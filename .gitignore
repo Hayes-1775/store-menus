@@ -1,0 +1,5 @@
+downloads/
+data/
+__pycache__/
+.DS_Store
+docs/compare-diff.jpg

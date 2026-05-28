@@ -1,0 +1,354 @@
+#!/usr/bin/env python3
+import argparse
+import csv
+import json
+import math
+import re
+from collections import defaultdict
+from datetime import datetime
+from decimal import Decimal, ROUND_HALF_UP
+from pathlib import Path
+from typing import Any, Dict, Iterable, List, Optional, Tuple
+
+from openpyxl import load_workbook
+
+
+STRAIN_GROUPS = {"Indica": 1, "Hybrid": 2, "Sativa": 3}
+THC_COLUMNS = ["Total % THC", "% THC", "Total THC %", "Potency THC %", "Potency THC"]
+
+
+def clean_key(value: Any) -> str:
+    return str(value or "").replace("\u00a0", "").strip().lower()
+
+
+def normalize_header(value: Any) -> str:
+    return re.sub(r"\s+", " ", str(value or "").replace("\u00a0", " ").strip()).lower()
+
+
+def parse_number(value: Any) -> Optional[float]:
+    if value is None:
+        return None
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        if math.isnan(value):
+            return None
+        return float(value)
+    text = str(value).strip().replace("$", "").replace(",", "")
+    if text.endswith("%"):
+        text = text[:-1].strip()
+    if not text:
+        return None
+    try:
+        return float(text)
+    except ValueError:
+        return None
+
+
+def parse_thc(value: Any) -> float:
+    parsed = parse_number(value)
+    if parsed is None:
+        return 0.0
+    return parsed / 100.0 if parsed > 1 else parsed
+
+
+def fmt_money(value: Any) -> str:
+    parsed = parse_number(value)
+    if parsed is None:
+        return ""
+    return f"${int(round(parsed))}"
+
+
+def fmt_percent(value: float) -> str:
+    pct = Decimal(str(value * 100)).quantize(Decimal("1"), rounding=ROUND_HALF_UP)
+    return f"{pct}%"
+
+
+def row_get(row: Dict[str, Any], header_map: Dict[str, str], aliases: Iterable[str]) -> Any:
+    for alias in aliases:
+        key = header_map.get(normalize_header(alias))
+        if key is not None:
+            return row.get(key)
+    return None
+
+
+def read_table(path: Path, sheet_name: Optional[str] = None) -> List[Dict[str, Any]]:
+    suffix = path.suffix.lower()
+    if suffix == ".csv":
+        with path.open("r", encoding="utf-8-sig", newline="") as f:
+            return list(csv.DictReader(f))
+
+    if suffix in {".xlsx", ".xlsm"}:
+        wb = load_workbook(path, data_only=True, read_only=True, keep_vba=suffix == ".xlsm")
+        if sheet_name:
+            ws = wb[sheet_name]
+        elif "Inventory" in wb.sheetnames:
+            ws = wb["Inventory"]
+        else:
+            ws = wb[wb.sheetnames[0]]
+        rows = ws.iter_rows(values_only=True)
+        headers = [str(v).strip() if v is not None else "" for v in next(rows)]
+        out = []
+        for values in rows:
+            if not any(v not in (None, "") for v in values):
+                continue
+            out.append({headers[i]: values[i] if i < len(values) else None for i in range(len(headers))})
+        return out
+
+    raise ValueError(f"Unsupported inventory file type: {path}")
+
+
+def read_pricing(path: Path, sheet_name: str) -> Dict[str, Dict[str, Any]]:
+    wb = load_workbook(path, data_only=True, read_only=True, keep_vba=path.suffix.lower() == ".xlsm")
+    ws = wb[sheet_name]
+    pricing: Dict[str, Dict[str, Any]] = {}
+    for values in ws.iter_rows(min_row=2, values_only=True):
+        profile = values[0] if values else None
+        if profile in (None, ""):
+            continue
+        pricing[clean_key(profile)] = {
+            "profile": str(profile).strip(),
+            "gram": values[1] if len(values) > 1 else None,
+            "eighth": values[2] if len(values) > 2 else None,
+            "quarter": values[3] if len(values) > 3 else None,
+            "half": values[4] if len(values) > 4 else None,
+            "ounce": values[5] if len(values) > 5 else None,
+        }
+    return pricing
+
+
+def normalize_strain(value: Any) -> Tuple[str, int]:
+    text = str(value or "")
+    if re.search("indica", text, re.I):
+        return "Indica", 1
+    if re.search("sativa", text, re.I):
+        return "Sativa", 3
+    return "Hybrid", 2
+
+
+def product_display_name(raw: Any) -> str:
+    text = str(raw or "").strip()
+    if not text:
+        return "Unknown"
+    return text.split("|", 1)[0].strip() or "Unknown"
+
+
+def extract_menu(
+    inventory_rows: List[Dict[str, Any]],
+    pricing: Dict[str, Dict[str, Any]],
+    low_stock_threshold: float,
+) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+    if not inventory_rows:
+        raise ValueError("Inventory source contained no rows.")
+
+    source_headers = list(inventory_rows[0].keys())
+    header_map = {normalize_header(h): h for h in source_headers}
+    required_groups = {
+        "Category": ["Category"],
+        "Room": ["Room"],
+        "Quantity": ["Quantity"],
+        "Product Type": ["Product Type"],
+        "Product Name": ["Product Name"],
+        "Price Profile": ["Price Profile Name", "Price Profile"],
+        "Strain Species": ["Strain Species"],
+    }
+    missing = [
+        name
+        for name, aliases in required_groups.items()
+        if not any(normalize_header(alias) in header_map for alias in aliases)
+    ]
+    if missing:
+        raise ValueError(f"Missing required inventory columns: {', '.join(missing)}")
+    if not any(normalize_header(col) in header_map for col in THC_COLUMNS):
+        raise ValueError(f"Missing required THC columns: one of {', '.join(THC_COLUMNS)}")
+
+    products: Dict[str, Dict[str, Any]] = {}
+    excluded: List[Dict[str, Any]] = []
+    warnings: List[Dict[str, Any]] = []
+
+    for idx, row in enumerate(inventory_rows, start=2):
+        category = str(row_get(row, header_map, ["Category"]) or "").strip()
+        room = str(row_get(row, header_map, ["Room"]) or "").strip()
+        qty = parse_number(row_get(row, header_map, ["Quantity"]))
+        ptype = str(row_get(row, header_map, ["Product Type"]) or "").strip()
+
+        reasons = []
+        room_l = room.lower()
+        if category.lower() != "flower":
+            reasons.append("not flower")
+        if "for sale" not in room_l or "not for sale" in room_l:
+            reasons.append("not for-sale room")
+        if qty is None or qty <= 0:
+            reasons.append("quantity <= 0 or nonnumeric")
+        if ptype.lower() in {"deal", "flower deal"}:
+            reasons.append("deal product type")
+        if reasons:
+            excluded.append({"row": idx, "reasons": reasons})
+            continue
+
+        raw_name = row_get(row, header_map, ["Product Name"])
+        name = product_display_name(raw_name)
+        strain, group_order = normalize_strain(row_get(row, header_map, ["Strain Species"]))
+        profile = str(row_get(row, header_map, ["Price Profile Name", "Price Profile"]) or "").strip()
+        direct_price = row_get(row, header_map, ["Price"])
+        thc = 0.0
+        for col in THC_COLUMNS:
+            thc_value = row_get(row, header_map, [col])
+            if thc_value not in (None, ""):
+                thc = parse_thc(thc_value)
+                break
+
+        candidate = {
+            "product_name": name,
+            "quantity": float(qty),
+            "thc": float(thc),
+            "strain": strain,
+            "group_order": group_order,
+            "price_profile": profile,
+            "direct_price": direct_price,
+            "source_row": idx,
+        }
+
+        existing = products.get(name)
+        if not existing:
+            products[name] = candidate
+            continue
+
+        existing["quantity"] += candidate["quantity"]
+        if existing["strain"] != candidate["strain"]:
+            warnings.append({
+                "product_name": name,
+                "type": "conflicting_strain",
+                "kept": existing["strain"],
+                "saw": candidate["strain"],
+                "source_row": idx,
+            })
+        if clean_key(existing["price_profile"]) != clean_key(candidate["price_profile"]):
+            warnings.append({
+                "product_name": name,
+                "type": "conflicting_price_profile",
+                "kept": existing["price_profile"],
+                "saw": candidate["price_profile"],
+                "source_row": idx,
+            })
+
+        should_replace = False
+        if candidate["thc"] > existing["thc"]:
+            should_replace = True
+        elif candidate["thc"] == existing["thc"]:
+            if not clean_key(existing["price_profile"]) and clean_key(candidate["price_profile"]):
+                should_replace = True
+        if should_replace:
+            quantity = existing["quantity"]
+            products[name] = candidate
+            products[name]["quantity"] = quantity
+
+    menu_rows: List[Dict[str, Any]] = []
+    missing_price_profiles: List[Dict[str, Any]] = []
+    excluded_specials: List[Dict[str, Any]] = []
+    for name, product in products.items():
+        price = pricing.get(clean_key(product["price_profile"]))
+        if not price:
+            if not clean_key(product["price_profile"]) and product.get("direct_price") not in (None, ""):
+                excluded_specials.append({
+                    "product_name": name,
+                    "reason": "direct price/no standard price profile",
+                    "direct_price": str(product.get("direct_price")),
+                    "quantity": round(product["quantity"], 2),
+                    "thc_percent": round(product["thc"] * 100, 2),
+                })
+                continue
+            missing_price_profiles.append({
+                "product_name": name,
+                "price_profile": product["price_profile"],
+                "quantity": round(product["quantity"], 2),
+                "thc_percent": round(product["thc"] * 100, 2),
+            })
+            continue
+
+        menu_rows.append({
+            "product_name": name,
+            "strain": product["strain"],
+            "group_order": product["group_order"],
+            "thc": product["thc"],
+            "thc_display": fmt_percent(product["thc"]),
+            "quantity": round(product["quantity"], 2),
+            "price_profile": product["price_profile"],
+            "gram": fmt_money(price["gram"]),
+            "eighth": fmt_money(price["eighth"]),
+            "quarter": fmt_money(price["quarter"]),
+            "half": fmt_money(price["half"]),
+            "ounce": fmt_money(price["ounce"]),
+            "gram_sort": parse_number(price["gram"]) or 999999,
+            "low_stock": product["quantity"] < low_stock_threshold,
+            "closeout": product["quantity"] < 27,
+        })
+
+    menu_rows.sort(key=lambda r: (r["group_order"], r["gram_sort"], r["thc"], r["product_name"].lower()))
+    for row in menu_rows:
+        row.pop("gram_sort", None)
+
+    validation = {
+        "source_row_count": len(inventory_rows),
+        "eligible_product_count": len(products),
+        "renderable_product_count": len(menu_rows),
+        "excluded_row_count": len(excluded),
+        "missing_price_profiles": missing_price_profiles,
+        "excluded_specials": excluded_specials,
+        "warnings": warnings,
+    }
+    return menu_rows, validation
+
+
+def write_csv(path: Path, rows: List[Dict[str, Any]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fields = ["product_name", "strain", "thc_display", "gram", "eighth", "quarter", "half", "ounce", "quantity", "price_profile", "low_stock", "closeout"]
+    with path.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fields)
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({field: row.get(field, "") for field in fields})
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Extract the flower menu from a Flowhub inventory CSV or workbook.")
+    parser.add_argument("--inventory", required=True, help="Path to Flowhub inventory CSV/XLSX/XLSM.")
+    parser.add_argument("--pricing-workbook", default="/Users/mikehayes/Desktop/Flower Menu Link.xlsm")
+    parser.add_argument("--pricing-sheet", default="Proposed Pricing")
+    parser.add_argument("--out-json", default="data/flower_menu.json")
+    parser.add_argument("--out-csv", default="data/flower_menu.csv")
+    parser.add_argument("--validation-json", default="data/validation_report.json")
+    parser.add_argument("--low-stock-threshold", type=float, default=20)
+    args = parser.parse_args()
+
+    inventory_path = Path(args.inventory).expanduser()
+    pricing_path = Path(args.pricing_workbook).expanduser()
+    menu_rows, validation = extract_menu(
+        read_table(inventory_path),
+        read_pricing(pricing_path, args.pricing_sheet),
+        args.low_stock_threshold,
+    )
+
+    payload = {
+        "generated_at": datetime.now().isoformat(timespec="seconds"),
+        "inventory_source": str(inventory_path),
+        "pricing_workbook": str(pricing_path),
+        "rows": menu_rows,
+    }
+
+    out_json = Path(args.out_json)
+    validation_json = Path(args.validation_json)
+    out_json.parent.mkdir(parents=True, exist_ok=True)
+    validation_json.parent.mkdir(parents=True, exist_ok=True)
+    out_json.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    validation_json.write_text(json.dumps(validation, indent=2), encoding="utf-8")
+    write_csv(Path(args.out_csv), menu_rows)
+    print(json.dumps({
+        "rows": len(menu_rows),
+        "missing_price_profiles": len(validation["missing_price_profiles"]),
+        "warnings": len(validation["warnings"]),
+        "out_json": str(out_json),
+        "validation_json": str(validation_json),
+    }, indent=2))
+
+
+if __name__ == "__main__":
+    main()

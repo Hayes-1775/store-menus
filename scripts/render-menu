@@ -1,0 +1,189 @@
+#!/usr/bin/env python3
+import argparse
+import json
+import shutil
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List
+
+from PIL import Image, ImageDraw, ImageFont
+
+
+WIDTH = 1080
+HEIGHT = 1920
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+
+
+FONT_CANDIDATES = {
+    "title": [
+        "/System/Library/Fonts/Supplemental/Georgia Bold.ttf",
+        "/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf",
+    ],
+    "body": [
+        "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+        "/System/Library/Fonts/Avenir Next.ttc",
+        "/System/Library/Fonts/Supplemental/Arial.ttf",
+    ],
+}
+
+
+def font(kind: str, size: int) -> ImageFont.FreeTypeFont:
+    for candidate in FONT_CANDIDATES[kind]:
+        p = Path(candidate)
+        if p.exists():
+            return ImageFont.truetype(str(p), size=size)
+    return ImageFont.load_default(size=size)
+
+
+def text_width(draw: ImageDraw.ImageDraw, text: str, fnt: ImageFont.FreeTypeFont) -> int:
+    box = draw.textbbox((0, 0), text, font=fnt)
+    return box[2] - box[0]
+
+
+def text_height(draw: ImageDraw.ImageDraw, text: str, fnt: ImageFont.FreeTypeFont) -> int:
+    box = draw.textbbox((0, 0), text, font=fnt)
+    return box[3] - box[1]
+
+
+def fit_font(draw: ImageDraw.ImageDraw, text: str, base: ImageFont.FreeTypeFont, max_width: int, min_size: int = 18) -> ImageFont.FreeTypeFont:
+    size = base.size
+    while size > min_size:
+        candidate = font("body", size)
+        if text_width(draw, text, candidate) <= max_width:
+            return candidate
+        size -= 1
+    return font("body", min_size)
+
+
+def gradient_bar(draw: ImageDraw.ImageDraw, x: int, y: int, w: int, h: int, color: tuple) -> None:
+    for i in range(w):
+        fade = max(0, 1 - (i / w) ** 1.6)
+        r = int(color[0] * fade)
+        g = int(color[1] * fade)
+        b = int(color[2] * fade)
+        draw.line([(x + i, y), (x + i, y + h)], fill=(r, g, b))
+
+
+def group_rows(rows: List[Dict]) -> Dict[str, List[Dict]]:
+    grouped = {"Indica": [], "Hybrid": [], "Sativa": []}
+    for row in rows:
+        grouped.setdefault(row["strain"], []).append(row)
+    return grouped
+
+
+def clamp(value: int, min_value: int, max_value: int) -> int:
+    return max(min_value, min(max_value, value))
+
+
+def draw_menu(rows: List[Dict], output: Path, width: int, height: int) -> None:
+    scale_x = width / 1080
+    scale_y = height / 1920
+    s = min(scale_x, scale_y)
+
+    img = Image.new("RGB", (width, height), BLACK)
+    draw = ImageDraw.Draw(img)
+
+    title_font = font("title", int(48 * s))
+    header_font = font("title", int(28 * s))
+    left = int(38 * scale_x)
+    top = int(20 * scale_y)
+    columns = {
+        "thc": int(445 * scale_x),
+        "gram": int(555 * scale_x),
+        "eighth": int(665 * scale_x),
+        "quarter": int(775 * scale_x),
+        "half": int(880 * scale_x),
+        "ounce": int(995 * scale_x),
+    }
+
+    draw.text((left, top), "Flower Menu", fill=WHITE, font=title_font)
+    for label, x in [("THC", columns["thc"]), ("Gram", columns["gram"]), ("1/8", columns["eighth"]), ("1/4", columns["quarter"]), ("1/2", columns["half"]), ("Ounce", columns["ounce"])]:
+        draw.text((x - text_width(draw, label, header_font) // 2, top + int(8 * scale_y)), label, fill=WHITE, font=header_font)
+
+    grouped = group_rows(rows)
+    active_groups = [strain for strain in ["Indica", "Hybrid", "Sativa"] if grouped.get(strain)]
+    row_count = len(rows)
+    content_top = int(88 * scale_y)
+    bottom_margin = int(34 * scale_y)
+    available_h = height - content_top - bottom_margin
+    group_count = len(active_groups)
+    target_row_h = int((available_h - (group_count * 60 * scale_y) - (group_count * 20 * scale_y) - ((group_count - 1) * 24 * scale_y)) / max(row_count, 1))
+    row_h = clamp(target_row_h, int(38 * scale_y), int(54 * scale_y))
+    body_font_size = clamp(int(row_h * 0.68), int(26 * s), int(36 * s))
+    bar_h = clamp(int(row_h * 1.34), int(54 * scale_y), int(68 * scale_y))
+    gap_after_bar = clamp(int(row_h * 0.40), int(16 * scale_y), int(24 * scale_y))
+    gap_between_groups = clamp(int(row_h * 0.52), int(18 * scale_y), int(30 * scale_y))
+    section_font_size = clamp(int(bar_h * 0.70), int(36 * s), int(48 * s))
+
+    body_font = font("body", body_font_size)
+    section_font = font("title", section_font_size)
+    y = int(88 * scale_y)
+    section_colors = {
+        "Indica": (120, 140, 200),
+        "Hybrid": (110, 185, 70),
+        "Sativa": (230, 35, 35),
+    }
+
+    for strain_index, strain in enumerate(active_groups):
+        group = grouped.get(strain, [])
+        if not group:
+            continue
+        gradient_bar(draw, left, y, int(900 * scale_x), bar_h, section_colors[strain])
+        section_box = draw.textbbox((0, 0), strain, font=section_font)
+        section_text_h = section_box[3] - section_box[1]
+        section_y = y + (bar_h - section_text_h) // 2 - section_box[1]
+        draw.text((left + int(16 * scale_x), section_y), strain, fill=WHITE, font=section_font)
+        y += bar_h + gap_after_bar
+
+        for row in group:
+            if y > height - int(55 * scale_y):
+                break
+            name = row["product_name"]
+            name_font = fit_font(draw, name, body_font, int(390 * scale_x), min_size=int(22 * s))
+            draw.text((left, y), name, fill=WHITE, font=name_font)
+            values = [
+                ("thc", row["thc_display"]),
+                ("gram", row["gram"]),
+                ("eighth", row["eighth"]),
+                ("quarter", row["quarter"]),
+                ("half", row["half"]),
+                ("ounce", row["ounce"]),
+            ]
+            for key, value in values:
+                value = str(value)
+                draw.text((columns[key] - text_width(draw, value, body_font) // 2, y), value, fill=WHITE, font=body_font)
+            y += row_h
+        if strain_index < len(active_groups) - 1:
+            y += gap_between_groups
+
+    output.parent.mkdir(parents=True, exist_ok=True)
+    img.save(output, "JPEG", quality=92, optimize=True)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Render the flower menu JSON to a portrait JPEG.")
+    parser.add_argument("--menu-json", default="data/flower_menu.json")
+    parser.add_argument("--out", default="docs/latest.jpg")
+    parser.add_argument("--archive-dir", default="docs/archive")
+    parser.add_argument("--width", type=int, default=WIDTH)
+    parser.add_argument("--height", type=int, default=HEIGHT)
+    parser.add_argument("--archive", action="store_true")
+    args = parser.parse_args()
+
+    payload = json.loads(Path(args.menu_json).read_text(encoding="utf-8"))
+    rows = payload["rows"]
+    out = Path(args.out)
+    draw_menu(rows, out, args.width, args.height)
+
+    if args.archive:
+        archive = Path(args.archive_dir)
+        archive.mkdir(parents=True, exist_ok=True)
+        dated = archive / f"flower-menu-{datetime.now().date().isoformat()}.jpg"
+        shutil.copyfile(out, dated)
+
+    print(json.dumps({"out": str(out), "width": args.width, "height": args.height, "rows": len(rows)}, indent=2))
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,74 @@
+#!/usr/bin/env python3
+import json
+import sys
+from pathlib import Path
+
+from PIL import Image
+
+
+def fail(message: str) -> None:
+    print(f"FAIL: {message}", file=sys.stderr)
+    sys.exit(1)
+
+
+def main() -> None:
+    menu_path = Path("data/flower_menu.json")
+    validation_path = Path("data/validation_report.json")
+    image_path = Path("docs/latest.jpg")
+    docs_data_path = Path("docs/menu-data.json")
+    html_path = Path("docs/index.html")
+
+    if not menu_path.exists():
+        fail("missing data/flower_menu.json")
+    if not validation_path.exists():
+        fail("missing data/validation_report.json")
+    if not image_path.exists():
+        fail("missing docs/latest.jpg")
+    if not docs_data_path.exists():
+        fail("missing docs/menu-data.json")
+    if not html_path.exists():
+        fail("missing docs/index.html")
+
+    menu = json.loads(menu_path.read_text(encoding="utf-8"))
+    docs_menu = json.loads(docs_data_path.read_text(encoding="utf-8"))
+    validation = json.loads(validation_path.read_text(encoding="utf-8"))
+    rows = menu.get("rows", [])
+    docs_rows = docs_menu.get("rows", [])
+    names = {row["product_name"] for row in rows}
+
+    if len(rows) != len(docs_rows):
+        fail(f"docs/menu-data.json row count {len(docs_rows)} does not match data/flower_menu.json {len(rows)}")
+
+    if "Jack Herer" not in names:
+        fail("Jack Herer should be retained by duplicate tie handling")
+    specials = {row["product_name"] for row in validation.get("excluded_specials", [])}
+    if "Japanese Mimosa" not in specials:
+        fail("Japanese Mimosa should be reported as an excluded direct-price special")
+    if len(rows) < 30:
+        fail(f"unexpectedly low menu row count: {len(rows)}")
+    closeout_names = {row["product_name"] for row in rows if row.get("closeout")}
+    if "Power Mintz" not in closeout_names:
+        fail("Power Mintz should be marked closeout when quantity is below 27g")
+    if "Japanese Mimosa" in names:
+        fail("Japanese Mimosa should remain excluded from renderable menu rows")
+    for row in rows:
+        if row.get("quantity", 0) >= 27 and row.get("closeout"):
+            fail(f"{row['product_name']} is marked closeout with quantity {row['quantity']}")
+
+    img = Image.open(image_path)
+    if img.size != (1080, 1920):
+        fail(f"expected 1080x1920 image, got {img.size}")
+
+    print(json.dumps({
+        "status": "ok",
+        "rows": len(rows),
+        "missing_price_profiles": len(validation.get("missing_price_profiles", [])),
+        "image": str(image_path),
+        "html": str(html_path),
+        "docs_data": str(docs_data_path),
+        "size": img.size,
+    }, indent=2))
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+PYTHON="${PYTHON:-/Users/mikehayes/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3}"
+INVENTORY="${1:-}"
+
+if [[ -z "$INVENTORY" ]]; then
+  echo "Usage: scripts/run-daily-menu /path/to/flowhub-inventory.csv" >&2
+  exit 2
+fi
+
+cd "$ROOT_DIR"
+"$PYTHON" scripts/extract-flower-menu \
+  --inventory "$INVENTORY" \
+  --pricing-workbook "/Users/mikehayes/Desktop/Flower Menu Link.xlsm" \
+  --out-json data/flower_menu.json \
+  --out-csv data/flower_menu.csv \
+  --validation-json data/validation_report.json
+
+"$PYTHON" scripts/render-menu \
+  --menu-json data/flower_menu.json \
+  --out docs/latest.jpg \
+  --archive
+
+cp data/flower_menu.json docs/menu-data.json
+
+echo "Generated docs/latest.jpg and docs/menu-data.json"

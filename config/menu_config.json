@@ -1,0 +1,18 @@
+{
+  "flowhub_inventory_url": "https://app.flowhub.com/analytics/report/view/inventory#store_id=6453e245-f882-470d-92c2-8a47083d954c",
+  "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
+  "pricing_sheet": "Proposed Pricing",
+  "reference_image": "/Users/mikehayes/Desktop/Flower Menu InDesign.jpg",
+  "low_stock_threshold": 20,
+  "output": {
+    "data_json": "data/flower_menu.json",
+    "data_csv": "data/flower_menu.csv",
+    "validation_json": "data/validation_report.json",
+    "latest_jpg": "docs/latest.jpg",
+    "archive_dir": "docs/archive"
+  },
+  "render": {
+    "width": 1080,
+    "height": 1920
+  }
+}
