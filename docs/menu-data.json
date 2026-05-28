@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-27T21:08:40",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-05-27.csv",
+  "generated_at": "2026-05-28T05:34:16",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-05-28.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -313,7 +313,7 @@
       "group_order": 3,
       "thc": 0.163,
       "thc_display": "16%",
-      "quantity": 436.23,
+      "quantity": 433.23,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -425,7 +425,7 @@
       "group_order": 3,
       "thc": 0.29100000000000004,
       "thc_display": "29%",
-      "quantity": 116.19,
+      "quantity": 112.64,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",

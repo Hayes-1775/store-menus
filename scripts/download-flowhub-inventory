@@ -3,9 +3,9 @@
  * Flowhub inventory download entrypoint.
  *
  * This script is intentionally conservative: it uses the Codex Chrome browser
- * bridge when available, and stops if Flowhub requires login or if the page
- * does not expose a clear CSV/export control. The scheduled Codex skill should
- * use this as the first attempt, then fall back to a visible Chrome handoff.
+ * bridge when available, gives Chrome/password-manager autofill a short window
+ * to complete login, and keeps the tab open while waiting for manual login or
+ * verification handoff before continuing the export.
  */
 
 const fs = require("node:fs");
@@ -17,6 +17,94 @@ const FLOWHUB_URL =
   "https://app.flowhub.com/analytics/report/view/inventory#store_id=6453e245-f882-470d-92c2-8a47083d954c";
 
 const OUT_DIR = path.resolve(process.env.FLOWHUB_DOWNLOAD_DIR || "downloads");
+const LOGIN_WAIT_MS = Number(process.env.FLOWHUB_LOGIN_WAIT_MS || 45000);
+const HANDOFF_WAIT_MS = Number(process.env.FLOWHUB_HANDOFF_WAIT_MS || 8 * 60 * 60 * 1000);
+
+async function getPageState(tab) {
+  return tab.playwright.evaluate(() => {
+    const text = document.body?.innerText || "";
+    const passwordInputs = Array.from(document.querySelectorAll('input[type="password"]'));
+    const visiblePasswordInputs = passwordInputs.filter((input) => {
+      const style = window.getComputedStyle(input);
+      const rect = input.getBoundingClientRect();
+      return style.visibility !== "hidden" && style.display !== "none" && rect.width > 0 && rect.height > 0;
+    });
+
+    return {
+      title: document.title,
+      text,
+      hasPasswordField: visiblePasswordInputs.length > 0,
+      hasFilledPasswordField: visiblePasswordInputs.some((input) => input.value.length > 0),
+    };
+  }, undefined, { timeoutMs: 10000 }).catch(() => ({
+    title: "",
+    text: "",
+    hasPasswordField: false,
+    hasFilledPasswordField: false,
+  }));
+}
+
+function needsManualAuth(pageState) {
+  return /verification|two[- ]factor|captcha/i.test(`${pageState.title}\n${pageState.text}`);
+}
+
+function looksLikeLogin(pageState) {
+  return pageState.hasPasswordField || /sign in|log in/i.test(`${pageState.title}\n${pageState.text}`);
+}
+
+async function waitForAutofilledLogin(tab) {
+  const deadline = Date.now() + LOGIN_WAIT_MS;
+
+  while (Date.now() < deadline) {
+    const pageState = await getPageState(tab);
+    if (needsManualAuth(pageState)) {
+      return { status: "manual_auth", pageState };
+    }
+    if (!looksLikeLogin(pageState)) {
+      return { status: "logged_in", pageState };
+    }
+
+    if (pageState.hasFilledPasswordField) {
+      const submitted = await tab.playwright.evaluate(() => {
+        const passwordInput = document.querySelector('input[type="password"]');
+        if (!passwordInput) return false;
+        const form = passwordInput.closest("form");
+        if (form) {
+          form.requestSubmit();
+          return true;
+        }
+        const buttons = Array.from(document.querySelectorAll('button, input[type="submit"]'));
+        const submit = buttons.find((button) => /log in|sign in|continue|submit/i.test(button.innerText || button.value || ""));
+        if (!submit) return false;
+        submit.click();
+        return true;
+      }).catch(() => false);
+
+      if (submitted) {
+        await tab.playwright.waitForLoadState({ state: "domcontentloaded", timeoutMs: 15000 }).catch(() => {});
+      }
+    }
+
+    await tab.playwright.waitForTimeout(1500);
+  }
+
+  return { status: "login_required", pageState: await getPageState(tab) };
+}
+
+async function waitForManualHandoff(tab, reason) {
+  console.error(`${reason}. Waiting for manual completion in Chrome for ${Math.round(HANDOFF_WAIT_MS / 60000)} minutes.`);
+  const deadline = Date.now() + HANDOFF_WAIT_MS;
+
+  while (Date.now() < deadline) {
+    const pageState = await getPageState(tab);
+    if (!needsManualAuth(pageState) && !looksLikeLogin(pageState)) {
+      return { status: "resolved", pageState };
+    }
+    await tab.playwright.waitForTimeout(3000);
+  }
+
+  return { status: "timeout", pageState: await getPageState(tab) };
+}
 
 async function main() {
   fs.mkdirSync(OUT_DIR, { recursive: true });
@@ -37,10 +125,20 @@ async function main() {
   await tab.goto(FLOWHUB_URL);
   await tab.playwright.waitForLoadState({ state: "domcontentloaded", timeoutMs: 30000 });
 
-  const visibleText = await tab.playwright.locator("body").innerText({ timeoutMs: 10000 }).catch(() => "");
-  if (/sign in|log in|verification|two[- ]factor|captcha/i.test(visibleText)) {
-    await browser.tabs.finalize({ keep: [{ tab, status: "handoff" }] });
-    throw new Error("Flowhub requires login, 2FA, or CAPTCHA. Complete login in Chrome and rerun.");
+  const loginResult = await waitForAutofilledLogin(tab);
+  if (loginResult.status === "manual_auth") {
+    const handoffResult = await waitForManualHandoff(tab, "Flowhub requires verification, 2FA, or CAPTCHA");
+    if (handoffResult.status !== "resolved") {
+      await browser.tabs.finalize({ keep: [{ tab, status: "handoff" }] });
+      throw new Error("Flowhub verification handoff timed out before the report page was available.");
+    }
+  }
+  if (loginResult.status === "login_required") {
+    const handoffResult = await waitForManualHandoff(tab, "Flowhub login did not complete after waiting for saved username/password autofill");
+    if (handoffResult.status !== "resolved") {
+      await browser.tabs.finalize({ keep: [{ tab, status: "handoff" }] });
+      throw new Error("Flowhub login handoff timed out before the report page was available.");
+    }
   }
 
   const candidates = [
