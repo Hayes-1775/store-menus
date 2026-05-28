@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+PYTHON="${PYTHON:-/Users/mikehayes/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3}"
+INVENTORY="${1:-}"
+
+if [[ -z "$INVENTORY" ]]; then
+  echo "Usage: scripts/run-vape-menu /path/to/flowhub-inventory.csv" >&2
+  exit 2
+fi
+
+cd "$ROOT_DIR"
+"$PYTHON" scripts/extract-vape-menu \
+  --inventory "$INVENTORY" \
+  --out-json data/vape_menu.json \
+  --out-csv data/vape_menu.csv \
+  --validation-json data/vape_validation_report.json
+
+"$PYTHON" scripts/render-vape-menu \
+  --menu-json data/vape_menu.json \
+  --out docs/vapes/latest.jpg \
+  --archive
+
+mkdir -p docs/vapes
+cp data/vape_menu.json docs/vapes/menu-data.json
+
+echo "Generated docs/vapes/latest.jpg and docs/vapes/menu-data.json"

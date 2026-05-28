@@ -1,0 +1,283 @@
+#!/usr/bin/env python3
+import argparse
+import json
+import shutil
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List
+
+from PIL import Image, ImageDraw, ImageFont
+
+
+WIDTH = 1080
+HEIGHT = 1920
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+BRAND_GOLD = (218, 170, 74)
+STRAIN_COLORS = {
+    "Indica": (120, 140, 200),
+    "Hybrid": (110, 185, 70),
+    "Sativa": (230, 35, 35),
+}
+PROCESS_ORDER = ["Distillate", "Cured Resin", "Live Resin", "Rosin"]
+HIGHER_CULTURES_PROCESS_ORDER = ["DLR", "Live Resin"]
+
+
+FONT_CANDIDATES = {
+    "title": [
+        "/System/Library/Fonts/Supplemental/Georgia Bold.ttf",
+        "/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf",
+    ],
+    "body": [
+        "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+        "/System/Library/Fonts/Avenir Next.ttc",
+        "/System/Library/Fonts/Supplemental/Arial.ttf",
+    ],
+}
+
+
+def font(kind: str, size: int) -> ImageFont.FreeTypeFont:
+    for candidate in FONT_CANDIDATES[kind]:
+        path = Path(candidate)
+        if path.exists():
+            return ImageFont.truetype(str(path), size=size)
+    return ImageFont.load_default(size=size)
+
+
+def text_width(draw: ImageDraw.ImageDraw, text: str, fnt: ImageFont.FreeTypeFont) -> int:
+    box = draw.textbbox((0, 0), text, font=fnt)
+    return box[2] - box[0]
+
+
+def fit_font(draw: ImageDraw.ImageDraw, text: str, max_width: int, size: int, min_size: int = 22) -> ImageFont.FreeTypeFont:
+    for candidate_size in range(size, min_size - 1, -1):
+        candidate = font("body", candidate_size)
+        if text_width(draw, text, candidate) <= max_width:
+            return candidate
+    return font("body", min_size)
+
+
+def fit_text(draw: ImageDraw.ImageDraw, text: str, fnt: ImageFont.FreeTypeFont, max_width: int) -> str:
+    if text_width(draw, text, fnt) <= max_width:
+        return text
+    ellipsis = "..."
+    trimmed = text.rstrip()
+    while trimmed and text_width(draw, trimmed + ellipsis, fnt) > max_width:
+        trimmed = trimmed[:-1].rstrip()
+    return trimmed + ellipsis if trimmed else ellipsis
+
+
+def clamp(value: int, min_value: int, max_value: int) -> int:
+    return max(min_value, min(max_value, value))
+
+
+def gradient_bar(draw: ImageDraw.ImageDraw, x: int, y: int, w: int, h: int, color: tuple) -> None:
+    for i in range(w):
+        fade = max(0, 1 - (i / w) ** 1.55)
+        draw.line([(x + i, y), (x + i, y + h)], fill=tuple(int(c * fade) for c in color))
+
+
+def strain_panel(draw: ImageDraw.ImageDraw, x: int, y: int, w: int, h: int, color: tuple) -> None:
+    for i in range(w):
+        fade = max(0, 1 - (i / w) ** 1.35)
+        fill = tuple(int(color[j] * fade * 0.22) for j in range(3))
+        draw.line([(x + i, y), (x + i, y + h)], fill=fill)
+    border = tuple(min(255, int(c * 0.72)) for c in color)
+    draw.rectangle((x, y, x + w, y + h), outline=border, width=1)
+    draw.line((x, y, x + int(w * 0.74), y), fill=color, width=4)
+
+
+def grouped_rows(rows: List[Dict]) -> Dict[str, List[Dict]]:
+    grouped: Dict[str, List[Dict]] = {}
+    for row in rows:
+        grouped.setdefault(row["brand"], []).append(row)
+    return grouped
+
+
+def strain_groups(rows: List[Dict]) -> Dict[str, List[Dict]]:
+    grouped = {"Indica": [], "Hybrid": [], "Sativa": []}
+    for row in rows:
+        grouped.setdefault(row.get("strain") or "Other", []).append(row)
+    return grouped
+
+
+def process_groups(rows: List[Dict]) -> Dict[str, List[Dict]]:
+    grouped: Dict[str, List[Dict]] = {}
+    for row in rows:
+        grouped.setdefault(row.get("process") or "Other", []).append(row)
+    return grouped
+
+
+def price_range(rows: List[Dict]) -> str:
+    values = []
+    for row in rows:
+        raw = str(row.get("price") or "").replace("$", "")
+        try:
+            values.append(float(raw))
+        except ValueError:
+            pass
+    if not values:
+        return ""
+    low, high = min(values), max(values)
+    if low == high:
+        return f"${low:g}"
+    return f"${low:g}-${high:g}"
+
+
+def process_label(process: str, rows: List[Dict]) -> str:
+    sizes = {row.get("size", "") for row in rows if row.get("size")}
+    size_label = next(iter(sizes)) if len(sizes) == 1 else "Mixed"
+    by_format: Dict[str, List[Dict]] = {}
+    for row in rows:
+        by_format.setdefault(row.get("format") or "Other", []).append(row)
+    format_order = ["510", "AIO", "Other"]
+    format_prices = []
+    for format_name in format_order:
+        format_rows = by_format.get(format_name)
+        if not format_rows:
+            continue
+        format_prices.append(f"{format_name} = {price_range(format_rows)}")
+    return f"{process} - {size_label} {' / '.join(format_prices)}"
+
+
+def brand_label(brand: str, rows: List[Dict]) -> str:
+    sizes = {row.get("size", "") for row in rows if row.get("size")}
+    formats = {row.get("format", "") for row in rows if row.get("format")}
+    processes = {row.get("process", "") for row in rows if row.get("process")}
+    prices = {row.get("price", "") for row in rows if row.get("price")}
+    if len(sizes) == len(formats) == len(processes) == len(prices) == 1:
+        return f"{brand} - {next(iter(sizes))} {next(iter(formats))} {next(iter(processes))} - {next(iter(prices))}"
+    price_values = [row.get("short_price") or row.get("price", "") for row in rows if row.get("price")]
+    price_label = ""
+    if price_values:
+        numeric = sorted({float(str(v).replace("$", "")) for v in price_values if str(v).replace("$", "").replace(".", "", 1).isdigit()})
+        if len(numeric) == 1:
+            price_label = f" - ${numeric[0]:g}"
+        elif numeric:
+            price_label = f" - ${numeric[0]:g}-${numeric[-1]:g}"
+    size_label = next(iter(sizes)) if len(sizes) == 1 else "Mixed"
+    format_label = "/".join(sorted(formats)) if formats else "Mixed"
+    return f"{brand} - {size_label} {format_label}{price_label}"
+
+
+def draw_menu(rows: List[Dict], output: Path, width: int, height: int) -> None:
+    scale_x = width / 1080
+    scale_y = height / 1920
+    s = min(scale_x, scale_y)
+
+    img = Image.new("RGB", (width, height), BLACK)
+    draw = ImageDraw.Draw(img)
+
+    left = int(38 * scale_x)
+    top = int(20 * scale_y)
+    title_font = font("title", int(48 * s))
+
+    draw.text((left, top), "Vape Menu", fill=WHITE, font=title_font)
+
+    grouped = grouped_rows(rows)
+    brands = [brand for brand in ["Verdant"] if grouped.get(brand)] + [brand for brand in grouped if brand != "Verdant"]
+    row_count = len(rows)
+    group_count = max(len(brands), 1)
+    content_top = int(88 * scale_y)
+    bottom_margin = int(34 * scale_y)
+    available_h = height - content_top - bottom_margin
+    target_row_h = int((available_h - (group_count * 60 * scale_y) - (group_count * 18 * scale_y) - ((group_count - 1) * 24 * scale_y)) / max(row_count, 1))
+    row_h = clamp(target_row_h, int(42 * scale_y), int(54 * scale_y))
+    body_size = clamp(int(row_h * 0.58), int(24 * s), int(30 * s))
+    section_h = clamp(int(row_h * 1.34), int(58 * scale_y), int(76 * scale_y))
+    section_size = clamp(int(section_h * 0.68), int(38 * s), int(52 * s))
+    gap_after_bar = clamp(int(row_h * 0.38), int(16 * scale_y), int(26 * scale_y))
+    gap_between = clamp(int(row_h * 0.52), int(20 * scale_y), int(32 * scale_y))
+
+    body_font = font("body", body_size)
+    section_font = font("title", section_size)
+    strain_font = font("title", int(36 * s))
+    y = content_top
+    for brand_index, brand in enumerate(brands):
+        group = grouped[brand]
+        gradient_bar(draw, left, y, int(900 * scale_x), section_h, BRAND_GOLD)
+        label = f"{brand} - AIO = Disposable" if brand in {"NW Kind", "Higher Cultures"} else brand_label(brand, group)
+        box = draw.textbbox((0, 0), label, font=section_font)
+        draw.text((left + int(16 * scale_x), y + (section_h - (box[3] - box[1])) // 2 - box[1]), label, fill=WHITE, font=section_font)
+        y += section_h + gap_after_bar
+
+        island_gap = int(34 * scale_x)
+        island_w = int((1004 * scale_x - island_gap * 2) / 3)
+        indica_x = left
+        hybrid_x = left + island_w + island_gap
+        sativa_x = left + (island_w + island_gap) * 2
+        name_w = int(island_w - 98 * scale_x)
+
+        def draw_group(title: str, group_rows: List[Dict], x: int, start_y: int) -> int:
+            panel_pad_x = int(12 * scale_x)
+            panel_pad_top = int(10 * scale_y)
+            panel_pad_bottom = int(14 * scale_y)
+            title_h = int(38 * scale_y)
+            panel_h = panel_pad_top + title_h + len(group_rows) * row_h + panel_pad_bottom
+            strain_panel(draw, x, start_y, island_w, panel_h, STRAIN_COLORS.get(title, WHITE))
+            local_y = start_y + panel_pad_top
+            text_x = x + panel_pad_x
+            draw.text((text_x, local_y), title, fill=WHITE, font=strain_font)
+            local_y += title_h
+            for row in group_rows:
+                max_name_w = name_w - panel_pad_x * 2
+                row_name = row.get("display_name") or row["product_name"]
+                name_font = fit_font(draw, row_name, max_name_w, body_size)
+                name = fit_text(draw, row_name, name_font, max_name_w)
+                draw.text((text_x, local_y), name, fill=WHITE, font=name_font)
+                detail = str(row.get("detail_display") or row.get("thc_display", ""))
+                draw.text((x + island_w - panel_pad_x - text_width(draw, detail, body_font), local_y), detail, fill=WHITE, font=body_font)
+                local_y += row_h
+            return start_y + panel_h
+
+        def draw_islands(group_rows: List[Dict], start_y: int) -> int:
+            strains = strain_groups(group_rows)
+            indica_y = draw_group("Indica", strains.get("Indica", []), indica_x, start_y)
+            hybrid_y = draw_group("Hybrid", strains.get("Hybrid", []), hybrid_x, start_y)
+            sativa_y = draw_group("Sativa", strains.get("Sativa", []), sativa_x, start_y)
+            return max(indica_y, hybrid_y, sativa_y)
+
+        if brand in {"NW Kind", "Higher Cultures"}:
+            process_font = font("title", int(30 * s))
+            by_process = process_groups(group)
+            process_order = HIGHER_CULTURES_PROCESS_ORDER if brand == "Higher Cultures" else PROCESS_ORDER
+            for process in process_order:
+                process_rows = by_process.get(process, [])
+                if not process_rows:
+                    continue
+                process_text = process_label(process, process_rows)
+                draw.text((left, y), process_text, fill=(247, 223, 155), font=process_font)
+                y += int(34 * scale_y)
+                y = draw_islands(process_rows, y)
+                y += int(14 * scale_y)
+        else:
+            y = draw_islands(group, y)
+        if brand_index < len(brands) - 1:
+            y += gap_between
+
+    output.parent.mkdir(parents=True, exist_ok=True)
+    img.save(output, "JPEG", quality=92, optimize=True)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Render the vape menu JSON to a portrait JPEG.")
+    parser.add_argument("--menu-json", default="data/vape_menu.json")
+    parser.add_argument("--out", default="docs/vapes/latest.jpg")
+    parser.add_argument("--archive-dir", default="docs/vapes/archive")
+    parser.add_argument("--width", type=int, default=WIDTH)
+    parser.add_argument("--height", type=int, default=HEIGHT)
+    parser.add_argument("--archive", action="store_true")
+    args = parser.parse_args()
+
+    rows = json.loads(Path(args.menu_json).read_text(encoding="utf-8"))["rows"]
+    out = Path(args.out)
+    draw_menu(rows, out, args.width, args.height)
+    if args.archive:
+        archive = Path(args.archive_dir)
+        archive.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(out, archive / f"vape-menu-{datetime.now().date().isoformat()}.jpg")
+    print(json.dumps({"out": str(out), "width": args.width, "height": args.height, "rows": len(rows)}, indent=2))
+
+
+if __name__ == "__main__":
+    main()

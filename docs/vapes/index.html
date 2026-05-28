@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="900">
+    <title>Vape Menu</title>
+    <style>
+      :root {
+        --row-height: 56px;
+        --body-size: 36px;
+        --section-height: 72px;
+        --section-size: 48px;
+        --gap-after-section: 22px;
+        --gap-between-groups: 28px;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        overflow: hidden;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .screen {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 16% 18%, rgba(72, 178, 108, 0.18), transparent 24%),
+          radial-gradient(circle at 88% 74%, rgba(255, 255, 255, 0.07), transparent 28%),
+          #000;
+      }
+
+      .menu {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1080px;
+        height: 1920px;
+        background: #000;
+        overflow: hidden;
+        box-sizing: border-box;
+        padding: 20px 38px 34px;
+        z-index: 1;
+        transform-origin: center center;
+      }
+
+      .menu::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(115deg, transparent 0%, transparent 42%, rgba(255, 255, 255, 0.08) 50%, transparent 58%, transparent 100%);
+        mix-blend-mode: screen;
+        transform: translateX(-120%);
+        animation: page-sheen 18s linear infinite;
+      }
+
+      .header,
+      .row {
+        display: grid;
+        align-items: center;
+        column-gap: 0;
+        white-space: nowrap;
+      }
+
+      .header {
+        height: 68px;
+        align-items: start;
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 700;
+      }
+
+      .title {
+        font-size: 48px;
+        line-height: 1;
+      }
+
+      .groups {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .group:not(:last-child) {
+        margin-bottom: var(--gap-between-groups);
+      }
+
+      .section-bar {
+        position: relative;
+        height: var(--section-height);
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        padding-left: 16px;
+        margin-bottom: var(--gap-after-section);
+        overflow: hidden;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: var(--section-size);
+        line-height: 1;
+        font-weight: 700;
+      }
+
+      .section-bar::before,
+      .section-bar::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+      }
+
+      .section-bar::before {
+        background: linear-gradient(90deg, var(--section-color), rgba(0, 0, 0, 0.92));
+      }
+
+      .section-bar::after {
+        background: linear-gradient(110deg, transparent 0%, transparent 38%, rgba(255, 255, 255, 0.18) 50%, transparent 62%, transparent 100%);
+        transform: translateX(-125%);
+        animation: bar-sheen 9s ease-in-out infinite;
+      }
+
+      .section-bar span {
+        position: relative;
+        z-index: 1;
+        transform: translateY(-0.02em);
+      }
+
+      .row {
+        position: relative;
+        height: var(--row-height);
+        font-size: var(--body-size);
+        line-height: 1;
+        font-weight: 700;
+        display: block;
+      }
+
+      .name {
+        position: absolute;
+        inset: 0;
+        display: block;
+        line-height: var(--row-height);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 0;
+        min-width: 0;
+        animation: name-fit-thc 7s ease-in-out infinite;
+      }
+
+      .num {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        text-align: right;
+        opacity: 0;
+        color: #fff;
+        text-shadow: 0 0 12px rgba(255, 255, 255, 0.22);
+        animation: thc-name-thc 7s ease-in-out infinite;
+      }
+
+      .islands {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 34px;
+      }
+
+      .process-group + .process-group {
+        margin-top: 14px;
+      }
+
+      .process-title {
+        height: 34px;
+        display: flex;
+        align-items: center;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 30px;
+        line-height: 1;
+        font-weight: 700;
+        color: #f7df9b;
+        text-shadow: 0 0 14px rgba(218, 170, 74, 0.26);
+      }
+
+      .strain-group {
+        position: relative;
+        min-width: 0;
+        overflow: hidden;
+        box-sizing: border-box;
+        padding: 10px 12px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background:
+          linear-gradient(90deg, color-mix(in srgb, var(--strain-color) 28%, transparent), rgba(0, 0, 0, 0) 58%),
+          rgba(0, 0, 0, 0.46);
+        box-shadow:
+          inset 0 0 0 1px color-mix(in srgb, var(--strain-color) 38%, transparent),
+          0 0 28px color-mix(in srgb, var(--strain-color) 20%, transparent);
+      }
+
+      .strain-group::before,
+      .strain-group::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .strain-group::before {
+        background: linear-gradient(105deg, transparent 0%, transparent 34%, rgba(255, 255, 255, 0.16) 50%, transparent 66%, transparent 100%);
+        transform: translateX(-135%);
+        animation: island-sheen 8s ease-in-out infinite;
+      }
+
+      .strain-group::after {
+        inset: 0 0 auto;
+        height: 4px;
+        background: linear-gradient(90deg, var(--strain-color), transparent);
+        opacity: 0.86;
+        animation: island-pulse 5s ease-in-out infinite;
+      }
+
+      .strain-title {
+        position: relative;
+        z-index: 1;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 36px;
+        line-height: 1;
+        font-weight: 700;
+      }
+
+      .loading,
+      .error {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        padding: 40px;
+        box-sizing: border-box;
+        text-align: center;
+        font: 700 32px/1.25 Arial, Helvetica, sans-serif;
+        color: #fff;
+        background: #000;
+      }
+
+      @keyframes page-sheen {
+        0%,
+        45% {
+          transform: translateX(-120%);
+        }
+        100% {
+          transform: translateX(120%);
+        }
+      }
+
+      @keyframes bar-sheen {
+        0%,
+        40% {
+          transform: translateX(-125%);
+        }
+        100% {
+          transform: translateX(125%);
+        }
+      }
+
+      @keyframes island-sheen {
+        0%,
+        42% {
+          transform: translateX(-135%);
+        }
+        100% {
+          transform: translateX(135%);
+        }
+      }
+
+      @keyframes island-pulse {
+        0%,
+        100% {
+          opacity: 0.46;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes name-fit-thc {
+        0%,
+        42%,
+        100% {
+          opacity: 1;
+          right: 0;
+          transform: translateX(0);
+        }
+        52%,
+        78% {
+          opacity: 1;
+          right: 94px;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes thc-name-thc {
+        0%,
+        42%,
+        100% {
+          opacity: 0;
+          transform: translateX(6px);
+        }
+        52%,
+        78% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="screen">
+      <section class="menu" aria-label="Vape Menu">
+        <header class="header">
+          <div class="title">Vape Menu</div>
+        </header>
+        <main class="groups" id="groups">
+          <div class="loading">Loading menu...</div>
+        </main>
+      </section>
+    </div>
+
+    <script>
+      const sectionColors = {
+        Verdant: "rgb(218, 170, 74)",
+        "NW Kind": "rgb(218, 170, 74)",
+        "Higher Cultures": "rgb(218, 170, 74)"
+      };
+
+      function escapeHtml(value) {
+        return String(value ?? "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function clamp(value, min, max) {
+        return Math.max(min, Math.min(max, value));
+      }
+
+      function applyDynamicSizing(rows, activeGroups) {
+        const menuHeight = 1920;
+        const contentTop = 88;
+        const bottomMargin = 34;
+        const available = menuHeight - contentTop - bottomMargin;
+        const groupCount = activeGroups.length;
+        const rowCount = Math.max(rows.length, 1);
+        const targetRow = Math.floor(
+          (available - groupCount * 60 - groupCount * 18 - Math.max(groupCount - 1, 0) * 24) / rowCount
+        );
+        const rowHeight = clamp(targetRow, 42, 54);
+        const bodySize = clamp(Math.floor(rowHeight * 0.58), 24, 30);
+        const sectionHeight = clamp(Math.floor(rowHeight * 1.34), 58, 76);
+        const sectionSize = clamp(Math.floor(sectionHeight * 0.68), 38, 52);
+        const gapAfterSection = clamp(Math.floor(rowHeight * 0.38), 16, 26);
+        const gapBetweenGroups = clamp(Math.floor(rowHeight * 0.52), 20, 32);
+
+        const root = document.documentElement.style;
+        root.setProperty("--row-height", `${rowHeight}px`);
+        root.setProperty("--body-size", `${bodySize}px`);
+        root.setProperty("--section-height", `${sectionHeight}px`);
+        root.setProperty("--section-size", `${sectionSize}px`);
+        root.setProperty("--gap-after-section", `${gapAfterSection}px`);
+        root.setProperty("--gap-between-groups", `${gapBetweenGroups}px`);
+      }
+
+      function rowHtml(row) {
+        return `
+          <div class="row">
+            <div class="name">${escapeHtml(row.display_name || row.product_name)}</div>
+            <div class="num">${escapeHtml(row.detail_display || row.thc_display)}</div>
+          </div>
+        `;
+      }
+
+      function shortPrice(value) {
+        const parsed = Number(String(value || "").replace("$", ""));
+        if (!Number.isFinite(parsed)) return value || "";
+        return Number.isInteger(parsed) ? `$${parsed}` : `$${parsed}`;
+      }
+
+      function brandLabel(brand, rows) {
+        const unique = (key) => [...new Set(rows.map((row) => row[key]).filter(Boolean))];
+        const sizes = unique("size");
+        const formats = unique("format");
+        const processes = unique("process");
+        const prices = unique("price");
+        if (sizes.length === 1 && formats.length === 1 && processes.length === 1 && prices.length === 1) {
+          return `${brand} - ${sizes[0]} ${formats[0]} ${processes[0]} - ${prices[0]}`;
+        }
+        const numericPrices = [...new Set(prices.map((price) => Number(String(price).replace("$", ""))).filter(Number.isFinite))].sort((a, b) => a - b);
+        const priceLabel = numericPrices.length > 1 ? ` - $${numericPrices[0]}-$${numericPrices.at(-1)}` : numericPrices.length === 1 ? ` - $${numericPrices[0]}` : "";
+        const sizeLabel = sizes.length === 1 ? sizes[0] : "Mixed";
+        const formatLabel = formats.length ? formats.sort().join("/") : "Mixed";
+        return `${brand} - ${sizeLabel} ${formatLabel}${priceLabel}`;
+      }
+
+      function strainGroupHtml(title, rows) {
+        if (!rows.length) return "";
+        const colors = {
+          Indica: "rgb(120, 140, 200)",
+          Hybrid: "rgb(110, 185, 70)",
+          Sativa: "rgb(230, 35, 35)"
+        };
+        return `
+          <section class="strain-group" style="--strain-color: ${colors[title] || "rgb(255, 255, 255)"}">
+            <div class="strain-title">${escapeHtml(title)}</div>
+            ${rows.map(rowHtml).join("")}
+          </section>
+        `;
+      }
+
+      function processLabel(process, rows) {
+        const unique = (key) => [...new Set(rows.map((row) => row[key]).filter(Boolean))];
+        const sizes = unique("size");
+        const sizeLabel = sizes.length === 1 ? sizes[0] : "Mixed";
+        const byFormat = rows.reduce((acc, row) => {
+          const format = row.format || "Other";
+          (acc[format] ||= []).push(row);
+          return acc;
+        }, {});
+        const formatPrices = ["510", "AIO", "Other"].filter((format) => byFormat[format]?.length).map((format) => {
+          const numericPrices = [...new Set(byFormat[format].map((row) => Number(String(row.price).replace("$", ""))).filter(Number.isFinite))].sort((a, b) => a - b);
+          const priceLabel = numericPrices.length > 1 ? `$${numericPrices[0]}-$${numericPrices.at(-1)}` : numericPrices.length === 1 ? `$${numericPrices[0]}` : "";
+          return `${format} = ${priceLabel}`;
+        });
+        return `${process} - ${sizeLabel} ${formatPrices.join(" / ")}`;
+      }
+
+      function strainIslandsHtml(rows) {
+        const byStrain = rows.reduce((acc, row) => {
+          const strain = row.strain || "Other";
+          (acc[strain] ||= []).push(row);
+          return acc;
+        }, {});
+        return `
+          <div class="islands">
+            ${strainGroupHtml("Indica", byStrain.Indica || [])}
+            ${strainGroupHtml("Hybrid", byStrain.Hybrid || [])}
+            ${strainGroupHtml("Sativa", byStrain.Sativa || [])}
+          </div>
+        `;
+      }
+
+      function processGroupsHtml(rows) {
+        const order = rows.some((row) => row.brand === "Higher Cultures")
+          ? ["DLR", "Live Resin"]
+          : ["Distillate", "Cured Resin", "Live Resin", "Rosin"];
+        const byProcess = rows.reduce((acc, row) => {
+          const process = row.process || "Other";
+          (acc[process] ||= []).push(row);
+          return acc;
+        }, {});
+        return order
+          .filter((process) => byProcess[process]?.length)
+          .map((process) => `
+            <section class="process-group">
+              <div class="process-title">${escapeHtml(processLabel(process, byProcess[process]))}</div>
+              ${strainIslandsHtml(byProcess[process])}
+            </section>
+          `)
+          .join("");
+      }
+
+      function render(payload) {
+        const rows = payload.rows || [];
+        const groupsByBrand = rows.reduce((acc, row) => {
+          const brand = row.brand || "Other";
+          (acc[brand] ||= []).push(row);
+          return acc;
+        }, {});
+        const activeGroups = ["Verdant", ...Object.keys(groupsByBrand).filter((brand) => brand !== "Verdant")].filter((brand) => groupsByBrand[brand]);
+        applyDynamicSizing(rows, activeGroups);
+
+        const html = activeGroups.map((brand) => {
+          const color = sectionColors[brand] || "rgb(120, 140, 200)";
+          const groupRows = groupsByBrand[brand];
+          const label = ["NW Kind", "Higher Cultures"].includes(brand) ? `${brand} - AIO = Disposable` : brandLabel(brand, groupRows);
+          const body = ["NW Kind", "Higher Cultures"].includes(brand) ? processGroupsHtml(groupRows) : strainIslandsHtml(groupRows);
+          return `
+            <section class="group" style="--section-color: ${color}">
+              <div class="section-bar"><span>${escapeHtml(label)}</span></div>
+              ${body}
+            </section>
+          `;
+        }).join("");
+
+        document.getElementById("groups").innerHTML = html || '<div class="error">No menu rows available.</div>';
+      }
+
+      fetch("menu-data.json", { cache: "no-store" })
+        .then((response) => {
+          if (!response.ok) throw new Error(`Menu data failed to load: ${response.status}`);
+          return response.json();
+        })
+        .then(render)
+        .catch((error) => {
+          document.getElementById("groups").innerHTML = `<div class="error">${escapeHtml(error.message)}</div>`;
+        });
+
+      function fitToScreen() {
+        const menu = document.querySelector(".menu");
+        const menuWidth = 1080;
+        const menuHeight = 1920;
+        const portrait = window.innerHeight >= window.innerWidth;
+        if (!portrait) {
+          const scale = Math.min(window.innerWidth / menuHeight, window.innerHeight / menuWidth);
+          menu.style.transform = `translate(-50%, -50%) rotate(-90deg) scale(${scale})`;
+          return;
+        }
+        const scale = Math.min(window.innerWidth / menuWidth, window.innerHeight / menuHeight);
+        menu.style.transform = `translate(-50%, -50%) scale(${scale})`;
+      }
+
+      window.addEventListener("resize", fitToScreen);
+      fitToScreen();
+    </script>
+  </body>
+</html>

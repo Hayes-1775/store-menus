@@ -1,0 +1,276 @@
+#!/usr/bin/env python3
+import argparse
+import csv
+import json
+import math
+import re
+from collections import defaultdict
+from datetime import datetime
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
+
+
+TARGET_BRANDS = ["Verdant", "Verdant Leaf", "NW Kind", "Higher Cultures"]
+BRAND_ORDER = {"Verdant": 1, "NW Kind": 2, "Higher Cultures": 3}
+STRAIN_CODES = {"I": "Indica", "H": "Hybrid", "S": "Sativa"}
+STRAIN_ORDER = {"Indica": 1, "Hybrid": 2, "Sativa": 3}
+THC_COLUMNS = ["Total % THC", "% THC", "Total THC %", "Potency THC %", "Potency THC"]
+
+
+def parse_number(value: Any) -> Optional[float]:
+    if value is None:
+        return None
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        if math.isnan(value):
+            return None
+        return float(value)
+    text = str(value).strip().replace("$", "").replace(",", "")
+    if not text:
+        return None
+    try:
+        return float(text)
+    except ValueError:
+        return None
+
+
+def parse_thc(row: Dict[str, Any]) -> float:
+    for column in THC_COLUMNS:
+        parsed = parse_number(row.get(column))
+        if parsed is not None:
+            return parsed / 100 if parsed > 1 else parsed
+    return 0.0
+
+
+def format_percent(value: float) -> str:
+    if value <= 0:
+        return ""
+    return f"{int(value * 100 + 0.5)}%"
+
+
+def read_inventory(path: Path) -> List[Dict[str, Any]]:
+    with path.open("r", encoding="utf-8-sig", newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def display_brand(value: Any) -> str:
+    text = str(value or "").strip()
+    if text.lower() in {"verdant", "verdant leaf"}:
+        return "Verdant"
+    return text or "Unknown"
+
+
+def clean_product_name(value: Any) -> str:
+    text = str(value or "").strip()
+    return text.split("|", 1)[0].strip() or "Unknown"
+
+
+def parse_strain(value: Any) -> str:
+    text = str(value or "")
+    match = re.search(r"\|\s*([IHS])\s*\|", text, re.I)
+    if match:
+        return STRAIN_CODES.get(match.group(1).upper(), "")
+    return "Hybrid"
+
+
+def parse_size(row: Dict[str, Any]) -> str:
+    weight = parse_number(row.get("Weight"))
+    unit = str(row.get("Weight Unit of Measure") or "").strip().lower()
+    if weight is not None and "gram" in unit:
+        return f"{weight:g}g"
+    match = re.search(r"(\d+(?:\.\d+)?)\s*g\b", str(row.get("Product Name") or ""), re.I)
+    if match:
+        return f"{match.group(1)}g"
+    return ""
+
+
+def parse_format(product_type: Any, product_name: Any) -> str:
+    text = f"{product_type or ''} {product_name or ''}".lower()
+    if "all in one" in text or re.search(r"\baio\b", text) or "disposable" in text:
+        return "AIO"
+    return "510"
+
+
+def parse_process(product_type: Any, product_name: Any) -> str:
+    text = f"{product_type or ''} {product_name or ''}".lower()
+    if re.search(r"\bdlr\b", text):
+        return "DLR"
+    if "rosin/cr" in text or ("rosin" in text and "cured resin" in text):
+        return "Rosin/CR"
+    if "live rosin" in text:
+        return "Live Rosin"
+    if re.search(r"\blr\b", text) or "live resin" in text:
+        return "Live Resin"
+    if re.search(r"\bcr\b", text) or "cured resin" in text:
+        return "Cured Resin"
+    if "dist" in text:
+        return "Distillate"
+    if "rosin" in text:
+        return "Rosin"
+    return ""
+
+
+def short_price(value: Any) -> str:
+    parsed = parse_number(value)
+    if parsed is None:
+        return str(value or "").strip()
+    return f"${int(parsed)}" if parsed.is_integer() else f"${parsed:g}"
+
+
+def row_key(row: Dict[str, Any]) -> Tuple[str, str, str, str, str, str]:
+    return (
+        display_brand(row.get("Brand")),
+        clean_product_name(row.get("Product Name")),
+        parse_strain(row.get("Product Name")),
+        parse_size(row),
+        parse_format(row.get("Product Type"), row.get("Product Name")),
+        str(row.get("Price") or "").strip(),
+    )
+
+
+def extract_menu(rows: List[Dict[str, Any]], limit_per_brand: int) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+    if not rows:
+        raise ValueError("Inventory source contained no rows.")
+
+    required = ["Category", "Room", "Quantity", "Brand", "Product Type", "Product Name", "Weight", "Price"]
+    missing = [name for name in required if name not in rows[0]]
+    if missing:
+        raise ValueError(f"Missing required inventory columns: {', '.join(missing)}")
+    if not any(column in rows[0] for column in THC_COLUMNS):
+        raise ValueError(f"Missing required THC columns: one of {', '.join(THC_COLUMNS)}")
+
+    grouped: Dict[Tuple[str, str, str, str, str, str], Dict[str, Any]] = {}
+    excluded: List[Dict[str, Any]] = []
+    warnings: List[Dict[str, Any]] = []
+
+    for idx, row in enumerate(rows, start=2):
+        category = str(row.get("Category") or "").strip()
+        room = str(row.get("Room") or "").strip()
+        brand = str(row.get("Brand") or "").strip()
+        quantity = parse_number(row.get("Quantity"))
+        reasons = []
+
+        if category.lower() != "cartridges":
+            reasons.append("not cartridges")
+        room_l = room.lower()
+        if "for sale" not in room_l or "not for sale" in room_l:
+            reasons.append("not for-sale room")
+        if quantity is None or quantity <= 0:
+            reasons.append("quantity <= 0 or nonnumeric")
+        if brand.lower() not in {b.lower() for b in TARGET_BRANDS}:
+            reasons.append("not selected brand")
+
+        if reasons:
+            excluded.append({"row": idx, "reasons": reasons})
+            continue
+
+        key = row_key(row)
+        brand_name, product_name, strain, size, format_name, price = key
+        process = parse_process(row.get("Product Type"), row.get("Product Name"))
+        thc = parse_thc(row)
+        if brand_name == "Higher Cultures" and process not in {"DLR", "Live Resin"}:
+            excluded.append({"row": idx, "reasons": ["not Higher Cultures DLR/LR"]})
+            continue
+        if not size:
+            warnings.append({"row": idx, "product_name": product_name, "type": "missing_size"})
+        if not process:
+            warnings.append({"row": idx, "product_name": product_name, "type": "missing_process"})
+        if not price:
+            warnings.append({"row": idx, "product_name": product_name, "type": "missing_price"})
+        if not thc:
+            warnings.append({"row": idx, "product_name": product_name, "type": "missing_thc"})
+
+        item = grouped.setdefault(
+            key,
+            {
+                "brand": brand_name,
+                "product_name": product_name,
+                "display_name": f"{product_name} AIO" if format_name == "AIO" and brand_name != "Higher Cultures" else product_name,
+                "strain": strain,
+                "size": size,
+                "format": format_name,
+                "process": process,
+                "thc": 0.0,
+                "thc_display": "",
+                "price": price,
+                "short_price": short_price(price),
+                "quantity": 0.0,
+                "source_rows": [],
+            },
+        )
+        item["quantity"] += float(quantity)
+        if thc > item["thc"]:
+            item["thc"] = thc
+            item["thc_display"] = format_percent(thc)
+        item["source_rows"].append(idx)
+
+    menu_rows = sorted(
+        grouped.values(),
+        key=lambda r: (
+            BRAND_ORDER.get(r["brand"], 99),
+            STRAIN_ORDER.get(r["strain"], 99),
+            1 if r["format"] == "AIO" else 0,
+            -r["thc"],
+            r["product_name"],
+            r["price"],
+        ),
+    )
+    for row in menu_rows:
+        row["detail_display"] = row["thc_display"]
+    if limit_per_brand > 0:
+        counts: Dict[str, int] = defaultdict(int)
+        limited = []
+        for row in menu_rows:
+            if counts[row["brand"]] >= limit_per_brand:
+                continue
+            limited.append(row)
+            counts[row["brand"]] += 1
+        menu_rows = limited
+
+    validation = {
+        "generated_at": datetime.now().isoformat(timespec="seconds"),
+        "target_brands": TARGET_BRANDS,
+        "rows_included": len(menu_rows),
+        "warnings": warnings,
+        "excluded_count": len(excluded),
+    }
+    return menu_rows, validation
+
+
+def write_csv(rows: List[Dict[str, Any]], path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    headers = ["brand", "product_name", "strain", "thc_display", "detail_display", "process", "size", "format", "price", "quantity"]
+    with path.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=headers)
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({h: row.get(h, "") for h in headers})
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Extract the Verdant vape menu from a Flowhub inventory CSV.")
+    parser.add_argument("--inventory", required=True)
+    parser.add_argument("--out-json", default="data/vape_menu.json")
+    parser.add_argument("--out-csv", default="data/vape_menu.csv")
+    parser.add_argument("--validation-json", default="data/vape_validation_report.json")
+    parser.add_argument("--limit-per-brand", type=int, default=24)
+    args = parser.parse_args()
+
+    inventory_path = Path(args.inventory)
+    rows, validation = extract_menu(read_inventory(inventory_path), args.limit_per_brand)
+    payload = {
+        "generated_at": datetime.now().isoformat(timespec="seconds"),
+        "inventory_source": str(inventory_path),
+        "menu": "vapes",
+        "rows": rows,
+    }
+
+    out_json = Path(args.out_json)
+    out_json.parent.mkdir(parents=True, exist_ok=True)
+    out_json.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    write_csv(rows, Path(args.out_csv))
+    Path(args.validation_json).write_text(json.dumps(validation, indent=2), encoding="utf-8")
+    print(json.dumps({"rows": len(rows), "out": str(out_json)}, indent=2))
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,945 @@
+{
+  "generated_at": "2026-05-28T12:50:00",
+  "inventory_source": "downloads/flowhub-inventory-2026-05-28.csv",
+  "menu": "vapes",
+  "rows": [
+    {
+      "brand": "Verdant",
+      "product_name": "Mendo Odyssey",
+      "display_name": "Mendo Odyssey",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.7959999999999999,
+      "thc_display": "80%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 9.0,
+      "source_rows": [
+        1064
+      ],
+      "detail_display": "80%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Violet Moon",
+      "display_name": "Violet Moon",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.7959999999999999,
+      "thc_display": "80%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 19.0,
+      "source_rows": [
+        1092
+      ],
+      "detail_display": "80%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Kush Kingdom",
+      "display_name": "Kush Kingdom",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.794,
+      "thc_display": "79%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 6.0,
+      "source_rows": [
+        1060
+      ],
+      "detail_display": "79%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Mutant Punch",
+      "display_name": "Mutant Punch",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.7929999999999999,
+      "thc_display": "79%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 10.0,
+      "source_rows": [
+        1067
+      ],
+      "detail_display": "79%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Heavenly Pastry",
+      "display_name": "Heavenly Pastry",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.738,
+      "thc_display": "74%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 8.0,
+      "source_rows": [
+        1055
+      ],
+      "detail_display": "74%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Velvet Reverie",
+      "display_name": "Velvet Reverie",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.831,
+      "thc_display": "83%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 5.0,
+      "source_rows": [
+        1089
+      ],
+      "detail_display": "83%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Miracle Mints",
+      "display_name": "Miracle Mints",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.784,
+      "thc_display": "78%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 12.0,
+      "source_rows": [
+        1065
+      ],
+      "detail_display": "78%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Interstellar Patty",
+      "display_name": "Interstellar Patty",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.764,
+      "thc_display": "76%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 3.0,
+      "source_rows": [
+        1057
+      ],
+      "detail_display": "76%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Sugar Summit",
+      "display_name": "Sugar Summit",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.742,
+      "thc_display": "74%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 8.0,
+      "source_rows": [
+        1081
+      ],
+      "detail_display": "74%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Sugar Dreamz",
+      "display_name": "Sugar Dreamz",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.738,
+      "thc_display": "74%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 7.0,
+      "source_rows": [
+        1080
+      ],
+      "detail_display": "74%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Citrus Express",
+      "display_name": "Citrus Express",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.789,
+      "thc_display": "79%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 18.0,
+      "source_rows": [
+        1097
+      ],
+      "detail_display": "79%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Sunny Breeze",
+      "display_name": "Sunny Breeze",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.7759999999999999,
+      "thc_display": "78%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 4.0,
+      "source_rows": [
+        1083
+      ],
+      "detail_display": "78%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Exotic Groove",
+      "display_name": "Exotic Groove",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.762,
+      "thc_display": "76%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 16.0,
+      "source_rows": [
+        1048
+      ],
+      "detail_display": "76%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Tropicana Pop",
+      "display_name": "Tropicana Pop",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.747,
+      "thc_display": "75%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 3.0,
+      "source_rows": [
+        1087
+      ],
+      "detail_display": "75%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Golden Crisps",
+      "display_name": "Golden Crisps",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.726,
+      "thc_display": "73%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 4.0,
+      "source_rows": [
+        1051
+      ],
+      "detail_display": "73%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Honey Jack",
+      "display_name": "Honey Jack",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.706,
+      "thc_display": "71%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 1.0,
+      "source_rows": [
+        1056
+      ],
+      "detail_display": "71%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Obamacare",
+      "display_name": "Obamacare",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.862,
+      "thc_display": "86%",
+      "price": "$26.00",
+      "short_price": "$26",
+      "quantity": 8.0,
+      "source_rows": [
+        855
+      ],
+      "detail_display": "86%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Chem Cookiez",
+      "display_name": "Chem Cookiez",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.86,
+      "thc_display": "86%",
+      "price": "$26.00",
+      "short_price": "$26",
+      "quantity": 5.0,
+      "source_rows": [
+        831
+      ],
+      "detail_display": "86%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Mint Chocolate Chip",
+      "display_name": "Mint Chocolate Chip",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.858,
+      "thc_display": "86%",
+      "price": "$23.00",
+      "short_price": "$23",
+      "quantity": 8.0,
+      "source_rows": [
+        852
+      ],
+      "detail_display": "86%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Sangiovese",
+      "display_name": "Sangiovese",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.8240000000000001,
+      "thc_display": "82%",
+      "price": "$26.00",
+      "short_price": "$26",
+      "quantity": 9.0,
+      "source_rows": [
+        869
+      ],
+      "detail_display": "82%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Pie Scream",
+      "display_name": "Pie Scream",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.823,
+      "thc_display": "82%",
+      "price": "$26.00",
+      "short_price": "$26",
+      "quantity": 7.0,
+      "source_rows": [
+        856
+      ],
+      "detail_display": "82%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Mendo Breath",
+      "display_name": "Mendo Breath",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.794,
+      "thc_display": "79%",
+      "price": "$26.00",
+      "short_price": "$26",
+      "quantity": 5.0,
+      "source_rows": [
+        851
+      ],
+      "detail_display": "79%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Zeno",
+      "display_name": "Zeno",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.7140000000000001,
+      "thc_display": "71%",
+      "price": "$31.00",
+      "short_price": "$31",
+      "quantity": 1.0,
+      "source_rows": [
+        887
+      ],
+      "detail_display": "71%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Red Pave",
+      "display_name": "Red Pave AIO",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.75,
+      "thc_display": "75%",
+      "price": "$40.00",
+      "short_price": "$40",
+      "quantity": 6.0,
+      "source_rows": [
+        867
+      ],
+      "detail_display": "75%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Strawberry Watermelon",
+      "display_name": "Strawberry Watermelon",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.86,
+      "thc_display": "86%",
+      "price": "$26.00",
+      "short_price": "$26",
+      "quantity": 1.0,
+      "source_rows": [
+        876
+      ],
+      "detail_display": "86%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "GG12",
+      "display_name": "GG12",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.8540000000000001,
+      "thc_display": "85%",
+      "price": "$23.00",
+      "short_price": "$23",
+      "quantity": 19.0,
+      "source_rows": [
+        837,
+        838
+      ],
+      "detail_display": "85%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Purple Push Pop",
+      "display_name": "Purple Push Pop",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.8540000000000001,
+      "thc_display": "85%",
+      "price": "$23.00",
+      "short_price": "$23",
+      "quantity": 14.0,
+      "source_rows": [
+        862,
+        863
+      ],
+      "detail_display": "85%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Grape Gas",
+      "display_name": "Grape Gas",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.83,
+      "thc_display": "83%",
+      "price": "$26.00",
+      "short_price": "$26",
+      "quantity": 8.0,
+      "source_rows": [
+        840
+      ],
+      "detail_display": "83%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Smashburgers",
+      "display_name": "Smashburgers",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.802,
+      "thc_display": "80%",
+      "price": "$26.00",
+      "short_price": "$26",
+      "quantity": 1.0,
+      "source_rows": [
+        872
+      ],
+      "detail_display": "80%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Watermelon Jealousy",
+      "display_name": "Watermelon Jealousy",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.764,
+      "thc_display": "76%",
+      "price": "$26.00",
+      "short_price": "$26",
+      "quantity": 7.0,
+      "source_rows": [
+        882
+      ],
+      "detail_display": "76%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Grandi Guava",
+      "display_name": "Grandi Guava",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.74,
+      "thc_display": "74%",
+      "price": "$31.00",
+      "short_price": "$31",
+      "quantity": 1.0,
+      "source_rows": [
+        839
+      ],
+      "detail_display": "74%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Gary Payton",
+      "display_name": "Gary Payton AIO",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.82,
+      "thc_display": "82%",
+      "price": "$36.00",
+      "short_price": "$36",
+      "quantity": 6.0,
+      "source_rows": [
+        836
+      ],
+      "detail_display": "82%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Tropic Thunder",
+      "display_name": "Tropic Thunder",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.8420000000000001,
+      "thc_display": "84%",
+      "price": "$23.00",
+      "short_price": "$23",
+      "quantity": 6.0,
+      "source_rows": [
+        880
+      ],
+      "detail_display": "84%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Tropicanna Mac",
+      "display_name": "Tropicanna Mac",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.828,
+      "thc_display": "83%",
+      "price": "$26.00",
+      "short_price": "$26",
+      "quantity": 6.0,
+      "source_rows": [
+        879
+      ],
+      "detail_display": "83%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Hella Jelly",
+      "display_name": "Hella Jelly",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.8170000000000001,
+      "thc_display": "82%",
+      "price": "$26.00",
+      "short_price": "$26",
+      "quantity": 4.0,
+      "source_rows": [
+        843
+      ],
+      "detail_display": "82%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Chocolate Diesel",
+      "display_name": "Chocolate Diesel",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.774,
+      "thc_display": "77%",
+      "price": "$26.00",
+      "short_price": "$26",
+      "quantity": 7.0,
+      "source_rows": [
+        832
+      ],
+      "detail_display": "77%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Sour Amnesia Haze",
+      "display_name": "Sour Amnesia Haze",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.71,
+      "thc_display": "71%",
+      "price": "$31.00",
+      "short_price": "$31",
+      "quantity": 6.0,
+      "source_rows": [
+        874
+      ],
+      "detail_display": "71%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Pine Ex",
+      "display_name": "Pine Ex AIO",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.755,
+      "thc_display": "76%",
+      "price": "$40.00",
+      "short_price": "$40",
+      "quantity": 9.0,
+      "source_rows": [
+        859
+      ],
+      "detail_display": "76%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Melon Mafia",
+      "display_name": "Melon Mafia",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "AIO",
+      "process": "DLR",
+      "thc": 0.86616,
+      "thc_display": "87%",
+      "price": "$29.00",
+      "short_price": "$29",
+      "quantity": 7.0,
+      "source_rows": [
+        543
+      ],
+      "detail_display": "87%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "F.O.A.M.",
+      "display_name": "F.O.A.M.",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "AIO",
+      "process": "DLR",
+      "thc": 0.8647400000000001,
+      "thc_display": "86%",
+      "price": "$29.00",
+      "short_price": "$29",
+      "quantity": 9.0,
+      "source_rows": [
+        534
+      ],
+      "detail_display": "86%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Neon Flamingo",
+      "display_name": "Neon Flamingo",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.80373,
+      "thc_display": "80%",
+      "price": "$36.00",
+      "short_price": "$36",
+      "quantity": 7.0,
+      "source_rows": [
+        545
+      ],
+      "detail_display": "80%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Beef Tartare",
+      "display_name": "Beef Tartare",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7622,
+      "thc_display": "76%",
+      "price": "$36.00",
+      "short_price": "$36",
+      "quantity": 10.0,
+      "source_rows": [
+        528
+      ],
+      "detail_display": "76%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Frozen Papaya",
+      "display_name": "Frozen Papaya",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "DLR",
+      "thc": 0.8665,
+      "thc_display": "87%",
+      "price": "$28.00",
+      "short_price": "$28",
+      "quantity": 7.0,
+      "source_rows": [
+        535
+      ],
+      "detail_display": "87%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Michelin Star",
+      "display_name": "Michelin Star",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "DLR",
+      "thc": 0.8333799999999999,
+      "thc_display": "83%",
+      "price": "$29.00",
+      "short_price": "$29",
+      "quantity": 8.0,
+      "source_rows": [
+        544
+      ],
+      "detail_display": "83%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Pineapple Sorbet",
+      "display_name": "Pineapple Sorbet",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.79283,
+      "thc_display": "79%",
+      "price": "$36.00",
+      "short_price": "$36",
+      "quantity": 9.0,
+      "source_rows": [
+        547
+      ],
+      "detail_display": "79%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Banana Pancakes",
+      "display_name": "Banana Pancakes",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7831,
+      "thc_display": "78%",
+      "price": "$36.00",
+      "short_price": "$36",
+      "quantity": 9.0,
+      "source_rows": [
+        527
+      ],
+      "detail_display": "78%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Vice City",
+      "display_name": "Vice City",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7471899999999999,
+      "thc_display": "75%",
+      "price": "$36.00",
+      "short_price": "$36",
+      "quantity": 2.0,
+      "source_rows": [
+        567
+      ],
+      "detail_display": "75%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Green Crack",
+      "display_name": "Green Crack",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "AIO",
+      "process": "DLR",
+      "thc": 0.9,
+      "thc_display": "90%",
+      "price": "$28.00",
+      "short_price": "$28",
+      "quantity": 10.0,
+      "source_rows": [
+        538
+      ],
+      "detail_display": "90%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Ginger Tea",
+      "display_name": "Ginger Tea",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "AIO",
+      "process": "DLR",
+      "thc": 0.8996999999999999,
+      "thc_display": "90%",
+      "price": "$28.00",
+      "short_price": "$28",
+      "quantity": 9.0,
+      "source_rows": [
+        537
+      ],
+      "detail_display": "90%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Sour Skunk",
+      "display_name": "Sour Skunk",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "AIO",
+      "process": "DLR",
+      "thc": 0.85531,
+      "thc_display": "86%",
+      "price": "$29.00",
+      "short_price": "$29",
+      "quantity": 5.0,
+      "source_rows": [
+        549
+      ],
+      "detail_display": "86%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Lemon Royal",
+      "display_name": "Lemon Royal",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.8073600000000001,
+      "thc_display": "81%",
+      "price": "$36.00",
+      "short_price": "$36",
+      "quantity": 9.0,
+      "source_rows": [
+        542
+      ],
+      "detail_display": "81%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Strawberry Fields",
+      "display_name": "Strawberry Fields",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7590600000000001,
+      "thc_display": "76%",
+      "price": "$36.00",
+      "short_price": "$36",
+      "quantity": 10.0,
+      "source_rows": [
+        551
+      ],
+      "detail_display": "76%"
+    }
+  ]
+}
