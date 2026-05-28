@@ -525,11 +525,11 @@
         const portrait = window.innerHeight >= window.innerWidth;
         if (!portrait) {
           const scale = Math.min(window.innerWidth / menuHeight, window.innerHeight / menuWidth);
-          menu.style.transform = `translate(-50%, -50%) rotate(-90deg) scale(${scale})`;
+          menu.style.transform = `translate(-50%, -50%) rotate(90deg) scale(${scale})`;
           return;
         }
         const scale = Math.min(window.innerWidth / menuWidth, window.innerHeight / menuHeight);
-        menu.style.transform = `translate(-50%, -50%) scale(${scale})`;
+        menu.style.transform = `translate(-50%, -50%) rotate(180deg) scale(${scale})`;
       }
 
       window.addEventListener("resize", fitToScreen);
