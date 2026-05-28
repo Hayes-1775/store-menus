@@ -19,6 +19,7 @@ fi
 git add \
   .gitignore \
   config/menu_config.json \
+  scripts/download-flowhub-inventory \
   scripts/extract-flower-menu \
   scripts/render-menu \
   scripts/run-daily-menu \

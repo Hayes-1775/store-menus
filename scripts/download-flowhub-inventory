@@ -1,0 +1,79 @@
+#!/usr/bin/env node
+/*
+ * Flowhub inventory download entrypoint.
+ *
+ * This script is intentionally conservative: it uses the Codex Chrome browser
+ * bridge when available, and stops if Flowhub requires login or if the page
+ * does not expose a clear CSV/export control. The scheduled Codex skill should
+ * use this as the first attempt, then fall back to a visible Chrome handoff.
+ */
+
+const fs = require("node:fs");
+const path = require("node:path");
+const realExit = process.exit.bind(process);
+
+const FLOWHUB_URL =
+  process.env.FLOWHUB_INVENTORY_URL ||
+  "https://app.flowhub.com/analytics/report/view/inventory#store_id=6453e245-f882-470d-92c2-8a47083d954c";
+
+const OUT_DIR = path.resolve(process.env.FLOWHUB_DOWNLOAD_DIR || "downloads");
+
+async function main() {
+  fs.mkdirSync(OUT_DIR, { recursive: true });
+  const pluginRoot =
+    process.env.CODEX_CHROME_PLUGIN_ROOT ||
+    "/Users/mikehayes/.codex/plugins/cache/openai-bundled/chrome/26.519.81530";
+  const clientPath = path.join(pluginRoot, "scripts", "browser-client.mjs");
+
+  if (!fs.existsSync(clientPath)) {
+    throw new Error(`Codex Chrome browser client not found at ${clientPath}`);
+  }
+
+  const { setupBrowserRuntime } = await import(`file://${clientPath}`);
+  await setupBrowserRuntime({ globals: globalThis });
+  const browser = await agent.browsers.get("extension");
+  await browser.nameSession("Flowhub inventory export");
+  const tab = await browser.tabs.new();
+  await tab.goto(FLOWHUB_URL);
+  await tab.playwright.waitForLoadState({ state: "domcontentloaded", timeoutMs: 30000 });
+
+  const visibleText = await tab.playwright.locator("body").innerText({ timeoutMs: 10000 }).catch(() => "");
+  if (/sign in|log in|verification|two[- ]factor|captcha/i.test(visibleText)) {
+    await browser.tabs.finalize({ keep: [{ tab, status: "handoff" }] });
+    throw new Error("Flowhub requires login, 2FA, or CAPTCHA. Complete login in Chrome and rerun.");
+  }
+
+  const candidates = [
+    tab.playwright.getByRole("button", { name: /export|download|csv/i }),
+    tab.playwright.getByText(/export|download|csv/i),
+  ];
+
+  for (const candidate of candidates) {
+    try {
+      const count = await candidate.count();
+      if (!count) continue;
+      const downloadPromise = tab.playwright.waitForEvent("download", { timeoutMs: 15000 });
+      await candidate.first().click({ timeoutMs: 10000 });
+      const download = await downloadPromise;
+      if (!download || typeof download.saveAs !== "function") {
+        throw new Error("Chrome download object does not support saveAs in this environment.");
+      }
+      const filename = `flowhub-inventory-${new Date().toISOString().slice(0, 10)}.csv`;
+      const outPath = path.join(OUT_DIR, filename);
+      await download.saveAs(outPath);
+      await browser.tabs.finalize({});
+      console.log(JSON.stringify({ path: outPath }, null, 2));
+      return;
+    } catch (error) {
+      // Try the next selector candidate.
+    }
+  }
+
+  await browser.tabs.finalize({ keep: [{ tab, status: "handoff" }] });
+  throw new Error("Could not find a clear Flowhub CSV/export/download control on the report page.");
+}
+
+main().catch((error) => {
+  console.error(error.message || String(error));
+  realExit(1);
+});

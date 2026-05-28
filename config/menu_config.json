@@ -9,7 +9,8 @@
     "data_csv": "data/flower_menu.csv",
     "validation_json": "data/validation_report.json",
     "latest_jpg": "docs/latest.jpg",
-    "archive_dir": "docs/archive"
+    "archive_dir": "docs/archive",
+    "pages_url": "https://hayes-1775.github.io/store-menus/"
   },
   "render": {
     "width": 1080,
