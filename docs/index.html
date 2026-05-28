@@ -46,7 +46,7 @@
 
       .menu {
         position: absolute;
-        top: 0;
+        top: 50%;
         left: 50%;
         width: 1080px;
         height: 1920px;
@@ -55,7 +55,7 @@
         box-sizing: border-box;
         padding: 20px 38px 34px;
         z-index: 1;
-        transform-origin: top center;
+        transform-origin: center center;
       }
 
       .menu::after {
@@ -390,8 +390,21 @@
 
       function scaleMenu() {
         const menu = document.querySelector(".menu");
-        const scale = Math.min(window.innerWidth / 1080, window.innerHeight / 1920);
-        menu.style.transform = `translateX(-50%) scale(${scale})`;
+        const menuWidth = 1080;
+        const menuHeight = 1920;
+        const rotateMode = new URLSearchParams(window.location.search).get("rotate");
+        const shouldRotate =
+          rotateMode === "ccw" ||
+          (rotateMode !== "none" && window.innerWidth > window.innerHeight);
+
+        if (shouldRotate) {
+          const scale = Math.min(window.innerWidth / menuHeight, window.innerHeight / menuWidth);
+          menu.style.transform = `translate(-50%, -50%) rotate(-90deg) scale(${scale})`;
+          return;
+        }
+
+        const scale = Math.min(window.innerWidth / menuWidth, window.innerHeight / menuHeight);
+        menu.style.transform = `translate(-50%, -50%) scale(${scale})`;
       }
 
       window.addEventListener("resize", scaleMenu);
