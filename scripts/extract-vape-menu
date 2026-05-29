@@ -266,7 +266,7 @@ def main() -> None:
     parser.add_argument("--out-json", default="data/vape_menu.json")
     parser.add_argument("--out-csv", default="data/vape_menu.csv")
     parser.add_argument("--validation-json", default="data/vape_validation_report.json")
-    parser.add_argument("--limit-per-brand", type=int, default=24)
+    parser.add_argument("--limit-per-brand", type=int, default=0)
     parser.add_argument("--brands", nargs="+", default=TARGET_BRANDS)
     args = parser.parse_args()
 

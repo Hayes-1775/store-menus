@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T06:46:47",
+  "generated_at": "2026-05-29T06:54:30",
   "inventory_source": "downloads/flowhub-inventory-2026-05-29.csv",
   "menu": "vapes",
   "rows": [
@@ -725,6 +725,79 @@
         865
       ],
       "detail_display": "82%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Tagalongz",
+      "display_name": "Tagalongz",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.807,
+      "thc_display": "81%",
+      "price": "$30.00",
+      "short_price": "$30",
+      "quantity": 10.0,
+      "source_rows": [
+        909
+      ],
+      "detail_display": "81%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Chocolate Diesel",
+      "display_name": "Chocolate Diesel",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.774,
+      "thc_display": "77%",
+      "price": "$26.00",
+      "short_price": "$26",
+      "quantity": 7.0,
+      "source_rows": [
+        854
+      ],
+      "detail_display": "77%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Sour Amnesia Haze",
+      "display_name": "Sour Amnesia Haze",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.71,
+      "thc_display": "71%",
+      "price": "$30.00",
+      "short_price": "$30",
+      "quantity": 16.0,
+      "source_rows": [
+        902,
+        904
+      ],
+      "detail_display": "71%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Pine Ex",
+      "display_name": "Pine Ex AIO",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.755,
+      "thc_display": "76%",
+      "price": "$40.00",
+      "short_price": "$40",
+      "quantity": 9.0,
+      "source_rows": [
+        886
+      ],
+      "detail_display": "76%"
     },
     {
       "brand": "Higher Cultures",
