@@ -19,6 +19,11 @@ STRAIN_COLORS = {
     "Hybrid": (110, 185, 70),
     "Sativa": (230, 35, 35),
 }
+FORMAT_COLORS = {
+    "510": (218, 170, 74),
+    "AIO 1g": (92, 170, 210),
+    "AIO 2g": (38, 190, 178),
+}
 PROCESS_ORDER = ["Distillate", "Cured Resin", "Live Resin", "Rosin"]
 HIGHER_CULTURES_PROCESS_ORDER = ["DLR", "Live Resin"]
 
@@ -196,7 +201,7 @@ def draw_menu(rows: List[Dict], output: Path, width: int, height: int) -> None:
     for brand_index, brand in enumerate(brands):
         group = grouped[brand]
         gradient_bar(draw, left, y, int(900 * scale_x), section_h, BRAND_GOLD)
-        label = f"{brand} - AIO = Disposable" if brand in {"NW Kind", "Higher Cultures"} else brand_label(brand, group)
+        label = f"{brand} - AIO = Disposable" if brand in {"NW Kind", "Higher Cultures", "Buddies"} else brand_label(brand, group)
         box = draw.textbbox((0, 0), label, font=section_font)
         draw.text((left + int(16 * scale_x), y + (section_h - (box[3] - box[1])) // 2 - box[1]), label, fill=WHITE, font=section_font)
         y += section_h + gap_after_bar
@@ -208,16 +213,17 @@ def draw_menu(rows: List[Dict], output: Path, width: int, height: int) -> None:
         sativa_x = left + (island_w + island_gap) * 2
         name_w = int(island_w - 98 * scale_x)
 
-        def draw_group(title: str, group_rows: List[Dict], x: int, start_y: int) -> int:
+        def draw_group(title: str, group_rows: List[Dict], x: int, start_y: int, color_title: str = "") -> int:
             panel_pad_x = int(12 * scale_x)
             panel_pad_top = int(10 * scale_y)
             panel_pad_bottom = int(14 * scale_y)
             title_h = int(38 * scale_y)
             panel_h = panel_pad_top + title_h + len(group_rows) * row_h + panel_pad_bottom
-            strain_panel(draw, x, start_y, island_w, panel_h, STRAIN_COLORS.get(title, WHITE))
+            strain_panel(draw, x, start_y, island_w, panel_h, STRAIN_COLORS.get(color_title or title, WHITE))
             local_y = start_y + panel_pad_top
             text_x = x + panel_pad_x
-            draw.text((text_x, local_y), title, fill=WHITE, font=strain_font)
+            title_font = fit_font(draw, title, island_w - panel_pad_x * 2, int(26 * s))
+            draw.text((text_x, local_y), title, fill=WHITE, font=title_font)
             local_y += title_h
             for row in group_rows:
                 max_name_w = name_w - panel_pad_x * 2
@@ -232,12 +238,45 @@ def draw_menu(rows: List[Dict], output: Path, width: int, height: int) -> None:
 
         def draw_islands(group_rows: List[Dict], start_y: int) -> int:
             strains = strain_groups(group_rows)
-            indica_y = draw_group("Indica", strains.get("Indica", []), indica_x, start_y)
-            hybrid_y = draw_group("Hybrid", strains.get("Hybrid", []), hybrid_x, start_y)
-            sativa_y = draw_group("Sativa", strains.get("Sativa", []), sativa_x, start_y)
+            indica_y = draw_group("Indica", strains.get("Indica", []), indica_x, start_y) if strains.get("Indica") else start_y
+            hybrid_y = draw_group("Hybrid", strains.get("Hybrid", []), hybrid_x, start_y) if strains.get("Hybrid") else start_y
+            sativa_y = draw_group("Sativa", strains.get("Sativa", []), sativa_x, start_y) if strains.get("Sativa") else start_y
             return max(indica_y, hybrid_y, sativa_y)
 
-        if brand in {"NW Kind", "Higher Cultures"}:
+        def draw_format_islands(group_rows: List[Dict], start_y: int) -> int:
+            format_gap = int(34 * scale_x)
+            format_w = int((1004 * scale_x - format_gap * 2) / 3)
+            format_xs = [left + index * (format_w + format_gap) for index in range(3)]
+
+            def draw_format_group(title: str, format_rows: List[Dict], x: int) -> int:
+                nonlocal island_w, name_w
+                original_island_w, original_name_w = island_w, name_w
+                island_w = format_w
+                name_w = int(format_w - 98 * scale_x)
+                original_color = STRAIN_COLORS.get(title)
+                STRAIN_COLORS[title] = FORMAT_COLORS.get(title, WHITE)
+                price = price_range(format_rows)
+                title_label = f"{title} - {price}" if price else title
+                try:
+                    return draw_group(title_label, format_rows, x, start_y, title)
+                finally:
+                    if original_color is None:
+                        STRAIN_COLORS.pop(title, None)
+                    else:
+                        STRAIN_COLORS[title] = original_color
+                    island_w, name_w = original_island_w, original_name_w
+
+            by_format: Dict[str, List[Dict]] = {}
+            for row in group_rows:
+                format_name = row.get("format") or "Other"
+                key = f"AIO {row.get('size')}".strip() if format_name == "AIO" else format_name
+                by_format.setdefault(key, []).append(row)
+            ends = []
+            for title, x in zip(["510", "AIO 1g", "AIO 2g"], format_xs):
+                ends.append(draw_format_group(title, by_format.get(title, []), x) if by_format.get(title) else start_y)
+            return max(ends)
+
+        if brand in {"NW Kind", "Higher Cultures", "Buddies"}:
             process_font = font("title", int(30 * s))
             by_process = process_groups(group)
             process_order = HIGHER_CULTURES_PROCESS_ORDER if brand == "Higher Cultures" else PROCESS_ORDER
@@ -245,10 +284,13 @@ def draw_menu(rows: List[Dict], output: Path, width: int, height: int) -> None:
                 process_rows = by_process.get(process, [])
                 if not process_rows:
                     continue
-                process_text = process_label(process, process_rows)
+                process_text = process if brand == "Buddies" and process == "Distillate" else process_label(process, process_rows)
                 draw.text((left, y), process_text, fill=(247, 223, 155), font=process_font)
                 y += int(34 * scale_y)
-                y = draw_islands(process_rows, y)
+                if brand == "Buddies" and process == "Distillate":
+                    y = draw_format_islands(process_rows, y)
+                else:
+                    y = draw_islands(process_rows, y)
                 y += int(14 * scale_y)
         else:
             y = draw_islands(group, y)

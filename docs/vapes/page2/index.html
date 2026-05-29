@@ -176,6 +176,12 @@
         column-gap: 34px;
       }
 
+      .format-islands {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 34px;
+      }
+
       .process-group + .process-group {
         margin-top: 14px;
       }
@@ -431,6 +437,24 @@
         `;
       }
 
+      function formatGroupHtml(title, rows) {
+        if (!rows.length) return "";
+        const colors = {
+          "510": "rgb(218, 170, 74)",
+          "AIO 1g": "rgb(92, 170, 210)",
+          "AIO 2g": "rgb(38, 190, 178)"
+        };
+        const numericPrices = [...new Set(rows.map((row) => Number(String(row.price).replace("$", ""))).filter(Number.isFinite))].sort((a, b) => a - b);
+        const priceLabel = numericPrices.length > 1 ? `$${numericPrices[0]}-$${numericPrices.at(-1)}` : numericPrices.length === 1 ? `$${numericPrices[0]}` : "";
+        const titleLabel = priceLabel ? `${title} - ${priceLabel}` : title;
+        return `
+          <section class="strain-group" style="--strain-color: ${colors[title] || "rgb(220, 220, 220)"}">
+            <div class="strain-title">${escapeHtml(titleLabel)}</div>
+            ${rows.map(rowHtml).join("")}
+          </section>
+        `;
+      }
+
       function processLabel(process, rows) {
         const unique = (key) => [...new Set(rows.map((row) => row[key]).filter(Boolean))];
         const sizes = unique("size");
@@ -463,6 +487,22 @@
         `;
       }
 
+      function formatIslandsHtml(rows) {
+        const byFormat = rows.reduce((acc, row) => {
+          const format = row.format || "Other";
+          const key = format === "AIO" ? `AIO ${row.size || ""}`.trim() : format;
+          (acc[key] ||= []).push(row);
+          return acc;
+        }, {});
+        return `
+          <div class="format-islands">
+            ${formatGroupHtml("510", byFormat["510"] || [])}
+            ${formatGroupHtml("AIO 1g", byFormat["AIO 1g"] || [])}
+            ${formatGroupHtml("AIO 2g", byFormat["AIO 2g"] || [])}
+          </div>
+        `;
+      }
+
       function processGroupsHtml(rows) {
         const order = rows.some((row) => row.brand === "Higher Cultures")
           ? ["DLR", "Live Resin"]
@@ -476,8 +516,8 @@
           .filter((process) => byProcess[process]?.length)
           .map((process) => `
             <section class="process-group">
-              <div class="process-title">${escapeHtml(processLabel(process, byProcess[process]))}</div>
-              ${strainIslandsHtml(byProcess[process])}
+              <div class="process-title">${escapeHtml(byProcess[process].some((row) => row.brand === "Buddies") && process === "Distillate" ? process : processLabel(process, byProcess[process]))}</div>
+              ${byProcess[process].some((row) => row.brand === "Buddies") && process === "Distillate" ? formatIslandsHtml(byProcess[process]) : strainIslandsHtml(byProcess[process])}
             </section>
           `)
           .join("");
@@ -527,11 +567,11 @@
         const portrait = window.innerHeight >= window.innerWidth;
         if (!portrait) {
           const scale = Math.min(window.innerWidth / menuHeight, window.innerHeight / menuWidth);
-          menu.style.transform = `translate(-50%, -50%) rotate(90deg) scale(${scale})`;
+          menu.style.transform = `translate(-50%, -50%) rotate(-90deg) scale(${scale})`;
           return;
         }
         const scale = Math.min(window.innerWidth / menuWidth, window.innerHeight / menuHeight);
-        menu.style.transform = `translate(-50%, -50%) rotate(180deg) scale(${scale})`;
+        menu.style.transform = `translate(-50%, -50%) scale(${scale})`;
       }
 
       window.addEventListener("resize", fitToScreen);

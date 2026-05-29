@@ -1,0 +1,314 @@
+{
+  "generated_at": "2026-05-29T06:46:47",
+  "inventory_source": "downloads/flowhub-inventory-2026-05-29.csv",
+  "menu": "vapes",
+  "rows": [
+    {
+      "brand": "Buddies",
+      "product_name": "Tropic Puncher",
+      "display_name": "Tropic Puncher",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.768,
+      "thc_display": "77%",
+      "price": "$27.00",
+      "short_price": "$27",
+      "quantity": 12.0,
+      "source_rows": [
+        146
+      ],
+      "detail_display": "77%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Blue Steel",
+      "display_name": "Blue Steel",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.7572,
+      "thc_display": "76%",
+      "price": "$27.00",
+      "short_price": "$27",
+      "quantity": 10.0,
+      "source_rows": [
+        125
+      ],
+      "detail_display": "76%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Pink Lemonade",
+      "display_name": "Pink Lemonade",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.93,
+      "thc_display": "93%",
+      "price": "$15.95",
+      "short_price": "$15.95",
+      "quantity": 4.0,
+      "source_rows": [
+        144
+      ],
+      "detail_display": "93%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Grape Ape",
+      "display_name": "Grape Ape",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.9164,
+      "thc_display": "92%",
+      "price": "$15.95",
+      "short_price": "$15.95",
+      "quantity": 3.0,
+      "source_rows": [
+        135
+      ],
+      "detail_display": "92%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Orange Soda",
+      "display_name": "Orange Soda",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.8985,
+      "thc_display": "90%",
+      "price": "$15.95",
+      "short_price": "$15.95",
+      "quantity": 8.0,
+      "source_rows": [
+        138
+      ],
+      "detail_display": "90%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Peppermint Kush",
+      "display_name": "Peppermint Kush",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.868,
+      "thc_display": "87%",
+      "price": "$15.95",
+      "short_price": "$15.95",
+      "quantity": 8.0,
+      "source_rows": [
+        140
+      ],
+      "detail_display": "87%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Deadhead OG",
+      "display_name": "Deadhead OG",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.7938,
+      "thc_display": "79%",
+      "price": "$27.00",
+      "short_price": "$27",
+      "quantity": 10.0,
+      "source_rows": [
+        129
+      ],
+      "detail_display": "79%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Pina Colada",
+      "display_name": "Pina Colada 1g",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Distillate",
+      "thc": 0.9281999999999999,
+      "thc_display": "93%",
+      "price": "$21.00",
+      "short_price": "$21",
+      "quantity": 9.0,
+      "source_rows": [
+        141
+      ],
+      "detail_display": "93%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Grape Ape",
+      "display_name": "Grape Ape 1g",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Distillate",
+      "thc": 0.9046,
+      "thc_display": "90%",
+      "price": "$21.00",
+      "short_price": "$21",
+      "quantity": 8.0,
+      "source_rows": [
+        134
+      ],
+      "detail_display": "90%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Blueberry Muffin",
+      "display_name": "Blueberry Muffin 2g",
+      "strain": "Hybrid",
+      "size": "2g",
+      "format": "AIO",
+      "process": "Distillate",
+      "thc": 0.8996,
+      "thc_display": "90%",
+      "price": "$31.00",
+      "short_price": "$31",
+      "quantity": 2.0,
+      "source_rows": [
+        123
+      ],
+      "detail_display": "90%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Pink Lemonade",
+      "display_name": "Pink Lemonade 1g",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Distillate",
+      "thc": 0.8717,
+      "thc_display": "87%",
+      "price": "$21.00",
+      "short_price": "$21",
+      "quantity": 8.0,
+      "source_rows": [
+        143
+      ],
+      "detail_display": "87%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Pineapple Express",
+      "display_name": "Pineapple Express 2g",
+      "strain": "Hybrid",
+      "size": "2g",
+      "format": "AIO",
+      "process": "Distillate",
+      "thc": 0.8663,
+      "thc_display": "87%",
+      "price": "$31.00",
+      "short_price": "$31",
+      "quantity": 9.0,
+      "source_rows": [
+        142
+      ],
+      "detail_display": "87%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Orange Soda",
+      "display_name": "Orange Soda 1g",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Distillate",
+      "thc": 0.8626999999999999,
+      "thc_display": "86%",
+      "price": "$21.00",
+      "short_price": "$21",
+      "quantity": 10.0,
+      "source_rows": [
+        137
+      ],
+      "detail_display": "86%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Strawberry Cough",
+      "display_name": "Strawberry Cough 2g",
+      "strain": "Hybrid",
+      "size": "2g",
+      "format": "AIO",
+      "process": "Distillate",
+      "thc": 0.8609,
+      "thc_display": "86%",
+      "price": "$31.00",
+      "short_price": "$31",
+      "quantity": 8.0,
+      "source_rows": [
+        145
+      ],
+      "detail_display": "86%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Orange Soda",
+      "display_name": "Orange Soda 2g",
+      "strain": "Hybrid",
+      "size": "2g",
+      "format": "AIO",
+      "process": "Distillate",
+      "thc": 0.852,
+      "thc_display": "85%",
+      "price": "$31.00",
+      "short_price": "$31",
+      "quantity": 9.0,
+      "source_rows": [
+        139
+      ],
+      "detail_display": "85%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Citrus 13",
+      "display_name": "Citrus 13",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8131,
+      "thc_display": "81%",
+      "price": "$27.00",
+      "short_price": "$27",
+      "quantity": 19.0,
+      "source_rows": [
+        126,
+        127
+      ],
+      "detail_display": "81%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Durban Posion",
+      "display_name": "Durban Posion",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.20559999999999998,
+      "thc_display": "21%",
+      "price": "$32.00",
+      "short_price": "$32",
+      "quantity": 9.0,
+      "source_rows": [
+        131
+      ],
+      "detail_display": "21%"
+    }
+  ]
+}

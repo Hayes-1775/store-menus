@@ -11,7 +11,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 
 TARGET_BRANDS = ["Verdant", "Verdant Leaf", "NW Kind", "Higher Cultures"]
-BRAND_ORDER = {"Verdant": 1, "NW Kind": 2, "Higher Cultures": 3}
+BRAND_ORDER = {"Verdant": 1, "NW Kind": 2, "Higher Cultures": 3, "Buddies": 4}
 STRAIN_CODES = {"I": "Indica", "H": "Hybrid", "S": "Sativa"}
 STRAIN_ORDER = {"Indica": 1, "Hybrid": 2, "Sativa": 3}
 THC_COLUMNS = ["Total % THC", "% THC", "Total THC %", "Potency THC %", "Potency THC"]
@@ -128,6 +128,14 @@ def row_key(row: Dict[str, Any]) -> Tuple[str, str, str, str, str, str]:
 
 
 def extract_menu(rows: List[Dict[str, Any]], limit_per_brand: int) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+    return extract_menu_for_brands(rows, limit_per_brand, TARGET_BRANDS)
+
+
+def extract_menu_for_brands(
+    rows: List[Dict[str, Any]],
+    limit_per_brand: int,
+    target_brands: List[str],
+) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
     if not rows:
         raise ValueError("Inventory source contained no rows.")
 
@@ -156,7 +164,7 @@ def extract_menu(rows: List[Dict[str, Any]], limit_per_brand: int) -> Tuple[List
             reasons.append("not for-sale room")
         if quantity is None or quantity <= 0:
             reasons.append("quantity <= 0 or nonnumeric")
-        if brand.lower() not in {b.lower() for b in TARGET_BRANDS}:
+        if brand.lower() not in {b.lower() for b in target_brands}:
             reasons.append("not selected brand")
 
         if reasons:
@@ -179,12 +187,18 @@ def extract_menu(rows: List[Dict[str, Any]], limit_per_brand: int) -> Tuple[List
         if not thc:
             warnings.append({"row": idx, "product_name": product_name, "type": "missing_thc"})
 
+        display_name = product_name
+        if format_name == "AIO" and brand_name == "Buddies":
+            display_name = f"{product_name} {size}".strip()
+        elif format_name == "AIO" and brand_name != "Higher Cultures":
+            display_name = f"{product_name} AIO"
+
         item = grouped.setdefault(
             key,
             {
                 "brand": brand_name,
                 "product_name": product_name,
-                "display_name": f"{product_name} AIO" if format_name == "AIO" and brand_name != "Higher Cultures" else product_name,
+                "display_name": display_name,
                 "strain": strain,
                 "size": size,
                 "format": format_name,
@@ -228,7 +242,7 @@ def extract_menu(rows: List[Dict[str, Any]], limit_per_brand: int) -> Tuple[List
 
     validation = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
-        "target_brands": TARGET_BRANDS,
+        "target_brands": target_brands,
         "rows_included": len(menu_rows),
         "warnings": warnings,
         "excluded_count": len(excluded),
@@ -253,10 +267,11 @@ def main() -> None:
     parser.add_argument("--out-csv", default="data/vape_menu.csv")
     parser.add_argument("--validation-json", default="data/vape_validation_report.json")
     parser.add_argument("--limit-per-brand", type=int, default=24)
+    parser.add_argument("--brands", nargs="+", default=TARGET_BRANDS)
     args = parser.parse_args()
 
     inventory_path = Path(args.inventory)
-    rows, validation = extract_menu(read_inventory(inventory_path), args.limit_per_brand)
+    rows, validation = extract_menu_for_brands(read_inventory(inventory_path), args.limit_per_brand, args.brands)
     payload = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "inventory_source": str(inventory_path),
