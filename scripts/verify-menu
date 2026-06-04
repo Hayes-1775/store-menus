@@ -46,11 +46,12 @@ def main() -> None:
         fail("Japanese Mimosa should be reported as an excluded direct-price special")
     if len(rows) < 30:
         fail(f"unexpectedly low menu row count: {len(rows)}")
-    closeout_names = {row["product_name"] for row in rows if row.get("closeout")}
-    if "Power Mintz" not in closeout_names:
-        fail("Power Mintz should be marked closeout when quantity is below 27g")
+    low_stock_rows = [row for row in rows if row.get("quantity", 0) < 27]
     if "Japanese Mimosa" in names:
         fail("Japanese Mimosa should remain excluded from renderable menu rows")
+    for row in low_stock_rows:
+        if not row.get("closeout"):
+            fail(f"{row['product_name']} is missing closeout with quantity {row['quantity']}")
     for row in rows:
         if row.get("quantity", 0) >= 27 and row.get("closeout"):
             fail(f"{row['product_name']} is marked closeout with quantity {row['quantity']}")
