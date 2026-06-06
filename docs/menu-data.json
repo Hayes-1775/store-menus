@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-06-05T04:11:46",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-05.csv",
+  "generated_at": "2026-06-06T05:01:07",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-06.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
       "product_name": "Red Pave",
+      "brand": "Miracle Farms",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.217,
@@ -17,10 +18,21 @@
       "half": "$56",
       "ounce": "$90",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "4ae3f2a5-7af7-4dee-b81a-f760d2d60a5a"
+      ],
+      "source_variant_ids": [
+        "ec2b9db5-4141-4994-bd33-1930f1769615"
+      ],
+      "source_skus": [
+        "Bx4dFnyiuX"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Devils Den",
+      "brand": "Miracle Farms",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.21899999999999997,
@@ -33,10 +45,21 @@
       "half": "$56",
       "ounce": "$90",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "87ab3c0c-acf2-44e4-9f5a-32e16a4d70cc"
+      ],
+      "source_variant_ids": [
+        "709b5603-6c59-4b74-95f3-76637f3061ba"
+      ],
+      "source_skus": [
+        "W9YSnBVznN"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Hectane",
+      "brand": "Grown Rogue",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.30210000000000004,
@@ -49,10 +72,21 @@
       "half": "$56",
       "ounce": "$90",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "37469079-51b4-4843-b940-0270e2574db9"
+      ],
+      "source_variant_ids": [
+        "6781039e-81a8-4b18-94e8-4f8047aa65ec"
+      ],
+      "source_skus": [
+        "9pgfhQ0BD7"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Smashburger",
+      "brand": "Miracle Farms",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.23,
@@ -65,10 +99,21 @@
       "half": "$57",
       "ounce": "$105",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "1853af79-e648-460d-984b-cca18284b369"
+      ],
+      "source_variant_ids": [
+        "55976487-39a7-4dab-a829-33327881f03a"
+      ],
+      "source_skus": [
+        "R61IRt3KQi"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Purple Churro",
+      "brand": "Miracle Farms",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.264,
@@ -81,15 +126,26 @@
       "half": "$57",
       "ounce": "$105",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "e589508b-db2f-4133-be5e-f5baa4499381"
+      ],
+      "source_variant_ids": [
+        "cf0d44a6-5752-47d7-9d36-08495f4d34bb"
+      ],
+      "source_skus": [
+        "riV28s3K5V"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Black Amber",
+      "brand": "Miracle Farms",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.273,
       "thc_display": "27%",
-      "quantity": 884.18,
+      "quantity": 865.68,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -97,15 +153,26 @@
       "half": "$57",
       "ounce": "$105",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "7aaebe76-6c13-4aae-a445-2b21fb060f11"
+      ],
+      "source_variant_ids": [
+        "817300af-c410-4fbf-8e72-7358e79b7bc7"
+      ],
+      "source_skus": [
+        "o6uhNynymI"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Miracle Mintz",
+      "brand": "Virgin Cannabis",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.302,
       "thc_display": "30%",
-      "quantity": 137.7,
+      "quantity": 109.67,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -113,10 +180,21 @@
       "half": "$57",
       "ounce": "$105",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "6e4cf382-095b-4a8b-9ab1-6dd629dd5f4f"
+      ],
+      "source_variant_ids": [
+        "a1082408-a85c-4505-bc99-dc69e01c1dfa"
+      ],
+      "source_skus": [
+        "SwtykdSaC6"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Purple Panties",
+      "brand": "Grown Rogue",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.2441,
@@ -129,15 +207,26 @@
       "half": "$68",
       "ounce": "$126",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "cc6ec8ac-9c19-4d3a-97ed-4592792cf3b7"
+      ],
+      "source_variant_ids": [
+        "2be0dc64-8bf6-4aa1-8614-6edb61b6f37d"
+      ],
+      "source_skus": [
+        "UiJ19oNjtA"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Blueberry Donut",
+      "brand": "Good Garden",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.2759,
       "thc_display": "28%",
-      "quantity": 159.15,
+      "quantity": 145.1,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -145,10 +234,21 @@
       "half": "$68",
       "ounce": "$126",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "08d29cd5-3783-4c9d-9684-e5433fc4e3a7"
+      ],
+      "source_variant_ids": [
+        "a5b2803b-e7db-4829-aa83-d0fb98ab1ced"
+      ],
+      "source_skus": [
+        "1A401030003D609000027872"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "The Hive",
+      "brand": "Oregrown",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.2054,
@@ -161,15 +261,26 @@
       "half": "$80",
       "ounce": "$148",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "724b8414-7eb1-4053-9a0f-4e02c396d317"
+      ],
+      "source_variant_ids": [
+        "116c9b30-ac34-422c-add4-054a15a304e2"
+      ],
+      "source_skus": [
+        "eJGUEN6Zuj"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Alien Gary",
+      "brand": "Oregrown",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.25670000000000004,
       "thc_display": "26%",
-      "quantity": 86.22,
+      "quantity": 73.16,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -177,10 +288,21 @@
       "half": "$80",
       "ounce": "$148",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "5ed3aa43-9116-4a51-b71b-6e977968ba1b"
+      ],
+      "source_variant_ids": [
+        "7a8121d6-8607-4582-9a87-42c0c10d7a30"
+      ],
+      "source_skus": [
+        "21BPlUb9bN"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Timmeh",
+      "brand": "Virgin Cannabis",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.263,
@@ -193,10 +315,48 @@
       "half": "$80",
       "ounce": "$148",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "d4645b14-58e2-4cb7-8458-1db1e19d20dd"
+      ],
+      "source_variant_ids": [
+        "24dbde67-45e2-4f66-9952-329bbc771598"
+      ],
+      "source_skus": [
+        "wFam9KFUNn"
+      ],
+      "dutchie_url": ""
+    },
+    {
+      "product_name": "Beach Grapes",
+      "brand": "Oregrown",
+      "strain": "Indica",
+      "group_order": 1,
+      "thc": 0.2898,
+      "thc_display": "29%",
+      "quantity": 114.0,
+      "price_profile": "$7 Gram",
+      "gram": "$7",
+      "eighth": "$22",
+      "quarter": "$42",
+      "half": "$80",
+      "ounce": "$148",
+      "low_stock": false,
+      "closeout": false,
+      "source_product_ids": [
+        "7d864cc5-ce4f-420a-bce9-5463046063e9"
+      ],
+      "source_variant_ids": [
+        "9a3fee97-24df-4629-99b2-cb14f6008085"
+      ],
+      "source_skus": [
+        "RxgxGGiOLw"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Dantes Inferno",
+      "brand": "Garden First Cannabis",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.3029,
@@ -209,10 +369,21 @@
       "half": "$91",
       "ounce": "$168",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "530b2c3c-49ce-484e-8a1b-93b43d8e2457"
+      ],
+      "source_variant_ids": [
+        "0a36ff71-d9f2-484a-85a4-b22cfe8cc031"
+      ],
+      "source_skus": [
+        "zvOJ3VbR5A"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Triple Burger",
+      "brand": "Fenario Farms",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.3525,
@@ -225,15 +396,26 @@
       "half": "$137",
       "ounce": "$253",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "02318bf1-d419-46fa-8854-919466ccd75b"
+      ],
+      "source_variant_ids": [
+        "513b4764-0b88-4753-8509-e132f62b8ef9"
+      ],
+      "source_skus": [
+        "3Zc0yn8s0H"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Wow!",
+      "brand": "Noble Farms",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.3407,
       "thc_display": "34%",
-      "quantity": 69.5,
+      "quantity": 68.47,
       "price_profile": "$14 Gram",
       "gram": "$14",
       "eighth": "$44",
@@ -241,10 +423,21 @@
       "half": "$160",
       "ounce": "$295",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "bae723b9-fe9f-416c-b5f4-3af4862e4b84"
+      ],
+      "source_variant_ids": [
+        "6a485e9b-ac00-41ab-b799-311a1c98b385"
+      ],
+      "source_skus": [
+        "jnPhL0Gxbr"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Dark Queen",
+      "brand": "Miracle Farms",
       "strain": "Hybrid",
       "group_order": 2,
       "thc": 0.155,
@@ -257,10 +450,21 @@
       "half": "$40",
       "ounce": "$67",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "2d22dcba-05f3-48ee-97e5-a06dac2dc9a0"
+      ],
+      "source_variant_ids": [
+        "0d1b5fc9-30a4-4a5c-b2e1-ad9083e10626"
+      ],
+      "source_skus": [
+        "V2ECfFaVQK"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Cherry Punch",
+      "brand": "Grown Rogue",
       "strain": "Hybrid",
       "group_order": 2,
       "thc": 0.2853,
@@ -273,10 +477,21 @@
       "half": "$57",
       "ounce": "$105",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "bfe38935-d67a-4fe5-bb43-8b5cc5659c20"
+      ],
+      "source_variant_ids": [
+        "f9a43f64-3f52-40af-9b98-0b6d41b3fd2d"
+      ],
+      "source_skus": [
+        "40BxMSIdMp"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Grease Bucket",
+      "brand": "Good Garden",
       "strain": "Hybrid",
       "group_order": 2,
       "thc": 0.26280000000000003,
@@ -289,10 +504,21 @@
       "half": "$68",
       "ounce": "$126",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "e6dc6ea7-8cbf-4dfd-a775-00f998a204e4"
+      ],
+      "source_variant_ids": [
+        "01b9fa8d-bb6c-4f26-8587-447cebc2cd1f"
+      ],
+      "source_skus": [
+        "jAT7nIhKde"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Black Market",
+      "brand": "Good Garden",
       "strain": "Hybrid",
       "group_order": 2,
       "thc": 0.2755,
@@ -305,10 +531,21 @@
       "half": "$68",
       "ounce": "$126",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "356c235c-c3bf-4e3d-a6ce-1a469a6b897c"
+      ],
+      "source_variant_ids": [
+        "4bb0674b-c7c3-4151-b75b-5d7a6fefcaa0"
+      ],
+      "source_skus": [
+        "1FOQEMQUZu"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Scented Marker",
+      "brand": "Grown Rogue",
       "strain": "Hybrid",
       "group_order": 2,
       "thc": 0.3017,
@@ -321,10 +558,48 @@
       "half": "$68",
       "ounce": "$126",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "a6a0231b-c196-4e11-aeb1-7fd517663a45"
+      ],
+      "source_variant_ids": [
+        "72bf20b8-6838-4c77-8a50-5896047d5e6e"
+      ],
+      "source_skus": [
+        "LkOTnC1kgx"
+      ],
+      "dutchie_url": ""
+    },
+    {
+      "product_name": "Mac Flrrry",
+      "brand": "Oregrown",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.2939,
+      "thc_display": "29%",
+      "quantity": 114.0,
+      "price_profile": "$7 Gram",
+      "gram": "$7",
+      "eighth": "$22",
+      "quarter": "$42",
+      "half": "$80",
+      "ounce": "$148",
+      "low_stock": false,
+      "closeout": false,
+      "source_product_ids": [
+        "681fa215-7ca8-4c1f-bf8d-78523f240ae6"
+      ],
+      "source_variant_ids": [
+        "b7a08871-7430-4be1-bb67-19a4693fb096"
+      ],
+      "source_skus": [
+        "myvxgAdbjJ"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Cherry Paloma",
+      "brand": "Garden First Cannabis",
       "strain": "Hybrid",
       "group_order": 2,
       "thc": 0.25239999999999996,
@@ -337,15 +612,26 @@
       "half": "$91",
       "ounce": "$168",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "72c963b8-211a-4b64-9562-beba75afbac4"
+      ],
+      "source_variant_ids": [
+        "80cce4f9-427d-42cd-bcc0-7dbd44ca26fc"
+      ],
+      "source_skus": [
+        "LoultoGl7B"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Pineapple Bang",
+      "brand": "Good Garden",
       "strain": "Hybrid",
       "group_order": 2,
       "thc": 0.3265,
       "thc_display": "33%",
-      "quantity": 186.96,
+      "quantity": 183.4,
       "price_profile": "$8 Gram",
       "gram": "$8",
       "eighth": "$25",
@@ -353,10 +639,21 @@
       "half": "$91",
       "ounce": "$168",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "3b05fe9f-21dd-4848-afec-3f6426605995"
+      ],
+      "source_variant_ids": [
+        "eafd8768-d2e1-4de4-b73a-d100489da487"
+      ],
+      "source_skus": [
+        "SFgpMcVLVa"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Tongue Splasher",
+      "brand": "Fenario Farms",
       "strain": "Hybrid",
       "group_order": 2,
       "thc": 0.2077,
@@ -369,10 +666,21 @@
       "half": "$101",
       "ounce": "$187",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "10f91862-d4ec-436c-95ed-4da9fa2e7dfe"
+      ],
+      "source_variant_ids": [
+        "1fbaed23-6aeb-49ad-8e4f-9849e812bc8f"
+      ],
+      "source_skus": [
+        "FF.TS.4675"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Juicy Fruit",
+      "brand": "Noble Farms",
       "strain": "Hybrid",
       "group_order": 2,
       "thc": 0.31,
@@ -385,15 +693,26 @@
       "half": "$180",
       "ounce": "$332",
       "low_stock": true,
-      "closeout": true
+      "closeout": true,
+      "source_product_ids": [
+        "bd48950e-0439-48a4-82f3-8567de8b158c"
+      ],
+      "source_variant_ids": [
+        "26be657e-821f-44d6-860f-259321416831"
+      ],
+      "source_skus": [
+        "zJKVVKdAYi"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Jack Herer",
+      "brand": "Miracle Farms",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.163,
       "thc_display": "16%",
-      "quantity": 399.97,
+      "quantity": 397.87,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -401,10 +720,21 @@
       "half": "$56",
       "ounce": "$90",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "2047e797-eadc-422e-9d20-d45df4b26f12"
+      ],
+      "source_variant_ids": [
+        "71e7f972-1c72-43e1-8b4e-5a4e482e2351"
+      ],
+      "source_skus": [
+        "08pwAcYJv7"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Southern Sunset",
+      "brand": "Miracle Farms",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.23800000000000002,
@@ -417,10 +747,21 @@
       "half": "$57",
       "ounce": "$105",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "6b62b467-c395-4d41-a76e-08b7eace92b0"
+      ],
+      "source_variant_ids": [
+        "36188604-e2eb-43c8-887a-f982f478b20e"
+      ],
+      "source_skus": [
+        "B87mbca1c9"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Dante's Cookie Jar",
+      "brand": "Miracle Farms",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.245,
@@ -433,10 +774,21 @@
       "half": "$57",
       "ounce": "$105",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "d3dae599-de3b-4cdd-ad68-8e99739fac0a"
+      ],
+      "source_variant_ids": [
+        "9c3cfaf5-d2f6-41e2-9d55-3132f79ef025"
+      ],
+      "source_skus": [
+        "N3xGRavjiF"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "College Park",
+      "brand": "Grown Rogue",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.2302,
@@ -449,10 +801,21 @@
       "half": "$68",
       "ounce": "$126",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "3690a563-8eed-408c-9704-c34c1bb0c79a"
+      ],
+      "source_variant_ids": [
+        "9beee010-80d7-4743-a27e-38772d5d8605"
+      ],
+      "source_skus": [
+        "7UGh80QMBf"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Ginger Tea",
+      "brand": "Good Garden",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.2546,
@@ -465,10 +828,21 @@
       "half": "$68",
       "ounce": "$126",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "86b938a7-b656-4e2b-b775-08812482b29a"
+      ],
+      "source_variant_ids": [
+        "9c8884ad-e6a4-480b-9548-53872644b1c2"
+      ],
+      "source_skus": [
+        "ZSCrJexnb9"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Apricot Glaze",
+      "brand": "Good Garden",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.2581,
@@ -481,10 +855,21 @@
       "half": "$68",
       "ounce": "$126",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "116a99df-2433-4797-bc27-45b9f2b38b9f"
+      ],
+      "source_variant_ids": [
+        "55af00c6-01b9-4ee5-9945-a20cd924b12f"
+      ],
+      "source_skus": [
+        "nY2ys2Azyi"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Where's My Bike",
+      "brand": "Good Garden",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.2614,
@@ -497,15 +882,26 @@
       "half": "$68",
       "ounce": "$126",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "91df18c4-d699-4e58-8881-4151ff6a0186"
+      ],
+      "source_variant_ids": [
+        "1575c50f-722d-4307-9ea9-707db0bc4581"
+      ],
+      "source_skus": [
+        "qYl4h9qTgv"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Gelato Sweet Tea",
+      "brand": "Virgin Cannabis",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.29100000000000004,
       "thc_display": "29%",
-      "quantity": 97.61,
+      "quantity": 94.01,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -513,15 +909,26 @@
       "half": "$68",
       "ounce": "$126",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "4e8f53e3-ed23-44c2-8a51-4a3a123d88a2"
+      ],
+      "source_variant_ids": [
+        "00fb93cc-c593-4e70-b903-3c4553de99ea"
+      ],
+      "source_skus": [
+        "aUORbHacK6"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Emerald Apricot",
+      "brand": "Oregrown",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.3267,
       "thc_display": "33%",
-      "quantity": 58.78,
+      "quantity": 55.23,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -529,15 +936,26 @@
       "half": "$80",
       "ounce": "$148",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "e7fffdbe-ebea-4e32-9864-461460cfa7fb"
+      ],
+      "source_variant_ids": [
+        "a431c930-a15d-42e5-b39f-689cfad805af"
+      ],
+      "source_skus": [
+        "S2x7Y65E5Z"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Caramel Cake",
+      "brand": "Grown Rogue",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.3299,
       "thc_display": "33%",
-      "quantity": 332.98,
+      "quantity": 269.68,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -545,15 +963,26 @@
       "half": "$80",
       "ounce": "$148",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "da062d35-5beb-48c5-9445-4629cf95e8f9"
+      ],
+      "source_variant_ids": [
+        "0547bb2c-502c-4e20-8c79-363358b4d7cc"
+      ],
+      "source_skus": [
+        "SG8rrtMLcX"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Ice Queen",
+      "brand": "Garden First Cannabis",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.2541,
       "thc_display": "25%",
-      "quantity": 93.27,
+      "quantity": 82.12,
       "price_profile": "$8 Gram",
       "gram": "$8",
       "eighth": "$25",
@@ -561,15 +990,26 @@
       "half": "$91",
       "ounce": "$168",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "4f61f255-4f7c-4dd0-a17c-f3c5c5454005"
+      ],
+      "source_variant_ids": [
+        "ebab5420-78dc-41c6-9408-a5c00555c69e"
+      ],
+      "source_skus": [
+        "z8b8wLfyf2"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Black Bubblegum",
+      "brand": "Grown Rogue",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.3074,
       "thc_display": "31%",
-      "quantity": 110.26,
+      "quantity": 106.66,
       "price_profile": "$8 Gram",
       "gram": "$8",
       "eighth": "$25",
@@ -577,15 +1017,26 @@
       "half": "$91",
       "ounce": "$168",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "53d8500c-af6a-42a7-af9b-d928e01737e4"
+      ],
+      "source_variant_ids": [
+        "88c8dbb3-4290-417e-96d1-0dcf9d4ea27f"
+      ],
+      "source_skus": [
+        "BD2qusOCZb"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Candied Lemons",
+      "brand": "Virgin Cannabis",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.243,
       "thc_display": "24%",
-      "quantity": 211.22,
+      "quantity": 209.2,
       "price_profile": "$10 Gram",
       "gram": "$10",
       "eighth": "$32",
@@ -593,10 +1044,21 @@
       "half": "$116",
       "ounce": "$214",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "1bf08102-09e5-43f1-b904-38d7fc0df3d8"
+      ],
+      "source_variant_ids": [
+        "5619687d-f76a-4fe4-9414-e343f6ae8382"
+      ],
+      "source_skus": [
+        "nxfK9toCVh"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "High Desert Sour Sage",
+      "brand": "Oregrown",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.2685,
@@ -609,10 +1071,21 @@
       "half": "$116",
       "ounce": "$214",
       "low_stock": false,
-      "closeout": false
+      "closeout": false,
+      "source_product_ids": [
+        "2b17d933-6962-49e2-8035-de76086820ef"
+      ],
+      "source_variant_ids": [
+        "a5683838-a64a-423a-9fb4-9523da53b97b"
+      ],
+      "source_skus": [
+        "TwYjVk13Cb"
+      ],
+      "dutchie_url": ""
     },
     {
       "product_name": "Sour Snowman",
+      "brand": "Noble Farms",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.3618,
@@ -625,7 +1098,17 @@
       "half": "$196",
       "ounce": "$362",
       "low_stock": true,
-      "closeout": true
+      "closeout": true,
+      "source_product_ids": [
+        "03d83dec-5d71-4782-91ab-22f0ee19e60d"
+      ],
+      "source_variant_ids": [
+        "426b9eb7-2a59-48ff-be82-b9f7b37b2272"
+      ],
+      "source_skus": [
+        "0wWRn1k3la"
+      ],
+      "dutchie_url": ""
     }
   ]
 }

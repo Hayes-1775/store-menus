@@ -131,6 +131,24 @@ def product_display_name(raw: Any) -> str:
     return text.split("|", 1)[0].strip() or "Unknown"
 
 
+def clean_display(value: Any) -> str:
+    return re.sub(r"\s+", " ", str(value or "").strip())
+
+
+def first_present(*values: Any) -> str:
+    for value in values:
+        text = clean_display(value)
+        if text:
+            return text
+    return ""
+
+
+def append_unique(values: List[str], value: Any) -> None:
+    text = clean_display(value)
+    if text and text not in values:
+        values.append(text)
+
+
 def extract_menu(
     inventory_rows: List[Dict[str, Any]],
     pricing: Dict[str, Dict[str, Any]],
@@ -186,6 +204,11 @@ def extract_menu(
 
         raw_name = row_get(row, header_map, ["Product Name"])
         name = product_display_name(raw_name)
+        brand = first_present(
+            row_get(row, header_map, ["Brand"]),
+            row_get(row, header_map, ["Third-Party Display Name"]),
+            row_get(row, header_map, ["Supplier Name"]),
+        )
         strain, group_order = normalize_strain(row_get(row, header_map, ["Strain Species"]))
         profile = str(row_get(row, header_map, ["Price Profile Name", "Price Profile"]) or "").strip()
         direct_price = row_get(row, header_map, ["Price"])
@@ -198,14 +221,21 @@ def extract_menu(
 
         candidate = {
             "product_name": name,
+            "brand": brand,
             "quantity": float(qty),
             "thc": float(thc),
             "strain": strain,
             "group_order": group_order,
             "price_profile": profile,
             "direct_price": direct_price,
+            "product_ids": [],
+            "variant_ids": [],
+            "skus": [],
             "source_row": idx,
         }
+        append_unique(candidate["product_ids"], row_get(row, header_map, ["Product Id"]))
+        append_unique(candidate["variant_ids"], row_get(row, header_map, ["Variant Id"]))
+        append_unique(candidate["skus"], row_get(row, header_map, ["SKU"]))
 
         existing = products.get(name)
         if not existing:
@@ -213,6 +243,9 @@ def extract_menu(
             continue
 
         existing["quantity"] += candidate["quantity"]
+        for field in ("product_ids", "variant_ids", "skus"):
+            for value in candidate[field]:
+                append_unique(existing[field], value)
         if existing["strain"] != candidate["strain"]:
             warnings.append({
                 "product_name": name,
@@ -229,6 +262,14 @@ def extract_menu(
                 "saw": candidate["price_profile"],
                 "source_row": idx,
             })
+        if clean_key(existing.get("brand")) != clean_key(candidate.get("brand")):
+            warnings.append({
+                "product_name": name,
+                "type": "conflicting_brand",
+                "kept": existing.get("brand", ""),
+                "saw": candidate.get("brand", ""),
+                "source_row": idx,
+            })
 
         should_replace = False
         if candidate["thc"] > existing["thc"]:
@@ -238,8 +279,14 @@ def extract_menu(
                 should_replace = True
         if should_replace:
             quantity = existing["quantity"]
+            product_ids = existing["product_ids"]
+            variant_ids = existing["variant_ids"]
+            skus = existing["skus"]
             products[name] = candidate
             products[name]["quantity"] = quantity
+            products[name]["product_ids"] = product_ids
+            products[name]["variant_ids"] = variant_ids
+            products[name]["skus"] = skus
 
     menu_rows: List[Dict[str, Any]] = []
     missing_price_profiles: List[Dict[str, Any]] = []
@@ -266,6 +313,7 @@ def extract_menu(
 
         menu_rows.append({
             "product_name": name,
+            "brand": product.get("brand", ""),
             "strain": product["strain"],
             "group_order": product["group_order"],
             "thc": product["thc"],
@@ -280,6 +328,10 @@ def extract_menu(
             "gram_sort": parse_number(price["gram"]) or 999999,
             "low_stock": product["quantity"] < low_stock_threshold,
             "closeout": product["quantity"] < 27,
+            "source_product_ids": product.get("product_ids", []),
+            "source_variant_ids": product.get("variant_ids", []),
+            "source_skus": product.get("skus", []),
+            "dutchie_url": "",
         })
 
     menu_rows.sort(key=lambda r: (r["group_order"], r["gram_sort"], r["thc"], r["product_name"].lower()))
@@ -300,7 +352,7 @@ def extract_menu(
 
 def write_csv(path: Path, rows: List[Dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    fields = ["product_name", "strain", "thc_display", "gram", "eighth", "quarter", "half", "ounce", "quantity", "price_profile", "low_stock", "closeout"]
+    fields = ["product_name", "brand", "strain", "thc_display", "gram", "eighth", "quarter", "half", "ounce", "quantity", "price_profile", "low_stock", "closeout", "dutchie_url"]
     with path.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fields)
         writer.writeheader()
