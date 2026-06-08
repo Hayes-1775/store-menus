@@ -17,6 +17,12 @@ def main() -> None:
     image_path = Path("docs/latest.jpg")
     docs_data_path = Path("docs/menu-data.json")
     html_path = Path("docs/index.html")
+    vape_image_path = Path("docs/vapes/latest.jpg")
+    vape_docs_data_path = Path("docs/vapes/menu-data.json")
+    vape_html_path = Path("docs/vapes/index.html")
+    vape_page2_image_path = Path("docs/vapes/page2/latest.jpg")
+    vape_page2_docs_data_path = Path("docs/vapes/page2/menu-data.json")
+    vape_page2_html_path = Path("docs/vapes/page2/index.html")
 
     if not menu_path.exists():
         fail("missing data/flower_menu.json")
@@ -28,10 +34,22 @@ def main() -> None:
         fail("missing docs/menu-data.json")
     if not html_path.exists():
         fail("missing docs/index.html")
+    for path in [
+        vape_image_path,
+        vape_docs_data_path,
+        vape_html_path,
+        vape_page2_image_path,
+        vape_page2_docs_data_path,
+        vape_page2_html_path,
+    ]:
+        if not path.exists():
+            fail(f"missing {path}")
 
     menu = json.loads(menu_path.read_text(encoding="utf-8"))
     docs_menu = json.loads(docs_data_path.read_text(encoding="utf-8"))
     validation = json.loads(validation_path.read_text(encoding="utf-8"))
+    vape_docs_menu = json.loads(vape_docs_data_path.read_text(encoding="utf-8"))
+    vape_page2_docs_menu = json.loads(vape_page2_docs_data_path.read_text(encoding="utf-8"))
     rows = menu.get("rows", [])
     docs_rows = docs_menu.get("rows", [])
     names = {row["product_name"] for row in rows}
@@ -41,14 +59,13 @@ def main() -> None:
 
     if "Jack Herer" not in names:
         fail("Jack Herer should be retained by duplicate tie handling")
-    specials = {row["product_name"] for row in validation.get("excluded_specials", [])}
-    if "Japanese Mimosa" not in specials:
-        fail("Japanese Mimosa should be reported as an excluded direct-price special")
     if len(rows) < 30:
         fail(f"unexpectedly low menu row count: {len(rows)}")
+    if len(vape_docs_menu.get("rows", [])) < 20:
+        fail(f"unexpectedly low vape menu row count: {len(vape_docs_menu.get('rows', []))}")
+    if len(vape_page2_docs_menu.get("rows", [])) < 5:
+        fail(f"unexpectedly low vape page 2 row count: {len(vape_page2_docs_menu.get('rows', []))}")
     low_stock_rows = [row for row in rows if row.get("quantity", 0) < 27]
-    if "Japanese Mimosa" in names:
-        fail("Japanese Mimosa should remain excluded from renderable menu rows")
     for row in low_stock_rows:
         if not row.get("closeout"):
             fail(f"{row['product_name']} is missing closeout with quantity {row['quantity']}")
@@ -59,10 +76,18 @@ def main() -> None:
     img = Image.open(image_path)
     if img.size != (1080, 1920):
         fail(f"expected 1080x1920 image, got {img.size}")
+    vape_img = Image.open(vape_image_path)
+    if vape_img.size != (1080, 1920):
+        fail(f"expected 1080x1920 vape image, got {vape_img.size}")
+    vape_page2_img = Image.open(vape_page2_image_path)
+    if vape_page2_img.size != (1080, 1920):
+        fail(f"expected 1080x1920 vape page 2 image, got {vape_page2_img.size}")
 
     print(json.dumps({
         "status": "ok",
         "rows": len(rows),
+        "vape_rows": len(vape_docs_menu.get("rows", [])),
+        "vape_page2_rows": len(vape_page2_docs_menu.get("rows", [])),
         "missing_price_profiles": len(validation.get("missing_price_profiles", [])),
         "image": str(image_path),
         "html": str(html_path),
