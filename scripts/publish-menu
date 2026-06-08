@@ -21,14 +21,26 @@ git add \
   config/menu_config.json \
   scripts/download-flowhub-inventory \
   scripts/extract-flower-menu \
+  scripts/extract-vape-menu \
   scripts/render-menu \
+  scripts/render-vape-menu \
   scripts/run-daily-menu \
+  scripts/run-vape-menu \
+  scripts/run-vape-menu-page2 \
   scripts/verify-menu \
   scripts/publish-menu \
   docs/index.html \
   docs/menu-data.json \
   docs/latest.jpg \
-  docs/archive/*.jpg
+  docs/archive/*.jpg \
+  docs/vapes/index.html \
+  docs/vapes/menu-data.json \
+  docs/vapes/latest.jpg \
+  docs/vapes/archive/*.jpg \
+  docs/vapes/page2/index.html \
+  docs/vapes/page2/menu-data.json \
+  docs/vapes/page2/latest.jpg \
+  docs/vapes/page2/archive/*.jpg
 
 if git diff --cached --quiet; then
   echo "No publishable menu changes to commit."
@@ -37,7 +49,7 @@ if git diff --cached --quiet; then
 fi
 
 commit_date="$(date +%Y-%m-%d)"
-git commit -m "Update flower menu ${commit_date}"
+git commit -m "Update store menus ${commit_date}"
 git push origin HEAD
 
 cat /tmp/store-menu-verify.json

@@ -25,4 +25,7 @@ cd "$ROOT_DIR"
 
 cp data/flower_menu.json docs/menu-data.json
 
-echo "Generated docs/latest.jpg and docs/menu-data.json"
+scripts/run-vape-menu "$INVENTORY"
+scripts/run-vape-menu-page2 "$INVENTORY"
+
+echo "Generated flower and vape menu pages from $INVENTORY"

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-29T06:46:47",
-  "inventory_source": "downloads/flowhub-inventory-2026-05-29.csv",
+  "generated_at": "2026-06-08T07:13:25",
+  "inventory_source": "downloads/flowhub-inventory-2026-06-06.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -15,9 +15,9 @@
       "thc_display": "77%",
       "price": "$27.00",
       "short_price": "$27",
-      "quantity": 12.0,
+      "quantity": 11.0,
       "source_rows": [
-        146
+        142
       ],
       "detail_display": "77%"
     },
@@ -33,47 +33,11 @@
       "thc_display": "76%",
       "price": "$27.00",
       "short_price": "$27",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
-        125
+        119
       ],
       "detail_display": "76%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Pink Lemonade",
-      "display_name": "Pink Lemonade",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Distillate",
-      "thc": 0.93,
-      "thc_display": "93%",
-      "price": "$15.95",
-      "short_price": "$15.95",
-      "quantity": 4.0,
-      "source_rows": [
-        144
-      ],
-      "detail_display": "93%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Grape Ape",
-      "display_name": "Grape Ape",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Distillate",
-      "thc": 0.9164,
-      "thc_display": "92%",
-      "price": "$15.95",
-      "short_price": "$15.95",
-      "quantity": 3.0,
-      "source_rows": [
-        135
-      ],
-      "detail_display": "92%"
     },
     {
       "brand": "Buddies",
@@ -87,11 +51,47 @@
       "thc_display": "90%",
       "price": "$15.95",
       "short_price": "$15.95",
-      "quantity": 8.0,
+      "quantity": 3.0,
       "source_rows": [
-        138
+        132
       ],
       "detail_display": "90%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Watermelon Kush",
+      "display_name": "Watermelon Kush",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.873,
+      "thc_display": "87%",
+      "price": "$15.95",
+      "short_price": "$15.95",
+      "quantity": 8.0,
+      "source_rows": [
+        143
+      ],
+      "detail_display": "87%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Peach OG",
+      "display_name": "Peach OG",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.8697,
+      "thc_display": "87%",
+      "price": "$15.95",
+      "short_price": "$15.95",
+      "quantity": 4.0,
+      "source_rows": [
+        135
+      ],
+      "detail_display": "87%"
     },
     {
       "brand": "Buddies",
@@ -105,9 +105,9 @@
       "thc_display": "87%",
       "price": "$15.95",
       "short_price": "$15.95",
-      "quantity": 8.0,
+      "quantity": 1.0,
       "source_rows": [
-        140
+        136
       ],
       "detail_display": "87%"
     },
@@ -123,11 +123,29 @@
       "thc_display": "79%",
       "price": "$27.00",
       "short_price": "$27",
-      "quantity": 10.0,
+      "quantity": 6.0,
       "source_rows": [
-        129
+        123
       ],
       "detail_display": "79%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Monkey Fuel",
+      "display_name": "Monkey Fuel",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.7539,
+      "thc_display": "75%",
+      "price": "$27.00",
+      "short_price": "$27",
+      "quantity": 11.0,
+      "source_rows": [
+        130
+      ],
+      "detail_display": "75%"
     },
     {
       "brand": "Buddies",
@@ -141,9 +159,9 @@
       "thc_display": "93%",
       "price": "$21.00",
       "short_price": "$21",
-      "quantity": 9.0,
+      "quantity": 5.0,
       "source_rows": [
-        141
+        137
       ],
       "detail_display": "93%"
     },
@@ -159,27 +177,9 @@
       "thc_display": "90%",
       "price": "$21.00",
       "short_price": "$21",
-      "quantity": 8.0,
+      "quantity": 4.0,
       "source_rows": [
-        134
-      ],
-      "detail_display": "90%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Blueberry Muffin",
-      "display_name": "Blueberry Muffin 2g",
-      "strain": "Hybrid",
-      "size": "2g",
-      "format": "AIO",
-      "process": "Distillate",
-      "thc": 0.8996,
-      "thc_display": "90%",
-      "price": "$31.00",
-      "short_price": "$31",
-      "quantity": 2.0,
-      "source_rows": [
-        123
+        127
       ],
       "detail_display": "90%"
     },
@@ -195,9 +195,9 @@
       "thc_display": "87%",
       "price": "$21.00",
       "short_price": "$21",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        143
+        139
       ],
       "detail_display": "87%"
     },
@@ -213,9 +213,9 @@
       "thc_display": "87%",
       "price": "$31.00",
       "short_price": "$31",
-      "quantity": 9.0,
+      "quantity": 5.0,
       "source_rows": [
-        142
+        138
       ],
       "detail_display": "87%"
     },
@@ -231,9 +231,9 @@
       "thc_display": "86%",
       "price": "$21.00",
       "short_price": "$21",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
-        137
+        131
       ],
       "detail_display": "86%"
     },
@@ -249,9 +249,9 @@
       "thc_display": "86%",
       "price": "$31.00",
       "short_price": "$31",
-      "quantity": 8.0,
+      "quantity": 6.0,
       "source_rows": [
-        145
+        141
       ],
       "detail_display": "86%"
     },
@@ -267,9 +267,9 @@
       "thc_display": "85%",
       "price": "$31.00",
       "short_price": "$31",
-      "quantity": 9.0,
+      "quantity": 6.0,
       "source_rows": [
-        139
+        133
       ],
       "detail_display": "85%"
     },
@@ -285,12 +285,30 @@
       "thc_display": "81%",
       "price": "$27.00",
       "short_price": "$27",
-      "quantity": 19.0,
+      "quantity": 18.0,
       "source_rows": [
-        126,
-        127
+        120,
+        121
       ],
       "detail_display": "81%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Panama Red",
+      "display_name": "Panama Red",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.7998000000000001,
+      "thc_display": "80%",
+      "price": "$27.00",
+      "short_price": "$27",
+      "quantity": 11.0,
+      "source_rows": [
+        134
+      ],
+      "detail_display": "80%"
     },
     {
       "brand": "Buddies",
@@ -304,9 +322,9 @@
       "thc_display": "21%",
       "price": "$32.00",
       "short_price": "$32",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        131
+        124
       ],
       "detail_display": "21%"
     }
