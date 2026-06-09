@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-08T07:36:56",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-08.csv",
+  "generated_at": "2026-06-08T21:06:07",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-09.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -17,7 +17,7 @@
       "short_price": "$27",
       "quantity": 11.0,
       "source_rows": [
-        141
+        138
       ],
       "detail_display": "77%"
     },
@@ -35,7 +35,7 @@
       "short_price": "$27",
       "quantity": 8.0,
       "source_rows": [
-        118
+        115
       ],
       "detail_display": "76%"
     },
@@ -53,7 +53,7 @@
       "short_price": "$15.95",
       "quantity": 3.0,
       "source_rows": [
-        131
+        128
       ],
       "detail_display": "90%"
     },
@@ -69,9 +69,9 @@
       "thc_display": "87%",
       "price": "$15.95",
       "short_price": "$15.95",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        142
+        139
       ],
       "detail_display": "87%"
     },
@@ -87,27 +87,9 @@
       "thc_display": "87%",
       "price": "$15.95",
       "short_price": "$15.95",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        134
-      ],
-      "detail_display": "87%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Peppermint Kush",
-      "display_name": "Peppermint Kush",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Distillate",
-      "thc": 0.868,
-      "thc_display": "87%",
-      "price": "$15.95",
-      "short_price": "$15.95",
-      "quantity": 1.0,
-      "source_rows": [
-        135
+        131
       ],
       "detail_display": "87%"
     },
@@ -125,7 +107,7 @@
       "short_price": "$27",
       "quantity": 6.0,
       "source_rows": [
-        122
+        119
       ],
       "detail_display": "79%"
     },
@@ -143,7 +125,7 @@
       "short_price": "$27",
       "quantity": 11.0,
       "source_rows": [
-        129
+        126
       ],
       "detail_display": "75%"
     },
@@ -161,7 +143,7 @@
       "short_price": "$21",
       "quantity": 5.0,
       "source_rows": [
-        136
+        133
       ],
       "detail_display": "93%"
     },
@@ -179,7 +161,7 @@
       "short_price": "$21",
       "quantity": 4.0,
       "source_rows": [
-        126
+        123
       ],
       "detail_display": "90%"
     },
@@ -197,7 +179,7 @@
       "short_price": "$21",
       "quantity": 7.0,
       "source_rows": [
-        138
+        135
       ],
       "detail_display": "87%"
     },
@@ -215,7 +197,7 @@
       "short_price": "$31",
       "quantity": 5.0,
       "source_rows": [
-        137
+        134
       ],
       "detail_display": "87%"
     },
@@ -233,7 +215,7 @@
       "short_price": "$21",
       "quantity": 9.0,
       "source_rows": [
-        130
+        127
       ],
       "detail_display": "86%"
     },
@@ -249,9 +231,9 @@
       "thc_display": "86%",
       "price": "$31.00",
       "short_price": "$31",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        140
+        137
       ],
       "detail_display": "86%"
     },
@@ -267,9 +249,9 @@
       "thc_display": "85%",
       "price": "$31.00",
       "short_price": "$31",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        132
+        129
       ],
       "detail_display": "85%"
     },
@@ -287,8 +269,8 @@
       "short_price": "$27",
       "quantity": 18.0,
       "source_rows": [
-        119,
-        120
+        116,
+        117
       ],
       "detail_display": "81%"
     },
@@ -306,7 +288,7 @@
       "short_price": "$27",
       "quantity": 10.0,
       "source_rows": [
-        133
+        130
       ],
       "detail_display": "80%"
     },
@@ -324,7 +306,7 @@
       "short_price": "$32",
       "quantity": 8.0,
       "source_rows": [
-        123
+        120
       ],
       "detail_display": "21%"
     }
