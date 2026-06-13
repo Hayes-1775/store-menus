@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-11T02:54:04",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-11.csv",
+  "generated_at": "2026-06-13T07:55:50",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-13.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -15,9 +15,9 @@
       "thc_display": "87%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
-        1107
+        1109
       ],
       "detail_display": "87%"
     },
@@ -35,7 +35,7 @@
       "short_price": "$22.5",
       "quantity": 8.0,
       "source_rows": [
-        1095
+        1097
       ],
       "detail_display": "80%"
     },
@@ -51,29 +51,11 @@
       "thc_display": "80%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 13.0,
+      "quantity": 7.0,
       "source_rows": [
-        1124
+        1125
       ],
       "detail_display": "80%"
-    },
-    {
-      "brand": "Verdant",
-      "product_name": "Kush Kingdom",
-      "display_name": "Kush Kingdom",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Rosin/CR",
-      "thc": 0.794,
-      "thc_display": "79%",
-      "price": "$22.50",
-      "short_price": "$22.5",
-      "quantity": 1.0,
-      "source_rows": [
-        1091
-      ],
-      "detail_display": "79%"
     },
     {
       "brand": "Verdant",
@@ -89,7 +71,7 @@
       "short_price": "$22.5",
       "quantity": 8.0,
       "source_rows": [
-        1098
+        1100
       ],
       "detail_display": "79%"
     },
@@ -105,9 +87,9 @@
       "thc_display": "74%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 8.0,
+      "quantity": 3.0,
       "source_rows": [
-        1086
+        1088
       ],
       "detail_display": "74%"
     },
@@ -125,7 +107,7 @@
       "short_price": "$22.5",
       "quantity": 9.0,
       "source_rows": [
-        1096
+        1098
       ],
       "detail_display": "78%"
     },
@@ -143,7 +125,7 @@
       "short_price": "$22.5",
       "quantity": 6.0,
       "source_rows": [
-        1115
+        1116
       ],
       "detail_display": "74%"
     },
@@ -161,7 +143,7 @@
       "short_price": "$22.5",
       "quantity": 7.0,
       "source_rows": [
-        1114
+        1115
       ],
       "detail_display": "74%"
     },
@@ -177,65 +159,11 @@
       "thc_display": "79%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        1128
+        1130
       ],
       "detail_display": "79%"
-    },
-    {
-      "brand": "Verdant",
-      "product_name": "Sunny Breeze",
-      "display_name": "Sunny Breeze",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Rosin/CR",
-      "thc": 0.7759999999999999,
-      "thc_display": "78%",
-      "price": "$22.50",
-      "short_price": "$22.5",
-      "quantity": 1.0,
-      "source_rows": [
-        1116
-      ],
-      "detail_display": "78%"
-    },
-    {
-      "brand": "Verdant",
-      "product_name": "Exotic Groove",
-      "display_name": "Exotic Groove",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Rosin/CR",
-      "thc": 0.762,
-      "thc_display": "76%",
-      "price": "$22.50",
-      "short_price": "$22.5",
-      "quantity": 3.0,
-      "source_rows": [
-        1080
-      ],
-      "detail_display": "76%"
-    },
-    {
-      "brand": "Verdant",
-      "product_name": "Tropicana Pop",
-      "display_name": "Tropicana Pop",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Rosin/CR",
-      "thc": 0.747,
-      "thc_display": "75%",
-      "price": "$22.50",
-      "short_price": "$22.5",
-      "quantity": 1.0,
-      "source_rows": [
-        1119
-      ],
-      "detail_display": "75%"
     },
     {
       "brand": "Verdant",
@@ -251,27 +179,9 @@
       "short_price": "$22.5",
       "quantity": 3.0,
       "source_rows": [
-        1082
+        1084
       ],
       "detail_display": "73%"
-    },
-    {
-      "brand": "Verdant",
-      "product_name": "Honey Jack",
-      "display_name": "Honey Jack",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Rosin/CR",
-      "thc": 0.706,
-      "thc_display": "71%",
-      "price": "$22.50",
-      "short_price": "$22.5",
-      "quantity": 1.0,
-      "source_rows": [
-        1087
-      ],
-      "detail_display": "71%"
     },
     {
       "brand": "NW Kind",
@@ -285,9 +195,9 @@
       "thc_display": "86%",
       "price": "$23.00",
       "short_price": "$23",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        877
+        872
       ],
       "detail_display": "86%"
     },
@@ -305,7 +215,7 @@
       "short_price": "$23",
       "quantity": 5.0,
       "source_rows": [
-        850
+        845
       ],
       "detail_display": "86%"
     },
@@ -323,7 +233,7 @@
       "short_price": "$23",
       "quantity": 8.0,
       "source_rows": [
-        874
+        869
       ],
       "detail_display": "86%"
     },
@@ -339,9 +249,9 @@
       "thc_display": "82%",
       "price": "$26.00",
       "short_price": "$26",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        893
+        888
       ],
       "detail_display": "82%"
     },
@@ -357,9 +267,9 @@
       "thc_display": "82%",
       "price": "$26.00",
       "short_price": "$26",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        879
+        874
       ],
       "detail_display": "82%"
     },
@@ -375,9 +285,9 @@
       "thc_display": "79%",
       "price": "$26.00",
       "short_price": "$26",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        873
+        868
       ],
       "detail_display": "79%"
     },
@@ -395,7 +305,7 @@
       "short_price": "$30",
       "quantity": 3.0,
       "source_rows": [
-        904
+        899
       ],
       "detail_display": "76%"
     },
@@ -411,9 +321,9 @@
       "thc_display": "67%",
       "price": "$30.00",
       "short_price": "$30",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        881
+        876
       ],
       "detail_display": "67%"
     },
@@ -429,9 +339,9 @@
       "thc_display": "75%",
       "price": "$40.00",
       "short_price": "$40",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        891
+        886
       ],
       "detail_display": "75%"
     },
@@ -447,10 +357,9 @@
       "thc_display": "86%",
       "price": "$23.00",
       "short_price": "$23",
-      "quantity": 8.0,
+      "quantity": 6.0,
       "source_rows": [
-        901,
-        902
+        896
       ],
       "detail_display": "86%"
     },
@@ -468,8 +377,8 @@
       "short_price": "$23",
       "quantity": 13.0,
       "source_rows": [
-        885,
-        886
+        880,
+        881
       ],
       "detail_display": "85%"
     },
@@ -487,7 +396,7 @@
       "short_price": "$23",
       "quantity": 9.0,
       "source_rows": [
-        847
+        843
       ],
       "detail_display": "85%"
     },
@@ -505,9 +414,27 @@
       "short_price": "$26",
       "quantity": 7.0,
       "source_rows": [
-        859
+        853
       ],
       "detail_display": "83%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Banana Orange Pineapple",
+      "display_name": "Banana Orange Pineapple",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.784,
+      "thc_display": "78%",
+      "price": "$30.00",
+      "short_price": "$30",
+      "quantity": 6.0,
+      "source_rows": [
+        836
+      ],
+      "detail_display": "78%"
     },
     {
       "brand": "NW Kind",
@@ -523,7 +450,7 @@
       "short_price": "$26",
       "quantity": 6.0,
       "source_rows": [
-        910
+        906
       ],
       "detail_display": "76%"
     },
@@ -541,7 +468,7 @@
       "short_price": "$23",
       "quantity": 8.0,
       "source_rows": [
-        878
+        873
       ],
       "detail_display": "89%"
     },
@@ -559,8 +486,8 @@
       "short_price": "$23",
       "quantity": 19.0,
       "source_rows": [
-        856,
-        857
+        850,
+        851
       ],
       "detail_display": "85%"
     },
@@ -578,7 +505,7 @@
       "short_price": "$23",
       "quantity": 5.0,
       "source_rows": [
-        908
+        904
       ],
       "detail_display": "84%"
     },
@@ -596,7 +523,7 @@
       "short_price": "$26",
       "quantity": 6.0,
       "source_rows": [
-        907
+        903
       ],
       "detail_display": "83%"
     },
@@ -614,7 +541,7 @@
       "short_price": "$26",
       "quantity": 2.0,
       "source_rows": [
-        861
+        855
       ],
       "detail_display": "82%"
     },
@@ -630,11 +557,29 @@
       "thc_display": "81%",
       "price": "$30.00",
       "short_price": "$30",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        905
+        901
       ],
       "detail_display": "81%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Blue Dream",
+      "display_name": "Blue Dream",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.7979999999999999,
+      "thc_display": "80%",
+      "price": "$30.00",
+      "short_price": "$30",
+      "quantity": 9.0,
+      "source_rows": [
+        842
+      ],
+      "detail_display": "80%"
     },
     {
       "brand": "NW Kind",
@@ -650,7 +595,7 @@
       "short_price": "$26",
       "quantity": 6.0,
       "source_rows": [
-        851
+        846
       ],
       "detail_display": "77%"
     },
@@ -666,9 +611,9 @@
       "thc_display": "71%",
       "price": "$30.00",
       "short_price": "$30",
-      "quantity": 7.0,
+      "quantity": 4.0,
       "source_rows": [
-        897
+        892
       ],
       "detail_display": "71%"
     },
@@ -684,11 +629,29 @@
       "thc_display": "76%",
       "price": "$40.00",
       "short_price": "$40",
-      "quantity": 4.0,
+      "quantity": 2.0,
       "source_rows": [
-        882
+        877
       ],
       "detail_display": "76%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Super Gremlin",
+      "display_name": "Super Gremlin AIO",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.682,
+      "thc_display": "68%",
+      "price": "$40.00",
+      "short_price": "$40",
+      "quantity": 10.0,
+      "source_rows": [
+        900
+      ],
+      "detail_display": "68%"
     },
     {
       "brand": "Higher Cultures",
@@ -702,9 +665,9 @@
       "thc_display": "87%",
       "price": "$29.00",
       "short_price": "$29",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        564
+        558
       ],
       "detail_display": "87%"
     },
@@ -722,7 +685,7 @@
       "short_price": "$28",
       "quantity": 5.0,
       "source_rows": [
-        556
+        550
       ],
       "detail_display": "86%"
     },
@@ -740,7 +703,7 @@
       "short_price": "$36",
       "quantity": 4.0,
       "source_rows": [
-        566
+        560
       ],
       "detail_display": "80%"
     },
@@ -758,7 +721,7 @@
       "short_price": "$36",
       "quantity": 8.0,
       "source_rows": [
-        550
+        544
       ],
       "detail_display": "76%"
     },
@@ -774,9 +737,9 @@
       "thc_display": "87%",
       "price": "$28.00",
       "short_price": "$28",
-      "quantity": 5.0,
+      "quantity": 3.0,
       "source_rows": [
-        557
+        551
       ],
       "detail_display": "87%"
     },
@@ -792,9 +755,9 @@
       "thc_display": "83%",
       "price": "$29.00",
       "short_price": "$29",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        565
+        559
       ],
       "detail_display": "83%"
     },
@@ -812,7 +775,7 @@
       "short_price": "$36",
       "quantity": 9.0,
       "source_rows": [
-        568
+        562
       ],
       "detail_display": "79%"
     },
@@ -830,7 +793,7 @@
       "short_price": "$36",
       "quantity": 8.0,
       "source_rows": [
-        549
+        543
       ],
       "detail_display": "78%"
     },
@@ -848,7 +811,7 @@
       "short_price": "$36",
       "quantity": 2.0,
       "source_rows": [
-        584
+        578
       ],
       "detail_display": "75%"
     },
@@ -866,7 +829,7 @@
       "short_price": "$28",
       "quantity": 8.0,
       "source_rows": [
-        560
+        554
       ],
       "detail_display": "90%"
     },
@@ -884,27 +847,9 @@
       "short_price": "$28",
       "quantity": 8.0,
       "source_rows": [
-        559
+        553
       ],
       "detail_display": "90%"
-    },
-    {
-      "brand": "Higher Cultures",
-      "product_name": "Sour Skunk",
-      "display_name": "Sour Skunk",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "AIO",
-      "process": "DLR",
-      "thc": 0.85531,
-      "thc_display": "86%",
-      "price": "$29.00",
-      "short_price": "$29",
-      "quantity": 2.0,
-      "source_rows": [
-        570
-      ],
-      "detail_display": "86%"
     },
     {
       "brand": "Higher Cultures",
@@ -918,9 +863,9 @@
       "thc_display": "81%",
       "price": "$36.00",
       "short_price": "$36",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        563
+        557
       ],
       "detail_display": "81%"
     },
@@ -938,7 +883,7 @@
       "short_price": "$36",
       "quantity": 10.0,
       "source_rows": [
-        572
+        566
       ],
       "detail_display": "76%"
     }
