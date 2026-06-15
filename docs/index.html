@@ -559,11 +559,8 @@
           const pill = row.querySelector(".deal-message");
           if (!name || !pill) return;
 
-          const nameRect = name.getBoundingClientRect();
-          const pillRect = pill.getBoundingClientRect();
-          const isRotatedDisplay = window.innerWidth > window.innerHeight;
-          const targetGap = isRotatedDisplay ? 220 : 32;
-          const nameRight = name.offsetLeft + nameRect.width;
+          const targetGap = 32;
+          const nameRight = name.offsetLeft + name.offsetWidth;
           const pillLeft = pill.offsetLeft;
           const maxShift = Math.max(0, pillLeft - nameRight - targetGap);
           if (maxShift < 8) return;
