@@ -167,7 +167,9 @@
 
       .row.aged-row .name {
         position: relative;
+        z-index: 4;
         color: #fff7c2;
+        overflow: visible;
         text-shadow: 0 0 12px rgba(255, 232, 138, 0.42);
         transform-origin: left center;
         will-change: transform, color, text-shadow;
@@ -178,18 +180,9 @@
         will-change: transform, color, text-shadow;
       }
 
-      .row.aged-row .name::after {
-        content: "";
-        position: absolute;
-        top: 8%;
-        bottom: 8%;
-        left: 0;
-        width: 90px;
-        pointer-events: none;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
-        mix-blend-mode: screen;
-        opacity: var(--sweep-opacity, 0);
-        transform: translateX(var(--sweep-x, -120px)) skewX(-18deg);
+      .product-name-text {
+        display: inline-block;
+        vertical-align: top;
       }
 
       .row.closeout .normal-row,
@@ -207,18 +200,43 @@
 
       .row.closeout .deal-row {
         opacity: 0;
-        color: #ffe88a;
-        text-shadow: 0 0 14px rgba(255, 220, 90, 0.42);
         animation: deal-row-fade 8s ease-in-out infinite;
         pointer-events: none;
       }
 
       .deal-message {
         grid-column: 2 / -1;
+        justify-self: center;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: max-content;
+        max-width: 100%;
+        height: 1.08em;
+        padding: 0 16px 1px;
+        border: 2px solid rgba(184, 255, 112, 0.74);
+        border-radius: 999px;
+        box-sizing: border-box;
+        background: rgb(18, 45, 16);
+        color: #f7ffd9;
+        filter: drop-shadow(0 0 16px rgba(184, 255, 112, 0.82));
         overflow: hidden;
-        text-overflow: clip;
         text-align: center;
-        font-size: min(var(--body-size), 30px);
+        font-size: min(var(--body-size), 26px);
+        line-height: 1;
+        text-transform: uppercase;
+        text-shadow: 0 0 12px rgba(247, 255, 217, 0.72);
+        animation: deal-pill-pulse 8s ease-in-out infinite;
+      }
+
+      .deal-leaf {
+        flex: 0 0 auto;
+        display: block;
+        width: 0.72em;
+        height: 0.72em;
+        fill: currentColor;
+        filter: drop-shadow(0 0 8px rgba(184, 255, 112, 0.88));
       }
 
       .name {
@@ -228,26 +246,54 @@
       }
 
       .attention-icon {
-        display: inline-block;
+        position: relative;
+        z-index: 5;
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 6px;
         margin-left: 8px;
-        width: 0.9em;
-        height: 0.9em;
+        width: 0.92em;
+        height: 0.92em;
+        max-width: 7.8em;
+        padding: 0;
+        border: 2px solid transparent;
+        border-radius: 999px;
+        box-sizing: border-box;
+        background: rgba(126, 217, 87, 0);
         color: #7ed957;
         filter: drop-shadow(0 0 10px rgba(126, 217, 87, 0.62));
         line-height: 1;
+        overflow: hidden;
         vertical-align: -0.06em;
-        transform-origin: center;
-        will-change: transform, color, filter;
+        transform-origin: left center;
+        will-change: width, transform, color, filter, background-color, border-color;
       }
 
       .attention-icon svg {
+        flex: 0 0 auto;
         display: block;
-        width: 100%;
-        height: 100%;
+        width: 0.82em;
+        height: 0.82em;
         fill: currentColor;
       }
 
+      .attention-offer {
+        display: inline-block;
+        flex: 0 0 auto;
+        color: #f7ffd9;
+        font-size: 0.46em;
+        line-height: 1;
+        opacity: 0;
+        text-transform: uppercase;
+        text-shadow: 0 0 12px rgba(247, 255, 217, 0.72);
+        transform: translateX(-6px);
+        will-change: opacity, transform;
+      }
+
       .num {
+        position: relative;
+        z-index: 1;
         text-align: center;
       }
 
@@ -309,6 +355,20 @@
           opacity: 1;
         }
       }
+
+      @keyframes deal-pill-pulse {
+        0%,
+        48%,
+        100% {
+          transform: scale(0.96);
+          filter: drop-shadow(0 0 8px rgba(184, 255, 112, 0.42));
+        }
+        58%,
+        88% {
+          transform: scale(1.04);
+          filter: drop-shadow(0 0 18px rgba(184, 255, 112, 0.92));
+        }
+      }
     </style>
   </head>
   <body>
@@ -367,7 +427,9 @@
       }
 
       function rowHtml(row) {
-        const productName = `${productNameHtml(row)}${attentionIconHtml(row)}`;
+        const productName = row.aged_inventory
+          ? `<span class="product-name-text">${productNameHtml(row)}</span>${attentionIconHtml(row)}`
+          : productNameHtml(row);
         const rowClasses = row.aged_inventory ? "row aged-row" : "row";
         if (row.closeout) {
           return `
@@ -382,7 +444,10 @@
                 <div class="num deal-cell">${escapeHtml(row.ounce)}</div>
               </div>
               <div class="deal-row">
-                <div class="deal-message">End of jar deal: buy it all, 30% off!</div>
+                <div class="deal-message">
+                  ${leafIconHtml()}
+                  <span>End of jar deal: buy it all, 30% off!</span>
+                </div>
               </div>
             </div>
           `;
@@ -405,10 +470,17 @@
         if (!row.aged_inventory) return "";
         return `
           <span class="attention-icon" aria-hidden="true">
-            <svg viewBox="0 0 64 64" focusable="false">
-              <path d="M32 6c2.5 7.2 3.8 13.2 3.5 18 4.1-5.2 9.1-9 15-11.3-.5 7.8-3.2 14.1-8.1 18.7 5.6-1.1 10.8-.8 15.6.9-4.4 6.1-9.7 9.8-15.9 11.1 3.8 2 7 4.7 9.6 8.1-7.2 1.2-13.1-.2-17.7-4.2v10.2h-4V47.3c-4.6 4-10.5 5.4-17.7 4.2 2.6-3.4 5.8-6.1 9.6-8.1-6.2-1.3-11.5-5-15.9-11.1 4.8-1.7 10-2 15.6-.9-4.9-4.6-7.6-10.9-8.1-18.7 5.9 2.3 10.9 6.1 15 11.3-.3-4.8 1-10.8 3.5-18Z" />
-            </svg>
+            ${leafIconHtml()}
+            <span class="attention-offer">Tax-free 20% off</span>
           </span>
+        `;
+      }
+
+      function leafIconHtml() {
+        return `
+          <svg class="deal-leaf" viewBox="0 0 64 64" focusable="false" aria-hidden="true">
+            <path d="M32 6c2.5 7.2 3.8 13.2 3.5 18 4.1-5.2 9.1-9 15-11.3-.5 7.8-3.2 14.1-8.1 18.7 5.6-1.1 10.8-.8 15.6.9-4.4 6.1-9.7 9.8-15.9 11.1 3.8 2 7 4.7 9.6 8.1-7.2 1.2-13.1-.2-17.7-4.2v10.2h-4V47.3c-4.6 4-10.5 5.4-17.7 4.2 2.6-3.4 5.8-6.1 9.6-8.1-6.2-1.3-11.5-5-15.9-11.1 4.8-1.7 10-2 15.6-.9-4.9-4.6-7.6-10.9-8.1-18.7 5.9 2.3 10.9 6.1 15 11.3-.3-4.8 1-10.8 3.5-18Z" />
+          </svg>
         `;
       }
 
@@ -456,6 +528,7 @@
         agedRows.forEach((row, index) => {
           const name = row.querySelector(".name");
           const marker = row.querySelector(".attention-icon");
+          const offer = row.querySelector(".attention-offer");
           const chars = name.querySelectorAll(".attention-char");
           const delay = index * 0.35;
 
@@ -495,40 +568,50 @@
 
           gsap.timeline({ repeat: -1, repeatDelay: 4.5, delay: delay + 0.08 })
             .to(marker, {
-              scale: 1.45,
-              rotate: -14,
+              width: "7.8em",
+              paddingLeft: "6px",
+              paddingRight: "9px",
+              borderColor: "rgba(184, 255, 112, 0.74)",
+              backgroundColor: "rgb(18, 45, 16)",
+              scale: 1.04,
+              rotate: 0,
               color: "#b8ff70",
               filter: "drop-shadow(0 0 18px rgba(184, 255, 112, 0.94))",
-              duration: 0.26,
-              ease: "back.out(2.8)"
+              duration: 0.38,
+              ease: "back.out(1.8)"
+            }, 0)
+            .to(offer, {
+              opacity: 1,
+              x: 0,
+              duration: 0.24,
+              ease: "power2.out"
+            }, "-=0.18")
+            .to(marker, {
+              scale: 1.08,
+              duration: 0.52,
+              ease: "sine.inOut",
+              yoyo: true,
+              repeat: 1
+            })
+            .to(offer, {
+              opacity: 0,
+              x: -6,
+              duration: 0.18,
+              ease: "power1.in"
             })
             .to(marker, {
+              width: "0.92em",
+              paddingLeft: 0,
+              paddingRight: 0,
+              borderColor: "rgba(184, 255, 112, 0)",
+              backgroundColor: "rgba(126, 217, 87, 0)",
               scale: 1,
               rotate: 0,
               color: "#7ed957",
               filter: "drop-shadow(0 0 10px rgba(126, 217, 87, 0.62))",
-              duration: 0.54,
-              ease: "elastic.out(1, 0.45)"
+              duration: 0.32,
+              ease: "power2.inOut"
             });
-
-          gsap.fromTo(
-            name,
-            { "--sweep-x": "-120px" },
-            { "--sweep-x": "420px", duration: 1.15, repeat: -1, repeatDelay: 5.2, delay: delay + 0.15, ease: "power2.inOut" }
-          );
-          gsap.fromTo(
-            name,
-            { "--sweep-opacity": 0 },
-            {
-              "--sweep-opacity": 1,
-              duration: 0.28,
-              repeat: -1,
-              yoyo: true,
-              repeatDelay: 5.79,
-              delay: delay + 0.15,
-              ease: "power1.inOut"
-            }
-          );
         });
       }
 
