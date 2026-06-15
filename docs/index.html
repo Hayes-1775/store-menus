@@ -559,12 +559,12 @@
           const pill = row.querySelector(".deal-message");
           if (!name || !pill) return;
 
-          const menu = document.querySelector(".menu");
-          const menuScale = menu ? menu.getBoundingClientRect().width / 1080 : 1;
           const nameRect = name.getBoundingClientRect();
           const pillRect = pill.getBoundingClientRect();
           const targetGap = 32;
-          const maxShift = Math.max(0, (pillRect.left - nameRect.right - targetGap) / menuScale);
+          const nameRight = name.offsetLeft + nameRect.width;
+          const pillLeft = pill.offsetLeft;
+          const maxShift = Math.max(0, pillLeft - nameRight - targetGap);
           if (maxShift < 8) return;
 
           gsap.timeline({ repeat: -1 })
