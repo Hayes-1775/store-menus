@@ -165,6 +165,33 @@
         white-space: nowrap;
       }
 
+      .row.aged-row .name {
+        position: relative;
+        color: #fff7c2;
+        text-shadow: 0 0 12px rgba(255, 232, 138, 0.42);
+        transform-origin: left center;
+        will-change: transform, color, text-shadow;
+      }
+
+      .attention-char {
+        display: inline-block;
+        will-change: transform, color, text-shadow;
+      }
+
+      .row.aged-row .name::after {
+        content: "";
+        position: absolute;
+        top: 8%;
+        bottom: 8%;
+        left: 0;
+        width: 90px;
+        pointer-events: none;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+        mix-blend-mode: screen;
+        opacity: var(--sweep-opacity, 0);
+        transform: translateX(var(--sweep-x, -120px)) skewX(-18deg);
+      }
+
       .row.closeout .normal-row,
       .row.closeout .deal-row {
         position: absolute;
@@ -198,6 +225,26 @@
         overflow: hidden;
         text-overflow: clip;
         padding-right: 14px;
+      }
+
+      .attention-icon {
+        display: inline-block;
+        margin-left: 8px;
+        width: 0.9em;
+        height: 0.9em;
+        color: #7ed957;
+        filter: drop-shadow(0 0 10px rgba(126, 217, 87, 0.62));
+        line-height: 1;
+        vertical-align: -0.06em;
+        transform-origin: center;
+        will-change: transform, color, filter;
+      }
+
+      .attention-icon svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill: currentColor;
       }
 
       .num {
@@ -281,6 +328,7 @@
         </div>
       </section>
     </main>
+    <script src="vendor/gsap.min.js"></script>
     <script>
       const sections = [
         ["Indica", "rgb(120, 140, 200)"],
@@ -319,11 +367,13 @@
       }
 
       function rowHtml(row) {
+        const productName = `${productNameHtml(row)}${attentionIconHtml(row)}`;
+        const rowClasses = row.aged_inventory ? "row aged-row" : "row";
         if (row.closeout) {
           return `
-            <div class="row closeout">
+            <div class="${rowClasses} closeout">
               <div class="normal-row">
-                <div class="name">${escapeHtml(row.product_name)}</div>
+                <div class="name">${productName}</div>
                 <div class="num deal-cell">${escapeHtml(row.thc_display)}</div>
                 <div class="num deal-cell">${escapeHtml(row.gram)}</div>
                 <div class="num deal-cell">${escapeHtml(row.eighth)}</div>
@@ -339,8 +389,8 @@
         }
 
         return `
-          <div class="row">
-            <div class="name">${escapeHtml(row.product_name)}</div>
+          <div class="${rowClasses}">
+            <div class="name">${productName}</div>
             <div class="num">${escapeHtml(row.thc_display)}</div>
             <div class="num">${escapeHtml(row.gram)}</div>
             <div class="num">${escapeHtml(row.eighth)}</div>
@@ -349,6 +399,25 @@
             <div class="num">${escapeHtml(row.ounce)}</div>
           </div>
         `;
+      }
+
+      function attentionIconHtml(row) {
+        if (!row.aged_inventory) return "";
+        return `
+          <span class="attention-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" focusable="false">
+              <path d="M32 6c2.5 7.2 3.8 13.2 3.5 18 4.1-5.2 9.1-9 15-11.3-.5 7.8-3.2 14.1-8.1 18.7 5.6-1.1 10.8-.8 15.6.9-4.4 6.1-9.7 9.8-15.9 11.1 3.8 2 7 4.7 9.6 8.1-7.2 1.2-13.1-.2-17.7-4.2v10.2h-4V47.3c-4.6 4-10.5 5.4-17.7 4.2 2.6-3.4 5.8-6.1 9.6-8.1-6.2-1.3-11.5-5-15.9-11.1 4.8-1.7 10-2 15.6-.9-4.9-4.6-7.6-10.9-8.1-18.7 5.9 2.3 10.9 6.1 15 11.3-.3-4.8 1-10.8 3.5-18Z" />
+            </svg>
+          </span>
+        `;
+      }
+
+      function productNameHtml(row) {
+        if (!row.aged_inventory) return escapeHtml(row.product_name);
+        return String(row.product_name ?? "")
+          .split("")
+          .map((char) => `<span class="attention-char">${char === " " ? "&nbsp;" : escapeHtml(char)}</span>`)
+          .join("");
       }
 
       function escapeHtml(value) {
@@ -375,6 +444,92 @@
             </section>
           `;
         }).join("");
+        animateAgedInventoryRows();
+      }
+
+      function animateAgedInventoryRows() {
+        if (!window.gsap) return;
+        const agedRows = gsap.utils.toArray(".row.aged-row");
+        if (!agedRows.length) return;
+        document.documentElement.dataset.gsapTextAnimation = "active";
+
+        agedRows.forEach((row, index) => {
+          const name = row.querySelector(".name");
+          const marker = row.querySelector(".attention-icon");
+          const chars = name.querySelectorAll(".attention-char");
+          const delay = index * 0.35;
+
+          gsap.timeline({ repeat: -1, repeatDelay: 4.5, delay })
+            .to(name, {
+              color: "#fff1a8",
+              scale: 1.035,
+              textShadow: "0 0 22px rgba(255, 232, 138, 0.85)",
+              duration: 0.32,
+              ease: "power2.out"
+            })
+            .to(name, {
+              color: "#ffffff",
+              scale: 1,
+              textShadow: "0 0 8px rgba(255, 232, 138, 0.34)",
+              duration: 0.62,
+              ease: "elastic.out(1, 0.45)"
+            });
+
+          gsap.timeline({ repeat: -1, repeatDelay: 4.5, delay: delay + 0.02 })
+            .to(chars, {
+              y: -4,
+              color: "#ffe88a",
+              textShadow: "0 0 18px rgba(255, 232, 138, 0.78)",
+              duration: 0.18,
+              ease: "power2.out",
+              stagger: { each: 0.018, from: "start" }
+            })
+            .to(chars, {
+              y: 0,
+              color: "#ffffff",
+              textShadow: "0 0 8px rgba(255, 232, 138, 0.34)",
+              duration: 0.28,
+              ease: "power2.out",
+              stagger: { each: 0.012, from: "start" }
+            }, "-=0.04");
+
+          gsap.timeline({ repeat: -1, repeatDelay: 4.5, delay: delay + 0.08 })
+            .to(marker, {
+              scale: 1.45,
+              rotate: -14,
+              color: "#b8ff70",
+              filter: "drop-shadow(0 0 18px rgba(184, 255, 112, 0.94))",
+              duration: 0.26,
+              ease: "back.out(2.8)"
+            })
+            .to(marker, {
+              scale: 1,
+              rotate: 0,
+              color: "#7ed957",
+              filter: "drop-shadow(0 0 10px rgba(126, 217, 87, 0.62))",
+              duration: 0.54,
+              ease: "elastic.out(1, 0.45)"
+            });
+
+          gsap.fromTo(
+            name,
+            { "--sweep-x": "-120px" },
+            { "--sweep-x": "420px", duration: 1.15, repeat: -1, repeatDelay: 5.2, delay: delay + 0.15, ease: "power2.inOut" }
+          );
+          gsap.fromTo(
+            name,
+            { "--sweep-opacity": 0 },
+            {
+              "--sweep-opacity": 1,
+              duration: 0.28,
+              repeat: -1,
+              yoyo: true,
+              repeatDelay: 5.79,
+              delay: delay + 0.15,
+              ease: "power1.inOut"
+            }
+          );
+        });
       }
 
       fetch("menu-data.json", { cache: "no-store" })

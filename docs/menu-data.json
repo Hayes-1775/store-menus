@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T06:27:15",
+  "generated_at": "2026-06-15T09:06:12",
   "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-15.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
@@ -19,6 +19,9 @@
       "ounce": "$90",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "4ae3f2a5-7af7-4dee-b81a-f760d2d60a5a"
       ],
@@ -46,6 +49,9 @@
       "ounce": "$90",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "87ab3c0c-acf2-44e4-9f5a-32e16a4d70cc"
       ],
@@ -73,6 +79,9 @@
       "ounce": "$90",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "37469079-51b4-4843-b940-0270e2574db9"
       ],
@@ -100,6 +109,9 @@
       "ounce": "$105",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "1853af79-e648-460d-984b-cca18284b369"
       ],
@@ -127,6 +139,9 @@
       "ounce": "$105",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "20e48c38-2d9d-4583-ab2a-14e077f0139c"
       ],
@@ -154,6 +169,9 @@
       "ounce": "$105",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "e589508b-db2f-4133-be5e-f5baa4499381"
       ],
@@ -181,6 +199,9 @@
       "ounce": "$105",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "7aaebe76-6c13-4aae-a445-2b21fb060f11"
       ],
@@ -208,6 +229,9 @@
       "ounce": "$105",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "6e4cf382-095b-4a8b-9ab1-6dd629dd5f4f"
       ],
@@ -235,6 +259,9 @@
       "ounce": "$126",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "cc6ec8ac-9c19-4d3a-97ed-4592792cf3b7"
       ],
@@ -262,6 +289,9 @@
       "ounce": "$126",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "08d29cd5-3783-4c9d-9684-e5433fc4e3a7"
       ],
@@ -289,6 +319,9 @@
       "ounce": "$148",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "724b8414-7eb1-4053-9a0f-4e02c396d317"
       ],
@@ -316,6 +349,9 @@
       "ounce": "$148",
       "low_stock": true,
       "closeout": true,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "5ed3aa43-9116-4a51-b71b-6e977968ba1b"
       ],
@@ -343,6 +379,9 @@
       "ounce": "$148",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": true,
+      "aged_inventory_days": 375,
+      "aged_inventory_date": "2025-06-05",
       "source_product_ids": [
         "d4645b14-58e2-4cb7-8458-1db1e19d20dd"
       ],
@@ -370,6 +409,9 @@
       "ounce": "$168",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "530b2c3c-49ce-484e-8a1b-93b43d8e2457"
       ],
@@ -397,6 +439,9 @@
       "ounce": "$253",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "02318bf1-d419-46fa-8854-919466ccd75b"
       ],
@@ -424,6 +469,9 @@
       "ounce": "$295",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "bae723b9-fe9f-416c-b5f4-3af4862e4b84"
       ],
@@ -451,6 +499,9 @@
       "ounce": "$67",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "2d22dcba-05f3-48ee-97e5-a06dac2dc9a0"
       ],
@@ -478,6 +529,9 @@
       "ounce": "$105",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "bfe38935-d67a-4fe5-bb43-8b5cc5659c20"
       ],
@@ -505,6 +559,9 @@
       "ounce": "$126",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "e6dc6ea7-8cbf-4dfd-a775-00f998a204e4"
       ],
@@ -532,6 +589,9 @@
       "ounce": "$126",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "356c235c-c3bf-4e3d-a6ce-1a469a6b897c"
       ],
@@ -559,6 +619,9 @@
       "ounce": "$126",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "a6a0231b-c196-4e11-aeb1-7fd517663a45"
       ],
@@ -586,6 +649,9 @@
       "ounce": "$148",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "681fa215-7ca8-4c1f-bf8d-78523f240ae6"
       ],
@@ -613,6 +679,9 @@
       "ounce": "$168",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "72c963b8-211a-4b64-9562-beba75afbac4"
       ],
@@ -640,6 +709,9 @@
       "ounce": "$168",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "3b05fe9f-21dd-4848-afec-3f6426605995"
       ],
@@ -667,6 +739,9 @@
       "ounce": "$187",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": true,
+      "aged_inventory_days": 391,
+      "aged_inventory_date": "2025-05-20",
       "source_product_ids": [
         "10f91862-d4ec-436c-95ed-4da9fa2e7dfe"
       ],
@@ -694,6 +769,9 @@
       "ounce": "$332",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "29afa6d1-9906-414e-88aa-c610af329077"
       ],
@@ -721,6 +799,9 @@
       "ounce": "$90",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "2047e797-eadc-422e-9d20-d45df4b26f12"
       ],
@@ -748,6 +829,9 @@
       "ounce": "$105",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "6b62b467-c395-4d41-a76e-08b7eace92b0"
       ],
@@ -775,6 +859,9 @@
       "ounce": "$105",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "d3dae599-de3b-4cdd-ad68-8e99739fac0a"
       ],
@@ -802,6 +889,9 @@
       "ounce": "$126",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": true,
+      "aged_inventory_days": 205,
+      "aged_inventory_date": "2025-11-22",
       "source_product_ids": [
         "3690a563-8eed-408c-9704-c34c1bb0c79a"
       ],
@@ -829,6 +919,9 @@
       "ounce": "$126",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "86b938a7-b656-4e2b-b775-08812482b29a"
       ],
@@ -856,6 +949,9 @@
       "ounce": "$126",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "91df18c4-d699-4e58-8881-4151ff6a0186"
       ],
@@ -883,6 +979,9 @@
       "ounce": "$126",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "4e8f53e3-ed23-44c2-8a51-4a3a123d88a2"
       ],
@@ -910,6 +1009,9 @@
       "ounce": "$148",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "da062d35-5beb-48c5-9445-4629cf95e8f9"
       ],
@@ -937,6 +1039,9 @@
       "ounce": "$168",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "4f61f255-4f7c-4dd0-a17c-f3c5c5454005"
       ],
@@ -964,6 +1069,9 @@
       "ounce": "$168",
       "low_stock": true,
       "closeout": true,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "53d8500c-af6a-42a7-af9b-d928e01737e4"
       ],
@@ -991,6 +1099,9 @@
       "ounce": "$214",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": true,
+      "aged_inventory_days": 329,
+      "aged_inventory_date": "2025-07-21",
       "source_product_ids": [
         "1bf08102-09e5-43f1-b904-38d7fc0df3d8"
       ],
@@ -1018,6 +1129,9 @@
       "ounce": "$214",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": true,
+      "aged_inventory_days": 326,
+      "aged_inventory_date": "2025-07-24",
       "source_product_ids": [
         "2b17d933-6962-49e2-8035-de76086820ef"
       ],
@@ -1045,6 +1159,9 @@
       "ounce": "$362",
       "low_stock": false,
       "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "3f444812-dfa3-45c8-bce1-ad0023a10b56"
       ],
@@ -1072,6 +1189,9 @@
       "ounce": "$362",
       "low_stock": true,
       "closeout": true,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "03d83dec-5d71-4782-91ab-22f0ee19e60d"
       ],

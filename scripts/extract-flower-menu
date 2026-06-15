@@ -4,8 +4,7 @@ import csv
 import json
 import math
 import re
-from collections import defaultdict
-from datetime import datetime
+from datetime import date, datetime
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
@@ -15,6 +14,9 @@ from openpyxl import load_workbook
 
 STRAIN_GROUPS = {"Indica": 1, "Hybrid": 2, "Sativa": 3}
 THC_COLUMNS = ["Total % THC", "% THC", "Total THC %", "Potency THC %", "Potency THC"]
+AGE_DATE_COLUMNS = ["Created At", "Inventory Created At", "Received At", "Received Date", "Created Date"]
+AGED_INVENTORY_DAYS = 60
+AGED_INVENTORY_EXEMPT_BRANDS = {"miracle farms"}
 
 
 def clean_key(value: Any) -> str:
@@ -41,6 +43,30 @@ def parse_number(value: Any) -> Optional[float]:
         return float(text)
     except ValueError:
         return None
+
+
+def parse_date(value: Any) -> Optional[date]:
+    text = clean_display(value)
+    if not text:
+        return None
+    text = text.replace("Z", "+00:00")
+    try:
+        return datetime.fromisoformat(text).date()
+    except ValueError:
+        pass
+
+    for fmt in (
+        "%m/%d/%Y %I:%M:%S %p",
+        "%m/%d/%Y %I:%M %p",
+        "%m/%d/%Y",
+        "%Y-%m-%d %H:%M:%S",
+        "%Y-%m-%d",
+    ):
+        try:
+            return datetime.strptime(text, fmt).date()
+        except ValueError:
+            continue
+    return None
 
 
 def parse_thc(value: Any) -> float:
@@ -149,10 +175,26 @@ def append_unique(values: List[str], value: Any) -> None:
         values.append(text)
 
 
+def is_exempt_from_aged_inventory(*values: Any) -> bool:
+    for value in values:
+        text = clean_key(value)
+        if any(exempt in text for exempt in AGED_INVENTORY_EXEMPT_BRANDS):
+            return True
+    return False
+
+
+def aged_inventory_info(inventory_date: Optional[date], brand_exempt: bool, reference_date: date) -> Tuple[bool, Optional[int]]:
+    if inventory_date is None or brand_exempt:
+        return False, None
+    age_days = (reference_date - inventory_date).days
+    return age_days > AGED_INVENTORY_DAYS, age_days
+
+
 def extract_menu(
     inventory_rows: List[Dict[str, Any]],
     pricing: Dict[str, Dict[str, Any]],
     low_stock_threshold: float,
+    reference_date: Optional[date] = None,
 ) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
     if not inventory_rows:
         raise ValueError("Inventory source contained no rows.")
@@ -177,10 +219,12 @@ def extract_menu(
         raise ValueError(f"Missing required inventory columns: {', '.join(missing)}")
     if not any(normalize_header(col) in header_map for col in THC_COLUMNS):
         raise ValueError(f"Missing required THC columns: one of {', '.join(THC_COLUMNS)}")
+    age_date_available = any(normalize_header(col) in header_map for col in AGE_DATE_COLUMNS)
 
     products: Dict[str, Dict[str, Any]] = {}
     excluded: List[Dict[str, Any]] = []
     warnings: List[Dict[str, Any]] = []
+    reference_date = reference_date or datetime.now().date()
 
     for idx, row in enumerate(inventory_rows, start=2):
         category = str(row_get(row, header_map, ["Category"]) or "").strip()
@@ -209,6 +253,13 @@ def extract_menu(
             row_get(row, header_map, ["Third-Party Display Name"]),
             row_get(row, header_map, ["Supplier Name"]),
         )
+        brand_exempt = is_exempt_from_aged_inventory(
+            row_get(row, header_map, ["Brand"]),
+            row_get(row, header_map, ["Third-Party Display Name"]),
+            row_get(row, header_map, ["Supplier Name"]),
+        )
+        inventory_date = parse_date(row_get(row, header_map, AGE_DATE_COLUMNS))
+        is_aged, age_days = aged_inventory_info(inventory_date, brand_exempt, reference_date)
         strain, group_order = normalize_strain(row_get(row, header_map, ["Strain Species"]))
         profile = str(row_get(row, header_map, ["Price Profile Name", "Price Profile"]) or "").strip()
         direct_price = row_get(row, header_map, ["Price"])
@@ -231,6 +282,9 @@ def extract_menu(
             "product_ids": [],
             "variant_ids": [],
             "skus": [],
+            "aged_inventory": is_aged,
+            "aged_inventory_days": age_days if is_aged else None,
+            "aged_inventory_date": inventory_date.isoformat() if is_aged and inventory_date else "",
             "source_row": idx,
         }
         append_unique(candidate["product_ids"], row_get(row, header_map, ["Product Id"]))
@@ -246,6 +300,12 @@ def extract_menu(
         for field in ("product_ids", "variant_ids", "skus"):
             for value in candidate[field]:
                 append_unique(existing[field], value)
+        if candidate["aged_inventory_days"] and (
+            not existing.get("aged_inventory_days") or candidate["aged_inventory_days"] > existing["aged_inventory_days"]
+        ):
+            existing["aged_inventory"] = True
+            existing["aged_inventory_days"] = candidate["aged_inventory_days"]
+            existing["aged_inventory_date"] = candidate["aged_inventory_date"]
         if existing["strain"] != candidate["strain"]:
             warnings.append({
                 "product_name": name,
@@ -282,11 +342,17 @@ def extract_menu(
             product_ids = existing["product_ids"]
             variant_ids = existing["variant_ids"]
             skus = existing["skus"]
+            aged_inventory = existing.get("aged_inventory", False)
+            aged_inventory_days = existing.get("aged_inventory_days")
+            aged_inventory_date = existing.get("aged_inventory_date", "")
             products[name] = candidate
             products[name]["quantity"] = quantity
             products[name]["product_ids"] = product_ids
             products[name]["variant_ids"] = variant_ids
             products[name]["skus"] = skus
+            products[name]["aged_inventory"] = aged_inventory
+            products[name]["aged_inventory_days"] = aged_inventory_days
+            products[name]["aged_inventory_date"] = aged_inventory_date
 
     menu_rows: List[Dict[str, Any]] = []
     missing_price_profiles: List[Dict[str, Any]] = []
@@ -328,6 +394,9 @@ def extract_menu(
             "gram_sort": parse_number(price["gram"]) or 999999,
             "low_stock": product["quantity"] < low_stock_threshold,
             "closeout": product["quantity"] < 27,
+            "aged_inventory": product.get("aged_inventory", False),
+            "aged_inventory_days": product.get("aged_inventory_days"),
+            "aged_inventory_date": product.get("aged_inventory_date", ""),
             "source_product_ids": product.get("product_ids", []),
             "source_variant_ids": product.get("variant_ids", []),
             "source_skus": product.get("skus", []),
@@ -345,6 +414,23 @@ def extract_menu(
         "excluded_row_count": len(excluded),
         "missing_price_profiles": missing_price_profiles,
         "excluded_specials": excluded_specials,
+        "aged_inventory": [
+            {
+                "product_name": row["product_name"],
+                "brand": row.get("brand", ""),
+                "days": row.get("aged_inventory_days"),
+                "inventory_date": row.get("aged_inventory_date", ""),
+            }
+            for row in menu_rows
+            if row.get("aged_inventory")
+        ],
+        "aged_inventory_rule": {
+            "days_threshold": AGED_INVENTORY_DAYS,
+            "date_columns": AGE_DATE_COLUMNS,
+            "exempt_brands": sorted(AGED_INVENTORY_EXEMPT_BRANDS),
+            "reference_date": reference_date.isoformat(),
+            "date_column_available": age_date_available,
+        },
         "warnings": warnings,
     }
     return menu_rows, validation
@@ -352,7 +438,7 @@ def extract_menu(
 
 def write_csv(path: Path, rows: List[Dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    fields = ["product_name", "brand", "strain", "thc_display", "gram", "eighth", "quarter", "half", "ounce", "quantity", "price_profile", "low_stock", "closeout", "dutchie_url"]
+    fields = ["product_name", "brand", "strain", "thc_display", "gram", "eighth", "quarter", "half", "ounce", "quantity", "price_profile", "low_stock", "closeout", "aged_inventory", "aged_inventory_days", "aged_inventory_date", "dutchie_url"]
     with path.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fields)
         writer.writeheader()
@@ -369,6 +455,7 @@ def main() -> None:
     parser.add_argument("--out-csv", default="data/flower_menu.csv")
     parser.add_argument("--validation-json", default="data/validation_report.json")
     parser.add_argument("--low-stock-threshold", type=float, default=20)
+    parser.add_argument("--age-reference-date", help="Override today's date for aged-inventory calculations (YYYY-MM-DD).")
     args = parser.parse_args()
 
     inventory_path = Path(args.inventory).expanduser()
@@ -377,6 +464,7 @@ def main() -> None:
         read_table(inventory_path),
         read_pricing(pricing_path, args.pricing_sheet),
         args.low_stock_threshold,
+        datetime.strptime(args.age_reference_date, "%Y-%m-%d").date() if args.age_reference_date else None,
     )
 
     payload = {

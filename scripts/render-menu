@@ -13,6 +13,7 @@ WIDTH = 1080
 HEIGHT = 1920
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
+GOLD = (255, 232, 138)
 
 
 FONT_CANDIDATES = {
@@ -140,8 +141,31 @@ def draw_menu(rows: List[Dict], output: Path, width: int, height: int) -> None:
             if y > height - int(55 * scale_y):
                 break
             name = row["product_name"]
-            name_font = fit_font(draw, name, body_font, int(390 * scale_x), min_size=int(22 * s))
+            badge = row.get("aged_inventory")
+            badge_gap = int(8 * scale_x) if badge else 0
+            badge_font = font("body", max(int(body_font_size * 0.52), int(16 * s)))
+            badge_text = "60+"
+            badge_w = text_width(draw, badge_text, badge_font) + int(12 * scale_x) if badge else 0
+            max_name_w = int(390 * scale_x) - badge_gap - badge_w
+            name_font = fit_font(draw, name, body_font, max_name_w, min_size=int(22 * s))
             draw.text((left, y), name, fill=WHITE, font=name_font)
+            if badge:
+                name_w = text_width(draw, name, name_font)
+                badge_h = text_height(draw, badge_text, badge_font) + int(5 * scale_y)
+                badge_x = left + name_w + badge_gap
+                badge_y = y + int(3 * scale_y)
+                draw.rounded_rectangle(
+                    [badge_x, badge_y, badge_x + badge_w, badge_y + badge_h],
+                    radius=int(5 * s),
+                    outline=GOLD,
+                    width=max(1, int(2 * s)),
+                )
+                draw.text(
+                    (badge_x + int(6 * scale_x), badge_y + int(1 * scale_y)),
+                    badge_text,
+                    fill=GOLD,
+                    font=badge_font,
+                )
             values = [
                 ("thc", row["thc_display"]),
                 ("gram", row["gram"]),

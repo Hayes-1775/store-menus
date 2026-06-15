@@ -30,6 +30,7 @@ git add \
   scripts/verify-menu \
   scripts/publish-menu \
   docs/index.html \
+  docs/vendor/gsap.min.js \
   docs/menu-data.json \
   docs/latest.jpg \
   docs/archive/*.jpg \
