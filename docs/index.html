@@ -195,7 +195,7 @@
       }
 
       .row.closeout .normal-row .deal-cell {
-        animation: normal-row-fade 8s ease-in-out infinite;
+        animation: normal-row-fade 20s ease-in-out infinite;
       }
 
       .row.closeout .normal-row .name {
@@ -211,7 +211,7 @@
 
       .row.closeout .deal-row {
         opacity: 0;
-        animation: deal-row-fade 8s ease-in-out infinite;
+        animation: deal-row-fade 20s ease-in-out infinite;
         pointer-events: none;
       }
 
@@ -238,7 +238,7 @@
         line-height: 1;
         text-transform: uppercase;
         text-shadow: 0 0 12px rgba(247, 255, 217, 0.72);
-        animation: deal-pill-pulse 8s ease-in-out infinite;
+        animation: deal-pill-pulse 20s ease-in-out infinite;
       }
 
       .deal-leaf {
@@ -253,6 +253,16 @@
 
       .deal-message span {
         transform: translateY(1px);
+      }
+
+      .closeout-leaf {
+        display: inline-block;
+        width: 0.78em;
+        height: 0.78em;
+        margin-left: 8px;
+        fill: #f2c94c;
+        filter: drop-shadow(0 0 8px rgba(242, 201, 76, 0.82));
+        vertical-align: -0.08em;
       }
 
       .name {
@@ -350,37 +360,40 @@
 
       @keyframes normal-row-fade {
         0%,
-        48%,
+        58%,
+        86%,
         100% {
           opacity: 1;
         }
-        58%,
-        88% {
+        64%,
+        80% {
           opacity: 0;
         }
       }
 
       @keyframes deal-row-fade {
         0%,
-        48%,
+        58%,
+        86%,
         100% {
           opacity: 0;
         }
-        58%,
-        88% {
+        64%,
+        80% {
           opacity: 1;
         }
       }
 
       @keyframes deal-pill-pulse {
         0%,
-        48%,
+        58%,
+        86%,
         100% {
           transform: scale(0.96);
           filter: drop-shadow(0 0 8px rgba(184, 255, 112, 0.42));
         }
-        58%,
-        88% {
+        64%,
+        80% {
           transform: scale(1.04);
           filter: drop-shadow(0 0 18px rgba(184, 255, 112, 0.92));
         }
@@ -451,7 +464,7 @@
           return `
             <div class="${rowClasses} closeout">
               <div class="normal-row">
-                <div class="name"><span class="closeout-name-copy">${productName}</span></div>
+                <div class="name"><span class="closeout-name-copy">${productName}${leafIconHtml("closeout-leaf")}</span></div>
                 <div class="num deal-cell">${escapeHtml(row.thc_display)}</div>
                 <div class="num deal-cell">${escapeHtml(row.gram)}</div>
                 <div class="num deal-cell">${escapeHtml(row.eighth)}</div>
@@ -492,9 +505,9 @@
         `;
       }
 
-      function leafIconHtml() {
+      function leafIconHtml(className = "deal-leaf") {
         return `
-          <svg class="deal-leaf" viewBox="0 0 64 64" focusable="false" aria-hidden="true">
+          <svg class="${className}" viewBox="0 0 64 64" focusable="false" aria-hidden="true">
             <path d="M32 6c2.5 7.2 3.8 13.2 3.5 18 4.1-5.2 9.1-9 15-11.3-.5 7.8-3.2 14.1-8.1 18.7 5.6-1.1 10.8-.8 15.6.9-4.4 6.1-9.7 9.8-15.9 11.1 3.8 2 7 4.7 9.6 8.1-7.2 1.2-13.1-.2-17.7-4.2v10.2h-4V47.3c-4.6 4-10.5 5.4-17.7 4.2 2.6-3.4 5.8-6.1 9.6-8.1-6.2-1.3-11.5-5-15.9-11.1 4.8-1.7 10-2 15.6-.9-4.9-4.6-7.6-10.9-8.1-18.7 5.9 2.3 10.9 6.1 15 11.3-.3-4.8 1-10.8 3.5-18Z" />
           </svg>
         `;
@@ -560,20 +573,20 @@
               x: maxShift,
               duration: 0.7,
               ease: "power2.inOut"
-            }, 4.35)
+            }, 12.3)
             .to(name, {
               x: maxShift,
-              duration: 1.75,
+              duration: 3.2,
               ease: "none"
             })
             .to(name, {
               x: 0,
-              duration: 0.7,
+              duration: 0.9,
               ease: "power2.inOut"
             })
             .to(name, {
               x: 0,
-              duration: 0.5,
+              duration: 2.9,
               ease: "none"
             });
         });
@@ -592,7 +605,7 @@
           const chars = name.querySelectorAll(".attention-char");
           const delay = index * 0.35;
 
-          gsap.timeline({ repeat: -1, repeatDelay: 4.5, delay })
+          gsap.timeline({ repeat: -1, repeatDelay: 19.05, delay })
             .to(name, {
               color: "#fff1a8",
               scale: 1.035,
@@ -608,7 +621,7 @@
               ease: "elastic.out(1, 0.45)"
             });
 
-          gsap.timeline({ repeat: -1, repeatDelay: 4.5, delay: delay + 0.02 })
+          gsap.timeline({ repeat: -1, repeatDelay: 19.45, delay: delay + 0.02 })
             .to(chars, {
               y: -4,
               color: "#ffe88a",
@@ -626,7 +639,7 @@
               stagger: { each: 0.012, from: "start" }
             }, "-=0.04");
 
-          gsap.timeline({ repeat: -1, repeatDelay: 4.5, delay: delay + 0.08 })
+          gsap.timeline({ repeat: -1, repeatDelay: 16.4, delay: delay + 0.08 })
             .to(marker, {
               width: "7.8em",
               paddingLeft: "6px",
@@ -652,6 +665,11 @@
               ease: "sine.inOut",
               yoyo: true,
               repeat: 1
+            })
+            .to(marker, {
+              scale: 1.04,
+              duration: 1.6,
+              ease: "none"
             })
             .to(offer, {
               opacity: 0,
