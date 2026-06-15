@@ -198,6 +198,17 @@
         animation: normal-row-fade 8s ease-in-out infinite;
       }
 
+      .row.closeout .normal-row .name {
+        overflow: visible;
+        position: relative;
+        z-index: 3;
+      }
+
+      .closeout-name-copy {
+        display: inline-block;
+        will-change: transform;
+      }
+
       .row.closeout .deal-row {
         opacity: 0;
         animation: deal-row-fade 8s ease-in-out infinite;
@@ -210,11 +221,11 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 8px;
+        gap: 7px;
         width: max-content;
         max-width: 100%;
-        height: 1.08em;
-        padding: 0 16px 1px;
+        height: 1.34em;
+        padding: 0 24px 1px;
         border: 2px solid rgba(184, 255, 112, 0.74);
         border-radius: 999px;
         box-sizing: border-box;
@@ -223,7 +234,7 @@
         filter: drop-shadow(0 0 16px rgba(184, 255, 112, 0.82));
         overflow: hidden;
         text-align: center;
-        font-size: min(var(--body-size), 26px);
+        font-size: min(var(--body-size), 21px);
         line-height: 1;
         text-transform: uppercase;
         text-shadow: 0 0 12px rgba(247, 255, 217, 0.72);
@@ -237,6 +248,11 @@
         height: 0.72em;
         fill: currentColor;
         filter: drop-shadow(0 0 8px rgba(184, 255, 112, 0.88));
+        transform: translateY(1px);
+      }
+
+      .deal-message span {
+        transform: translateY(1px);
       }
 
       .name {
@@ -435,7 +451,7 @@
           return `
             <div class="${rowClasses} closeout">
               <div class="normal-row">
-                <div class="name">${productName}</div>
+                <div class="name"><span class="closeout-name-copy">${productName}</span></div>
                 <div class="num deal-cell">${escapeHtml(row.thc_display)}</div>
                 <div class="num deal-cell">${escapeHtml(row.gram)}</div>
                 <div class="num deal-cell">${escapeHtml(row.eighth)}</div>
@@ -517,6 +533,50 @@
           `;
         }).join("");
         animateAgedInventoryRows();
+        animateCloseoutRows();
+      }
+
+      function animateCloseoutRows() {
+        if (!window.gsap) return;
+        const rows = gsap.utils.toArray(".row.closeout");
+        if (!rows.length) return;
+
+        rows.forEach((row) => {
+          const name = row.querySelector(".closeout-name-copy");
+          const pill = row.querySelector(".deal-message");
+          if (!name || !pill) return;
+
+          const menu = document.querySelector(".menu");
+          const menuScale = menu ? menu.getBoundingClientRect().width / 1080 : 1;
+          const nameRect = name.getBoundingClientRect();
+          const pillRect = pill.getBoundingClientRect();
+          const targetGap = 32;
+          const maxShift = Math.max(0, (pillRect.left - nameRect.right - targetGap) / menuScale);
+          if (maxShift < 8) return;
+
+          gsap.timeline({ repeat: -1 })
+            .set(name, { x: 0 }, 0)
+            .to(name, {
+              x: maxShift,
+              duration: 0.7,
+              ease: "power2.inOut"
+            }, 4.35)
+            .to(name, {
+              x: maxShift,
+              duration: 1.75,
+              ease: "none"
+            })
+            .to(name, {
+              x: 0,
+              duration: 0.7,
+              ease: "power2.inOut"
+            })
+            .to(name, {
+              x: 0,
+              duration: 0.5,
+              ease: "none"
+            });
+        });
       }
 
       function animateAgedInventoryRows() {
