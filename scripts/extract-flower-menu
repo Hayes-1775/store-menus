@@ -4,10 +4,12 @@ import csv
 import json
 import math
 import re
+import subprocess
 from datetime import date, datetime
+from datetime import time, timedelta
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
 from openpyxl import load_workbook
 
@@ -17,6 +19,8 @@ THC_COLUMNS = ["Total % THC", "% THC", "Total THC %", "Potency THC %", "Potency 
 AGE_DATE_COLUMNS = ["Created At", "Inventory Created At", "Received At", "Received Date", "Created Date"]
 AGED_INVENTORY_DAYS = 60
 AGED_INVENTORY_EXEMPT_BRANDS = {"miracle farms"}
+NO_RECENT_SALES_LOOKBACK_DAYS = 3
+NO_RECENT_SALES_PATHSPEC = "docs/menu-data.json"
 
 
 def clean_key(value: Any) -> str:
@@ -188,6 +192,79 @@ def aged_inventory_info(inventory_date: Optional[date], brand_exempt: bool, refe
         return False, None
     age_days = (reference_date - inventory_date).days
     return age_days > AGED_INVENTORY_DAYS, age_days
+
+
+def run_git(args: Sequence[str]) -> str:
+    return subprocess.check_output(["git", *args], cwd=Path(__file__).resolve().parents[1], text=True)
+
+
+def previous_snapshot_line(pathspecs: Sequence[str], before_date: datetime) -> Optional[Tuple[str, str, str]]:
+    try:
+        output = run_git(
+            [
+                "log",
+                f"--before={before_date.strftime('%Y-%m-%d %H:%M:%S')}",
+                "--date=iso",
+                "--pretty=format:%H|%ad|%s",
+                "--",
+                *pathspecs,
+            ]
+        ).splitlines()
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return None
+    if not output:
+        return None
+    return tuple(output[0].split("|", 2))  # type: ignore[return-value]
+
+
+def load_rows_from_git(commit: str, pathspec: str) -> List[Dict[str, Any]]:
+    try:
+        payload = json.loads(run_git(["show", f"{commit}:{pathspec}"]))
+    except (subprocess.CalledProcessError, FileNotFoundError, json.JSONDecodeError):
+        return []
+    rows = payload.get("rows", [])
+    return rows if isinstance(rows, list) else []
+
+
+def annotate_no_recent_sales(menu_rows: List[Dict[str, Any]], reference_date: date) -> Dict[str, Any]:
+    for row in menu_rows:
+        row["no_recent_sales"] = False
+
+    before_date = datetime.combine(reference_date, time.min) - timedelta(days=NO_RECENT_SALES_LOOKBACK_DAYS - 1)
+    baseline = previous_snapshot_line([NO_RECENT_SALES_PATHSPEC], before_date)
+    if not baseline:
+        return {
+            "lookback_days": NO_RECENT_SALES_LOOKBACK_DAYS,
+            "pathspec": NO_RECENT_SALES_PATHSPEC,
+            "baseline_commit": "",
+            "baseline_date": "",
+            "products": [],
+        }
+
+    commit, baseline_date, _ = baseline
+    old_rows = load_rows_from_git(commit, NO_RECENT_SALES_PATHSPEC)
+    old_by_name = {row.get("product_name"): row for row in old_rows if row.get("product_name")}
+    marked: List[Dict[str, Any]] = []
+    for row in menu_rows:
+        if row.get("aged_inventory") or row.get("closeout"):
+            continue
+        old_row = old_by_name.get(row.get("product_name"))
+        if not old_row:
+            continue
+        if old_row.get("quantity") == row.get("quantity") and row.get("quantity") is not None:
+            row["no_recent_sales"] = True
+            marked.append({
+                "product_name": row["product_name"],
+                "quantity": row.get("quantity"),
+            })
+
+    return {
+        "lookback_days": NO_RECENT_SALES_LOOKBACK_DAYS,
+        "pathspec": NO_RECENT_SALES_PATHSPEC,
+        "baseline_commit": commit,
+        "baseline_date": baseline_date,
+        "products": marked,
+    }
 
 
 def extract_menu(
@@ -406,6 +483,7 @@ def extract_menu(
     menu_rows.sort(key=lambda r: (r["group_order"], r["gram_sort"], r["thc"], r["product_name"].lower()))
     for row in menu_rows:
         row.pop("gram_sort", None)
+    no_recent_sales = annotate_no_recent_sales(menu_rows, reference_date)
 
     validation = {
         "source_row_count": len(inventory_rows),
@@ -431,6 +509,7 @@ def extract_menu(
             "reference_date": reference_date.isoformat(),
             "date_column_available": age_date_available,
         },
+        "no_recent_sales": no_recent_sales,
         "warnings": warnings,
     }
     return menu_rows, validation
@@ -438,7 +517,7 @@ def extract_menu(
 
 def write_csv(path: Path, rows: List[Dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    fields = ["product_name", "brand", "strain", "thc_display", "gram", "eighth", "quarter", "half", "ounce", "quantity", "price_profile", "low_stock", "closeout", "aged_inventory", "aged_inventory_days", "aged_inventory_date", "dutchie_url"]
+    fields = ["product_name", "brand", "strain", "thc_display", "gram", "eighth", "quarter", "half", "ounce", "quantity", "price_profile", "low_stock", "closeout", "aged_inventory", "aged_inventory_days", "aged_inventory_date", "no_recent_sales", "dutchie_url"]
     with path.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fields)
         writer.writeheader()

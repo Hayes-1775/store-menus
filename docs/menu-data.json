@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-16T03:46:02",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-16.csv",
+  "generated_at": "2026-06-16T06:32:42",
+  "inventory_source": "downloads/flowhub-inventory-2026-06-16.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -31,7 +31,8 @@
       "source_skus": [
         "Bx4dFnyiuX"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Devils Den",
@@ -61,7 +62,8 @@
       "source_skus": [
         "W9YSnBVznN"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Hectane",
@@ -91,7 +93,8 @@
       "source_skus": [
         "9pgfhQ0BD7"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Smashburger",
@@ -121,7 +124,8 @@
       "source_skus": [
         "R61IRt3KQi"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": true
     },
     {
       "product_name": "Alley Oop",
@@ -151,7 +155,8 @@
       "source_skus": [
         "CyJ6GFQ8Zp"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Purple Churro",
@@ -181,7 +186,8 @@
       "source_skus": [
         "riV28s3K5V"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Black Amber",
@@ -211,7 +217,8 @@
       "source_skus": [
         "1A4010300023A51000002447"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": true
     },
     {
       "product_name": "Miracle Mintz",
@@ -241,7 +248,8 @@
       "source_skus": [
         "SwtykdSaC6"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Purple Panties",
@@ -271,7 +279,8 @@
       "source_skus": [
         "UiJ19oNjtA"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Blueberry Donut",
@@ -301,7 +310,8 @@
       "source_skus": [
         "Blueberrydonutgood"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "The Hive",
@@ -331,7 +341,8 @@
       "source_skus": [
         "eJGUEN6Zuj"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Alien Gary",
@@ -361,7 +372,8 @@
       "source_skus": [
         "21BPlUb9bN"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Timmeh",
@@ -391,7 +403,8 @@
       "source_skus": [
         "wFam9KFUNn"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Dantes Inferno",
@@ -421,7 +434,8 @@
       "source_skus": [
         "zvOJ3VbR5A"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Triple Burger",
@@ -451,7 +465,8 @@
       "source_skus": [
         "3Zc0yn8s0H"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Dark Queen",
@@ -481,7 +496,8 @@
       "source_skus": [
         "V2ECfFaVQK"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Cherry Punch",
@@ -511,7 +527,8 @@
       "source_skus": [
         "40BxMSIdMp"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Grease Bucket",
@@ -541,7 +558,8 @@
       "source_skus": [
         "jAT7nIhKde"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Black Market",
@@ -571,7 +589,8 @@
       "source_skus": [
         "1FOQEMQUZu"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Scented Marker",
@@ -601,7 +620,8 @@
       "source_skus": [
         "LkOTnC1kgx"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": true
     },
     {
       "product_name": "Mac Flurry",
@@ -631,7 +651,8 @@
       "source_skus": [
         "myvxgAdbjJ"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Cherry Paloma",
@@ -661,7 +682,8 @@
       "source_skus": [
         "LoultoGl7B"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Pineapple Bang",
@@ -691,7 +713,8 @@
       "source_skus": [
         "SFgpMcVLVa"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Tongue Splasher",
@@ -721,7 +744,8 @@
       "source_skus": [
         "FF.TS.4675"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Koji Sunberry",
@@ -751,7 +775,8 @@
       "source_skus": [
         "DUpxP2I5ug"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Jack Herer",
@@ -781,7 +806,8 @@
       "source_skus": [
         "08pwAcYJv7"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Southern Sunset",
@@ -811,7 +837,8 @@
       "source_skus": [
         "B87mbca1c9"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Dante's Cookie Jar",
@@ -841,7 +868,8 @@
       "source_skus": [
         "N3xGRavjiF"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "College Park",
@@ -871,7 +899,8 @@
       "source_skus": [
         "7UGh80QMBf"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Ginger Tea",
@@ -901,7 +930,8 @@
       "source_skus": [
         "ZSCrJexnb9"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Where's My Bike",
@@ -931,7 +961,8 @@
       "source_skus": [
         "qYl4h9qTgv"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Gelato Sweet Tea",
@@ -961,7 +992,8 @@
       "source_skus": [
         "aUORbHacK6"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Caramel Cake",
@@ -991,7 +1023,8 @@
       "source_skus": [
         "SG8rrtMLcX"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Ice Queen",
@@ -1021,7 +1054,8 @@
       "source_skus": [
         "z8b8wLfyf2"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Black Bubblegum",
@@ -1051,7 +1085,8 @@
       "source_skus": [
         "BD2qusOCZb"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Candied Lemons",
@@ -1081,7 +1116,8 @@
       "source_skus": [
         "nxfK9toCVh"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "High Desert Sour Sage",
@@ -1111,7 +1147,8 @@
       "source_skus": [
         "TwYjVk13Cb"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     },
     {
       "product_name": "Durban Poison S1",
@@ -1141,7 +1178,8 @@
       "source_skus": [
         "I6zULY8qz4"
       ],
-      "dutchie_url": ""
+      "dutchie_url": "",
+      "no_recent_sales": false
     }
   ]
 }

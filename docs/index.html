@@ -265,6 +265,24 @@
         vertical-align: -0.08em;
       }
 
+      .no-sale-marker {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        margin-left: 8px;
+        color: #f2c94c;
+        filter: drop-shadow(0 0 8px rgba(242, 201, 76, 0.82));
+        vertical-align: -0.08em;
+      }
+
+      .no-sale-marker .deal-leaf {
+        width: 0.72em;
+        height: 0.72em;
+        fill: currentColor;
+        filter: none;
+        transform: none;
+      }
+
       .name {
         overflow: hidden;
         text-overflow: clip;
@@ -456,9 +474,12 @@
       }
 
       function rowHtml(row) {
+        const noRecentSalesMarker = row.no_recent_sales && !row.aged_inventory && !row.closeout
+          ? noRecentSalesMarkerHtml()
+          : "";
         const productName = row.aged_inventory
           ? `<span class="product-name-text">${productNameHtml(row)}</span>${attentionIconHtml(row)}`
-          : productNameHtml(row);
+          : `${productNameHtml(row)}${noRecentSalesMarker}`;
         const rowClasses = row.aged_inventory ? "row aged-row" : "row";
         if (row.closeout) {
           return `
@@ -492,6 +513,15 @@
             <div class="num">${escapeHtml(row.half)}</div>
             <div class="num">${escapeHtml(row.ounce)}</div>
           </div>
+        `;
+      }
+
+      function noRecentSalesMarkerHtml() {
+        return `
+          <span class="no-sale-marker" aria-hidden="true">
+            ${leafIconHtml()}
+            ${leafIconHtml()}
+          </span>
         `;
       }
 
