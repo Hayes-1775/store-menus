@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-15T06:27:16",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-15.csv",
+  "generated_at": "2026-06-16T03:46:05",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-16.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -33,7 +33,7 @@
       "thc_display": "76%",
       "price": "$27.00",
       "short_price": "$27",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
         115
       ],
@@ -51,27 +51,9 @@
       "thc_display": "90%",
       "price": "$15.95",
       "short_price": "$15.95",
-      "quantity": 8.0,
+      "quantity": 5.0,
       "source_rows": [
         140
-      ],
-      "detail_display": "90%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Orange Soda",
-      "display_name": "Orange Soda",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Distillate",
-      "thc": 0.8985,
-      "thc_display": "90%",
-      "price": "$15.95",
-      "short_price": "$15.95",
-      "quantity": 2.0,
-      "source_rows": [
-        127
       ],
       "detail_display": "90%"
     },
@@ -87,27 +69,9 @@
       "thc_display": "89%",
       "price": "$15.95",
       "short_price": "$15.95",
-      "quantity": 6.0,
+      "quantity": 4.0,
       "source_rows": [
         111
-      ],
-      "detail_display": "89%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Apple Fritter",
-      "display_name": "Apple Fritter",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Distillate",
-      "thc": 0.8911,
-      "thc_display": "89%",
-      "price": "$15.95",
-      "short_price": "$15.95",
-      "quantity": 1.0,
-      "source_rows": [
-        109
       ],
       "detail_display": "89%"
     },
@@ -123,7 +87,7 @@
       "thc_display": "87%",
       "price": "$15.95",
       "short_price": "$15.95",
-      "quantity": 4.0,
+      "quantity": 2.0,
       "source_rows": [
         141
       ],
@@ -159,7 +123,7 @@
       "thc_display": "85%",
       "price": "$15.95",
       "short_price": "$15.95",
-      "quantity": 11.0,
+      "quantity": 10.0,
       "source_rows": [
         137
       ],
@@ -213,7 +177,7 @@
       "thc_display": "93%",
       "price": "$21.00",
       "short_price": "$21",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
         132
       ],
@@ -252,24 +216,6 @@
       "quantity": 9.0,
       "source_rows": [
         126
-      ],
-      "detail_display": "86%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Strawberry Cough",
-      "display_name": "Strawberry Cough 2g",
-      "strain": "Hybrid",
-      "size": "2g",
-      "format": "AIO",
-      "process": "Distillate",
-      "thc": 0.8609,
-      "thc_display": "86%",
-      "price": "$31.00",
-      "short_price": "$31",
-      "quantity": 1.0,
-      "source_rows": [
-        138
       ],
       "detail_display": "86%"
     },
@@ -322,7 +268,7 @@
       "thc_display": "80%",
       "price": "$27.00",
       "short_price": "$27",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
         129
       ],

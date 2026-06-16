@@ -1,26 +1,8 @@
 {
-  "generated_at": "2026-06-15T06:27:15",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-15.csv",
+  "generated_at": "2026-06-16T03:46:05",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-16.csv",
   "menu": "vapes",
   "rows": [
-    {
-      "brand": "Verdant",
-      "product_name": "Pure Mintz",
-      "display_name": "Pure Mintz",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Rosin/CR",
-      "thc": 0.87,
-      "thc_display": "87%",
-      "price": "$22.50",
-      "short_price": "$22.5",
-      "quantity": 1.0,
-      "source_rows": [
-        1098
-      ],
-      "detail_display": "87%"
-    },
     {
       "brand": "Verdant",
       "product_name": "Mendo Odyssey",
@@ -53,7 +35,7 @@
       "short_price": "$22.5",
       "quantity": 7.0,
       "source_rows": [
-        1114
+        1113
       ],
       "detail_display": "80%"
     },
@@ -105,7 +87,7 @@
       "thc_display": "78%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
         1087
       ],
@@ -125,7 +107,7 @@
       "short_price": "$22.5",
       "quantity": 6.0,
       "source_rows": [
-        1105
+        1104
       ],
       "detail_display": "74%"
     },
@@ -143,7 +125,7 @@
       "short_price": "$22.5",
       "quantity": 7.0,
       "source_rows": [
-        1104
+        1103
       ],
       "detail_display": "74%"
     },
@@ -159,9 +141,9 @@
       "thc_display": "79%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 4.0,
+      "quantity": 1.0,
       "source_rows": [
-        1119
+        1118
       ],
       "detail_display": "79%"
     },
@@ -177,7 +159,7 @@
       "thc_display": "73%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 3.0,
+      "quantity": 2.0,
       "source_rows": [
         1073
       ],
@@ -285,7 +267,7 @@
       "thc_display": "82%",
       "price": "$26.00",
       "short_price": "$26",
-      "quantity": 3.0,
+      "quantity": 2.0,
       "source_rows": [
         863
       ],
@@ -393,7 +375,7 @@
       "thc_display": "85%",
       "price": "$23.00",
       "short_price": "$23",
-      "quantity": 12.0,
+      "quantity": 13.0,
       "source_rows": [
         869,
         870
