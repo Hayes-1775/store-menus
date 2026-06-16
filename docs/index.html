@@ -265,23 +265,6 @@
         vertical-align: -0.08em;
       }
 
-      .no-sale-marker {
-        display: inline-block;
-        margin-left: 8px;
-        width: 0.78em;
-        height: 0.78em;
-        color: #f2c94c;
-        filter: drop-shadow(0 0 8px rgba(242, 201, 76, 0.82));
-        vertical-align: -0.08em;
-      }
-
-      .no-sale-marker svg {
-        display: block;
-        width: 100%;
-        height: 100%;
-        fill: currentColor;
-      }
-
       .name {
         overflow: hidden;
         text-overflow: clip;
@@ -311,6 +294,12 @@
         vertical-align: -0.06em;
         transform-origin: left center;
         will-change: width, transform, color, filter, background-color, border-color;
+      }
+
+      .hidden-gem-icon {
+        max-width: 5.8em;
+        color: #38bdf8;
+        filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.70));
       }
 
       .attention-icon svg {
@@ -473,13 +462,18 @@
       }
 
       function rowHtml(row) {
-        const noRecentSalesMarker = row.no_recent_sales && !row.aged_inventory && !row.closeout
-          ? noRecentSalesMarkerHtml()
+        const isHiddenGem = row.no_recent_sales && !row.aged_inventory && !row.closeout;
+        const hiddenGemMarker = isHiddenGem
+          ? hiddenGemIconHtml()
           : "";
         const productName = row.aged_inventory
           ? `<span class="product-name-text">${productNameHtml(row)}</span>${attentionIconHtml(row)}`
-          : `${productNameHtml(row)}${noRecentSalesMarker}`;
-        const rowClasses = row.aged_inventory ? "row aged-row" : "row";
+          : `${productNameHtml(row)}${hiddenGemMarker}`;
+        const rowClasses = [
+          "row",
+          row.aged_inventory ? "aged-row" : "",
+          isHiddenGem ? "hidden-gem-row" : ""
+        ].filter(Boolean).join(" ");
         if (row.closeout) {
           return `
             <div class="${rowClasses} closeout">
@@ -515,10 +509,11 @@
         `;
       }
 
-      function noRecentSalesMarkerHtml() {
+      function hiddenGemIconHtml() {
         return `
-          <span class="no-sale-marker" aria-hidden="true">
+          <span class="attention-icon hidden-gem-icon" aria-hidden="true">
             ${diamondIconHtml()}
+            <span class="attention-offer hidden-gem-offer">Hidden Gem</span>
           </span>
         `;
       }
@@ -626,10 +621,65 @@
         });
       }
 
+      function animateOfferPill(marker, offer, delay, colors) {
+        gsap.timeline({ repeat: -1, repeatDelay: 16.4, delay })
+          .to(marker, {
+            width: colors.width,
+            paddingLeft: "6px",
+            paddingRight: "9px",
+            borderColor: colors.border,
+            backgroundColor: colors.background,
+            scale: 1.04,
+            rotate: 0,
+            color: colors.active,
+            filter: colors.activeFilter,
+            duration: 0.38,
+            ease: "back.out(1.8)"
+          }, 0)
+          .to(offer, {
+            opacity: 1,
+            x: 0,
+            duration: 0.24,
+            ease: "power2.out"
+          }, "-=0.18")
+          .to(marker, {
+            scale: 1.08,
+            duration: 0.52,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: 1
+          })
+          .to(marker, {
+            scale: 1.04,
+            duration: 1.6,
+            ease: "none"
+          })
+          .to(offer, {
+            opacity: 0,
+            x: -6,
+            duration: 0.18,
+            ease: "power1.in"
+          })
+          .to(marker, {
+            width: "0.92em",
+            paddingLeft: 0,
+            paddingRight: 0,
+            borderColor: colors.restBorder,
+            backgroundColor: colors.restBackground,
+            scale: 1,
+            rotate: 0,
+            color: colors.rest,
+            filter: colors.restFilter,
+            duration: 0.32,
+            ease: "power2.inOut"
+          });
+      }
+
       function animateAgedInventoryRows() {
         if (!window.gsap) return;
         const agedRows = gsap.utils.toArray(".row.aged-row");
-        if (!agedRows.length) return;
+        const hiddenGemRows = gsap.utils.toArray(".row.hidden-gem-row");
+        if (!agedRows.length && !hiddenGemRows.length) return;
         document.documentElement.dataset.gsapTextAnimation = "active";
 
         agedRows.forEach((row, index) => {
@@ -673,57 +723,34 @@
               stagger: { each: 0.012, from: "start" }
             }, "-=0.04");
 
-          gsap.timeline({ repeat: -1, repeatDelay: 16.4, delay: delay + 0.08 })
-            .to(marker, {
-              width: "7.8em",
-              paddingLeft: "6px",
-              paddingRight: "9px",
-              borderColor: "rgba(184, 255, 112, 0.74)",
-              backgroundColor: "rgb(18, 45, 16)",
-              scale: 1.04,
-              rotate: 0,
-              color: "#b8ff70",
-              filter: "drop-shadow(0 0 18px rgba(184, 255, 112, 0.94))",
-              duration: 0.38,
-              ease: "back.out(1.8)"
-            }, 0)
-            .to(offer, {
-              opacity: 1,
-              x: 0,
-              duration: 0.24,
-              ease: "power2.out"
-            }, "-=0.18")
-            .to(marker, {
-              scale: 1.08,
-              duration: 0.52,
-              ease: "sine.inOut",
-              yoyo: true,
-              repeat: 1
-            })
-            .to(marker, {
-              scale: 1.04,
-              duration: 1.6,
-              ease: "none"
-            })
-            .to(offer, {
-              opacity: 0,
-              x: -6,
-              duration: 0.18,
-              ease: "power1.in"
-            })
-            .to(marker, {
-              width: "0.92em",
-              paddingLeft: 0,
-              paddingRight: 0,
-              borderColor: "rgba(184, 255, 112, 0)",
-              backgroundColor: "rgba(126, 217, 87, 0)",
-              scale: 1,
-              rotate: 0,
-              color: "#7ed957",
-              filter: "drop-shadow(0 0 10px rgba(126, 217, 87, 0.62))",
-              duration: 0.32,
-              ease: "power2.inOut"
-            });
+          animateOfferPill(marker, offer, delay + 0.08, {
+            width: "7.8em",
+            active: "#b8ff70",
+            rest: "#7ed957",
+            border: "rgba(184, 255, 112, 0.74)",
+            restBorder: "rgba(184, 255, 112, 0)",
+            background: "rgb(18, 45, 16)",
+            restBackground: "rgba(126, 217, 87, 0)",
+            activeFilter: "drop-shadow(0 0 18px rgba(184, 255, 112, 0.94))",
+            restFilter: "drop-shadow(0 0 10px rgba(126, 217, 87, 0.62))"
+          });
+        });
+
+        hiddenGemRows.forEach((row, index) => {
+          const marker = row.querySelector(".attention-icon");
+          const offer = row.querySelector(".attention-offer");
+          const delay = index * 0.35;
+          animateOfferPill(marker, offer, delay + 0.08, {
+            width: "5.8em",
+            active: "#38bdf8",
+            rest: "#38bdf8",
+            border: "rgba(56, 189, 248, 0.78)",
+            restBorder: "rgba(56, 189, 248, 0)",
+            background: "rgb(7, 32, 52)",
+            restBackground: "rgba(56, 189, 248, 0)",
+            activeFilter: "drop-shadow(0 0 18px rgba(56, 189, 248, 0.95))",
+            restFilter: "drop-shadow(0 0 10px rgba(56, 189, 248, 0.70))"
+          });
         });
       }
 
