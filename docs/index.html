@@ -195,7 +195,7 @@
       }
 
       .row.closeout .normal-row .deal-cell {
-        animation: normal-row-fade 20s ease-in-out infinite;
+        animation: normal-row-fade 30s ease-in-out infinite;
       }
 
       .row.closeout .normal-row .name {
@@ -211,7 +211,7 @@
 
       .row.closeout .deal-row {
         opacity: 0;
-        animation: deal-row-fade 20s ease-in-out infinite;
+        animation: deal-row-fade 30s ease-in-out infinite;
         pointer-events: none;
       }
 
@@ -238,7 +238,7 @@
         line-height: 1;
         text-transform: uppercase;
         text-shadow: 0 0 12px rgba(247, 255, 217, 0.72);
-        animation: deal-pill-pulse 20s ease-in-out infinite;
+        animation: deal-pill-pulse 30s ease-in-out infinite;
       }
 
       .deal-leaf {
@@ -366,40 +366,40 @@
 
       @keyframes normal-row-fade {
         0%,
-        58%,
-        86%,
+        64%,
+        90%,
         100% {
           opacity: 1;
         }
-        64%,
-        80% {
+        70%,
+        86.67% {
           opacity: 0;
         }
       }
 
       @keyframes deal-row-fade {
         0%,
-        58%,
-        86%,
+        64%,
+        90%,
         100% {
           opacity: 0;
         }
-        64%,
-        80% {
+        70%,
+        86.67% {
           opacity: 1;
         }
       }
 
       @keyframes deal-pill-pulse {
         0%,
-        58%,
-        86%,
+        64%,
+        90%,
         100% {
           transform: scale(0.96);
           filter: drop-shadow(0 0 8px rgba(184, 255, 112, 0.42));
         }
-        64%,
-        80% {
+        70%,
+        86.67% {
           transform: scale(1.04);
           filter: drop-shadow(0 0 18px rgba(184, 255, 112, 0.92));
         }
@@ -602,7 +602,7 @@
               x: maxShift,
               duration: 0.7,
               ease: "power2.inOut"
-            }, 12.3)
+            }, 21.3)
             .to(name, {
               x: maxShift,
               duration: 3.2,
@@ -615,14 +615,14 @@
             })
             .to(name, {
               x: 0,
-              duration: 2.9,
+              duration: 3.9,
               ease: "none"
             });
         });
       }
 
       function animateOfferPill(marker, offer, delay, colors) {
-        gsap.timeline({ repeat: -1, repeatDelay: 16.4, delay })
+        gsap.timeline({ repeat: -1, repeatDelay: 26.4, delay })
           .to(marker, {
             width: colors.width,
             paddingLeft: "6px",
@@ -689,7 +689,7 @@
           const chars = name.querySelectorAll(".attention-char");
           const delay = index * 0.35;
 
-          gsap.timeline({ repeat: -1, repeatDelay: 19.05, delay })
+          gsap.timeline({ repeat: -1, repeatDelay: 29.05, delay: delay + 10 })
             .to(name, {
               color: "#fff1a8",
               scale: 1.035,
@@ -705,7 +705,7 @@
               ease: "elastic.out(1, 0.45)"
             });
 
-          gsap.timeline({ repeat: -1, repeatDelay: 19.45, delay: delay + 0.02 })
+          gsap.timeline({ repeat: -1, repeatDelay: 29.45, delay: delay + 10.02 })
             .to(chars, {
               y: -4,
               color: "#ffe88a",
@@ -723,7 +723,7 @@
               stagger: { each: 0.012, from: "start" }
             }, "-=0.04");
 
-          animateOfferPill(marker, offer, delay + 0.08, {
+          animateOfferPill(marker, offer, delay + 10.08, {
             width: "7.8em",
             active: "#b8ff70",
             rest: "#7ed957",
@@ -740,7 +740,7 @@
           const marker = row.querySelector(".attention-icon");
           const offer = row.querySelector(".attention-offer");
           const delay = index * 0.35;
-          animateOfferPill(marker, offer, delay + 0.08, {
+          animateOfferPill(marker, offer, delay + 1.08, {
             width: "5.8em",
             active: "#38bdf8",
             rest: "#38bdf8",
