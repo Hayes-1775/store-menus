@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-16T06:32:42",
-  "inventory_source": "downloads/flowhub-inventory-2026-06-16.csv",
+  "generated_at": "2026-06-17T04:27:06",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-17.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -72,7 +72,7 @@
       "group_order": 1,
       "thc": 0.30210000000000004,
       "thc_display": "30%",
-      "quantity": 140.89,
+      "quantity": 131.75,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -103,7 +103,7 @@
       "group_order": 1,
       "thc": 0.23,
       "thc_display": "23%",
-      "quantity": 644.58,
+      "quantity": 637.56,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -125,7 +125,7 @@
         "R61IRt3KQi"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true
+      "no_recent_sales": false
     },
     {
       "product_name": "Alley Oop",
@@ -165,7 +165,7 @@
       "group_order": 1,
       "thc": 0.264,
       "thc_display": "26%",
-      "quantity": 722.52,
+      "quantity": 694.42,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -196,7 +196,7 @@
       "group_order": 1,
       "thc": 0.273,
       "thc_display": "27%",
-      "quantity": 796.77,
+      "quantity": 768.77,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -218,7 +218,7 @@
         "1A4010300023A51000002447"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true
+      "no_recent_sales": false
     },
     {
       "product_name": "Miracle Mintz",
@@ -227,7 +227,7 @@
       "group_order": 1,
       "thc": 0.302,
       "thc_display": "30%",
-      "quantity": 60.57,
+      "quantity": 32.55,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -258,7 +258,7 @@
       "group_order": 1,
       "thc": 0.2441,
       "thc_display": "24%",
-      "quantity": 169.44,
+      "quantity": 165.89,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -289,7 +289,7 @@
       "group_order": 1,
       "thc": 0.2759,
       "thc_display": "28%",
-      "quantity": 44.71,
+      "quantity": 32.97,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -345,37 +345,6 @@
       "no_recent_sales": false
     },
     {
-      "product_name": "Alien Gary",
-      "brand": "Oregrown",
-      "strain": "Indica",
-      "group_order": 1,
-      "thc": 0.25670000000000004,
-      "thc_display": "26%",
-      "quantity": 16.54,
-      "price_profile": "$7 Gram",
-      "gram": "$7",
-      "eighth": "$22",
-      "quarter": "$42",
-      "half": "$80",
-      "ounce": "$148",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "5ed3aa43-9116-4a51-b71b-6e977968ba1b"
-      ],
-      "source_variant_ids": [
-        "7a8121d6-8607-4582-9a87-42c0c10d7a30"
-      ],
-      "source_skus": [
-        "21BPlUb9bN"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false
-    },
-    {
       "product_name": "Timmeh",
       "brand": "Virgin Cannabis",
       "strain": "Indica",
@@ -392,7 +361,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 376,
+      "aged_inventory_days": 377,
       "aged_inventory_date": "2025-06-05",
       "source_product_ids": [
         "d4645b14-58e2-4cb7-8458-1db1e19d20dd"
@@ -413,7 +382,7 @@
       "group_order": 1,
       "thc": 0.3029,
       "thc_display": "30%",
-      "quantity": 43.1,
+      "quantity": 39.4,
       "price_profile": "$8 Gram",
       "gram": "$8",
       "eighth": "$25",
@@ -475,7 +444,7 @@
       "group_order": 2,
       "thc": 0.155,
       "thc_display": "16%",
-      "quantity": 1247.68,
+      "quantity": 1217.55,
       "price_profile": "$3 Gram",
       "gram": "$3",
       "eighth": "$10",
@@ -506,7 +475,7 @@
       "group_order": 2,
       "thc": 0.2853,
       "thc_display": "29%",
-      "quantity": 42.62,
+      "quantity": 37.32,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -547,7 +516,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 61,
+      "aged_inventory_days": 62,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "e6dc6ea7-8cbf-4dfd-a775-00f998a204e4"
@@ -568,7 +537,7 @@
       "group_order": 2,
       "thc": 0.2755,
       "thc_display": "28%",
-      "quantity": 61.14,
+      "quantity": 60.14,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -578,7 +547,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 61,
+      "aged_inventory_days": 62,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "356c235c-c3bf-4e3d-a6ce-1a469a6b897c"
@@ -599,7 +568,7 @@
       "group_order": 2,
       "thc": 0.3017,
       "thc_display": "30%",
-      "quantity": 231.54,
+      "quantity": 227.99,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -621,7 +590,7 @@
         "LkOTnC1kgx"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true
+      "no_recent_sales": false
     },
     {
       "product_name": "Mac Flurry",
@@ -661,7 +630,7 @@
       "group_order": 2,
       "thc": 0.25239999999999996,
       "thc_display": "25%",
-      "quantity": 80.63,
+      "quantity": 74.98,
       "price_profile": "$8 Gram",
       "gram": "$8",
       "eighth": "$25",
@@ -733,7 +702,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 392,
+      "aged_inventory_days": 393,
       "aged_inventory_date": "2025-05-20",
       "source_product_ids": [
         "10f91862-d4ec-436c-95ed-4da9fa2e7dfe"
@@ -847,7 +816,7 @@
       "group_order": 3,
       "thc": 0.245,
       "thc_display": "25%",
-      "quantity": 960.66,
+      "quantity": 950.59,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -888,7 +857,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 206,
+      "aged_inventory_days": 207,
       "aged_inventory_date": "2025-11-22",
       "source_product_ids": [
         "3690a563-8eed-408c-9704-c34c1bb0c79a"
@@ -919,7 +888,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 61,
+      "aged_inventory_days": 62,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "86b938a7-b656-4e2b-b775-08812482b29a"
@@ -950,7 +919,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 61,
+      "aged_inventory_days": 62,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "91df18c4-d699-4e58-8881-4151ff6a0186"
@@ -1033,7 +1002,7 @@
       "group_order": 3,
       "thc": 0.2541,
       "thc_display": "25%",
-      "quantity": 40.86,
+      "quantity": 37.32,
       "price_profile": "$8 Gram",
       "gram": "$8",
       "eighth": "$25",
@@ -1058,37 +1027,6 @@
       "no_recent_sales": false
     },
     {
-      "product_name": "Black Bubblegum",
-      "brand": "Grown Rogue",
-      "strain": "Sativa",
-      "group_order": 3,
-      "thc": 0.3074,
-      "thc_display": "31%",
-      "quantity": 2.81,
-      "price_profile": "$8 Gram",
-      "gram": "$8",
-      "eighth": "$25",
-      "quarter": "$48",
-      "half": "$91",
-      "ounce": "$168",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "53d8500c-af6a-42a7-af9b-d928e01737e4"
-      ],
-      "source_variant_ids": [
-        "88c8dbb3-4290-417e-96d1-0dcf9d4ea27f"
-      ],
-      "source_skus": [
-        "BD2qusOCZb"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false
-    },
-    {
       "product_name": "Candied Lemons",
       "brand": "Virgin Cannabis",
       "strain": "Sativa",
@@ -1105,7 +1043,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 330,
+      "aged_inventory_days": 331,
       "aged_inventory_date": "2025-07-21",
       "source_product_ids": [
         "1bf08102-09e5-43f1-b904-38d7fc0df3d8"
@@ -1136,7 +1074,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 327,
+      "aged_inventory_days": 328,
       "aged_inventory_date": "2025-07-24",
       "source_product_ids": [
         "2b17d933-6962-49e2-8035-de76086820ef"
