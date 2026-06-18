@@ -249,13 +249,13 @@
 
       .header-price-state,
       .price-state {
-        animation: price-state-cycle 24s ease-in-out infinite;
+        animation: price-state-cycle 36s ease-in-out infinite;
       }
 
       .header-descriptor-state,
       .descriptor-state {
         opacity: 0;
-        animation: descriptor-state-cycle 24s ease-in-out infinite;
+        animation: descriptor-state-cycle 36s ease-in-out infinite;
       }
 
       .rotating-header .header-price-state,
@@ -304,7 +304,7 @@
 
       .row.closeout .normal-row > .num,
       .row.closeout .normal-row .deal-cell {
-        animation: normal-row-fade 24s ease-in-out infinite;
+        animation: normal-row-fade 36s ease-in-out infinite;
       }
 
       .row.closeout .normal-row .name {
@@ -321,7 +321,7 @@
       .row.closeout .deal-row {
         opacity: 0;
         z-index: 5;
-        animation: deal-row-fade 24s ease-in-out infinite;
+        animation: deal-row-fade 36s ease-in-out infinite;
         pointer-events: none;
       }
 
@@ -352,7 +352,7 @@
         line-height: 1;
         text-transform: uppercase;
         text-shadow: 0 0 12px rgba(255, 247, 194, 0.72);
-        animation: deal-pill-pulse 24s ease-in-out infinite;
+        animation: deal-pill-pulse 36s ease-in-out infinite;
       }
 
       .deal-leaf {
@@ -483,12 +483,12 @@
       @keyframes normal-row-fade {
         0%,
         8%,
-        32%,
+        38%,
         100% {
           opacity: 1;
         }
         12%,
-        30% {
+        34% {
           opacity: 0;
         }
       }
@@ -496,12 +496,12 @@
       @keyframes deal-row-fade {
         0%,
         8%,
-        32%,
+        38%,
         100% {
           opacity: 0;
         }
         12%,
-        30% {
+        34% {
           opacity: 1;
         }
       }
@@ -509,13 +509,13 @@
       @keyframes deal-pill-pulse {
         0%,
         8%,
-        32%,
+        38%,
         100% {
           transform: scale(0.96);
           filter: drop-shadow(0 0 8px rgba(242, 201, 76, 0.42));
         }
         12%,
-        30% {
+        34% {
           transform: scale(1);
           filter: drop-shadow(0 0 18px rgba(242, 201, 76, 0.92));
         }
@@ -523,17 +523,17 @@
 
       @keyframes price-state-cycle {
         0%,
-        32%,
+        46%,
         100% {
           opacity: 1;
           filter: blur(0);
         }
-        36%,
-        92% {
+        50%,
+        90% {
           opacity: 0;
           filter: blur(2px);
         }
-        96% {
+        94% {
           opacity: 1;
           filter: blur(0);
         }
@@ -541,14 +541,14 @@
 
       @keyframes descriptor-state-cycle {
         0%,
-        38%,
-        92%,
+        52%,
+        90%,
         100% {
           opacity: 0;
           filter: blur(2px);
         }
-        42%,
-        88% {
+        56%,
+        86% {
           opacity: 1;
           filter: blur(0);
         }
@@ -844,7 +844,7 @@
 
       function animateOfferPill(marker, offer, delay, colors) {
         const activeWidth = measureOfferPillWidth(marker, offer);
-        gsap.timeline({ repeat: -1, repeatDelay: 26.4, delay })
+        gsap.timeline({ repeat: -1, repeatDelay: 32.24, delay })
           .to(marker, {
             width: activeWidth,
             paddingLeft: "12px",
@@ -943,7 +943,7 @@
           const chars = name.querySelectorAll(".attention-char");
           const delay = index * 0.35;
 
-          gsap.timeline({ repeat: -1, repeatDelay: 29.05, delay: delay + 10 })
+          gsap.timeline({ repeat: -1, repeatDelay: 35.06, delay: delay + 7.4 })
             .to(name, {
               color: "#fff1a8",
               scale: 1.035,
@@ -959,7 +959,7 @@
               ease: "elastic.out(1, 0.45)"
             });
 
-          gsap.timeline({ repeat: -1, repeatDelay: 29.45, delay: delay + 10.02 })
+          gsap.timeline({ repeat: -1, repeatDelay: 35.45, delay: delay + 7.42 })
             .to(chars, {
               y: -4,
               color: "#ffe88a",
@@ -977,7 +977,7 @@
               stagger: { each: 0.012, from: "start" }
             }, "-=0.04");
 
-          animateOfferPill(marker, offer, delay + 10.08, {
+          animateOfferPill(marker, offer, delay + 7.5, {
             active: "#b8ff70",
             rest: "#7ed957",
             border: "rgba(184, 255, 112, 0.74)",
