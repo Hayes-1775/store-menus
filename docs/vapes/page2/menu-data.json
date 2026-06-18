@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-18T02:53:05",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-18.csv",
+  "generated_at": "2026-06-18T16:19:20",
+  "inventory_source": "downloads/flowhub-inventory-2026-06-18.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -51,7 +51,7 @@
       "thc_display": "92%",
       "price": "$15.95",
       "short_price": "$15.95",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
         115
       ],
@@ -92,24 +92,6 @@
         102
       ],
       "detail_display": "89%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Watermelon Kush",
-      "display_name": "Watermelon Kush",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Distillate",
-      "thc": 0.873,
-      "thc_display": "87%",
-      "price": "$15.95",
-      "short_price": "$15.95",
-      "quantity": 1.0,
-      "source_rows": [
-        137
-      ],
-      "detail_display": "87%"
     },
     {
       "brand": "Buddies",
@@ -231,7 +213,7 @@
       "thc_display": "90%",
       "price": "$31.00",
       "short_price": "$31",
-      "quantity": 11.0,
+      "quantity": 10.0,
       "source_rows": [
         118
       ],

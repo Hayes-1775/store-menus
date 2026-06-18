@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-18T02:53:04",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-18.csv",
+  "generated_at": "2026-06-18T16:19:19",
+  "inventory_source": "downloads/flowhub-inventory-2026-06-18.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -165,7 +165,7 @@
       "group_order": 1,
       "thc": 0.264,
       "thc_display": "26%",
-      "quantity": 694.42,
+      "quantity": 687.32,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -196,7 +196,7 @@
       "group_order": 1,
       "thc": 0.273,
       "thc_display": "27%",
-      "quantity": 765.22,
+      "quantity": 758.12,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -258,7 +258,7 @@
       "group_order": 1,
       "thc": 0.2441,
       "thc_display": "24%",
-      "quantity": 156.79,
+      "quantity": 155.59,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -345,6 +345,37 @@
       "no_recent_sales": true
     },
     {
+      "product_name": "Maltese Tiger",
+      "brand": "Oregrown",
+      "strain": "Indica",
+      "group_order": 1,
+      "thc": 0.2373,
+      "thc_display": "24%",
+      "quantity": 114.0,
+      "price_profile": "$7 Gram",
+      "gram": "$7",
+      "eighth": "$22",
+      "quarter": "$42",
+      "half": "$80",
+      "ounce": "$148",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "d8674ca3-ab64-435a-a48e-24391052fabb"
+      ],
+      "source_variant_ids": [
+        "2d783978-9879-48e4-b416-e40405fb4bd5"
+      ],
+      "source_skus": [
+        "wMLycPHcfk"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
       "product_name": "Timmeh",
       "brand": "Virgin Cannabis",
       "strain": "Indica",
@@ -413,7 +444,7 @@
       "group_order": 1,
       "thc": 0.3525,
       "thc_display": "35%",
-      "quantity": 58.2,
+      "quantity": 51.19,
       "price_profile": "$12 Gram",
       "gram": "$12",
       "eighth": "$38",
@@ -464,6 +495,37 @@
       ],
       "source_skus": [
         "V2ECfFaVQK"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
+      "product_name": "Tea Time",
+      "brand": "Grown Rogue",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.2637,
+      "thc_display": "26%",
+      "quantity": 454.0,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "9c6f658c-5066-471e-8a7f-43a8e1790f4a"
+      ],
+      "source_variant_ids": [
+        "0a53d909-1afe-4f84-9a5b-f7517205e076"
+      ],
+      "source_skus": [
+        "auhtfeLnDI"
       ],
       "dutchie_url": "",
       "no_recent_sales": false
@@ -562,6 +624,40 @@
       "no_recent_sales": false
     },
     {
+      "product_name": "Cherry Paloma",
+      "brand": "Grown Rogue",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.29100000000000004,
+      "thc_display": "29%",
+      "quantity": 290.33,
+      "price_profile": "$6 Gram",
+      "gram": "$6",
+      "eighth": "$19",
+      "quarter": "$36",
+      "half": "$68",
+      "ounce": "$126",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "72c963b8-211a-4b64-9562-beba75afbac4",
+        "18899d85-5120-4f93-9e20-8584feeeb933"
+      ],
+      "source_variant_ids": [
+        "80cce4f9-427d-42cd-bcc0-7dbd44ca26fc",
+        "590d2456-1096-4d00-945c-642ab163cf9a"
+      ],
+      "source_skus": [
+        "LoultoGl7B",
+        "xPrZ9xxhMm"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
       "product_name": "Scented Marker",
       "brand": "Grown Rogue",
       "strain": "Hybrid",
@@ -588,6 +684,37 @@
       ],
       "source_skus": [
         "LkOTnC1kgx"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
+      "product_name": "Sheesh",
+      "brand": "Oregrown",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.2771,
+      "thc_display": "28%",
+      "quantity": 114.0,
+      "price_profile": "$7 Gram",
+      "gram": "$7",
+      "eighth": "$22",
+      "quarter": "$42",
+      "half": "$80",
+      "ounce": "$148",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "3a67a4cd-15d5-49a5-9ff6-142ac6b3e828"
+      ],
+      "source_variant_ids": [
+        "9835c88f-f077-439c-be77-7680f8094cf1"
+      ],
+      "source_skus": [
+        "wVo8okzJJA"
       ],
       "dutchie_url": "",
       "no_recent_sales": false
@@ -624,32 +751,32 @@
       "no_recent_sales": false
     },
     {
-      "product_name": "Cherry Paloma",
-      "brand": "Garden First Cannabis",
+      "product_name": "Bananaconda",
+      "brand": "Oregrown",
       "strain": "Hybrid",
       "group_order": 2,
-      "thc": 0.25239999999999996,
-      "thc_display": "25%",
-      "quantity": 63.33,
-      "price_profile": "$8 Gram",
-      "gram": "$8",
-      "eighth": "$25",
-      "quarter": "$48",
-      "half": "$91",
-      "ounce": "$168",
+      "thc": 0.32799999999999996,
+      "thc_display": "33%",
+      "quantity": 114.0,
+      "price_profile": "$7 Gram",
+      "gram": "$7",
+      "eighth": "$22",
+      "quarter": "$42",
+      "half": "$80",
+      "ounce": "$148",
       "low_stock": false,
       "closeout": false,
       "aged_inventory": false,
       "aged_inventory_days": null,
       "aged_inventory_date": "",
       "source_product_ids": [
-        "72c963b8-211a-4b64-9562-beba75afbac4"
+        "a7c822b9-4cca-4d01-9e58-dc417cf3570e"
       ],
       "source_variant_ids": [
-        "80cce4f9-427d-42cd-bcc0-7dbd44ca26fc"
+        "a5defed0-b619-46f3-adfb-6fb26bfac1e1"
       ],
       "source_skus": [
-        "LoultoGl7B"
+        "7YvEUIYkjL"
       ],
       "dutchie_url": "",
       "no_recent_sales": false
@@ -661,7 +788,7 @@
       "group_order": 2,
       "thc": 0.3265,
       "thc_display": "33%",
-      "quantity": 100.68,
+      "quantity": 93.66,
       "price_profile": "$8 Gram",
       "gram": "$8",
       "eighth": "$25",
@@ -785,7 +912,7 @@
       "group_order": 3,
       "thc": 0.23800000000000002,
       "thc_display": "24%",
-      "quantity": 202.25,
+      "quantity": 201.17,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -807,7 +934,7 @@
         "B87mbca1c9"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true
+      "no_recent_sales": false
     },
     {
       "product_name": "Dante's Cookie Jar",
@@ -965,13 +1092,44 @@
       "no_recent_sales": true
     },
     {
+      "product_name": "Island Blends",
+      "brand": "Oregrown",
+      "strain": "Sativa",
+      "group_order": 3,
+      "thc": 0.2983,
+      "thc_display": "30%",
+      "quantity": 114.0,
+      "price_profile": "$7 Gram",
+      "gram": "$7",
+      "eighth": "$22",
+      "quarter": "$42",
+      "half": "$80",
+      "ounce": "$148",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "f542222c-521d-463c-8f97-229b4d60b4b3"
+      ],
+      "source_variant_ids": [
+        "7d6c275c-ebfb-4799-9ca2-4a273e2db321"
+      ],
+      "source_skus": [
+        "4P5niAy1ZJ"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
       "product_name": "Caramel Cake",
       "brand": "Grown Rogue",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.3299,
       "thc_display": "33%",
-      "quantity": 205.65,
+      "quantity": 188.15,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",

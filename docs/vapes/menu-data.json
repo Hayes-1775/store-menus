@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-18T02:53:05",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-18.csv",
+  "generated_at": "2026-06-18T16:19:19",
+  "inventory_source": "downloads/flowhub-inventory-2026-06-18.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -17,7 +17,7 @@
       "short_price": "$22.5",
       "quantity": 6.0,
       "source_rows": [
-        1099
+        1109
       ],
       "detail_display": "80%"
     },
@@ -35,7 +35,7 @@
       "short_price": "$22.5",
       "quantity": 6.0,
       "source_rows": [
-        1125
+        1135
       ],
       "detail_display": "80%"
     },
@@ -53,7 +53,7 @@
       "short_price": "$22.5",
       "quantity": 8.0,
       "source_rows": [
-        1102
+        1112
       ],
       "detail_display": "79%"
     },
@@ -71,7 +71,7 @@
       "short_price": "$22.5",
       "quantity": 3.0,
       "source_rows": [
-        1091
+        1101
       ],
       "detail_display": "74%"
     },
@@ -89,7 +89,7 @@
       "short_price": "$22.5",
       "quantity": 1.0,
       "source_rows": [
-        1124
+        1134
       ],
       "detail_display": "83%"
     },
@@ -105,9 +105,9 @@
       "thc_display": "78%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        1100
+        1110
       ],
       "detail_display": "78%"
     },
@@ -125,7 +125,7 @@
       "short_price": "$22.5",
       "quantity": 3.0,
       "source_rows": [
-        1117
+        1127
       ],
       "detail_display": "74%"
     },
@@ -143,7 +143,7 @@
       "short_price": "$22.5",
       "quantity": 7.0,
       "source_rows": [
-        1116
+        1126
       ],
       "detail_display": "74%"
     },
@@ -161,7 +161,7 @@
       "short_price": "$23",
       "quantity": 6.0,
       "source_rows": [
-        873
+        877
       ],
       "detail_display": "86%"
     },
@@ -179,7 +179,7 @@
       "short_price": "$23",
       "quantity": 5.0,
       "source_rows": [
-        847
+        851
       ],
       "detail_display": "86%"
     },
@@ -197,7 +197,7 @@
       "short_price": "$23",
       "quantity": 8.0,
       "source_rows": [
-        870
+        874
       ],
       "detail_display": "86%"
     },
@@ -215,7 +215,7 @@
       "short_price": "$26",
       "quantity": 8.0,
       "source_rows": [
-        889
+        893
       ],
       "detail_display": "82%"
     },
@@ -233,7 +233,7 @@
       "short_price": "$26",
       "quantity": 2.0,
       "source_rows": [
-        875
+        879
       ],
       "detail_display": "82%"
     },
@@ -251,7 +251,7 @@
       "short_price": "$26",
       "quantity": 2.0,
       "source_rows": [
-        869
+        873
       ],
       "detail_display": "79%"
     },
@@ -269,7 +269,7 @@
       "short_price": "$30",
       "quantity": 2.0,
       "source_rows": [
-        877
+        881
       ],
       "detail_display": "67%"
     },
@@ -287,7 +287,7 @@
       "short_price": "$40",
       "quantity": 3.0,
       "source_rows": [
-        887
+        891
       ],
       "detail_display": "75%"
     },
@@ -305,7 +305,7 @@
       "short_price": "$23",
       "quantity": 5.0,
       "source_rows": [
-        896
+        900
       ],
       "detail_display": "86%"
     },
@@ -323,8 +323,8 @@
       "short_price": "$23",
       "quantity": 13.0,
       "source_rows": [
-        881,
-        882
+        885,
+        886
       ],
       "detail_display": "85%"
     },
@@ -342,7 +342,7 @@
       "short_price": "$23",
       "quantity": 8.0,
       "source_rows": [
-        846
+        850
       ],
       "detail_display": "85%"
     },
@@ -360,7 +360,7 @@
       "short_price": "$26",
       "quantity": 7.0,
       "source_rows": [
-        854
+        858
       ],
       "detail_display": "83%"
     },
@@ -378,7 +378,7 @@
       "short_price": "$30",
       "quantity": 2.0,
       "source_rows": [
-        839
+        843
       ],
       "detail_display": "78%"
     },
@@ -396,7 +396,7 @@
       "short_price": "$26",
       "quantity": 6.0,
       "source_rows": [
-        907
+        911
       ],
       "detail_display": "76%"
     },
@@ -414,7 +414,7 @@
       "short_price": "$23",
       "quantity": 8.0,
       "source_rows": [
-        874
+        878
       ],
       "detail_display": "89%"
     },
@@ -432,8 +432,8 @@
       "short_price": "$23",
       "quantity": 19.0,
       "source_rows": [
-        851,
-        852
+        855,
+        856
       ],
       "detail_display": "85%"
     },
@@ -451,7 +451,7 @@
       "short_price": "$23",
       "quantity": 4.0,
       "source_rows": [
-        905
+        909
       ],
       "detail_display": "84%"
     },
@@ -469,7 +469,7 @@
       "short_price": "$26",
       "quantity": 6.0,
       "source_rows": [
-        904
+        908
       ],
       "detail_display": "83%"
     },
@@ -487,7 +487,7 @@
       "short_price": "$26",
       "quantity": 2.0,
       "source_rows": [
-        856
+        860
       ],
       "detail_display": "82%"
     },
@@ -505,7 +505,7 @@
       "short_price": "$30",
       "quantity": 2.0,
       "source_rows": [
-        901
+        905
       ],
       "detail_display": "81%"
     },
@@ -523,7 +523,7 @@
       "short_price": "$30",
       "quantity": 7.0,
       "source_rows": [
-        845
+        849
       ],
       "detail_display": "80%"
     },
@@ -541,7 +541,7 @@
       "short_price": "$26",
       "quantity": 5.0,
       "source_rows": [
-        848
+        852
       ],
       "detail_display": "77%"
     },
@@ -559,7 +559,7 @@
       "short_price": "$30",
       "quantity": 2.0,
       "source_rows": [
-        893
+        897
       ],
       "detail_display": "71%"
     },
@@ -577,7 +577,7 @@
       "short_price": "$40",
       "quantity": 2.0,
       "source_rows": [
-        878
+        882
       ],
       "detail_display": "76%"
     },
@@ -595,7 +595,7 @@
       "short_price": "$40",
       "quantity": 10.0,
       "source_rows": [
-        900
+        904
       ],
       "detail_display": "68%"
     },
@@ -613,7 +613,7 @@
       "short_price": "$29",
       "quantity": 4.0,
       "source_rows": [
-        559
+        563
       ],
       "detail_display": "87%"
     },
@@ -631,7 +631,7 @@
       "short_price": "$28",
       "quantity": 2.0,
       "source_rows": [
-        551
+        555
       ],
       "detail_display": "86%"
     },
@@ -649,7 +649,7 @@
       "short_price": "$36",
       "quantity": 3.0,
       "source_rows": [
-        561
+        565
       ],
       "detail_display": "80%"
     },
@@ -667,7 +667,7 @@
       "short_price": "$36",
       "quantity": 7.0,
       "source_rows": [
-        545
+        549
       ],
       "detail_display": "76%"
     },
@@ -685,7 +685,7 @@
       "short_price": "$28",
       "quantity": 2.0,
       "source_rows": [
-        552
+        556
       ],
       "detail_display": "87%"
     },
@@ -703,7 +703,7 @@
       "short_price": "$29",
       "quantity": 7.0,
       "source_rows": [
-        560
+        564
       ],
       "detail_display": "83%"
     },
@@ -721,7 +721,7 @@
       "short_price": "$36",
       "quantity": 9.0,
       "source_rows": [
-        563
+        567
       ],
       "detail_display": "79%"
     },
@@ -739,7 +739,7 @@
       "short_price": "$36",
       "quantity": 7.0,
       "source_rows": [
-        544
+        548
       ],
       "detail_display": "78%"
     },
@@ -757,7 +757,7 @@
       "short_price": "$36",
       "quantity": 2.0,
       "source_rows": [
-        579
+        583
       ],
       "detail_display": "75%"
     },
@@ -775,7 +775,7 @@
       "short_price": "$28",
       "quantity": 6.0,
       "source_rows": [
-        555
+        559
       ],
       "detail_display": "90%"
     },
@@ -793,7 +793,7 @@
       "short_price": "$28",
       "quantity": 4.0,
       "source_rows": [
-        554
+        558
       ],
       "detail_display": "90%"
     },
@@ -811,7 +811,7 @@
       "short_price": "$36",
       "quantity": 7.0,
       "source_rows": [
-        558
+        562
       ],
       "detail_display": "81%"
     },
@@ -829,7 +829,7 @@
       "short_price": "$36",
       "quantity": 10.0,
       "source_rows": [
-        567
+        571
       ],
       "detail_display": "76%"
     }
