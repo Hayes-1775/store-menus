@@ -6,6 +6,18 @@
     <meta http-equiv="refresh" content="900">
     <title>Flower Menu</title>
     <style>
+      @font-face {
+        font-family: "MADE Sunflower";
+        src: url("assets/fonts/MADE-Sunflower.otf") format("opentype");
+        font-display: block;
+      }
+
+      @font-face {
+        font-family: "Gotham Medium";
+        src: url("assets/fonts/Gotham-Medium.otf") format("opentype");
+        font-display: block;
+      }
+
       :root {
         --row-height: 48px;
         --body-size: 32px;
@@ -28,7 +40,7 @@
         display: grid;
         place-items: center;
         color: #fff;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "MADE Sunflower", Arial, Helvetica, sans-serif;
       }
 
       .screen {
@@ -79,10 +91,10 @@
       .header {
         display: grid;
         grid-template-columns: minmax(310px, 1fr) 95px 92px 92px 92px 92px 112px;
-        align-items: start;
+        align-items: end;
         column-gap: 0;
         height: 68px;
-        font-family: Georgia, "Times New Roman", serif;
+        font-family: "MADE Sunflower", Georgia, "Times New Roman", serif;
         font-weight: 700;
         white-space: nowrap;
       }
@@ -96,7 +108,8 @@
         text-align: center;
         font-size: 28px;
         line-height: 1;
-        padding-top: 8px;
+        padding-top: 0;
+        align-self: end;
       }
 
       .groups {
@@ -117,7 +130,7 @@
         padding-left: 16px;
         margin-bottom: var(--gap-after-section);
         overflow: hidden;
-        font-family: Georgia, "Times New Roman", serif;
+        font-family: "MADE Sunflower", Georgia, "Times New Roman", serif;
         font-size: var(--section-size);
         line-height: 1;
         font-weight: 700;
@@ -175,6 +188,10 @@
         will-change: transform, color, text-shadow;
       }
 
+      .row.hidden-gem-row .name {
+        overflow: visible;
+      }
+
       .attention-char {
         display: inline-block;
         will-change: transform, color, text-shadow;
@@ -183,6 +200,97 @@
       .product-name-text {
         display: inline-block;
         vertical-align: top;
+      }
+
+      .bucket-icon {
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 0.86em;
+        height: 0.86em;
+        margin-left: 9px;
+        color: #ffffff;
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.50));
+        vertical-align: -0.07em;
+      }
+
+      .bucket-icon svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .rotating-header,
+      .rotating-detail {
+        grid-column: 4 / -1;
+        position: relative;
+        display: grid;
+        grid-template-columns: 92px 92px 92px 112px;
+        align-items: center;
+        height: 100%;
+      }
+
+      .header-price-state,
+      .header-descriptor-state,
+      .price-state,
+      .descriptor-state {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        grid-template-columns: 92px 92px 92px 112px;
+        align-items: center;
+      }
+
+      .header-price-state,
+      .price-state {
+        animation: price-state-cycle 24s ease-in-out infinite;
+      }
+
+      .header-descriptor-state,
+      .descriptor-state {
+        opacity: 0;
+        animation: descriptor-state-cycle 24s ease-in-out infinite;
+      }
+
+      .rotating-header .header-price-state,
+      .rotating-header .header-descriptor-state {
+        align-items: end;
+      }
+
+      .header-descriptor-state .feeling-heading {
+        grid-column: 1 / 3;
+      }
+
+      .header-descriptor-state .looking-heading {
+        grid-column: 3 / 5;
+      }
+
+      .descriptor-value {
+        grid-column: 1 / 3;
+        color: #fff7d6;
+        font-size: 1em;
+        text-align: center;
+        text-shadow: 0 0 13px rgba(255, 247, 214, 0.35);
+      }
+
+      .bucket-value {
+        grid-column: 3 / 5;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 1em;
+        text-align: center;
+      }
+
+      .bucket-label {
+        transform: translateY(0.02em);
       }
 
       .row.closeout .normal-row,
@@ -194,8 +302,9 @@
         align-items: center;
       }
 
+      .row.closeout .normal-row > .num,
       .row.closeout .normal-row .deal-cell {
-        animation: normal-row-fade 30s ease-in-out infinite;
+        animation: normal-row-fade 24s ease-in-out infinite;
       }
 
       .row.closeout .normal-row .name {
@@ -211,34 +320,39 @@
 
       .row.closeout .deal-row {
         opacity: 0;
-        animation: deal-row-fade 30s ease-in-out infinite;
+        z-index: 5;
+        animation: deal-row-fade 24s ease-in-out infinite;
         pointer-events: none;
       }
 
       .deal-message {
         grid-column: 2 / -1;
         justify-self: center;
+        position: relative;
+        z-index: 6;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 7px;
+        gap: 8px;
         width: max-content;
-        max-width: 100%;
-        height: 1.34em;
-        padding: 0 24px 1px;
-        border: 2px solid rgba(184, 255, 112, 0.74);
+        max-width: none;
+        min-width: 0;
+        height: 1.52em;
+        padding: 0 18px 1px;
+        border: 2px solid rgba(242, 201, 76, 0.82);
         border-radius: 999px;
         box-sizing: border-box;
-        background: rgb(18, 45, 16);
-        color: #f7ffd9;
-        filter: drop-shadow(0 0 16px rgba(184, 255, 112, 0.82));
+        background: rgb(55, 40, 5);
+        color: #fff7c2;
+        filter: drop-shadow(0 0 16px rgba(242, 201, 76, 0.82));
         overflow: hidden;
         text-align: center;
-        font-size: min(var(--body-size), 21px);
+        font-size: calc(var(--body-size) * 0.8);
+        font-family: "Gotham Medium", Arial, Helvetica, sans-serif;
         line-height: 1;
         text-transform: uppercase;
-        text-shadow: 0 0 12px rgba(247, 255, 217, 0.72);
-        animation: deal-pill-pulse 30s ease-in-out infinite;
+        text-shadow: 0 0 12px rgba(255, 247, 194, 0.72);
+        animation: deal-pill-pulse 24s ease-in-out infinite;
       }
 
       .deal-leaf {
@@ -247,11 +361,13 @@
         width: 0.72em;
         height: 0.72em;
         fill: currentColor;
-        filter: drop-shadow(0 0 8px rgba(184, 255, 112, 0.88));
+        filter: drop-shadow(0 0 8px rgba(242, 201, 76, 0.88));
         transform: translateY(1px);
       }
 
       .deal-message span {
+        flex: 0 1 auto;
+        min-width: 0;
         transform: translateY(1px);
       }
 
@@ -277,11 +393,11 @@
         display: inline-flex;
         align-items: center;
         justify-content: flex-start;
-        gap: 4px;
+        gap: 7px;
         margin-left: 8px;
-        width: 0.92em;
-        height: 0.92em;
-        max-width: 4.8em;
+        width: 1.2em;
+        height: 1.2em;
+        max-width: none;
         padding: 0;
         border: 2px solid transparent;
         border-radius: 999px;
@@ -291,13 +407,12 @@
         filter: drop-shadow(0 0 10px rgba(126, 217, 87, 0.62));
         line-height: 1;
         overflow: hidden;
-        vertical-align: -0.06em;
+        vertical-align: -0.16em;
         transform-origin: left center;
         will-change: width, transform, color, filter, background-color, border-color;
       }
 
       .hidden-gem-icon {
-        max-width: 4.2em;
         color: #38bdf8;
         filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.70));
       }
@@ -314,7 +429,8 @@
         display: inline-block;
         flex: 0 0 auto;
         color: #f7ffd9;
-        font-size: 0.38em;
+        font-size: 0.8em;
+        font-family: "Gotham Medium", Arial, Helvetica, sans-serif;
         line-height: 1;
         opacity: 0;
         text-transform: uppercase;
@@ -338,7 +454,7 @@
         padding: 40px;
         box-sizing: border-box;
         text-align: center;
-        font: 700 32px/1.25 Arial, Helvetica, sans-serif;
+        font: 700 32px/1.25 "MADE Sunflower", Arial, Helvetica, sans-serif;
         color: #fff;
         background: #000;
       }
@@ -366,44 +482,78 @@
 
       @keyframes normal-row-fade {
         0%,
-        64%,
-        90%,
+        8%,
+        32%,
         100% {
           opacity: 1;
         }
-        70%,
-        86.67% {
+        12%,
+        30% {
           opacity: 0;
         }
       }
 
       @keyframes deal-row-fade {
         0%,
-        64%,
-        90%,
+        8%,
+        32%,
         100% {
           opacity: 0;
         }
-        70%,
-        86.67% {
+        12%,
+        30% {
           opacity: 1;
         }
       }
 
       @keyframes deal-pill-pulse {
         0%,
-        64%,
-        90%,
+        8%,
+        32%,
         100% {
           transform: scale(0.96);
-          filter: drop-shadow(0 0 8px rgba(184, 255, 112, 0.42));
+          filter: drop-shadow(0 0 8px rgba(242, 201, 76, 0.42));
         }
-        70%,
-        86.67% {
-          transform: scale(1.04);
-          filter: drop-shadow(0 0 18px rgba(184, 255, 112, 0.92));
+        12%,
+        30% {
+          transform: scale(1);
+          filter: drop-shadow(0 0 18px rgba(242, 201, 76, 0.92));
         }
       }
+
+      @keyframes price-state-cycle {
+        0%,
+        32%,
+        100% {
+          opacity: 1;
+          filter: blur(0);
+        }
+        36%,
+        92% {
+          opacity: 0;
+          filter: blur(2px);
+        }
+        96% {
+          opacity: 1;
+          filter: blur(0);
+        }
+      }
+
+      @keyframes descriptor-state-cycle {
+        0%,
+        38%,
+        92%,
+        100% {
+          opacity: 0;
+          filter: blur(2px);
+        }
+        42%,
+        88% {
+          opacity: 1;
+          filter: blur(0);
+        }
+      }
+
     </style>
   </head>
   <body>
@@ -413,10 +563,18 @@
           <div class="title">Flower Menu</div>
           <div class="column-label">THC</div>
           <div class="column-label">Gram</div>
-          <div class="column-label">1/8</div>
-          <div class="column-label">1/4</div>
-          <div class="column-label">1/2</div>
-          <div class="column-label">Ounce</div>
+          <div class="rotating-header">
+            <div class="header-price-state">
+              <div class="column-label">1/8</div>
+              <div class="column-label">1/4</div>
+              <div class="column-label">1/2</div>
+              <div class="column-label">Ounce</div>
+            </div>
+            <div class="header-descriptor-state">
+              <div class="column-label feeling-heading">Feeling</div>
+              <div class="column-label looking-heading">Looking For</div>
+            </div>
+          </div>
         </div>
         <div id="groups" class="groups">
           <div class="loading">Loading menu...</div>
@@ -430,6 +588,45 @@
         ["Hybrid", "rgb(110, 185, 70)"],
         ["Sativa", "rgb(230, 35, 35)"]
       ];
+
+      const productDescriptors = {
+        "Red Pave": { adjective: "Tingly", bucket: "chill" },
+        "Devils Den": { adjective: "Sedative", bucket: "sleepy" },
+        "Hectane": { adjective: "Calming", bucket: "chill" },
+        "Smashburger": { adjective: "Sleepy", bucket: "sleepy" },
+        "Alley Oop": { adjective: "Balanced", bucket: "chill" },
+        "Purple Churro": { adjective: "Soothing", bucket: "sleepy" },
+        "Black Amber": { adjective: "Tranquil", bucket: "sleepy" },
+        "Miracle Mintz": { adjective: "Potent", bucket: "hungry" },
+        "Purple Panties": { adjective: "Carefree", bucket: "chill" },
+        "Blueberry Donut": { adjective: "Euphoric", bucket: "chill" },
+        "The Hive": { adjective: "Cheerful", bucket: "chill" },
+        "Timmeh": { adjective: "Mellow", bucket: "chill" },
+        "Dantes Inferno": { adjective: "Relaxing", bucket: "sleepy" },
+        "Triple Burger": { adjective: "Heavy", bucket: "sleepy" },
+        "Dark Queen": { adjective: "Euphoric", bucket: "chill" },
+        "Cherry Punch": { adjective: "Focused", bucket: "energy" },
+        "Grease Bucket": { adjective: "Gassy", bucket: "hungry" },
+        "Black Market": { adjective: "Uplifting", bucket: "energy" },
+        "Scented Marker": { adjective: "Social", bucket: "hungry" },
+        "Mac Flurry": { adjective: "Chill", bucket: "chill" },
+        "Cherry Paloma": { adjective: "Euphoric", bucket: "chill" },
+        "Pineapple Bang": { adjective: "Joyful", bucket: "energy" },
+        "Tongue Splasher": { adjective: "Calming", bucket: "sleepy" },
+        "Koji Sunberry": { adjective: "Bright", bucket: "energy" },
+        "Jack Herer": { adjective: "Clearheaded", bucket: "energy" },
+        "Southern Sunset": { adjective: "Bright", bucket: "energy" },
+        "Dante's Cookie Jar": { adjective: "Motivating", bucket: "energy" },
+        "College Park": { adjective: "Giggly", bucket: "energy" },
+        "Ginger Tea": { adjective: "Focused", bucket: "energy" },
+        "Where's My Bike": { adjective: "Talkative", bucket: "energy" },
+        "Gelato Sweet Tea": { adjective: "Uplifting", bucket: "energy" },
+        "Caramel Cake": { adjective: "Energizing", bucket: "energy" },
+        "Ice Queen": { adjective: "Creative", bucket: "energy" },
+        "Candied Lemons": { adjective: "Focused", bucket: "energy" },
+        "High Desert Sour Sage": { adjective: "Alert", bucket: "energy" },
+        "Durban Poison S1": { adjective: "Productive", bucket: "energy" }
+      };
 
       function clamp(value, min, max) {
         return Math.max(min, Math.min(max, value));
@@ -467,8 +664,10 @@
           ? hiddenGemIconHtml()
           : "";
         const productName = row.aged_inventory
-          ? `<span class="product-name-text">${productNameHtml(row)}</span>${attentionIconHtml(row)}`
+          ? `${productNameHtml(row)}${attentionIconHtml(row)}`
           : `${productNameHtml(row)}${hiddenGemMarker}`;
+        const descriptor = productDescriptors[row.product_name] || {};
+        const rotatingDetail = rotatingDetailHtml(row, descriptor);
         const rowClasses = [
           "row",
           row.aged_inventory ? "aged-row" : "",
@@ -479,12 +678,9 @@
             <div class="${rowClasses} closeout">
               <div class="normal-row">
                 <div class="name"><span class="closeout-name-copy">${productName}${leafIconHtml("closeout-leaf")}</span></div>
-                <div class="num deal-cell">${escapeHtml(row.thc_display)}</div>
-                <div class="num deal-cell">${escapeHtml(row.gram)}</div>
-                <div class="num deal-cell">${escapeHtml(row.eighth)}</div>
-                <div class="num deal-cell">${escapeHtml(row.quarter)}</div>
-                <div class="num deal-cell">${escapeHtml(row.half)}</div>
-                <div class="num deal-cell">${escapeHtml(row.ounce)}</div>
+                <div class="num">${escapeHtml(row.thc_display)}</div>
+                <div class="num">${escapeHtml(row.gram)}</div>
+                ${rotatingDetail}
               </div>
               <div class="deal-row">
                 <div class="deal-message">
@@ -501,10 +697,7 @@
             <div class="name">${productName}</div>
             <div class="num">${escapeHtml(row.thc_display)}</div>
             <div class="num">${escapeHtml(row.gram)}</div>
-            <div class="num">${escapeHtml(row.eighth)}</div>
-            <div class="num">${escapeHtml(row.quarter)}</div>
-            <div class="num">${escapeHtml(row.half)}</div>
-            <div class="num">${escapeHtml(row.ounce)}</div>
+            ${rotatingDetail}
           </div>
         `;
       }
@@ -531,7 +724,7 @@
         return `
           <span class="attention-icon" aria-hidden="true">
             ${leafIconHtml()}
-            <span class="attention-offer">Tax-free 20% off</span>
+            <span class="attention-offer">Online pricing 20% off</span>
           </span>
         `;
       }
@@ -545,11 +738,81 @@
       }
 
       function productNameHtml(row) {
-        if (!row.aged_inventory) return escapeHtml(row.product_name);
-        return String(row.product_name ?? "")
+        return row.aged_inventory
+          ? `<span class="product-name-text">${animatedProductNameHtml(row.product_name)}</span>`
+          : escapeHtml(row.product_name);
+      }
+
+      function animatedProductNameHtml(productName) {
+        return String(productName ?? "")
           .split("")
           .map((char) => `<span class="attention-char">${char === " " ? "&nbsp;" : escapeHtml(char)}</span>`)
           .join("");
+      }
+
+      function bucketIconHtml(bucket) {
+        const icons = {
+          sleepy: `
+            <svg viewBox="0 0 64 64" focusable="false" aria-hidden="true">
+              <path d="M45.6 49.8A21.8 21.8 0 0 1 37.5 7.7 25.7 25.7 0 1 0 56.3 44a21.7 21.7 0 0 1-10.7 5.8Z" />
+            </svg>
+          `,
+          energy: `
+            <svg viewBox="0 0 64 64" focusable="false" aria-hidden="true">
+              <path d="M35.8 4 13.6 36.5h16.1L25.8 60l24.6-34.5H34.1L35.8 4Z" />
+            </svg>
+          `,
+          hungry: `
+            <svg viewBox="0 0 64 64" focusable="false" aria-hidden="true">
+              <path d="M18 5v21" />
+              <path d="M10 5v16a8 8 0 0 0 16 0V5" />
+              <path d="M18 29v30" />
+              <path d="M45 5v54" />
+              <path d="M45 5c7 4.2 10 10.1 10 17.8 0 7.6-3 13.4-10 17.2" />
+            </svg>
+          `,
+          chill: `
+            <svg viewBox="0 0 64 64" focusable="false" aria-hidden="true">
+              <circle cx="32" cy="32" r="25" />
+              <path d="M22 38c2.4 4.1 5.7 6.1 10 6.1s7.6-2 10-6.1" />
+              <path d="M23 25h.1M41 25h.1" />
+            </svg>
+          `
+        };
+        if (!icons[bucket]) return "";
+        return `<span class="bucket-icon bucket-${bucket}" aria-hidden="true">${icons[bucket]}</span>`;
+      }
+
+      function bucketLabel(bucket) {
+        const labels = {
+          sleepy: "Sleepy",
+          energy: "Energy",
+          hungry: "Hungry",
+          chill: "Chill"
+        };
+        return labels[bucket] || "";
+      }
+
+      function rotatingDetailHtml(row, descriptor) {
+        const adjective = descriptor.adjective ? escapeHtml(descriptor.adjective) : "";
+        const label = bucketLabel(descriptor.bucket);
+        return `
+          <div class="rotating-detail deal-cell">
+            <div class="price-state">
+              <div class="num">${escapeHtml(row.eighth)}</div>
+              <div class="num">${escapeHtml(row.quarter)}</div>
+              <div class="num">${escapeHtml(row.half)}</div>
+              <div class="num">${escapeHtml(row.ounce)}</div>
+            </div>
+            <div class="descriptor-state">
+              <div class="num descriptor-value">${adjective}</div>
+              <div class="num bucket-value">
+                ${bucketIconHtml(descriptor.bucket)}
+                <span class="bucket-label">${escapeHtml(label)}</span>
+              </div>
+            </div>
+          </div>
+        `;
       }
 
       function escapeHtml(value) {
@@ -577,56 +840,15 @@
           `;
         }).join("");
         animateAgedInventoryRows();
-        animateCloseoutRows();
-      }
-
-      function animateCloseoutRows() {
-        if (!window.gsap) return;
-        const rows = gsap.utils.toArray(".row.closeout");
-        if (!rows.length) return;
-
-        rows.forEach((row) => {
-          const name = row.querySelector(".closeout-name-copy");
-          const pill = row.querySelector(".deal-message");
-          if (!name || !pill) return;
-
-          const targetGap = 32;
-          const nameRight = name.offsetLeft + name.offsetWidth;
-          const pillLeft = pill.offsetLeft;
-          const maxShift = Math.max(0, pillLeft - nameRight - targetGap);
-          if (maxShift < 8) return;
-
-          gsap.timeline({ repeat: -1 })
-            .set(name, { x: 0 }, 0)
-            .to(name, {
-              x: maxShift,
-              duration: 0.7,
-              ease: "power2.inOut"
-            }, 21.3)
-            .to(name, {
-              x: maxShift,
-              duration: 3.2,
-              ease: "none"
-            })
-            .to(name, {
-              x: 0,
-              duration: 0.9,
-              ease: "power2.inOut"
-            })
-            .to(name, {
-              x: 0,
-              duration: 3.9,
-              ease: "none"
-            });
-        });
       }
 
       function animateOfferPill(marker, offer, delay, colors) {
+        const activeWidth = measureOfferPillWidth(marker, offer);
         gsap.timeline({ repeat: -1, repeatDelay: 26.4, delay })
           .to(marker, {
-            width: colors.width,
-            paddingLeft: "6px",
-            paddingRight: "9px",
+            width: activeWidth,
+            paddingLeft: "12px",
+            paddingRight: "22px",
             borderColor: colors.border,
             backgroundColor: colors.background,
             scale: 1.04,
@@ -641,7 +863,7 @@
             x: 0,
             duration: 0.24,
             ease: "power2.out"
-          }, "-=0.18")
+          })
           .to(marker, {
             scale: 1.08,
             duration: 0.52,
@@ -661,7 +883,7 @@
             ease: "power1.in"
           })
           .to(marker, {
-            width: "0.92em",
+            width: "1.2em",
             paddingLeft: 0,
             paddingRight: 0,
             borderColor: colors.restBorder,
@@ -672,7 +894,39 @@
             filter: colors.restFilter,
             duration: 0.32,
             ease: "power2.inOut"
-          });
+          }, "<");
+      }
+
+      function measureOfferPillWidth(marker, offer) {
+        const icon = marker.querySelector("svg");
+        const markerStyle = getComputedStyle(marker);
+        const borderLeft = parseFloat(markerStyle.borderLeftWidth) || 0;
+        const borderRight = parseFloat(markerStyle.borderRightWidth) || 0;
+        const gap = parseFloat(markerStyle.gap) || 0;
+        const iconWidth = icon ? icon.getBoundingClientRect().width : 0;
+        const offerWidth = measureTextWidth(offer);
+        const activePadding = 12 + 22;
+        const buffer = 26;
+        return `${Math.ceil(iconWidth + gap + offerWidth + activePadding + borderLeft + borderRight + buffer)}px`;
+      }
+
+      function measureTextWidth(source) {
+        if (!source) return 0;
+        const style = getComputedStyle(source);
+        const probe = document.createElement("span");
+        probe.textContent = source.textContent;
+        probe.style.position = "absolute";
+        probe.style.left = "-9999px";
+        probe.style.top = "-9999px";
+        probe.style.visibility = "hidden";
+        probe.style.whiteSpace = "nowrap";
+        probe.style.font = style.font;
+        probe.style.letterSpacing = style.letterSpacing;
+        probe.style.textTransform = style.textTransform;
+        document.body.appendChild(probe);
+        const width = probe.getBoundingClientRect().width;
+        probe.remove();
+        return width;
       }
 
       function animateAgedInventoryRows() {
@@ -684,8 +938,8 @@
 
         agedRows.forEach((row, index) => {
           const name = row.querySelector(".name");
-          const marker = row.querySelector(".attention-icon");
-          const offer = row.querySelector(".attention-offer");
+          const marker = row.querySelector(".attention-icon:not(.bucket-icon)");
+          const offer = marker ? marker.querySelector(".attention-offer") : null;
           const chars = name.querySelectorAll(".attention-char");
           const delay = index * 0.35;
 
@@ -724,7 +978,6 @@
             }, "-=0.04");
 
           animateOfferPill(marker, offer, delay + 10.08, {
-            width: "4.8em",
             active: "#b8ff70",
             rest: "#7ed957",
             border: "rgba(184, 255, 112, 0.74)",
@@ -737,11 +990,10 @@
         });
 
         hiddenGemRows.forEach((row, index) => {
-          const marker = row.querySelector(".attention-icon");
-          const offer = row.querySelector(".attention-offer");
+          const marker = row.querySelector(".attention-icon:not(.bucket-icon)");
+          const offer = marker ? marker.querySelector(".attention-offer") : null;
           const delay = index * 0.35;
           animateOfferPill(marker, offer, delay + 1.08, {
-            width: "4.2em",
             active: "#38bdf8",
             rest: "#38bdf8",
             border: "rgba(56, 189, 248, 0.78)",
