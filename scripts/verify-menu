@@ -93,6 +93,13 @@ def main() -> None:
     ]
     if invalid_descriptors:
         fail(f"invalid productDescriptors for: {', '.join(invalid_descriptors)}")
+    sativa_sleepy_or_chill = [
+        row["product_name"]
+        for row in rows
+        if row.get("strain") == "Sativa" and descriptors[row["product_name"]]["bucket"] in {"sleepy", "chill"}
+    ]
+    if sativa_sleepy_or_chill:
+        fail(f"Sativa productDescriptors cannot use sleepy/chill buckets: {', '.join(sativa_sleepy_or_chill)}")
 
     low_stock_rows = [row for row in rows if row.get("quantity", 0) < 27]
     for row in low_stock_rows:
