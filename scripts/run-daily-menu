@@ -28,4 +28,6 @@ cp data/flower_menu.json docs/menu-data.json
 scripts/run-vape-menu "$INVENTORY"
 scripts/run-vape-menu-page2 "$INVENTORY"
 
+scripts/verify-menu
+
 echo "Generated flower and vape menu pages from $INVENTORY"

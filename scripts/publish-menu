@@ -18,6 +18,7 @@ fi
 
 git add \
   .gitignore \
+  config/com.miraclegreens.store-menu-report.plist \
   config/menu_config.json \
   scripts/download-flowhub-inventory \
   scripts/extract-flower-menu \
@@ -27,6 +28,7 @@ git add \
   scripts/run-daily-menu \
   scripts/run-vape-menu \
   scripts/run-vape-menu-page2 \
+  scripts/send-store-menu-report-email \
   scripts/verify-menu \
   scripts/publish-menu \
   docs/index.html \
