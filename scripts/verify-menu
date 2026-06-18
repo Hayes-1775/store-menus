@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -65,6 +66,34 @@ def main() -> None:
         fail(f"unexpectedly low vape menu row count: {len(vape_docs_menu.get('rows', []))}")
     if len(vape_page2_docs_menu.get("rows", [])) < 5:
         fail(f"unexpectedly low vape page 2 row count: {len(vape_page2_docs_menu.get('rows', []))}")
+
+    html = html_path.read_text(encoding="utf-8")
+    descriptor_block_match = re.search(r"const productDescriptors = \{(.*?)\n      \};", html, re.S)
+    if not descriptor_block_match:
+        fail("docs/index.html is missing productDescriptors")
+    descriptor_block = descriptor_block_match.group(1)
+    descriptor_pattern = re.compile(
+        r'"(?P<name>[^"]+)": \{ adjective: "(?P<adjective>[^"]+)", bucket: "(?P<bucket>[^"]+)" \}'
+    )
+    descriptors = {
+        match.group("name"): {
+            "adjective": match.group("adjective"),
+            "bucket": match.group("bucket"),
+        }
+        for match in descriptor_pattern.finditer(descriptor_block)
+    }
+    valid_buckets = {"sleepy", "energy", "hungry", "chill"}
+    missing_descriptors = [row["product_name"] for row in rows if row["product_name"] not in descriptors]
+    if missing_descriptors:
+        fail(f"missing productDescriptors for: {', '.join(missing_descriptors)}")
+    invalid_descriptors = [
+        name
+        for name, descriptor in descriptors.items()
+        if not descriptor["adjective"] or descriptor["bucket"] not in valid_buckets
+    ]
+    if invalid_descriptors:
+        fail(f"invalid productDescriptors for: {', '.join(invalid_descriptors)}")
+
     low_stock_rows = [row for row in rows if row.get("quantity", 0) < 27]
     for row in low_stock_rows:
         if not row.get("closeout"):
