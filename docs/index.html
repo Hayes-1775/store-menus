@@ -86,7 +86,7 @@
         background: #000;
         overflow: hidden;
         box-sizing: border-box;
-        padding: 20px 38px 34px;
+        padding: 20px 38px 20px;
         z-index: 1;
         transform-origin: center center;
       }
@@ -661,22 +661,41 @@
         return Math.max(min, Math.min(max, value));
       }
 
+      function getSectionMetrics(rowHeight) {
+        return {
+          sectionHeight: clamp(Math.floor(rowHeight * 1.28), 46, 68),
+          gapAfterSection: clamp(Math.floor(rowHeight * 0.32), 10, 24),
+          gapBetweenGroups: clamp(Math.floor(rowHeight * 0.40), 12, 30),
+        };
+      }
+
+      function totalVerticalUsage(rowHeight, groupCount, rowCount) {
+        const { sectionHeight, gapAfterSection, gapBetweenGroups } = getSectionMetrics(rowHeight);
+        return (
+          rowCount * rowHeight +
+          groupCount * sectionHeight +
+          groupCount * gapAfterSection +
+          Math.max(groupCount - 1, 0) * gapBetweenGroups
+        );
+      }
+
       function applyDynamicSizing(rows, activeGroups) {
         const menuHeight = 1920;
         const contentTop = 88;
-        const bottomMargin = 34;
+        const bottomMargin = 20;
         const available = menuHeight - contentTop - bottomMargin;
         const groupCount = activeGroups.length;
         const rowCount = Math.max(rows.length, 1);
-        const targetRow = Math.floor(
-          (available - groupCount * 60 - groupCount * 18 - Math.max(groupCount - 1, 0) * 24) / rowCount
-        );
-        const rowHeight = clamp(targetRow, 34, 54);
+        let rowHeight = 34;
+        for (let candidate = 54; candidate >= 34; candidate -= 1) {
+          if (totalVerticalUsage(candidate, groupCount, rowCount) <= available) {
+            rowHeight = candidate;
+            break;
+          }
+        }
         const bodySize = clamp(Math.floor(rowHeight * 0.68), 24, 36);
-        const sectionHeight = clamp(Math.floor(rowHeight * 1.28), 46, 68);
+        const { sectionHeight, gapAfterSection, gapBetweenGroups } = getSectionMetrics(rowHeight);
         const sectionSize = clamp(Math.floor(sectionHeight * 0.70), 32, 48);
-        const gapAfterSection = clamp(Math.floor(rowHeight * 0.32), 10, 24);
-        const gapBetweenGroups = clamp(Math.floor(rowHeight * 0.40), 12, 30);
         const sectionPadLeft = clamp(Math.floor(sectionHeight * 0.28), 12, 18);
         const namePadRight = clamp(Math.floor(rowHeight * 0.36), 8, 14);
         const bucketGap = clamp(Math.floor(rowHeight * 0.14), 4, 8);
