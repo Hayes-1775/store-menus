@@ -433,6 +433,7 @@
         font-family: "Gotham Medium", Arial, Helvetica, sans-serif;
         line-height: 1;
         opacity: 0;
+        white-space: nowrap;
         text-transform: uppercase;
         text-shadow: 0 0 12px rgba(247, 255, 217, 0.72);
         transform: translateX(-6px);
@@ -911,7 +912,7 @@
         const iconWidth = icon ? icon.getBoundingClientRect().width : 0;
         const offerWidth = measureTextWidth(offer);
         const activePadding = 12 + 22;
-        const buffer = 26;
+        const buffer = 58;
         return `${Math.ceil(iconWidth + gap + offerWidth + activePadding + borderLeft + borderRight + buffer)}px`;
       }
 
