@@ -810,13 +810,14 @@
 
       function rowHtml(row) {
         const isHiddenGem = row.no_recent_sales && !row.aged_inventory && !row.closeout;
+        const descriptor = productDescriptors[row.product_name] || {};
+        const bucketMarker = descriptor.bucket ? bucketIconHtml(descriptor.bucket) : "";
         const hiddenGemMarker = isHiddenGem
           ? hiddenGemIconHtml()
           : "";
         const productName = row.aged_inventory
-          ? `${productNameHtml(row)}${attentionIconHtml(row)}`
-          : `${productNameHtml(row)}${hiddenGemMarker}`;
-        const descriptor = productDescriptors[row.product_name] || {};
+          ? `${productNameHtml(row)}${bucketMarker}${attentionIconHtml(row)}`
+          : `${productNameHtml(row)}${hiddenGemMarker}${bucketMarker}`;
         const rotatingDetail = rotatingDetailHtml(row, descriptor);
         const rowClasses = [
           "row",
@@ -968,7 +969,6 @@
             <div class="descriptor-state">
               <div class="num descriptor-value">${adjective}</div>
               <div class="num bucket-value">
-                ${bucketIconHtml(descriptor.bucket)}
                 <span class="bucket-label">${escapeHtml(label)}</span>
               </div>
             </div>
