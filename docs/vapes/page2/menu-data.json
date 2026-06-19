@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-18T16:19:20",
-  "inventory_source": "downloads/flowhub-inventory-2026-06-18.csv",
+  "generated_at": "2026-06-19T04:21:36",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-19.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -17,7 +17,7 @@
       "short_price": "$27",
       "quantity": 9.0,
       "source_rows": [
-        135
+        144
       ],
       "detail_display": "77%"
     },
@@ -33,9 +33,9 @@
       "thc_display": "76%",
       "price": "$27.00",
       "short_price": "$27",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        107
+        116
       ],
       "detail_display": "76%"
     },
@@ -53,7 +53,7 @@
       "short_price": "$15.95",
       "quantity": 7.0,
       "source_rows": [
-        115
+        124
       ],
       "detail_display": "92%"
     },
@@ -71,7 +71,7 @@
       "short_price": "$15.95",
       "quantity": 2.0,
       "source_rows": [
-        136
+        145
       ],
       "detail_display": "90%"
     },
@@ -89,7 +89,7 @@
       "short_price": "$15.95",
       "quantity": 1.0,
       "source_rows": [
-        102
+        111
       ],
       "detail_display": "89%"
     },
@@ -107,7 +107,7 @@
       "short_price": "$15.95",
       "quantity": 4.0,
       "source_rows": [
-        130
+        139
       ],
       "detail_display": "87%"
     },
@@ -125,7 +125,7 @@
       "short_price": "$15.95",
       "quantity": 7.0,
       "source_rows": [
-        132
+        141
       ],
       "detail_display": "85%"
     },
@@ -143,7 +143,7 @@
       "short_price": "$27",
       "quantity": 4.0,
       "source_rows": [
-        110
+        119
       ],
       "detail_display": "79%"
     },
@@ -159,29 +159,11 @@
       "thc_display": "75%",
       "price": "$27.00",
       "short_price": "$27",
-      "quantity": 9.0,
+      "quantity": 7.0,
       "source_rows": [
-        119
+        128
       ],
       "detail_display": "75%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Pina Colada",
-      "display_name": "Pina Colada 1g",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Distillate",
-      "thc": 0.9281999999999999,
-      "thc_display": "93%",
-      "price": "$21.00",
-      "short_price": "$21",
-      "quantity": 1.0,
-      "source_rows": [
-        126
-      ],
-      "detail_display": "93%"
     },
     {
       "brand": "Buddies",
@@ -197,7 +179,7 @@
       "short_price": "$21",
       "quantity": 12.0,
       "source_rows": [
-        103
+        112
       ],
       "detail_display": "92%"
     },
@@ -213,9 +195,9 @@
       "thc_display": "90%",
       "price": "$31.00",
       "short_price": "$31",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
-        118
+        127
       ],
       "detail_display": "90%"
     },
@@ -233,7 +215,7 @@
       "short_price": "$31",
       "quantity": 11.0,
       "source_rows": [
-        133
+        142
       ],
       "detail_display": "88%"
     },
@@ -251,7 +233,7 @@
       "short_price": "$21",
       "quantity": 8.0,
       "source_rows": [
-        128
+        137
       ],
       "detail_display": "87%"
     },
@@ -269,7 +251,7 @@
       "short_price": "$21",
       "quantity": 7.0,
       "source_rows": [
-        120
+        129
       ],
       "detail_display": "86%"
     },
@@ -287,7 +269,7 @@
       "short_price": "$31",
       "quantity": 12.0,
       "source_rows": [
-        131
+        140
       ],
       "detail_display": "86%"
     },
@@ -305,8 +287,8 @@
       "short_price": "$27",
       "quantity": 15.0,
       "source_rows": [
-        108,
-        109
+        117,
+        118
       ],
       "detail_display": "81%"
     },
@@ -324,7 +306,7 @@
       "short_price": "$27",
       "quantity": 4.0,
       "source_rows": [
-        123
+        132
       ],
       "detail_display": "80%"
     },
@@ -342,7 +324,7 @@
       "short_price": "$32",
       "quantity": 7.0,
       "source_rows": [
-        111
+        120
       ],
       "detail_display": "21%"
     }
