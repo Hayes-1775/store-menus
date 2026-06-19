@@ -25,6 +25,27 @@
         --section-size: 42px;
         --gap-after-section: 18px;
         --gap-between-groups: 24px;
+        --section-pad-left: 16px;
+        --name-pad-right: 14px;
+        --bucket-gap: 8px;
+        --bucket-icon-size: 28px;
+        --bucket-icon-offset: 9px;
+        --attention-icon-size: 38px;
+        --attention-icon-gap: 7px;
+        --attention-icon-offset: 8px;
+        --attention-icon-glyph-size: 26px;
+        --attention-pill-border: 2px;
+        --attention-pill-padding-left: 12px;
+        --attention-pill-padding-right: 22px;
+        --attention-pill-text-size: 24px;
+        --attention-pill-shift: 6px;
+        --attention-pill-width-buffer: 58px;
+        --closeout-pill-gap: 8px;
+        --closeout-pill-padding-x: 18px;
+        --closeout-pill-border: 2px;
+        --closeout-pill-text-size: 26px;
+        --closeout-leaf-size: 25px;
+        --closeout-leaf-offset: 8px;
       }
 
       html,
@@ -127,7 +148,7 @@
         display: flex;
         align-items: center;
         box-sizing: border-box;
-        padding-left: 16px;
+        padding-left: var(--section-pad-left);
         margin-bottom: var(--gap-after-section);
         overflow: hidden;
         font-family: "MADE Sunflower", Georgia, "Times New Roman", serif;
@@ -207,9 +228,9 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 0.86em;
-        height: 0.86em;
-        margin-left: 9px;
+        width: var(--bucket-icon-size);
+        height: var(--bucket-icon-size);
+        margin-left: var(--bucket-icon-offset);
         color: #ffffff;
         filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.50));
         vertical-align: -0.07em;
@@ -284,7 +305,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 8px;
+        gap: var(--bucket-gap);
         font-size: 1em;
         text-align: center;
       }
@@ -333,13 +354,13 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 8px;
+        gap: var(--closeout-pill-gap);
         width: max-content;
         max-width: none;
         min-width: 0;
         height: 1.52em;
-        padding: 0 18px 1px;
-        border: 2px solid rgba(242, 201, 76, 0.82);
+        padding: 0 var(--closeout-pill-padding-x) 1px;
+        border: var(--closeout-pill-border) solid rgba(242, 201, 76, 0.82);
         border-radius: 999px;
         box-sizing: border-box;
         background: rgb(55, 40, 5);
@@ -347,7 +368,7 @@
         filter: drop-shadow(0 0 16px rgba(242, 201, 76, 0.82));
         overflow: hidden;
         text-align: center;
-        font-size: calc(var(--body-size) * 0.8);
+        font-size: var(--closeout-pill-text-size);
         font-family: "Gotham Medium", Arial, Helvetica, sans-serif;
         line-height: 1;
         text-transform: uppercase;
@@ -373,9 +394,9 @@
 
       .closeout-leaf {
         display: inline-block;
-        width: 0.78em;
-        height: 0.78em;
-        margin-left: 8px;
+        width: var(--closeout-leaf-size);
+        height: var(--closeout-leaf-size);
+        margin-left: var(--closeout-leaf-offset);
         fill: #f2c94c;
         filter: drop-shadow(0 0 8px rgba(242, 201, 76, 0.82));
         vertical-align: -0.08em;
@@ -384,7 +405,7 @@
       .name {
         overflow: hidden;
         text-overflow: clip;
-        padding-right: 14px;
+        padding-right: var(--name-pad-right);
       }
 
       .attention-icon {
@@ -393,13 +414,13 @@
         display: inline-flex;
         align-items: center;
         justify-content: flex-start;
-        gap: 7px;
-        margin-left: 8px;
-        width: 1.2em;
-        height: 1.2em;
+        gap: var(--attention-icon-gap);
+        margin-left: var(--attention-icon-offset);
+        width: var(--attention-icon-size);
+        height: var(--attention-icon-size);
         max-width: none;
         padding: 0;
-        border: 2px solid transparent;
+        border: var(--attention-pill-border) solid transparent;
         border-radius: 999px;
         box-sizing: border-box;
         background: rgba(126, 217, 87, 0);
@@ -420,8 +441,8 @@
       .attention-icon svg {
         flex: 0 0 auto;
         display: block;
-        width: 0.82em;
-        height: 0.82em;
+        width: var(--attention-icon-glyph-size);
+        height: var(--attention-icon-glyph-size);
         fill: currentColor;
       }
 
@@ -429,14 +450,14 @@
         display: inline-block;
         flex: 0 0 auto;
         color: #f7ffd9;
-        font-size: 0.8em;
+        font-size: var(--attention-pill-text-size);
         font-family: "Gotham Medium", Arial, Helvetica, sans-serif;
         line-height: 1;
         opacity: 0;
         white-space: nowrap;
         text-transform: uppercase;
         text-shadow: 0 0 12px rgba(247, 255, 217, 0.72);
-        transform: translateX(-6px);
+        transform: translateX(calc(var(--attention-pill-shift) * -1));
         will-change: opacity, transform;
       }
 
@@ -656,6 +677,27 @@
         const sectionSize = clamp(Math.floor(sectionHeight * 0.70), 32, 48);
         const gapAfterSection = clamp(Math.floor(rowHeight * 0.32), 10, 24);
         const gapBetweenGroups = clamp(Math.floor(rowHeight * 0.40), 12, 30);
+        const sectionPadLeft = clamp(Math.floor(sectionHeight * 0.28), 12, 18);
+        const namePadRight = clamp(Math.floor(rowHeight * 0.36), 8, 14);
+        const bucketGap = clamp(Math.floor(rowHeight * 0.14), 4, 8);
+        const bucketIconSize = clamp(Math.floor(bodySize * 0.86), 22, 30);
+        const bucketIconOffset = clamp(Math.floor(rowHeight * 0.20), 5, 9);
+        const attentionIconSize = clamp(Math.floor(rowHeight * 0.78), 28, 40);
+        const attentionIconGap = clamp(Math.floor(rowHeight * 0.12), 4, 7);
+        const attentionIconOffset = clamp(Math.floor(rowHeight * 0.18), 5, 8);
+        const attentionIconGlyphSize = clamp(Math.floor(attentionIconSize * 0.68), 18, 28);
+        const attentionPillBorder = clamp(Math.round(rowHeight * 0.05), 1, 2);
+        const attentionPillPaddingLeft = clamp(Math.floor(rowHeight * 0.30), 8, 12);
+        const attentionPillPaddingRight = clamp(Math.floor(rowHeight * 0.56), 14, 22);
+        const attentionPillTextSize = clamp(Math.floor(bodySize * 0.76), 18, 28);
+        const attentionPillShift = clamp(Math.floor(rowHeight * 0.16), 4, 6);
+        const attentionPillWidthBuffer = clamp(Math.floor(rowHeight * 1.28), 42, 58);
+        const closeoutPillGap = clamp(Math.floor(rowHeight * 0.14), 4, 8);
+        const closeoutPillPaddingX = clamp(Math.floor(rowHeight * 0.50), 12, 18);
+        const closeoutPillBorder = clamp(Math.round(rowHeight * 0.05), 1, 2);
+        const closeoutPillTextSize = clamp(Math.floor(bodySize * 0.80), 19, 28);
+        const closeoutLeafSize = clamp(Math.floor(bodySize * 0.78), 18, 28);
+        const closeoutLeafOffset = clamp(Math.floor(rowHeight * 0.18), 5, 8);
 
         const root = document.documentElement.style;
         root.setProperty("--row-height", `${rowHeight}px`);
@@ -664,6 +706,27 @@
         root.setProperty("--section-size", `${sectionSize}px`);
         root.setProperty("--gap-after-section", `${gapAfterSection}px`);
         root.setProperty("--gap-between-groups", `${gapBetweenGroups}px`);
+        root.setProperty("--section-pad-left", `${sectionPadLeft}px`);
+        root.setProperty("--name-pad-right", `${namePadRight}px`);
+        root.setProperty("--bucket-gap", `${bucketGap}px`);
+        root.setProperty("--bucket-icon-size", `${bucketIconSize}px`);
+        root.setProperty("--bucket-icon-offset", `${bucketIconOffset}px`);
+        root.setProperty("--attention-icon-size", `${attentionIconSize}px`);
+        root.setProperty("--attention-icon-gap", `${attentionIconGap}px`);
+        root.setProperty("--attention-icon-offset", `${attentionIconOffset}px`);
+        root.setProperty("--attention-icon-glyph-size", `${attentionIconGlyphSize}px`);
+        root.setProperty("--attention-pill-border", `${attentionPillBorder}px`);
+        root.setProperty("--attention-pill-padding-left", `${attentionPillPaddingLeft}px`);
+        root.setProperty("--attention-pill-padding-right", `${attentionPillPaddingRight}px`);
+        root.setProperty("--attention-pill-text-size", `${attentionPillTextSize}px`);
+        root.setProperty("--attention-pill-shift", `${attentionPillShift}px`);
+        root.setProperty("--attention-pill-width-buffer", `${attentionPillWidthBuffer}px`);
+        root.setProperty("--closeout-pill-gap", `${closeoutPillGap}px`);
+        root.setProperty("--closeout-pill-padding-x", `${closeoutPillPaddingX}px`);
+        root.setProperty("--closeout-pill-border", `${closeoutPillBorder}px`);
+        root.setProperty("--closeout-pill-text-size", `${closeoutPillTextSize}px`);
+        root.setProperty("--closeout-leaf-size", `${closeoutLeafSize}px`);
+        root.setProperty("--closeout-leaf-offset", `${closeoutLeafOffset}px`);
       }
 
       function rowHtml(row) {
@@ -852,11 +915,12 @@
 
       function animateOfferPill(marker, offer, delay, colors) {
         const activeWidth = measureOfferPillWidth(marker, offer);
+        const pillMetrics = getPillMetrics();
         gsap.timeline({ repeat: -1, repeatDelay: 32.24, delay })
           .to(marker, {
             width: activeWidth,
-            paddingLeft: "12px",
-            paddingRight: "22px",
+            paddingLeft: `${pillMetrics.paddingLeft}px`,
+            paddingRight: `${pillMetrics.paddingRight}px`,
             borderColor: colors.border,
             backgroundColor: colors.background,
             scale: 1.04,
@@ -886,7 +950,7 @@
           })
           .to(offer, {
             opacity: 0,
-            x: -6,
+            x: -pillMetrics.shift,
             duration: 0.18,
             ease: "power1.in"
           })
@@ -908,14 +972,24 @@
       function measureOfferPillWidth(marker, offer) {
         const icon = marker.querySelector("svg");
         const markerStyle = getComputedStyle(marker);
-        const borderLeft = parseFloat(markerStyle.borderLeftWidth) || 0;
-        const borderRight = parseFloat(markerStyle.borderRightWidth) || 0;
+        const pillMetrics = getPillMetrics();
         const gap = parseFloat(markerStyle.gap) || 0;
         const iconWidth = icon ? icon.getBoundingClientRect().width : 0;
         const offerWidth = measureTextWidth(offer);
-        const activePadding = 12 + 22;
-        const buffer = 58;
-        return `${Math.ceil(iconWidth + gap + offerWidth + activePadding + borderLeft + borderRight + buffer)}px`;
+        const activePadding = pillMetrics.paddingLeft + pillMetrics.paddingRight;
+        const borderWidth = pillMetrics.border * 2;
+        return `${Math.ceil(iconWidth + gap + offerWidth + activePadding + borderWidth + pillMetrics.buffer)}px`;
+      }
+
+      function getPillMetrics() {
+        const rootStyle = getComputedStyle(document.documentElement);
+        return {
+          paddingLeft: parseFloat(rootStyle.getPropertyValue("--attention-pill-padding-left")) || 12,
+          paddingRight: parseFloat(rootStyle.getPropertyValue("--attention-pill-padding-right")) || 22,
+          border: parseFloat(rootStyle.getPropertyValue("--attention-pill-border")) || 2,
+          shift: parseFloat(rootStyle.getPropertyValue("--attention-pill-shift")) || 6,
+          buffer: parseFloat(rootStyle.getPropertyValue("--attention-pill-width-buffer")) || 58,
+        };
       }
 
       function measureTextWidth(source) {
