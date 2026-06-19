@@ -184,13 +184,16 @@
       .section-bar span {
         position: relative;
         z-index: 1;
-        transform: translateY(-0.02em);
+        transform: none;
       }
 
       .section-title {
-        position: relative;
+        position: absolute;
+        inset: 0;
         z-index: 1;
-        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         overflow: hidden;
       }
 
@@ -199,7 +202,7 @@
         inset: 0;
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         opacity: 0;
         line-height: 1;
         color: inherit;
@@ -608,16 +611,16 @@
         0%,
         100% {
           opacity: 0;
-          transform: translateY(8%);
+          transform: none;
         }
         10%,
         24% {
           opacity: 1;
-          transform: translateY(0);
+          transform: none;
         }
         34% {
           opacity: 0;
-          transform: translateY(-8%);
+          transform: none;
         }
       }
 
