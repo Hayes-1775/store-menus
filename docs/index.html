@@ -193,7 +193,8 @@
         z-index: 1;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        padding-left: var(--section-pad-left);
         overflow: hidden;
       }
 
@@ -202,12 +203,13 @@
         inset: 0;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        padding-left: var(--section-pad-left);
         opacity: 0;
         line-height: 1;
         color: inherit;
         text-shadow: inherit;
-        animation: section-word-cycle 10.5s ease-in-out infinite;
+        animation: section-word-cycle 14s ease-in-out infinite;
       }
 
       .section-title-word:nth-child(2) {
@@ -216,6 +218,10 @@
 
       .section-title-word:nth-child(3) {
         animation-delay: 7s;
+      }
+
+      .section-title-word:nth-child(4) {
+        animation-delay: 10.5s;
       }
 
       .row {
@@ -706,9 +712,9 @@
       };
 
       const sectionDescriptors = {
-        Indica: ["Chill", "Sleepy", "Heavy"],
-        Hybrid: ["Balanced", "Hungry", "Social"],
-        Sativa: ["Energy", "Focused", "Uplifted"]
+        Indica: ["Indica", "Chill", "Sleepy", "Heavy"],
+        Hybrid: ["Hybrid", "Balanced", "Hungry", "Social"],
+        Sativa: ["Sativa", "Energy", "Focused", "Uplifted"]
       };
 
       function clamp(value, min, max) {
@@ -847,7 +853,7 @@
       }
 
       function sectionBarHtml(strain) {
-        const words = (sectionDescriptors[strain] || []).slice(0, 3);
+        const words = sectionDescriptors[strain] || [strain];
         return `
           <div class="section-bar">
             <div class="section-title" aria-label="${escapeHtml(strain)}">
