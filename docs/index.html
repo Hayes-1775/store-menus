@@ -23,12 +23,9 @@
         --body-size: 32px;
         --section-height: 60px;
         --section-size: 42px;
-        --section-words-size: 24px;
         --gap-after-section: 18px;
         --gap-between-groups: 24px;
         --section-pad-left: 16px;
-        --section-pad-right: 18px;
-        --section-words-width: 240px;
         --name-pad-right: 14px;
         --bucket-gap: 8px;
         --bucket-icon-size: 28px;
@@ -150,10 +147,8 @@
         height: var(--section-height);
         display: flex;
         align-items: center;
-        justify-content: space-between;
         box-sizing: border-box;
         padding-left: var(--section-pad-left);
-        padding-right: var(--section-pad-right);
         margin-bottom: var(--gap-after-section);
         overflow: hidden;
         font-family: "MADE Sunflower", Georgia, "Times New Roman", serif;
@@ -193,41 +188,30 @@
       }
 
       .section-title {
-        flex: 0 0 auto;
-      }
-
-      .section-words {
         position: relative;
         z-index: 1;
-        flex: 0 0 var(--section-words-width);
-        width: var(--section-words-width);
         height: 100%;
         overflow: hidden;
-        justify-self: end;
       }
 
-      .section-word {
+      .section-title-word {
         position: absolute;
         inset: 0;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: flex-start;
         opacity: 0;
-        font-family: "Gotham Medium", Arial, Helvetica, sans-serif;
-        font-size: var(--section-words-size);
-        letter-spacing: 0.02em;
         line-height: 1;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.92);
-        text-shadow: 0 0 12px rgba(255, 255, 255, 0.24);
+        color: inherit;
+        text-shadow: inherit;
         animation: section-word-cycle 10.5s ease-in-out infinite;
       }
 
-      .section-word:nth-child(2) {
+      .section-title-word:nth-child(2) {
         animation-delay: 3.5s;
       }
 
-      .section-word:nth-child(3) {
+      .section-title-word:nth-child(3) {
         animation-delay: 7s;
       }
 
@@ -763,10 +747,7 @@
         const bodySize = clamp(Math.floor(rowHeight * 0.68), 24, 36);
         const { sectionHeight, gapAfterSection, gapBetweenGroups } = getSectionMetrics(rowHeight);
         const sectionSize = clamp(Math.floor(sectionHeight * 0.70), 32, 48);
-        const sectionWordsSize = clamp(Math.floor(sectionHeight * 0.40), 18, 26);
         const sectionPadLeft = clamp(Math.floor(sectionHeight * 0.28), 12, 18);
-        const sectionPadRight = clamp(Math.floor(sectionHeight * 0.30), 12, 20);
-        const sectionWordsWidth = clamp(Math.floor(sectionHeight * 4.8), 170, 240);
         const namePadRight = clamp(Math.floor(rowHeight * 0.36), 8, 14);
         const bucketGap = clamp(Math.floor(rowHeight * 0.14), 4, 8);
         const bucketIconSize = clamp(Math.floor(bodySize * 0.86), 22, 30);
@@ -793,12 +774,9 @@
         root.setProperty("--body-size", `${bodySize}px`);
         root.setProperty("--section-height", `${sectionHeight}px`);
         root.setProperty("--section-size", `${sectionSize}px`);
-        root.setProperty("--section-words-size", `${sectionWordsSize}px`);
         root.setProperty("--gap-after-section", `${gapAfterSection}px`);
         root.setProperty("--gap-between-groups", `${gapBetweenGroups}px`);
         root.setProperty("--section-pad-left", `${sectionPadLeft}px`);
-        root.setProperty("--section-pad-right", `${sectionPadRight}px`);
-        root.setProperty("--section-words-width", `${sectionWordsWidth}px`);
         root.setProperty("--name-pad-right", `${namePadRight}px`);
         root.setProperty("--bucket-gap", `${bucketGap}px`);
         root.setProperty("--bucket-icon-size", `${bucketIconSize}px`);
@@ -869,9 +847,8 @@
         const words = (sectionDescriptors[strain] || []).slice(0, 3);
         return `
           <div class="section-bar">
-            <span class="section-title">${strain}</span>
-            <div class="section-words" aria-hidden="true">
-              ${words.map((word) => `<span class="section-word">${escapeHtml(word)}</span>`).join("")}
+            <div class="section-title" aria-label="${escapeHtml(strain)}">
+              ${words.map((word) => `<span class="section-title-word">${escapeHtml(word)}</span>`).join("")}
             </div>
           </div>
         `;
