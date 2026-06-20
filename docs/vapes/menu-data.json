@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-19T04:21:30",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-19.csv",
+  "generated_at": "2026-06-19T23:29:18",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-20.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -17,7 +17,7 @@
       "short_price": "$22.5",
       "quantity": 5.0,
       "source_rows": [
-        1124
+        1114
       ],
       "detail_display": "80%"
     },
@@ -35,7 +35,7 @@
       "short_price": "$22.5",
       "quantity": 6.0,
       "source_rows": [
-        1150
+        1140
       ],
       "detail_display": "80%"
     },
@@ -53,7 +53,7 @@
       "short_price": "$22.5",
       "quantity": 7.0,
       "source_rows": [
-        1127
+        1117
       ],
       "detail_display": "79%"
     },
@@ -69,9 +69,9 @@
       "thc_display": "74%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 3.0,
+      "quantity": 2.0,
       "source_rows": [
-        1116
+        1106
       ],
       "detail_display": "74%"
     },
@@ -89,7 +89,7 @@
       "short_price": "$22.5",
       "quantity": 1.0,
       "source_rows": [
-        1149
+        1139
       ],
       "detail_display": "83%"
     },
@@ -105,9 +105,9 @@
       "thc_display": "78%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        1125
+        1115
       ],
       "detail_display": "78%"
     },
@@ -125,7 +125,7 @@
       "short_price": "$22.5",
       "quantity": 2.0,
       "source_rows": [
-        1142
+        1132
       ],
       "detail_display": "74%"
     },
@@ -143,7 +143,7 @@
       "short_price": "$22.5",
       "quantity": 7.0,
       "source_rows": [
-        1141
+        1131
       ],
       "detail_display": "74%"
     },
@@ -161,7 +161,7 @@
       "short_price": "$23",
       "quantity": 6.0,
       "source_rows": [
-        897
+        887
       ],
       "detail_display": "86%"
     },
@@ -179,7 +179,7 @@
       "short_price": "$23",
       "quantity": 5.0,
       "source_rows": [
-        871
+        861
       ],
       "detail_display": "86%"
     },
@@ -197,7 +197,7 @@
       "short_price": "$23",
       "quantity": 8.0,
       "source_rows": [
-        894
+        884
       ],
       "detail_display": "86%"
     },
@@ -215,7 +215,7 @@
       "short_price": "$26",
       "quantity": 8.0,
       "source_rows": [
-        913
+        903
       ],
       "detail_display": "82%"
     },
@@ -233,7 +233,7 @@
       "short_price": "$26",
       "quantity": 2.0,
       "source_rows": [
-        899
+        889
       ],
       "detail_display": "82%"
     },
@@ -251,7 +251,7 @@
       "short_price": "$26",
       "quantity": 1.0,
       "source_rows": [
-        893
+        883
       ],
       "detail_display": "79%"
     },
@@ -269,7 +269,7 @@
       "short_price": "$30",
       "quantity": 2.0,
       "source_rows": [
-        901
+        891
       ],
       "detail_display": "67%"
     },
@@ -287,7 +287,7 @@
       "short_price": "$40",
       "quantity": 3.0,
       "source_rows": [
-        911
+        901
       ],
       "detail_display": "75%"
     },
@@ -303,9 +303,9 @@
       "thc_display": "86%",
       "price": "$23.00",
       "short_price": "$23",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        920
+        910
       ],
       "detail_display": "86%"
     },
@@ -323,8 +323,8 @@
       "short_price": "$23",
       "quantity": 12.0,
       "source_rows": [
-        905,
-        906
+        895,
+        896
       ],
       "detail_display": "85%"
     },
@@ -342,7 +342,7 @@
       "short_price": "$23",
       "quantity": 8.0,
       "source_rows": [
-        870
+        860
       ],
       "detail_display": "85%"
     },
@@ -358,9 +358,9 @@
       "thc_display": "83%",
       "price": "$26.00",
       "short_price": "$26",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        878
+        868
       ],
       "detail_display": "83%"
     },
@@ -378,7 +378,7 @@
       "short_price": "$30",
       "quantity": 2.0,
       "source_rows": [
-        864
+        854
       ],
       "detail_display": "78%"
     },
@@ -396,7 +396,7 @@
       "short_price": "$26",
       "quantity": 6.0,
       "source_rows": [
-        931
+        921
       ],
       "detail_display": "76%"
     },
@@ -414,7 +414,7 @@
       "short_price": "$23",
       "quantity": 8.0,
       "source_rows": [
-        898
+        888
       ],
       "detail_display": "89%"
     },
@@ -432,8 +432,8 @@
       "short_price": "$23",
       "quantity": 19.0,
       "source_rows": [
-        875,
-        876
+        865,
+        866
       ],
       "detail_display": "85%"
     },
@@ -451,7 +451,7 @@
       "short_price": "$23",
       "quantity": 4.0,
       "source_rows": [
-        929
+        919
       ],
       "detail_display": "84%"
     },
@@ -467,9 +467,9 @@
       "thc_display": "83%",
       "price": "$26.00",
       "short_price": "$26",
-      "quantity": 6.0,
+      "quantity": 4.0,
       "source_rows": [
-        928
+        918
       ],
       "detail_display": "83%"
     },
@@ -487,7 +487,7 @@
       "short_price": "$26",
       "quantity": 2.0,
       "source_rows": [
-        880
+        870
       ],
       "detail_display": "82%"
     },
@@ -503,9 +503,9 @@
       "thc_display": "80%",
       "price": "$30.00",
       "short_price": "$30",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        869
+        859
       ],
       "detail_display": "80%"
     },
@@ -523,27 +523,9 @@
       "short_price": "$26",
       "quantity": 5.0,
       "source_rows": [
-        872
+        862
       ],
       "detail_display": "77%"
-    },
-    {
-      "brand": "NW Kind",
-      "product_name": "Pine Ex",
-      "display_name": "Pine Ex AIO",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.755,
-      "thc_display": "76%",
-      "price": "$40.00",
-      "short_price": "$40",
-      "quantity": 1.0,
-      "source_rows": [
-        902
-      ],
-      "detail_display": "76%"
     },
     {
       "brand": "NW Kind",
@@ -559,7 +541,7 @@
       "short_price": "$40",
       "quantity": 10.0,
       "source_rows": [
-        924
+        914
       ],
       "detail_display": "68%"
     },
@@ -577,7 +559,7 @@
       "short_price": "$29",
       "quantity": 4.0,
       "source_rows": [
-        577
+        567
       ],
       "detail_display": "87%"
     },
@@ -593,9 +575,9 @@
       "thc_display": "86%",
       "price": "$28.00",
       "short_price": "$28",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
-        569
+        559
       ],
       "detail_display": "86%"
     },
@@ -613,7 +595,7 @@
       "short_price": "$36",
       "quantity": 3.0,
       "source_rows": [
-        579
+        569
       ],
       "detail_display": "80%"
     },
@@ -631,7 +613,7 @@
       "short_price": "$36",
       "quantity": 7.0,
       "source_rows": [
-        563
+        554
       ],
       "detail_display": "76%"
     },
@@ -649,7 +631,7 @@
       "short_price": "$28",
       "quantity": 2.0,
       "source_rows": [
-        570
+        560
       ],
       "detail_display": "87%"
     },
@@ -667,7 +649,7 @@
       "short_price": "$29",
       "quantity": 7.0,
       "source_rows": [
-        578
+        568
       ],
       "detail_display": "83%"
     },
@@ -685,7 +667,7 @@
       "short_price": "$36",
       "quantity": 9.0,
       "source_rows": [
-        581
+        571
       ],
       "detail_display": "79%"
     },
@@ -701,9 +683,9 @@
       "thc_display": "78%",
       "price": "$36.00",
       "short_price": "$36",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        562
+        553
       ],
       "detail_display": "78%"
     },
@@ -721,7 +703,7 @@
       "short_price": "$36",
       "quantity": 2.0,
       "source_rows": [
-        597
+        587
       ],
       "detail_display": "75%"
     },
@@ -739,7 +721,7 @@
       "short_price": "$28",
       "quantity": 6.0,
       "source_rows": [
-        573
+        563
       ],
       "detail_display": "90%"
     },
@@ -757,7 +739,7 @@
       "short_price": "$28",
       "quantity": 4.0,
       "source_rows": [
-        572
+        562
       ],
       "detail_display": "90%"
     },
@@ -775,7 +757,7 @@
       "short_price": "$36",
       "quantity": 7.0,
       "source_rows": [
-        576
+        566
       ],
       "detail_display": "81%"
     },
@@ -793,7 +775,7 @@
       "short_price": "$36",
       "quantity": 10.0,
       "source_rows": [
-        585
+        575
       ],
       "detail_display": "76%"
     }
