@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-19T23:29:16",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-20.csv",
+  "generated_at": "2026-06-21T02:51:46",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-21.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -72,7 +72,7 @@
       "group_order": 1,
       "thc": 0.30210000000000004,
       "thc_display": "30%",
-      "quantity": 77.01,
+      "quantity": 73.43,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -227,7 +227,7 @@
       "group_order": 1,
       "thc": 0.302,
       "thc_display": "30%",
-      "quantity": 19.75,
+      "quantity": 18.73,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -258,7 +258,7 @@
       "group_order": 1,
       "thc": 0.2441,
       "thc_display": "24%",
-      "quantity": 130.91,
+      "quantity": 138.01,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -289,7 +289,7 @@
       "group_order": 1,
       "thc": 0.2868,
       "thc_display": "29%",
-      "quantity": 227.0,
+      "quantity": 224.96,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -351,7 +351,7 @@
       "group_order": 1,
       "thc": 0.2373,
       "thc_display": "24%",
-      "quantity": 104.84,
+      "quantity": 103.78,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -392,7 +392,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 379,
+      "aged_inventory_days": 381,
       "aged_inventory_date": "2025-06-05",
       "source_product_ids": [
         "d4645b14-58e2-4cb7-8458-1db1e19d20dd"
@@ -402,37 +402,6 @@
       ],
       "source_skus": [
         "wFam9KFUNn"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false
-    },
-    {
-      "product_name": "Dantes Inferno",
-      "brand": "Garden First Cannabis",
-      "strain": "Indica",
-      "group_order": 1,
-      "thc": 0.3029,
-      "thc_display": "30%",
-      "quantity": 1.41,
-      "price_profile": "$8 Gram",
-      "gram": "$8",
-      "eighth": "$25",
-      "quarter": "$48",
-      "half": "$91",
-      "ounce": "$168",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "530b2c3c-49ce-484e-8a1b-93b43d8e2457"
-      ],
-      "source_variant_ids": [
-        "0a36ff71-d9f2-484a-85a4-b22cfe8cc031"
-      ],
-      "source_skus": [
-        "zvOJ3VbR5A"
       ],
       "dutchie_url": "",
       "no_recent_sales": false
@@ -475,7 +444,7 @@
       "group_order": 2,
       "thc": 0.155,
       "thc_display": "16%",
-      "quantity": 1196.5,
+      "quantity": 1195.41,
       "price_profile": "$3 Gram",
       "gram": "$3",
       "eighth": "$10",
@@ -528,7 +497,7 @@
         "auhtfeLnDI"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": true
     },
     {
       "product_name": "Cherry Punch",
@@ -578,7 +547,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 64,
+      "aged_inventory_days": 66,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "e6dc6ea7-8cbf-4dfd-a775-00f998a204e4"
@@ -609,7 +578,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 64,
+      "aged_inventory_days": 66,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "356c235c-c3bf-4e3d-a6ce-1a469a6b897c"
@@ -686,7 +655,7 @@
         "LkOTnC1kgx"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": true
     },
     {
       "product_name": "Sheesh",
@@ -798,7 +767,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 395,
+      "aged_inventory_days": 397,
       "aged_inventory_date": "2025-05-20",
       "source_product_ids": [
         "10f91862-d4ec-436c-95ed-4da9fa2e7dfe"
@@ -850,7 +819,7 @@
       "group_order": 3,
       "thc": 0.163,
       "thc_display": "16%",
-      "quantity": 263.24,
+      "quantity": 261.16,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -903,7 +872,7 @@
         "B87mbca1c9"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": true
     },
     {
       "product_name": "Dante's Cookie Jar",
@@ -934,7 +903,7 @@
         "N3xGRavjiF"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": true
     },
     {
       "product_name": "College Park",
@@ -943,7 +912,7 @@
       "group_order": 3,
       "thc": 0.2302,
       "thc_display": "23%",
-      "quantity": 65.71,
+      "quantity": 51.71,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -953,7 +922,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 209,
+      "aged_inventory_days": 211,
       "aged_inventory_date": "2025-11-22",
       "source_product_ids": [
         "3690a563-8eed-408c-9704-c34c1bb0c79a"
@@ -974,7 +943,7 @@
       "group_order": 3,
       "thc": 0.23870000000000002,
       "thc_display": "24%",
-      "quantity": 195.82,
+      "quantity": 188.74,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -1015,7 +984,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 64,
+      "aged_inventory_days": 66,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "86b938a7-b656-4e2b-b775-08812482b29a"
@@ -1046,7 +1015,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 64,
+      "aged_inventory_days": 66,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "91df18c4-d699-4e58-8881-4151ff6a0186"
@@ -1182,7 +1151,7 @@
         "z8b8wLfyf2"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": true
     },
     {
       "product_name": "Candied Lemons",
@@ -1201,7 +1170,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 333,
+      "aged_inventory_days": 335,
       "aged_inventory_date": "2025-07-21",
       "source_product_ids": [
         "1bf08102-09e5-43f1-b904-38d7fc0df3d8"
@@ -1222,7 +1191,7 @@
       "group_order": 3,
       "thc": 0.2685,
       "thc_display": "27%",
-      "quantity": 51.85,
+      "quantity": 49.85,
       "price_profile": "$10 Gram",
       "gram": "$10",
       "eighth": "$32",
@@ -1232,7 +1201,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 330,
+      "aged_inventory_days": 332,
       "aged_inventory_date": "2025-07-24",
       "source_product_ids": [
         "2b17d933-6962-49e2-8035-de76086820ef"
