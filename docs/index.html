@@ -809,22 +809,24 @@
       }
 
       function rowHtml(row) {
-        const isHiddenGem = row.no_recent_sales && !row.aged_inventory && !row.closeout;
+        const hasAgedPriority = Boolean(row.aged_inventory);
+        const showsCloseoutState = Boolean(row.closeout) && !hasAgedPriority;
+        const isHiddenGem = row.no_recent_sales && !hasAgedPriority && !showsCloseoutState;
         const descriptor = productDescriptors[row.product_name] || {};
         const bucketMarker = descriptor.bucket ? bucketIconHtml(descriptor.bucket) : "";
         const hiddenGemMarker = isHiddenGem
           ? hiddenGemIconHtml()
           : "";
-        const productName = row.aged_inventory
+        const productName = hasAgedPriority
           ? `${productNameHtml(row)}${bucketMarker}${attentionIconHtml(row)}`
           : `${productNameHtml(row)}${bucketMarker}${hiddenGemMarker}`;
         const rotatingDetail = rotatingDetailHtml(row, descriptor);
         const rowClasses = [
           "row",
-          row.aged_inventory ? "aged-row" : "",
+          hasAgedPriority ? "aged-row" : "",
           isHiddenGem ? "hidden-gem-row" : ""
         ].filter(Boolean).join(" ");
-        if (row.closeout) {
+        if (showsCloseoutState) {
           return `
             <div class="${rowClasses} closeout">
               <div class="normal-row">
