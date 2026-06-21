@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-21T02:51:46",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-21.csv",
+  "generated_at": "2026-06-21T07:27:13",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-20.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -41,7 +41,7 @@
       "group_order": 1,
       "thc": 0.21899999999999997,
       "thc_display": "22%",
-      "quantity": 530.76,
+      "quantity": 495.61,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -63,7 +63,7 @@
         "W9YSnBVznN"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true
+      "no_recent_sales": false
     },
     {
       "product_name": "Hectane",
@@ -103,7 +103,7 @@
       "group_order": 1,
       "thc": 0.23,
       "thc_display": "23%",
-      "quantity": 619.89,
+      "quantity": 612.31,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -134,7 +134,7 @@
       "group_order": 1,
       "thc": 0.2475,
       "thc_display": "25%",
-      "quantity": 394.62,
+      "quantity": 380.5,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -258,7 +258,7 @@
       "group_order": 1,
       "thc": 0.2441,
       "thc_display": "24%",
-      "quantity": 138.01,
+      "quantity": 127.36,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -382,7 +382,7 @@
       "group_order": 1,
       "thc": 0.263,
       "thc_display": "26%",
-      "quantity": 31.71,
+      "quantity": 24.61,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -390,7 +390,7 @@
       "half": "$80",
       "ounce": "$148",
       "low_stock": false,
-      "closeout": false,
+      "closeout": true,
       "aged_inventory": true,
       "aged_inventory_days": 381,
       "aged_inventory_date": "2025-06-05",
@@ -413,7 +413,7 @@
       "group_order": 1,
       "thc": 0.3525,
       "thc_display": "35%",
-      "quantity": 45.57,
+      "quantity": 42.01,
       "price_profile": "$12 Gram",
       "gram": "$12",
       "eighth": "$38",
@@ -475,7 +475,7 @@
       "group_order": 2,
       "thc": 0.2637,
       "thc_display": "26%",
-      "quantity": 454.0,
+      "quantity": 432.9,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -495,37 +495,6 @@
       ],
       "source_skus": [
         "auhtfeLnDI"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": true
-    },
-    {
-      "product_name": "Cherry Punch",
-      "brand": "Grown Rogue",
-      "strain": "Hybrid",
-      "group_order": 2,
-      "thc": 0.2853,
-      "thc_display": "29%",
-      "quantity": 12.49,
-      "price_profile": "$5 Gram",
-      "gram": "$5",
-      "eighth": "$16",
-      "quarter": "$30",
-      "half": "$57",
-      "ounce": "$105",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "bfe38935-d67a-4fe5-bb43-8b5cc5659c20"
-      ],
-      "source_variant_ids": [
-        "f9a43f64-3f52-40af-9b98-0b6d41b3fd2d"
-      ],
-      "source_skus": [
-        "40BxMSIdMp"
       ],
       "dutchie_url": "",
       "no_recent_sales": false
@@ -695,7 +664,7 @@
       "group_order": 2,
       "thc": 0.32799999999999996,
       "thc_display": "33%",
-      "quantity": 54.33,
+      "quantity": 40.23,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -819,7 +788,7 @@
       "group_order": 3,
       "thc": 0.163,
       "thc_display": "16%",
-      "quantity": 261.16,
+      "quantity": 252.04,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -943,7 +912,7 @@
       "group_order": 3,
       "thc": 0.23870000000000002,
       "thc_display": "24%",
-      "quantity": 188.74,
+      "quantity": 180.6,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -1067,7 +1036,7 @@
       "group_order": 3,
       "thc": 0.2983,
       "thc_display": "30%",
-      "quantity": 91.83,
+      "quantity": 84.58,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -1098,7 +1067,7 @@
       "group_order": 3,
       "thc": 0.3299,
       "thc_display": "33%",
-      "quantity": 145.91,
+      "quantity": 114.37,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -1129,7 +1098,7 @@
       "group_order": 3,
       "thc": 0.2541,
       "thc_display": "25%",
-      "quantity": 33.77,
+      "quantity": 30.2,
       "price_profile": "$8 Gram",
       "gram": "$8",
       "eighth": "$25",
@@ -1151,7 +1120,7 @@
         "z8b8wLfyf2"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true
+      "no_recent_sales": false
     },
     {
       "product_name": "Candied Lemons",
