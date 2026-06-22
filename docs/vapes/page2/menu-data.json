@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-21T07:27:13",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-20.csv",
+  "generated_at": "2026-06-22T05:21:55",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-22.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -51,7 +51,7 @@
       "thc_display": "92%",
       "price": "$15.95",
       "short_price": "$15.95",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
         115
       ],
@@ -87,7 +87,7 @@
       "thc_display": "85%",
       "price": "$15.95",
       "short_price": "$15.95",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
         132
       ],
@@ -177,7 +177,7 @@
       "thc_display": "88%",
       "price": "$31.00",
       "short_price": "$31",
-      "quantity": 11.0,
+      "quantity": 10.0,
       "source_rows": [
         133
       ],
@@ -195,7 +195,7 @@
       "thc_display": "87%",
       "price": "$21.00",
       "short_price": "$21",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
         128
       ],
@@ -231,7 +231,7 @@
       "thc_display": "86%",
       "price": "$31.00",
       "short_price": "$31",
-      "quantity": 11.0,
+      "quantity": 10.0,
       "source_rows": [
         131
       ],
@@ -249,7 +249,7 @@
       "thc_display": "81%",
       "price": "$27.00",
       "short_price": "$27",
-      "quantity": 14.0,
+      "quantity": 12.0,
       "source_rows": [
         108,
         109

@@ -105,6 +105,10 @@ def fmt_amount(value: float, unit: str = "") -> str:
     return f"{value:g}{suffix}"
 
 
+def fmt_amount_abs(value: float, unit: str = "") -> str:
+    return fmt_amount(abs(value), unit)
+
+
 def fmt_units(value: float, singular: str, plural: str) -> str:
     unit = singular if abs(value) == 1 else plural
     return f"{value:g} {unit}"
@@ -116,6 +120,16 @@ def fmt_product_delta(old_value: Optional[float], new_value: Optional[float], un
 
 def format_date_label(date_text: str) -> str:
     return datetime.strptime(date_text[:19], "%Y-%m-%d %H:%M:%S").strftime("%B %-d, %Y")
+
+
+def format_day_label(day: date) -> str:
+    return day.strftime("%A, %B %-d, %Y")
+
+
+def sales_day_for_run(run_at: datetime) -> date:
+    if run_at.hour >= REPORT_ROLLOVER_HOUR:
+        return run_at.date()
+    return run_at.date() - timedelta(days=1)
 
 
 def unchanged_rows_between(
@@ -141,10 +155,10 @@ def unchanged_rows_between(
     return base_date, unchanged
 
 
-def flower_section(report_day: date, source_commit: Optional[str]) -> str:
-    baseline = previous_snapshot_line(["docs/menu-data.json"], datetime.combine(report_day, time.min))
+def flower_section(sales_day: date, source_commit: Optional[str]) -> str:
+    baseline = previous_snapshot_line(["docs/menu-data.json"], datetime.combine(sales_day, time.min))
     if not baseline:
-        return "Flower Menu\nNo prior published flower snapshot found.\n"
+        return "FLOWER SELL-THROUGH\nNo prior published flower snapshot found.\n"
 
     commit, base_date, _ = baseline
     current_rows = load_rows_at(FLOWER_PATH, "docs/menu-data.json", source_commit)
@@ -152,84 +166,75 @@ def flower_section(report_day: date, source_commit: Optional[str]) -> str:
     old = key_by_name(old_rows)
     new = key_by_name(current_rows)
 
-    removed = sorted(name for name in old if name not in new)
-    added = sorted(name for name in new if name not in old)
-    changed = []
-    unchanged = []
+    sold_entries: List[Tuple[str, float, bool]] = []
+    restocked_entries: List[Tuple[str, float, bool]] = []
+    unchanged: List[Tuple[str, float]] = []
 
-    for name in sorted(set(old) & set(new)):
-        old_qty = old[name].get("quantity")
-        new_qty = new[name].get("quantity")
-        if old_qty == new_qty:
-            unchanged.append((name, old_qty))
-            continue
-        diffs = {}
-        for field in [
-            "strain",
-            "thc",
-            "gram",
-            "eighth",
-            "quarter",
-            "half_ounce",
-            "ounce",
-            "quantity",
-            "closeout",
-            "price_profile",
-        ]:
-            if old[name].get(field) != new[name].get(field):
-                diffs[field] = (old[name].get(field), new[name].get(field))
-        changed.append((name, diffs))
+    for name in sorted(set(old) | set(new)):
+        old_qty = old[name].get("quantity") if name in old else None
+        new_qty = new[name].get("quantity") if name in new else None
+        delta = inventory_delta(old_qty, new_qty)
+        if delta > 0:
+            sold_entries.append((name, delta, name not in new))
+        elif delta < 0:
+            restocked_entries.append((name, delta, name not in old))
+        elif name in old and old_qty is not None:
+            unchanged.append((name, float(old_qty)))
+
+    sold_entries.sort(key=lambda item: (-item[1], item[0]))
+    restocked_entries.sort(key=lambda item: (item[1], item[0]))
 
     lines = []
-    lines.append("Flower Menu")
+    lines.append("FLOWER SELL-THROUGH")
     lines.append(
-        f"Compared {format_date_label(base_date)} to {report_day.strftime('%B %-d, %Y')} using published inventory snapshot quantities."
+        f"Method: net inventory sold on {format_day_label(sales_day)} versus the prior published flower snapshot from {format_date_label(base_date)}."
     )
-    sold_grams = sum(
-        max(inventory_delta(old[name].get("quantity"), new[name].get("quantity") if name in new else None), 0)
-        for name in set(old) | set(new)
-        if inventory_delta(old[name].get("quantity") if name in old else None, new[name].get("quantity") if name in new else None) > 0
-    )
-    lines.append(f"Total flower sold: {fmt_amount(sold_grams, 'g')} yesterday.")
+    sold_grams = sum(delta for _, delta, _ in sold_entries)
+    sold_sku_count = len(sold_entries)
+    top_flower = sold_entries[0] if sold_entries else None
+    lines.append(f"- Net flower sold: {fmt_amount(sold_grams, 'g')} across {sold_sku_count} products")
+    lines.append(f"- No movement: {len(unchanged)} products")
+    if top_flower:
+        lines.append(f"- Top mover: {top_flower[0]} ({fmt_amount(top_flower[1], 'g')})")
+    if restocked_entries:
+        lines.append(f"- Restocked or newly added: {len(restocked_entries)} products")
     lines.append("")
 
-    if removed:
-        lines.append("Removed rows")
-        for name in removed:
-            lines.append(f"- {name}: {fmt_product_delta(old[name].get('quantity'), None, 'g')}")
+    if sold_entries:
+        lines.append("SOLD")
+        for name, delta, removed_from_menu in sold_entries:
+            status = " (off menu)" if removed_from_menu else ""
+            lines.append(f"- {name}: {fmt_amount(delta, 'g')}{status}")
+        lines.append("")
+    else:
+        lines.append("SOLD")
+        lines.append("- No flower sell-through recorded.")
         lines.append("")
 
-    if added:
-        lines.append("Added rows")
-        for name in added:
-            lines.append(f"- {name}: {fmt_product_delta(None, new[name].get('quantity'), 'g')}")
-        lines.append("")
-
-    if changed:
-        lines.append("Quantity changes")
-        for name, diffs in changed:
-            if "quantity" in diffs:
-                old_qty, new_qty = diffs["quantity"]
-                lines.append(f"- {name}: {fmt_product_delta(old_qty, new_qty, 'g')}")
+    if restocked_entries:
+        lines.append("RESTOCKED / ADDED")
+        for name, delta, newly_added in restocked_entries:
+            status = " (new on menu)" if newly_added else ""
+            lines.append(f"- {name}: {fmt_amount_abs(delta, 'g')}{status}")
         lines.append("")
 
     if unchanged:
-        lines.append("Didn't sell")
-        for name, qty in unchanged:
-            lines.append(f"- {name}: {fmt_product_delta(qty, qty, 'g')}")
+        lines.append("NO MOVEMENT")
+        for name, _ in unchanged:
+            lines.append(f"- {name}")
         lines.append("")
 
     three_day_base_date, three_day_unchanged = unchanged_rows_between(
         "docs/menu-data.json",
         FLOWER_PATH,
-        datetime.combine(report_day, time.min) - timedelta(days=2),
+        datetime.combine(sales_day, time.min) - timedelta(days=2),
         source_commit,
     )
     if three_day_base_date and three_day_unchanged:
-        lines.append("Didn't sell in the last 3 days")
-        lines.append(f"Baseline snapshot: {format_date_label(three_day_base_date)}")
-        for name, qty in three_day_unchanged:
-            lines.append(f"- {name}: {fmt_product_delta(qty, qty, 'g')}")
+        lines.append("NO FLOWER MOVEMENT IN THE LAST 3 DAYS")
+        lines.append(f"Baseline: {format_date_label(three_day_base_date)}")
+        for name, _ in three_day_unchanged:
+            lines.append(f"- {name}")
         lines.append("")
 
     hidden_gem_sales = []
@@ -244,28 +249,27 @@ def flower_section(report_day: date, source_commit: Optional[str]) -> str:
 
     if hidden_gem_count:
         hidden_gem_sold_total = sum(sold for _, sold in hidden_gem_sales)
-        lines.append("Blue diamond / Hidden Gem check")
+        lines.append("BLUE DIAMOND / HIDDEN GEM CHECK")
         if hidden_gem_sales:
             lines.append(
-                f"Yes. {len(hidden_gem_sales)} of {hidden_gem_count} blue-diamond products sold yesterday, totaling {fmt_amount(hidden_gem_sold_total, 'g')}."
+                f"- Sold: {len(hidden_gem_sales)} of {hidden_gem_count} tracked products, totaling {fmt_amount(hidden_gem_sold_total, 'g')}"
             )
             for name, sold in hidden_gem_sales:
                 lines.append(f"- {name}: {fmt_amount(sold, 'g')}")
         else:
-            lines.append(f"No. 0 of {hidden_gem_count} blue-diamond products sold yesterday.")
+            lines.append(f"- Sold: 0 of {hidden_gem_count} tracked products")
         lines.append("")
 
-    lines.append("Note: didn't sell means no net inventory quantity change between the two published daily snapshots.")
     return "\n".join(lines)
 
 
-def vape_section(report_day: date, source_commit: Optional[str]) -> str:
+def vape_section(sales_day: date, source_commit: Optional[str]) -> str:
     baseline = previous_snapshot_line(
         ["docs/vapes/menu-data.json", "docs/vapes/page2/menu-data.json"],
-        datetime.combine(report_day, time.min),
+        datetime.combine(sales_day, time.min),
     )
     if not baseline:
-        return "Vape Menu\nNo prior published vape snapshot found.\n"
+        return "VAPE SELL-THROUGH\nNo prior published vape snapshot found.\n"
 
     commit, base_date, _ = baseline
     old_rows = load_rows_from_git(commit, "docs/vapes/menu-data.json") + load_rows_from_git(
@@ -277,6 +281,9 @@ def vape_section(report_day: date, source_commit: Optional[str]) -> str:
     old = key_by_name(old_rows)
     new = key_by_name(new_rows)
     groups: Dict[Tuple[str, str], List[Tuple[str, Optional[float], Optional[float]]]] = defaultdict(list)
+    sold_groups: Dict[Tuple[str, str], List[Tuple[str, float]]] = defaultdict(list)
+    restocked_groups: Dict[Tuple[str, str], List[Tuple[str, float]]] = defaultdict(list)
+    sold_units_total = 0.0
 
     for name in sorted(set(old) | set(new)):
         previous = old.get(name)
@@ -286,44 +293,74 @@ def vape_section(report_day: date, source_commit: Optional[str]) -> str:
         process = sample.get("process") or "Unspecified"
         old_qty = previous.get("quantity") if previous else None
         new_qty = current.get("quantity") if current else None
-        if old_qty == new_qty:
-            continue
-        groups[(brand, process)].append((name, old_qty, new_qty))
+        delta = inventory_delta(old_qty, new_qty)
+        if delta > 0:
+            sold_groups[(brand, process)].append((name, delta))
+            sold_units_total += delta
+        elif delta < 0:
+            restocked_groups[(brand, process)].append((name, delta))
 
     lines = []
-    lines.append("Vape Menu")
+    lines.append("VAPE SELL-THROUGH")
     lines.append(
-        f"Compared {format_date_label(base_date)} to {report_day.strftime('%B %-d, %Y')} using published inventory snapshot quantities."
+        f"Method: net inventory sold on {format_day_label(sales_day)} versus the prior published vape snapshot from {format_date_label(base_date)}."
     )
+    sold_product_count = sum(len(entries) for entries in sold_groups.values())
+    top_group = None
+    if sold_groups:
+        top_group = max(
+            sold_groups.items(),
+            key=lambda item: (sum(delta for _, delta in item[1]), item[0][0], item[0][1]),
+        )
+    lines.append(f"- Net vape sold: {fmt_units(sold_units_total, 'unit', 'units')} across {sold_product_count} products")
+    if top_group:
+        group_units = sum(delta for _, delta in top_group[1])
+        lines.append(f"- Top brand / process: {top_group[0][0]} / {top_group[0][1]} ({fmt_units(group_units, 'unit', 'units')})")
+    if restocked_groups:
+        lines.append(f"- Restocked or newly added: {sum(len(entries) for entries in restocked_groups.values())} products")
     lines.append("")
 
-    for brand, process in sorted(groups):
-        lines.append(brand)
-        lines.append(process)
-        sold_units = sum(max(inventory_delta(old_qty, new_qty), 0) for _, old_qty, new_qty in groups[(brand, process)])
-        if sold_units > 0:
-            lines.append(f"Total sold: {fmt_units(sold_units, 'unit', 'units')} yesterday.")
-        for name, old_qty, new_qty in groups[(brand, process)]:
-            lines.append(f"- {name}: {fmt_units(inventory_delta(old_qty, new_qty), 'unit', 'units')}")
+    if sold_groups:
+        lines.append("SOLD")
+        for brand, process in sorted(sold_groups):
+            lines.append(f"{brand} / {process}")
+            sold_entries = sorted(sold_groups[(brand, process)], key=lambda item: (-item[1], item[0]))
+            sold_units = sum(delta for _, delta in sold_entries)
+            lines.append(f"- Total sold: {fmt_units(sold_units, 'unit', 'units')}")
+            for name, delta in sold_entries:
+                lines.append(f"- {name}: {fmt_units(delta, 'unit', 'units')}")
+            lines.append("")
+    else:
+        lines.append("SOLD")
+        lines.append("- No vape sell-through recorded.")
         lines.append("")
+
+    if restocked_groups:
+        lines.append("RESTOCKED / ADDED")
+        for brand, process in sorted(restocked_groups):
+            lines.append(f"{brand} / {process}")
+            restock_entries = sorted(restocked_groups[(brand, process)], key=lambda item: (item[1], item[0]))
+            for name, delta in restock_entries:
+                lines.append(f"- {name}: {fmt_units(abs(delta), 'unit', 'units')}")
+            lines.append("")
 
     return "\n".join(lines).rstrip()
 
 
-def report_dates(run_at: datetime) -> Tuple[date, date]:
-    snapshot_day = run_at.date()
-    report_day = snapshot_day + timedelta(days=1) if run_at.hour >= REPORT_ROLLOVER_HOUR else snapshot_day
-    return snapshot_day, report_day
-
-
 def build_report(run_at: datetime, source_commit: Optional[str] = None) -> str:
-    _, report_day = report_dates(run_at)
+    sales_day = sales_day_for_run(run_at)
     parts = [
-        f"Store Menu Report - {report_day.strftime('%B %-d, %Y')}",
+        "MIRACLE GREENS",
+        "STORE SELL-THROUGH RECAP",
         "",
-        flower_section(report_day, source_commit),
+        f"Sales Day: {format_day_label(sales_day)}",
+        f"Sent: {run_at.strftime('%A, %B %-d, %Y at %-I:%M %p %Z')}",
         "",
-        vape_section(report_day, source_commit),
+        "This report shows what sold after close based on net inventory change versus the prior published menu snapshot.",
+        "",
+        flower_section(sales_day, source_commit),
+        "",
+        vape_section(sales_day, source_commit),
     ]
     return "\n".join(parts).strip() + "\n"
 
@@ -350,7 +387,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--to", required=True)
     parser.add_argument("--send", action="store_true")
-    parser.add_argument("--subject-prefix", default="Store Menu Report")
+    parser.add_argument("--subject-prefix", default="Store Sell-Through Recap")
     parser.add_argument(
         "--run-at",
         help="Override the local run timestamp in ISO format, e.g. 2026-06-17T22:00:00-07:00",
@@ -368,9 +405,9 @@ def main() -> int:
     )
     if not args.source_commit:
         verify_current_menu()
-    _, report_day = report_dates(run_at)
+    sales_day = sales_day_for_run(run_at)
     report = build_report(run_at, args.source_commit)
-    subject = f"{args.subject_prefix} - {report_day.strftime('%Y-%m-%d')}"
+    subject = f"{args.subject_prefix} - {sales_day.strftime('%Y-%m-%d')}"
 
     if not args.send:
       sys.stdout.write(report)
