@@ -10,9 +10,14 @@ from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
 
 ROOT = Path("/Users/mikehayes/Documents/Store Menus")
+CONFIG_PATH = ROOT / "config/menu_config.json"
 FLOWER_PATH = ROOT / "docs/menu-data.json"
 VAPE1_PATH = ROOT / "docs/vapes/menu-data.json"
 VAPE2_PATH = ROOT / "docs/vapes/page2/menu-data.json"
+VERIFY_SCRIPT = ROOT / "scripts/verify-menu"
+RUNTIME_PYTHON = Path(
+    "/Users/mikehayes/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3"
+)
 REPORT_ROLLOVER_HOUR = 22
 
 
@@ -20,20 +25,24 @@ def run_git(args: Sequence[str]) -> str:
     return subprocess.check_output(["git", *args], cwd=ROOT, text=True)
 
 
-def verify_current_menu() -> None:
+def load_config() -> dict:
+    return json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+
+
+def verify_current_menu() -> dict:
     result = subprocess.run(
-        [str(ROOT / "scripts/verify-menu")],
+        [str(RUNTIME_PYTHON), str(VERIFY_SCRIPT)],
         cwd=ROOT,
         text=True,
         capture_output=True,
     )
-    if result.returncode == 0:
-        return
-    if result.stdout:
-        print(result.stdout, file=sys.stderr, end="")
-    if result.stderr:
-        print(result.stderr, file=sys.stderr, end="")
-    raise SystemExit(result.returncode)
+    if result.returncode != 0:
+        if result.stdout:
+            print(result.stdout, file=sys.stderr, end="")
+        if result.stderr:
+            print(result.stderr, file=sys.stderr, end="")
+        raise SystemExit(result.returncode)
+    return json.loads(result.stdout)
 
 
 def load_json(path: Path) -> dict:
@@ -70,34 +79,19 @@ def previous_snapshot_line(pathspecs: Sequence[str], before_date: datetime) -> O
     return tuple(output[0].split("|", 2))  # type: ignore[return-value]
 
 
+def commit_metadata(commit: str) -> Tuple[str, str]:
+    output = run_git(["show", "-s", "--date=iso", "--format=%ad|%s", commit]).strip()
+    commit_date, subject = output.split("|", 1)
+    return commit_date, subject
+
+
+def commit_label(commit: str) -> str:
+    commit_date, subject = commit_metadata(commit)
+    return f"{commit[:7]} ({format_date_label(commit_date)}; {subject})"
+
+
 def key_by_name(rows: Iterable[dict]) -> Dict[str, dict]:
     return {row["product_name"]: row for row in rows}
-
-
-def fmt_qty(value: Optional[float]) -> str:
-    if value is None:
-        return "not on menu"
-    return f"{value:g}"
-
-
-def fmt_diff(old_value: Optional[float], new_value: Optional[float]) -> str:
-    if old_value is None and new_value is None:
-        return "0"
-    if old_value is None:
-        return f"{new_value:g}"
-    if new_value is None:
-        return f"{old_value:g}"
-    return f"{(old_value - new_value):g}"
-
-
-def inventory_delta(old_value: Optional[float], new_value: Optional[float]) -> float:
-    if old_value is None and new_value is None:
-        return 0
-    if old_value is None:
-        return -float(new_value or 0)
-    if new_value is None:
-        return float(old_value)
-    return float(old_value) - float(new_value)
 
 
 def fmt_amount(value: float, unit: str = "") -> str:
@@ -114,8 +108,14 @@ def fmt_units(value: float, singular: str, plural: str) -> str:
     return f"{value:g} {unit}"
 
 
-def fmt_product_delta(old_value: Optional[float], new_value: Optional[float], unit: str = "") -> str:
-    return fmt_amount(inventory_delta(old_value, new_value), unit)
+def inventory_delta(old_value: Optional[float], new_value: Optional[float]) -> float:
+    if old_value is None and new_value is None:
+        return 0
+    if old_value is None:
+        return -float(new_value or 0)
+    if new_value is None:
+        return float(old_value)
+    return float(old_value) - float(new_value)
 
 
 def format_date_label(date_text: str) -> str:
@@ -130,6 +130,21 @@ def sales_day_for_run(run_at: datetime) -> date:
     if run_at.hour >= REPORT_ROLLOVER_HOUR:
         return run_at.date()
     return run_at.date() - timedelta(days=1)
+
+
+def comparison_context(
+    pathspecs: Sequence[str],
+    before_date: datetime,
+    baseline_commit: Optional[str],
+) -> Optional[Tuple[str, str]]:
+    if baseline_commit:
+        date_text, _ = commit_metadata(baseline_commit)
+        return baseline_commit, date_text
+    baseline = previous_snapshot_line(pathspecs, before_date)
+    if not baseline:
+        return None
+    commit, base_date, _ = baseline
+    return commit, base_date
 
 
 def unchanged_rows_between(
@@ -155,12 +170,12 @@ def unchanged_rows_between(
     return base_date, unchanged
 
 
-def flower_section(sales_day: date, source_commit: Optional[str]) -> str:
-    baseline = previous_snapshot_line(["docs/menu-data.json"], datetime.combine(sales_day, time.min))
-    if not baseline:
-        return "FLOWER SELL-THROUGH\nNo prior published flower snapshot found.\n"
+def flower_section(sales_day: date, source_commit: Optional[str], baseline_commit: Optional[str]) -> str:
+    context = comparison_context(["docs/menu-data.json"], datetime.combine(sales_day, time.min), baseline_commit)
+    if not context:
+        return "FLOWER INVENTORY CHANGES\nNo prior published flower snapshot found.\n"
 
-    commit, base_date, _ = baseline
+    commit, base_date = context
     current_rows = load_rows_at(FLOWER_PATH, "docs/menu-data.json", source_commit)
     old_rows = load_rows_from_git(commit, "docs/menu-data.json")
     old = key_by_name(old_rows)
@@ -185,30 +200,33 @@ def flower_section(sales_day: date, source_commit: Optional[str]) -> str:
     restocked_entries.sort(key=lambda item: (item[1], item[0]))
 
     lines = []
-    lines.append("FLOWER SELL-THROUGH")
-    lines.append(
-        f"Method: net inventory sold on {format_day_label(sales_day)} versus the prior published flower snapshot from {format_date_label(base_date)}."
-    )
+    lines.append("FLOWER INVENTORY CHANGES")
+    if baseline_commit:
+        lines.append(f"Method: compared current flower menu to prior published snapshot {commit_label(commit)}.")
+    else:
+        lines.append(
+            f"Method: net inventory sold on {format_day_label(sales_day)} versus the prior published flower snapshot from {format_date_label(base_date)}."
+        )
     sold_grams = sum(delta for _, delta, _ in sold_entries)
     sold_sku_count = len(sold_entries)
     top_flower = sold_entries[0] if sold_entries else None
-    lines.append(f"- Net flower sold: {fmt_amount(sold_grams, 'g')} across {sold_sku_count} products")
+    lines.append(f"- Net flower decrease: {fmt_amount(sold_grams, 'g')} across {sold_sku_count} products")
     lines.append(f"- No movement: {len(unchanged)} products")
     if top_flower:
-        lines.append(f"- Top mover: {top_flower[0]} ({fmt_amount(top_flower[1], 'g')})")
+        lines.append(f"- Largest decrease: {top_flower[0]} ({fmt_amount(top_flower[1], 'g')})")
     if restocked_entries:
         lines.append(f"- Restocked or newly added: {len(restocked_entries)} products")
     lines.append("")
 
     if sold_entries:
-        lines.append("SOLD")
+        lines.append("DECREASED / SOLD")
         for name, delta, removed_from_menu in sold_entries:
             status = " (off menu)" if removed_from_menu else ""
             lines.append(f"- {name}: {fmt_amount(delta, 'g')}{status}")
         lines.append("")
     else:
-        lines.append("SOLD")
-        lines.append("- No flower sell-through recorded.")
+        lines.append("DECREASED / SOLD")
+        lines.append("- No flower decreases recorded.")
         lines.append("")
 
     if restocked_entries:
@@ -223,6 +241,9 @@ def flower_section(sales_day: date, source_commit: Optional[str]) -> str:
         for name, _ in unchanged:
             lines.append(f"- {name}")
         lines.append("")
+
+    if baseline_commit:
+        return "\n".join(lines).rstrip()
 
     three_day_base_date, three_day_unchanged = unchanged_rows_between(
         "docs/menu-data.json",
@@ -260,18 +281,19 @@ def flower_section(sales_day: date, source_commit: Optional[str]) -> str:
             lines.append(f"- Sold: 0 of {hidden_gem_count} tracked products")
         lines.append("")
 
-    return "\n".join(lines)
+    return "\n".join(lines).rstrip()
 
 
-def vape_section(sales_day: date, source_commit: Optional[str]) -> str:
-    baseline = previous_snapshot_line(
+def vape_section(sales_day: date, source_commit: Optional[str], baseline_commit: Optional[str]) -> str:
+    context = comparison_context(
         ["docs/vapes/menu-data.json", "docs/vapes/page2/menu-data.json"],
         datetime.combine(sales_day, time.min),
+        baseline_commit,
     )
-    if not baseline:
-        return "VAPE SELL-THROUGH\nNo prior published vape snapshot found.\n"
+    if not context:
+        return "VAPE INVENTORY CHANGES\nNo prior published vape snapshot found.\n"
 
-    commit, base_date, _ = baseline
+    commit, base_date = context
     old_rows = load_rows_from_git(commit, "docs/vapes/menu-data.json") + load_rows_from_git(
         commit, "docs/vapes/page2/menu-data.json"
     )
@@ -280,7 +302,6 @@ def vape_section(sales_day: date, source_commit: Optional[str]) -> str:
     )
     old = key_by_name(old_rows)
     new = key_by_name(new_rows)
-    groups: Dict[Tuple[str, str], List[Tuple[str, Optional[float], Optional[float]]]] = defaultdict(list)
     sold_groups: Dict[Tuple[str, str], List[Tuple[str, float]]] = defaultdict(list)
     restocked_groups: Dict[Tuple[str, str], List[Tuple[str, float]]] = defaultdict(list)
     sold_units_total = 0.0
@@ -301,10 +322,13 @@ def vape_section(sales_day: date, source_commit: Optional[str]) -> str:
             restocked_groups[(brand, process)].append((name, delta))
 
     lines = []
-    lines.append("VAPE SELL-THROUGH")
-    lines.append(
-        f"Method: net inventory sold on {format_day_label(sales_day)} versus the prior published vape snapshot from {format_date_label(base_date)}."
-    )
+    lines.append("VAPE INVENTORY CHANGES")
+    if baseline_commit:
+        lines.append(f"Method: compared current vape menu to prior published snapshot {commit_label(commit)}.")
+    else:
+        lines.append(
+            f"Method: net inventory sold on {format_day_label(sales_day)} versus the prior published vape snapshot from {format_date_label(base_date)}."
+        )
     sold_product_count = sum(len(entries) for entries in sold_groups.values())
     top_group = None
     if sold_groups:
@@ -312,27 +336,27 @@ def vape_section(sales_day: date, source_commit: Optional[str]) -> str:
             sold_groups.items(),
             key=lambda item: (sum(delta for _, delta in item[1]), item[0][0], item[0][1]),
         )
-    lines.append(f"- Net vape sold: {fmt_units(sold_units_total, 'unit', 'units')} across {sold_product_count} products")
+    lines.append(f"- Net vape decrease: {fmt_units(sold_units_total, 'unit', 'units')} across {sold_product_count} products")
     if top_group:
         group_units = sum(delta for _, delta in top_group[1])
-        lines.append(f"- Top brand / process: {top_group[0][0]} / {top_group[0][1]} ({fmt_units(group_units, 'unit', 'units')})")
+        lines.append(f"- Largest decrease by brand / process: {top_group[0][0]} / {top_group[0][1]} ({fmt_units(group_units, 'unit', 'units')})")
     if restocked_groups:
         lines.append(f"- Restocked or newly added: {sum(len(entries) for entries in restocked_groups.values())} products")
     lines.append("")
 
     if sold_groups:
-        lines.append("SOLD")
+        lines.append("DECREASED / SOLD")
         for brand, process in sorted(sold_groups):
             lines.append(f"{brand} / {process}")
             sold_entries = sorted(sold_groups[(brand, process)], key=lambda item: (-item[1], item[0]))
             sold_units = sum(delta for _, delta in sold_entries)
-            lines.append(f"- Total sold: {fmt_units(sold_units, 'unit', 'units')}")
+            lines.append(f"- Total decrease: {fmt_units(sold_units, 'unit', 'units')}")
             for name, delta in sold_entries:
                 lines.append(f"- {name}: {fmt_units(delta, 'unit', 'units')}")
             lines.append("")
     else:
-        lines.append("SOLD")
-        lines.append("- No vape sell-through recorded.")
+        lines.append("DECREASED / SOLD")
+        lines.append("- No vape decreases recorded.")
         lines.append("")
 
     if restocked_groups:
@@ -347,20 +371,70 @@ def vape_section(sales_day: date, source_commit: Optional[str]) -> str:
     return "\n".join(lines).rstrip()
 
 
-def build_report(run_at: datetime, source_commit: Optional[str] = None) -> str:
+def menu_verification_section(
+    run_at: datetime,
+    verification: Optional[dict],
+    publish_status: Optional[str],
+    published_commit: Optional[str],
+    pages_url: Optional[str],
+    baseline_commit: Optional[str],
+) -> str:
+    lines = ["MENU UPDATE VERIFICATION"]
+    lines.append(f"- Checked at: {run_at.strftime('%A, %B %-d, %Y at %-I:%M %p %Z')}")
+
+    if publish_status == "published":
+        commit_text = published_commit[:7] if published_commit else "current HEAD"
+        lines.append(f"- Publish status: pushed successfully at commit {commit_text}")
+    elif publish_status == "no_changes":
+        lines.append("- Publish status: no publishable changes were needed; menu output was already current")
+    elif publish_status:
+        lines.append(f"- Publish status: {publish_status}")
+
+    if pages_url:
+        lines.append(f"- Pages URL: {pages_url}")
+    if baseline_commit:
+        lines.append(f"- Inventory baseline: prior published snapshot {commit_label(baseline_commit)}")
+    if verification:
+        lines.append(f"- Flower rows: {verification['rows']}")
+        lines.append(f"- Vape page 1 rows: {verification['vape_rows']}")
+        lines.append(f"- Vape page 2 rows: {verification['vape_page2_rows']}")
+        lines.append(f"- Missing flower price profiles: {verification['missing_price_profiles']}")
+        lines.append(f"- Image size check: {verification['size'][0]}x{verification['size'][1]} verified")
+
+    return "\n".join(lines)
+
+
+def build_report(
+    run_at: datetime,
+    source_commit: Optional[str] = None,
+    baseline_commit: Optional[str] = None,
+    verification: Optional[dict] = None,
+    publish_status: Optional[str] = None,
+    published_commit: Optional[str] = None,
+    pages_url: Optional[str] = None,
+) -> str:
     sales_day = sales_day_for_run(run_at)
+    report_title = "STORE MENU UPDATE REPORT" if baseline_commit else "STORE SELL-THROUGH RECAP"
+    intro = (
+        "This report confirms the menu verified successfully and summarizes inventory changes versus the prior published menu snapshot."
+        if baseline_commit
+        else "This report shows what sold after close based on net inventory change versus the prior published menu snapshot."
+    )
+
     parts = [
         "MIRACLE GREENS",
-        "STORE SELL-THROUGH RECAP",
+        report_title,
         "",
         f"Sales Day: {format_day_label(sales_day)}",
         f"Sent: {run_at.strftime('%A, %B %-d, %Y at %-I:%M %p %Z')}",
         "",
-        "This report shows what sold after close based on net inventory change versus the prior published menu snapshot.",
+        intro,
         "",
-        flower_section(sales_day, source_commit),
+        menu_verification_section(run_at, verification, publish_status, published_commit, pages_url, baseline_commit),
         "",
-        vape_section(sales_day, source_commit),
+        flower_section(sales_day, source_commit, baseline_commit),
+        "",
+        vape_section(sales_day, source_commit, baseline_commit),
     ]
     return "\n".join(parts).strip() + "\n"
 
@@ -384,10 +458,13 @@ end run
 
 
 def main() -> int:
+    config = load_config()
+    email_config = config.get("report_email", {})
+
     parser = argparse.ArgumentParser()
-    parser.add_argument("--to", required=True)
+    parser.add_argument("--to", default=email_config.get("to"))
     parser.add_argument("--send", action="store_true")
-    parser.add_argument("--subject-prefix", default="Store Sell-Through Recap")
+    parser.add_argument("--subject-prefix", default=email_config.get("subject_prefix", "Store Sell-Through Recap"))
     parser.add_argument(
         "--run-at",
         help="Override the local run timestamp in ISO format, e.g. 2026-06-17T22:00:00-07:00",
@@ -396,22 +473,53 @@ def main() -> int:
         "--source-commit",
         help="Read menu snapshot data from a specific git commit instead of the working tree.",
     )
+    parser.add_argument(
+        "--baseline-commit",
+        help="Compare the current menu output against an explicit prior published commit.",
+    )
+    parser.add_argument(
+        "--publish-status",
+        help="Optional publish outcome label for the report header, e.g. published or no_changes.",
+    )
+    parser.add_argument(
+        "--published-commit",
+        help="Optional commit hash to mention in the report header after publish.",
+    )
+    parser.add_argument(
+        "--pages-url",
+        default=config.get("output", {}).get("pages_url"),
+        help="Optional published Pages URL to include in the report header.",
+    )
     args = parser.parse_args()
+
+    if args.send and not args.to:
+        raise SystemExit("Missing recipient email. Set config.menu_config.report_email.to or pass --to.")
 
     run_at = (
         datetime.fromisoformat(args.run_at).astimezone()
         if args.run_at
         else datetime.now().astimezone()
     )
+
+    verification = None
     if not args.source_commit:
-        verify_current_menu()
+        verification = verify_current_menu()
+
+    report = build_report(
+        run_at,
+        args.source_commit,
+        args.baseline_commit,
+        verification,
+        args.publish_status,
+        args.published_commit,
+        args.pages_url,
+    )
     sales_day = sales_day_for_run(run_at)
-    report = build_report(run_at, args.source_commit)
     subject = f"{args.subject_prefix} - {sales_day.strftime('%Y-%m-%d')}"
 
     if not args.send:
-      sys.stdout.write(report)
-      return 0
+        sys.stdout.write(report)
+        return 0
 
     send_mail(args.to, subject, report)
     print(f"Sent report to {args.to} with subject: {subject}")

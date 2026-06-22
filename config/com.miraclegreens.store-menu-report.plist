@@ -6,11 +6,9 @@
   <string>com.miraclegreens.store-menu-report</string>
   <key>ProgramArguments</key>
   <array>
-    <string>/Library/Frameworks/Python.framework/Versions/3.13/bin/python3</string>
+    <string>/Users/mikehayes/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3</string>
     <string>/Users/mikehayes/Documents/Store Menus/scripts/send-store-menu-report-email</string>
     <string>--send</string>
-    <string>--to</string>
-    <string>mhayes@miraclegreens.com</string>
   </array>
   <key>WorkingDirectory</key>
   <string>/Users/mikehayes/Documents/Store Menus</string>

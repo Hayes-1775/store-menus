@@ -12,6 +12,10 @@
     "archive_dir": "docs/archive",
     "pages_url": "https://hayes-1775.github.io/store-menus/"
   },
+  "report_email": {
+    "to": "mhayes@miraclegreens.com",
+    "subject_prefix": "Store Menu Update"
+  },
   "render": {
     "width": 1080,
     "height": 1920
