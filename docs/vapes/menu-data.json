@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-22T05:21:54",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-22.csv",
+  "generated_at": "2026-06-23T02:49:16",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-23.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -77,24 +77,6 @@
     },
     {
       "brand": "Verdant",
-      "product_name": "Sugar Summit",
-      "display_name": "Sugar Summit",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Rosin/CR",
-      "thc": 0.742,
-      "thc_display": "74%",
-      "price": "$22.50",
-      "short_price": "$22.5",
-      "quantity": 1.0,
-      "source_rows": [
-        1115
-      ],
-      "detail_display": "74%"
-    },
-    {
-      "brand": "Verdant",
       "product_name": "Sugar Dreamz",
       "display_name": "Sugar Dreamz",
       "strain": "Hybrid",
@@ -125,7 +107,7 @@
       "short_price": "$23",
       "quantity": 6.0,
       "source_rows": [
-        873
+        875
       ],
       "detail_display": "86%"
     },
@@ -143,7 +125,7 @@
       "short_price": "$23",
       "quantity": 5.0,
       "source_rows": [
-        847
+        849
       ],
       "detail_display": "86%"
     },
@@ -161,7 +143,7 @@
       "short_price": "$23",
       "quantity": 8.0,
       "source_rows": [
-        870
+        872
       ],
       "detail_display": "86%"
     },
@@ -179,45 +161,9 @@
       "short_price": "$26",
       "quantity": 8.0,
       "source_rows": [
-        888
+        890
       ],
       "detail_display": "82%"
-    },
-    {
-      "brand": "NW Kind",
-      "product_name": "Pie Scream",
-      "display_name": "Pie Scream",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Cured Resin",
-      "thc": 0.823,
-      "thc_display": "82%",
-      "price": "$26.00",
-      "short_price": "$26",
-      "quantity": 1.0,
-      "source_rows": [
-        875
-      ],
-      "detail_display": "82%"
-    },
-    {
-      "brand": "NW Kind",
-      "product_name": "Pineapple Fruz",
-      "display_name": "Pineapple Fruz",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.669,
-      "thc_display": "67%",
-      "price": "$30.00",
-      "short_price": "$30",
-      "quantity": 1.0,
-      "source_rows": [
-        877
-      ],
-      "detail_display": "67%"
     },
     {
       "brand": "NW Kind",
@@ -233,7 +179,7 @@
       "short_price": "$40",
       "quantity": 3.0,
       "source_rows": [
-        886
+        888
       ],
       "detail_display": "75%"
     },
@@ -251,7 +197,7 @@
       "short_price": "$23",
       "quantity": 4.0,
       "source_rows": [
-        895
+        897
       ],
       "detail_display": "86%"
     },
@@ -269,8 +215,8 @@
       "short_price": "$23",
       "quantity": 12.0,
       "source_rows": [
-        880,
-        881
+        882,
+        883
       ],
       "detail_display": "85%"
     },
@@ -286,9 +232,9 @@
       "thc_display": "85%",
       "price": "$23.00",
       "short_price": "$23",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        846
+        848
       ],
       "detail_display": "85%"
     },
@@ -304,9 +250,9 @@
       "thc_display": "83%",
       "price": "$26.00",
       "short_price": "$26",
-      "quantity": 6.0,
+      "quantity": 4.0,
       "source_rows": [
-        854
+        856
       ],
       "detail_display": "83%"
     },
@@ -324,7 +270,7 @@
       "short_price": "$30",
       "quantity": 1.0,
       "source_rows": [
-        840
+        842
       ],
       "detail_display": "78%"
     },
@@ -342,7 +288,7 @@
       "short_price": "$26",
       "quantity": 6.0,
       "source_rows": [
-        906
+        908
       ],
       "detail_display": "76%"
     },
@@ -360,7 +306,7 @@
       "short_price": "$23",
       "quantity": 8.0,
       "source_rows": [
-        874
+        876
       ],
       "detail_display": "89%"
     },
@@ -378,8 +324,8 @@
       "short_price": "$23",
       "quantity": 19.0,
       "source_rows": [
-        851,
-        852
+        853,
+        854
       ],
       "detail_display": "85%"
     },
@@ -397,7 +343,7 @@
       "short_price": "$23",
       "quantity": 4.0,
       "source_rows": [
-        904
+        906
       ],
       "detail_display": "84%"
     },
@@ -413,9 +359,9 @@
       "thc_display": "83%",
       "price": "$26.00",
       "short_price": "$26",
-      "quantity": 3.0,
+      "quantity": 2.0,
       "source_rows": [
-        903
+        905
       ],
       "detail_display": "83%"
     },
@@ -433,27 +379,9 @@
       "short_price": "$26",
       "quantity": 1.0,
       "source_rows": [
-        856
+        858
       ],
       "detail_display": "82%"
-    },
-    {
-      "brand": "NW Kind",
-      "product_name": "Blue Dream",
-      "display_name": "Blue Dream",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.7979999999999999,
-      "thc_display": "80%",
-      "price": "$30.00",
-      "short_price": "$30",
-      "quantity": 2.0,
-      "source_rows": [
-        845
-      ],
-      "detail_display": "80%"
     },
     {
       "brand": "NW Kind",
@@ -469,7 +397,7 @@
       "short_price": "$26",
       "quantity": 5.0,
       "source_rows": [
-        848
+        850
       ],
       "detail_display": "77%"
     },
@@ -487,7 +415,7 @@
       "short_price": "$40",
       "quantity": 10.0,
       "source_rows": [
-        899
+        901
       ],
       "detail_display": "68%"
     },
@@ -505,7 +433,7 @@
       "short_price": "$29",
       "quantity": 4.0,
       "source_rows": [
-        558
+        560
       ],
       "detail_display": "87%"
     },
@@ -523,7 +451,7 @@
       "short_price": "$28",
       "quantity": 1.0,
       "source_rows": [
-        550
+        552
       ],
       "detail_display": "86%"
     },
@@ -541,7 +469,7 @@
       "short_price": "$36",
       "quantity": 1.0,
       "source_rows": [
-        560
+        562
       ],
       "detail_display": "80%"
     },
@@ -559,7 +487,7 @@
       "short_price": "$36",
       "quantity": 7.0,
       "source_rows": [
-        545
+        547
       ],
       "detail_display": "76%"
     },
@@ -577,7 +505,7 @@
       "short_price": "$28",
       "quantity": 2.0,
       "source_rows": [
-        551
+        553
       ],
       "detail_display": "87%"
     },
@@ -595,7 +523,7 @@
       "short_price": "$29",
       "quantity": 7.0,
       "source_rows": [
-        559
+        561
       ],
       "detail_display": "83%"
     },
@@ -613,7 +541,7 @@
       "short_price": "$36",
       "quantity": 9.0,
       "source_rows": [
-        562
+        564
       ],
       "detail_display": "79%"
     },
@@ -631,7 +559,7 @@
       "short_price": "$36",
       "quantity": 6.0,
       "source_rows": [
-        544
+        546
       ],
       "detail_display": "78%"
     },
@@ -649,7 +577,7 @@
       "short_price": "$36",
       "quantity": 2.0,
       "source_rows": [
-        578
+        580
       ],
       "detail_display": "75%"
     },
@@ -667,7 +595,7 @@
       "short_price": "$28",
       "quantity": 6.0,
       "source_rows": [
-        554
+        556
       ],
       "detail_display": "90%"
     },
@@ -685,7 +613,7 @@
       "short_price": "$28",
       "quantity": 3.0,
       "source_rows": [
-        553
+        555
       ],
       "detail_display": "90%"
     },
@@ -703,7 +631,7 @@
       "short_price": "$36",
       "quantity": 7.0,
       "source_rows": [
-        557
+        559
       ],
       "detail_display": "81%"
     },
@@ -721,7 +649,7 @@
       "short_price": "$36",
       "quantity": 10.0,
       "source_rows": [
-        566
+        568
       ],
       "detail_display": "76%"
     }
