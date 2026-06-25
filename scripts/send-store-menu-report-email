@@ -15,6 +15,7 @@ FLOWER_PATH = ROOT / "docs/menu-data.json"
 VAPE1_PATH = ROOT / "docs/vapes/menu-data.json"
 VAPE2_PATH = ROOT / "docs/vapes/page2/menu-data.json"
 VERIFY_SCRIPT = ROOT / "scripts/verify-menu"
+WORKFLOW_OPTIMIZER_SCRIPT = ROOT / "scripts/workflow-optimizer.py"
 RUNTIME_PYTHON = Path(
     "/Users/mikehayes/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3"
 )
@@ -47,6 +48,21 @@ def verify_current_menu() -> dict:
 
 def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def workflow_optimization_summary() -> Optional[dict]:
+    if not WORKFLOW_OPTIMIZER_SCRIPT.exists():
+        return None
+
+    result = subprocess.run(
+        [str(RUNTIME_PYTHON), str(WORKFLOW_OPTIMIZER_SCRIPT), "summary", "--workflow", "store-menu-daily"],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+    )
+    if result.returncode != 0 or not result.stdout.strip():
+        return None
+    return json.loads(result.stdout)
 
 
 def load_rows(path: Path) -> List[dict]:
@@ -404,6 +420,59 @@ def menu_verification_section(
     return "\n".join(lines)
 
 
+def workflow_optimization_section(summary: Optional[dict]) -> str:
+    lines = ["WORKFLOW OPTIMIZATION"]
+    if not summary or not any(
+        summary.get(key)
+        for key in ("slow_steps", "failure_prone_steps", "unnecessary_waits", "replaceable_ui_actions", "optimizations")
+    ):
+        lines.append("- No workflow telemetry available yet.")
+        return "\n".join(lines)
+
+    slow_steps = summary.get("slow_steps", [])
+    if slow_steps:
+        top = slow_steps[0]
+        lines.append(
+            f"- Slowest recorded step: {top['step']} averaging {round(top['avg_duration_ms'] / 1000, 2)}s"
+        )
+
+    failure_prone = summary.get("failure_prone_steps", [])
+    if failure_prone:
+        top_failure = failure_prone[0]
+        lines.append(
+            f"- Most failure-prone step: {top_failure['step']} at {round(top_failure['failure_rate'] * 100)}% failure"
+        )
+
+    waits = summary.get("unnecessary_waits", [])
+    if waits:
+        top_wait = waits[0]
+        lines.append(
+            f"- Highest wait ratio: {top_wait['step']} at {round(top_wait['wait_ratio'] * 100)}% wait time"
+        )
+
+    replacements = summary.get("replaceable_ui_actions", [])
+    if replacements:
+        top_replace = replacements[0]
+        lines.append(
+            f"- Replaceable UI action: {top_replace['step']} can move from {top_replace['current_method']} to {top_replace['recommended_method']}"
+        )
+
+    optimizations = summary.get("optimizations", [])
+    if optimizations:
+        top_optimization = optimizations[0]
+        lines.append(f"- Suggested improvement: {top_optimization['suggested_improvement']}")
+        lines.append(f"- Improvement applied: {'yes' if top_optimization['applied'] else 'no'}")
+        if top_optimization.get("before_avg_duration_ms") is not None and top_optimization.get("after_avg_duration_ms") is not None:
+            lines.append(
+                f"- Before/after timing: {round(top_optimization['before_avg_duration_ms'] / 1000, 2)}s -> "
+                f"{round(top_optimization['after_avg_duration_ms'] / 1000, 2)}s"
+            )
+        if top_optimization.get("disabled"):
+            lines.append(f"- Safeguard status: disabled ({top_optimization.get('disabled_reason') or 'regression detected'})")
+
+    return "\n".join(lines)
+
+
 def build_report(
     run_at: datetime,
     source_commit: Optional[str] = None,
@@ -431,6 +500,8 @@ def build_report(
         intro,
         "",
         menu_verification_section(run_at, verification, publish_status, published_commit, pages_url, baseline_commit),
+        "",
+        workflow_optimization_section(workflow_optimization_summary()),
         "",
         flower_section(sales_day, source_commit, baseline_commit),
         "",

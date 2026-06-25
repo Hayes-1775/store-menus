@@ -4,6 +4,7 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 PYTHON="${PYTHON:-/Users/mikehayes/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3}"
 INVENTORY="${1:-}"
+WORKFLOW_NAME="store-menu-daily"
 
 if [[ -z "$INVENTORY" ]]; then
   echo "Usage: scripts/run-daily-menu /path/to/flowhub-inventory.csv" >&2
@@ -11,23 +12,38 @@ if [[ -z "$INVENTORY" ]]; then
 fi
 
 cd "$ROOT_DIR"
-"$PYTHON" scripts/extract-flower-menu \
-  --inventory "$INVENTORY" \
-  --pricing-workbook "/Users/mikehayes/Desktop/Flower Menu Link.xlsm" \
-  --out-json data/flower_menu.json \
-  --out-csv data/flower_menu.csv \
-  --validation-json data/validation_report.json
+source "$ROOT_DIR/scripts/workflow-optimizer.sh"
 
-"$PYTHON" scripts/render-menu \
-  --menu-json data/flower_menu.json \
-  --out docs/latest.jpg \
-  --archive
+workflow_run_timed_step "$WORKFLOW_NAME" "extract_flower_menu" "local-script" \
+  "local script" \
+  "$PYTHON" scripts/extract-flower-menu \
+    --inventory "$INVENTORY" \
+    --pricing-workbook "/Users/mikehayes/Desktop/Flower Menu Link.xlsm" \
+    --out-json data/flower_menu.json \
+    --out-csv data/flower_menu.csv \
+    --validation-json data/validation_report.json
 
-cp data/flower_menu.json docs/menu-data.json
+workflow_run_timed_step "$WORKFLOW_NAME" "render_flower_menu" "local-script" \
+  "local script" \
+  "$PYTHON" scripts/render-menu \
+    --menu-json data/flower_menu.json \
+    --out docs/latest.jpg \
+    --archive
 
-scripts/run-vape-menu "$INVENTORY"
-scripts/run-vape-menu-page2 "$INVENTORY"
+workflow_run_timed_step "$WORKFLOW_NAME" "copy_flower_menu_data" "batch-copy" \
+  "batch" \
+  cp data/flower_menu.json docs/menu-data.json
 
-scripts/verify-menu
+workflow_run_timed_step "$WORKFLOW_NAME" "generate_vape_page_1" "local-script" \
+  "local script" \
+  scripts/run-vape-menu "$INVENTORY"
+
+workflow_run_timed_step "$WORKFLOW_NAME" "generate_vape_page_2" "local-script" \
+  "local script" \
+  scripts/run-vape-menu-page2 "$INVENTORY"
+
+workflow_run_timed_step "$WORKFLOW_NAME" "verify_generated_menus" "local-script" \
+  "local script" \
+  scripts/verify-menu
 
 echo "Generated flower and vape menu pages from $INVENTORY"

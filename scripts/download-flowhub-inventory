@@ -10,6 +10,7 @@
 
 const fs = require("node:fs");
 const path = require("node:path");
+const childProcess = require("node:child_process");
 const realExit = process.exit.bind(process);
 
 const FLOWHUB_URL =
@@ -19,6 +20,164 @@ const FLOWHUB_URL =
 const OUT_DIR = path.resolve(process.env.FLOWHUB_DOWNLOAD_DIR || "downloads");
 const LOGIN_WAIT_MS = Number(process.env.FLOWHUB_LOGIN_WAIT_MS || 45000);
 const HANDOFF_WAIT_MS = Number(process.env.FLOWHUB_HANDOFF_WAIT_MS || 8 * 60 * 60 * 1000);
+const WORKFLOW_NAME = "store-menu-daily";
+const OPTIMIZER_PYTHON =
+  process.env.PYTHON ||
+  "/Users/mikehayes/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3";
+const OPTIMIZER_SCRIPT = "/Users/mikehayes/Documents/Store Menus/scripts/workflow-optimizer.py";
+const WORKFLOW_RUN_ID = process.env.WORKFLOW_RUN_ID || `${new Date().toISOString().replace(/[:.]/g, "-")}-${process.pid}`;
+
+function detectChromePluginRoot() {
+  const latestPath = "/Users/mikehayes/.codex/plugins/cache/openai-bundled/chrome/latest";
+  if (fs.existsSync(path.join(latestPath, "scripts", "browser-client.mjs"))) {
+    return latestPath;
+  }
+
+  const baseDir = "/Users/mikehayes/.codex/plugins/cache/openai-bundled/chrome";
+  const versions = fs.existsSync(baseDir) ? fs.readdirSync(baseDir) : [];
+  const candidates = versions
+    .filter((entry) => /^\d/.test(entry))
+    .sort((a, b) => b.localeCompare(a, undefined, { numeric: true }))
+    .map((entry) => path.join(baseDir, entry))
+    .filter((entry) => fs.existsSync(path.join(entry, "scripts", "browser-client.mjs")));
+  return candidates[0] || baseDir;
+}
+
+function recordStep({
+  step,
+  status,
+  startedAtMs,
+  endedAtMs,
+  durationMs,
+  method = "",
+  actionType = "",
+  waitMs = 0,
+  mouseDistancePx = 0,
+  retries = 0,
+  errorMessage = "",
+  userOverride = "",
+  notes = "",
+}) {
+  try {
+    const startedMs = startedAtMs ?? Date.now();
+    const endedMs = endedAtMs ?? startedMs + Math.max(0, Math.round(durationMs || 0));
+    childProcess.execFileSync(
+      OPTIMIZER_PYTHON,
+      [
+        OPTIMIZER_SCRIPT,
+        "record-step",
+        "--workflow",
+        WORKFLOW_NAME,
+        "--run-id",
+        WORKFLOW_RUN_ID,
+        "--step",
+        step,
+        "--status",
+        status,
+        "--started-at-ms",
+        String(startedMs),
+        "--ended-at-ms",
+        String(endedMs),
+        "--method",
+        method,
+        "--action-type",
+        actionType || classifyActionType(method),
+        "--wait-ms",
+        String(Math.max(0, Math.round(waitMs))),
+        "--mouse-distance-px",
+        String(Math.max(0, Math.round(mouseDistancePx))),
+        "--retries",
+        String(Math.max(0, Math.round(retries))),
+        "--error-message",
+        errorMessage,
+        "--user-override",
+        userOverride,
+        "--notes",
+        notes,
+      ],
+      { stdio: "ignore" }
+    );
+  } catch {
+    // Telemetry must never block the workflow.
+  }
+}
+
+function classifyActionType(method) {
+  const value = (method || "").toLowerCase();
+  if (value.includes("api")) return "api call";
+  if (value.includes("batch")) return "batch";
+  if (["role", "text", "selector", "element", "dom"].some((token) => value.includes(token))) return "selector targeting";
+  if (value.includes("keyboard") || value.includes("shortcut")) return "keyboard shortcut";
+  if (value.includes("manual") || value.includes("handoff")) return "manual/user input";
+  if (value.includes("wait") || value.includes("poll")) return "wait";
+  if (value.includes("mouse") || value.includes("coordinate") || value.includes("click")) return "mouse click";
+  return "other";
+}
+
+function methodOrder(step, methods) {
+  try {
+    const raw = childProcess.execFileSync(
+      OPTIMIZER_PYTHON,
+      [
+        OPTIMIZER_SCRIPT,
+        "method-order",
+        "--workflow",
+        WORKFLOW_NAME,
+        "--step",
+        step,
+        "--methods",
+        methods.join(","),
+      ],
+      { encoding: "utf8" }
+    );
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed.methods) && parsed.methods.length) {
+      return parsed.methods;
+    }
+  } catch {
+    // Fall through to the default order.
+  }
+  return methods;
+}
+
+async function runTimedStep(step, method, fn, extras = {}) {
+  const startedAt = Date.now();
+  try {
+    const result = await fn();
+    recordStep({
+      step,
+      status: "success",
+      startedAtMs: startedAt,
+      endedAtMs: Date.now(),
+      durationMs: Date.now() - startedAt,
+      method,
+      actionType: extras.actionType || classifyActionType(method),
+      waitMs: extras.waitMs || 0,
+      mouseDistancePx: extras.mouseDistancePx || 0,
+      retries: extras.retries || 0,
+      userOverride: extras.userOverride || "",
+      notes: extras.notes || "",
+    });
+    return result;
+  } catch (error) {
+    recordStep({
+      step,
+      status: "failure",
+      startedAtMs: startedAt,
+      endedAtMs: Date.now(),
+      durationMs: Date.now() - startedAt,
+      method,
+      actionType: extras.actionType || classifyActionType(method),
+      waitMs: extras.waitMs || 0,
+      mouseDistancePx: extras.mouseDistancePx || 0,
+      retries: extras.retries || 0,
+      errorMessage: error?.message || "",
+      userOverride: extras.userOverride || "",
+      notes: error?.message || extras.notes || "",
+    });
+    throw error;
+  }
+}
 
 async function getPageState(tab) {
   return tab.playwright.evaluate(() => {
@@ -54,14 +213,15 @@ function looksLikeLogin(pageState) {
 
 async function waitForAutofilledLogin(tab) {
   const deadline = Date.now() + LOGIN_WAIT_MS;
+  let totalWaitMs = 0;
 
   while (Date.now() < deadline) {
     const pageState = await getPageState(tab);
     if (needsManualAuth(pageState)) {
-      return { status: "manual_auth", pageState };
+      return { status: "manual_auth", pageState, waitedMs: totalWaitMs };
     }
     if (!looksLikeLogin(pageState)) {
-      return { status: "logged_in", pageState };
+      return { status: "logged_in", pageState, waitedMs: totalWaitMs };
     }
 
     if (pageState.hasFilledPasswordField) {
@@ -86,89 +246,216 @@ async function waitForAutofilledLogin(tab) {
     }
 
     await tab.playwright.waitForTimeout(1500);
+    totalWaitMs += 1500;
   }
 
-  return { status: "login_required", pageState: await getPageState(tab) };
+  return { status: "login_required", pageState: await getPageState(tab), waitedMs: totalWaitMs };
 }
 
 async function waitForManualHandoff(tab, reason) {
   console.error(`${reason}. Waiting for manual completion in Chrome for ${Math.round(HANDOFF_WAIT_MS / 60000)} minutes.`);
   const deadline = Date.now() + HANDOFF_WAIT_MS;
+  let totalWaitMs = 0;
 
   while (Date.now() < deadline) {
     const pageState = await getPageState(tab);
     if (!needsManualAuth(pageState) && !looksLikeLogin(pageState)) {
-      return { status: "resolved", pageState };
+      return { status: "resolved", pageState, waitedMs: totalWaitMs };
     }
     await tab.playwright.waitForTimeout(3000);
+    totalWaitMs += 3000;
   }
 
-  return { status: "timeout", pageState: await getPageState(tab) };
+  return { status: "timeout", pageState: await getPageState(tab), waitedMs: totalWaitMs };
+}
+
+function findFreshDownload(downloadsDir, notBeforeMs) {
+  const tenMinutesAgo = Date.now() - 10 * 60 * 1000;
+  const matches = fs
+    .readdirSync(downloadsDir)
+    .filter((name) => /^Inventory Miracle Greens Bend .*\.csv$/i.test(name))
+    .map((name) => {
+      const filePath = path.join(downloadsDir, name);
+      const stat = fs.statSync(filePath);
+      return { filePath, mtimeMs: stat.mtimeMs, name };
+    })
+    .filter((file) => file.mtimeMs >= Math.max(tenMinutesAgo, notBeforeMs))
+    .sort((a, b) => b.mtimeMs - a.mtimeMs);
+  return matches[0] || null;
+}
+
+async function pollForDownload(downloadsDir, notBeforeMs) {
+  let waitMs = 0;
+  for (let attempt = 0; attempt < 20; attempt += 1) {
+    const found = findFreshDownload(downloadsDir, notBeforeMs);
+    if (found) {
+      return { file: found, waitMs };
+    }
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    waitMs += 500;
+  }
+  return { file: null, waitMs };
 }
 
 async function main() {
   fs.mkdirSync(OUT_DIR, { recursive: true });
-  const pluginRoot =
-    process.env.CODEX_CHROME_PLUGIN_ROOT ||
-    "/Users/mikehayes/.codex/plugins/cache/openai-bundled/chrome/26.519.81530";
+  const pluginRoot = process.env.CODEX_CHROME_PLUGIN_ROOT || detectChromePluginRoot();
   const clientPath = path.join(pluginRoot, "scripts", "browser-client.mjs");
 
   if (!fs.existsSync(clientPath)) {
     throw new Error(`Codex Chrome browser client not found at ${clientPath}`);
   }
 
-  const { setupBrowserRuntime } = await import(`file://${clientPath}`);
-  await setupBrowserRuntime({ globals: globalThis });
-  const browser = await agent.browsers.get("extension");
-  await browser.nameSession("Flowhub inventory export");
-  const tab = await browser.tabs.new();
-  await tab.goto(FLOWHUB_URL);
-  await tab.playwright.waitForLoadState({ state: "domcontentloaded", timeoutMs: 30000 });
+  const { browser, tab } = await runTimedStep("setup_chrome_runtime", "direct-element-runtime", async () => {
+    const { setupBrowserRuntime } = await import(`file://${clientPath}`);
+    await setupBrowserRuntime({ globals: globalThis });
+    const browser = await agent.browsers.get("extension");
+    await browser.nameSession("Flowhub inventory export");
+    const tab = await browser.tabs.new();
+    return { browser, tab };
+  });
 
-  const loginResult = await waitForAutofilledLogin(tab);
+  await runTimedStep("open_flowhub_inventory_report", "direct-element-runtime", async () => {
+    await tab.goto(FLOWHUB_URL);
+    await tab.playwright.waitForLoadState({ state: "domcontentloaded", timeoutMs: 30000 });
+  });
+
+  const loginResult = await runTimedStep(
+    "flowhub_login_resolution",
+    "direct-element-login-check",
+    async () => waitForAutofilledLogin(tab)
+  );
+  recordStep({
+    step: "flowhub_login_wait",
+    status: "success",
+    startedAtMs: Date.now() - (loginResult.waitedMs || 0),
+    endedAtMs: Date.now(),
+    durationMs: 0,
+    method: "static-wait-login",
+    actionType: "wait",
+    waitMs: loginResult.waitedMs || 0,
+    notes: loginResult.status,
+  });
   if (loginResult.status === "manual_auth") {
-    const handoffResult = await waitForManualHandoff(tab, "Flowhub requires verification, 2FA, or CAPTCHA");
+    const handoffResult = await runTimedStep(
+      "flowhub_manual_auth_handoff",
+      "manual-handoff",
+      async () => waitForManualHandoff(tab, "Flowhub requires verification, 2FA, or CAPTCHA")
+    );
     if (handoffResult.status !== "resolved") {
       await browser.tabs.finalize({ keep: [{ tab, status: "handoff" }] });
       throw new Error("Flowhub verification handoff timed out before the report page was available.");
     }
   }
   if (loginResult.status === "login_required") {
-    const handoffResult = await waitForManualHandoff(tab, "Flowhub login did not complete after waiting for saved username/password autofill");
+    const handoffResult = await runTimedStep(
+      "flowhub_login_handoff",
+      "manual-handoff",
+      async () => waitForManualHandoff(tab, "Flowhub login did not complete after waiting for saved username/password autofill")
+    );
     if (handoffResult.status !== "resolved") {
       await browser.tabs.finalize({ keep: [{ tab, status: "handoff" }] });
       throw new Error("Flowhub login handoff timed out before the report page was available.");
     }
   }
 
-  const candidates = [
-    tab.playwright.getByRole("button", { name: /export|download|csv/i }),
-    tab.playwright.getByText(/export|download|csv/i),
+  const clickCandidates = [
+    {
+      name: "role-button",
+      mouseDistancePx: 0,
+      run: async () => {
+        const candidate = tab.playwright.getByRole("button", { name: /export|download|csv/i });
+        const count = await candidate.count();
+        if (!count) {
+          throw new Error("role button export control unavailable");
+        }
+        await candidate.first().click({ timeoutMs: 10000 });
+      },
+    },
+    {
+      name: "text-match",
+      mouseDistancePx: 0,
+      run: async () => {
+        const candidate = tab.playwright.getByText(/export|download|csv/i);
+        const count = await candidate.count();
+        if (!count) {
+          throw new Error("text match export control unavailable");
+        }
+        await candidate.first().click({ timeoutMs: 10000 });
+      },
+    },
+    {
+      name: "coordinate-click",
+      mouseDistancePx: 1252,
+      run: async () => {
+        await tab.playwright.mouse.click(1241, 165);
+      },
+    },
   ];
+  const candidateOrder = methodOrder("download_csv", clickCandidates.map((candidate) => candidate.name));
+  const orderedCandidates = candidateOrder
+    .map((name) => clickCandidates.find((candidate) => candidate.name === name))
+    .filter(Boolean);
+  const downloadsDir = path.resolve(process.env.HOME || "/Users/mikehayes", "Downloads");
+  const outPath = path.join(OUT_DIR, `flowhub-inventory-${new Date().toISOString().slice(0, 10)}.csv`);
+  let downloadedFile = null;
 
-  for (const candidate of candidates) {
+  for (const candidate of orderedCandidates) {
     try {
-      const count = await candidate.count();
-      if (!count) continue;
-      const downloadPromise = tab.playwright.waitForEvent("download", { timeoutMs: 15000 });
-      await candidate.first().click({ timeoutMs: 10000 });
-      const download = await downloadPromise;
-      if (!download || typeof download.saveAs !== "function") {
-        throw new Error("Chrome download object does not support saveAs in this environment.");
+      const startedAt = Date.now();
+      await candidate.run();
+      const { file, waitMs } = await pollForDownload(downloadsDir, startedAt - 1000);
+      recordStep({
+        step: "download_csv",
+        status: file ? "success" : "failure",
+        startedAtMs: startedAt,
+        endedAtMs: Date.now(),
+        durationMs: Date.now() - startedAt,
+        method: candidate.name,
+        actionType: classifyActionType(candidate.name),
+        waitMs,
+        mouseDistancePx: candidate.mouseDistancePx,
+        retries: Math.max(0, candidateOrder.indexOf(candidate.name)),
+      });
+      if (file) {
+        downloadedFile = file;
+        break;
       }
-      const filename = `flowhub-inventory-${new Date().toISOString().slice(0, 10)}.csv`;
-      const outPath = path.join(OUT_DIR, filename);
-      await download.saveAs(outPath);
-      await browser.tabs.finalize({});
-      console.log(JSON.stringify({ path: outPath }, null, 2));
-      return;
     } catch (error) {
-      // Try the next selector candidate.
+      recordStep({
+        step: "download_csv",
+        status: "failure",
+        startedAtMs: Date.now(),
+        endedAtMs: Date.now(),
+        durationMs: 0,
+        method: candidate.name,
+        actionType: classifyActionType(candidate.name),
+        mouseDistancePx: candidate.mouseDistancePx,
+        retries: Math.max(0, candidateOrder.indexOf(candidate.name)),
+        errorMessage: error.message || String(error),
+        notes: error.message || String(error),
+      });
     }
   }
 
-  await browser.tabs.finalize({ keep: [{ tab, status: "handoff" }] });
-  throw new Error("Could not find a clear Flowhub CSV/export/download control on the report page.");
+  if (!downloadedFile) {
+    await browser.tabs.finalize({ keep: [{ tab, status: "handoff" }] });
+    throw new Error("Flowhub CSV did not appear in Downloads.");
+  }
+
+  await runTimedStep("copy_and_validate_downloaded_csv", "batch-csv-header-validation", async () => {
+    fs.copyFileSync(downloadedFile.filePath, outPath);
+    const header = fs.readFileSync(outPath, "utf8").split(/\r?\n/, 1)[0].split(",");
+    const required = ["Category", "Room", "Quantity", "Product Type", "Product Name", "Strain Species"];
+    const missing = required.filter((name) => !header.includes(name));
+    if (missing.length) {
+      throw new Error(`CSV downloaded but required columns missing: ${missing.join(", ")}`);
+    }
+  });
+  await browser.tabs.finalize({});
+  console.log(JSON.stringify({ path: outPath }, null, 2));
+  return;
+
 }
 
 main().catch((error) => {
