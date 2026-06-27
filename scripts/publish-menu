@@ -6,9 +6,19 @@ source "$ROOT_DIR/scripts/workflow-optimizer.sh"
 WORKFLOW_NAME="store-menu-daily"
 cd "$ROOT_DIR"
 
-previous_head="$(git rev-parse HEAD)"
+if command -v xcrun >/dev/null 2>&1; then
+  GIT_BIN="$(xcrun -f git 2>/dev/null || true)"
+fi
+GIT_BIN="${GIT_BIN:-/usr/bin/git}"
 
-if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+if [[ ! -x "$GIT_BIN" ]]; then
+  echo "FAIL: system git binary not found" >&2
+  exit 1
+fi
+
+previous_head="$("$GIT_BIN" rev-parse HEAD)"
+
+if ! "$GIT_BIN" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   echo "FAIL: not inside a git repository" >&2
   exit 1
 fi
@@ -17,14 +27,14 @@ workflow_run_timed_step "$WORKFLOW_NAME" "verify_before_publish" "local-script" 
   "local script" \
   sh -c 'scripts/verify-menu >/tmp/store-menu-verify.json'
 
-if ! git remote get-url origin >/dev/null 2>&1; then
+if ! "$GIT_BIN" remote get-url origin >/dev/null 2>&1; then
   echo "FAIL: no git remote named origin is configured. Create/connect a GitHub repo before publishing." >&2
   exit 2
 fi
 
 workflow_run_timed_step "$WORKFLOW_NAME" "stage_publishable_files" "batch-git-add" \
   "batch" \
-git add \
+"$GIT_BIN" add \
   .gitignore \
   config/com.miraclegreens.store-menu-report.plist \
   config/menu_config.json \
@@ -55,7 +65,7 @@ git add \
   docs/vapes/page2/latest.jpg \
   docs/vapes/page2/archive/*.jpg
 
-if git diff --cached --quiet; then
+if "$GIT_BIN" diff --cached --quiet; then
   echo "No publishable menu changes to commit."
   workflow_run_timed_step "$WORKFLOW_NAME" "send_no_change_report" "local-script" \
     "local script" \
@@ -71,12 +81,12 @@ fi
 commit_date="$(date +%Y-%m-%d)"
 workflow_run_timed_step "$WORKFLOW_NAME" "commit_menu_publish" "local-script" \
   "local script" \
-  git commit -m "Update store menus ${commit_date}"
+  "$GIT_BIN" commit -m "Update store menus ${commit_date}"
 workflow_run_timed_step "$WORKFLOW_NAME" "push_menu_publish" "api-git-push" \
   "api call" \
-  git push origin HEAD
+  "$GIT_BIN" push origin HEAD
 
-published_head="$(git rev-parse HEAD)"
+published_head="$("$GIT_BIN" rev-parse HEAD)"
 workflow_run_timed_step "$WORKFLOW_NAME" "send_publish_report" "local-script" \
   "local script" \
   scripts/send-store-menu-report-email \
