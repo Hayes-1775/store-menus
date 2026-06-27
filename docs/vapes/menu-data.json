@@ -1,8 +1,44 @@
 {
-  "generated_at": "2026-06-25T03:12:39",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-25.csv",
+  "generated_at": "2026-06-27T02:48:24",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-27.csv",
   "menu": "vapes",
   "rows": [
+    {
+      "brand": "Verdant",
+      "product_name": "Garlic Burger",
+      "display_name": "Garlic Burger",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.872,
+      "thc_display": "87%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 18.0,
+      "source_rows": [
+        1080
+      ],
+      "detail_display": "87%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Swiss Fruit",
+      "display_name": "Swiss Fruit",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.818,
+      "thc_display": "82%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 20.0,
+      "source_rows": [
+        1114
+      ],
+      "detail_display": "82%"
+    },
     {
       "brand": "Verdant",
       "product_name": "Mendo Odyssey",
@@ -15,9 +51,9 @@
       "thc_display": "80%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 3.0,
+      "quantity": 2.0,
       "source_rows": [
-        1103
+        1094
       ],
       "detail_display": "80%"
     },
@@ -33,9 +69,9 @@
       "thc_display": "80%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 3.0,
+      "quantity": 1.0,
       "source_rows": [
-        1128
+        1121
       ],
       "detail_display": "80%"
     },
@@ -53,7 +89,43 @@
       "short_price": "$22.5",
       "quantity": 5.0,
       "source_rows": [
-        1105
+        1096
+      ],
+      "detail_display": "79%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Apple Fusion",
+      "display_name": "Apple Fusion",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.8009999999999999,
+      "thc_display": "80%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 20.0,
+      "source_rows": [
+        1065
+      ],
+      "detail_display": "80%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Mango Harmony",
+      "display_name": "Mango Harmony",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.7929999999999999,
+      "thc_display": "79%",
+      "price": "$18.52",
+      "short_price": "$18.52",
+      "quantity": 20.0,
+      "source_rows": [
+        1092
       ],
       "detail_display": "79%"
     },
@@ -69,11 +141,65 @@
       "thc_display": "74%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 5.0,
+      "quantity": 3.0,
       "source_rows": [
-        1119
+        1111
       ],
       "detail_display": "74%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Sour Moroccan",
+      "display_name": "Sour Moroccan",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.88,
+      "thc_display": "88%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 20.0,
+      "source_rows": [
+        1109
+      ],
+      "detail_display": "88%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Citrus Banana",
+      "display_name": "Citrus Banana",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.877,
+      "thc_display": "88%",
+      "price": "$18.52",
+      "short_price": "$18.52",
+      "quantity": 19.0,
+      "source_rows": [
+        1125
+      ],
+      "detail_display": "88%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Funky Papaya",
+      "display_name": "Funky Papaya",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.868,
+      "thc_display": "87%",
+      "price": "$22.50",
+      "short_price": "$22.5",
+      "quantity": 20.0,
+      "source_rows": [
+        1079
+      ],
+      "detail_display": "87%"
     },
     {
       "brand": "NW Kind",
@@ -89,7 +215,7 @@
       "short_price": "$23",
       "quantity": 6.0,
       "source_rows": [
-        883
+        873
       ],
       "detail_display": "86%"
     },
@@ -107,7 +233,7 @@
       "short_price": "$23",
       "quantity": 5.0,
       "source_rows": [
-        857
+        847
       ],
       "detail_display": "86%"
     },
@@ -125,7 +251,7 @@
       "short_price": "$23",
       "quantity": 8.0,
       "source_rows": [
-        880
+        870
       ],
       "detail_display": "86%"
     },
@@ -143,7 +269,7 @@
       "short_price": "$26",
       "quantity": 8.0,
       "source_rows": [
-        897
+        887
       ],
       "detail_display": "82%"
     },
@@ -161,7 +287,7 @@
       "short_price": "$40",
       "quantity": 2.0,
       "source_rows": [
-        895
+        885
       ],
       "detail_display": "75%"
     },
@@ -179,7 +305,7 @@
       "short_price": "$23",
       "quantity": 4.0,
       "source_rows": [
-        904
+        894
       ],
       "detail_display": "86%"
     },
@@ -197,8 +323,8 @@
       "short_price": "$23",
       "quantity": 11.0,
       "source_rows": [
-        889,
-        890
+        879,
+        880
       ],
       "detail_display": "85%"
     },
@@ -214,9 +340,9 @@
       "thc_display": "85%",
       "price": "$23.00",
       "short_price": "$23",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        856
+        846
       ],
       "detail_display": "85%"
     },
@@ -234,7 +360,7 @@
       "short_price": "$26",
       "quantity": 4.0,
       "source_rows": [
-        864
+        854
       ],
       "detail_display": "83%"
     },
@@ -252,7 +378,7 @@
       "short_price": "$26",
       "quantity": 5.0,
       "source_rows": [
-        915
+        905
       ],
       "detail_display": "76%"
     },
@@ -270,7 +396,7 @@
       "short_price": "$23",
       "quantity": 8.0,
       "source_rows": [
-        884
+        874
       ],
       "detail_display": "89%"
     },
@@ -288,8 +414,8 @@
       "short_price": "$23",
       "quantity": 18.0,
       "source_rows": [
-        861,
-        862
+        851,
+        852
       ],
       "detail_display": "85%"
     },
@@ -305,9 +431,9 @@
       "thc_display": "84%",
       "price": "$23.00",
       "short_price": "$23",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        913
+        903
       ],
       "detail_display": "84%"
     },
@@ -323,9 +449,9 @@
       "thc_display": "83%",
       "price": "$26.00",
       "short_price": "$26",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
-        912
+        902
       ],
       "detail_display": "83%"
     },
@@ -343,7 +469,7 @@
       "short_price": "$26",
       "quantity": 1.0,
       "source_rows": [
-        866
+        856
       ],
       "detail_display": "82%"
     },
@@ -361,7 +487,7 @@
       "short_price": "$26",
       "quantity": 5.0,
       "source_rows": [
-        858
+        848
       ],
       "detail_display": "77%"
     },
@@ -379,7 +505,7 @@
       "short_price": "$40",
       "quantity": 9.0,
       "source_rows": [
-        908
+        898
       ],
       "detail_display": "68%"
     },
@@ -397,7 +523,7 @@
       "short_price": "$29",
       "quantity": 4.0,
       "source_rows": [
-        566
+        558
       ],
       "detail_display": "87%"
     },
@@ -415,27 +541,9 @@
       "short_price": "$28",
       "quantity": 1.0,
       "source_rows": [
-        558
+        550
       ],
       "detail_display": "86%"
-    },
-    {
-      "brand": "Higher Cultures",
-      "product_name": "Neon Flamingo",
-      "display_name": "Neon Flamingo",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.80373,
-      "thc_display": "80%",
-      "price": "$36.00",
-      "short_price": "$36",
-      "quantity": 1.0,
-      "source_rows": [
-        568
-      ],
-      "detail_display": "80%"
     },
     {
       "brand": "Higher Cultures",
@@ -449,9 +557,9 @@
       "thc_display": "76%",
       "price": "$36.00",
       "short_price": "$36",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        553
+        546
       ],
       "detail_display": "76%"
     },
@@ -469,7 +577,7 @@
       "short_price": "$28",
       "quantity": 2.0,
       "source_rows": [
-        559
+        551
       ],
       "detail_display": "87%"
     },
@@ -487,7 +595,7 @@
       "short_price": "$29",
       "quantity": 7.0,
       "source_rows": [
-        567
+        559
       ],
       "detail_display": "83%"
     },
@@ -503,9 +611,9 @@
       "thc_display": "79%",
       "price": "$36.00",
       "short_price": "$36",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        570
+        561
       ],
       "detail_display": "79%"
     },
@@ -523,7 +631,7 @@
       "short_price": "$36",
       "quantity": 6.0,
       "source_rows": [
-        552
+        545
       ],
       "detail_display": "78%"
     },
@@ -541,7 +649,7 @@
       "short_price": "$36",
       "quantity": 2.0,
       "source_rows": [
-        586
+        577
       ],
       "detail_display": "75%"
     },
@@ -559,7 +667,7 @@
       "short_price": "$28",
       "quantity": 6.0,
       "source_rows": [
-        562
+        554
       ],
       "detail_display": "90%"
     },
@@ -577,7 +685,7 @@
       "short_price": "$28",
       "quantity": 3.0,
       "source_rows": [
-        561
+        553
       ],
       "detail_display": "90%"
     },
@@ -593,9 +701,9 @@
       "thc_display": "81%",
       "price": "$36.00",
       "short_price": "$36",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        565
+        557
       ],
       "detail_display": "81%"
     },
@@ -613,7 +721,7 @@
       "short_price": "$36",
       "quantity": 10.0,
       "source_rows": [
-        574
+        565
       ],
       "detail_display": "76%"
     }
