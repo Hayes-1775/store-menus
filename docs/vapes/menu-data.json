@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T02:48:24",
+  "generated_at": "2026-06-27T06:17:10",
   "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-27.csv",
   "menu": "vapes",
   "rows": [
@@ -541,7 +541,7 @@
       "short_price": "$28",
       "quantity": 1.0,
       "source_rows": [
-        550
+        551
       ],
       "detail_display": "86%"
     },
@@ -559,7 +559,7 @@
       "short_price": "$36",
       "quantity": 6.0,
       "source_rows": [
-        546
+        547
       ],
       "detail_display": "76%"
     },
@@ -577,7 +577,7 @@
       "short_price": "$28",
       "quantity": 2.0,
       "source_rows": [
-        551
+        552
       ],
       "detail_display": "87%"
     },
@@ -631,7 +631,7 @@
       "short_price": "$36",
       "quantity": 6.0,
       "source_rows": [
-        545
+        546
       ],
       "detail_display": "78%"
     },
