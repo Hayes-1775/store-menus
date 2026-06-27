@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T06:17:10",
+  "generated_at": "2026-06-27T06:33:59",
   "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-27.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
@@ -340,6 +340,68 @@
       ],
       "source_skus": [
         "wFam9KFUNn"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
+      "product_name": "Goodies",
+      "brand": "Fenario Farms",
+      "strain": "Indica",
+      "group_order": 1,
+      "thc": 0.215,
+      "thc_display": "22%",
+      "quantity": 114.0,
+      "price_profile": "$12 Gram",
+      "gram": "$12",
+      "eighth": "$38",
+      "quarter": "$72",
+      "half": "$137",
+      "ounce": "$253",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "19b29954-8b6c-4a62-a4c5-839d0406248a"
+      ],
+      "source_variant_ids": [
+        "1d3dec24-9ef9-48c5-9c61-f3350f084df1"
+      ],
+      "source_skus": [
+        "IDjuNM2gd5"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
+      "product_name": "Papaya Juice",
+      "brand": "Fenario Farms",
+      "strain": "Indica",
+      "group_order": 1,
+      "thc": 0.31079999999999997,
+      "thc_display": "31%",
+      "quantity": 114.0,
+      "price_profile": "$12 Gram",
+      "gram": "$12",
+      "eighth": "$38",
+      "quarter": "$72",
+      "half": "$137",
+      "ounce": "$253",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "fbc3781c-f61a-460a-98a3-65d0542505c5"
+      ],
+      "source_variant_ids": [
+        "4a3a06a3-c26b-46d6-a4b5-424641e7462f"
+      ],
+      "source_skus": [
+        "2RZ5gq1OkF"
       ],
       "dutchie_url": "",
       "no_recent_sales": false
