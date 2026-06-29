@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T13:33:15",
+  "generated_at": "2026-06-29T13:40:22",
   "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-29.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
@@ -314,37 +314,6 @@
       "no_recent_sales": false
     },
     {
-      "product_name": "Timmeh",
-      "brand": "Virgin Cannabis",
-      "strain": "Indica",
-      "group_order": 1,
-      "thc": 0.263,
-      "thc_display": "26%",
-      "quantity": 0.06,
-      "price_profile": "$7 Gram",
-      "gram": "$7",
-      "eighth": "$22",
-      "quarter": "$42",
-      "half": "$80",
-      "ounce": "$148",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": true,
-      "aged_inventory_days": 389,
-      "aged_inventory_date": "2025-06-05",
-      "source_product_ids": [
-        "d4645b14-58e2-4cb7-8458-1db1e19d20dd"
-      ],
-      "source_variant_ids": [
-        "24dbde67-45e2-4f66-9952-329bbc771598"
-      ],
-      "source_skus": [
-        "wFam9KFUNn"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false
-    },
-    {
       "product_name": "Goodies",
       "brand": "Fenario Farms",
       "strain": "Indica",
@@ -619,37 +588,6 @@
       ],
       "source_skus": [
         "wVo8okzJJA"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false
-    },
-    {
-      "product_name": "Bananaconda",
-      "brand": "Oregrown",
-      "strain": "Hybrid",
-      "group_order": 2,
-      "thc": 0.32799999999999996,
-      "thc_display": "33%",
-      "quantity": 0.19,
-      "price_profile": "$7 Gram",
-      "gram": "$7",
-      "eighth": "$22",
-      "quarter": "$42",
-      "half": "$80",
-      "ounce": "$148",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "a7c822b9-4cca-4d01-9e58-dc417cf3570e"
-      ],
-      "source_variant_ids": [
-        "a5defed0-b619-46f3-adfb-6fb26bfac1e1"
-      ],
-      "source_skus": [
-        "7YvEUIYkjL"
       ],
       "dutchie_url": "",
       "no_recent_sales": false
@@ -1115,37 +1053,6 @@
       ],
       "source_skus": [
         "SG8rrtMLcX"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false
-    },
-    {
-      "product_name": "Ice Queen",
-      "brand": "Garden First Cannabis",
-      "strain": "Sativa",
-      "group_order": 3,
-      "thc": 0.2541,
-      "thc_display": "25%",
-      "quantity": 7.94,
-      "price_profile": "$8 Gram",
-      "gram": "$8",
-      "eighth": "$25",
-      "quarter": "$48",
-      "half": "$91",
-      "ounce": "$168",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "4f61f255-4f7c-4dd0-a17c-f3c5c5454005"
-      ],
-      "source_variant_ids": [
-        "ebab5420-78dc-41c6-9408-a5c00555c69e"
-      ],
-      "source_skus": [
-        "z8b8wLfyf2"
       ],
       "dutchie_url": "",
       "no_recent_sales": false
