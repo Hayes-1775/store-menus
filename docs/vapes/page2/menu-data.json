@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T05:01:44",
+  "generated_at": "2026-06-29T13:33:16",
   "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-29.csv",
   "menu": "vapes",
   "rows": [
@@ -69,7 +69,7 @@
       "thc_display": "90%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
         116
       ],

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T05:01:44",
+  "generated_at": "2026-06-29T13:33:16",
   "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-06-29.csv",
   "menu": "vapes",
   "rows": [
@@ -17,7 +17,7 @@
       "short_price": "$22.5",
       "quantity": 17.0,
       "source_rows": [
-        1067
+        1076
       ],
       "detail_display": "87%"
     },
@@ -35,7 +35,7 @@
       "short_price": "$22.5",
       "quantity": 20.0,
       "source_rows": [
-        1101
+        1110
       ],
       "detail_display": "82%"
     },
@@ -53,7 +53,7 @@
       "short_price": "$22.5",
       "quantity": 2.0,
       "source_rows": [
-        1081
+        1090
       ],
       "detail_display": "80%"
     },
@@ -71,7 +71,7 @@
       "short_price": "$22.5",
       "quantity": 1.0,
       "source_rows": [
-        1108
+        1117
       ],
       "detail_display": "80%"
     },
@@ -89,7 +89,7 @@
       "short_price": "$22.5",
       "quantity": 5.0,
       "source_rows": [
-        1083
+        1092
       ],
       "detail_display": "79%"
     },
@@ -105,9 +105,9 @@
       "thc_display": "80%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 17.0,
+      "quantity": 16.0,
       "source_rows": [
-        1052
+        1061
       ],
       "detail_display": "80%"
     },
@@ -125,7 +125,7 @@
       "short_price": "$18.52",
       "quantity": 19.0,
       "source_rows": [
-        1079
+        1088
       ],
       "detail_display": "79%"
     },
@@ -143,7 +143,7 @@
       "short_price": "$22.5",
       "quantity": 3.0,
       "source_rows": [
-        1098
+        1107
       ],
       "detail_display": "74%"
     },
@@ -161,7 +161,7 @@
       "short_price": "$22.5",
       "quantity": 19.0,
       "source_rows": [
-        1096
+        1105
       ],
       "detail_display": "88%"
     },
@@ -177,9 +177,9 @@
       "thc_display": "88%",
       "price": "$18.52",
       "short_price": "$18.52",
-      "quantity": 15.0,
+      "quantity": 14.0,
       "source_rows": [
-        1112
+        1121
       ],
       "detail_display": "88%"
     },
@@ -197,7 +197,7 @@
       "short_price": "$22.5",
       "quantity": 17.0,
       "source_rows": [
-        1066
+        1075
       ],
       "detail_display": "87%"
     },
@@ -215,7 +215,7 @@
       "short_price": "$23",
       "quantity": 5.0,
       "source_rows": [
-        864
+        872
       ],
       "detail_display": "86%"
     },
@@ -233,7 +233,7 @@
       "short_price": "$23",
       "quantity": 5.0,
       "source_rows": [
-        838
+        843
       ],
       "detail_display": "86%"
     },
@@ -251,9 +251,27 @@
       "short_price": "$23",
       "quantity": 7.0,
       "source_rows": [
-        861
+        869
       ],
       "detail_display": "86%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Granimals",
+      "display_name": "Granimals",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.8320000000000001,
+      "thc_display": "83%",
+      "price": "$24.00",
+      "short_price": "$24",
+      "quantity": 10.0,
+      "source_rows": [
+        851
+      ],
+      "detail_display": "83%"
     },
     {
       "brand": "NW Kind",
@@ -269,7 +287,7 @@
       "short_price": "$26",
       "quantity": 7.0,
       "source_rows": [
-        878
+        886
       ],
       "detail_display": "82%"
     },
@@ -287,7 +305,7 @@
       "short_price": "$40",
       "quantity": 2.0,
       "source_rows": [
-        876
+        884
       ],
       "detail_display": "75%"
     },
@@ -305,7 +323,7 @@
       "short_price": "$23",
       "quantity": 4.0,
       "source_rows": [
-        885
+        893
       ],
       "detail_display": "86%"
     },
@@ -323,8 +341,8 @@
       "short_price": "$23",
       "quantity": 10.0,
       "source_rows": [
-        870,
-        871
+        878,
+        879
       ],
       "detail_display": "85%"
     },
@@ -342,7 +360,7 @@
       "short_price": "$23",
       "quantity": 5.0,
       "source_rows": [
-        837
+        842
       ],
       "detail_display": "85%"
     },
@@ -360,7 +378,7 @@
       "short_price": "$26",
       "quantity": 3.0,
       "source_rows": [
-        845
+        852
       ],
       "detail_display": "83%"
     },
@@ -378,9 +396,27 @@
       "short_price": "$26",
       "quantity": 5.0,
       "source_rows": [
-        896
+        905
       ],
       "detail_display": "76%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Grandi Guava",
+      "display_name": "Grandi Guava AIO",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.74,
+      "thc_display": "74%",
+      "price": "$35.56",
+      "short_price": "$35.56",
+      "quantity": 10.0,
+      "source_rows": [
+        849
+      ],
+      "detail_display": "74%"
     },
     {
       "brand": "NW Kind",
@@ -396,7 +432,7 @@
       "short_price": "$23",
       "quantity": 8.0,
       "source_rows": [
-        865
+        873
       ],
       "detail_display": "89%"
     },
@@ -414,8 +450,8 @@
       "short_price": "$23",
       "quantity": 18.0,
       "source_rows": [
-        842,
-        843
+        847,
+        848
       ],
       "detail_display": "85%"
     },
@@ -433,7 +469,7 @@
       "short_price": "$23",
       "quantity": 3.0,
       "source_rows": [
-        894
+        903
       ],
       "detail_display": "84%"
     },
@@ -451,7 +487,7 @@
       "short_price": "$26",
       "quantity": 1.0,
       "source_rows": [
-        847
+        854
       ],
       "detail_display": "82%"
     },
@@ -469,9 +505,45 @@
       "short_price": "$26",
       "quantity": 5.0,
       "source_rows": [
-        839
+        844
       ],
       "detail_display": "77%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Trop Cherry",
+      "display_name": "Trop Cherry",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.752,
+      "thc_display": "75%",
+      "price": "$30.00",
+      "short_price": "$30",
+      "quantity": 10.0,
+      "source_rows": [
+        900
+      ],
+      "detail_display": "75%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Acai Gelato",
+      "display_name": "Acai Gelato",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.742,
+      "thc_display": "74%",
+      "price": "$30.00",
+      "short_price": "$30",
+      "quantity": 10.0,
+      "source_rows": [
+        835
+      ],
+      "detail_display": "74%"
     },
     {
       "brand": "NW Kind",
@@ -487,7 +559,7 @@
       "short_price": "$40",
       "quantity": 9.0,
       "source_rows": [
-        889
+        897
       ],
       "detail_display": "68%"
     },
