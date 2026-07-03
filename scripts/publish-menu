@@ -35,6 +35,7 @@ fi
 workflow_run_timed_step "$WORKFLOW_NAME" "stage_publishable_files" "batch-git-add" \
   "batch" \
 "$GIT_BIN" add \
+  .github/workflows/deploy-pages.yml \
   .gitignore \
   config/com.miraclegreens.store-menu-report.plist \
   config/menu_config.json \
@@ -52,6 +53,7 @@ workflow_run_timed_step "$WORKFLOW_NAME" "stage_publishable_files" "batch-git-ad
   scripts/verify-menu \
   scripts/publish-menu \
   docs/index.html \
+  docs/.nojekyll \
   docs/vendor/gsap.min.js \
   docs/menu-data.json \
   docs/latest.jpg \
