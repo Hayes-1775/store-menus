@@ -50,6 +50,7 @@ workflow_run_timed_step "$WORKFLOW_NAME" "stage_publishable_files" "batch-git-ad
   scripts/run-vape-menu \
   scripts/run-vape-menu-page2 \
   scripts/send-store-menu-report-email \
+  scripts/verify-live-menu \
   scripts/verify-menu \
   scripts/publish-menu \
   docs/index.html \
@@ -89,6 +90,24 @@ workflow_run_timed_step "$WORKFLOW_NAME" "push_menu_publish" "api-git-push" \
   "$GIT_BIN" push origin HEAD
 
 published_head="$("$GIT_BIN" rev-parse HEAD)"
+pages_url="$(python3 - <<'PY'
+import json
+from pathlib import Path
+
+config = json.loads(Path("config/menu_config.json").read_text(encoding="utf-8"))
+print(config.get("output", {}).get("pages_url", ""))
+PY
+)"
+
+if [[ -z "$pages_url" ]]; then
+  echo "FAIL: config/menu_config.json is missing output.pages_url" >&2
+  exit 1
+fi
+
+workflow_run_timed_step "$WORKFLOW_NAME" "verify_live_pages_publish" "http-pages-check" \
+  "http poll" \
+  scripts/verify-live-menu --pages-url "$pages_url" >/tmp/store-menu-live-verify.json
+
 workflow_run_timed_step "$WORKFLOW_NAME" "send_publish_report" "local-script" \
   "local script" \
   scripts/send-store-menu-report-email \
