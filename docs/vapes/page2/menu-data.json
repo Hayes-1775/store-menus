@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-05T06:51:33",
-  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-05.csv",
+  "generated_at": "2026-07-06T04:59:14",
+  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-06.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -20,24 +20,6 @@
         120
       ],
       "detail_display": "80%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Tropic Puncher",
-      "display_name": "Tropic Puncher",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.768,
-      "thc_display": "77%",
-      "price": "$27.00",
-      "short_price": "$27",
-      "quantity": 1.0,
-      "source_rows": [
-        142
-      ],
-      "detail_display": "77%"
     },
     {
       "brand": "Buddies",
@@ -159,7 +141,7 @@
       "thc_display": "77%",
       "price": "$16.67",
       "short_price": "$16.67",
-      "quantity": 12.0,
+      "quantity": 11.0,
       "source_rows": [
         109
       ],
