@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-07T05:19:50",
-  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-07.csv",
+  "generated_at": "2026-07-08T04:55:18",
+  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-08.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -41,7 +41,7 @@
       "group_order": 1,
       "thc": 0.21899999999999997,
       "thc_display": "22%",
-      "quantity": 403.15,
+      "quantity": 389.11,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -63,7 +63,7 @@
         "W9YSnBVznN"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true
+      "no_recent_sales": false
     },
     {
       "product_name": "Mendo Breath",
@@ -134,7 +134,7 @@
       "group_order": 1,
       "thc": 0.2475,
       "thc_display": "25%",
-      "quantity": 343.23,
+      "quantity": 336.2,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -196,7 +196,7 @@
       "group_order": 1,
       "thc": 0.273,
       "thc_display": "27%",
-      "quantity": 591.92,
+      "quantity": 590.87,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -227,7 +227,7 @@
       "group_order": 1,
       "thc": 0.2868,
       "thc_display": "29%",
-      "quantity": 162.59,
+      "quantity": 141.51,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -258,7 +258,7 @@
       "group_order": 1,
       "thc": 0.2054,
       "thc_display": "21%",
-      "quantity": 69.72,
+      "quantity": 66.12,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -280,7 +280,7 @@
         "eJGUEN6Zuj"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true
+      "no_recent_sales": false
     },
     {
       "product_name": "Maltese Tiger",
@@ -289,7 +289,7 @@
       "group_order": 1,
       "thc": 0.2373,
       "thc_display": "24%",
-      "quantity": 45.95,
+      "quantity": 44.85,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -351,7 +351,7 @@
       "group_order": 1,
       "thc": 0.28559999999999997,
       "thc_display": "29%",
-      "quantity": 43.36,
+      "quantity": 39.81,
       "price_profile": "$16 Gram",
       "gram": "$16",
       "eighth": "$50",
@@ -413,7 +413,7 @@
       "group_order": 2,
       "thc": 0.2637,
       "thc_display": "26%",
-      "quantity": 359.42,
+      "quantity": 355.87,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -435,7 +435,7 @@
         "auhtfeLnDI"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true
+      "no_recent_sales": false
     },
     {
       "product_name": "Zkittlez",
@@ -485,7 +485,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 82,
+      "aged_inventory_days": 83,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "e6dc6ea7-8cbf-4dfd-a775-00f998a204e4"
@@ -516,7 +516,7 @@
       "low_stock": false,
       "closeout": true,
       "aged_inventory": true,
-      "aged_inventory_days": 82,
+      "aged_inventory_days": 83,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "356c235c-c3bf-4e3d-a6ce-1a469a6b897c"
@@ -537,7 +537,7 @@
       "group_order": 2,
       "thc": 0.29100000000000004,
       "thc_display": "29%",
-      "quantity": 83.33,
+      "quantity": 76.86,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -578,7 +578,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 75,
+      "aged_inventory_days": 76,
       "aged_inventory_date": "2026-04-23",
       "source_product_ids": [
         "a6a0231b-c196-4e11-aeb1-7fd517663a45"
@@ -599,7 +599,7 @@
       "group_order": 2,
       "thc": 0.32049999999999995,
       "thc_display": "32%",
-      "quantity": 111.04,
+      "quantity": 53.26,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -640,7 +640,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 413,
+      "aged_inventory_days": 414,
       "aged_inventory_date": "2025-05-20",
       "source_product_ids": [
         "10f91862-d4ec-436c-95ed-4da9fa2e7dfe"
@@ -754,7 +754,7 @@
       "group_order": 3,
       "thc": 0.163,
       "thc_display": "16%",
-      "quantity": 133.79,
+      "quantity": 124.73,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -816,7 +816,7 @@
       "group_order": 3,
       "thc": 0.245,
       "thc_display": "25%",
-      "quantity": 853.97,
+      "quantity": 852.91,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -857,7 +857,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 227,
+      "aged_inventory_days": 228,
       "aged_inventory_date": "2025-11-22",
       "source_product_ids": [
         "3690a563-8eed-408c-9704-c34c1bb0c79a"
@@ -878,7 +878,7 @@
       "group_order": 3,
       "thc": 0.2546,
       "thc_display": "25%",
-      "quantity": 160.43,
+      "quantity": 146.23,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -888,7 +888,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 82,
+      "aged_inventory_days": 83,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "86b938a7-b656-4e2b-b775-08812482b29a"
@@ -950,7 +950,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 351,
+      "aged_inventory_days": 352,
       "aged_inventory_date": "2025-07-21",
       "source_product_ids": [
         "1bf08102-09e5-43f1-b904-38d7fc0df3d8"
@@ -971,7 +971,7 @@
       "group_order": 3,
       "thc": 0.31079999999999997,
       "thc_display": "31%",
-      "quantity": 90.49,
+      "quantity": 87.37,
       "price_profile": "$12 Gram",
       "gram": "$12",
       "eighth": "$38",
