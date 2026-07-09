@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-09T08:43:26",
-  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-09.csv",
+  "generated_at": "2026-07-09T15:27:43",
+  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-09 (1).csv",
   "menu": "vapes",
   "rows": [
     {
@@ -123,7 +123,7 @@
       "thc_display": "89%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 11.0,
+      "quantity": 10.0,
       "source_rows": [
         104
       ],
