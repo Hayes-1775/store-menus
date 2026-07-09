@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-08T04:55:18",
-  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-08.csv",
+  "generated_at": "2026-07-09T08:43:25",
+  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-09.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -41,7 +41,7 @@
       "group_order": 1,
       "thc": 0.21899999999999997,
       "thc_display": "22%",
-      "quantity": 389.11,
+      "quantity": 385.56,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -72,7 +72,7 @@
       "group_order": 1,
       "thc": 0.2157,
       "thc_display": "22%",
-      "quantity": 411.81,
+      "quantity": 383.77,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -125,7 +125,7 @@
         "R61IRt3KQi"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": true
     },
     {
       "product_name": "Alley Oop",
@@ -134,7 +134,7 @@
       "group_order": 1,
       "thc": 0.2475,
       "thc_display": "25%",
-      "quantity": 336.2,
+      "quantity": 332.6,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -196,7 +196,7 @@
       "group_order": 1,
       "thc": 0.273,
       "thc_display": "27%",
-      "quantity": 590.87,
+      "quantity": 587.54,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -320,7 +320,7 @@
       "group_order": 1,
       "thc": 0.215,
       "thc_display": "22%",
-      "quantity": 109.35,
+      "quantity": 95.35,
       "price_profile": "$12 Gram",
       "gram": "$12",
       "eighth": "$38",
@@ -351,7 +351,7 @@
       "group_order": 1,
       "thc": 0.28559999999999997,
       "thc_display": "29%",
-      "quantity": 39.81,
+      "quantity": 25.8,
       "price_profile": "$16 Gram",
       "gram": "$16",
       "eighth": "$50",
@@ -359,7 +359,7 @@
       "half": "$180",
       "ounce": "$332",
       "low_stock": false,
-      "closeout": false,
+      "closeout": true,
       "aged_inventory": false,
       "aged_inventory_days": null,
       "aged_inventory_date": "",
@@ -382,7 +382,7 @@
       "group_order": 2,
       "thc": 0.155,
       "thc_display": "16%",
-      "quantity": 1001.1,
+      "quantity": 969.5,
       "price_profile": "$3 Gram",
       "gram": "$3",
       "eighth": "$10",
@@ -444,15 +444,15 @@
       "group_order": 2,
       "thc": 0.3141,
       "thc_display": "31%",
-      "quantity": 62.96,
+      "quantity": 1.85,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
       "quarter": "$30",
       "half": "$57",
       "ounce": "$105",
-      "low_stock": false,
-      "closeout": false,
+      "low_stock": true,
+      "closeout": true,
       "aged_inventory": false,
       "aged_inventory_days": null,
       "aged_inventory_date": "",
@@ -485,7 +485,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 83,
+      "aged_inventory_days": 84,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "e6dc6ea7-8cbf-4dfd-a775-00f998a204e4"
@@ -516,7 +516,7 @@
       "low_stock": false,
       "closeout": true,
       "aged_inventory": true,
-      "aged_inventory_days": 83,
+      "aged_inventory_days": 84,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "356c235c-c3bf-4e3d-a6ce-1a469a6b897c"
@@ -537,7 +537,7 @@
       "group_order": 2,
       "thc": 0.29100000000000004,
       "thc_display": "29%",
-      "quantity": 76.86,
+      "quantity": 72.26,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -578,7 +578,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 76,
+      "aged_inventory_days": 77,
       "aged_inventory_date": "2026-04-23",
       "source_product_ids": [
         "a6a0231b-c196-4e11-aeb1-7fd517663a45"
@@ -599,7 +599,7 @@
       "group_order": 2,
       "thc": 0.32049999999999995,
       "thc_display": "32%",
-      "quantity": 53.26,
+      "quantity": 48.61,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -624,6 +624,37 @@
       "no_recent_sales": false
     },
     {
+      "product_name": "Sheesh",
+      "brand": "Oregrown",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.2771,
+      "thc_display": "28%",
+      "quantity": 114.0,
+      "price_profile": "$7 Gram",
+      "gram": "$7",
+      "eighth": "$22",
+      "quarter": "$42",
+      "half": "$80",
+      "ounce": "$148",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "3a67a4cd-15d5-49a5-9ff6-142ac6b3e828"
+      ],
+      "source_variant_ids": [
+        "9835c88f-f077-439c-be77-7680f8094cf1"
+      ],
+      "source_skus": [
+        "d79S4IVbUE"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
       "product_name": "Tongue Splasher",
       "brand": "Fenario Farms",
       "strain": "Hybrid",
@@ -640,7 +671,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 414,
+      "aged_inventory_days": 415,
       "aged_inventory_date": "2025-05-20",
       "source_product_ids": [
         "10f91862-d4ec-436c-95ed-4da9fa2e7dfe"
@@ -683,7 +714,7 @@
         "CljXcKOLRG"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": true
     },
     {
       "product_name": "Iced Mocha",
@@ -754,7 +785,7 @@
       "group_order": 3,
       "thc": 0.163,
       "thc_display": "16%",
-      "quantity": 124.73,
+      "quantity": 119.14,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -785,7 +816,7 @@
       "group_order": 3,
       "thc": 0.23800000000000002,
       "thc_display": "24%",
-      "quantity": 72.34,
+      "quantity": 68.74,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -816,7 +847,7 @@
       "group_order": 3,
       "thc": 0.245,
       "thc_display": "25%",
-      "quantity": 852.91,
+      "quantity": 851.87,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -857,7 +888,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 228,
+      "aged_inventory_days": 229,
       "aged_inventory_date": "2025-11-22",
       "source_product_ids": [
         "3690a563-8eed-408c-9704-c34c1bb0c79a"
@@ -888,7 +919,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 83,
+      "aged_inventory_days": 84,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "86b938a7-b656-4e2b-b775-08812482b29a"
@@ -909,7 +940,7 @@
       "group_order": 3,
       "thc": 0.3299,
       "thc_display": "33%",
-      "quantity": 38.33,
+      "quantity": 31.3,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -950,7 +981,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 352,
+      "aged_inventory_days": 353,
       "aged_inventory_date": "2025-07-21",
       "source_product_ids": [
         "1bf08102-09e5-43f1-b904-38d7fc0df3d8"
@@ -971,7 +1002,7 @@
       "group_order": 3,
       "thc": 0.31079999999999997,
       "thc_display": "31%",
-      "quantity": 87.37,
+      "quantity": 75.64,
       "price_profile": "$12 Gram",
       "gram": "$12",
       "eighth": "$38",
@@ -1002,7 +1033,7 @@
       "group_order": 3,
       "thc": 0.31739999999999996,
       "thc_display": "32%",
-      "quantity": 58.44,
+      "quantity": 54.88,
       "price_profile": "$17 Gram",
       "gram": "$17",
       "eighth": "$54",

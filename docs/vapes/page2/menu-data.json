@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-08T04:55:19",
-  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-08.csv",
+  "generated_at": "2026-07-09T08:43:26",
+  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-09.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -143,7 +143,7 @@
       "short_price": "$15.73",
       "quantity": 2.0,
       "source_rows": [
-        134
+        133
       ],
       "detail_display": "88%"
     },
@@ -179,7 +179,7 @@
       "short_price": "$26.44",
       "quantity": 12.0,
       "source_rows": [
-        133
+        132
       ],
       "detail_display": "78%"
     },
@@ -195,7 +195,7 @@
       "thc_display": "77%",
       "price": "$16.67",
       "short_price": "$16.67",
-      "quantity": 10.0,
+      "quantity": 7.0,
       "source_rows": [
         110
       ],
@@ -231,9 +231,9 @@
       "thc_display": "90%",
       "price": "$16.67",
       "short_price": "$16.67",
-      "quantity": 8.0,
+      "quantity": 6.0,
       "source_rows": [
-        147
+        146
       ],
       "detail_display": "90%"
     },
@@ -251,7 +251,7 @@
       "short_price": "$16.67",
       "quantity": 9.0,
       "source_rows": [
-        149
+        148
       ],
       "detail_display": "90%"
     },
@@ -287,7 +287,7 @@
       "short_price": "$31",
       "quantity": 6.0,
       "source_rows": [
-        142
+        141
       ],
       "detail_display": "88%"
     },
@@ -305,8 +305,8 @@
       "short_price": "$16.67",
       "quantity": 15.0,
       "source_rows": [
-        136,
-        137
+        135,
+        136
       ],
       "detail_display": "87%"
     },
@@ -342,7 +342,7 @@
       "short_price": "$16.67",
       "quantity": 8.0,
       "source_rows": [
-        144
+        143
       ],
       "detail_display": "87%"
     },
@@ -396,7 +396,7 @@
       "short_price": "$31",
       "quantity": 8.0,
       "source_rows": [
-        139
+        138
       ],
       "detail_display": "86%"
     },
@@ -430,29 +430,11 @@
       "thc_display": "85%",
       "price": "$16.67",
       "short_price": "$16.67",
-      "quantity": 12.0,
+      "quantity": 11.0,
       "source_rows": [
-        140
+        139
       ],
       "detail_display": "85%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Citrus 13",
-      "display_name": "Citrus 13",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8131,
-      "thc_display": "81%",
-      "price": "$27.00",
-      "short_price": "$27",
-      "quantity": 1.0,
-      "source_rows": [
-        106
-      ],
-      "detail_display": "81%"
     },
     {
       "brand": "Buddies",
@@ -468,7 +450,7 @@
       "short_price": "$16.67",
       "quantity": 11.0,
       "source_rows": [
-        143
+        142
       ],
       "detail_display": "78%"
     },
