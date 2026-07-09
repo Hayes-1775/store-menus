@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T15:27:42",
+  "generated_at": "2026-07-09T15:33:57",
   "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-09 (1).csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
@@ -309,6 +309,37 @@
       ],
       "source_skus": [
         "wMLycPHcfk"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
+      "product_name": "Blue Nerds",
+      "brand": "Oregrown",
+      "strain": "Indica",
+      "group_order": 1,
+      "thc": 0.2756,
+      "thc_display": "28%",
+      "quantity": 105.92,
+      "price_profile": "$7 Gram",
+      "gram": "$7",
+      "eighth": "$22",
+      "quarter": "$42",
+      "half": "$80",
+      "ounce": "$148",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "ca518af3-8c35-4285-b892-ac45bc80d46b"
+      ],
+      "source_variant_ids": [
+        "a17d1204-b14e-4504-9b79-c1499e4eaa66"
+      ],
+      "source_skus": [
+        "xhc9uAWSoF"
       ],
       "dutchie_url": "",
       "no_recent_sales": false
@@ -681,6 +712,37 @@
       ],
       "source_skus": [
         "d79S4IVbUE"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
+      "product_name": "Garlic Cocktail",
+      "brand": "Oregrown",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.3641,
+      "thc_display": "36%",
+      "quantity": 91.9,
+      "price_profile": "$7 Gram",
+      "gram": "$7",
+      "eighth": "$22",
+      "quarter": "$42",
+      "half": "$80",
+      "ounce": "$148",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "1446c8b0-a85c-4d5a-ba5d-1eb2c35fbb14"
+      ],
+      "source_variant_ids": [
+        "7ecefc9e-b554-4903-9628-b736829a7ac6"
+      ],
+      "source_skus": [
+        "LxnSgL9ixw"
       ],
       "dutchie_url": "",
       "no_recent_sales": false

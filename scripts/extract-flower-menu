@@ -27,6 +27,32 @@ def clean_key(value: Any) -> str:
     return str(value or "").replace("\u00a0", "").strip().lower()
 
 
+def normalize_med_or_rec(value: Any) -> str:
+    text = clean_key(value)
+    if text == "rec":
+        return "REC"
+    if text == "med":
+        return "MED"
+    return ""
+
+
+def normalize_price_profile_name(profile: Any, med_or_rec: Any) -> str:
+    text = str(profile or "").strip()
+    if not text:
+        return ""
+
+    inventory_type = normalize_med_or_rec(med_or_rec)
+    medical_suffix = " - Medical"
+    has_medical_suffix = text.lower().endswith(medical_suffix.lower())
+    base_profile = text[: -len(medical_suffix)].rstrip() if has_medical_suffix else text
+
+    if inventory_type == "REC":
+        return base_profile
+    if inventory_type == "MED":
+        return f"{base_profile}{medical_suffix}"
+    return text
+
+
 def normalize_header(value: Any) -> str:
     return re.sub(r"\s+", " ", str(value or "").replace("\u00a0", " ").strip()).lower()
 
@@ -286,6 +312,7 @@ def extract_menu(
         "Product Name": ["Product Name"],
         "Price Profile": ["Price Profile Name", "Price Profile"],
         "Strain Species": ["Strain Species"],
+        "Med or Rec": ["Med or Rec"],
     }
     missing = [
         name
@@ -338,7 +365,9 @@ def extract_menu(
         inventory_date = parse_date(row_get(row, header_map, AGE_DATE_COLUMNS))
         is_aged, age_days = aged_inventory_info(inventory_date, brand_exempt, reference_date)
         strain, group_order = normalize_strain(row_get(row, header_map, ["Strain Species"]))
-        profile = str(row_get(row, header_map, ["Price Profile Name", "Price Profile"]) or "").strip()
+        med_or_rec = row_get(row, header_map, ["Med or Rec"])
+        raw_profile = str(row_get(row, header_map, ["Price Profile Name", "Price Profile"]) or "").strip()
+        profile = normalize_price_profile_name(raw_profile, med_or_rec)
         direct_price = row_get(row, header_map, ["Price"])
         thc = 0.0
         for col in THC_COLUMNS:
@@ -355,6 +384,8 @@ def extract_menu(
             "strain": strain,
             "group_order": group_order,
             "price_profile": profile,
+            "source_price_profile": raw_profile,
+            "med_or_rec": normalize_med_or_rec(med_or_rec),
             "direct_price": direct_price,
             "product_ids": [],
             "variant_ids": [],
@@ -397,6 +428,8 @@ def extract_menu(
                 "type": "conflicting_price_profile",
                 "kept": existing["price_profile"],
                 "saw": candidate["price_profile"],
+                "kept_source": existing.get("source_price_profile", ""),
+                "saw_source": candidate.get("source_price_profile", ""),
                 "source_row": idx,
             })
         if clean_key(existing.get("brand")) != clean_key(candidate.get("brand")):
@@ -449,6 +482,8 @@ def extract_menu(
             missing_price_profiles.append({
                 "product_name": name,
                 "price_profile": product["price_profile"],
+                "source_price_profile": product.get("source_price_profile", ""),
+                "med_or_rec": product.get("med_or_rec", ""),
                 "quantity": round(product["quantity"], 2),
                 "thc_percent": round(product["thc"] * 100, 2),
             })
