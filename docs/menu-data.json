@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-09T15:33:57",
-  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-09 (1).csv",
+  "generated_at": "2026-07-10T05:20:32",
+  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-10.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -103,7 +103,7 @@
       "group_order": 1,
       "thc": 0.23,
       "thc_display": "23%",
-      "quantity": 519.76,
+      "quantity": 516.23,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -125,7 +125,7 @@
         "R61IRt3KQi"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true
+      "no_recent_sales": false
     },
     {
       "product_name": "Alley Oop",
@@ -134,7 +134,7 @@
       "group_order": 1,
       "thc": 0.2475,
       "thc_display": "25%",
-      "quantity": 332.6,
+      "quantity": 329.0,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -187,7 +187,7 @@
         "riV28s3K5V"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": true
     },
     {
       "product_name": "Black Amber",
@@ -351,7 +351,7 @@
       "group_order": 1,
       "thc": 0.215,
       "thc_display": "22%",
-      "quantity": 95.35,
+      "quantity": 91.81,
       "price_profile": "$12 Gram",
       "gram": "$12",
       "eighth": "$38",
@@ -376,13 +376,44 @@
       "no_recent_sales": false
     },
     {
+      "product_name": "Gorilla Gas",
+      "brand": "Noble Farms",
+      "strain": "Indica",
+      "group_order": 1,
+      "thc": 0.27,
+      "thc_display": "27%",
+      "quantity": 113.9,
+      "price_profile": "$16 Gram",
+      "gram": "$16",
+      "eighth": "$50",
+      "quarter": "$95",
+      "half": "$180",
+      "ounce": "$332",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "947e0cff-0a05-48e7-9fb0-fbb0a7274913"
+      ],
+      "source_variant_ids": [
+        "43fbbcc6-f8a6-49b7-99d1-3b7e65f51a40"
+      ],
+      "source_skus": [
+        "bn4Cx1hnla"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
       "product_name": "OMMP Blueberry",
       "brand": "Noble Farms",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.28559999999999997,
       "thc_display": "29%",
-      "quantity": 25.8,
+      "quantity": 22.2,
       "price_profile": "$16 Gram",
       "gram": "$16",
       "eighth": "$50",
@@ -407,44 +438,13 @@
       "no_recent_sales": false
     },
     {
-      "product_name": "Gorilla Gas",
-      "brand": "Noble Farms",
-      "strain": "Indica",
-      "group_order": 1,
-      "thc": 0.27,
-      "thc_display": "27%",
-      "quantity": 115.0,
-      "price_profile": "$17 Gram",
-      "gram": "$17",
-      "eighth": "$54",
-      "quarter": "$103",
-      "half": "$196",
-      "ounce": "$362",
-      "low_stock": false,
-      "closeout": false,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "947e0cff-0a05-48e7-9fb0-fbb0a7274913"
-      ],
-      "source_variant_ids": [
-        "43fbbcc6-f8a6-49b7-99d1-3b7e65f51a40"
-      ],
-      "source_skus": [
-        "bn4Cx1hnla"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false
-    },
-    {
       "product_name": "Dark Queen",
       "brand": "Miracle Farms",
       "strain": "Hybrid",
       "group_order": 2,
       "thc": 0.155,
       "thc_display": "16%",
-      "quantity": 969.5,
+      "quantity": 962.4,
       "price_profile": "$3 Gram",
       "gram": "$3",
       "eighth": "$10",
@@ -661,7 +661,7 @@
       "group_order": 2,
       "thc": 0.32049999999999995,
       "thc_display": "32%",
-      "quantity": 48.61,
+      "quantity": 30.52,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -692,7 +692,7 @@
       "group_order": 2,
       "thc": 0.2771,
       "thc_display": "28%",
-      "quantity": 114.0,
+      "quantity": 110.47,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -723,7 +723,7 @@
       "group_order": 2,
       "thc": 0.3641,
       "thc_display": "36%",
-      "quantity": 91.9,
+      "quantity": 82.63,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -878,7 +878,7 @@
       "group_order": 3,
       "thc": 0.163,
       "thc_display": "16%",
-      "quantity": 119.14,
+      "quantity": 118.09,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -909,7 +909,7 @@
       "group_order": 3,
       "thc": 0.23800000000000002,
       "thc_display": "24%",
-      "quantity": 68.74,
+      "quantity": 65.14,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -940,7 +940,7 @@
       "group_order": 3,
       "thc": 0.245,
       "thc_display": "25%",
-      "quantity": 851.87,
+      "quantity": 848.27,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -971,7 +971,7 @@
       "group_order": 3,
       "thc": 0.2302,
       "thc_display": "23%",
-      "quantity": 33.83,
+      "quantity": 31.8,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -993,7 +993,7 @@
         "7UGh80QMBf"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true
+      "no_recent_sales": false
     },
     {
       "product_name": "Ginger Tea",
@@ -1055,7 +1055,7 @@
         "nxfK9toCVh"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": true
     },
     {
       "product_name": "Papaya Juice",
@@ -1089,37 +1089,6 @@
       "no_recent_sales": false
     },
     {
-      "product_name": "Durban Poison S1",
-      "brand": "Noble Farms",
-      "strain": "Sativa",
-      "group_order": 3,
-      "thc": 0.31739999999999996,
-      "thc_display": "32%",
-      "quantity": 26.8,
-      "price_profile": "$17 Gram",
-      "gram": "$17",
-      "eighth": "$54",
-      "quarter": "$103",
-      "half": "$196",
-      "ounce": "$362",
-      "low_stock": false,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "3f444812-dfa3-45c8-bce1-ad0023a10b56"
-      ],
-      "source_variant_ids": [
-        "a7040bf6-e213-42e0-aaf6-4cc1f2dc43b7"
-      ],
-      "source_skus": [
-        "I6zULY8qz4"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false
-    },
-    {
       "product_name": "Orange Slyce",
       "brand": "Noble Farms",
       "strain": "Sativa",
@@ -1127,12 +1096,12 @@
       "thc": 0.33990000000000004,
       "thc_display": "34%",
       "quantity": 115.0,
-      "price_profile": "$17 Gram",
-      "gram": "$17",
-      "eighth": "$54",
-      "quarter": "$103",
-      "half": "$196",
-      "ounce": "$362",
+      "price_profile": "$16 Gram",
+      "gram": "$16",
+      "eighth": "$50",
+      "quarter": "$95",
+      "half": "$180",
+      "ounce": "$332",
       "low_stock": false,
       "closeout": false,
       "aged_inventory": false,
@@ -1146,6 +1115,37 @@
       ],
       "source_skus": [
         "1ZgR5yKXOF"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
+      "product_name": "Durban Poison S1",
+      "brand": "Noble Farms",
+      "strain": "Sativa",
+      "group_order": 3,
+      "thc": 0.31739999999999996,
+      "thc_display": "32%",
+      "quantity": 0.3,
+      "price_profile": "$17 Gram",
+      "gram": "$17",
+      "eighth": "$54",
+      "quarter": "$103",
+      "half": "$196",
+      "ounce": "$362",
+      "low_stock": true,
+      "closeout": true,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "3f444812-dfa3-45c8-bce1-ad0023a10b56"
+      ],
+      "source_variant_ids": [
+        "a7040bf6-e213-42e0-aaf6-4cc1f2dc43b7"
+      ],
+      "source_skus": [
+        "I6zULY8qz4"
       ],
       "dutchie_url": "",
       "no_recent_sales": false
