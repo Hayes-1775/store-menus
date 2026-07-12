@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-11T05:37:28",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-07-11.csv",
+  "generated_at": "2026-07-12T08:48:33",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-07-12.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -17,7 +17,7 @@
       "short_price": "$27",
       "quantity": 10.0,
       "source_rows": [
-        134
+        133
       ],
       "detail_display": "80%"
     },
@@ -35,7 +35,7 @@
       "short_price": "$26.44",
       "quantity": 11.0,
       "source_rows": [
-        129
+        128
       ],
       "detail_display": "76%"
     },
@@ -51,9 +51,9 @@
       "thc_display": "92%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 11.0,
+      "quantity": 8.0,
       "source_rows": [
-        126
+        125
       ],
       "detail_display": "92%"
     },
@@ -69,9 +69,9 @@
       "thc_display": "90%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        119
+        118
       ],
       "detail_display": "90%"
     },
@@ -87,9 +87,9 @@
       "thc_display": "90%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        131
+        130
       ],
       "detail_display": "90%"
     },
@@ -105,9 +105,9 @@
       "thc_display": "89%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 12.0,
+      "quantity": 10.0,
       "source_rows": [
-        109
+        108
       ],
       "detail_display": "89%"
     },
@@ -123,29 +123,11 @@
       "thc_display": "89%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 10.0,
+      "quantity": 7.0,
       "source_rows": [
-        115
+        114
       ],
       "detail_display": "89%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Pineapple Express",
-      "display_name": "Pineapple Express",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Distillate",
-      "thc": 0.8823000000000001,
-      "thc_display": "88%",
-      "price": "$15.73",
-      "short_price": "$15.73",
-      "quantity": 1.0,
-      "source_rows": [
-        143
-      ],
-      "detail_display": "88%"
     },
     {
       "brand": "Buddies",
@@ -159,9 +141,9 @@
       "thc_display": "88%",
       "price": "$15.95",
       "short_price": "$15.95",
-      "quantity": 7.0,
+      "quantity": 5.0,
       "source_rows": [
-        113
+        112
       ],
       "detail_display": "88%"
     },
@@ -179,7 +161,7 @@
       "short_price": "$26.44",
       "quantity": 12.0,
       "source_rows": [
-        142
+        141
       ],
       "detail_display": "78%"
     },
@@ -195,9 +177,9 @@
       "thc_display": "77%",
       "price": "$16.67",
       "short_price": "$16.67",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        121
+        120
       ],
       "detail_display": "77%"
     },
@@ -213,9 +195,9 @@
       "thc_display": "92%",
       "price": "$21.00",
       "short_price": "$21",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        112
+        111
       ],
       "detail_display": "92%"
     },
@@ -231,9 +213,9 @@
       "thc_display": "90%",
       "price": "$16.67",
       "short_price": "$16.67",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        155
+        154
       ],
       "detail_display": "90%"
     },
@@ -251,7 +233,7 @@
       "short_price": "$16.67",
       "quantity": 9.0,
       "source_rows": [
-        157
+        156
       ],
       "detail_display": "90%"
     },
@@ -269,7 +251,7 @@
       "short_price": "$31",
       "quantity": 4.0,
       "source_rows": [
-        132
+        131
       ],
       "detail_display": "90%"
     },
@@ -287,7 +269,7 @@
       "short_price": "$31",
       "quantity": 5.0,
       "source_rows": [
-        150
+        149
       ],
       "detail_display": "88%"
     },
@@ -303,10 +285,10 @@
       "thc_display": "87%",
       "price": "$16.67",
       "short_price": "$16.67",
-      "quantity": 15.0,
+      "quantity": 13.0,
       "source_rows": [
-        144,
-        145
+        143,
+        144
       ],
       "detail_display": "87%"
     },
@@ -324,7 +306,7 @@
       "short_price": "$16.67",
       "quantity": 11.0,
       "source_rows": [
-        130
+        129
       ],
       "detail_display": "87%"
     },
@@ -342,7 +324,7 @@
       "short_price": "$16.67",
       "quantity": 8.0,
       "source_rows": [
-        152
+        151
       ],
       "detail_display": "87%"
     },
@@ -360,7 +342,7 @@
       "short_price": "$16.67",
       "quantity": 10.0,
       "source_rows": [
-        125
+        124
       ],
       "detail_display": "86%"
     },
@@ -378,7 +360,7 @@
       "short_price": "$21",
       "quantity": 3.0,
       "source_rows": [
-        135
+        134
       ],
       "detail_display": "86%"
     },
@@ -396,27 +378,9 @@
       "short_price": "$31",
       "quantity": 7.0,
       "source_rows": [
-        147
+        146
       ],
       "detail_display": "86%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Peach OG",
-      "display_name": "Peach OG 1g",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Distillate",
-      "thc": 0.8549,
-      "thc_display": "85%",
-      "price": "$16.67",
-      "short_price": "$16.67",
-      "quantity": 2.0,
-      "source_rows": [
-        139
-      ],
-      "detail_display": "85%"
     },
     {
       "brand": "Buddies",
@@ -432,7 +396,7 @@
       "short_price": "$16.67",
       "quantity": 11.0,
       "source_rows": [
-        148
+        147
       ],
       "detail_display": "85%"
     },
@@ -450,7 +414,7 @@
       "short_price": "$16.67",
       "quantity": 11.0,
       "source_rows": [
-        151
+        150
       ],
       "detail_display": "78%"
     },
@@ -468,7 +432,7 @@
       "short_price": "$32",
       "quantity": 6.0,
       "source_rows": [
-        122
+        121
       ],
       "detail_display": "21%"
     }
