@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-17T06:46:41",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-07-17.csv",
+  "generated_at": "2026-07-17T13:43:07",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-07-17-1.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -105,7 +105,7 @@
       "thc_display": "89%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 7.0,
+      "quantity": 5.0,
       "source_rows": [
         100
       ],
@@ -177,7 +177,7 @@
       "thc_display": "77%",
       "price": "$16.67",
       "short_price": "$16.67",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
         111
       ],
@@ -200,24 +200,6 @@
         102
       ],
       "detail_display": "92%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Vanilla Cake",
-      "display_name": "Vanilla Cake 1g",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Distillate",
-      "thc": 0.9025,
-      "thc_display": "90%",
-      "price": "$16.67",
-      "short_price": "$16.67",
-      "quantity": 1.0,
-      "source_rows": [
-        141
-      ],
-      "detail_display": "90%"
     },
     {
       "brand": "Buddies",
@@ -304,7 +286,7 @@
       "thc_display": "87%",
       "price": "$16.67",
       "short_price": "$16.67",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
         119
       ],
@@ -394,7 +376,7 @@
       "thc_display": "85%",
       "price": "$16.67",
       "short_price": "$16.67",
-      "quantity": 10.0,
+      "quantity": 8.0,
       "source_rows": [
         135
       ],

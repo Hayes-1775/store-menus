@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-17T06:46:40",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-07-17.csv",
+  "generated_at": "2026-07-17T13:43:06",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-07-17-1.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -72,7 +72,7 @@
       "group_order": 1,
       "thc": 0.2157,
       "thc_display": "22%",
-      "quantity": 288.9,
+      "quantity": 258.79,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -103,7 +103,7 @@
       "group_order": 1,
       "thc": 0.23,
       "thc_display": "23%",
-      "quantity": 485.59,
+      "quantity": 482.03,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -134,7 +134,7 @@
       "group_order": 1,
       "thc": 0.2475,
       "thc_display": "25%",
-      "quantity": 310.77,
+      "quantity": 308.7,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -165,7 +165,7 @@
       "group_order": 1,
       "thc": 0.264,
       "thc_display": "26%",
-      "quantity": 513.81,
+      "quantity": 478.76,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -289,7 +289,7 @@
       "group_order": 1,
       "thc": 0.2552,
       "thc_display": "26%",
-      "quantity": 85.76,
+      "quantity": 75.17,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -314,44 +314,13 @@
       "no_recent_sales": false
     },
     {
-      "product_name": "Blue Nerds",
-      "brand": "Oregrown",
-      "strain": "Indica",
-      "group_order": 1,
-      "thc": 0.2756,
-      "thc_display": "28%",
-      "quantity": 3.68,
-      "price_profile": "$7 Gram",
-      "gram": "$7",
-      "eighth": "$22",
-      "quarter": "$42",
-      "half": "$80",
-      "ounce": "$148",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "ca518af3-8c35-4285-b892-ac45bc80d46b"
-      ],
-      "source_variant_ids": [
-        "a17d1204-b14e-4504-9b79-c1499e4eaa66"
-      ],
-      "source_skus": [
-        "xhc9uAWSoF"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false
-    },
-    {
       "product_name": "Oreoz",
       "brand": "Garden First Cannabis",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.3054,
       "thc_display": "31%",
-      "quantity": 98.09,
+      "quantity": 75.98,
       "price_profile": "$8 Gram",
       "gram": "$8",
       "eighth": "$25",
@@ -515,9 +484,9 @@
       "ounce": "$126",
       "low_stock": false,
       "closeout": false,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
+      "aged_inventory": true,
+      "aged_inventory_days": 92,
+      "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "e6dc6ea7-8cbf-4dfd-a775-00f998a204e4"
       ],
@@ -537,7 +506,7 @@
       "group_order": 2,
       "thc": 0.3017,
       "thc_display": "30%",
-      "quantity": 128.34,
+      "quantity": 121.31,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -546,9 +515,9 @@
       "ounce": "$126",
       "low_stock": false,
       "closeout": false,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
+      "aged_inventory": true,
+      "aged_inventory_days": 85,
+      "aged_inventory_date": "2026-04-23",
       "source_product_ids": [
         "a6a0231b-c196-4e11-aeb1-7fd517663a45"
       ],
@@ -608,9 +577,9 @@
       "ounce": "$187",
       "low_stock": false,
       "closeout": false,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
+      "aged_inventory": true,
+      "aged_inventory_days": 423,
+      "aged_inventory_date": "2025-05-20",
       "source_product_ids": [
         "10f91862-d4ec-436c-95ed-4da9fa2e7dfe"
       ],
@@ -621,7 +590,7 @@
         "FF.TS.4675"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true
+      "no_recent_sales": false
     },
     {
       "product_name": "Sherb Cream Pop #4",
@@ -686,37 +655,6 @@
       "no_recent_sales": true
     },
     {
-      "product_name": "Koji Sunberry",
-      "brand": "Noble Farms",
-      "strain": "Hybrid",
-      "group_order": 2,
-      "thc": 0.3181,
-      "thc_display": "32%",
-      "quantity": 1.37,
-      "price_profile": "$16 Gram",
-      "gram": "$16",
-      "eighth": "$50",
-      "quarter": "$95",
-      "half": "$180",
-      "ounce": "$332",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "29afa6d1-9906-414e-88aa-c610af329077"
-      ],
-      "source_variant_ids": [
-        "aca91e1a-7c09-42e6-ba1f-cc9fde1237da"
-      ],
-      "source_skus": [
-        "DUpxP2I5ug"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false
-    },
-    {
       "product_name": "Jack Herer",
       "brand": "Miracle Farms",
       "strain": "Sativa",
@@ -743,6 +681,37 @@
       ],
       "source_skus": [
         "08pwAcYJv7"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
+      "product_name": "Miami Dade",
+      "brand": "Good Garden",
+      "strain": "Sativa",
+      "group_order": 3,
+      "thc": 0.1791,
+      "thc_display": "18%",
+      "quantity": 454.0,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "fab2fe66-0a55-44fb-ae29-a5467b0c4213"
+      ],
+      "source_variant_ids": [
+        "67574ae6-97e2-4ab0-b100-3200a46d148e"
+      ],
+      "source_skus": [
+        "C5SpAOxJam"
       ],
       "dutchie_url": "",
       "no_recent_sales": false
@@ -785,7 +754,7 @@
       "group_order": 3,
       "thc": 0.245,
       "thc_display": "25%",
-      "quantity": 747.86,
+      "quantity": 744.31,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -825,9 +794,9 @@
       "ounce": "$126",
       "low_stock": false,
       "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
+      "aged_inventory": true,
+      "aged_inventory_days": 237,
+      "aged_inventory_date": "2025-11-22",
       "source_product_ids": [
         "3690a563-8eed-408c-9704-c34c1bb0c79a"
       ],
@@ -856,9 +825,9 @@
       "ounce": "$126",
       "low_stock": false,
       "closeout": false,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
+      "aged_inventory": true,
+      "aged_inventory_days": 92,
+      "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "86b938a7-b656-4e2b-b775-08812482b29a"
       ],
@@ -878,7 +847,7 @@
       "group_order": 3,
       "thc": 0.3139,
       "thc_display": "31%",
-      "quantity": 212.75,
+      "quantity": 176.47,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -909,7 +878,7 @@
       "group_order": 3,
       "thc": 0.2983,
       "thc_display": "30%",
-      "quantity": 113.0,
+      "quantity": 106.25,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -940,7 +909,7 @@
       "group_order": 3,
       "thc": 0.2469,
       "thc_display": "25%",
-      "quantity": 113.0,
+      "quantity": 111.36,
       "price_profile": "$8 Gram",
       "gram": "$8",
       "eighth": "$25",
@@ -980,9 +949,9 @@
       "ounce": "$214",
       "low_stock": false,
       "closeout": false,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
+      "aged_inventory": true,
+      "aged_inventory_days": 361,
+      "aged_inventory_date": "2025-07-21",
       "source_product_ids": [
         "1bf08102-09e5-43f1-b904-38d7fc0df3d8"
       ],
@@ -1033,7 +1002,7 @@
       "group_order": 3,
       "thc": 0.33990000000000004,
       "thc_display": "34%",
-      "quantity": 31.04,
+      "quantity": 29.95,
       "price_profile": "$16 Gram",
       "gram": "$16",
       "eighth": "$50",
