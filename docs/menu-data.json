@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-20T05:46:35",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-07-20.csv",
+  "generated_at": "2026-07-21T05:53:53",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-07-21.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -32,7 +32,7 @@
         "Bx4dFnyiuX"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": true
     },
     {
       "product_name": "Devils Den",
@@ -41,7 +41,7 @@
       "group_order": 1,
       "thc": 0.21899999999999997,
       "thc_display": "22%",
-      "quantity": 356.54,
+      "quantity": 349.49,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -72,7 +72,7 @@
       "group_order": 1,
       "thc": 0.2157,
       "thc_display": "22%",
-      "quantity": 230.7,
+      "quantity": 216.65,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -134,7 +134,7 @@
       "group_order": 1,
       "thc": 0.2475,
       "thc_display": "25%",
-      "quantity": 287.57,
+      "quantity": 273.54,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -165,7 +165,7 @@
       "group_order": 1,
       "thc": 0.264,
       "thc_display": "26%",
-      "quantity": 429.57,
+      "quantity": 422.47,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -196,7 +196,7 @@
       "group_order": 1,
       "thc": 0.273,
       "thc_display": "27%",
-      "quantity": 466.11,
+      "quantity": 462.51,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -280,7 +280,7 @@
         "QjPmSNhvtH"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": true
     },
     {
       "product_name": "Alien Gary",
@@ -289,7 +289,7 @@
       "group_order": 1,
       "thc": 0.2552,
       "thc_display": "26%",
-      "quantity": 54.06,
+      "quantity": 32.79,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -320,14 +320,14 @@
       "group_order": 1,
       "thc": 0.3054,
       "thc_display": "31%",
-      "quantity": 25.6,
+      "quantity": 0.57,
       "price_profile": "$8 Gram",
       "gram": "$8",
       "eighth": "$25",
       "quarter": "$48",
       "half": "$91",
       "ounce": "$168",
-      "low_stock": false,
+      "low_stock": true,
       "closeout": true,
       "aged_inventory": false,
       "aged_inventory_days": null,
@@ -382,7 +382,7 @@
       "group_order": 1,
       "thc": 0.27,
       "thc_display": "27%",
-      "quantity": 41.43,
+      "quantity": 33.33,
       "price_profile": "$16 Gram",
       "gram": "$16",
       "eighth": "$50",
@@ -404,7 +404,7 @@
         "bn4Cx1hnla"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true
+      "no_recent_sales": false
     },
     {
       "product_name": "Dark Queen",
@@ -413,7 +413,7 @@
       "group_order": 2,
       "thc": 0.155,
       "thc_display": "16%",
-      "quantity": 842.85,
+      "quantity": 839.33,
       "price_profile": "$3 Gram",
       "gram": "$3",
       "eighth": "$10",
@@ -444,7 +444,7 @@
       "group_order": 2,
       "thc": 0.2637,
       "thc_display": "26%",
-      "quantity": 277.03,
+      "quantity": 241.95,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -484,9 +484,9 @@
       "ounce": "$126",
       "low_stock": false,
       "closeout": false,
-      "aged_inventory": true,
-      "aged_inventory_days": 95,
-      "aged_inventory_date": "2026-04-16",
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "e6dc6ea7-8cbf-4dfd-a775-00f998a204e4"
       ],
@@ -497,7 +497,7 @@
         "jAT7nIhKde"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": true
     },
     {
       "product_name": "Scented Marker",
@@ -506,7 +506,7 @@
       "group_order": 2,
       "thc": 0.3017,
       "thc_display": "30%",
-      "quantity": 80.43,
+      "quantity": 37.26,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -515,9 +515,9 @@
       "ounce": "$126",
       "low_stock": false,
       "closeout": false,
-      "aged_inventory": true,
-      "aged_inventory_days": 88,
-      "aged_inventory_date": "2026-04-23",
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "a6a0231b-c196-4e11-aeb1-7fd517663a45"
       ],
@@ -537,7 +537,7 @@
       "group_order": 2,
       "thc": 0.2771,
       "thc_display": "28%",
-      "quantity": 55.88,
+      "quantity": 48.78,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -577,9 +577,9 @@
       "ounce": "$187",
       "low_stock": false,
       "closeout": false,
-      "aged_inventory": true,
-      "aged_inventory_days": 426,
-      "aged_inventory_date": "2025-05-20",
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "10f91862-d4ec-436c-95ed-4da9fa2e7dfe"
       ],
@@ -590,7 +590,7 @@
         "FF.TS.4675"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": true
     },
     {
       "product_name": "Sherb Cream Pop #4",
@@ -599,7 +599,7 @@
       "group_order": 2,
       "thc": 0.2211,
       "thc_display": "22%",
-      "quantity": 85.98,
+      "quantity": 84.88,
       "price_profile": "$10 Gram",
       "gram": "$10",
       "eighth": "$32",
@@ -630,7 +630,7 @@
       "group_order": 2,
       "thc": 0.2502,
       "thc_display": "25%",
-      "quantity": 54.2,
+      "quantity": 50.6,
       "price_profile": "$10 Gram",
       "gram": "$10",
       "eighth": "$32",
@@ -754,7 +754,7 @@
       "group_order": 3,
       "thc": 0.245,
       "thc_display": "25%",
-      "quantity": 747.87,
+      "quantity": 736.07,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -779,37 +779,6 @@
       "no_recent_sales": false
     },
     {
-      "product_name": "College Park",
-      "brand": "Grown Rogue",
-      "strain": "Sativa",
-      "group_order": 3,
-      "thc": 0.2302,
-      "thc_display": "23%",
-      "quantity": 24.69,
-      "price_profile": "$6 Gram",
-      "gram": "$6",
-      "eighth": "$19",
-      "quarter": "$36",
-      "half": "$68",
-      "ounce": "$126",
-      "low_stock": false,
-      "closeout": true,
-      "aged_inventory": true,
-      "aged_inventory_days": 240,
-      "aged_inventory_date": "2025-11-22",
-      "source_product_ids": [
-        "3690a563-8eed-408c-9704-c34c1bb0c79a"
-      ],
-      "source_variant_ids": [
-        "9beee010-80d7-4743-a27e-38772d5d8605"
-      ],
-      "source_skus": [
-        "7UGh80QMBf"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false
-    },
-    {
       "product_name": "Ginger Tea",
       "brand": "Good Garden",
       "strain": "Sativa",
@@ -825,9 +794,9 @@
       "ounce": "$126",
       "low_stock": false,
       "closeout": false,
-      "aged_inventory": true,
-      "aged_inventory_days": 95,
-      "aged_inventory_date": "2026-04-16",
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "86b938a7-b656-4e2b-b775-08812482b29a"
       ],
@@ -847,7 +816,7 @@
       "group_order": 3,
       "thc": 0.3139,
       "thc_display": "31%",
-      "quantity": 128.99,
+      "quantity": 90.24,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -878,7 +847,7 @@
       "group_order": 3,
       "thc": 0.2983,
       "thc_display": "30%",
-      "quantity": 87.24,
+      "quantity": 75.55,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -909,7 +878,7 @@
       "group_order": 3,
       "thc": 0.2469,
       "thc_display": "25%",
-      "quantity": 66.76,
+      "quantity": 63.17,
       "price_profile": "$8 Gram",
       "gram": "$8",
       "eighth": "$25",
@@ -949,9 +918,9 @@
       "ounce": "$214",
       "low_stock": false,
       "closeout": false,
-      "aged_inventory": true,
-      "aged_inventory_days": 364,
-      "aged_inventory_date": "2025-07-21",
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
         "1bf08102-09e5-43f1-b904-38d7fc0df3d8"
       ],
@@ -962,7 +931,7 @@
         "nxfK9toCVh"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": true
     },
     {
       "product_name": "Papaya Juice",
@@ -971,15 +940,15 @@
       "group_order": 3,
       "thc": 0.31079999999999997,
       "thc_display": "31%",
-      "quantity": 34.79,
+      "quantity": 4.76,
       "price_profile": "$12 Gram",
       "gram": "$12",
       "eighth": "$38",
       "quarter": "$72",
       "half": "$137",
       "ounce": "$253",
-      "low_stock": false,
-      "closeout": false,
+      "low_stock": true,
+      "closeout": true,
       "aged_inventory": false,
       "aged_inventory_days": null,
       "aged_inventory_date": "",
@@ -991,37 +960,6 @@
       ],
       "source_skus": [
         "2RZ5gq1OkF"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": true
-    },
-    {
-      "product_name": "Orange Slyce",
-      "brand": "Noble Farms",
-      "strain": "Sativa",
-      "group_order": 3,
-      "thc": 0.33990000000000004,
-      "thc_display": "34%",
-      "quantity": 1.1,
-      "price_profile": "$16 Gram",
-      "gram": "$16",
-      "eighth": "$50",
-      "quarter": "$95",
-      "half": "$180",
-      "ounce": "$332",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "e5ce76de-85bf-4911-b75c-f37546f0eaab"
-      ],
-      "source_variant_ids": [
-        "e7090d75-a566-45c4-b145-b61e08edb088"
-      ],
-      "source_skus": [
-        "1ZgR5yKXOF"
       ],
       "dutchie_url": "",
       "no_recent_sales": false
