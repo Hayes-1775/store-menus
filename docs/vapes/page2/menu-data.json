@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-21T05:53:54",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-07-21.csv",
+  "generated_at": "2026-07-22T02:07:56",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-07-22.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -33,9 +33,9 @@
       "thc_display": "76%",
       "price": "$26.44",
       "short_price": "$26.44",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
-        112
+        110
       ],
       "detail_display": "76%"
     },
@@ -53,7 +53,7 @@
       "short_price": "$15.73",
       "quantity": 5.0,
       "source_rows": [
-        109
+        107
       ],
       "detail_display": "92%"
     },
@@ -71,7 +71,7 @@
       "short_price": "$15.73",
       "quantity": 5.0,
       "source_rows": [
-        103
+        101
       ],
       "detail_display": "90%"
     },
@@ -89,7 +89,7 @@
       "short_price": "$15.73",
       "quantity": 6.0,
       "source_rows": [
-        114
+        112
       ],
       "detail_display": "90%"
     },
@@ -107,7 +107,7 @@
       "short_price": "$15.73",
       "quantity": 4.0,
       "source_rows": [
-        95
+        93
       ],
       "detail_display": "89%"
     },
@@ -123,9 +123,9 @@
       "thc_display": "89%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
-        99
+        97
       ],
       "detail_display": "89%"
     },
@@ -143,9 +143,27 @@
       "short_price": "$15.95",
       "quantity": 3.0,
       "source_rows": [
-        97
+        95
       ],
       "detail_display": "88%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Peanut Butter Breath",
+      "display_name": "Peanut Butter Breath",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8097,
+      "thc_display": "81%",
+      "price": "$26.44",
+      "short_price": "$26.44",
+      "quantity": 12.0,
+      "source_rows": [
+        122
+      ],
+      "detail_display": "81%"
     },
     {
       "brand": "Buddies",
@@ -161,7 +179,7 @@
       "short_price": "$26.44",
       "quantity": 9.0,
       "source_rows": [
-        122
+        124
       ],
       "detail_display": "78%"
     },
@@ -179,7 +197,7 @@
       "short_price": "$21",
       "quantity": 3.0,
       "source_rows": [
-        96
+        94
       ],
       "detail_display": "92%"
     },
@@ -195,9 +213,9 @@
       "thc_display": "90%",
       "price": "$16.67",
       "short_price": "$16.67",
-      "quantity": 9.0,
+      "quantity": 7.0,
       "source_rows": [
-        135
+        137
       ],
       "detail_display": "90%"
     },
@@ -215,9 +233,27 @@
       "short_price": "$31",
       "quantity": 1.0,
       "source_rows": [
-        130
+        132
       ],
       "detail_display": "88%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Melon Gum",
+      "display_name": "Melon Gum 2g",
+      "strain": "Hybrid",
+      "size": "2g",
+      "format": "AIO",
+      "process": "Distillate",
+      "thc": 0.8744,
+      "thc_display": "87%",
+      "price": "$30.67",
+      "short_price": "$30.67",
+      "quantity": 11.0,
+      "source_rows": [
+        114
+      ],
+      "detail_display": "87%"
     },
     {
       "brand": "Buddies",
@@ -233,8 +269,8 @@
       "short_price": "$16.67",
       "quantity": 5.0,
       "source_rows": [
-        124,
-        125
+        126,
+        127
       ],
       "detail_display": "87%"
     },
@@ -252,7 +288,25 @@
       "short_price": "$16.67",
       "quantity": 5.0,
       "source_rows": [
-        113
+        111
+      ],
+      "detail_display": "87%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Pina Colada",
+      "display_name": "Pina Colada 2g",
+      "strain": "Hybrid",
+      "size": "2g",
+      "format": "AIO",
+      "process": "Distillate",
+      "thc": 0.8709,
+      "thc_display": "87%",
+      "price": "$30.67",
+      "short_price": "$30.67",
+      "quantity": 12.0,
+      "source_rows": [
+        123
       ],
       "detail_display": "87%"
     },
@@ -268,9 +322,9 @@
       "thc_display": "87%",
       "price": "$16.67",
       "short_price": "$16.67",
-      "quantity": 3.0,
+      "quantity": 2.0,
       "source_rows": [
-        132
+        134
       ],
       "detail_display": "87%"
     },
@@ -288,7 +342,7 @@
       "short_price": "$16.67",
       "quantity": 2.0,
       "source_rows": [
-        108
+        106
       ],
       "detail_display": "86%"
     },
@@ -304,7 +358,7 @@
       "thc_display": "86%",
       "price": "$21.00",
       "short_price": "$21",
-      "quantity": 3.0,
+      "quantity": 2.0,
       "source_rows": [
         118
       ],
@@ -324,7 +378,7 @@
       "short_price": "$31",
       "quantity": 5.0,
       "source_rows": [
-        127
+        129
       ],
       "detail_display": "86%"
     },
@@ -342,7 +396,7 @@
       "short_price": "$16.67",
       "quantity": 8.0,
       "source_rows": [
-        128
+        130
       ],
       "detail_display": "85%"
     },
@@ -360,9 +414,27 @@
       "short_price": "$16.67",
       "quantity": 6.0,
       "source_rows": [
-        131
+        133
       ],
       "detail_display": "78%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Moby Dick",
+      "display_name": "Moby Dick",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.752,
+      "thc_display": "75%",
+      "price": "$26.44",
+      "short_price": "$26.44",
+      "quantity": 12.0,
+      "source_rows": [
+        115
+      ],
+      "detail_display": "75%"
     },
     {
       "brand": "Buddies",
@@ -378,7 +450,7 @@
       "short_price": "$32",
       "quantity": 6.0,
       "source_rows": [
-        106
+        104
       ],
       "detail_display": "21%"
     }

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-21T05:53:53",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-07-21.csv",
+  "generated_at": "2026-07-22T02:07:56",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-07-22.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -17,7 +17,7 @@
       "short_price": "$22.5",
       "quantity": 8.0,
       "source_rows": [
-        1028
+        1021
       ],
       "detail_display": "87%"
     },
@@ -35,7 +35,7 @@
       "short_price": "$22.5",
       "quantity": 16.0,
       "source_rows": [
-        1059
+        1051
       ],
       "detail_display": "82%"
     },
@@ -53,7 +53,7 @@
       "short_price": "$22.5",
       "quantity": 1.0,
       "source_rows": [
-        1040
+        1033
       ],
       "detail_display": "79%"
     },
@@ -71,7 +71,7 @@
       "short_price": "$22.5",
       "quantity": 6.0,
       "source_rows": [
-        1013
+        1006
       ],
       "detail_display": "80%"
     },
@@ -89,7 +89,7 @@
       "short_price": "$18.52",
       "quantity": 10.0,
       "source_rows": [
-        1036
+        1029
       ],
       "detail_display": "79%"
     },
@@ -107,7 +107,7 @@
       "short_price": "$22.5",
       "quantity": 4.0,
       "source_rows": [
-        1055
+        1048
       ],
       "detail_display": "88%"
     },
@@ -123,9 +123,9 @@
       "thc_display": "88%",
       "price": "$18.52",
       "short_price": "$18.52",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
-        1068
+        1060
       ],
       "detail_display": "88%"
     },
@@ -143,7 +143,7 @@
       "short_price": "$22.22",
       "quantity": 8.0,
       "source_rows": [
-        1027
+        1020
       ],
       "detail_display": "87%"
     },
@@ -161,7 +161,7 @@
       "short_price": "$23",
       "quantity": 2.0,
       "source_rows": [
-        810
+        804
       ],
       "detail_display": "86%"
     },
@@ -179,7 +179,7 @@
       "short_price": "$23",
       "quantity": 6.0,
       "source_rows": [
-        832
+        826
       ],
       "detail_display": "86%"
     },
@@ -197,8 +197,8 @@
       "short_price": "$24",
       "quantity": 13.0,
       "source_rows": [
-        816,
-        817
+        810,
+        811
       ],
       "detail_display": "83%"
     },
@@ -216,7 +216,7 @@
       "short_price": "$26",
       "quantity": 5.0,
       "source_rows": [
-        850
+        843
       ],
       "detail_display": "82%"
     },
@@ -234,7 +234,7 @@
       "short_price": "$24",
       "quantity": 10.0,
       "source_rows": [
-        812
+        806
       ],
       "detail_display": "78%"
     },
@@ -252,7 +252,7 @@
       "short_price": "$30",
       "quantity": 1.0,
       "source_rows": [
-        864
+        857
       ],
       "detail_display": "73%"
     },
@@ -270,8 +270,8 @@
       "short_price": "$30",
       "quantity": 18.0,
       "source_rows": [
-        840,
-        841
+        833,
+        834
       ],
       "detail_display": "71%"
     },
@@ -289,8 +289,8 @@
       "short_price": "$23",
       "quantity": 8.0,
       "source_rows": [
-        842,
-        843
+        835,
+        836
       ],
       "detail_display": "85%"
     },
@@ -308,7 +308,7 @@
       "short_price": "$23",
       "quantity": 3.0,
       "source_rows": [
-        808
+        802
       ],
       "detail_display": "85%"
     },
@@ -326,7 +326,7 @@
       "short_price": "$26",
       "quantity": 2.0,
       "source_rows": [
-        861
+        854
       ],
       "detail_display": "76%"
     },
@@ -344,7 +344,7 @@
       "short_price": "$35.56",
       "quantity": 9.0,
       "source_rows": [
-        809
+        803
       ],
       "detail_display": "78%"
     },
@@ -360,9 +360,9 @@
       "thc_display": "75%",
       "price": "$30.00",
       "short_price": "$30",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        863
+        856
       ],
       "detail_display": "75%"
     },
@@ -380,7 +380,7 @@
       "short_price": "$35.56",
       "quantity": 9.0,
       "source_rows": [
-        815
+        809
       ],
       "detail_display": "74%"
     },
@@ -398,8 +398,8 @@
       "short_price": "$23",
       "quantity": 12.0,
       "source_rows": [
-        813,
-        814
+        807,
+        808
       ],
       "detail_display": "85%"
     },
@@ -417,7 +417,7 @@
       "short_price": "$24",
       "quantity": 9.0,
       "source_rows": [
-        819
+        813
       ],
       "detail_display": "85%"
     },
@@ -435,7 +435,7 @@
       "short_price": "$23",
       "quantity": 1.0,
       "source_rows": [
-        859
+        852
       ],
       "detail_display": "84%"
     },
@@ -451,9 +451,9 @@
       "thc_display": "77%",
       "price": "$26.00",
       "short_price": "$26",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        811
+        805
       ],
       "detail_display": "77%"
     },
@@ -471,7 +471,7 @@
       "short_price": "$30",
       "quantity": 8.0,
       "source_rows": [
-        849
+        842
       ],
       "detail_display": "82%"
     },
@@ -489,7 +489,7 @@
       "short_price": "$40",
       "quantity": 7.0,
       "source_rows": [
-        855
+        848
       ],
       "detail_display": "68%"
     },
@@ -507,7 +507,7 @@
       "short_price": "$36",
       "quantity": 2.0,
       "source_rows": [
-        527
+        524
       ],
       "detail_display": "76%"
     },
@@ -525,7 +525,7 @@
       "short_price": "$29",
       "quantity": 2.0,
       "source_rows": [
-        545
+        542
       ],
       "detail_display": "83%"
     },
@@ -543,27 +543,9 @@
       "short_price": "$36",
       "quantity": 3.0,
       "source_rows": [
-        548
+        545
       ],
       "detail_display": "79%"
-    },
-    {
-      "brand": "Higher Cultures",
-      "product_name": "Banana Pancakes",
-      "display_name": "Banana Pancakes",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.7831,
-      "thc_display": "78%",
-      "price": "$36.00",
-      "short_price": "$36",
-      "quantity": 1.0,
-      "source_rows": [
-        526
-      ],
-      "detail_display": "78%"
     },
     {
       "brand": "Higher Cultures",
@@ -579,7 +561,7 @@
       "short_price": "$36",
       "quantity": 1.0,
       "source_rows": [
-        563
+        559
       ],
       "detail_display": "75%"
     },
@@ -597,7 +579,7 @@
       "short_price": "$36",
       "quantity": 7.0,
       "source_rows": [
-        551
+        548
       ],
       "detail_display": "76%"
     }

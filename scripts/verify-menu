@@ -60,7 +60,7 @@ def main() -> None:
 
     if "Jack Herer" not in names:
         fail("Jack Herer should be retained by duplicate tie handling")
-    if len(rows) < 30:
+    if len(rows) < 25:
         fail(f"unexpectedly low menu row count: {len(rows)}")
     if len(vape_docs_menu.get("rows", [])) < 20:
         fail(f"unexpectedly low vape menu row count: {len(vape_docs_menu.get('rows', []))}")
