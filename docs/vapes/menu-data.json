@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-22T02:07:56",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-07-22.csv",
+  "generated_at": "2026-07-23T05:26:59",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-07-23.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -15,7 +15,7 @@
       "thc_display": "87%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
         1021
       ],
@@ -35,7 +35,7 @@
       "short_price": "$22.5",
       "quantity": 16.0,
       "source_rows": [
-        1051
+        1050
       ],
       "detail_display": "82%"
     },
@@ -53,7 +53,7 @@
       "short_price": "$22.5",
       "quantity": 1.0,
       "source_rows": [
-        1033
+        1032
       ],
       "detail_display": "79%"
     },
@@ -69,9 +69,9 @@
       "thc_display": "80%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        1006
+        1008
       ],
       "detail_display": "80%"
     },
@@ -89,7 +89,7 @@
       "short_price": "$18.52",
       "quantity": 10.0,
       "source_rows": [
-        1029
+        1028
       ],
       "detail_display": "79%"
     },
@@ -107,25 +107,7 @@
       "short_price": "$22.5",
       "quantity": 4.0,
       "source_rows": [
-        1048
-      ],
-      "detail_display": "88%"
-    },
-    {
-      "brand": "Verdant",
-      "product_name": "Citrus Banana",
-      "display_name": "Citrus Banana",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Rosin/CR",
-      "thc": 0.877,
-      "thc_display": "88%",
-      "price": "$18.52",
-      "short_price": "$18.52",
-      "quantity": 1.0,
-      "source_rows": [
-        1060
+        1047
       ],
       "detail_display": "88%"
     },
@@ -141,7 +123,7 @@
       "thc_display": "87%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
         1020
       ],
@@ -161,7 +143,7 @@
       "short_price": "$23",
       "quantity": 2.0,
       "source_rows": [
-        804
+        806
       ],
       "detail_display": "86%"
     },
@@ -179,7 +161,7 @@
       "short_price": "$23",
       "quantity": 6.0,
       "source_rows": [
-        826
+        828
       ],
       "detail_display": "86%"
     },
@@ -197,8 +179,8 @@
       "short_price": "$24",
       "quantity": 13.0,
       "source_rows": [
-        810,
-        811
+        812,
+        813
       ],
       "detail_display": "83%"
     },
@@ -216,7 +198,7 @@
       "short_price": "$26",
       "quantity": 5.0,
       "source_rows": [
-        843
+        844
       ],
       "detail_display": "82%"
     },
@@ -234,9 +216,27 @@
       "short_price": "$24",
       "quantity": 10.0,
       "source_rows": [
-        806
+        808
       ],
       "detail_display": "78%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Wonder Dawg",
+      "display_name": "Wonder Dawg",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.75,
+      "thc_display": "75%",
+      "price": "$30.00",
+      "short_price": "$30",
+      "quantity": 1.0,
+      "source_rows": [
+        857
+      ],
+      "detail_display": "75%"
     },
     {
       "brand": "NW Kind",
@@ -252,7 +252,7 @@
       "short_price": "$30",
       "quantity": 1.0,
       "source_rows": [
-        857
+        858
       ],
       "detail_display": "73%"
     },
@@ -268,10 +268,10 @@
       "thc_display": "71%",
       "price": "$30.00",
       "short_price": "$30",
-      "quantity": 18.0,
+      "quantity": 16.0,
       "source_rows": [
-        833,
-        834
+        834,
+        835
       ],
       "detail_display": "71%"
     },
@@ -289,8 +289,8 @@
       "short_price": "$23",
       "quantity": 8.0,
       "source_rows": [
-        835,
-        836
+        836,
+        837
       ],
       "detail_display": "85%"
     },
@@ -306,9 +306,9 @@
       "thc_display": "85%",
       "price": "$23.00",
       "short_price": "$23",
-      "quantity": 3.0,
+      "quantity": 2.0,
       "source_rows": [
-        802
+        804
       ],
       "detail_display": "85%"
     },
@@ -326,7 +326,7 @@
       "short_price": "$26",
       "quantity": 2.0,
       "source_rows": [
-        854
+        855
       ],
       "detail_display": "76%"
     },
@@ -344,27 +344,9 @@
       "short_price": "$35.56",
       "quantity": 9.0,
       "source_rows": [
-        803
+        805
       ],
       "detail_display": "78%"
-    },
-    {
-      "brand": "NW Kind",
-      "product_name": "Wonder Dawg",
-      "display_name": "Wonder Dawg AIO",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.75,
-      "thc_display": "75%",
-      "price": "$30.00",
-      "short_price": "$30",
-      "quantity": 4.0,
-      "source_rows": [
-        856
-      ],
-      "detail_display": "75%"
     },
     {
       "brand": "NW Kind",
@@ -380,7 +362,7 @@
       "short_price": "$35.56",
       "quantity": 9.0,
       "source_rows": [
-        809
+        811
       ],
       "detail_display": "74%"
     },
@@ -396,10 +378,10 @@
       "thc_display": "85%",
       "price": "$23.00",
       "short_price": "$23",
-      "quantity": 12.0,
+      "quantity": 11.0,
       "source_rows": [
-        807,
-        808
+        809,
+        810
       ],
       "detail_display": "85%"
     },
@@ -417,7 +399,7 @@
       "short_price": "$24",
       "quantity": 9.0,
       "source_rows": [
-        813
+        815
       ],
       "detail_display": "85%"
     },
@@ -435,7 +417,7 @@
       "short_price": "$23",
       "quantity": 1.0,
       "source_rows": [
-        852
+        853
       ],
       "detail_display": "84%"
     },
@@ -453,7 +435,7 @@
       "short_price": "$26",
       "quantity": 4.0,
       "source_rows": [
-        805
+        807
       ],
       "detail_display": "77%"
     },
@@ -471,7 +453,7 @@
       "short_price": "$30",
       "quantity": 8.0,
       "source_rows": [
-        842
+        843
       ],
       "detail_display": "82%"
     },
@@ -489,7 +471,7 @@
       "short_price": "$40",
       "quantity": 7.0,
       "source_rows": [
-        848
+        849
       ],
       "detail_display": "68%"
     },
@@ -507,7 +489,7 @@
       "short_price": "$36",
       "quantity": 2.0,
       "source_rows": [
-        524
+        522
       ],
       "detail_display": "76%"
     },
@@ -525,7 +507,7 @@
       "short_price": "$29",
       "quantity": 2.0,
       "source_rows": [
-        542
+        540
       ],
       "detail_display": "83%"
     },
@@ -543,7 +525,7 @@
       "short_price": "$36",
       "quantity": 3.0,
       "source_rows": [
-        545
+        543
       ],
       "detail_display": "79%"
     },
@@ -561,7 +543,7 @@
       "short_price": "$36",
       "quantity": 1.0,
       "source_rows": [
-        559
+        557
       ],
       "detail_display": "75%"
     },
@@ -579,7 +561,7 @@
       "short_price": "$36",
       "quantity": 7.0,
       "source_rows": [
-        548
+        546
       ],
       "detail_display": "76%"
     }

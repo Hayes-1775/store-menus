@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-22T02:07:55",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-07-22.csv",
+  "generated_at": "2026-07-23T05:26:58",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-07-23.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -196,7 +196,7 @@
       "group_order": 1,
       "thc": 0.273,
       "thc_display": "27%",
-      "quantity": 462.51,
+      "quantity": 392.23,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -342,7 +342,7 @@
         "IDjuNM2gd5"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": true
     },
     {
       "product_name": "Gorilla Gas",
@@ -376,13 +376,44 @@
       "no_recent_sales": false
     },
     {
+      "product_name": "OMMP Blueberry",
+      "brand": "Noble Farms",
+      "strain": "Indica",
+      "group_order": 1,
+      "thc": 0.2967,
+      "thc_display": "30%",
+      "quantity": 115.0,
+      "price_profile": "$17 Gram",
+      "gram": "$17",
+      "eighth": "$54",
+      "quarter": "$103",
+      "half": "$196",
+      "ounce": "$362",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "a02d32ae-e556-4e6f-be9a-45572e7c272b"
+      ],
+      "source_variant_ids": [
+        "ee205d5a-1f67-423e-9884-0b227a1daf12"
+      ],
+      "source_skus": [
+        "hZSUIeGEzS"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
       "product_name": "Dark Queen",
       "brand": "Miracle Farms",
       "strain": "Hybrid",
       "group_order": 2,
       "thc": 0.155,
       "thc_display": "16%",
-      "quantity": 839.33,
+      "quantity": 835.78,
       "price_profile": "$3 Gram",
       "gram": "$3",
       "eighth": "$10",
@@ -413,7 +444,7 @@
       "group_order": 2,
       "thc": 0.2637,
       "thc_display": "26%",
-      "quantity": 227.87,
+      "quantity": 224.32,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -454,7 +485,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 97,
+      "aged_inventory_days": 98,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "e6dc6ea7-8cbf-4dfd-a775-00f998a204e4"
@@ -485,7 +516,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 90,
+      "aged_inventory_days": 91,
       "aged_inventory_date": "2026-04-23",
       "source_product_ids": [
         "a6a0231b-c196-4e11-aeb1-7fd517663a45"
@@ -547,7 +578,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 428,
+      "aged_inventory_days": 429,
       "aged_inventory_date": "2025-05-20",
       "source_product_ids": [
         "10f91862-d4ec-436c-95ed-4da9fa2e7dfe"
@@ -624,6 +655,68 @@
       "no_recent_sales": false
     },
     {
+      "product_name": "Super Boof",
+      "brand": "Fenario Farms",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.3019,
+      "thc_display": "30%",
+      "quantity": 110.5,
+      "price_profile": "$12 Gram",
+      "gram": "$12",
+      "eighth": "$38",
+      "quarter": "$72",
+      "half": "$137",
+      "ounce": "$253",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "3cdea1c5-dddd-4521-9b43-81effedcf8aa"
+      ],
+      "source_variant_ids": [
+        "5f3b50ba-3c67-4917-a367-c2048d62016b"
+      ],
+      "source_skus": [
+        "53B9VXkgnH"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
+      "product_name": "Spanish Honey",
+      "brand": "Noble Farms",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.3452,
+      "thc_display": "35%",
+      "quantity": 115.0,
+      "price_profile": "$16 Gram",
+      "gram": "$16",
+      "eighth": "$50",
+      "quarter": "$95",
+      "half": "$180",
+      "ounce": "$332",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "4abaa34a-0265-4e3c-bf12-70bc78159f6a"
+      ],
+      "source_variant_ids": [
+        "75dfc09d-b091-4a3b-b78a-9e5896f6b0bb"
+      ],
+      "source_skus": [
+        "HfeCDn7784"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
       "product_name": "Jack Herer",
       "brand": "Miracle Farms",
       "strain": "Sativa",
@@ -652,7 +745,7 @@
         "08pwAcYJv7"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": true
     },
     {
       "product_name": "Miami Dade",
@@ -661,7 +754,7 @@
       "group_order": 3,
       "thc": 0.1791,
       "thc_display": "18%",
-      "quantity": 422.86,
+      "quantity": 420.84,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -692,15 +785,15 @@
       "group_order": 3,
       "thc": 0.23800000000000002,
       "thc_display": "24%",
-      "quantity": 30.34,
+      "quantity": 16.31,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
       "quarter": "$30",
       "half": "$57",
       "ounce": "$105",
-      "low_stock": false,
-      "closeout": false,
+      "low_stock": true,
+      "closeout": true,
       "aged_inventory": false,
       "aged_inventory_days": null,
       "aged_inventory_date": "",
@@ -714,7 +807,7 @@
         "B87mbca1c9"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true
+      "no_recent_sales": false
     },
     {
       "product_name": "Dante's Cookie Jar",
@@ -764,7 +857,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 97,
+      "aged_inventory_days": 98,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "86b938a7-b656-4e2b-b775-08812482b29a"
@@ -785,7 +878,7 @@
       "group_order": 3,
       "thc": 0.3139,
       "thc_display": "31%",
-      "quantity": 72.46,
+      "quantity": 47.66,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -816,7 +909,7 @@
       "group_order": 3,
       "thc": 0.2983,
       "thc_display": "30%",
-      "quantity": 57.72,
+      "quantity": 54.14,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -878,7 +971,7 @@
       "group_order": 3,
       "thc": 0.243,
       "thc_display": "24%",
-      "quantity": 130.12,
+      "quantity": 126.57,
       "price_profile": "$10 Gram",
       "gram": "$10",
       "eighth": "$32",
@@ -888,7 +981,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 366,
+      "aged_inventory_days": 367,
       "aged_inventory_date": "2025-07-21",
       "source_product_ids": [
         "1bf08102-09e5-43f1-b904-38d7fc0df3d8"
@@ -898,6 +991,37 @@
       ],
       "source_skus": [
         "nxfK9toCVh"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
+      "product_name": "Jack Herer Silver Lining",
+      "brand": "Noble Farms",
+      "strain": "Sativa",
+      "group_order": 3,
+      "thc": 0.3084,
+      "thc_display": "31%",
+      "quantity": 115.0,
+      "price_profile": "$16 Gram",
+      "gram": "$16",
+      "eighth": "$50",
+      "quarter": "$95",
+      "half": "$180",
+      "ounce": "$332",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "8597645a-c4c2-4000-9ad9-3b34afbc9039"
+      ],
+      "source_variant_ids": [
+        "7bfc38d0-d3a4-4633-837f-2dcec8b37f51"
+      ],
+      "source_skus": [
+        "pPT9yzEXdt"
       ],
       "dutchie_url": "",
       "no_recent_sales": false
