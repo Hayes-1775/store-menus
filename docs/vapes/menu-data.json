@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-24T09:06:54",
-  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-24 (1).csv",
+  "generated_at": "2026-07-26T07:05:05",
+  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-26.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -15,9 +15,9 @@
       "thc_display": "87%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        1033
+        1014
       ],
       "detail_display": "87%"
     },
@@ -33,9 +33,9 @@
       "thc_display": "82%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 14.0,
+      "quantity": 13.0,
       "source_rows": [
-        1062
+        1043
       ],
       "detail_display": "82%"
     },
@@ -53,7 +53,7 @@
       "short_price": "$22.5",
       "quantity": 1.0,
       "source_rows": [
-        1044
+        1025
       ],
       "detail_display": "79%"
     },
@@ -71,7 +71,7 @@
       "short_price": "$22.5",
       "quantity": 4.0,
       "source_rows": [
-        1021
+        1002
       ],
       "detail_display": "80%"
     },
@@ -87,9 +87,9 @@
       "thc_display": "79%",
       "price": "$18.52",
       "short_price": "$18.52",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        1041
+        1022
       ],
       "detail_display": "79%"
     },
@@ -105,9 +105,9 @@
       "thc_display": "77%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 20.0,
+      "quantity": 18.0,
       "source_rows": [
-        1066
+        1047
       ],
       "detail_display": "77%"
     },
@@ -123,9 +123,9 @@
       "thc_display": "88%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        1059
+        1040
       ],
       "detail_display": "88%"
     },
@@ -141,9 +141,9 @@
       "thc_display": "87%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 7.0,
+      "quantity": 4.0,
       "source_rows": [
-        1032
+        1013
       ],
       "detail_display": "87%"
     },
@@ -161,7 +161,7 @@
       "short_price": "$22.22",
       "quantity": 19.0,
       "source_rows": [
-        1037
+        1018
       ],
       "detail_display": "76%"
     },
@@ -179,7 +179,7 @@
       "short_price": "$22.22",
       "quantity": 20.0,
       "source_rows": [
-        1063
+        1044
       ],
       "detail_display": "70%"
     },
@@ -195,9 +195,9 @@
       "thc_display": "86%",
       "price": "$23.00",
       "short_price": "$23",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
-        818
+        798
       ],
       "detail_display": "86%"
     },
@@ -215,7 +215,7 @@
       "short_price": "$23",
       "quantity": 6.0,
       "source_rows": [
-        840
+        820
       ],
       "detail_display": "86%"
     },
@@ -231,10 +231,10 @@
       "thc_display": "83%",
       "price": "$24.00",
       "short_price": "$24",
-      "quantity": 13.0,
+      "quantity": 12.0,
       "source_rows": [
-        824,
-        825
+        804,
+        805
       ],
       "detail_display": "83%"
     },
@@ -252,7 +252,7 @@
       "short_price": "$26",
       "quantity": 5.0,
       "source_rows": [
-        856
+        836
       ],
       "detail_display": "82%"
     },
@@ -270,7 +270,7 @@
       "short_price": "$24",
       "quantity": 10.0,
       "source_rows": [
-        820
+        800
       ],
       "detail_display": "78%"
     },
@@ -288,27 +288,9 @@
       "short_price": "$30",
       "quantity": 1.0,
       "source_rows": [
-        868
+        848
       ],
       "detail_display": "75%"
-    },
-    {
-      "brand": "NW Kind",
-      "product_name": "Zlurpee",
-      "display_name": "Zlurpee",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.7290000000000001,
-      "thc_display": "73%",
-      "price": "$30.00",
-      "short_price": "$30",
-      "quantity": 1.0,
-      "source_rows": [
-        869
-      ],
-      "detail_display": "73%"
     },
     {
       "brand": "NW Kind",
@@ -322,10 +304,10 @@
       "thc_display": "71%",
       "price": "$30.00",
       "short_price": "$30",
-      "quantity": 16.0,
+      "quantity": 12.0,
       "source_rows": [
-        846,
-        847
+        826,
+        827
       ],
       "detail_display": "71%"
     },
@@ -341,10 +323,10 @@
       "thc_display": "85%",
       "price": "$23.00",
       "short_price": "$23",
-      "quantity": 7.0,
+      "quantity": 5.0,
       "source_rows": [
-        848,
-        849
+        828,
+        829
       ],
       "detail_display": "85%"
     },
@@ -362,7 +344,7 @@
       "short_price": "$23",
       "quantity": 2.0,
       "source_rows": [
-        816
+        796
       ],
       "detail_display": "85%"
     },
@@ -380,7 +362,7 @@
       "short_price": "$26",
       "quantity": 2.0,
       "source_rows": [
-        867
+        847
       ],
       "detail_display": "76%"
     },
@@ -396,9 +378,9 @@
       "thc_display": "78%",
       "price": "$35.56",
       "short_price": "$35.56",
-      "quantity": 9.0,
+      "quantity": 7.0,
       "source_rows": [
-        817
+        797
       ],
       "detail_display": "78%"
     },
@@ -414,9 +396,9 @@
       "thc_display": "74%",
       "price": "$35.56",
       "short_price": "$35.56",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        823
+        803
       ],
       "detail_display": "74%"
     },
@@ -432,10 +414,10 @@
       "thc_display": "85%",
       "price": "$23.00",
       "short_price": "$23",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
-        821,
-        822
+        801,
+        802
       ],
       "detail_display": "85%"
     },
@@ -451,9 +433,9 @@
       "thc_display": "85%",
       "price": "$24.00",
       "short_price": "$24",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        827
+        807
       ],
       "detail_display": "85%"
     },
@@ -471,7 +453,7 @@
       "short_price": "$23",
       "quantity": 1.0,
       "source_rows": [
-        865
+        845
       ],
       "detail_display": "84%"
     },
@@ -489,7 +471,7 @@
       "short_price": "$26",
       "quantity": 4.0,
       "source_rows": [
-        819
+        799
       ],
       "detail_display": "77%"
     },
@@ -507,7 +489,7 @@
       "short_price": "$30",
       "quantity": 8.0,
       "source_rows": [
-        855
+        835
       ],
       "detail_display": "82%"
     },
@@ -523,9 +505,9 @@
       "thc_display": "68%",
       "price": "$40.00",
       "short_price": "$40",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        861
+        841
       ],
       "detail_display": "68%"
     },
@@ -543,27 +525,9 @@
       "short_price": "$36",
       "quantity": 2.0,
       "source_rows": [
-        531
+        522
       ],
       "detail_display": "76%"
-    },
-    {
-      "brand": "Higher Cultures",
-      "product_name": "Michelin Star",
-      "display_name": "Michelin Star",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "AIO",
-      "process": "DLR",
-      "thc": 0.8333799999999999,
-      "thc_display": "83%",
-      "price": "$29.00",
-      "short_price": "$29",
-      "quantity": 1.0,
-      "source_rows": [
-        548
-      ],
-      "detail_display": "83%"
     },
     {
       "brand": "Higher Cultures",
@@ -577,9 +541,9 @@
       "thc_display": "79%",
       "price": "$36.00",
       "short_price": "$36",
-      "quantity": 3.0,
+      "quantity": 1.0,
       "source_rows": [
-        551
+        541
       ],
       "detail_display": "79%"
     },
@@ -597,7 +561,7 @@
       "short_price": "$36",
       "quantity": 1.0,
       "source_rows": [
-        563
+        551
       ],
       "detail_display": "75%"
     },
@@ -615,7 +579,7 @@
       "short_price": "$36",
       "quantity": 6.0,
       "source_rows": [
-        554
+        544
       ],
       "detail_display": "76%"
     }
