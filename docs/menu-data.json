@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-26T07:05:03",
-  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-26.csv",
+  "generated_at": "2026-07-27T06:15:45",
+  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-27.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -10,7 +10,7 @@
       "group_order": 1,
       "thc": 0.217,
       "thc_display": "22%",
-      "quantity": 597.54,
+      "quantity": 586.35,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -72,7 +72,7 @@
       "group_order": 1,
       "thc": 0.2157,
       "thc_display": "22%",
-      "quantity": 90.6,
+      "quantity": 80.46,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -134,7 +134,7 @@
       "group_order": 1,
       "thc": 0.2475,
       "thc_display": "25%",
-      "quantity": 269.94,
+      "quantity": 268.93,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -165,7 +165,7 @@
       "group_order": 1,
       "thc": 0.264,
       "thc_display": "26%",
-      "quantity": 415.33,
+      "quantity": 408.25,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -196,7 +196,7 @@
       "group_order": 1,
       "thc": 0.273,
       "thc_display": "27%",
-      "quantity": 385.15,
+      "quantity": 379.41,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -258,7 +258,7 @@
       "group_order": 1,
       "thc": 0.2373,
       "thc_display": "24%",
-      "quantity": 97.77,
+      "quantity": 95.74,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -320,7 +320,7 @@
       "group_order": 1,
       "thc": 0.27,
       "thc_display": "27%",
-      "quantity": 32.23,
+      "quantity": 28.69,
       "price_profile": "$16 Gram",
       "gram": "$16",
       "eighth": "$50",
@@ -342,7 +342,7 @@
         "bn4Cx1hnla"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true
+      "no_recent_sales": false
     },
     {
       "product_name": "OMMP Blueberry",
@@ -351,7 +351,7 @@
       "group_order": 1,
       "thc": 0.2967,
       "thc_display": "30%",
-      "quantity": 110.05,
+      "quantity": 106.5,
       "price_profile": "$17 Gram",
       "gram": "$17",
       "eighth": "$54",
@@ -382,7 +382,7 @@
       "group_order": 2,
       "thc": 0.155,
       "thc_display": "16%",
-      "quantity": 783.61,
+      "quantity": 752.01,
       "price_profile": "$3 Gram",
       "gram": "$3",
       "eighth": "$10",
@@ -413,7 +413,7 @@
       "group_order": 2,
       "thc": 0.2637,
       "thc_display": "26%",
-      "quantity": 175.11,
+      "quantity": 167.96,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -454,7 +454,7 @@
       "low_stock": false,
       "closeout": true,
       "aged_inventory": true,
-      "aged_inventory_days": 101,
+      "aged_inventory_days": 102,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "e6dc6ea7-8cbf-4dfd-a775-00f998a204e4"
@@ -475,7 +475,7 @@
       "group_order": 2,
       "thc": 0.2771,
       "thc_display": "28%",
-      "quantity": 26.02,
+      "quantity": 24.92,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -516,7 +516,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 432,
+      "aged_inventory_days": 433,
       "aged_inventory_date": "2025-05-20",
       "source_product_ids": [
         "10f91862-d4ec-436c-95ed-4da9fa2e7dfe"
@@ -630,7 +630,7 @@
       "group_order": 2,
       "thc": 0.3452,
       "thc_display": "35%",
-      "quantity": 113.92,
+      "quantity": 113.41,
       "price_profile": "$16 Gram",
       "gram": "$16",
       "eighth": "$50",
@@ -661,7 +661,7 @@
       "group_order": 3,
       "thc": 0.163,
       "thc_display": "16%",
-      "quantity": 49.44,
+      "quantity": 47.34,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -692,7 +692,7 @@
       "group_order": 3,
       "thc": 0.1791,
       "thc_display": "18%",
-      "quantity": 411.14,
+      "quantity": 405.54,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -795,7 +795,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 101,
+      "aged_inventory_days": 102,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "86b938a7-b656-4e2b-b775-08812482b29a"
@@ -805,37 +805,6 @@
       ],
       "source_skus": [
         "ZSCrJexnb9"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false
-    },
-    {
-      "product_name": "Island Blends",
-      "brand": "Oregrown",
-      "strain": "Sativa",
-      "group_order": 3,
-      "thc": 0.2983,
-      "thc_display": "30%",
-      "quantity": 19.82,
-      "price_profile": "$7 Gram",
-      "gram": "$7",
-      "eighth": "$22",
-      "quarter": "$42",
-      "half": "$80",
-      "ounce": "$148",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "f542222c-521d-463c-8f97-229b4d60b4b3"
-      ],
-      "source_variant_ids": [
-        "7d6c275c-ebfb-4799-9ca2-4a273e2db321"
-      ],
-      "source_skus": [
-        "gwH33PYFJG"
       ],
       "dutchie_url": "",
       "no_recent_sales": false
@@ -888,7 +857,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 370,
+      "aged_inventory_days": 371,
       "aged_inventory_date": "2025-07-21",
       "source_product_ids": [
         "1bf08102-09e5-43f1-b904-38d7fc0df3d8"
@@ -909,7 +878,7 @@
       "group_order": 3,
       "thc": 0.3084,
       "thc_display": "31%",
-      "quantity": 89.67,
+      "quantity": 87.52,
       "price_profile": "$16 Gram",
       "gram": "$16",
       "eighth": "$50",
