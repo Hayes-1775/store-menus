@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-28T06:22:19",
-  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-28.csv",
+  "generated_at": "2026-07-31T06:24:56",
+  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-07-31.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -10,7 +10,7 @@
       "group_order": 1,
       "thc": 0.217,
       "thc_display": "22%",
-      "quantity": 586.35,
+      "quantity": 555.22,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -41,7 +41,7 @@
       "group_order": 1,
       "thc": 0.21899999999999997,
       "thc_display": "22%",
-      "quantity": 338.43,
+      "quantity": 333.86,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -72,15 +72,15 @@
       "group_order": 1,
       "thc": 0.2157,
       "thc_display": "22%",
-      "quantity": 43.34,
+      "quantity": 7.28,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
       "quarter": "$30",
       "half": "$57",
       "ounce": "$105",
-      "low_stock": false,
-      "closeout": false,
+      "low_stock": true,
+      "closeout": true,
       "aged_inventory": false,
       "aged_inventory_days": null,
       "aged_inventory_date": "",
@@ -97,13 +97,44 @@
       "no_recent_sales": false
     },
     {
+      "product_name": "Apple Jacked",
+      "brand": "Good Garden",
+      "strain": "Indica",
+      "group_order": 1,
+      "thc": 0.2187,
+      "thc_display": "22%",
+      "quantity": 227.0,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "22acd2f3-9ed3-4d3c-8c4a-b18cbfaf1621"
+      ],
+      "source_variant_ids": [
+        "0aba8a98-9536-4529-a7c3-bc40a25ced9e"
+      ],
+      "source_skus": [
+        "sKWZqqHD4e"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
       "product_name": "Smashburger",
       "brand": "Miracle Farms",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.23,
       "thc_display": "23%",
-      "quantity": 426.87,
+      "quantity": 405.74,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -134,7 +165,7 @@
       "group_order": 1,
       "thc": 0.2475,
       "thc_display": "25%",
-      "quantity": 268.93,
+      "quantity": 232.69,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -165,7 +196,7 @@
       "group_order": 1,
       "thc": 0.264,
       "thc_display": "26%",
-      "quantity": 404.65,
+      "quantity": 373.1,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -196,7 +227,7 @@
       "group_order": 1,
       "thc": 0.273,
       "thc_display": "27%",
-      "quantity": 368.2,
+      "quantity": 324.99,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -227,7 +258,7 @@
       "group_order": 1,
       "thc": 0.2054,
       "thc_display": "21%",
-      "quantity": 49.78,
+      "quantity": 42.73,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -258,7 +289,7 @@
       "group_order": 1,
       "thc": 0.2373,
       "thc_display": "24%",
-      "quantity": 90.21,
+      "quantity": 78.88,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -278,6 +309,37 @@
       ],
       "source_skus": [
         "QjPmSNhvtH"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
+      "product_name": "Animal Tsunami",
+      "brand": "Oregrown",
+      "strain": "Indica",
+      "group_order": 1,
+      "thc": 0.2685,
+      "thc_display": "27%",
+      "quantity": 105.88,
+      "price_profile": "$7 Gram",
+      "gram": "$7",
+      "eighth": "$22",
+      "quarter": "$42",
+      "half": "$80",
+      "ounce": "$148",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "db342e5c-707d-4b59-bb6b-7125e957b83a"
+      ],
+      "source_variant_ids": [
+        "cd9b8da8-ae54-4901-8980-7b4684e5201b"
+      ],
+      "source_skus": [
+        "d21vDKCrsD"
       ],
       "dutchie_url": "",
       "no_recent_sales": false
@@ -320,7 +382,7 @@
       "group_order": 1,
       "thc": 0.27,
       "thc_display": "27%",
-      "quantity": 27.62,
+      "quantity": 24.02,
       "price_profile": "$16 Gram",
       "gram": "$16",
       "eighth": "$50",
@@ -328,7 +390,7 @@
       "half": "$180",
       "ounce": "$332",
       "low_stock": false,
-      "closeout": false,
+      "closeout": true,
       "aged_inventory": false,
       "aged_inventory_days": null,
       "aged_inventory_date": "",
@@ -351,7 +413,7 @@
       "group_order": 1,
       "thc": 0.2967,
       "thc_display": "30%",
-      "quantity": 101.37,
+      "quantity": 85.16,
       "price_profile": "$17 Gram",
       "gram": "$17",
       "eighth": "$54",
@@ -382,7 +444,7 @@
       "group_order": 2,
       "thc": 0.155,
       "thc_display": "16%",
-      "quantity": 748.46,
+      "quantity": 696.29,
       "price_profile": "$3 Gram",
       "gram": "$3",
       "eighth": "$10",
@@ -413,7 +475,7 @@
       "group_order": 2,
       "thc": 0.2637,
       "thc_display": "26%",
-      "quantity": 132.85,
+      "quantity": 123.73,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -438,32 +500,63 @@
       "no_recent_sales": false
     },
     {
-      "product_name": "Grease Bucket",
+      "product_name": "Black Market",
       "brand": "Good Garden",
       "strain": "Hybrid",
       "group_order": 2,
-      "thc": 0.26280000000000003,
-      "thc_display": "26%",
-      "quantity": 26.54,
-      "price_profile": "$6 Gram",
-      "gram": "$6",
-      "eighth": "$19",
-      "quarter": "$36",
-      "half": "$68",
-      "ounce": "$126",
+      "thc": 0.2755,
+      "thc_display": "28%",
+      "quantity": 227.0,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
       "low_stock": false,
-      "closeout": true,
-      "aged_inventory": true,
-      "aged_inventory_days": 103,
-      "aged_inventory_date": "2026-04-16",
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
       "source_product_ids": [
-        "e6dc6ea7-8cbf-4dfd-a775-00f998a204e4"
+        "356c235c-c3bf-4e3d-a6ce-1a469a6b897c"
       ],
       "source_variant_ids": [
-        "01b9fa8d-bb6c-4f26-8587-447cebc2cd1f"
+        "4bb0674b-c7c3-4151-b75b-5d7a6fefcaa0"
       ],
       "source_skus": [
-        "jAT7nIhKde"
+        "fE4WXxH9Y9"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
+      "product_name": "MAC 1",
+      "brand": "Oregrown",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.2658,
+      "thc_display": "27%",
+      "quantity": 111.85,
+      "price_profile": "$7 Gram",
+      "gram": "$7",
+      "eighth": "$22",
+      "quarter": "$42",
+      "half": "$80",
+      "ounce": "$148",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "08cefa48-6684-4669-bdf1-9ed7698aa141"
+      ],
+      "source_variant_ids": [
+        "cb2dfb38-7606-490c-9110-8cf58ab876ed"
+      ],
+      "source_skus": [
+        "zK3x2PVwDp"
       ],
       "dutchie_url": "",
       "no_recent_sales": false
@@ -475,7 +568,7 @@
       "group_order": 2,
       "thc": 0.2771,
       "thc_display": "28%",
-      "quantity": 6.07,
+      "quantity": 2.52,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -500,13 +593,44 @@
       "no_recent_sales": false
     },
     {
+      "product_name": "Garlic Cocktail",
+      "brand": "Oregrown",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.3641,
+      "thc_display": "36%",
+      "quantity": 98.24,
+      "price_profile": "$7 Gram",
+      "gram": "$7",
+      "eighth": "$22",
+      "quarter": "$42",
+      "half": "$80",
+      "ounce": "$148",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "1446c8b0-a85c-4d5a-ba5d-1eb2c35fbb14"
+      ],
+      "source_variant_ids": [
+        "7ecefc9e-b554-4903-9628-b736829a7ac6"
+      ],
+      "source_skus": [
+        "lyrM67T39M"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
       "product_name": "Tongue Splasher",
       "brand": "Fenario Farms",
       "strain": "Hybrid",
       "group_order": 2,
       "thc": 0.2077,
       "thc_display": "21%",
-      "quantity": 30.25,
+      "quantity": 23.15,
       "price_profile": "$9 Gram",
       "gram": "$9",
       "eighth": "$28",
@@ -514,9 +638,9 @@
       "half": "$101",
       "ounce": "$187",
       "low_stock": false,
-      "closeout": false,
+      "closeout": true,
       "aged_inventory": true,
-      "aged_inventory_days": 434,
+      "aged_inventory_days": 437,
       "aged_inventory_date": "2025-05-20",
       "source_product_ids": [
         "10f91862-d4ec-436c-95ed-4da9fa2e7dfe"
@@ -531,13 +655,44 @@
       "no_recent_sales": false
     },
     {
+      "product_name": "Cherry Paloma",
+      "brand": "Garden First Cannabis",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.25239999999999996,
+      "thc_display": "25%",
+      "quantity": 111.45,
+      "price_profile": "$9 Gram",
+      "gram": "$9",
+      "eighth": "$28",
+      "quarter": "$53",
+      "half": "$101",
+      "ounce": "$187",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "72c963b8-211a-4b64-9562-beba75afbac4"
+      ],
+      "source_variant_ids": [
+        "80cce4f9-427d-42cd-bcc0-7dbd44ca26fc"
+      ],
+      "source_skus": [
+        "vpKw7h3bKs"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false
+    },
+    {
       "product_name": "Sherb Cream Pop #4",
       "brand": "Garden First Cannabis",
       "strain": "Hybrid",
       "group_order": 2,
       "thc": 0.2211,
       "thc_display": "22%",
-      "quantity": 68.72,
+      "quantity": 37.47,
       "price_profile": "$10 Gram",
       "gram": "$10",
       "eighth": "$32",
@@ -568,7 +723,7 @@
       "group_order": 2,
       "thc": 0.2502,
       "thc_display": "25%",
-      "quantity": 40.4,
+      "quantity": 33.35,
       "price_profile": "$10 Gram",
       "gram": "$10",
       "eighth": "$32",
@@ -599,7 +754,7 @@
       "group_order": 2,
       "thc": 0.3019,
       "thc_display": "30%",
-      "quantity": 92.05,
+      "quantity": 78.26,
       "price_profile": "$12 Gram",
       "gram": "$12",
       "eighth": "$38",
@@ -630,7 +785,7 @@
       "group_order": 2,
       "thc": 0.3452,
       "thc_display": "35%",
-      "quantity": 113.41,
+      "quantity": 91.6,
       "price_profile": "$16 Gram",
       "gram": "$16",
       "eighth": "$50",
@@ -661,15 +816,15 @@
       "group_order": 3,
       "thc": 0.163,
       "thc_display": "16%",
-      "quantity": 47.34,
+      "quantity": 16.7,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
       "quarter": "$28",
       "half": "$56",
       "ounce": "$90",
-      "low_stock": false,
-      "closeout": false,
+      "low_stock": true,
+      "closeout": true,
       "aged_inventory": false,
       "aged_inventory_days": null,
       "aged_inventory_date": "",
@@ -692,7 +847,7 @@
       "group_order": 3,
       "thc": 0.1791,
       "thc_display": "18%",
-      "quantity": 399.96,
+      "quantity": 394.84,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -717,44 +872,13 @@
       "no_recent_sales": false
     },
     {
-      "product_name": "Southern Sunset",
-      "brand": "Miracle Farms",
-      "strain": "Sativa",
-      "group_order": 3,
-      "thc": 0.23800000000000002,
-      "thc_display": "24%",
-      "quantity": 2.74,
-      "price_profile": "$5 Gram",
-      "gram": "$5",
-      "eighth": "$16",
-      "quarter": "$30",
-      "half": "$57",
-      "ounce": "$105",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "6b62b467-c395-4d41-a76e-08b7eace92b0"
-      ],
-      "source_variant_ids": [
-        "36188604-e2eb-43c8-887a-f982f478b20e"
-      ],
-      "source_skus": [
-        "B87mbca1c9"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false
-    },
-    {
       "product_name": "Dante's Cookie Jar",
       "brand": "Miracle Farms",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.245,
       "thc_display": "25%",
-      "quantity": 694.9,
+      "quantity": 683.24,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -785,7 +909,7 @@
       "group_order": 3,
       "thc": 0.2546,
       "thc_display": "25%",
-      "quantity": 64.64,
+      "quantity": 48.44,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -795,7 +919,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 103,
+      "aged_inventory_days": 106,
       "aged_inventory_date": "2026-04-16",
       "source_product_ids": [
         "86b938a7-b656-4e2b-b775-08812482b29a"
@@ -805,37 +929,6 @@
       ],
       "source_skus": [
         "ZSCrJexnb9"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false
-    },
-    {
-      "product_name": "Rocky Mountain Moonshine",
-      "brand": "Garden First Cannabis",
-      "strain": "Sativa",
-      "group_order": 3,
-      "thc": 0.2469,
-      "thc_display": "25%",
-      "quantity": 41.99,
-      "price_profile": "$8 Gram",
-      "gram": "$8",
-      "eighth": "$25",
-      "quarter": "$48",
-      "half": "$91",
-      "ounce": "$168",
-      "low_stock": false,
-      "closeout": false,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "801e0f59-93ed-4043-815d-df05ed52100d"
-      ],
-      "source_variant_ids": [
-        "8d510a51-5ecd-4551-9b36-a9ea93854aec"
-      ],
-      "source_skus": [
-        "jiK3PY4nDq"
       ],
       "dutchie_url": "",
       "no_recent_sales": false
@@ -857,7 +950,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 372,
+      "aged_inventory_days": 375,
       "aged_inventory_date": "2025-07-21",
       "source_product_ids": [
         "1bf08102-09e5-43f1-b904-38d7fc0df3d8"
@@ -878,7 +971,7 @@
       "group_order": 3,
       "thc": 0.3084,
       "thc_display": "31%",
-      "quantity": 86.44,
+      "quantity": 76.84,
       "price_profile": "$16 Gram",
       "gram": "$16",
       "eighth": "$50",
