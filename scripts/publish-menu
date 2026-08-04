@@ -16,8 +16,6 @@ if [[ ! -x "$GIT_BIN" ]]; then
   exit 1
 fi
 
-previous_head="$("$GIT_BIN" rev-parse HEAD)"
-
 if ! "$GIT_BIN" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   echo "FAIL: not inside a git repository" >&2
   exit 1
@@ -70,13 +68,6 @@ workflow_run_timed_step "$WORKFLOW_NAME" "stage_publishable_files" "batch-git-ad
 
 if "$GIT_BIN" diff --cached --quiet; then
   echo "No publishable menu changes to commit."
-  workflow_run_timed_step "$WORKFLOW_NAME" "send_no_change_report" "local-script" \
-    "local script" \
-    scripts/send-store-menu-report-email \
-      --send \
-      --baseline-commit "$previous_head" \
-      --publish-status no_changes \
-      --published-commit "$previous_head"
   cat /tmp/store-menu-verify.json
   exit 0
 fi
@@ -89,7 +80,6 @@ workflow_run_timed_step "$WORKFLOW_NAME" "push_menu_publish" "api-git-push" \
   "api call" \
   "$GIT_BIN" push origin HEAD
 
-published_head="$("$GIT_BIN" rev-parse HEAD)"
 pages_url="$(python3 - <<'PY'
 import json
 from pathlib import Path
@@ -107,13 +97,5 @@ fi
 workflow_run_timed_step "$WORKFLOW_NAME" "verify_live_pages_publish" "http-pages-check" \
   "http poll" \
   scripts/verify-live-menu --pages-url "$pages_url" >/tmp/store-menu-live-verify.json
-
-workflow_run_timed_step "$WORKFLOW_NAME" "send_publish_report" "local-script" \
-  "local script" \
-  scripts/send-store-menu-report-email \
-    --send \
-    --baseline-commit "$previous_head" \
-    --publish-status published \
-    --published-commit "$published_head"
 
 cat /tmp/store-menu-verify.json
