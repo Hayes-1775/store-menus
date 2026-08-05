@@ -713,8 +713,8 @@
         "Koji Sunberry": { adjective: "Bright", bucket: "energy" },
         "Miami Dade": { adjective: "Focused", bucket: "energy" },
         "Category 5": { adjective: "Energizing", bucket: "energy" },
-        "Jack Herer": { adjective: "Clearheaded", bucket: "energy" },
-        "Jack Herer Silver Lining": { adjective: "Clearheaded", bucket: "energy" },
+        "Jack Herer": { adjective: "Alert", bucket: "energy" },
+        "Jack Herer Silver Lining": { adjective: "Alert", bucket: "energy" },
         "Southern Sunset": { adjective: "Bright", bucket: "energy" },
         "Rocky Mountain Moonshine": { adjective: "Lively", bucket: "energy" },
         "Dante's Cookie Jar": { adjective: "Motivating", bucket: "energy" },
@@ -739,6 +739,10 @@
         Indica: ["Indica", "Chill", "Sleepy", "Heavy"],
         Hybrid: ["Hybrid", "Balanced", "Hungry", "Social"],
         Sativa: ["Sativa", "Energy", "Focused", "Uplifted"]
+      };
+
+      const productDisplayNames = {
+        "Jack Herer Silver Lining": "Jack Herer Silver"
       };
 
       function clamp(value, min, max) {
@@ -926,9 +930,10 @@
       }
 
       function productNameHtml(row) {
+        const displayName = productDisplayNames[row.product_name] || row.product_name;
         return row.aged_inventory
-          ? `<span class="product-name-text">${animatedProductNameHtml(row.product_name)}</span>`
-          : escapeHtml(row.product_name);
+          ? `<span class="product-name-text">${animatedProductNameHtml(displayName)}</span>`
+          : escapeHtml(displayName);
       }
 
       function animatedProductNameHtml(productName) {
