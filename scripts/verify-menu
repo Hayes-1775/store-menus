@@ -52,14 +52,17 @@ def main() -> None:
     vape_docs_menu = json.loads(vape_docs_data_path.read_text(encoding="utf-8"))
     vape_page2_docs_menu = json.loads(vape_page2_docs_data_path.read_text(encoding="utf-8"))
     rows = menu.get("rows", [])
-    docs_rows = docs_menu.get("rows", [])
-    names = {row["product_name"] for row in rows}
 
-    if len(rows) != len(docs_rows):
-        fail(f"docs/menu-data.json row count {len(docs_rows)} does not match data/flower_menu.json {len(rows)}")
+    if docs_menu != menu:
+        fail("docs/menu-data.json does not exactly match data/flower_menu.json")
 
-    if "Jack Herer" not in names:
-        fail("Jack Herer should be retained by duplicate tie handling")
+    name_counts = {}
+    for row in rows:
+        name = row["product_name"]
+        name_counts[name] = name_counts.get(name, 0) + 1
+    duplicate_names = sorted(name for name, count in name_counts.items() if count > 1)
+    if duplicate_names:
+        fail(f"duplicate product names were not consolidated: {', '.join(duplicate_names)}")
     if len(rows) < 25:
         fail(f"unexpectedly low menu row count: {len(rows)}")
     if len(vape_docs_menu.get("rows", [])) < 20:

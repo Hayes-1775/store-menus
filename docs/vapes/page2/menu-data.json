@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-08-04T04:48:06",
-  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-08-04.csv",
+  "generated_at": "2026-08-05T14:14:26",
+  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-08-05.csv",
   "menu": "vapes",
   "rows": [
     {
       "brand": "Buddies",
-      "product_name": "Jomoberry",
-      "display_name": "Jomoberry",
+      "product_name": "Raspberry Punch",
+      "display_name": "Raspberry Punch",
       "strain": "Indica",
       "size": "1g",
       "format": "510",
       "process": "Live Resin",
-      "thc": 0.7615000000000001,
-      "thc_display": "76%",
-      "price": "$26.44",
-      "short_price": "$26.44",
-      "quantity": 1.0,
+      "thc": 0.7317,
+      "thc_display": "73%",
+      "price": "$23.62",
+      "short_price": "$23.62",
+      "quantity": 12.0,
       "source_rows": [
-        111
+        137
       ],
-      "detail_display": "76%"
+      "detail_display": "73%"
     },
     {
       "brand": "Buddies",
@@ -35,7 +35,7 @@
       "short_price": "$31.16",
       "quantity": 11.0,
       "source_rows": [
-        96
+        97
       ],
       "detail_display": "76%"
     },
@@ -51,9 +51,27 @@
       "thc_display": "90%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        103
+        107
+      ],
+      "detail_display": "90%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Melon Gum",
+      "display_name": "Melon Gum",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.8970999999999999,
+      "thc_display": "90%",
+      "price": "$15.73",
+      "short_price": "$15.73",
+      "quantity": 12.0,
+      "source_rows": [
+        118
       ],
       "detail_display": "90%"
     },
@@ -69,11 +87,65 @@
       "thc_display": "89%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        100
+        102
       ],
       "detail_display": "89%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Cherry Pie",
+      "display_name": "Cherry Pie",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.8771,
+      "thc_display": "88%",
+      "price": "$15.73",
+      "short_price": "$15.73",
+      "quantity": 12.0,
+      "source_rows": [
+        104
+      ],
+      "detail_display": "88%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Grape Ape",
+      "display_name": "Grape Ape",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.8717,
+      "thc_display": "87%",
+      "price": "$15.73",
+      "short_price": "$15.73",
+      "quantity": 12.0,
+      "source_rows": [
+        114
+      ],
+      "detail_display": "87%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Apricot Helix",
+      "display_name": "Apricot Helix",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.8715999999999999,
+      "thc_display": "87%",
+      "price": "$15.73",
+      "short_price": "$15.73",
+      "quantity": 12.0,
+      "source_rows": [
+        96
+      ],
+      "detail_display": "87%"
     },
     {
       "brand": "Buddies",
@@ -89,7 +161,7 @@
       "short_price": "$26.44",
       "quantity": 7.0,
       "source_rows": [
-        121
+        126
       ],
       "detail_display": "81%"
     },
@@ -107,9 +179,45 @@
       "short_price": "$26.44",
       "quantity": 7.0,
       "source_rows": [
-        123
+        128
       ],
       "detail_display": "78%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Blueberry Muffin",
+      "display_name": "Blueberry Muffin 1g",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Distillate",
+      "thc": 0.9177,
+      "thc_display": "92%",
+      "price": "$20.47",
+      "short_price": "$20.47",
+      "quantity": 12.0,
+      "source_rows": [
+        99
+      ],
+      "detail_display": "92%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Pineapple Express",
+      "display_name": "Pineapple Express 1g",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Distillate",
+      "thc": 0.9081,
+      "thc_display": "91%",
+      "price": "$20.47",
+      "short_price": "$20.47",
+      "quantity": 12.0,
+      "source_rows": [
+        129
+      ],
+      "detail_display": "91%"
     },
     {
       "brand": "Buddies",
@@ -123,9 +231,9 @@
       "thc_display": "87%",
       "price": "$30.67",
       "short_price": "$30.67",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        115
+        121
       ],
       "detail_display": "87%"
     },
@@ -141,7 +249,7 @@
       "thc_display": "87%",
       "price": "$30.67",
       "short_price": "$30.67",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
         95
       ],
@@ -161,7 +269,7 @@
       "short_price": "$30.67",
       "quantity": 3.0,
       "source_rows": [
-        122
+        127
       ],
       "detail_display": "87%"
     },
@@ -179,7 +287,7 @@
       "short_price": "$31",
       "quantity": 2.0,
       "source_rows": [
-        127
+        133
       ],
       "detail_display": "86%"
     },
@@ -197,9 +305,27 @@
       "short_price": "$26.44",
       "quantity": 4.0,
       "source_rows": [
-        128
+        134
       ],
       "detail_display": "85%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Cereal Milk",
+      "display_name": "Cereal Milk",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.76,
+      "thc_display": "76%",
+      "price": "$23.62",
+      "short_price": "$23.62",
+      "quantity": 12.0,
+      "source_rows": [
+        103
+      ],
+      "detail_display": "76%"
     },
     {
       "brand": "Buddies",
@@ -213,9 +339,9 @@
       "thc_display": "75%",
       "price": "$26.44",
       "short_price": "$26.44",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        116
+        122
       ],
       "detail_display": "75%"
     },
@@ -231,9 +357,9 @@
       "thc_display": "21%",
       "price": "$32.00",
       "short_price": "$32",
-      "quantity": 4.0,
+      "quantity": 2.0,
       "source_rows": [
-        107
+        111
       ],
       "detail_display": "21%"
     },
@@ -251,7 +377,7 @@
       "short_price": "$31.16",
       "quantity": 10.0,
       "source_rows": [
-        105
+        109
       ],
       "detail_display": "76%"
     }

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-04T04:48:04",
-  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-08-04.csv",
+  "generated_at": "2026-08-05T14:14:25",
+  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-08-05.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -134,7 +134,7 @@
       "group_order": 1,
       "thc": 0.2475,
       "thc_display": "25%",
-      "quantity": 198.99,
+      "quantity": 184.95,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -165,7 +165,7 @@
       "group_order": 1,
       "thc": 0.264,
       "thc_display": "26%",
-      "quantity": 343.93,
+      "quantity": 329.89,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -196,7 +196,7 @@
       "group_order": 1,
       "thc": 0.273,
       "thc_display": "27%",
-      "quantity": 303.07,
+      "quantity": 297.47,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -237,7 +237,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 63,
+      "aged_inventory_days": 64,
       "aged_inventory_date": "2026-06-02",
       "source_product_ids": [
         "724b8414-7eb1-4053-9a0f-4e02c396d317"
@@ -258,7 +258,7 @@
       "group_order": 1,
       "thc": 0.2373,
       "thc_display": "24%",
-      "quantity": 71.76,
+      "quantity": 61.01,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -289,7 +289,7 @@
       "group_order": 1,
       "thc": 0.2685,
       "thc_display": "27%",
-      "quantity": 68.95,
+      "quantity": 49.97,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -351,7 +351,7 @@
       "group_order": 1,
       "thc": 0.2967,
       "thc_display": "30%",
-      "quantity": 75.51,
+      "quantity": 64.23,
       "price_profile": "$17 Gram",
       "gram": "$17",
       "eighth": "$54",
@@ -382,7 +382,7 @@
       "group_order": 2,
       "thc": 0.155,
       "thc_display": "16%",
-      "quantity": 627.22,
+      "quantity": 623.67,
       "price_profile": "$3 Gram",
       "gram": "$3",
       "eighth": "$10",
@@ -444,7 +444,7 @@
       "group_order": 2,
       "thc": 0.2755,
       "thc_display": "28%",
-      "quantity": 126.41,
+      "quantity": 119.26,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -475,7 +475,7 @@
       "group_order": 2,
       "thc": 0.2658,
       "thc_display": "27%",
-      "quantity": 58.49,
+      "quantity": 36.18,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -500,44 +500,13 @@
       "no_recent_sales": false
     },
     {
-      "product_name": "Garlic Cocktail",
-      "brand": "Oregrown",
-      "strain": "Hybrid",
-      "group_order": 2,
-      "thc": 0.3641,
-      "thc_display": "36%",
-      "quantity": 2.44,
-      "price_profile": "$7 Gram",
-      "gram": "$7",
-      "eighth": "$22",
-      "quarter": "$42",
-      "half": "$80",
-      "ounce": "$148",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "1446c8b0-a85c-4d5a-ba5d-1eb2c35fbb14"
-      ],
-      "source_variant_ids": [
-        "7ecefc9e-b554-4903-9628-b736829a7ac6"
-      ],
-      "source_skus": [
-        "lyrM67T39M"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false
-    },
-    {
       "product_name": "Cherry Paloma",
       "brand": "Garden First Cannabis",
       "strain": "Hybrid",
       "group_order": 2,
       "thc": 0.25239999999999996,
       "thc_display": "25%",
-      "quantity": 97.68,
+      "quantity": 87.1,
       "price_profile": "$9 Gram",
       "gram": "$9",
       "eighth": "$28",
@@ -686,44 +655,13 @@
       "no_recent_sales": false
     },
     {
-      "product_name": "Jack Herer",
-      "brand": "Miracle Farms",
-      "strain": "Sativa",
-      "group_order": 3,
-      "thc": 0.163,
-      "thc_display": "16%",
-      "quantity": 0.7,
-      "price_profile": "$4 Gram",
-      "gram": "$4",
-      "eighth": "$14",
-      "quarter": "$28",
-      "half": "$56",
-      "ounce": "$90",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "2047e797-eadc-422e-9d20-d45df4b26f12"
-      ],
-      "source_variant_ids": [
-        "71e7f972-1c72-43e1-8b4e-5a4e482e2351"
-      ],
-      "source_skus": [
-        "08pwAcYJv7"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false
-    },
-    {
       "product_name": "Miami Dade",
       "brand": "Good Garden",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.1791,
       "thc_display": "18%",
-      "quantity": 338.4,
+      "quantity": 332.83,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -754,7 +692,7 @@
       "group_order": 3,
       "thc": 0.245,
       "thc_display": "25%",
-      "quantity": 646.36,
+      "quantity": 599.75,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -779,44 +717,13 @@
       "no_recent_sales": false
     },
     {
-      "product_name": "Ginger Tea",
-      "brand": "Good Garden",
-      "strain": "Sativa",
-      "group_order": 3,
-      "thc": 0.2546,
-      "thc_display": "25%",
-      "quantity": 28.68,
-      "price_profile": "$6 Gram",
-      "gram": "$6",
-      "eighth": "$19",
-      "quarter": "$36",
-      "half": "$68",
-      "ounce": "$126",
-      "low_stock": false,
-      "closeout": false,
-      "aged_inventory": true,
-      "aged_inventory_days": 110,
-      "aged_inventory_date": "2026-04-16",
-      "source_product_ids": [
-        "86b938a7-b656-4e2b-b775-08812482b29a"
-      ],
-      "source_variant_ids": [
-        "9c8884ad-e6a4-480b-9548-53872644b1c2"
-      ],
-      "source_skus": [
-        "ZSCrJexnb9"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false
-    },
-    {
       "product_name": "Candied Lemons",
       "brand": "Virgin Cannabis",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.243,
       "thc_display": "24%",
-      "quantity": 113.91,
+      "quantity": 111.82,
       "price_profile": "$10 Gram",
       "gram": "$10",
       "eighth": "$32",
@@ -826,7 +733,7 @@
       "low_stock": false,
       "closeout": false,
       "aged_inventory": true,
-      "aged_inventory_days": 379,
+      "aged_inventory_days": 380,
       "aged_inventory_date": "2025-07-21",
       "source_product_ids": [
         "1bf08102-09e5-43f1-b904-38d7fc0df3d8"
@@ -847,7 +754,7 @@
       "group_order": 3,
       "thc": 0.3084,
       "thc_display": "31%",
-      "quantity": 70.15,
+      "quantity": 61.03,
       "price_profile": "$16 Gram",
       "gram": "$16",
       "eighth": "$50",
