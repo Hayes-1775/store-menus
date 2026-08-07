@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-06T07:38:27",
-  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-08-06.csv",
+  "generated_at": "2026-08-07T16:48:34",
+  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-08-07.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -15,9 +15,9 @@
       "thc_display": "82%",
       "price": "$22.50",
       "short_price": "$22.5",
-      "quantity": 7.0,
+      "quantity": 5.0,
       "source_rows": [
-        1062
+        1103
       ],
       "detail_display": "82%"
     },
@@ -29,15 +29,15 @@
       "size": "1g",
       "format": "510",
       "process": "Rosin/CR",
-      "thc": 0.0,
-      "thc_display": "",
+      "thc": 0.7979999999999999,
+      "thc_display": "80%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 20.0,
+      "quantity": 18.0,
       "source_rows": [
-        1039
+        1080
       ],
-      "detail_display": ""
+      "detail_display": "80%"
     },
     {
       "brand": "Verdant",
@@ -47,15 +47,15 @@
       "size": "1g",
       "format": "510",
       "process": "Rosin/CR",
-      "thc": 0.0,
-      "thc_display": "",
+      "thc": 0.778,
+      "thc_display": "78%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 20.0,
+      "quantity": 18.0,
       "source_rows": [
-        1046
+        1087
       ],
-      "detail_display": ""
+      "detail_display": "78%"
     },
     {
       "brand": "Verdant",
@@ -71,9 +71,27 @@
       "short_price": "$18.52",
       "quantity": 2.0,
       "source_rows": [
-        1044
+        1085
       ],
       "detail_display": "79%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Garlic Cherries",
+      "display_name": "Garlic Cherries",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.7809999999999999,
+      "thc_display": "78%",
+      "price": "$22.22",
+      "short_price": "$22.22",
+      "quantity": 20.0,
+      "source_rows": [
+        1075
+      ],
+      "detail_display": "78%"
     },
     {
       "brand": "Verdant",
@@ -89,27 +107,27 @@
       "short_price": "$22.22",
       "quantity": 13.0,
       "source_rows": [
-        1066
+        1107
       ],
       "detail_display": "77%"
     },
     {
       "brand": "Verdant",
-      "product_name": "Garlic Cherries",
-      "display_name": "Garlic Cherries",
-      "strain": "Hybrid",
+      "product_name": "Government Hangman",
+      "display_name": "Government Hangman",
+      "strain": "Sativa",
       "size": "1g",
       "format": "510",
       "process": "Rosin/CR",
-      "thc": 0.0,
-      "thc_display": "",
+      "thc": 0.785,
+      "thc_display": "79%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 20.0,
+      "quantity": 19.0,
       "source_rows": [
-        1034
+        1076
       ],
-      "detail_display": ""
+      "detail_display": "79%"
     },
     {
       "brand": "Verdant",
@@ -125,7 +143,7 @@
       "short_price": "$22.22",
       "quantity": 10.0,
       "source_rows": [
-        1040
+        1081
       ],
       "detail_display": "76%"
     },
@@ -143,27 +161,9 @@
       "short_price": "$22.22",
       "quantity": 16.0,
       "source_rows": [
-        1063
+        1104
       ],
       "detail_display": "70%"
-    },
-    {
-      "brand": "Verdant",
-      "product_name": "Government Hangman",
-      "display_name": "Government Hangman",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Rosin/CR",
-      "thc": 0.0,
-      "thc_display": "",
-      "price": "$22.22",
-      "short_price": "$22.22",
-      "quantity": 20.0,
-      "source_rows": [
-        1035
-      ],
-      "detail_display": ""
     },
     {
       "brand": "NW Kind",
@@ -177,9 +177,9 @@
       "thc_display": "88%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 8.0,
+      "quantity": 6.0,
       "source_rows": [
-        791
+        831
       ],
       "detail_display": "88%"
     },
@@ -197,7 +197,7 @@
       "short_price": "$23",
       "quantity": 5.0,
       "source_rows": [
-        817
+        856
       ],
       "detail_display": "86%"
     },
@@ -215,8 +215,8 @@
       "short_price": "$24",
       "quantity": 11.0,
       "source_rows": [
-        804,
-        805
+        844,
+        845
       ],
       "detail_display": "83%"
     },
@@ -234,7 +234,7 @@
       "short_price": "$26",
       "quantity": 3.0,
       "source_rows": [
-        835
+        874
       ],
       "detail_display": "82%"
     },
@@ -252,7 +252,7 @@
       "short_price": "$24",
       "quantity": 8.0,
       "source_rows": [
-        799
+        839
       ],
       "detail_display": "78%"
     },
@@ -268,9 +268,9 @@
       "thc_display": "76%",
       "price": "$30.00",
       "short_price": "$30",
-      "quantity": 10.0,
+      "quantity": 8.0,
       "source_rows": [
-        792
+        832
       ],
       "detail_display": "76%"
     },
@@ -286,10 +286,10 @@
       "thc_display": "71%",
       "price": "$30.00",
       "short_price": "$30",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        824,
-        825
+        863,
+        864
       ],
       "detail_display": "71%"
     },
@@ -305,9 +305,9 @@
       "thc_display": "81%",
       "price": "$36.00",
       "short_price": "$36",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        841
+        880
       ],
       "detail_display": "81%"
     },
@@ -323,47 +323,11 @@
       "thc_display": "87%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        800
+        840
       ],
       "detail_display": "87%"
-    },
-    {
-      "brand": "NW Kind",
-      "product_name": "Purple Push Pop",
-      "display_name": "Purple Push Pop",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Distillate",
-      "thc": 0.8540000000000001,
-      "thc_display": "85%",
-      "price": "$23.00",
-      "short_price": "$23",
-      "quantity": 1.0,
-      "source_rows": [
-        826
-      ],
-      "detail_display": "85%"
-    },
-    {
-      "brand": "NW Kind",
-      "product_name": "BOP",
-      "display_name": "BOP",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Distillate",
-      "thc": 0.852,
-      "thc_display": "85%",
-      "price": "$23.00",
-      "short_price": "$23",
-      "quantity": 1.0,
-      "source_rows": [
-        793
-      ],
-      "detail_display": "85%"
     },
     {
       "brand": "NW Kind",
@@ -379,7 +343,7 @@
       "short_price": "$24",
       "quantity": 10.0,
       "source_rows": [
-        787
+        827
       ],
       "detail_display": "79%"
     },
@@ -397,7 +361,7 @@
       "short_price": "$24",
       "quantity": 10.0,
       "source_rows": [
-        846
+        885
       ],
       "detail_display": "77%"
     },
@@ -415,7 +379,7 @@
       "short_price": "$35.56",
       "quantity": 7.0,
       "source_rows": [
-        794
+        834
       ],
       "detail_display": "78%"
     },
@@ -433,7 +397,7 @@
       "short_price": "$35.56",
       "quantity": 7.0,
       "source_rows": [
-        803
+        843
       ],
       "detail_display": "74%"
     },
@@ -451,8 +415,8 @@
       "short_price": "$23",
       "quantity": 6.0,
       "source_rows": [
-        801,
-        802
+        841,
+        842
       ],
       "detail_display": "85%"
     },
@@ -470,7 +434,7 @@
       "short_price": "$24",
       "quantity": 6.0,
       "source_rows": [
-        807
+        847
       ],
       "detail_display": "85%"
     },
@@ -488,7 +452,7 @@
       "short_price": "$20",
       "quantity": 10.0,
       "source_rows": [
-        795
+        835
       ],
       "detail_display": "84%"
     },
@@ -504,9 +468,9 @@
       "thc_display": "81%",
       "price": "$30.00",
       "short_price": "$30",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        842
+        881
       ],
       "detail_display": "81%"
     },
@@ -522,9 +486,9 @@
       "thc_display": "80%",
       "price": "$30.00",
       "short_price": "$30",
-      "quantity": 4.0,
+      "quantity": 5.0,
       "source_rows": [
-        828
+        867
       ],
       "detail_display": "80%"
     },
@@ -540,9 +504,9 @@
       "thc_display": "77%",
       "price": "$26.00",
       "short_price": "$26",
-      "quantity": 3.0,
+      "quantity": 1.0,
       "source_rows": [
-        798
+        838
       ],
       "detail_display": "77%"
     },
@@ -560,7 +524,7 @@
       "short_price": "$30",
       "quantity": 7.0,
       "source_rows": [
-        834
+        873
       ],
       "detail_display": "82%"
     },
@@ -578,7 +542,7 @@
       "short_price": "$40",
       "quantity": 4.0,
       "source_rows": [
-        840
+        879
       ],
       "detail_display": "68%"
     },
@@ -596,7 +560,7 @@
       "short_price": "$24.44",
       "quantity": 9.0,
       "source_rows": [
-        519
+        542
       ],
       "detail_display": "88%"
     },
@@ -614,7 +578,7 @@
       "short_price": "$24.44",
       "quantity": 7.0,
       "source_rows": [
-        515
+        538
       ],
       "detail_display": "87%"
     },
@@ -632,27 +596,9 @@
       "short_price": "$24.44",
       "quantity": 8.0,
       "source_rows": [
-        514
+        537
       ],
       "detail_display": "86%"
-    },
-    {
-      "brand": "Higher Cultures",
-      "product_name": "Beef Tartare",
-      "display_name": "Beef Tartare",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.7622,
-      "thc_display": "76%",
-      "price": "$36.00",
-      "short_price": "$36",
-      "quantity": 1.0,
-      "source_rows": [
-        500
-      ],
-      "detail_display": "76%"
     },
     {
       "brand": "Higher Cultures",
@@ -666,9 +612,9 @@
       "thc_display": "83%",
       "price": "$24.44",
       "short_price": "$24.44",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        513
+        536
       ],
       "detail_display": "83%"
     },
@@ -686,7 +632,7 @@
       "short_price": "$36",
       "quantity": 1.0,
       "source_rows": [
-        532
+        555
       ],
       "detail_display": "75%"
     },
@@ -704,27 +650,9 @@
       "short_price": "$24.44",
       "quantity": 8.0,
       "source_rows": [
-        509
+        532
       ],
       "detail_display": "90%"
-    },
-    {
-      "brand": "Higher Cultures",
-      "product_name": "Strawberry Fields",
-      "display_name": "Strawberry Fields",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.7590600000000001,
-      "thc_display": "76%",
-      "price": "$36.00",
-      "short_price": "$36",
-      "quantity": 2.0,
-      "source_rows": [
-        523
-      ],
-      "detail_display": "76%"
     }
   ]
 }

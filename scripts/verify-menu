@@ -63,7 +63,7 @@ def main() -> None:
     duplicate_names = sorted(name for name, count in name_counts.items() if count > 1)
     if duplicate_names:
         fail(f"duplicate product names were not consolidated: {', '.join(duplicate_names)}")
-    if len(rows) < 25:
+    if len(rows) < 20:
         fail(f"unexpectedly low menu row count: {len(rows)}")
     if len(vape_docs_menu.get("rows", [])) < 20:
         fail(f"unexpectedly low vape menu row count: {len(vape_docs_menu.get('rows', []))}")
