@@ -23,6 +23,13 @@ workflow_run_timed_step "$WORKFLOW_NAME" "extract_flower_menu" "local-script" \
     --out-csv data/flower_menu.csv \
     --validation-json data/validation_report.json
 
+workflow_run_timed_step "$WORKFLOW_NAME" "apply_flower_menu_curation" "local-script" \
+  "local script" \
+  "$PYTHON" scripts/apply-flower-menu-curation \
+    --menu-json data/flower_menu.json \
+    --descriptors config/flower_product_descriptors.json \
+    --aliases config/flower_display_aliases.json
+
 workflow_run_timed_step "$WORKFLOW_NAME" "render_flower_menu" "local-script" \
   "local script" \
   "$PYTHON" scripts/render-menu \

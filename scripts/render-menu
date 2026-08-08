@@ -15,11 +15,6 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 GOLD = (255, 232, 138)
 
-DISPLAY_NAMES = {
-    "Jack Herer Silver Lining": "Jack Herer Silver",
-}
-
-
 FONT_CANDIDATES = {
     "title": [
         "/System/Library/Fonts/Supplemental/Georgia Bold.ttf",
@@ -144,7 +139,7 @@ def draw_menu(rows: List[Dict], output: Path, width: int, height: int) -> None:
         for row in group:
             if y > height - int(55 * scale_y):
                 break
-            name = DISPLAY_NAMES.get(row["product_name"], row["product_name"])
+            name = row.get("display_name") or row["product_name"]
             badge = row.get("aged_inventory")
             badge_gap = int(8 * scale_x) if badge else 0
             badge_font = font("body", max(int(body_font_size * 0.52), int(16 * s)))

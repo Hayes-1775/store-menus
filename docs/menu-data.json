@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T08:56:12",
+  "generated_at": "2026-08-08T09:03:52",
   "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-08-mcp-refresh.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
@@ -32,7 +32,10 @@
         "Bx4dFnyiuX"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Tingly",
+      "looking_for": "Chill",
+      "display_name": "Red Pave"
     },
     {
       "product_name": "Devils Den",
@@ -63,7 +66,10 @@
         "W9YSnBVznN"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Sedative",
+      "looking_for": "Sleepy",
+      "display_name": "Devils Den"
     },
     {
       "product_name": "Apple Jacked",
@@ -94,7 +100,10 @@
         "sKWZqqHD4e"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Relaxing",
+      "looking_for": "Chill",
+      "display_name": "Apple Jacked"
     },
     {
       "product_name": "Smashburger",
@@ -125,7 +134,10 @@
         "R61IRt3KQi"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Sleepy",
+      "looking_for": "Sleepy",
+      "display_name": "Smashburger"
     },
     {
       "product_name": "Alley Oop",
@@ -156,7 +168,10 @@
         "CyJ6GFQ8Zp"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Balanced",
+      "looking_for": "Chill",
+      "display_name": "Alley Oop"
     },
     {
       "product_name": "Stuffed Cherry Gelato",
@@ -187,7 +202,10 @@
         "dCjca1Luz7"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Sweet",
+      "looking_for": "Chill",
+      "display_name": "Stuffed Cherry Gelato"
     },
     {
       "product_name": "Punch Breath",
@@ -218,7 +236,10 @@
         "mqOZwhCY4y"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Calming",
+      "looking_for": "Sleepy",
+      "display_name": "Punch Breath"
     },
     {
       "product_name": "Purple Churro",
@@ -249,7 +270,10 @@
         "riV28s3K5V"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Soothing",
+      "looking_for": "Sleepy",
+      "display_name": "Purple Churro"
     },
     {
       "product_name": "Black Amber",
@@ -280,7 +304,10 @@
         "1A4010300023A51000002447"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Tranquil",
+      "looking_for": "Sleepy",
+      "display_name": "Black Amber"
     },
     {
       "product_name": "Snowland",
@@ -311,7 +338,10 @@
         "Jm18wJZmdQ"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Dreamy",
+      "looking_for": "Sleepy",
+      "display_name": "Snowland"
     },
     {
       "product_name": "Double Blue Jager",
@@ -342,7 +372,10 @@
         "IapfDoiqjY"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Mellow",
+      "looking_for": "Sleepy",
+      "display_name": "Double Blue Jager"
     },
     {
       "product_name": "Hectane",
@@ -373,7 +406,10 @@
         "DpAJszMCwU"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Calming",
+      "looking_for": "Chill",
+      "display_name": "Hectane"
     },
     {
       "product_name": "The Hive",
@@ -404,7 +440,10 @@
         "eJGUEN6Zuj"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Cheerful",
+      "looking_for": "Chill",
+      "display_name": "The Hive"
     },
     {
       "product_name": "Maltese Tiger",
@@ -435,7 +474,10 @@
         "QjPmSNhvtH"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Uplifted",
+      "looking_for": "Energy",
+      "display_name": "Maltese Tiger"
     },
     {
       "product_name": "Animal Tsunami",
@@ -466,7 +508,10 @@
         "d21vDKCrsD"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Soothing",
+      "looking_for": "Sleepy",
+      "display_name": "Animal Tsunami"
     },
     {
       "product_name": "Zookies",
@@ -497,7 +542,10 @@
         "6zItMC4oO2"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Relaxing",
+      "looking_for": "Chill",
+      "display_name": "Zookies"
     },
     {
       "product_name": "Goodies",
@@ -528,7 +576,10 @@
         "IDjuNM2gd5"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Mellow",
+      "looking_for": "Sleepy",
+      "display_name": "Goodies"
     },
     {
       "product_name": "OMMP Blueberry",
@@ -559,7 +610,10 @@
         "hZSUIeGEzS"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Soothing",
+      "looking_for": "Sleepy",
+      "display_name": "OMMP Blueberry"
     },
     {
       "product_name": "Dark Queen",
@@ -590,7 +644,10 @@
         "V2ECfFaVQK"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Euphoric",
+      "looking_for": "Chill",
+      "display_name": "Dark Queen"
     },
     {
       "product_name": "Tea Time",
@@ -621,7 +678,10 @@
         "auhtfeLnDI"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Creative",
+      "looking_for": "Energy",
+      "display_name": "Tea Time"
     },
     {
       "product_name": "Black Market",
@@ -652,7 +712,10 @@
         "fE4WXxH9Y9"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Uplifting",
+      "looking_for": "Energy",
+      "display_name": "Black Market"
     },
     {
       "product_name": "Cherry Paloma",
@@ -683,7 +746,10 @@
         "vpKw7h3bKs"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Uplifting",
+      "looking_for": "Energy",
+      "display_name": "Cherry Paloma"
     },
     {
       "product_name": "Sherb Cream Pop #4",
@@ -714,7 +780,10 @@
         "CljXcKOLRG"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true
+      "no_recent_sales": true,
+      "feeling": "Sweet",
+      "looking_for": "Chill",
+      "display_name": "Sherb Cream Pop #4"
     },
     {
       "product_name": "Lime Dawg",
@@ -745,7 +814,10 @@
         "v37wZN0vPj"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Bright",
+      "looking_for": "Energy",
+      "display_name": "Lime Dawg"
     },
     {
       "product_name": "Iced Mocha",
@@ -776,7 +848,10 @@
         "Os6xaFt3Vw"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true
+      "no_recent_sales": true,
+      "feeling": "Velvety",
+      "looking_for": "Hungry",
+      "display_name": "Iced Mocha"
     },
     {
       "product_name": "Super Boof",
@@ -807,7 +882,10 @@
         "53B9VXkgnH"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Euphoric",
+      "looking_for": "Energy",
+      "display_name": "Super Boof"
     },
     {
       "product_name": "Spanish Honey",
@@ -838,7 +916,10 @@
         "HfeCDn7784"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Uplifting",
+      "looking_for": "Energy",
+      "display_name": "Spanish Honey"
     },
     {
       "product_name": "Miami Dade",
@@ -869,7 +950,10 @@
         "C5SpAOxJam"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Focused",
+      "looking_for": "Energy",
+      "display_name": "Miami Dade"
     },
     {
       "product_name": "Dante's Cookie Jar",
@@ -900,7 +984,10 @@
         "N3xGRavjiF"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Driven",
+      "looking_for": "Energy",
+      "display_name": "Dante's Cookie Jar"
     },
     {
       "product_name": "Blue Dream",
@@ -931,7 +1018,10 @@
         "hArARyY0eg"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Creative",
+      "looking_for": "Energy",
+      "display_name": "Blue Dream"
     },
     {
       "product_name": "Candied Lemons",
@@ -962,7 +1052,10 @@
         "nxfK9toCVh"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Focused",
+      "looking_for": "Energy",
+      "display_name": "Candied Lemons"
     },
     {
       "product_name": "Jack Herer Silver Lining",
@@ -993,7 +1086,10 @@
         "pPT9yzEXdt"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false
+      "no_recent_sales": false,
+      "feeling": "Alert",
+      "looking_for": "Energy",
+      "display_name": "Jack Herer Silver"
     }
   ]
 }

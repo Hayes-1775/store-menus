@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import json
-import re
 import sys
 from pathlib import Path
 
@@ -18,6 +17,8 @@ def main() -> None:
     image_path = Path("docs/latest.jpg")
     docs_data_path = Path("docs/menu-data.json")
     html_path = Path("docs/index.html")
+    descriptors_path = Path("config/flower_product_descriptors.json")
+    aliases_path = Path("config/flower_display_aliases.json")
     vape_image_path = Path("docs/vapes/latest.jpg")
     vape_docs_data_path = Path("docs/vapes/menu-data.json")
     vape_html_path = Path("docs/vapes/index.html")
@@ -35,6 +36,10 @@ def main() -> None:
         fail("missing docs/menu-data.json")
     if not html_path.exists():
         fail("missing docs/index.html")
+    if not descriptors_path.exists():
+        fail("missing config/flower_product_descriptors.json")
+    if not aliases_path.exists():
+        fail("missing config/flower_display_aliases.json")
     for path in [
         vape_image_path,
         vape_docs_data_path,
@@ -51,6 +56,8 @@ def main() -> None:
     validation = json.loads(validation_path.read_text(encoding="utf-8"))
     vape_docs_menu = json.loads(vape_docs_data_path.read_text(encoding="utf-8"))
     vape_page2_docs_menu = json.loads(vape_page2_docs_data_path.read_text(encoding="utf-8"))
+    descriptors = json.loads(descriptors_path.read_text(encoding="utf-8"))
+    aliases = json.loads(aliases_path.read_text(encoding="utf-8"))
     rows = menu.get("rows", [])
 
     if docs_menu != menu:
@@ -70,39 +77,61 @@ def main() -> None:
     if len(vape_page2_docs_menu.get("rows", [])) < 5:
         fail(f"unexpectedly low vape page 2 row count: {len(vape_page2_docs_menu.get('rows', []))}")
 
-    html = html_path.read_text(encoding="utf-8")
-    descriptor_block_match = re.search(r"const productDescriptors = \{(.*?)\n      \};", html, re.S)
-    if not descriptor_block_match:
-        fail("docs/index.html is missing productDescriptors")
-    descriptor_block = descriptor_block_match.group(1)
-    descriptor_pattern = re.compile(
-        r'"(?P<name>[^"]+)": \{ adjective: "(?P<adjective>[^"]+)", bucket: "(?P<bucket>[^"]+)" \}'
-    )
-    descriptors = {
-        match.group("name"): {
-            "adjective": match.group("adjective"),
-            "bucket": match.group("bucket"),
-        }
-        for match in descriptor_pattern.finditer(descriptor_block)
-    }
-    valid_buckets = {"sleepy", "energy", "hungry", "chill"}
+    if not isinstance(descriptors, dict):
+        fail("config/flower_product_descriptors.json must contain an object")
+    if not isinstance(aliases, dict):
+        fail("config/flower_display_aliases.json must contain an object")
+
+    valid_looking_for = {"Sleepy", "Energy", "Hungry", "Chill"}
     missing_descriptors = [row["product_name"] for row in rows if row["product_name"] not in descriptors]
     if missing_descriptors:
-        fail(f"missing productDescriptors for: {', '.join(missing_descriptors)}")
+        fail(f"missing curated descriptors for: {', '.join(missing_descriptors)}")
     invalid_descriptors = [
         name
         for name, descriptor in descriptors.items()
-        if not descriptor["adjective"] or descriptor["bucket"] not in valid_buckets
+        if not isinstance(descriptor, dict)
+        or not str(descriptor.get("feeling", "")).strip()
+        or descriptor.get("looking_for") not in valid_looking_for
     ]
     if invalid_descriptors:
-        fail(f"invalid productDescriptors for: {', '.join(invalid_descriptors)}")
+        fail(f"invalid curated descriptors for: {', '.join(invalid_descriptors)}")
+
+    invalid_aliases = [
+        name for name, alias in aliases.items()
+        if name not in descriptors or not isinstance(alias, str) or not alias.strip()
+    ]
+    if invalid_aliases:
+        fail(f"invalid curated display aliases for: {', '.join(invalid_aliases)}")
+
+    curation_mismatches = []
+    for row in rows:
+        name = row["product_name"]
+        descriptor = descriptors[name]
+        expected = {
+            "feeling": descriptor["feeling"],
+            "looking_for": descriptor["looking_for"],
+            "display_name": aliases.get(name, name),
+        }
+        actual = {key: row.get(key) for key in expected}
+        if actual != expected:
+            curation_mismatches.append(name)
+    if curation_mismatches:
+        fail(f"generated menu rows do not match curated maps for: {', '.join(curation_mismatches)}")
+
     sativa_sleepy_or_chill = [
         row["product_name"]
         for row in rows
-        if row.get("strain") == "Sativa" and descriptors[row["product_name"]]["bucket"] in {"sleepy", "chill"}
+        if row.get("strain") == "Sativa" and descriptors[row["product_name"]]["looking_for"] in {"Sleepy", "Chill"}
     ]
     if sativa_sleepy_or_chill:
-        fail(f"Sativa productDescriptors cannot use sleepy/chill buckets: {', '.join(sativa_sleepy_or_chill)}")
+        fail(f"Sativa curated descriptors cannot use Sleepy/Chill: {', '.join(sativa_sleepy_or_chill)}")
+
+    html = html_path.read_text(encoding="utf-8")
+    if "const productDescriptors" in html or "const productDisplayNames" in html:
+        fail("docs/index.html still contains hard-coded product curation maps")
+    for required_reference in ("row.feeling", "row.looking_for", "row.display_name"):
+        if required_reference not in html:
+            fail(f"docs/index.html is missing generated curation reference: {required_reference}")
 
     low_stock_rows = [row for row in rows if row.get("quantity", 0) < 27]
     for row in low_stock_rows:
