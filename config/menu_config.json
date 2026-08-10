@@ -19,5 +19,37 @@
   "render": {
     "width": 1080,
     "height": 1920
+  },
+  "vape_menu": {
+    "screen_count": 4,
+    "brand_priority": [
+      "Verdant",
+      "NW Kind",
+      "Moonwalk",
+      "Buddies",
+      "Higher Cultures",
+      "Entourage Cannabis",
+      "Freshy",
+      "Grown Rogue",
+      "Mule",
+      "National",
+      "Oregrown",
+      "Puck Fortland"
+    ],
+    "brand_screens": {
+      "Verdant": 1,
+      "NW Kind": 1,
+      "Moonwalk": 1,
+      "Buddies": 2,
+      "Higher Cultures": 2,
+      "Entourage Cannabis": 2,
+      "Freshy": 3,
+      "Grown Rogue": 3,
+      "Mule": 3,
+      "National": 3,
+      "Oregrown": 4,
+      "Puck Fortland": 4
+    },
+    "rotation_seconds": 10
   }
 }

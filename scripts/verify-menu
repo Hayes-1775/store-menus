@@ -25,6 +25,8 @@ def main() -> None:
     vape_page2_image_path = Path("docs/vapes/page2/latest.jpg")
     vape_page2_docs_data_path = Path("docs/vapes/page2/menu-data.json")
     vape_page2_html_path = Path("docs/vapes/page2/index.html")
+    vape_manifest_path = Path("docs/vapes/screens.json")
+    menu_config_path = Path("config/menu_config.json")
 
     if not menu_path.exists():
         fail("missing data/flower_menu.json")
@@ -47,6 +49,7 @@ def main() -> None:
         vape_page2_image_path,
         vape_page2_docs_data_path,
         vape_page2_html_path,
+        vape_manifest_path,
     ]:
         if not path.exists():
             fail(f"missing {path}")
@@ -56,6 +59,8 @@ def main() -> None:
     validation = json.loads(validation_path.read_text(encoding="utf-8"))
     vape_docs_menu = json.loads(vape_docs_data_path.read_text(encoding="utf-8"))
     vape_page2_docs_menu = json.loads(vape_page2_docs_data_path.read_text(encoding="utf-8"))
+    vape_manifest = json.loads(vape_manifest_path.read_text(encoding="utf-8"))
+    menu_config = json.loads(menu_config_path.read_text(encoding="utf-8"))
     descriptors = json.loads(descriptors_path.read_text(encoding="utf-8"))
     aliases = json.loads(aliases_path.read_text(encoding="utf-8"))
     rows = menu.get("rows", [])
@@ -76,6 +81,42 @@ def main() -> None:
         fail(f"unexpectedly low vape menu row count: {len(vape_docs_menu.get('rows', []))}")
     if len(vape_page2_docs_menu.get("rows", [])) < 5:
         fail(f"unexpectedly low vape page 2 row count: {len(vape_page2_docs_menu.get('rows', []))}")
+
+    vape_config = menu_config.get("vape_menu", {})
+    configured_screen_count = int(vape_config.get("screen_count", 1))
+    configured_delay = int(vape_config.get("rotation_seconds", 20))
+    if vape_manifest.get("configured_screen_count") != configured_screen_count:
+        fail("docs/vapes/screens.json screen count does not match config/menu_config.json")
+    if vape_manifest.get("rotation_seconds") != configured_delay:
+        fail("docs/vapes/screens.json rotation delay does not match config/menu_config.json")
+
+    expected_manifest_screens = []
+    for number in range(1, configured_screen_count + 1):
+        docs_dir = Path("docs/vapes") if number == 1 else Path(f"docs/vapes/page{number}")
+        data_path = docs_dir / "menu-data.json"
+        screen_image_path = docs_dir / "latest.jpg"
+        for path in (data_path, screen_image_path):
+            if not path.exists():
+                fail(f"missing cartridge screen {number} output: {path}")
+        screen_menu = json.loads(data_path.read_text(encoding="utf-8"))
+        screen_rows = screen_menu.get("rows", [])
+        if not screen_rows:
+            continue
+        if screen_menu.get("screen") != number:
+            fail(f"cartridge screen {number} data has the wrong screen number")
+        if screen_menu.get("rotation_seconds") != configured_delay:
+            fail(f"cartridge screen {number} has the wrong rotation delay")
+        screen_image = Image.open(screen_image_path)
+        if screen_image.size != (1080, 1920):
+            fail(f"expected 1080x1920 cartridge screen {number} image, got {screen_image.size}")
+        expected_manifest_screens.append(number)
+
+    actual_manifest_screens = [screen.get("number") for screen in vape_manifest.get("screens", [])]
+    if actual_manifest_screens != expected_manifest_screens:
+        fail(
+            f"cartridge rotation manifest screens {actual_manifest_screens} do not match "
+            f"generated screens {expected_manifest_screens}"
+        )
 
     if not isinstance(descriptors, dict):
         fail("config/flower_product_descriptors.json must contain an object")

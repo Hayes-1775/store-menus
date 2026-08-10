@@ -9,6 +9,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+from vape_menu_layout import best_layout, plan_screens
+
 
 TARGET_BRANDS = ["Verdant", "Verdant Leaf", "NW Kind", "Higher Cultures"]
 BRAND_ORDER = {"Verdant": 1, "NW Kind": 2, "Higher Cultures": 3, "Buddies": 4}
@@ -146,6 +148,16 @@ def extract_menu_for_brands(
     if not any(column in rows[0] for column in THC_COLUMNS):
         raise ValueError(f"Missing required THC columns: one of {', '.join(THC_COLUMNS)}")
 
+    normalized_targets = []
+    seen_targets = set()
+    for target in target_brands:
+        normalized = display_brand(target)
+        if normalized.casefold() not in seen_targets:
+            normalized_targets.append(normalized)
+            seen_targets.add(normalized.casefold())
+    target_lookup = {brand.casefold() for brand in normalized_targets}
+    brand_order = {brand.casefold(): index for index, brand in enumerate(normalized_targets)}
+
     grouped: Dict[Tuple[str, str, str, str, str, str], Dict[str, Any]] = {}
     excluded: List[Dict[str, Any]] = []
     warnings: List[Dict[str, Any]] = []
@@ -153,7 +165,7 @@ def extract_menu_for_brands(
     for idx, row in enumerate(rows, start=2):
         category = str(row.get("Category") or "").strip()
         room = str(row.get("Room") or "").strip()
-        brand = str(row.get("Brand") or "").strip()
+        brand = display_brand(row.get("Brand"))
         quantity = parse_number(row.get("Quantity"))
         reasons = []
 
@@ -164,7 +176,7 @@ def extract_menu_for_brands(
             reasons.append("not for-sale room")
         if quantity is None or quantity <= 0:
             reasons.append("quantity <= 0 or nonnumeric")
-        if brand.lower() not in {b.lower() for b in target_brands}:
+        if brand.casefold() not in target_lookup:
             reasons.append("not selected brand")
 
         if reasons:
@@ -220,7 +232,7 @@ def extract_menu_for_brands(
     menu_rows = sorted(
         grouped.values(),
         key=lambda r: (
-            BRAND_ORDER.get(r["brand"], 99),
+            brand_order.get(r["brand"].casefold(), len(brand_order) + BRAND_ORDER.get(r["brand"], 99)),
             STRAIN_ORDER.get(r["strain"], 99),
             1 if r["format"] == "AIO" else 0,
             -r["thc"],
@@ -242,7 +254,7 @@ def extract_menu_for_brands(
 
     validation = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
-        "target_brands": target_brands,
+        "target_brands": normalized_targets,
         "rows_included": len(menu_rows),
         "warnings": warnings,
         "excluded_count": len(excluded),
@@ -261,21 +273,135 @@ def write_csv(rows: List[Dict[str, Any]], path: Path) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Extract the Verdant vape menu from a Flowhub inventory CSV.")
+    parser = argparse.ArgumentParser(description="Extract cartridge menu screens from a Flowhub inventory CSV.")
     parser.add_argument("--inventory", required=True)
     parser.add_argument("--out-json", default="data/vape_menu.json")
     parser.add_argument("--out-csv", default="data/vape_menu.csv")
     parser.add_argument("--validation-json", default="data/vape_validation_report.json")
     parser.add_argument("--limit-per-brand", type=int, default=0)
-    parser.add_argument("--brands", nargs="+", default=TARGET_BRANDS)
+    parser.add_argument("--brands", nargs="+")
+    parser.add_argument("--menu-config", default="config/menu_config.json")
+    parser.add_argument("--screen", type=int)
     args = parser.parse_args()
 
     inventory_path = Path(args.inventory)
-    rows, validation = extract_menu_for_brands(read_inventory(inventory_path), args.limit_per_brand, args.brands)
+    inventory_rows = read_inventory(inventory_path)
+    screen_plan = None
+    rotation_seconds = None
+
+    if args.screen:
+        config_path = Path(args.menu_config)
+        config = json.loads(config_path.read_text(encoding="utf-8"))
+        vape_config = config.get("vape_menu", {})
+        priority = vape_config.get("brand_priority", TARGET_BRANDS + ["Buddies"])
+        screen_count = int(vape_config.get("screen_count", 2))
+        rotation_seconds = int(vape_config.get("rotation_seconds", 20))
+        available_brands = []
+        seen = set()
+        for row in inventory_rows:
+            category = str(row.get("Category") or "").strip().casefold()
+            room = str(row.get("Room") or "").strip().casefold()
+            quantity = parse_number(row.get("Quantity"))
+            brand = display_brand(row.get("Brand"))
+            if (
+                category == "cartridges"
+                and "for sale" in room
+                and "not for sale" not in room
+                and quantity is not None
+                and quantity > 0
+                and brand.casefold() not in seen
+            ):
+                available_brands.append(brand)
+                seen.add(brand.casefold())
+        all_rows, all_validation = extract_menu_for_brands(
+            inventory_rows, args.limit_per_brand, available_brands
+        )
+        if args.screen < 1:
+            raise SystemExit("--screen must be at least 1")
+        if args.screen > screen_count:
+            raise SystemExit(
+                f"Screen {args.screen} is not configured; the cartridge plan currently has {screen_count} screens."
+            )
+
+        stored_assignments = vape_config.get("brand_screens")
+        available_set = set(available_brands)
+        uses_saved_assignments = (
+            isinstance(stored_assignments, dict)
+            and available_set.issubset(stored_assignments)
+            and all(
+                isinstance(stored_assignments[brand], int)
+                and not isinstance(stored_assignments[brand], bool)
+                and 1 <= stored_assignments[brand] <= screen_count
+                for brand in available_brands
+            )
+        )
+        if uses_saved_assignments:
+            ordered_brands = [brand for brand in priority if brand in available_set]
+            ordered_brands.extend(
+                sorted(available_set - set(ordered_brands), key=str.casefold)
+            )
+            rows_by_brand = defaultdict(list)
+            for row in all_rows:
+                rows_by_brand[row["brand"]].append(row)
+            screens = []
+            for number in range(1, screen_count + 1):
+                brands = [
+                    brand for brand in ordered_brands if stored_assignments[brand] == number
+                ]
+                screen_rows = [row for brand in brands for row in rows_by_brand[brand]]
+                screens.append(
+                    {
+                        "number": number,
+                        "brands": brands,
+                        "rows": screen_rows,
+                        "layout": best_layout(screen_rows),
+                    }
+                )
+            screen_plan = {
+                "priority": ordered_brands,
+                "screens": screens,
+                "not_displayed": [],
+                "oversized_brands": [
+                    brand for brand in ordered_brands if not best_layout(rows_by_brand[brand])["fits"]
+                ],
+            }
+        else:
+            screen_plan = plan_screens(all_rows, priority, screen_count=screen_count)
+        selected_screen = screen_plan["screens"][args.screen - 1]
+        rows = selected_screen["rows"]
+        validation = {
+            **all_validation,
+            "screen": args.screen,
+            "target_brands": selected_screen["brands"],
+            "rows_included": len(rows),
+            "brand_priority": screen_plan["priority"],
+            "screen_assignments": [screen["brands"] for screen in screen_plan["screens"]],
+            "not_displayed": screen_plan["not_displayed"],
+            "oversized_brands": screen_plan["oversized_brands"],
+            "layout": selected_screen["layout"],
+        }
+    else:
+        selected_brands = args.brands or TARGET_BRANDS
+        rows, validation = extract_menu_for_brands(
+            inventory_rows, args.limit_per_brand, selected_brands
+        )
+        layout = best_layout(rows)
+        validation["layout"] = layout
+        if not layout["fits"]:
+            brands = ", ".join(validation["target_brands"])
+            raise SystemExit(
+                f"Selected brands exceed one TV screen by {-layout['remaining_pixels']} pixels: {brands}"
+            )
+
+    layout = best_layout(rows)
     payload = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "inventory_source": str(inventory_path),
         "menu": "vapes",
+        "screen": args.screen,
+        "rotation_seconds": rotation_seconds,
+        "brands": validation["target_brands"],
+        "display": layout,
         "rows": rows,
     }
 

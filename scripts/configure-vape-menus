@@ -1,0 +1,507 @@
+#!/usr/bin/env python3
+"""Open a local, save-capable cartridge brand priority organizer."""
+
+import argparse
+import hashlib
+import importlib.util
+import json
+import os
+import shutil
+import tempfile
+import threading
+import webbrowser
+from collections import defaultdict
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from importlib.machinery import SourceFileLoader
+from pathlib import Path
+from typing import Any, Dict, List
+from urllib.parse import urlparse
+
+from vape_menu_layout import best_layout, plan_screens
+
+
+ROOT = Path(__file__).resolve().parent.parent
+CONFIG_PATH = ROOT / "config/menu_config.json"
+HTML_PATH = ROOT / "tools/cartridge-brand-priority.html"
+TV_HTML_PATH = ROOT / "tools/cartridge-tv-viewer.html"
+MIN_SCREENS = 1
+MAX_SCREENS = 6
+DEFAULT_ROTATION_SECONDS = 20
+MIN_ROTATION_SECONDS = 5
+MAX_ROTATION_SECONDS = 300
+
+
+def load_extractor():
+    path = ROOT / "scripts/extract-vape-menu"
+    loader = SourceFileLoader("extract_vape_menu", str(path))
+    spec = importlib.util.spec_from_loader(loader.name, loader)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Could not load {path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_renderer():
+    path = ROOT / "scripts/render-vape-menu"
+    loader = SourceFileLoader("render_vape_menu", str(path))
+    spec = importlib.util.spec_from_loader(loader.name, loader)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Could not load {path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def newest_inventory() -> Path:
+    candidates = list(Path.home().joinpath("Downloads").glob("Inventory Miracle Greens Bend*.csv"))
+    if not candidates:
+        raise FileNotFoundError("No Miracle Greens inventory CSV was found in Downloads.")
+    return max(candidates, key=lambda path: path.stat().st_mtime)
+
+
+class Organizer:
+    def __init__(self, inventory_path: Path):
+        self.inventory_path = inventory_path.resolve()
+        self.extractor = load_extractor()
+        self.renderer = load_renderer()
+        self.preview_dir = Path(tempfile.mkdtemp(prefix="cartridge-brand-previews-"))
+        self.preview_rows: Dict[str, List[Dict[str, Any]]] = {}
+        self.preview_lock = threading.Lock()
+        self.inventory_rows = self.extractor.read_inventory(self.inventory_path)
+        self.available_brands = self._available_brands()
+        self.menu_rows, self.validation = self.extractor.extract_menu_for_brands(
+            self.inventory_rows, 0, self.available_brands
+        )
+        if not self.menu_rows:
+            raise ValueError("The selected inventory has no in-stock cartridge rows.")
+
+    def _available_brands(self) -> List[str]:
+        brands: List[str] = []
+        seen = set()
+        for row in self.inventory_rows:
+            category = str(row.get("Category") or "").strip().casefold()
+            room = str(row.get("Room") or "").strip().casefold()
+            quantity = self.extractor.parse_number(row.get("Quantity"))
+            brand = self.extractor.display_brand(row.get("Brand"))
+            if (
+                category == "cartridges"
+                and "for sale" in room
+                and "not for sale" not in room
+                and quantity is not None
+                and quantity > 0
+                and brand.casefold() not in seen
+            ):
+                brands.append(brand)
+                seen.add(brand.casefold())
+        return brands
+
+    def config(self) -> Dict[str, Any]:
+        return json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+
+    def configured_priority(self) -> List[str]:
+        config = self.config()
+        priority = config.get("vape_menu", {}).get("brand_priority", [])
+        available = set(self.available_brands)
+        ordered = [brand for brand in priority if brand in available]
+        ordered.extend(sorted(available - set(ordered), key=str.casefold))
+        return ordered
+
+    def validate_priority(self, priority: List[str]) -> None:
+        available = set(self.available_brands)
+        if len(priority) != len(set(priority)) or set(priority) != available:
+            raise ValueError("The list must contain every current cartridge brand exactly once.")
+
+    def validate_screen_count(self, screen_count: int) -> int:
+        if isinstance(screen_count, bool) or not isinstance(screen_count, int):
+            raise ValueError("screen_count must be a whole number")
+        if not MIN_SCREENS <= screen_count <= MAX_SCREENS:
+            raise ValueError(f"Choose between {MIN_SCREENS} and {MAX_SCREENS} screens.")
+        return screen_count
+
+    def validate_rotation_seconds(self, rotation_seconds: int) -> int:
+        if isinstance(rotation_seconds, bool) or not isinstance(rotation_seconds, int):
+            raise ValueError("rotation_seconds must be a whole number")
+        if not MIN_ROTATION_SECONDS <= rotation_seconds <= MAX_ROTATION_SECONDS:
+            raise ValueError(
+                f"Choose a screen delay between {MIN_ROTATION_SECONDS} and "
+                f"{MAX_ROTATION_SECONDS} seconds."
+            )
+        return rotation_seconds
+
+    def auto_assignments(self, priority: List[str], screen_count: int) -> Dict[str, int]:
+        plan = plan_screens(self.menu_rows, priority, screen_count=screen_count)
+        assignments: Dict[str, int] = {}
+        for screen in plan["screens"]:
+            for brand in screen["brands"]:
+                assignments[brand] = screen["number"]
+        # If the chosen number of screens is too small, keep every brand visible in
+        # the organizer by placing the overflow on the final screen. Capacity feedback
+        # then tells the user to move a brand or add a screen.
+        for brand in plan["not_displayed"]:
+            assignments[brand] = screen_count
+        return assignments
+
+    def recommended_screen_count(self, priority: List[str]) -> int:
+        for screen_count in range(MIN_SCREENS, MAX_SCREENS + 1):
+            if not plan_screens(self.menu_rows, priority, screen_count)["not_displayed"]:
+                return screen_count
+        return MAX_SCREENS
+
+    def configured_layout(self, priority: List[str]) -> tuple[int, Dict[str, int]]:
+        vape_config = self.config().get("vape_menu", {})
+        stored = vape_config.get("brand_screens")
+        if isinstance(stored, dict):
+            try:
+                screen_count = self.validate_screen_count(int(vape_config.get("screen_count", 1)))
+                assignments = {
+                    brand: int(stored[brand])
+                    for brand in priority
+                    if brand in stored and 1 <= int(stored[brand]) <= screen_count
+                }
+            except (TypeError, ValueError):
+                assignments = {}
+            if len(assignments) == len(priority):
+                return screen_count, assignments
+        screen_count = self.recommended_screen_count(priority)
+        return screen_count, self.auto_assignments(priority, screen_count)
+
+    def normalize_assignments(
+        self, priority: List[str], assignments: Dict[str, Any], screen_count: int
+    ) -> Dict[str, int]:
+        self.validate_priority(priority)
+        self.validate_screen_count(screen_count)
+        if not isinstance(assignments, dict):
+            raise ValueError("assignments must map every brand to a screen")
+        normalized: Dict[str, int] = {}
+        for brand in priority:
+            value = assignments.get(brand)
+            if isinstance(value, bool):
+                raise ValueError(f"Choose a screen for {brand}.")
+            try:
+                screen = int(value)
+            except (TypeError, ValueError):
+                raise ValueError(f"Choose a screen for {brand}.") from None
+            if not 1 <= screen <= screen_count:
+                raise ValueError(f"Screen {screen} is not available for {brand}.")
+            normalized[brand] = screen
+        return normalized
+
+    def state(
+        self,
+        priority: List[str],
+        assignments: Dict[str, Any],
+        screen_count: int,
+        rotation_seconds: int,
+    ) -> Dict[str, Any]:
+        assignments = self.normalize_assignments(priority, assignments, screen_count)
+        rotation_seconds = self.validate_rotation_seconds(rotation_seconds)
+        details: Dict[str, Dict[str, Any]] = defaultdict(lambda: {"products": 0, "units": 0})
+        rows_by_brand: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
+        for row in self.menu_rows:
+            brand = row["brand"]
+            details[brand]["products"] += 1
+            details[brand]["units"] += float(row.get("quantity") or 0)
+            rows_by_brand[brand].append(row)
+
+        screens = []
+        for number in range(1, screen_count + 1):
+            screen_brands = [brand for brand in priority if assignments[brand] == number]
+            rows = [row for brand in screen_brands for row in rows_by_brand[brand]]
+            layout = best_layout(rows)
+            preview_source = json.dumps(
+                {
+                    "inventory": str(self.inventory_path),
+                    "modified": self.inventory_path.stat().st_mtime_ns,
+                    "priority": priority,
+                    "screen": number,
+                    "brands": screen_brands,
+                },
+                sort_keys=True,
+            ).encode("utf-8")
+            preview_key = hashlib.sha256(preview_source).hexdigest()[:20]
+            self.preview_rows[preview_key] = list(rows)
+            screens.append(
+                {
+                    "number": number,
+                    "brands": screen_brands,
+                    "row_count": layout["row_count"],
+                    "row_height": layout["row_height"],
+                    "remaining_pixels": layout["remaining_pixels"],
+                    "fits": layout["fits"],
+                    "over_by_pixels": max(0, -layout["remaining_pixels"]),
+                    "preview_key": preview_key,
+                }
+            )
+
+        brands = []
+        for rank, brand in enumerate(priority, start=1):
+            item = details[brand]
+            brands.append(
+                {
+                    "name": brand,
+                    "rank": rank,
+                    "products": item["products"],
+                    "units": round(item["units"], 1),
+                    "screen": assignments.get(brand),
+                }
+            )
+        return {
+            "inventory": self.inventory_path.name,
+            "brands": brands,
+            "screens": screens,
+            "screen_count": screen_count,
+            "rotation_seconds": rotation_seconds,
+            "has_capacity_errors": any(not screen["fits"] for screen in screens),
+            "min_screens": MIN_SCREENS,
+            "max_screens": MAX_SCREENS,
+        }
+
+    def configured_state(self) -> Dict[str, Any]:
+        priority = self.configured_priority()
+        screen_count, assignments = self.configured_layout(priority)
+        vape_config = self.config().get("vape_menu", {})
+        try:
+            rotation_seconds = self.validate_rotation_seconds(
+                int(vape_config.get("rotation_seconds", DEFAULT_ROTATION_SECONDS))
+            )
+        except (TypeError, ValueError):
+            rotation_seconds = DEFAULT_ROTATION_SECONDS
+        state = self.state(priority, assignments, screen_count, rotation_seconds)
+        stored = vape_config.get("brand_screens")
+        try:
+            saved_screen_count = int(vape_config.get("screen_count", 0))
+            saved_layout_is_complete = (
+                isinstance(stored, dict)
+                and saved_screen_count == screen_count
+                and int(vape_config.get("rotation_seconds", 0)) == rotation_seconds
+                and all(int(stored.get(brand, 0)) == assignments[brand] for brand in priority)
+            )
+        except (TypeError, ValueError):
+            saved_layout_is_complete = False
+        state["requires_save"] = not saved_layout_is_complete
+        return state
+
+    def auto_balanced_state(
+        self, priority: List[str], screen_count: int, rotation_seconds: int
+    ) -> Dict[str, Any]:
+        self.validate_priority(priority)
+        self.validate_screen_count(screen_count)
+        return self.state(
+            priority,
+            self.auto_assignments(priority, screen_count),
+            screen_count,
+            rotation_seconds,
+        )
+
+    def preview_image(self, key: str) -> Path:
+        rows = self.preview_rows.get(key)
+        if rows is None:
+            raise KeyError(key)
+        output = self.preview_dir / f"{key}.jpg"
+        if output.exists():
+            return output
+        with self.preview_lock:
+            if not output.exists():
+                self.renderer.draw_menu(rows, output, 1080, 1920)
+        return output
+
+    def current_preview_image(self) -> Path:
+        state = self.configured_state()
+        return self.preview_image(state["screens"][0]["preview_key"])
+
+    def close(self) -> None:
+        shutil.rmtree(self.preview_dir, ignore_errors=True)
+
+    def save(
+        self,
+        priority: List[str],
+        assignments: Dict[str, Any],
+        screen_count: int,
+        rotation_seconds: int,
+    ) -> Dict[str, Any]:
+        assignments = self.normalize_assignments(priority, assignments, screen_count)
+        rotation_seconds = self.validate_rotation_seconds(rotation_seconds)
+        state = self.state(priority, assignments, screen_count, rotation_seconds)
+        crowded = [screen for screen in state["screens"] if not screen["fits"]]
+        if crowded:
+            screen = crowded[0]
+            raise ValueError(
+                f"Screen {screen['number']} exceeds readable space by "
+                f"{screen['over_by_pixels']} pixels. Move a brand or add another screen."
+            )
+        available = set(self.available_brands)
+        config = self.config()
+        vape_config = config.setdefault("vape_menu", {})
+        old_priority = vape_config.get("brand_priority", [])
+        unavailable = [brand for brand in old_priority if brand not in available]
+        vape_config["brand_priority"] = priority + unavailable
+        vape_config["screen_count"] = screen_count
+        vape_config["brand_screens"] = assignments
+        vape_config["rotation_seconds"] = rotation_seconds
+
+        CONFIG_PATH.parent.mkdir(parents=True, exist_ok=True)
+        with tempfile.NamedTemporaryFile(
+            "w", encoding="utf-8", dir=CONFIG_PATH.parent, delete=False
+        ) as handle:
+            json.dump(config, handle, indent=2)
+            handle.write("\n")
+            temp_path = Path(handle.name)
+        os.replace(temp_path, CONFIG_PATH)
+        return state
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Open the cartridge brand priority organizer.")
+    parser.add_argument("inventory", nargs="?", type=Path)
+    parser.add_argument("--port", type=int, default=0)
+    parser.add_argument("--no-open", action="store_true")
+    args = parser.parse_args()
+
+    inventory_path = args.inventory or newest_inventory()
+    organizer = Organizer(inventory_path)
+    token = hashlib.sha256(
+        f"{ROOT.resolve()}::cartridge-brand-priority".encode("utf-8")
+    ).hexdigest()
+    html = HTML_PATH.read_text(encoding="utf-8").replace("__MENU_TOKEN__", token)
+    tv_html = TV_HTML_PATH.read_text(encoding="utf-8")
+
+    def browser_state(payload: Dict[str, Any]) -> Dict[str, Any]:
+        for screen in payload["screens"]:
+            preview_key = screen.pop("preview_key")
+            screen["preview_url"] = (
+                f"/api/screen-preview/{preview_key}.jpg" if screen["fits"] else None
+            )
+        payload["preview_url"] = payload["screens"][0]["preview_url"]
+        return payload
+
+    # Preload the saved previews so direct image links survive a server restart.
+    browser_state(organizer.configured_state())
+
+    class Handler(BaseHTTPRequestHandler):
+        def log_message(self, format: str, *args: Any) -> None:
+            return
+
+        def send_json(self, status: int, payload: Dict[str, Any]) -> None:
+            body = json.dumps(payload).encode("utf-8")
+            self.send_response(status)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Length", str(len(body)))
+            self.send_header("Cache-Control", "no-store")
+            self.end_headers()
+            self.wfile.write(body)
+
+        def authorized(self) -> bool:
+            return self.headers.get("X-Menu-Token") == token
+
+        def read_payload(self) -> Dict[str, Any]:
+            length = int(self.headers.get("Content-Length", "0"))
+            payload = json.loads(self.rfile.read(length) or b"{}")
+            priority = payload.get("priority")
+            if not isinstance(priority, list) or not all(isinstance(item, str) for item in priority):
+                raise ValueError("priority must be a list of brand names")
+            return payload
+
+        def do_GET(self) -> None:
+            path = urlparse(self.path).path
+            if path == "/":
+                body = html.encode("utf-8")
+                self.send_response(200)
+                self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.send_header("Content-Length", str(len(body)))
+                self.send_header("Cache-Control", "no-store")
+                self.end_headers()
+                self.wfile.write(body)
+                return
+            if path in {"/tv", "/tv/"}:
+                body = tv_html.encode("utf-8")
+                self.send_response(200)
+                self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.send_header("Content-Length", str(len(body)))
+                self.send_header("Cache-Control", "no-store")
+                self.end_headers()
+                self.wfile.write(body)
+                return
+            if path == "/api/tv-state":
+                self.send_json(200, browser_state(organizer.configured_state()))
+                return
+            if path == "/api/state" and self.authorized():
+                self.send_json(200, browser_state(organizer.configured_state()))
+                return
+            preview_prefix = "/api/screen-preview/"
+            if path.startswith(preview_prefix) and path.endswith(".jpg"):
+                preview_key = path.rsplit("/", 1)[-1][:-4]
+                try:
+                    body = organizer.preview_image(preview_key).read_bytes()
+                except KeyError:
+                    body = organizer.current_preview_image().read_bytes()
+                self.send_response(200)
+                self.send_header("Content-Type", "image/jpeg")
+                self.send_header("Content-Length", str(len(body)))
+                self.send_header("Cache-Control", "private, max-age=300")
+                self.end_headers()
+                self.wfile.write(body)
+                return
+            self.send_error(404)
+
+        def do_POST(self) -> None:
+            if not self.authorized():
+                self.send_json(403, {"error": "This organizer session is no longer active."})
+                return
+            path = urlparse(self.path).path
+            try:
+                if path == "/api/preview":
+                    payload = self.read_payload()
+                    state = organizer.state(
+                        payload["priority"],
+                        payload.get("assignments"),
+                        payload.get("screen_count"),
+                        payload.get("rotation_seconds"),
+                    )
+                    self.send_json(200, browser_state(state))
+                    return
+                if path == "/api/auto-balance":
+                    payload = self.read_payload()
+                    state = organizer.auto_balanced_state(
+                        payload["priority"],
+                        payload.get("screen_count"),
+                        payload.get("rotation_seconds"),
+                    )
+                    self.send_json(200, browser_state(state))
+                    return
+                if path == "/api/save":
+                    payload = self.read_payload()
+                    saved = organizer.save(
+                        payload["priority"],
+                        payload.get("assignments"),
+                        payload.get("screen_count"),
+                        payload.get("rotation_seconds"),
+                    )
+                    self.send_json(200, browser_state(saved))
+                    return
+                if path == "/api/stop":
+                    self.send_json(200, {"ok": True})
+                    threading.Thread(target=self.server.shutdown, daemon=True).start()
+                    return
+            except (ValueError, json.JSONDecodeError) as exc:
+                self.send_json(400, {"error": str(exc)})
+                return
+            self.send_error(404)
+
+    server = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
+    url = f"http://127.0.0.1:{server.server_port}/"
+    print(f"Cartridge Brand Priority is ready: {url}", flush=True)
+    print(f"Inventory: {inventory_path}", flush=True)
+    if not args.no_open:
+        threading.Timer(0.4, lambda: webbrowser.open(url)).start()
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        pass
+    finally:
+        server.server_close()
+        organizer.close()
+
+
+if __name__ == "__main__":
+    main()

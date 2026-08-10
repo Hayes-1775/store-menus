@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="refresh" content="900">
-    <title>Vape Menu</title>
+    <title>Cartridge Menu</title>
     <style>
       :root {
         --row-height: 56px;
@@ -331,12 +331,14 @@
         }
       }
     </style>
+    <link rel="stylesheet" href="../clean-theme.css">
   </head>
   <body>
     <div class="screen">
-      <section class="menu" aria-label="Vape Menu">
+      <section class="menu" aria-label="Cartridge Menu">
         <header class="header">
-          <div class="title">Vape Menu</div>
+          <div class="title">Cartridge Menu</div>
+          <div class="header-meta">LIVE INVENTORY</div>
         </header>
         <main class="groups" id="groups">
           <div class="loading">Loading menu...</div>
@@ -365,7 +367,7 @@
         return Math.max(min, Math.min(max, value));
       }
 
-      function applyDynamicSizing(rows, activeGroups) {
+      function applyDynamicSizing(rows, activeGroups, plannedRowHeight) {
         const menuHeight = 1920;
         const contentTop = 88;
         const bottomMargin = 34;
@@ -375,7 +377,9 @@
         const targetRow = Math.floor(
           (available - groupCount * 60 - groupCount * 18 - Math.max(groupCount - 1, 0) * 24) / rowCount
         );
-        const rowHeight = clamp(targetRow, 42, 54);
+        const rowHeight = Number.isFinite(Number(plannedRowHeight))
+          ? clamp(Number(plannedRowHeight), 42, 54)
+          : clamp(targetRow, 42, 54);
         const bodySize = clamp(Math.floor(rowHeight * 0.58), 24, 30);
         const sectionHeight = clamp(Math.floor(rowHeight * 1.34), 58, 76);
         const sectionSize = clamp(Math.floor(sectionHeight * 0.68), 38, 52);
@@ -448,7 +452,7 @@
         const priceLabel = numericPrices.length > 1 ? `$${numericPrices[0]}-$${numericPrices.at(-1)}` : numericPrices.length === 1 ? `$${numericPrices[0]}` : "";
         const titleLabel = priceLabel ? `${title} - ${priceLabel}` : title;
         return `
-          <section class="strain-group" style="--strain-color: ${colors[title] || "rgb(220, 220, 220)"}">
+          <section class="strain-group strain-${title.toLowerCase()}" style="--strain-color: ${colors[title] || "rgb(220, 220, 220)"}">
             <div class="strain-title">${escapeHtml(titleLabel)}</div>
             ${rows.map(rowHtml).join("")}
           </section>
@@ -530,8 +534,8 @@
           (acc[brand] ||= []).push(row);
           return acc;
         }, {});
-        const activeGroups = ["Verdant", ...Object.keys(groupsByBrand).filter((brand) => brand !== "Verdant")].filter((brand) => groupsByBrand[brand]);
-        applyDynamicSizing(rows, activeGroups);
+        const activeGroups = Object.keys(groupsByBrand);
+        applyDynamicSizing(rows, activeGroups, payload.display?.row_height);
 
         const html = activeGroups.map((brand) => {
           const color = sectionColors[brand] || "rgb(120, 140, 200)";
@@ -548,6 +552,177 @@
         }).join("");
 
         document.getElementById("groups").innerHTML = html || '<div class="error">No menu rows available.</div>';
+        requestAnimationFrame(fitSectionLabels);
+      }
+
+      function fitSectionLabels() {
+        document.querySelectorAll(".section-bar").forEach((section) => {
+          const label = section.querySelector("span");
+          let size = parseFloat(getComputedStyle(section).fontSize);
+          while (label.getBoundingClientRect().width > section.clientWidth - 32 && size > 24) {
+            size -= 1;
+            label.style.fontSize = `${size}px`;
+          }
+        });
+      }
+
+      function applyDynamicSizing(rows, activeGroups, plannedRowHeight) {
+        const rowHeight = Number.isFinite(Number(plannedRowHeight))
+          ? clamp(Number(plannedRowHeight), 34, 44)
+          : 40;
+        const root = document.documentElement.style;
+        root.setProperty("--row-height", `${rowHeight}px`);
+        root.setProperty("--body-size", `${clamp(Math.floor(rowHeight * 0.58), 20, 24)}px`);
+        root.setProperty("--section-height", `${clamp(Math.floor(rowHeight * 1.28), 48, 60)}px`);
+        root.setProperty("--section-size", `${clamp(Math.floor(rowHeight * 0.72), 27, 34)}px`);
+        root.setProperty("--gap-after-section", `${clamp(Math.floor(rowHeight * 0.25), 8, 12)}px`);
+        root.setProperty("--gap-between-groups", `${clamp(Math.floor(rowHeight * 0.38), 12, 18)}px`);
+      }
+
+      function money(value) {
+        return Number.isInteger(value) ? `$${value}` : `$${value.toFixed(2)}`;
+      }
+
+      function priceRange(rows) {
+        const values = rows
+          .map((row) => Number(String(row.price || "").replace("$", "")))
+          .filter(Number.isFinite);
+        if (!values.length) return "";
+        const low = Math.min(...values);
+        const high = Math.max(...values);
+        return low === high ? money(low) : `${money(low)}–${money(high)}`;
+      }
+
+      function brandLabel(rows) {
+        const count = rows.length;
+        const price = priceRange(rows);
+        return `${count} PRODUCT${count === 1 ? "" : "S"}${price ? ` · ${price}` : ""}`;
+      }
+
+      function formatLabel(format) {
+        if (format === "510") return "510 CARTRIDGES";
+        if (format === "AIO") return "AIO / DISPOSABLES";
+        return String(format || "Other").toUpperCase();
+      }
+
+      function displayProductName(row, siblingRows) {
+        let name = String(row.display_name || row.product_name || "");
+        if (row.format === "AIO") name = name.replace(/\s+AIO\b/gi, "").trim();
+        const sizes = [...new Set(siblingRows.map((item) => item.size).filter(Boolean))];
+        if (sizes.length > 1 && row.size && !name.toLowerCase().includes(String(row.size).toLowerCase())) {
+          name += ` · ${row.size}`;
+        }
+        return name;
+      }
+
+      function rowHtml(row, siblingRows) {
+        return `
+          <div class="row">
+            <div class="name">${escapeHtml(displayProductName(row, siblingRows))}</div>
+            <div class="num">${escapeHtml(row.detail_display || row.thc_display)}</div>
+          </div>
+        `;
+      }
+
+      function strainGroupHtml(title, rows) {
+        if (!rows.length) return "";
+        const colors = {
+          Indica: "rgb(151, 164, 211)",
+          Hybrid: "rgb(135, 190, 111)",
+          Sativa: "rgb(224, 112, 108)"
+        };
+        const byFormat = rows.reduce((acc, row) => {
+          const format = row.format || "Other";
+          (acc[format] ||= []).push(row);
+          return acc;
+        }, {});
+        const formatOrder = ["510", "AIO", "Other"]
+          .filter((format) => byFormat[format]?.length)
+          .concat(Object.keys(byFormat).filter((format) => !["510", "AIO", "Other"].includes(format)).sort());
+        return `
+          <section class="strain-group" style="--strain-color: ${colors[title] || "rgb(220, 220, 220)"}">
+            <div class="strain-title"><span>${escapeHtml(title)}</span><small>THC</small></div>
+            ${formatOrder.map((format) => `
+              <div class="format-block">
+                <div class="format-label">${escapeHtml(formatLabel(format))}</div>
+                ${byFormat[format].map((row) => rowHtml(row, byFormat[format])).join("")}
+              </div>
+            `).join("")}
+          </section>
+        `;
+      }
+
+      function processLabel(rows) {
+        const sizes = [...new Set(rows.map((row) => row.size).filter(Boolean))];
+        const sizeLabel = sizes.length === 1 ? sizes[0] : "Mixed sizes";
+        const byFormat = rows.reduce((acc, row) => {
+          const format = row.format || "Other";
+          (acc[format] ||= []).push(row);
+          return acc;
+        }, {});
+        const details = ["510", "AIO", "Other"]
+          .filter((format) => byFormat[format]?.length)
+          .map((format) => `${format === "AIO" ? "AIO" : format} ${priceRange(byFormat[format])}`.trim());
+        return `${sizeLabel} · ${details.join(" / ")}`;
+      }
+
+      function strainIslandsHtml(rows) {
+        const byStrain = rows.reduce((acc, row) => {
+          const strain = row.strain || "Other";
+          (acc[strain] ||= []).push(row);
+          return acc;
+        }, {});
+        return `
+          <div class="islands">
+            ${strainGroupHtml("Indica", byStrain.Indica || [])}
+            ${strainGroupHtml("Hybrid", byStrain.Hybrid || [])}
+            ${strainGroupHtml("Sativa", byStrain.Sativa || [])}
+          </div>
+        `;
+      }
+
+      function processGroupsHtml(rows) {
+        const preferredOrder = ["Distillate", "Cured Resin", "Live Resin", "DLR", "Live Rosin", "Rosin", "Rosin/CR", "Other"];
+        const byProcess = rows.reduce((acc, row) => {
+          const process = row.process || "Other";
+          (acc[process] ||= []).push(row);
+          return acc;
+        }, {});
+        const order = preferredOrder
+          .filter((process) => byProcess[process]?.length)
+          .concat(Object.keys(byProcess).filter((process) => !preferredOrder.includes(process)).sort());
+        return order.map((process) => `
+          <section class="process-group">
+            <div class="process-title">
+              <span>${escapeHtml(process)}</span>
+              <span class="process-meta">${escapeHtml(processLabel(byProcess[process]))}</span>
+            </div>
+            ${strainIslandsHtml(byProcess[process])}
+          </section>
+        `).join("");
+      }
+
+      function render(payload) {
+        const rows = payload.rows || [];
+        const groupsByBrand = rows.reduce((acc, row) => {
+          const brand = row.brand || "Other";
+          (acc[brand] ||= []).push(row);
+          return acc;
+        }, {});
+        const activeGroups = Object.keys(groupsByBrand);
+        applyDynamicSizing(rows, activeGroups, payload.display?.row_height);
+        document.getElementById("groups").innerHTML = activeGroups.map((brand) => {
+          const groupRows = groupsByBrand[brand];
+          return `
+            <section class="group">
+              <div class="section-bar">
+                <span class="section-brand">${escapeHtml(brand)}</span>
+                <span class="section-meta">${escapeHtml(brandLabel(groupRows))}</span>
+              </div>
+              ${processGroupsHtml(groupRows)}
+            </section>
+          `;
+        }).join("") || '<div class="error">No menu rows available.</div>';
       }
 
       fetch("menu-data.json", { cache: "no-store" })

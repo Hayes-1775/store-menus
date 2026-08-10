@@ -1,7 +1,23 @@
 {
-  "generated_at": "2026-08-10T04:06:35",
+  "generated_at": "2026-08-10T06:17:08",
   "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-08-10.csv",
   "menu": "vapes",
+  "screen": 2,
+  "rotation_seconds": 10,
+  "brands": [
+    "Buddies",
+    "Higher Cultures",
+    "Entourage Cannabis"
+  ],
+  "display": {
+    "fits": true,
+    "row_height": 34,
+    "required_height": 1868,
+    "available_height": 1886,
+    "remaining_pixels": 18,
+    "brand_count": 3,
+    "row_count": 37
+  },
   "rows": [
     {
       "brand": "Buddies",
@@ -380,6 +396,294 @@
         104
       ],
       "detail_display": "76%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "My Oh My",
+      "display_name": "My Oh My",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "AIO",
+      "process": "DLR",
+      "thc": 0.8824,
+      "thc_display": "88%",
+      "price": "$24.44",
+      "short_price": "$24.44",
+      "quantity": 9.0,
+      "source_rows": [
+        525
+      ],
+      "detail_display": "88%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Melon Mafia",
+      "display_name": "Melon Mafia",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "AIO",
+      "process": "DLR",
+      "thc": 0.86616,
+      "thc_display": "87%",
+      "price": "$24.44",
+      "short_price": "$24.44",
+      "quantity": 5.0,
+      "source_rows": [
+        521
+      ],
+      "detail_display": "87%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Lychee Fritter",
+      "display_name": "Lychee Fritter",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "AIO",
+      "process": "DLR",
+      "thc": 0.862,
+      "thc_display": "86%",
+      "price": "$24.44",
+      "short_price": "$24.44",
+      "quantity": 8.0,
+      "source_rows": [
+        520
+      ],
+      "detail_display": "86%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Lemon Cherry Gelato",
+      "display_name": "Lemon Cherry Gelato",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "DLR",
+      "thc": 0.83426,
+      "thc_display": "83%",
+      "price": "$24.44",
+      "short_price": "$24.44",
+      "quantity": 5.0,
+      "source_rows": [
+        519
+      ],
+      "detail_display": "83%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Vice City",
+      "display_name": "Vice City",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7471899999999999,
+      "thc_display": "75%",
+      "price": "$36.00",
+      "short_price": "$36",
+      "quantity": 1.0,
+      "source_rows": [
+        538
+      ],
+      "detail_display": "75%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Ginger Tea",
+      "display_name": "Ginger Tea",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "AIO",
+      "process": "DLR",
+      "thc": 0.8996999999999999,
+      "thc_display": "90%",
+      "price": "$24.44",
+      "short_price": "$24.44",
+      "quantity": 8.0,
+      "source_rows": [
+        515
+      ],
+      "detail_display": "90%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "GMO Rootbeer",
+      "display_name": "GMO Rootbeer",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.7037,
+      "thc_display": "70%",
+      "price": "$33.33",
+      "short_price": "$33.33",
+      "quantity": 1.0,
+      "source_rows": [
+        236
+      ],
+      "detail_display": "70%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Dulce De Uva",
+      "display_name": "Dulce De Uva",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.6546,
+      "thc_display": "65%",
+      "price": "$33.33",
+      "short_price": "$33.33",
+      "quantity": 9.0,
+      "source_rows": [
+        233
+      ],
+      "detail_display": "65%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "PHK x Afghani",
+      "display_name": "PHK x Afghani AIO",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7338,
+      "thc_display": "73%",
+      "price": "$40.00",
+      "short_price": "$40",
+      "quantity": 1.0,
+      "source_rows": [
+        248
+      ],
+      "detail_display": "73%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Shaved Ice",
+      "display_name": "Shaved Ice AIO",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7114,
+      "thc_display": "71%",
+      "price": "$40.00",
+      "short_price": "$40",
+      "quantity": 8.0,
+      "source_rows": [
+        251
+      ],
+      "detail_display": "71%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Dirty Dawg",
+      "display_name": "Dirty Dawg AIO",
+      "strain": "Indica",
+      "size": "2g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.6777,
+      "thc_display": "68%",
+      "price": "$64.44",
+      "short_price": "$64.44",
+      "quantity": 3.0,
+      "source_rows": [
+        232
+      ],
+      "detail_display": "68%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Upper Cut",
+      "display_name": "Upper Cut AIO",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7188,
+      "thc_display": "72%",
+      "price": "$40.00",
+      "short_price": "$40",
+      "quantity": 5.0,
+      "source_rows": [
+        256
+      ],
+      "detail_display": "72%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Tangelo Kush",
+      "display_name": "Tangelo Kush",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.7692,
+      "thc_display": "77%",
+      "price": "$33.33",
+      "short_price": "$33.33",
+      "quantity": 3.0,
+      "source_rows": [
+        254
+      ],
+      "detail_display": "77%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Lambo OG",
+      "display_name": "Lambo OG",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.6962999999999999,
+      "thc_display": "70%",
+      "price": "$34.00",
+      "short_price": "$34",
+      "quantity": 1.0,
+      "source_rows": [
+        243
+      ],
+      "detail_display": "70%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Red Lebanese",
+      "display_name": "Red Lebanese AIO",
+      "strain": "Sativa",
+      "size": "2g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7295,
+      "thc_display": "73%",
+      "price": "$64.44",
+      "short_price": "$64.44",
+      "quantity": 1.0,
+      "source_rows": [
+        249
+      ],
+      "detail_display": "73%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Haze",
+      "display_name": "Haze AIO",
+      "strain": "Sativa",
+      "size": "2g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7189,
+      "thc_display": "72%",
+      "price": "$64.44",
+      "short_price": "$64.44",
+      "quantity": 5.0,
+      "source_rows": [
+        238
+      ],
+      "detail_display": "72%"
     }
   ]
 }

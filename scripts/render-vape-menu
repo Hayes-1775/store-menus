@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import re
 import shutil
 from datetime import datetime
 from pathlib import Path
@@ -8,21 +9,27 @@ from typing import Dict, List
 
 from PIL import Image, ImageDraw, ImageFont
 
+from vape_menu_layout import best_layout, brand_body_height, content_groups
+
 
 WIDTH = 1080
 HEIGHT = 1920
-BLACK = (0, 0, 0)
+BLACK = (5, 8, 7)
 WHITE = (255, 255, 255)
 BRAND_GOLD = (218, 170, 74)
+SURFACE = (15, 21, 19)
+SURFACE_RAISED = (20, 27, 24)
+BORDER = (47, 58, 53)
+MUTED = (178, 190, 184)
 STRAIN_COLORS = {
-    "Indica": (120, 140, 200),
-    "Hybrid": (110, 185, 70),
-    "Sativa": (230, 35, 35),
+    "Indica": (151, 164, 211),
+    "Hybrid": (135, 190, 111),
+    "Sativa": (224, 112, 108),
 }
 FORMAT_COLORS = {
     "510": (218, 170, 74),
-    "AIO 1g": (92, 170, 210),
-    "AIO 2g": (38, 190, 178),
+    "AIO 1g": (111, 174, 201),
+    "AIO 2g": (78, 181, 164),
 }
 PROCESS_ORDER = ["Distillate", "Cured Resin", "Live Resin", "Rosin"]
 HIGHER_CULTURES_PROCESS_ORDER = ["DLR", "Live Resin"]
@@ -30,10 +37,12 @@ HIGHER_CULTURES_PROCESS_ORDER = ["DLR", "Live Resin"]
 
 FONT_CANDIDATES = {
     "title": [
+        str(Path(__file__).resolve().parent.parent / "docs/assets/fonts/MADE-Sunflower.otf"),
         "/System/Library/Fonts/Supplemental/Georgia Bold.ttf",
         "/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf",
     ],
     "body": [
+        str(Path(__file__).resolve().parent.parent / "docs/assets/fonts/Gotham-Medium.otf"),
         "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
         "/System/Library/Fonts/Avenir Next.ttc",
         "/System/Library/Fonts/Supplemental/Arial.ttf",
@@ -62,6 +71,14 @@ def fit_font(draw: ImageDraw.ImageDraw, text: str, max_width: int, size: int, mi
     return font("body", min_size)
 
 
+def fit_title_font(draw: ImageDraw.ImageDraw, text: str, max_width: int, size: int, min_size: int = 24) -> ImageFont.FreeTypeFont:
+    for candidate_size in range(size, min_size - 1, -1):
+        candidate = font("title", candidate_size)
+        if text_width(draw, text, candidate) <= max_width:
+            return candidate
+    return font("title", min_size)
+
+
 def fit_text(draw: ImageDraw.ImageDraw, text: str, fnt: ImageFont.FreeTypeFont, max_width: int) -> str:
     if text_width(draw, text, fnt) <= max_width:
         return text
@@ -77,19 +94,13 @@ def clamp(value: int, min_value: int, max_value: int) -> int:
 
 
 def gradient_bar(draw: ImageDraw.ImageDraw, x: int, y: int, w: int, h: int, color: tuple) -> None:
-    for i in range(w):
-        fade = max(0, 1 - (i / w) ** 1.55)
-        draw.line([(x + i, y), (x + i, y + h)], fill=tuple(int(c * fade) for c in color))
+    draw.rounded_rectangle((x, y, x + w, y + h), radius=8, fill=SURFACE_RAISED, outline=BORDER, width=1)
+    draw.rounded_rectangle((x, y, x + 7, y + h), radius=4, fill=color)
 
 
 def strain_panel(draw: ImageDraw.ImageDraw, x: int, y: int, w: int, h: int, color: tuple) -> None:
-    for i in range(w):
-        fade = max(0, 1 - (i / w) ** 1.35)
-        fill = tuple(int(color[j] * fade * 0.22) for j in range(3))
-        draw.line([(x + i, y), (x + i, y + h)], fill=fill)
-    border = tuple(min(255, int(c * 0.72)) for c in color)
-    draw.rectangle((x, y, x + w, y + h), outline=border, width=1)
-    draw.line((x, y, x + int(w * 0.74), y), fill=color, width=4)
+    draw.rounded_rectangle((x, y, x + w, y + h), radius=8, fill=SURFACE, outline=BORDER, width=1)
+    draw.rounded_rectangle((x, y, x + w, y + 4), radius=2, fill=color)
 
 
 def grouped_rows(rows: List[Dict]) -> Dict[str, List[Dict]]:
@@ -124,14 +135,16 @@ def price_range(rows: List[Dict]) -> str:
     if not values:
         return ""
     low, high = min(values), max(values)
+    def money(value: float) -> str:
+        return f"${value:.2f}" if not value.is_integer() else f"${int(value)}"
     if low == high:
-        return f"${low:g}"
-    return f"${low:g}-${high:g}"
+        return money(low)
+    return f"{money(low)}–{money(high)}"
 
 
-def process_label(process: str, rows: List[Dict]) -> str:
+def process_label(rows: List[Dict]) -> str:
     sizes = {row.get("size", "") for row in rows if row.get("size")}
-    size_label = next(iter(sizes)) if len(sizes) == 1 else "Mixed"
+    size_label = next(iter(sizes)) if len(sizes) == 1 else "Mixed sizes"
     by_format: Dict[str, List[Dict]] = {}
     for row in rows:
         by_format.setdefault(row.get("format") or "Other", []).append(row)
@@ -141,28 +154,34 @@ def process_label(process: str, rows: List[Dict]) -> str:
         format_rows = by_format.get(format_name)
         if not format_rows:
             continue
-        format_prices.append(f"{format_name} = {price_range(format_rows)}")
-    return f"{process} - {size_label} {' / '.join(format_prices)}"
+        label = "AIO" if format_name == "AIO" else format_name
+        format_prices.append(f"{label} {price_range(format_rows)}".strip())
+    return f"{size_label}  ·  {'  /  '.join(format_prices)}"
 
 
-def brand_label(brand: str, rows: List[Dict]) -> str:
-    sizes = {row.get("size", "") for row in rows if row.get("size")}
-    formats = {row.get("format", "") for row in rows if row.get("format")}
-    processes = {row.get("process", "") for row in rows if row.get("process")}
-    prices = {row.get("price", "") for row in rows if row.get("price")}
-    if len(sizes) == len(formats) == len(processes) == len(prices) == 1:
-        return f"{brand} - {next(iter(sizes))} {next(iter(formats))} {next(iter(processes))} - {next(iter(prices))}"
-    price_values = [row.get("short_price") or row.get("price", "") for row in rows if row.get("price")]
-    price_label = ""
-    if price_values:
-        numeric = sorted({float(str(v).replace("$", "")) for v in price_values if str(v).replace("$", "").replace(".", "", 1).isdigit()})
-        if len(numeric) == 1:
-            price_label = f" - ${numeric[0]:g}"
-        elif numeric:
-            price_label = f" - ${numeric[0]:g}-${numeric[-1]:g}"
-    size_label = next(iter(sizes)) if len(sizes) == 1 else "Mixed"
-    format_label = "/".join(sorted(formats)) if formats else "Mixed"
-    return f"{brand} - {size_label} {format_label}{price_label}"
+def brand_label(rows: List[Dict]) -> str:
+    price = price_range(rows)
+    count = len(rows)
+    return f"{count} PRODUCT{'S' if count != 1 else ''}" + (f"  ·  {price}" if price else "")
+
+
+def format_label(format_name: str) -> str:
+    if format_name == "510":
+        return "510 CARTRIDGES"
+    if format_name == "AIO":
+        return "AIO / DISPOSABLES"
+    return format_name.upper()
+
+
+def display_product_name(row: Dict, sibling_rows: List[Dict]) -> str:
+    name = str(row.get("display_name") or row.get("product_name") or "")
+    if row.get("format") == "AIO":
+        name = re.sub(r"\s+AIO\b", "", name, flags=re.I).strip()
+    sizes = {sibling.get("size") for sibling in sibling_rows if sibling.get("size")}
+    size = str(row.get("size") or "")
+    if len(sizes) > 1 and size and size.casefold() not in name.casefold():
+        name = f"{name} · {size}"
+    return name
 
 
 def draw_menu(rows: List[Dict], output: Path, width: int, height: int) -> None:
@@ -174,66 +193,125 @@ def draw_menu(rows: List[Dict], output: Path, width: int, height: int) -> None:
     draw = ImageDraw.Draw(img)
 
     left = int(38 * scale_x)
-    top = int(20 * scale_y)
+    top = int(22 * scale_y)
     title_font = font("title", int(48 * s))
+    header_meta_font = font("body", int(16 * s))
 
-    draw.text((left, top), "Vape Menu", fill=WHITE, font=title_font)
+    draw.text((left, top), "Cartridge Menu", fill=WHITE, font=title_font)
+    header_meta = "LIVE INVENTORY"
+    draw.text(
+        (width - left - text_width(draw, header_meta, header_meta_font), top + int(9 * scale_y)),
+        header_meta,
+        fill=MUTED,
+        font=header_meta_font,
+    )
+    draw.line((left, int(72 * scale_y), width - left, int(72 * scale_y)), fill=BORDER, width=1)
 
     grouped = grouped_rows(rows)
-    brands = [brand for brand in ["Verdant"] if grouped.get(brand)] + [brand for brand in grouped if brand != "Verdant"]
-    row_count = len(rows)
-    group_count = max(len(brands), 1)
+    brands = list(grouped)
     content_top = int(88 * scale_y)
-    bottom_margin = int(34 * scale_y)
-    available_h = height - content_top - bottom_margin
-    target_row_h = int((available_h - (group_count * 60 * scale_y) - (group_count * 18 * scale_y) - ((group_count - 1) * 24 * scale_y)) / max(row_count, 1))
-    row_h = clamp(target_row_h, int(42 * scale_y), int(54 * scale_y))
-    body_size = clamp(int(row_h * 0.58), int(24 * s), int(30 * s))
-    section_h = clamp(int(row_h * 1.34), int(58 * scale_y), int(76 * scale_y))
-    section_size = clamp(int(section_h * 0.68), int(38 * s), int(52 * s))
-    gap_after_bar = clamp(int(row_h * 0.38), int(16 * scale_y), int(26 * scale_y))
-    gap_between = clamp(int(row_h * 0.52), int(20 * scale_y), int(32 * scale_y))
+    layout = best_layout(rows)
+    if not layout["fits"]:
+        selected = ", ".join(brands)
+        raise ValueError(
+            f"Cartridge brands exceed one TV screen by {-layout['remaining_pixels']} pixels: {selected}"
+        )
+    row_h = int(layout["row_height"] * scale_y)
+    body_size = clamp(int(row_h * 0.58), int(20 * s), int(24 * s))
+    section_h = clamp(int(row_h * 1.28), int(48 * scale_y), int(60 * scale_y))
+    section_size = clamp(int(section_h * 0.58), int(27 * s), int(34 * s))
+    gap_after_bar = clamp(int(row_h * 0.25), int(8 * scale_y), int(12 * scale_y))
+    gap_between = clamp(int(row_h * 0.38), int(12 * scale_y), int(18 * scale_y))
 
     body_font = font("body", body_size)
-    section_font = font("title", section_size)
-    strain_font = font("title", int(36 * s))
+    detail_font = font("body", clamp(body_size - 1, int(18 * s), int(23 * s)))
+    strain_title_font = font("title", int(20 * s))
+    format_font = font("body", int(13 * s))
+    thc_label_font = font("body", int(12 * s))
+    process_font = font("title", int(20 * s))
+    process_meta_font = font("body", int(16 * s))
     y = content_top
     for brand_index, brand in enumerate(brands):
         group = grouped[brand]
-        gradient_bar(draw, left, y, int(900 * scale_x), section_h, BRAND_GOLD)
-        label = f"{brand} - AIO = Disposable" if brand in {"NW Kind", "Higher Cultures", "Buddies"} else brand_label(brand, group)
-        box = draw.textbbox((0, 0), label, font=section_font)
-        draw.text((left + int(16 * scale_x), y + (section_h - (box[3] - box[1])) // 2 - box[1]), label, fill=WHITE, font=section_font)
+        brand_card_h = section_h + gap_after_bar + int(brand_body_height(group, layout["row_height"]) * scale_y)
+        draw.rounded_rectangle(
+            (left, y, width - left, y + brand_card_h),
+            radius=10,
+            fill=(9, 13, 12),
+            outline=BORDER,
+            width=1,
+        )
+        gradient_bar(draw, left, y, width - left * 2, section_h, BRAND_GOLD)
+        brand_meta = brand_label(group)
+        meta_w = text_width(draw, brand_meta, process_meta_font)
+        label_max_w = width - left * 2 - meta_w - int(58 * scale_x)
+        label_font = fit_title_font(draw, brand, label_max_w, section_size, min_size=int(23 * s))
+        label_box = draw.textbbox((0, 0), brand, font=label_font)
+        label_y = y + (section_h - (label_box[3] - label_box[1])) // 2 - label_box[1]
+        draw.text((left + int(20 * scale_x), label_y), brand, fill=WHITE, font=label_font)
+        meta_box = draw.textbbox((0, 0), brand_meta, font=process_meta_font)
+        meta_y = y + (section_h - (meta_box[3] - meta_box[1])) // 2 - meta_box[1]
+        draw.text((width - left - int(16 * scale_x) - meta_w, meta_y), brand_meta, fill=MUTED, font=process_meta_font)
         y += section_h + gap_after_bar
 
-        island_gap = int(34 * scale_x)
+        island_gap = int(18 * scale_x)
         island_w = int((1004 * scale_x - island_gap * 2) / 3)
         indica_x = left
         hybrid_x = left + island_w + island_gap
         sativa_x = left + (island_w + island_gap) * 2
-        name_w = int(island_w - 98 * scale_x)
+        name_w = int(island_w - 78 * scale_x)
 
-        def draw_group(title: str, group_rows: List[Dict], x: int, start_y: int, color_title: str = "") -> int:
+        def draw_group(title: str, group_rows: List[Dict], x: int, start_y: int) -> int:
             panel_pad_x = int(12 * scale_x)
             panel_pad_top = int(10 * scale_y)
-            panel_pad_bottom = int(14 * scale_y)
-            title_h = int(38 * scale_y)
-            panel_h = panel_pad_top + title_h + len(group_rows) * row_h + panel_pad_bottom
-            strain_panel(draw, x, start_y, island_w, panel_h, STRAIN_COLORS.get(color_title or title, WHITE))
+            panel_pad_bottom = int(12 * scale_y)
+            title_h = int(28 * scale_y)
+            format_h = int(22 * scale_y)
+            by_format: Dict[str, List[Dict]] = {}
+            for row in group_rows:
+                by_format.setdefault(str(row.get("format") or "Other"), []).append(row)
+            format_order = [format_name for format_name in ["510", "AIO", "Other"] if by_format.get(format_name)]
+            format_order.extend(sorted(set(by_format) - set(format_order), key=str.casefold))
+            panel_h = panel_pad_top + title_h + panel_pad_bottom + sum(
+                format_h + len(by_format[format_name]) * row_h for format_name in format_order
+            )
+            color = STRAIN_COLORS.get(title, WHITE)
+            strain_panel(draw, x, start_y, island_w, panel_h, color)
             local_y = start_y + panel_pad_top
             text_x = x + panel_pad_x
-            title_font = fit_font(draw, title, island_w - panel_pad_x * 2, int(26 * s))
-            draw.text((text_x, local_y), title, fill=WHITE, font=title_font)
+            draw.text((text_x, local_y), title, fill=color, font=strain_title_font)
+            thc_label = "THC"
+            draw.text(
+                (x + island_w - panel_pad_x - text_width(draw, thc_label, thc_label_font), local_y + int(3 * scale_y)),
+                thc_label,
+                fill=MUTED,
+                font=thc_label_font,
+            )
             local_y += title_h
-            for row in group_rows:
-                max_name_w = name_w - panel_pad_x * 2
-                row_name = row.get("display_name") or row["product_name"]
-                name_font = fit_font(draw, row_name, max_name_w, body_size)
-                name = fit_text(draw, row_name, name_font, max_name_w)
-                draw.text((text_x, local_y), name, fill=WHITE, font=name_font)
-                detail = str(row.get("detail_display") or row.get("thc_display", ""))
-                draw.text((x + island_w - panel_pad_x - text_width(draw, detail, body_font), local_y), detail, fill=WHITE, font=body_font)
-                local_y += row_h
+            for format_name in format_order:
+                format_rows = by_format[format_name]
+                draw.text((text_x, local_y + int(2 * scale_y)), format_label(format_name), fill=MUTED, font=format_font)
+                local_y += format_h
+                for row_index, row in enumerate(format_rows):
+                    max_name_w = name_w - panel_pad_x
+                    row_name = display_product_name(row, format_rows)
+                    name = fit_text(draw, row_name, body_font, max_name_w)
+                    text_y = local_y + int(4 * scale_y)
+                    draw.text((text_x, text_y), name, fill=WHITE, font=body_font)
+                    detail = str(row.get("detail_display") or row.get("thc_display", ""))
+                    draw.text(
+                        (x + island_w - panel_pad_x - text_width(draw, detail, detail_font), text_y),
+                        detail,
+                        fill=(225, 231, 228),
+                        font=detail_font,
+                    )
+                    if row_index < len(format_rows) - 1:
+                        draw.line(
+                            (text_x, local_y + row_h - 1, x + island_w - panel_pad_x, local_y + row_h - 1),
+                            fill=(31, 40, 36),
+                            width=1,
+                        )
+                    local_y += row_h
             return start_y + panel_h
 
         def draw_islands(group_rows: List[Dict], start_y: int) -> int:
@@ -243,57 +321,23 @@ def draw_menu(rows: List[Dict], output: Path, width: int, height: int) -> None:
             sativa_y = draw_group("Sativa", strains.get("Sativa", []), sativa_x, start_y) if strains.get("Sativa") else start_y
             return max(indica_y, hybrid_y, sativa_y)
 
-        def draw_format_islands(group_rows: List[Dict], start_y: int) -> int:
-            format_gap = int(34 * scale_x)
-            format_w = int((1004 * scale_x - format_gap * 2) / 3)
-            format_xs = [left + index * (format_w + format_gap) for index in range(3)]
-
-            def draw_format_group(title: str, format_rows: List[Dict], x: int) -> int:
-                nonlocal island_w, name_w
-                original_island_w, original_name_w = island_w, name_w
-                island_w = format_w
-                name_w = int(format_w - 98 * scale_x)
-                original_color = STRAIN_COLORS.get(title)
-                STRAIN_COLORS[title] = FORMAT_COLORS.get(title, WHITE)
-                price = price_range(format_rows)
-                title_label = f"{title} - {price}" if price else title
-                try:
-                    return draw_group(title_label, format_rows, x, start_y, title)
-                finally:
-                    if original_color is None:
-                        STRAIN_COLORS.pop(title, None)
-                    else:
-                        STRAIN_COLORS[title] = original_color
-                    island_w, name_w = original_island_w, original_name_w
-
-            by_format: Dict[str, List[Dict]] = {}
-            for row in group_rows:
-                format_name = row.get("format") or "Other"
-                key = f"AIO {row.get('size')}".strip() if format_name == "AIO" else format_name
-                by_format.setdefault(key, []).append(row)
-            ends = []
-            for title, x in zip(["510", "AIO 1g", "AIO 2g"], format_xs):
-                ends.append(draw_format_group(title, by_format.get(title, []), x) if by_format.get(title) else start_y)
-            return max(ends)
-
-        if brand in {"NW Kind", "Higher Cultures", "Buddies"}:
-            process_font = font("title", int(30 * s))
-            by_process = process_groups(group)
-            process_order = HIGHER_CULTURES_PROCESS_ORDER if brand == "Higher Cultures" else PROCESS_ORDER
-            for process in process_order:
-                process_rows = by_process.get(process, [])
-                if not process_rows:
-                    continue
-                process_text = process if brand == "Buddies" and process == "Distillate" else process_label(process, process_rows)
-                draw.text((left, y), process_text, fill=(247, 223, 155), font=process_font)
-                y += int(34 * scale_y)
-                if brand == "Buddies" and process == "Distillate":
-                    y = draw_format_islands(process_rows, y)
-                else:
-                    y = draw_islands(process_rows, y)
-                y += int(14 * scale_y)
-        else:
-            y = draw_islands(group, y)
+        for content_group in content_groups(group):
+            process = content_group["process"]
+            process_rows = content_group["rows"]
+            process_name = process
+            process_meta = process_label(process_rows)
+            draw.text((left + int(12 * scale_x), y + int(3 * scale_y)), process_name, fill=BRAND_GOLD, font=process_font)
+            available_meta_w = int(660 * scale_x)
+            process_meta = fit_text(draw, process_meta, process_meta_font, available_meta_w)
+            draw.text(
+                (width - left - int(12 * scale_x) - text_width(draw, process_meta, process_meta_font), y + int(4 * scale_y)),
+                process_meta,
+                fill=MUTED,
+                font=process_meta_font,
+            )
+            y += int(30 * scale_y)
+            y = draw_islands(process_rows, y)
+            y += int(10 * scale_y)
         if brand_index < len(brands) - 1:
             y += gap_between
 

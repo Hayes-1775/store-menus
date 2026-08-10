@@ -13,7 +13,7 @@ fi
 cd "$ROOT_DIR"
 "$PYTHON" scripts/extract-vape-menu \
   --inventory "$INVENTORY" \
-  --brands Buddies \
+  --screen 2 \
   --out-json data/vape_menu_page2.json \
   --out-csv data/vape_menu_page2.csv \
   --validation-json data/vape_validation_report_page2.json

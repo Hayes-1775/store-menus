@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cartridge Brand Priority</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #142521;
+        --muted: #65746f;
+        --paper: #f5f4ed;
+        --card: #fffefa;
+        --line: #d8ddd5;
+        --forest: #174b3d;
+        --forest-2: #236b56;
+        --mint: #dcece4;
+        --gold: #c58b30;
+        --gold-soft: #f4e8d2;
+        --shadow: 0 20px 52px rgba(18, 49, 40, 0.11);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 88% 4%, rgba(197, 139, 48, 0.12), transparent 28rem),
+          linear-gradient(180deg, #faf9f3 0, var(--paper) 36rem);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      button { font: inherit; }
+
+      .shell {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 52px 0 64px;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: var(--forest-2);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 760px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(38px, 5vw, 64px);
+        line-height: 0.98;
+        letter-spacing: -0.03em;
+      }
+
+      .lede {
+        max-width: 720px;
+        margin: 20px 0 0;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      .source {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        margin-top: 22px;
+        padding: 8px 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 254, 250, 0.72);
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .source::before {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #3f936f;
+        content: "";
+        box-shadow: 0 0 0 4px rgba(63, 147, 111, 0.13);
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 340px;
+        gap: 24px;
+        align-items: start;
+        margin-top: 36px;
+      }
+
+      .panel {
+        overflow: hidden;
+        border: 1px solid rgba(23, 75, 61, 0.12);
+        border-radius: 22px;
+        background: var(--card);
+        box-shadow: var(--shadow);
+      }
+
+      .panel-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+        padding: 22px 24px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .panel-head h2,
+      .screen-summary h2 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 23px;
+      }
+
+      .count {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .brand-list { padding: 8px; }
+
+      .brand-row {
+        display: grid;
+        grid-template-columns: 30px 38px minmax(0, 1fr) auto auto;
+        gap: 10px;
+        align-items: center;
+        min-height: 72px;
+        padding: 8px 10px;
+        border: 1px solid transparent;
+        border-radius: 15px;
+        background: var(--card);
+        transition: border-color 140ms ease, background 140ms ease, transform 140ms ease;
+      }
+
+      .brand-row + .brand-row { margin-top: 4px; }
+      .brand-row:hover { background: #fafaf5; border-color: var(--line); }
+      .brand-row.dragging { opacity: 0.48; transform: scale(0.99); }
+      .brand-row.drop-target { border-color: var(--forest-2); background: var(--mint); }
+
+      .drag {
+        color: #a2ada8;
+        cursor: grab;
+        font-size: 20px;
+        letter-spacing: -5px;
+        user-select: none;
+      }
+
+      .rank {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--mint);
+        color: var(--forest);
+        font-weight: 800;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .brand-name { min-width: 0; }
+      .brand-name strong { display: block; font-size: 16px; }
+      .brand-name span { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; }
+
+      .screen-select {
+        min-width: 104px;
+        height: 36px;
+        padding: 0 28px 0 11px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        color: var(--forest);
+        background: #fff;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .screen-select:hover,
+      .screen-select:focus { border-color: var(--forest-2); outline: none; }
+
+      .moves { display: grid; grid-template-columns: 28px 28px; gap: 4px; }
+      .move {
+        width: 28px;
+        height: 28px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        color: var(--forest);
+        background: #fff;
+        cursor: pointer;
+      }
+      .move:hover:not(:disabled) { border-color: var(--forest-2); background: var(--mint); }
+      .move:disabled { cursor: default; opacity: 0.3; }
+
+      .sidebar { display: grid; gap: 18px; }
+
+      .screen-summary { padding: 22px; }
+      .screen-summary-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+      }
+      .screen-controls { display: flex; align-items: center; gap: 6px; }
+      .screen-control {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        color: var(--forest);
+        background: #fff;
+        cursor: pointer;
+        font-size: 19px;
+        font-weight: 700;
+      }
+      .screen-control:hover:not(:disabled) { border-color: var(--forest-2); background: var(--mint); }
+      .screen-control:disabled { cursor: default; opacity: 0.35; }
+      .screen-total { min-width: 70px; color: var(--muted); font-size: 12px; text-align: center; }
+      .auto-balance {
+        width: 100%;
+        min-height: 40px;
+        margin-top: 14px;
+        border: 1px solid var(--line);
+        border-radius: 11px;
+        color: var(--forest);
+        background: #fff;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 800;
+      }
+      .auto-balance:hover { border-color: var(--forest-2); background: var(--mint); }
+      .rotation-setting {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-top: 14px;
+        padding: 13px 14px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fafaf6;
+      }
+      .rotation-copy strong { display: block; font-size: 13px; }
+      .rotation-copy span { display: block; margin-top: 3px; color: var(--muted); font-size: 11px; }
+      .rotation-select {
+        min-width: 112px;
+        height: 38px;
+        padding: 0 30px 0 11px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        color: var(--forest);
+        background: #fff;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .rotation-select:hover,
+      .rotation-select:focus { border-color: var(--forest-2); outline: none; }
+      .screen-card {
+        margin-top: 16px;
+        padding: 18px;
+        border: 2px solid transparent;
+        border-radius: 16px;
+        background: #f4f6f2;
+        cursor: pointer;
+        transition: border-color 140ms ease, transform 140ms ease;
+      }
+      .screen-card:hover { transform: translateY(-1px); }
+      .screen-card.selected { border-color: var(--forest); }
+      .screen-card.over-capacity { border-color: #b94b3e; background: #fff0ed; }
+      .screen-card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+      .screen-card strong { font-size: 16px; }
+      .screen-card small { color: var(--muted); }
+      .capacity { margin-top: 7px; color: #267252; font-size: 11px; font-weight: 800; }
+      .over-capacity .capacity { color: #a43a30; }
+      .screen-brands { margin-top: 10px; font-size: 14px; line-height: 1.5; }
+      .screen-brands.empty { color: var(--muted); font-style: italic; }
+
+      .notice {
+        margin-top: 16px;
+        padding: 13px 14px;
+        border: 1px solid #dfc697;
+        border-radius: 12px;
+        color: #774c10;
+        background: #fff8eb;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+      .notice.good { border-color: #b9d8ca; color: #267252; background: #f2faf6; }
+
+      .preview-panel { padding: 20px; }
+
+      .preview-heading {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: baseline;
+        margin-bottom: 16px;
+      }
+
+      .preview-heading h2 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 23px;
+      }
+
+      .preview-heading span { color: var(--muted); font-size: 12px; }
+
+      .preview-body {
+        display: grid;
+        grid-template-columns: 136px minmax(0, 1fr);
+        gap: 16px;
+        align-items: start;
+      }
+
+      .preview-link {
+        display: block;
+        overflow: hidden;
+        width: 136px;
+        aspect-ratio: 9 / 16;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        background: #000;
+        box-shadow: 0 12px 28px rgba(9, 28, 23, 0.22);
+      }
+
+      .preview-link img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: #000;
+      }
+
+      .preview-details { min-width: 0; }
+
+      .preview-kicker {
+        color: var(--forest-2);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .preview-brands {
+        margin: 7px 0 0;
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 1.38;
+      }
+
+      .preview-note {
+        margin: 9px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .preview-open {
+        display: inline-block;
+        margin-top: 13px;
+        color: var(--forest);
+        font-size: 12px;
+        font-weight: 800;
+        text-underline-offset: 3px;
+      }
+
+      .actions { padding: 18px; }
+      .button {
+        display: grid;
+        width: 100%;
+        min-height: 48px;
+        place-items: center;
+        border: 0;
+        border-radius: 12px;
+        cursor: pointer;
+        font-weight: 800;
+        text-decoration: none;
+      }
+      .button.primary { color: #fff; background: var(--forest); }
+      .button.primary:hover { background: var(--forest-2); }
+      .button.secondary { margin-top: 9px; border: 1px solid var(--line); color: var(--forest); background: #fff; }
+      .button.tv-view { color: #fff; background: var(--forest); }
+      .button.tv-view:hover { background: var(--forest-2); }
+      .button.tv-view + .button { margin-top: 9px; }
+      .button:disabled { cursor: default; opacity: 0.48; }
+
+      .save-state { min-height: 20px; margin: 12px 2px 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
+      .save-state.success { color: #267252; }
+      .save-state.error { color: #a43a30; }
+
+      .loading { padding: 38px 24px; color: var(--muted); text-align: center; }
+
+      @media (max-width: 850px) {
+        .shell { width: min(100% - 24px, 680px); padding-top: 32px; }
+        .workspace { grid-template-columns: 1fr; }
+        .sidebar { grid-row: 1; grid-template-columns: 1fr 1fr; }
+        .actions { display: flex; flex-direction: column; }
+      }
+
+      @media (max-width: 600px) {
+        .sidebar { grid-template-columns: 1fr; }
+        .brand-row { grid-template-columns: 28px 34px minmax(0, 1fr) auto; }
+        .moves { display: none; }
+        .screen-select { min-width: 96px; }
+        .brand-name span { font-size: 12px; }
+        .preview-body { grid-template-columns: 150px minmax(0, 1fr); }
+        .preview-link { width: 150px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <p class="eyebrow">Miracle Greens · Visual Menu</p>
+      <h1>Cartridge Brand Priority</h1>
+      <p class="lede">Rank the cartridge brands, choose the rotating screen for each one, set how long each screen stays visible, and add or remove screens as inventory changes. The organizer checks every screen for readable spacing before you save.</p>
+      <div class="source" id="source">Loading current inventory…</div>
+
+      <div class="workspace">
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Brand order</h2>
+            <span class="count" id="count"></span>
+          </div>
+          <div class="brand-list" id="brand-list"><div class="loading">Reading cartridge brands…</div></div>
+        </section>
+
+        <aside class="sidebar">
+          <section class="panel screen-summary">
+            <div class="screen-summary-head">
+              <h2>Screen plan</h2>
+              <div class="screen-controls" aria-label="Number of rotating menu screens">
+                <button class="screen-control" id="remove-screen" aria-label="Remove the last screen">−</button>
+                <span class="screen-total" id="screen-total"></span>
+                <button class="screen-control" id="add-screen" aria-label="Add a screen">+</button>
+              </div>
+            </div>
+            <button class="auto-balance" id="auto-balance">Auto-balance brands</button>
+            <label class="rotation-setting" for="rotation-delay">
+              <span class="rotation-copy">
+                <strong>Time on each screen</strong>
+                <span>Then advance automatically</span>
+              </span>
+              <select class="rotation-select" id="rotation-delay">
+                <option value="10">10 seconds</option>
+                <option value="15">15 seconds</option>
+                <option value="20">20 seconds</option>
+                <option value="30">30 seconds</option>
+                <option value="45">45 seconds</option>
+                <option value="60">1 minute</option>
+                <option value="90">1.5 minutes</option>
+                <option value="120">2 minutes</option>
+              </select>
+            </label>
+            <div id="screens"></div>
+            <div class="notice" id="notice" hidden></div>
+          </section>
+          <section class="panel actions">
+            <a class="button tv-view" href="/tv" target="_blank" rel="noopener">Open TV menu view ↗</a>
+            <button class="button primary" id="save" disabled>Save this order</button>
+            <button class="button secondary" id="reload">Reload saved order</button>
+            <button class="button secondary" id="close">Close organizer</button>
+            <div class="save-state" id="save-state" aria-live="polite"></div>
+          </section>
+          <section class="panel preview-panel">
+            <div class="preview-heading">
+              <h2 id="preview-title">Screen 1 preview</h2>
+              <span>Live</span>
+            </div>
+            <div class="preview-body">
+              <a class="preview-link" id="preview-link" href="#" target="_blank" rel="noopener" aria-label="Open the full Screen 1 menu preview">
+                <img id="preview-image" alt="Loading Screen 1 menu preview" width="1080" height="1920">
+              </a>
+              <div class="preview-details">
+                <div class="preview-kicker" id="preview-count">Actual menu image</div>
+                <p class="preview-brands" id="preview-brands">Loading brands…</p>
+                <p class="preview-note">This portrait image refreshes when you reorder a brand or change its assigned screen.</p>
+                <a class="preview-open" id="preview-open" href="#" target="_blank" rel="noopener">Open full preview</a>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <script>
+      const token = "__MENU_TOKEN__";
+      let state = null;
+      let priority = [];
+      let savedPriority = [];
+      let assignments = {};
+      let savedAssignments = {};
+      let screenCount = 1;
+      let savedScreenCount = 1;
+      let rotationSeconds = 20;
+      let savedRotationSeconds = 20;
+      let selectedPreviewScreen = 1;
+      let draggedBrand = null;
+
+      const list = document.getElementById("brand-list");
+      const saveButton = document.getElementById("save");
+      const saveState = document.getElementById("save-state");
+
+      async function api(path, options = {}) {
+        const response = await fetch(path, {
+          ...options,
+          cache: "no-store",
+          headers: { "Content-Type": "application/json", "X-Menu-Token": token, ...(options.headers || {}) }
+        });
+        const payload = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          if (response.status === 403) {
+            throw new Error("The organizer was restarted. Refresh this page once to reconnect.");
+          }
+          throw new Error(payload.error || "The organizer could not complete that action.");
+        }
+        return payload;
+      }
+
+      function sameOrder(a, b) {
+        return a.length === b.length && a.every((item, index) => item === b[index]);
+      }
+
+      function sameAssignments(a, b) {
+        return priority.every((brand) => Number(a[brand]) === Number(b[brand]));
+      }
+
+      function isDirty() {
+        return !sameOrder(priority, savedPriority)
+          || !sameAssignments(assignments, savedAssignments)
+          || screenCount !== savedScreenCount
+          || rotationSeconds !== savedRotationSeconds;
+      }
+
+      function formatUnits(value) {
+        return Number.isInteger(value) ? value : Number(value).toFixed(1);
+      }
+
+      function render() {
+        const details = new Map(state.brands.map((brand) => [brand.name, brand]));
+        document.getElementById("source").textContent = state.inventory;
+        document.getElementById("count").textContent = `${priority.length} in-stock brands`;
+        document.getElementById("screen-total").textContent = `${screenCount} ${screenCount === 1 ? "screen" : "screens"}`;
+        document.getElementById("rotation-delay").value = String(rotationSeconds);
+        document.getElementById("remove-screen").disabled = screenCount <= state.min_screens;
+        document.getElementById("add-screen").disabled = screenCount >= state.max_screens;
+
+        list.innerHTML = priority.map((name, index) => {
+          const brand = details.get(name);
+          const options = Array.from({ length: screenCount }, (_, optionIndex) => {
+            const screen = optionIndex + 1;
+            return `<option value="${screen}" ${Number(assignments[name]) === screen ? "selected" : ""}>Screen ${screen}</option>`;
+          }).join("");
+          return `<div class="brand-row" draggable="true" data-brand="${escapeHtml(name)}">
+              <span class="drag" aria-hidden="true">⋮⋮</span>
+              <span class="rank">${index + 1}</span>
+              <div class="brand-name">
+                <strong>${escapeHtml(name)}</strong>
+                <span>${brand.products} products · ${formatUnits(brand.units)} units</span>
+              </div>
+              <select class="screen-select" data-screen-brand="${escapeHtml(name)}" aria-label="Screen for ${escapeHtml(name)}">${options}</select>
+              <div class="moves">
+                <button class="move" data-move="up" data-brand="${escapeHtml(name)}" aria-label="Move ${escapeHtml(name)} up" ${index === 0 ? "disabled" : ""}>↑</button>
+                <button class="move" data-move="down" data-brand="${escapeHtml(name)}" aria-label="Move ${escapeHtml(name)} down" ${index === priority.length - 1 ? "disabled" : ""}>↓</button>
+              </div>
+            </div>`;
+        }).join("");
+
+        document.getElementById("screens").innerHTML = state.screens.map((screen) => `
+          <div class="screen-card ${screen.number === selectedPreviewScreen ? "selected" : ""} ${screen.fits ? "" : "over-capacity"}" data-preview-screen="${screen.number}" role="button" tabindex="0" aria-label="Preview Screen ${screen.number}">
+            <div class="screen-card-top">
+              <strong>Screen ${screen.number}</strong>
+              <small>${screen.row_count} products</small>
+            </div>
+            <div class="capacity">${screen.fits ? `${screen.remaining_pixels}px breathing room` : `Over readable space by ${screen.over_by_pixels}px`}</div>
+            <div class="screen-brands ${screen.brands.length ? "" : "empty"}">
+              ${screen.brands.length ? screen.brands.map(escapeHtml).join(" · ") : "No brands assigned"}
+            </div>
+          </div>
+        `).join("");
+
+        const notice = document.getElementById("notice");
+        const crowded = state.screens.filter((screen) => !screen.fits);
+        if (crowded.length) {
+          notice.hidden = false;
+          notice.className = "notice";
+          notice.textContent = `${crowded.map((screen) => `Screen ${screen.number}`).join(" and ")} ${crowded.length === 1 ? "is" : "are"} too full. Move a brand or add another screen before saving.`;
+        } else {
+          notice.hidden = false;
+          notice.className = "notice good";
+          notice.textContent = `All ${screenCount} ${screenCount === 1 ? "screen fits" : "screens fit"} within the readable area.`;
+        }
+
+        const previewScreen = state.screens.find((screen) => screen.number === selectedPreviewScreen) || state.screens[0];
+        selectedPreviewScreen = previewScreen.number;
+        const previewImage = document.getElementById("preview-image");
+        const previewLink = document.getElementById("preview-link");
+        const previewOpen = document.getElementById("preview-open");
+        const unavailablePreview = "data:image/svg+xml;charset=utf-8," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920"><rect width="100%" height="100%" fill="#07110e"/><text x="540" y="900" fill="#fff" font-family="Arial" font-size="62" font-weight="700" text-anchor="middle">Screen too full</text><text x="540" y="990" fill="#b9c8c2" font-family="Arial" font-size="34" text-anchor="middle">Move a brand or add a screen</text></svg>');
+        previewImage.src = previewScreen.preview_url || unavailablePreview;
+        previewImage.alt = `Screen ${previewScreen.number} menu preview featuring ${previewScreen.brands.join(", ")}`;
+        previewLink.href = previewScreen.preview_url || "#";
+        previewLink.setAttribute("aria-label", `Open the full Screen ${previewScreen.number} menu preview`);
+        previewOpen.href = previewScreen.preview_url || "#";
+        previewOpen.hidden = !previewScreen.preview_url;
+        document.getElementById("preview-title").textContent = `Screen ${previewScreen.number} preview`;
+        document.getElementById("preview-count").textContent = `${previewScreen.row_count} products on Screen ${previewScreen.number}`;
+        document.getElementById("preview-brands").textContent = previewScreen.brands.join(" · ") || "No brands assigned";
+
+        saveButton.textContent = state.has_capacity_errors ? "Resolve capacity to save" : "Save screen plan";
+        saveButton.disabled = !isDirty() || state.has_capacity_errors;
+      }
+
+      function escapeHtml(value) {
+        return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
+      }
+
+      async function preview() {
+        saveButton.disabled = true;
+        state = await api("/api/preview", {
+          method: "POST",
+          body: JSON.stringify({ priority, assignments, screen_count: screenCount, rotation_seconds: rotationSeconds })
+        });
+        assignments = Object.fromEntries(state.brands.map((brand) => [brand.name, brand.screen]));
+        render();
+      }
+
+      async function autoBalance() {
+        saveButton.disabled = true;
+        state = await api("/api/auto-balance", {
+          method: "POST",
+          body: JSON.stringify({ priority, screen_count: screenCount, rotation_seconds: rotationSeconds })
+        });
+        assignments = Object.fromEntries(state.brands.map((brand) => [brand.name, brand.screen]));
+        render();
+      }
+
+      function moveBrand(name, targetIndex) {
+        const from = priority.indexOf(name);
+        if (from < 0) return;
+        const bounded = Math.max(0, Math.min(priority.length - 1, targetIndex));
+        priority.splice(from, 1);
+        priority.splice(bounded, 0, name);
+        autoBalance().catch(showError);
+      }
+
+      list.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-move]");
+        if (!button) return;
+        const index = priority.indexOf(button.dataset.brand);
+        moveBrand(button.dataset.brand, button.dataset.move === "up" ? index - 1 : index + 1);
+      });
+
+      list.addEventListener("change", (event) => {
+        const select = event.target.closest("[data-screen-brand]");
+        if (!select) return;
+        assignments[select.dataset.screenBrand] = Number(select.value);
+        selectedPreviewScreen = Number(select.value);
+        preview().catch(showError);
+      });
+
+      list.addEventListener("dragstart", (event) => {
+        if (event.target.closest("select, button")) {
+          event.preventDefault();
+          return;
+        }
+        const row = event.target.closest(".brand-row");
+        if (!row) return;
+        draggedBrand = row.dataset.brand;
+        row.classList.add("dragging");
+        event.dataTransfer.effectAllowed = "move";
+      });
+
+      document.getElementById("screens").addEventListener("click", (event) => {
+        const card = event.target.closest("[data-preview-screen]");
+        if (!card) return;
+        selectedPreviewScreen = Number(card.dataset.previewScreen);
+        render();
+      });
+
+      document.getElementById("screens").addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        const card = event.target.closest("[data-preview-screen]");
+        if (!card) return;
+        event.preventDefault();
+        selectedPreviewScreen = Number(card.dataset.previewScreen);
+        render();
+      });
+
+      document.getElementById("add-screen").addEventListener("click", () => {
+        if (screenCount >= state.max_screens) return;
+        screenCount += 1;
+        selectedPreviewScreen = screenCount;
+        preview().catch(showError);
+      });
+
+      document.getElementById("remove-screen").addEventListener("click", () => {
+        if (screenCount <= state.min_screens) return;
+        const removed = screenCount;
+        screenCount -= 1;
+        priority.forEach((brand) => {
+          if (Number(assignments[brand]) === removed) assignments[brand] = screenCount;
+        });
+        selectedPreviewScreen = Math.min(selectedPreviewScreen, screenCount);
+        preview().catch(showError);
+      });
+
+      document.getElementById("auto-balance").addEventListener("click", async () => {
+        try { await autoBalance(); } catch (error) { showError(error); }
+      });
+
+      document.getElementById("rotation-delay").addEventListener("change", (event) => {
+        rotationSeconds = Number(event.target.value);
+        preview().catch(showError);
+      });
+
+      list.addEventListener("dragover", (event) => {
+        const row = event.target.closest(".brand-row");
+        if (!row || row.dataset.brand === draggedBrand) return;
+        event.preventDefault();
+        list.querySelectorAll(".drop-target").forEach((item) => item.classList.remove("drop-target"));
+        row.classList.add("drop-target");
+      });
+
+      list.addEventListener("drop", (event) => {
+        const row = event.target.closest(".brand-row");
+        if (!row || !draggedBrand) return;
+        event.preventDefault();
+        moveBrand(draggedBrand, priority.indexOf(row.dataset.brand));
+      });
+
+      list.addEventListener("dragend", () => {
+        list.querySelectorAll(".dragging, .drop-target").forEach((item) => item.classList.remove("dragging", "drop-target"));
+        draggedBrand = null;
+      });
+
+      saveButton.addEventListener("click", async () => {
+        try {
+          saveButton.disabled = true;
+          saveState.className = "save-state";
+          saveState.textContent = "Saving…";
+          state = await api("/api/save", {
+            method: "POST",
+            body: JSON.stringify({ priority, assignments, screen_count: screenCount, rotation_seconds: rotationSeconds })
+          });
+          savedPriority = [...priority];
+          savedAssignments = { ...assignments };
+          savedScreenCount = screenCount;
+          savedRotationSeconds = rotationSeconds;
+          saveState.className = "save-state success";
+          saveState.textContent = `Saved. The menu will advance every ${rotationSeconds} seconds across ${screenCount} ${screenCount === 1 ? "screen" : "screens"}.`;
+          render();
+        } catch (error) { showError(error); }
+      });
+
+      document.getElementById("reload").addEventListener("click", () => loadState());
+      document.getElementById("close").addEventListener("click", async () => {
+        try { await api("/api/stop", { method: "POST", body: "{}" }); } catch (_) {}
+        document.body.innerHTML = '<main class="shell"><section class="panel screen-summary"><h2>Organizer closed</h2><p class="lede">You can close this browser tab.</p></section></main>';
+      });
+
+      function showError(error) {
+        saveState.className = "save-state error";
+        saveState.textContent = error.message || String(error);
+        if (state) saveButton.disabled = !isDirty() || state.has_capacity_errors;
+      }
+
+      async function loadState() {
+        try {
+          saveState.textContent = "";
+          state = await api("/api/state");
+          priority = state.brands.map((brand) => brand.name);
+          savedPriority = [...priority];
+          assignments = Object.fromEntries(state.brands.map((brand) => [brand.name, brand.screen]));
+          savedAssignments = { ...assignments };
+          screenCount = state.screen_count;
+          rotationSeconds = state.rotation_seconds;
+          savedRotationSeconds = rotationSeconds;
+          savedScreenCount = state.requires_save ? 0 : screenCount;
+          selectedPreviewScreen = Math.min(selectedPreviewScreen, screenCount);
+          if (state.requires_save) {
+            saveState.className = "save-state";
+            saveState.textContent = "Review the suggested screen plan, then save it to activate these assignments.";
+          }
+          render();
+        } catch (error) {
+          list.innerHTML = `<div class="loading">${escapeHtml(error.message || String(error))}</div>`;
+          showError(error);
+        }
+      }
+
+      loadState();
+    </script>
+  </body>
+</html>

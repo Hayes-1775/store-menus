@@ -41,13 +41,9 @@ workflow_run_timed_step "$WORKFLOW_NAME" "copy_flower_menu_data" "batch-copy" \
   "batch" \
   cp data/flower_menu.json docs/menu-data.json
 
-workflow_run_timed_step "$WORKFLOW_NAME" "generate_vape_page_1" "local-script" \
+workflow_run_timed_step "$WORKFLOW_NAME" "generate_vape_screens" "local-script" \
   "local script" \
   scripts/run-vape-menu "$INVENTORY"
-
-workflow_run_timed_step "$WORKFLOW_NAME" "generate_vape_page_2" "local-script" \
-  "local script" \
-  scripts/run-vape-menu-page2 "$INVENTORY"
 
 workflow_run_timed_step "$WORKFLOW_NAME" "verify_generated_menus" "local-script" \
   "local script" \

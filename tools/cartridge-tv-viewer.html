@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <title>Miracle Greens Cartridge Menu</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        background: #000;
+      }
+      body { cursor: none; }
+      .menu-frame {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        opacity: 0;
+        transition: opacity 700ms ease;
+      }
+      .menu-frame.active { opacity: 1; }
+      .status {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        padding: 40px;
+        color: #dcece4;
+        background: #000;
+        font: 700 26px/1.35 Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+      .status[hidden] { display: none; }
+    </style>
+  </head>
+  <body>
+    <img class="menu-frame active" id="frame-a" alt="">
+    <img class="menu-frame" id="frame-b" alt="">
+    <div class="status" id="status">Loading the cartridge menu…</div>
+
+    <script>
+      const frames = [document.getElementById("frame-a"), document.getElementById("frame-b")];
+      const status = document.getElementById("status");
+      let screens = [];
+      let delayMilliseconds = 20000;
+      let currentScreen = 0;
+      let activeFrame = 0;
+      let timer = null;
+
+      function scheduleNext() {
+        clearTimeout(timer);
+        if (screens.length > 1) timer = setTimeout(() => showScreen(currentScreen + 1), delayMilliseconds);
+      }
+
+      function showScreen(index, immediate = false) {
+        if (!screens.length) return;
+        currentScreen = (index + screens.length) % screens.length;
+        const nextFrame = immediate ? frames[activeFrame] : frames[1 - activeFrame];
+        const previousFrame = frames[activeFrame];
+        nextFrame.onload = () => {
+          status.hidden = true;
+          nextFrame.classList.add("active");
+          if (!immediate) {
+            previousFrame.classList.remove("active");
+            activeFrame = 1 - activeFrame;
+          }
+          scheduleNext();
+        };
+        nextFrame.onerror = () => {
+          status.hidden = false;
+          status.textContent = `Screen ${screens[currentScreen].number} could not be loaded.`;
+          scheduleNext();
+        };
+        nextFrame.src = screens[currentScreen].preview_url;
+        nextFrame.alt = `Cartridge Menu Screen ${screens[currentScreen].number}`;
+      }
+
+      fetch("/api/tv-state", { cache: "no-store" })
+        .then((response) => {
+          if (!response.ok) throw new Error(`The TV menu could not be loaded (${response.status}).`);
+          return response.json();
+        })
+        .then((payload) => {
+          screens = (payload.screens || []).filter((screen) => screen.row_count > 0 && screen.preview_url);
+          if (!screens.length) throw new Error("No cartridge screens have products assigned.");
+          delayMilliseconds = Math.max(5000, Number(payload.rotation_seconds || 20) * 1000);
+          screens.slice(1).forEach((screen) => { const image = new Image(); image.src = screen.preview_url; });
+          showScreen(0, true);
+        })
+        .catch((error) => {
+          status.hidden = false;
+          status.textContent = error.message || String(error);
+        });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowRight" || event.key === "PageDown") showScreen(currentScreen + 1);
+        if (event.key === "ArrowLeft" || event.key === "PageUp") showScreen(currentScreen - 1);
+      });
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) clearTimeout(timer);
+        else scheduleNext();
+      });
+    </script>
+  </body>
+</html>

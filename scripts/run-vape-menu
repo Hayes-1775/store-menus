@@ -11,18 +11,37 @@ if [[ -z "$INVENTORY" ]]; then
 fi
 
 cd "$ROOT_DIR"
-"$PYTHON" scripts/extract-vape-menu \
-  --inventory "$INVENTORY" \
-  --out-json data/vape_menu.json \
-  --out-csv data/vape_menu.csv \
-  --validation-json data/vape_validation_report.json
+SCREEN_COUNT="$($PYTHON -c 'import json; print(int(json.load(open("config/menu_config.json"))["vape_menu"]["screen_count"]))')"
 
-"$PYTHON" scripts/render-vape-menu \
-  --menu-json data/vape_menu.json \
-  --out docs/vapes/latest.jpg \
-  --archive
+for SCREEN_NUMBER in $(seq 1 "$SCREEN_COUNT"); do
+  if [[ "$SCREEN_NUMBER" -eq 1 ]]; then
+    DATA_STEM="vape_menu"
+    DOCS_DIR="docs/vapes"
+    ARCHIVE_DIR="docs/vapes/archive"
+    VALIDATION_PATH="data/vape_validation_report.json"
+  else
+    DATA_STEM="vape_menu_page${SCREEN_NUMBER}"
+    DOCS_DIR="docs/vapes/page${SCREEN_NUMBER}"
+    ARCHIVE_DIR="${DOCS_DIR}/archive"
+    VALIDATION_PATH="data/vape_validation_report_page${SCREEN_NUMBER}.json"
+  fi
 
-mkdir -p docs/vapes
-cp data/vape_menu.json docs/vapes/menu-data.json
+  "$PYTHON" scripts/extract-vape-menu \
+    --inventory "$INVENTORY" \
+    --screen "$SCREEN_NUMBER" \
+    --out-json "data/${DATA_STEM}.json" \
+    --out-csv "data/${DATA_STEM}.csv" \
+    --validation-json "$VALIDATION_PATH"
 
-echo "Generated docs/vapes/latest.jpg and docs/vapes/menu-data.json"
+  mkdir -p "$DOCS_DIR"
+  "$PYTHON" scripts/render-vape-menu \
+    --menu-json "data/${DATA_STEM}.json" \
+    --out "${DOCS_DIR}/latest.jpg" \
+    --archive-dir "$ARCHIVE_DIR" \
+    --archive
+
+  cp "data/${DATA_STEM}.json" "${DOCS_DIR}/menu-data.json"
+done
+
+"$PYTHON" scripts/build-vape-screen-manifest >/dev/null
+echo "Generated ${SCREEN_COUNT} cartridge screens and docs/vapes/screens.json"

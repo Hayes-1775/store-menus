@@ -1,0 +1,223 @@
+@font-face {
+  font-family: "MADE Sunflower";
+  src: url("../assets/fonts/MADE-Sunflower.otf") format("opentype");
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Gotham Medium";
+  src: url("../assets/fonts/Gotham-Medium.otf") format("opentype");
+  font-display: block;
+}
+
+:root {
+  --row-height: 44px;
+  --body-size: 24px;
+  --section-height: 56px;
+  --section-size: 32px;
+  --gap-after-section: 10px;
+  --gap-between-groups: 16px;
+}
+
+html,
+body,
+.screen,
+.menu {
+  background: #050807;
+}
+
+body,
+.row,
+.section-meta,
+.process-meta,
+.format-label,
+.header-meta {
+  font-family: "Gotham Medium", Arial, Helvetica, sans-serif;
+}
+
+.header,
+.section-brand,
+.process-title > span:first-child,
+.strain-title > span:first-child {
+  font-family: "MADE Sunflower", Georgia, "Times New Roman", serif;
+}
+
+.screen { background: #050807; }
+.menu { padding: 22px 38px 34px; }
+
+.menu::after,
+.section-bar::after,
+.strain-group::before { display: none; }
+
+.header {
+  height: 66px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid #2f3a35;
+  font-weight: 700;
+}
+
+.title {
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: 0.015em;
+}
+
+.header-meta {
+  padding-top: 8px;
+  color: #b2beb8;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.group {
+  overflow: hidden;
+  border: 1px solid #2f3a35;
+  border-radius: 10px;
+  background: #090d0c;
+}
+
+.group:not(:last-child) { margin-bottom: var(--gap-between-groups); }
+
+.section-bar {
+  height: var(--section-height);
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: var(--gap-after-section);
+  padding: 0 16px 0 20px;
+  border-bottom: 1px solid #2f3a35;
+  border-left: 7px solid #daaa4a;
+  background: #141b18;
+  color: #fff;
+  font-size: var(--section-size);
+  font-weight: 700;
+}
+
+.section-bar::before { display: none; }
+
+.section-brand {
+  overflow: hidden;
+  min-width: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.section-meta {
+  flex: 0 0 auto;
+  color: #b2beb8;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.process-group + .process-group { margin-top: 10px; }
+
+.process-title {
+  height: 30px;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 12px;
+  color: #daaa4a;
+  font-size: 20px;
+  line-height: 1;
+  text-shadow: none;
+}
+
+.process-meta {
+  overflow: hidden;
+  color: #b2beb8;
+  font-size: 16px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.islands {
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 18px;
+}
+
+.strain-indica { grid-column: 1; }
+.strain-hybrid { grid-column: 2; }
+.strain-sativa { grid-column: 3; }
+
+.strain-group {
+  padding: 10px 12px 12px;
+  border: 1px solid #2f3a35;
+  border-radius: 8px;
+  background: #0f1513;
+  box-shadow: none;
+}
+
+.strain-group::after {
+  height: 4px;
+  background: var(--strain-color);
+  opacity: 1;
+  animation: none;
+}
+
+.strain-title {
+  height: 28px;
+  justify-content: space-between;
+  color: var(--strain-color);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.strain-title small {
+  color: #b2beb8;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.format-label {
+  height: 22px;
+  display: flex;
+  align-items: center;
+  color: #b2beb8;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.row {
+  position: static;
+  height: var(--row-height);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  border-bottom: 1px solid #1f2824;
+  font-size: var(--body-size);
+  font-weight: 700;
+}
+
+.format-block .row:last-child { border-bottom: 0; }
+.process-group:last-child { padding-bottom: 10px; }
+
+.name,
+.num {
+  position: static;
+  inset: auto;
+  min-width: 0;
+  opacity: 1;
+  animation: none;
+  transform: none;
+}
+
+.name {
+  overflow: hidden;
+  padding: 0;
+  line-height: 1;
+  text-overflow: ellipsis;
+}
+
+.num {
+  display: block;
+  color: #e1e7e4;
+  line-height: 1;
+  text-shadow: none;
+}

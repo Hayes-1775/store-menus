@@ -29,6 +29,17 @@ def summarize(menu: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def summarize_manifest(manifest: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "generated_at": manifest.get("generated_at"),
+        "rotation_seconds": manifest.get("rotation_seconds"),
+        "screens": [
+            {"number": screen.get("number"), "row_count": screen.get("row_count")}
+            for screen in manifest.get("screens", [])
+        ],
+    }
+
+
 def fail(message: str) -> None:
     print(f"FAIL: {message}", file=sys.stderr)
     raise SystemExit(1)
@@ -39,23 +50,43 @@ def normalize_base_url(url: str) -> str:
 
 
 def expected_payloads() -> dict[str, dict[str, Any]]:
-    return {
+    payloads = {
         "flower": summarize(load_json(Path("docs/menu-data.json"))),
         "vapes": summarize(load_json(Path("docs/vapes/menu-data.json"))),
         "vapes_page2": summarize(load_json(Path("docs/vapes/page2/menu-data.json"))),
+        "vapes_manifest": summarize_manifest(load_json(Path("docs/vapes/screens.json"))),
     }
+    manifest = load_json(Path("docs/vapes/screens.json"))
+    for screen in manifest.get("screens", []):
+        number = int(screen["number"])
+        if number <= 2:
+            continue
+        payloads[f"vapes_page{number}"] = summarize(
+            load_json(Path(f"docs/vapes/page{number}/menu-data.json"))
+        )
+    return payloads
 
 
 def live_urls(base_url: str) -> dict[str, str]:
-    return {
+    urls = {
         "flower": f"{base_url}menu-data.json",
         "vapes": f"{base_url}vapes/menu-data.json",
         "vapes_page2": f"{base_url}vapes/page2/menu-data.json",
+        "vapes_manifest": f"{base_url}vapes/screens.json",
     }
+    manifest = load_json(Path("docs/vapes/screens.json"))
+    for screen in manifest.get("screens", []):
+        number = int(screen["number"])
+        if number > 2:
+            urls[f"vapes_page{number}"] = f"{base_url}vapes/page{number}/menu-data.json"
+    return urls
 
 
 def fetch_live_state(urls: dict[str, str]) -> dict[str, dict[str, Any]]:
-    return {name: summarize(fetch_json(url)) for name, url in urls.items()}
+    return {
+        name: summarize_manifest(fetch_json(url)) if name == "vapes_manifest" else summarize(fetch_json(url))
+        for name, url in urls.items()
+    }
 
 
 def main() -> None:
