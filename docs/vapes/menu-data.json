@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T06:29:33",
+  "generated_at": "2026-08-10T06:46:52",
   "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-08-10.csv",
   "menu": "vapes",
   "screen": 1,
@@ -7,16 +7,17 @@
   "brands": [
     "Verdant",
     "NW Kind",
+    "Oregrown",
     "Moonwalk"
   ],
   "display": {
     "fits": true,
-    "row_height": 44,
-    "required_height": 1519,
+    "row_height": 38,
+    "required_height": 1870,
     "available_height": 1886,
-    "remaining_pixels": 367,
-    "brand_count": 3,
-    "row_count": 31
+    "remaining_pixels": 16,
+    "brand_count": 4,
+    "row_count": 43
   },
   "rows": [
     {
@@ -542,6 +543,223 @@
         858
       ],
       "detail_display": "68%"
+    },
+    {
+      "brand": "Oregrown",
+      "product_name": "Goofiez",
+      "display_name": "Goofiez",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.7275,
+      "thc_display": "73%",
+      "price": "$27.78",
+      "short_price": "$27.78",
+      "quantity": 4.0,
+      "source_rows": [
+        880
+      ],
+      "detail_display": "73%"
+    },
+    {
+      "brand": "Oregrown",
+      "product_name": "Red Smoothie",
+      "display_name": "Red Smoothie",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.7141,
+      "thc_display": "71%",
+      "price": "$33.33",
+      "short_price": "$33.33",
+      "quantity": 3.0,
+      "source_rows": [
+        899
+      ],
+      "detail_display": "71%"
+    },
+    {
+      "brand": "Oregrown",
+      "product_name": "El Chivo",
+      "display_name": "El Chivo AIO",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.728,
+      "thc_display": "73%",
+      "price": "$55.56",
+      "short_price": "$55.56",
+      "quantity": 2.0,
+      "source_rows": [
+        876
+      ],
+      "detail_display": "73%"
+    },
+    {
+      "brand": "Oregrown",
+      "product_name": "Oishii",
+      "display_name": "Oishii AIO",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.705,
+      "thc_display": "71%",
+      "price": "$41.67",
+      "short_price": "$41.67",
+      "quantity": 9.0,
+      "source_rows": [
+        896
+      ],
+      "detail_display": "71%"
+    },
+    {
+      "brand": "Oregrown",
+      "product_name": "Lemon Berry #17",
+      "display_name": "Lemon Berry #17",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.7617,
+      "thc_display": "76%",
+      "price": "$27.78",
+      "short_price": "$27.78",
+      "quantity": 12.0,
+      "source_rows": [
+        885,
+        886
+      ],
+      "detail_display": "76%"
+    },
+    {
+      "brand": "Oregrown",
+      "product_name": "Watermelon Zkittlez",
+      "display_name": "Watermelon Zkittlez",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.7197,
+      "thc_display": "72%",
+      "price": "$33.33",
+      "short_price": "$33.33",
+      "quantity": 5.0,
+      "source_rows": [
+        905
+      ],
+      "detail_display": "72%"
+    },
+    {
+      "brand": "Oregrown",
+      "product_name": "Drunken Strawberries",
+      "display_name": "Drunken Strawberries AIO",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7386,
+      "thc_display": "74%",
+      "price": "$55.56",
+      "short_price": "$55.56",
+      "quantity": 5.0,
+      "source_rows": [
+        875
+      ],
+      "detail_display": "74%"
+    },
+    {
+      "brand": "Oregrown",
+      "product_name": "Guava Cream",
+      "display_name": "Guava Cream AIO",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7182999999999999,
+      "thc_display": "72%",
+      "price": "$41.67",
+      "short_price": "$41.67",
+      "quantity": 6.0,
+      "source_rows": [
+        881
+      ],
+      "detail_display": "72%"
+    },
+    {
+      "brand": "Oregrown",
+      "product_name": "London Sour",
+      "display_name": "London Sour",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.7468,
+      "thc_display": "75%",
+      "price": "$27.78",
+      "short_price": "$27.78",
+      "quantity": 9.0,
+      "source_rows": [
+        889
+      ],
+      "detail_display": "75%"
+    },
+    {
+      "brand": "Oregrown",
+      "product_name": "Lemonhead Zkittlez",
+      "display_name": "Lemonhead Zkittlez",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.7073999999999999,
+      "thc_display": "71%",
+      "price": "$33.33",
+      "short_price": "$33.33",
+      "quantity": 5.0,
+      "source_rows": [
+        888
+      ],
+      "detail_display": "71%"
+    },
+    {
+      "brand": "Oregrown",
+      "product_name": "Sub Zero",
+      "display_name": "Sub Zero AIO",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7151000000000001,
+      "thc_display": "72%",
+      "price": "$55.56",
+      "short_price": "$55.56",
+      "quantity": 5.0,
+      "source_rows": [
+        901
+      ],
+      "detail_display": "72%"
+    },
+    {
+      "brand": "Oregrown",
+      "product_name": "London Sour",
+      "display_name": "London Sour AIO",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.715,
+      "thc_display": "72%",
+      "price": "$41.70",
+      "short_price": "$41.7",
+      "quantity": 4.0,
+      "source_rows": [
+        890
+      ],
+      "detail_display": "72%"
     },
     {
       "brand": "Moonwalk",
