@@ -7,6 +7,7 @@ import importlib.util
 import json
 import os
 import shutil
+import subprocess
 import tempfile
 import threading
 import webbrowser
@@ -68,6 +69,7 @@ class Organizer:
         self.preview_dir = Path(tempfile.mkdtemp(prefix="cartridge-brand-previews-"))
         self.preview_rows: Dict[str, List[Dict[str, Any]]] = {}
         self.preview_lock = threading.Lock()
+        self.publish_lock = threading.Lock()
         self.inventory_rows = self.extractor.read_inventory(self.inventory_path)
         self.available_brands = self._available_brands()
         self.menu_rows, self.validation = self.extractor.extract_menu_for_brands(
@@ -313,6 +315,55 @@ class Organizer:
     def close(self) -> None:
         shutil.rmtree(self.preview_dir, ignore_errors=True)
 
+    def publish(self) -> Dict[str, Any]:
+        if not self.publish_lock.acquire(blocking=False):
+            raise ValueError("A store-menu publish is already in progress.")
+        try:
+            configured = self.configured_state()
+            if configured.get("requires_save"):
+                raise ValueError("Save the screen plan before publishing it.")
+            if configured.get("has_capacity_errors"):
+                raise ValueError("Resolve the screen-capacity warning before publishing.")
+            commands = [
+                ([str(ROOT / "scripts/run-vape-menu"), str(self.inventory_path)], 180),
+                ([str(ROOT / "scripts/publish-menu")], 420),
+            ]
+            for command, timeout in commands:
+                try:
+                    result = subprocess.run(
+                        command,
+                        cwd=ROOT,
+                        capture_output=True,
+                        text=True,
+                        timeout=timeout,
+                        check=False,
+                    )
+                except subprocess.TimeoutExpired as exc:
+                    raise ValueError("Publishing timed out before GitHub Pages confirmed the update.") from exc
+                if result.returncode != 0:
+                    detail = (result.stderr or result.stdout or "Unknown publishing error").strip()
+                    raise ValueError(f"Publishing failed: {detail[-1200:]}")
+
+            commit = subprocess.run(
+                ["git", "rev-parse", "--short", "HEAD"],
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+                check=True,
+            ).stdout.strip()
+            config = self.config()
+            return {
+                "ok": True,
+                "commit": commit,
+                "pages_url": config.get("output", {}).get("pages_url", ""),
+                "rotation_seconds": config.get("vape_menu", {}).get(
+                    "rotation_seconds", DEFAULT_ROTATION_SECONDS
+                ),
+                "screen_count": config.get("vape_menu", {}).get("screen_count", 1),
+            }
+        finally:
+            self.publish_lock.release()
+
     def save(
         self,
         priority: List[str],
@@ -478,6 +529,9 @@ def main() -> None:
                         payload.get("rotation_seconds"),
                     )
                     self.send_json(200, browser_state(saved))
+                    return
+                if path == "/api/publish":
+                    self.send_json(200, organizer.publish())
                     return
                 if path == "/api/stop":
                     self.send_json(200, {"ok": True})

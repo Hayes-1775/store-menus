@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-10T06:17:08",
+  "generated_at": "2026-08-10T06:29:34",
   "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-08-10.csv",
   "menu": "vapes",
   "screen": 4,
-  "rotation_seconds": 10,
+  "rotation_seconds": 20,
   "brands": [
     "Oregrown",
     "Puck Fortland"

@@ -392,6 +392,8 @@
       .button.tv-view { color: #fff; background: var(--forest); }
       .button.tv-view:hover { background: var(--forest-2); }
       .button.tv-view + .button { margin-top: 9px; }
+      .button.publish { margin-top: 9px; color: #54370c; background: var(--gold-soft); border: 1px solid #dfc697; }
+      .button.publish:hover:not(:disabled) { background: #ecd5ad; }
       .button:disabled { cursor: default; opacity: 0.48; }
 
       .save-state { min-height: 20px; margin: 12px 2px 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
@@ -467,6 +469,7 @@
           <section class="panel actions">
             <a class="button tv-view" href="/tv" target="_blank" rel="noopener">Open TV menu view ↗</a>
             <button class="button primary" id="save" disabled>Save this order</button>
+            <button class="button publish" id="publish" disabled>Publish to store screen</button>
             <button class="button secondary" id="reload">Reload saved order</button>
             <button class="button secondary" id="close">Close organizer</button>
             <div class="save-state" id="save-state" aria-live="polite"></div>
@@ -505,9 +508,11 @@
       let savedRotationSeconds = 20;
       let selectedPreviewScreen = 1;
       let draggedBrand = null;
+      let publishing = false;
 
       const list = document.getElementById("brand-list");
       const saveButton = document.getElementById("save");
+      const publishButton = document.getElementById("publish");
       const saveState = document.getElementById("save-state");
 
       async function api(path, options = {}) {
@@ -617,7 +622,9 @@
         document.getElementById("preview-brands").textContent = previewScreen.brands.join(" · ") || "No brands assigned";
 
         saveButton.textContent = state.has_capacity_errors ? "Resolve capacity to save" : "Save screen plan";
-        saveButton.disabled = !isDirty() || state.has_capacity_errors;
+        saveButton.disabled = publishing || !isDirty() || state.has_capacity_errors;
+        publishButton.textContent = publishing ? "Publishing…" : "Publish to store screen";
+        publishButton.disabled = publishing || isDirty() || state.has_capacity_errors;
       }
 
       function escapeHtml(value) {
@@ -626,6 +633,7 @@
 
       async function preview() {
         saveButton.disabled = true;
+        publishButton.disabled = true;
         state = await api("/api/preview", {
           method: "POST",
           body: JSON.stringify({ priority, assignments, screen_count: screenCount, rotation_seconds: rotationSeconds })
@@ -636,6 +644,7 @@
 
       async function autoBalance() {
         saveButton.disabled = true;
+        publishButton.disabled = true;
         state = await api("/api/auto-balance", {
           method: "POST",
           body: JSON.stringify({ priority, screen_count: screenCount, rotation_seconds: rotationSeconds })
@@ -746,6 +755,7 @@
       saveButton.addEventListener("click", async () => {
         try {
           saveButton.disabled = true;
+          publishButton.disabled = true;
           saveState.className = "save-state";
           saveState.textContent = "Saving…";
           state = await api("/api/save", {
@@ -762,6 +772,29 @@
         } catch (error) { showError(error); }
       });
 
+      publishButton.addEventListener("click", async () => {
+        const confirmed = window.confirm(
+          `Publish the saved ${screenCount}-screen cartridge menu to the store? `
+          + `Each screen will remain visible for ${rotationSeconds} seconds.`
+        );
+        if (!confirmed) return;
+        try {
+          publishing = true;
+          render();
+          saveState.className = "save-state";
+          saveState.textContent = "Publishing and waiting for the live store screen…";
+          const result = await api("/api/publish", { method: "POST", body: "{}" });
+          publishing = false;
+          render();
+          saveState.className = "save-state success";
+          saveState.textContent = `Published ${result.screen_count} screens at ${result.rotation_seconds} seconds each. Live commit: ${result.commit}.`;
+        } catch (error) {
+          publishing = false;
+          render();
+          showError(error);
+        }
+      });
+
       document.getElementById("reload").addEventListener("click", () => loadState());
       document.getElementById("close").addEventListener("click", async () => {
         try { await api("/api/stop", { method: "POST", body: "{}" }); } catch (_) {}
@@ -771,7 +804,10 @@
       function showError(error) {
         saveState.className = "save-state error";
         saveState.textContent = error.message || String(error);
-        if (state) saveButton.disabled = !isDirty() || state.has_capacity_errors;
+        if (state) {
+          saveButton.disabled = publishing || !isDirty() || state.has_capacity_errors;
+          publishButton.disabled = publishing || isDirty() || state.has_capacity_errors;
+        }
       }
 
       async function loadState() {
