@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-08T09:03:53",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-08-mcp-refresh.csv",
+  "generated_at": "2026-08-10T04:06:35",
+  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-08-10.csv",
   "menu": "vapes",
   "rows": [
     {
@@ -15,9 +15,9 @@
       "thc_display": "73%",
       "price": "$23.62",
       "short_price": "$23.62",
-      "quantity": 11.0,
+      "quantity": 8.0,
       "source_rows": [
-        54
+        130
       ],
       "detail_display": "73%"
     },
@@ -33,9 +33,9 @@
       "thc_display": "76%",
       "price": "$31.16",
       "short_price": "$31.16",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
-        5
+        94
       ],
       "detail_display": "76%"
     },
@@ -53,7 +53,7 @@
       "short_price": "$15.73",
       "quantity": 4.0,
       "source_rows": [
-        17
+        102
       ],
       "detail_display": "90%"
     },
@@ -69,9 +69,9 @@
       "thc_display": "90%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 12.0,
+      "quantity": 11.0,
       "source_rows": [
-        37
+        113
       ],
       "detail_display": "90%"
     },
@@ -87,9 +87,9 @@
       "thc_display": "89%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        7
+        99
       ],
       "detail_display": "89%"
     },
@@ -107,7 +107,7 @@
       "short_price": "$15.73",
       "quantity": 12.0,
       "source_rows": [
-        14
+        101
       ],
       "detail_display": "88%"
     },
@@ -125,7 +125,7 @@
       "short_price": "$15.73",
       "quantity": 12.0,
       "source_rows": [
-        30
+        109
       ],
       "detail_display": "87%"
     },
@@ -141,9 +141,9 @@
       "thc_display": "87%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 12.0,
+      "quantity": 11.0,
       "source_rows": [
-        4
+        93
       ],
       "detail_display": "87%"
     },
@@ -159,9 +159,9 @@
       "thc_display": "81%",
       "price": "$26.44",
       "short_price": "$26.44",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        45
+        120
       ],
       "detail_display": "81%"
     },
@@ -177,9 +177,9 @@
       "thc_display": "78%",
       "price": "$26.44",
       "short_price": "$26.44",
-      "quantity": 6.0,
+      "quantity": 4.0,
       "source_rows": [
-        47
+        122
       ],
       "detail_display": "78%"
     },
@@ -195,9 +195,9 @@
       "thc_display": "92%",
       "price": "$20.47",
       "short_price": "$20.47",
-      "quantity": 12.0,
+      "quantity": 9.0,
       "source_rows": [
-        8
+        96
       ],
       "detail_display": "92%"
     },
@@ -215,7 +215,7 @@
       "short_price": "$20.47",
       "quantity": 12.0,
       "source_rows": [
-        48
+        123
       ],
       "detail_display": "91%"
     },
@@ -233,7 +233,7 @@
       "short_price": "$30.67",
       "quantity": 5.0,
       "source_rows": [
-        38
+        116
       ],
       "detail_display": "87%"
     },
@@ -251,7 +251,7 @@
       "short_price": "$30.67",
       "quantity": 6.0,
       "source_rows": [
-        3
+        92
       ],
       "detail_display": "87%"
     },
@@ -269,7 +269,7 @@
       "short_price": "$30.67",
       "quantity": 2.0,
       "source_rows": [
-        46
+        121
       ],
       "detail_display": "87%"
     },
@@ -285,9 +285,9 @@
       "thc_display": "86%",
       "price": "$31.00",
       "short_price": "$31",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
-        49
+        127
       ],
       "detail_display": "86%"
     },
@@ -303,9 +303,9 @@
       "thc_display": "85%",
       "price": "$26.44",
       "short_price": "$26.44",
-      "quantity": 3.0,
+      "quantity": 1.0,
       "source_rows": [
-        53
+        128
       ],
       "detail_display": "85%"
     },
@@ -321,9 +321,9 @@
       "thc_display": "76%",
       "price": "$23.62",
       "short_price": "$23.62",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
-        13
+        100
       ],
       "detail_display": "76%"
     },
@@ -341,7 +341,7 @@
       "short_price": "$26.44",
       "quantity": 7.0,
       "source_rows": [
-        41
+        117
       ],
       "detail_display": "75%"
     },
@@ -359,7 +359,7 @@
       "short_price": "$32",
       "quantity": 2.0,
       "source_rows": [
-        19
+        106
       ],
       "detail_display": "21%"
     },
@@ -377,7 +377,7 @@
       "short_price": "$31.16",
       "quantity": 9.0,
       "source_rows": [
-        18
+        104
       ],
       "detail_display": "76%"
     }
