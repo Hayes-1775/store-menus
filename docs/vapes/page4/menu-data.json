@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-10T06:46:53",
-  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-08-10.csv",
+  "generated_at": "2026-08-11T05:41:01",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-11-mcp.csv",
   "menu": "vapes",
   "screen": 4,
   "rotation_seconds": 20,
@@ -15,7 +15,7 @@
     "available_height": 1886,
     "remaining_pixels": 874,
     "brand_count": 2,
-    "row_count": 32
+    "row_count": 30
   },
   "rows": [
     {
@@ -32,7 +32,7 @@
       "short_price": "$15.56",
       "quantity": 4.0,
       "source_rows": [
-        286
+        100
       ],
       "detail_display": "87%"
     },
@@ -48,9 +48,9 @@
       "thc_display": "86%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
-        264
+        4
       ],
       "detail_display": "86%"
     },
@@ -68,8 +68,8 @@
       "short_price": "$18.95",
       "quantity": 10.0,
       "source_rows": [
-        304,
-        305
+        166,
+        167
       ],
       "detail_display": "86%"
     },
@@ -87,7 +87,7 @@
       "short_price": "$15.56",
       "quantity": 5.0,
       "source_rows": [
-        272
+        32
       ],
       "detail_display": "86%"
     },
@@ -105,7 +105,7 @@
       "short_price": "$18.95",
       "quantity": 2.0,
       "source_rows": [
-        321
+        268
       ],
       "detail_display": "86%"
     },
@@ -123,7 +123,7 @@
       "short_price": "$15.56",
       "quantity": 2.0,
       "source_rows": [
-        285
+        111
       ],
       "detail_display": "84%"
     },
@@ -139,9 +139,9 @@
       "thc_display": "86%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        270
+        29
       ],
       "detail_display": "86%"
     },
@@ -159,7 +159,7 @@
       "short_price": "$20",
       "quantity": 2.0,
       "source_rows": [
-        320
+        270
       ],
       "detail_display": "86%"
     },
@@ -175,9 +175,9 @@
       "thc_display": "87%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 9.0,
+      "quantity": 5.0,
       "source_rows": [
-        282
+        89
       ],
       "detail_display": "87%"
     },
@@ -195,9 +195,9 @@
       "short_price": "$15.56",
       "quantity": 12.0,
       "source_rows": [
-        277,
-        278,
-        279
+        73,
+        74,
+        75
       ],
       "detail_display": "87%"
     },
@@ -215,8 +215,8 @@
       "short_price": "$15.56",
       "quantity": 11.0,
       "source_rows": [
-        314,
-        316
+        243,
+        245
       ],
       "detail_display": "86%"
     },
@@ -234,7 +234,7 @@
       "short_price": "$15.56",
       "quantity": 8.0,
       "source_rows": [
-        293
+        156
       ],
       "detail_display": "86%"
     },
@@ -250,10 +250,10 @@
       "thc_display": "85%",
       "price": "$18.95",
       "short_price": "$18.95",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        312,
-        313
+        239,
+        240
       ],
       "detail_display": "85%"
     },
@@ -269,10 +269,10 @@
       "thc_display": "84%",
       "price": "$18.95",
       "short_price": "$18.95",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        317,
-        318
+        251,
+        252
       ],
       "detail_display": "84%"
     },
@@ -290,7 +290,7 @@
       "short_price": "$20",
       "quantity": 8.0,
       "source_rows": [
-        292
+        153
       ],
       "detail_display": "86%"
     },
@@ -308,7 +308,7 @@
       "short_price": "$15.56",
       "quantity": 6.0,
       "source_rows": [
-        308
+        217
       ],
       "detail_display": "85%"
     },
@@ -326,25 +326,7 @@
       "short_price": "$15.56",
       "quantity": 5.0,
       "source_rows": [
-        311
-      ],
-      "detail_display": "85%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Blue Dream",
-      "display_name": "Blue Dream",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8512000000000001,
-      "thc_display": "85%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 4.0,
-      "source_rows": [
-        274
+        235
       ],
       "detail_display": "85%"
     },
@@ -362,8 +344,8 @@
       "short_price": "$15.56",
       "quantity": 2.0,
       "source_rows": [
-        266,
-        268
+        12,
+        14
       ],
       "detail_display": "85%"
     },
@@ -381,7 +363,7 @@
       "short_price": "$20",
       "quantity": 4.0,
       "source_rows": [
-        324
+        301
       ],
       "detail_display": "87%"
     },
@@ -399,7 +381,7 @@
       "short_price": "$20",
       "quantity": 6.0,
       "source_rows": [
-        289
+        134
       ],
       "detail_display": "86%"
     },
@@ -417,7 +399,7 @@
       "short_price": "$20",
       "quantity": 5.0,
       "source_rows": [
-        299
+        162
       ],
       "detail_display": "85%"
     },
@@ -435,7 +417,7 @@
       "short_price": "$15.56",
       "quantity": 8.0,
       "source_rows": [
-        944
+        103
       ],
       "detail_display": "84%"
     },
@@ -453,7 +435,7 @@
       "short_price": "$15.56",
       "quantity": 4.0,
       "source_rows": [
-        946
+        125
       ],
       "detail_display": "83%"
     },
@@ -471,7 +453,7 @@
       "short_price": "$18.95",
       "quantity": 1.0,
       "source_rows": [
-        949
+        146
       ],
       "detail_display": "81%"
     },
@@ -489,7 +471,7 @@
       "short_price": "$15.56",
       "quantity": 6.0,
       "source_rows": [
-        939
+        53
       ],
       "detail_display": "86%"
     },
@@ -507,7 +489,7 @@
       "short_price": "$15.56",
       "quantity": 3.0,
       "source_rows": [
-        941
+        86
       ],
       "detail_display": "84%"
     },
@@ -523,9 +505,9 @@
       "thc_display": "84%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        957
+        290
       ],
       "detail_display": "84%"
     },
@@ -543,25 +525,7 @@
       "short_price": "$15.56",
       "quantity": 1.0,
       "source_rows": [
-        945
-      ],
-      "detail_display": "83%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Super Sour Diesel",
-      "display_name": "Super Sour Diesel",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.831,
-      "thc_display": "83%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 1.0,
-      "source_rows": [
-        952
+        101
       ],
       "detail_display": "83%"
     },
@@ -577,10 +541,10 @@
       "thc_display": "83%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 11.0,
+      "quantity": 9.0,
       "source_rows": [
-        954,
-        955
+        281,
+        282
       ],
       "detail_display": "83%"
     },
@@ -596,9 +560,9 @@
       "thc_display": "81%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 9.0,
+      "quantity": 5.0,
       "source_rows": [
-        950
+        161
       ],
       "detail_display": "81%"
     }

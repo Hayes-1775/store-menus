@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+PYTHON="${PYTHON:-/Users/mikehayes/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3}"
+SNAPSHOT="${1:-}"
+OUTPUT="${2:-$ROOT_DIR/downloads/flowhub-inventory-$(date +%Y-%m-%d)-mcp.csv}"
+
+if [[ -z "$SNAPSHOT" ]]; then
+  echo "Usage: scripts/run-flowhub-mcp-menu /path/to/flowhub-mcp-inventory.json [output.csv]" >&2
+  exit 2
+fi
+
+cd "$ROOT_DIR"
+"$PYTHON" scripts/convert-flowhub-mcp-inventory --input "$SNAPSHOT" --output "$OUTPUT"
+scripts/run-daily-menu "$OUTPUT"

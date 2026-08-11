@@ -1,0 +1,143 @@
+#!/usr/bin/env python3
+"""Convert Flowhub MCP inventory results to the CSV contract used by menu builders."""
+
+import argparse
+import csv
+import json
+import re
+from pathlib import Path
+from typing import Any, Iterable
+
+
+HEADERS = [
+    "Category", "Room", "Quantity", "Product Type", "Product Name", "Brand",
+    "Weight", "Weight Unit of Measure", "Price", "Price Profile Name",
+    "Strain Species", "Total % THC", "% THC", "Regulatory ID", "Med or Rec",
+    "Batch Date", "Product Id", "Variant Id", "SKU",
+]
+STRAINS = {"I": "Indica", "H": "Hybrid", "S": "Sativa"}
+
+
+def inventory_records(payload: Any) -> Iterable[dict[str, Any]]:
+    if isinstance(payload, list):
+        for item in payload:
+            yield from inventory_records(item)
+        return
+    if not isinstance(payload, dict):
+        return
+    if isinstance(payload.get("data", {}).get("inventory"), list):
+        yield from payload["data"]["inventory"]
+        return
+    if isinstance(payload.get("inventory"), list):
+        yield from payload["inventory"]
+        return
+    if isinstance(payload.get("structuredContent"), dict):
+        yield from inventory_records(payload["structuredContent"])
+
+
+def product_records(payload: Any) -> Iterable[dict[str, Any]]:
+    if isinstance(payload, list):
+        for item in payload:
+            yield from product_records(item)
+        return
+    if not isinstance(payload, dict):
+        return
+    products = payload.get("data", {}).get("products")
+    if isinstance(products, list):
+        yield from products
+        return
+    product = payload.get("data", {}).get("product")
+    if isinstance(product, dict):
+        yield product
+        return
+    if isinstance(payload.get("products"), list):
+        yield from payload["products"]
+        return
+    if isinstance(payload.get("structuredContent"), dict):
+        yield from product_records(payload["structuredContent"])
+
+
+def field_map(fields: Any) -> dict[str, Any]:
+    return {
+        str(field.get("name") or field.get("fieldId") or "").strip().lower(): field.get("value", "")
+        for field in fields or []
+    }
+
+
+def strain_species(product_name: Any) -> str:
+    match = re.search(r"\|\s*([IHS])\s*\|", str(product_name or ""), re.I)
+    return STRAINS.get(match.group(1).upper(), "Hybrid") if match else "Hybrid"
+
+
+def money(cents: Any) -> str:
+    if cents in (None, ""):
+        return ""
+    return f"${float(cents) / 100:.2f}"
+
+
+def convert(payload: Any) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    products = {item.get("id"): item for item in product_records(payload) if item.get("id")}
+    for item in inventory_records(payload):
+        product = products.get(item.get("productId"), {})
+        fields = field_map(item.get("fields"))
+        product_fields = field_map(product.get("fields"))
+        variants = {variant.get("id"): variant for variant in product.get("variants") or []}
+        variant_fields = field_map(variants.get(item.get("variantId"), {}).get("fields"))
+        total_thc = fields.get(
+            "total % thc",
+            fields.get("% thc", product_fields.get("total % thc", product_fields.get("% thc", ""))),
+        )
+        price = money((item.get("pricing") or {}).get("postTaxPrice"))
+        quantities = item.get("quantities") or [{"quantity": 0, "room": {"name": ""}}]
+        for quantity in quantities:
+            weight = item.get("weightVolume") or variant_fields.get("weight / volume", "")
+            strain = variant_fields.get("strain species") or strain_species(item.get("productName"))
+            if str(strain).strip().lower() == "50/50":
+                strain = "Hybrid"
+            rows.append({
+                "Category": item.get("categoryName", ""),
+                "Room": (quantity.get("room") or {}).get("name", ""),
+                "Quantity": quantity.get("quantity", 0),
+                "Product Type": item.get("productType", ""),
+                "Product Name": item.get("productName", ""),
+                "Brand": item.get("productBrand", ""),
+                "Weight": weight,
+                "Weight Unit of Measure": "Grams" if weight not in (None, "") else "",
+                "Price": price,
+                "Price Profile Name": item.get("priceProfileName", ""),
+                "Strain Species": strain,
+                "Total % THC": total_thc,
+                "% THC": fields.get("% thc", product_fields.get("% thc", total_thc)),
+                "Regulatory ID": item.get("regulatoryId", ""),
+                "Med or Rec": item.get("medOrRec", ""),
+                "Batch Date": fields.get("batch date", ""),
+                "Product Id": item.get("productId", ""),
+                "Variant Id": item.get("variantId", ""),
+                "SKU": item.get("sku", ""),
+            })
+    rows.sort(key=lambda row: (str(row["Category"]), str(row["Product Name"]), str(row["Room"])))
+    return rows
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Convert Flowhub MCP inventory JSON to menu inventory CSV.")
+    parser.add_argument("--input", required=True, help="JSON file containing one or more Flowhub inventory MCP results.")
+    parser.add_argument("--output", required=True, help="Destination CSV path.")
+    args = parser.parse_args()
+
+    source = Path(args.input)
+    destination = Path(args.output)
+    rows = convert(json.loads(source.read_text(encoding="utf-8")))
+    if not rows:
+        raise SystemExit("Flowhub MCP snapshot contained no inventory records.")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    with destination.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=HEADERS)
+        writer.writeheader()
+        writer.writerows(rows)
+    print(f"Converted {len(rows)} Flowhub MCP room-level inventory rows to {destination}")
+
+
+if __name__ == "__main__":
+    main()
