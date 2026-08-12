@@ -51,6 +51,9 @@
       "Freshy": 4,
       "Puck Fortland": 4
     },
-    "rotation_seconds": 20
+    "rotation_seconds": 20,
+    "enabled_screens": [
+      1
+    ]
   }
 }

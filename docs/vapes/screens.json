@@ -1,7 +1,10 @@
 {
-  "generated_at": "2026-08-12T09:59:18",
+  "generated_at": "2026-08-12T10:04:55",
   "rotation_seconds": 20,
   "configured_screen_count": 4,
+  "enabled_screens": [
+    1
+  ],
   "screens": [
     {
       "number": 1,
@@ -13,39 +16,6 @@
       "row_count": 50,
       "data": "menu-data.json",
       "image": "latest.jpg"
-    },
-    {
-      "number": 2,
-      "brands": [
-        "Oregrown",
-        "Moonwalk"
-      ],
-      "row_count": 14,
-      "data": "page2/menu-data.json",
-      "image": "page2/latest.jpg"
-    },
-    {
-      "number": 3,
-      "brands": [
-        "Higher Cultures",
-        "Entourage Cannabis",
-        "Grown Rogue",
-        "Mule"
-      ],
-      "row_count": 30,
-      "data": "page3/menu-data.json",
-      "image": "page3/latest.jpg"
-    },
-    {
-      "number": 4,
-      "brands": [
-        "National",
-        "Freshy",
-        "Puck Fortland"
-      ],
-      "row_count": 39,
-      "data": "page4/menu-data.json",
-      "image": "page4/latest.jpg"
     }
   ]
 }

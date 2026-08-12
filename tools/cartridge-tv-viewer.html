@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="60">
     <meta name="theme-color" content="#000000">
     <title>Miracle Greens Cartridge Menu</title>
     <style>
@@ -87,7 +88,7 @@
           return response.json();
         })
         .then((payload) => {
-          screens = (payload.screens || []).filter((screen) => screen.row_count > 0 && screen.preview_url);
+          screens = (payload.screens || []).filter((screen) => screen.enabled && screen.row_count > 0 && screen.preview_url);
           if (!screens.length) throw new Error("No cartridge screens have products assigned.");
           delayMilliseconds = Math.max(5000, Number(payload.rotation_seconds || 20) * 1000);
           screens.slice(1).forEach((screen) => { const image = new Image(); image.src = screen.preview_url; });

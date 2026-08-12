@@ -17,10 +17,15 @@ def main() -> None:
     vape_config = config.get("vape_menu", {})
     screen_count = int(vape_config.get("screen_count", 1))
     rotation_seconds = int(vape_config.get("rotation_seconds", 20))
+    enabled_screens = sorted(
+        {int(number) for number in vape_config.get("enabled_screens", range(1, screen_count + 1))}
+    )
     if screen_count < 1:
         raise SystemExit("vape_menu.screen_count must be at least 1")
     if not 5 <= rotation_seconds <= 300:
         raise SystemExit("vape_menu.rotation_seconds must be between 5 and 300")
+    if not enabled_screens or any(number < 1 or number > screen_count for number in enabled_screens):
+        raise SystemExit("vape_menu.enabled_screens must contain at least one configured screen")
 
     docs_dir = Path(args.docs_dir)
     screens: List[Dict[str, Any]] = []
@@ -33,7 +38,7 @@ def main() -> None:
             raise SystemExit(f"Screen {number} output is missing; regenerate the cartridge menus.")
         payload = json.loads(data_path.read_text(encoding="utf-8"))
         rows = payload.get("rows", [])
-        if not rows:
+        if not rows or number not in enabled_screens:
             continue
         generated_at = generated_at or payload.get("generated_at")
         prefix = "" if number == 1 else f"page{number}/"
@@ -53,6 +58,7 @@ def main() -> None:
         "generated_at": generated_at,
         "rotation_seconds": rotation_seconds,
         "configured_screen_count": screen_count,
+        "enabled_screens": enabled_screens,
         "screens": screens,
     }
     output = docs_dir / "screens.json"

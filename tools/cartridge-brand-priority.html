@@ -277,9 +277,23 @@
       .screen-card:hover { transform: translateY(-1px); }
       .screen-card.selected { border-color: var(--forest); }
       .screen-card.over-capacity { border-color: #b94b3e; background: #fff0ed; }
+      .screen-card.off { background: #ecefec; opacity: 0.72; }
       .screen-card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+      .screen-card-actions { display: flex; align-items: center; gap: 10px; }
       .screen-card strong { font-size: 16px; }
       .screen-card small { color: var(--muted); }
+      .visibility-toggle {
+        min-width: 48px;
+        height: 28px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: #6d7773;
+        background: #fff;
+        cursor: pointer;
+        font-size: 11px;
+        font-weight: 800;
+      }
+      .visibility-toggle.on { border-color: var(--forest); color: #fff; background: var(--forest); }
       .capacity { margin-top: 7px; color: #267252; font-size: 11px; font-weight: 800; }
       .over-capacity .capacity { color: #a43a30; }
       .screen-brands { margin-top: 10px; font-size: 14px; line-height: 1.5; }
@@ -424,7 +438,7 @@
     <main class="shell">
       <p class="eyebrow">Miracle Greens · Visual Menu</p>
       <h1>Cartridge Brand Priority</h1>
-      <p class="lede">Rank the cartridge brands, choose the rotating screen for each one, set how long each screen stays visible, and add or remove screens as inventory changes. The organizer checks every screen for readable spacing before you save.</p>
+      <p class="lede">Rank the cartridge brands, choose their screens, switch individual screens on or off, and set how long each active screen stays visible. Turning a screen off preserves its brands for later.</p>
       <div class="source" id="source">Loading current inventory…</div>
 
       <div class="workspace">
@@ -506,6 +520,8 @@
       let savedScreenCount = 1;
       let rotationSeconds = 20;
       let savedRotationSeconds = 20;
+      let enabledScreens = new Set([1]);
+      let savedEnabledScreens = new Set([1]);
       let selectedPreviewScreen = 1;
       let draggedBrand = null;
       let publishing = false;
@@ -539,11 +555,16 @@
         return priority.every((brand) => Number(a[brand]) === Number(b[brand]));
       }
 
+      function sameEnabledScreens(a, b) {
+        return a.size === b.size && [...a].every((number) => b.has(number));
+      }
+
       function isDirty() {
         return !sameOrder(priority, savedPriority)
           || !sameAssignments(assignments, savedAssignments)
           || screenCount !== savedScreenCount
-          || rotationSeconds !== savedRotationSeconds;
+          || rotationSeconds !== savedRotationSeconds
+          || !sameEnabledScreens(enabledScreens, savedEnabledScreens);
       }
 
       function formatUnits(value) {
@@ -581,10 +602,13 @@
         }).join("");
 
         document.getElementById("screens").innerHTML = state.screens.map((screen) => `
-          <div class="screen-card ${screen.number === selectedPreviewScreen ? "selected" : ""} ${screen.fits ? "" : "over-capacity"}" data-preview-screen="${screen.number}" role="button" tabindex="0" aria-label="Preview Screen ${screen.number}">
+          <div class="screen-card ${screen.number === selectedPreviewScreen ? "selected" : ""} ${screen.fits ? "" : "over-capacity"} ${screen.enabled ? "" : "off"}" data-preview-screen="${screen.number}" role="button" tabindex="0" aria-label="Preview Screen ${screen.number}">
             <div class="screen-card-top">
               <strong>Screen ${screen.number}</strong>
-              <small>${screen.row_count} products</small>
+              <div class="screen-card-actions">
+                <small>${screen.row_count} products</small>
+                <button class="visibility-toggle ${screen.enabled ? "on" : ""}" data-toggle-screen="${screen.number}" role="switch" aria-checked="${screen.enabled}" aria-label="${screen.enabled ? "Turn off" : "Turn on"} Screen ${screen.number}">${screen.enabled ? "On" : "Off"}</button>
+              </div>
             </div>
             <div class="capacity">${screen.fits ? `${screen.remaining_pixels}px breathing room` : `Over readable space by ${screen.over_by_pixels}px`}</div>
             <div class="screen-brands ${screen.brands.length ? "" : "empty"}">
@@ -594,7 +618,8 @@
         `).join("");
 
         const notice = document.getElementById("notice");
-        const crowded = state.screens.filter((screen) => !screen.fits);
+        const crowded = state.screens.filter((screen) => screen.enabled && !screen.fits);
+        const activeCount = enabledScreens.size;
         if (crowded.length) {
           notice.hidden = false;
           notice.className = "notice";
@@ -602,7 +627,7 @@
         } else {
           notice.hidden = false;
           notice.className = "notice good";
-          notice.textContent = `All ${screenCount} ${screenCount === 1 ? "screen fits" : "screens fit"} within the readable area.`;
+          notice.textContent = `${activeCount} of ${screenCount} ${screenCount === 1 ? "screen is" : "screens are"} on for the TV. All active screens fit within the readable area.`;
         }
 
         const previewScreen = state.screens.find((screen) => screen.number === selectedPreviewScreen) || state.screens[0];
@@ -618,7 +643,7 @@
         previewOpen.href = previewScreen.preview_url || "#";
         previewOpen.hidden = !previewScreen.preview_url;
         document.getElementById("preview-title").textContent = `Screen ${previewScreen.number} preview`;
-        document.getElementById("preview-count").textContent = `${previewScreen.row_count} products on Screen ${previewScreen.number}`;
+        document.getElementById("preview-count").textContent = `${previewScreen.row_count} products on Screen ${previewScreen.number} · ${previewScreen.enabled ? "On" : "Off"}`;
         document.getElementById("preview-brands").textContent = previewScreen.brands.join(" · ") || "No brands assigned";
 
         saveButton.textContent = state.has_capacity_errors ? "Resolve capacity to save" : "Save screen plan";
@@ -636,9 +661,10 @@
         publishButton.disabled = true;
         state = await api("/api/preview", {
           method: "POST",
-          body: JSON.stringify({ priority, assignments, screen_count: screenCount, rotation_seconds: rotationSeconds })
+          body: JSON.stringify({ priority, assignments, screen_count: screenCount, rotation_seconds: rotationSeconds, enabled_screens: [...enabledScreens].sort((a, b) => a - b) })
         });
         assignments = Object.fromEntries(state.brands.map((brand) => [brand.name, brand.screen]));
+        enabledScreens = new Set(state.enabled_screens);
         render();
       }
 
@@ -647,9 +673,10 @@
         publishButton.disabled = true;
         state = await api("/api/auto-balance", {
           method: "POST",
-          body: JSON.stringify({ priority, screen_count: screenCount, rotation_seconds: rotationSeconds })
+          body: JSON.stringify({ priority, screen_count: screenCount, rotation_seconds: rotationSeconds, enabled_screens: [...enabledScreens].sort((a, b) => a - b) })
         });
         assignments = Object.fromEntries(state.brands.map((brand) => [brand.name, brand.screen]));
+        enabledScreens = new Set(state.enabled_screens);
         render();
       }
 
@@ -690,6 +717,23 @@
       });
 
       document.getElementById("screens").addEventListener("click", (event) => {
+        const toggle = event.target.closest("[data-toggle-screen]");
+        if (toggle) {
+          event.stopPropagation();
+          const number = Number(toggle.dataset.toggleScreen);
+          if (enabledScreens.has(number)) {
+            if (enabledScreens.size === 1) {
+              saveState.className = "save-state error";
+              saveState.textContent = "At least one screen must remain on for the TV display.";
+              return;
+            }
+            enabledScreens.delete(number);
+          } else {
+            enabledScreens.add(number);
+          }
+          preview().catch(showError);
+          return;
+        }
         const card = event.target.closest("[data-preview-screen]");
         if (!card) return;
         selectedPreviewScreen = Number(card.dataset.previewScreen);
@@ -697,6 +741,7 @@
       });
 
       document.getElementById("screens").addEventListener("keydown", (event) => {
+        if (event.target.closest("[data-toggle-screen]")) return;
         if (event.key !== "Enter" && event.key !== " ") return;
         const card = event.target.closest("[data-preview-screen]");
         if (!card) return;
@@ -708,6 +753,7 @@
       document.getElementById("add-screen").addEventListener("click", () => {
         if (screenCount >= state.max_screens) return;
         screenCount += 1;
+        enabledScreens.add(screenCount);
         selectedPreviewScreen = screenCount;
         preview().catch(showError);
       });
@@ -716,6 +762,8 @@
         if (screenCount <= state.min_screens) return;
         const removed = screenCount;
         screenCount -= 1;
+        enabledScreens.delete(removed);
+        if (!enabledScreens.size) enabledScreens.add(1);
         priority.forEach((brand) => {
           if (Number(assignments[brand]) === removed) assignments[brand] = screenCount;
         });
@@ -760,21 +808,22 @@
           saveState.textContent = "Saving…";
           state = await api("/api/save", {
             method: "POST",
-            body: JSON.stringify({ priority, assignments, screen_count: screenCount, rotation_seconds: rotationSeconds })
+            body: JSON.stringify({ priority, assignments, screen_count: screenCount, rotation_seconds: rotationSeconds, enabled_screens: [...enabledScreens].sort((a, b) => a - b) })
           });
           savedPriority = [...priority];
           savedAssignments = { ...assignments };
           savedScreenCount = screenCount;
           savedRotationSeconds = rotationSeconds;
+          savedEnabledScreens = new Set(enabledScreens);
           saveState.className = "save-state success";
-          saveState.textContent = `Saved. The menu will advance every ${rotationSeconds} seconds across ${screenCount} ${screenCount === 1 ? "screen" : "screens"}.`;
+          saveState.textContent = `Saved. ${enabledScreens.size} of ${screenCount} screens will appear on the TV at ${rotationSeconds} seconds each.`;
           render();
         } catch (error) { showError(error); }
       });
 
       publishButton.addEventListener("click", async () => {
         const confirmed = window.confirm(
-          `Publish the saved ${screenCount}-screen cartridge menu to the store? `
+          `Publish ${enabledScreens.size} active cartridge ${enabledScreens.size === 1 ? "screen" : "screens"} to the store? `
           + `Each screen will remain visible for ${rotationSeconds} seconds.`
         );
         if (!confirmed) return;
@@ -787,7 +836,7 @@
           publishing = false;
           render();
           saveState.className = "save-state success";
-          saveState.textContent = `Published ${result.screen_count} screens at ${result.rotation_seconds} seconds each. Live commit: ${result.commit}.`;
+          saveState.textContent = `Published ${result.enabled_screens.length} active ${result.enabled_screens.length === 1 ? "screen" : "screens"} at ${result.rotation_seconds} seconds each. Live commit: ${result.commit}.`;
         } catch (error) {
           publishing = false;
           render();
@@ -821,6 +870,8 @@
           screenCount = state.screen_count;
           rotationSeconds = state.rotation_seconds;
           savedRotationSeconds = rotationSeconds;
+          enabledScreens = new Set(state.enabled_screens);
+          savedEnabledScreens = new Set(enabledScreens);
           savedScreenCount = state.requires_save ? 0 : screenCount;
           selectedPreviewScreen = Math.min(selectedPreviewScreen, screenCount);
           if (state.requires_save) {
