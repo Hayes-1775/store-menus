@@ -420,7 +420,7 @@
         return `${brand} - ${sizeLabel} ${formatLabel}${priceLabel}`;
       }
 
-      function strainGroupHtml(title, rows) {
+      function strainGroupHtml(title, rows, continued = false) {
         if (!rows.length) return "";
         const colors = {
           Indica: "rgb(120, 140, 200)",
@@ -584,7 +584,7 @@
         `;
       }
 
-      function strainGroupHtml(title, rows) {
+      function strainGroupHtml(title, rows, continued = false) {
         if (!rows.length) return "";
         const colors = {
           Indica: "rgb(151, 164, 211)",
@@ -601,7 +601,7 @@
           .concat(Object.keys(byFormat).filter((format) => !["510", "AIO", "Other"].includes(format)).sort());
         return `
           <section class="strain-group strain-${title.toLowerCase()}" style="--strain-color: ${colors[title] || "rgb(220, 220, 220)"}">
-            <div class="strain-title"><span>${escapeHtml(title)}</span><small>THC</small></div>
+            <div class="strain-title"><span>${escapeHtml(title)}</span><small>${continued ? "CONT. · THC" : "THC"}</small></div>
             ${formatOrder.map((format) => `
               <div class="format-block">
                 <div class="format-label">${escapeHtml(formatLabel(format))}</div>
@@ -610,6 +610,75 @@
             `).join("")}
           </section>
         `;
+      }
+
+      function panelWeight(rows, rowHeight) {
+        const formats = new Set(rows.map((row) => row.format || "Other"));
+        return 50 + formats.size * 22 + rows.length * rowHeight;
+      }
+
+      function columnWeight(panels, rowHeight) {
+        return panels.reduce((total, panel) => total + panelWeight(panel.rows, rowHeight), 0)
+          + Math.max(0, panels.length - 1) * 8;
+      }
+
+      function adaptiveStrainColumns(rows) {
+        const rowHeight = Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--row-height")) || 44;
+        const order = ["Indica", "Hybrid", "Sativa", "Other"];
+        const byStrain = rows.reduce((groups, row) => {
+          const strain = row.strain || "Other";
+          (groups[strain] ||= []).push(row);
+          return groups;
+        }, {});
+        const strains = order.filter((strain) => byStrain[strain]?.length)
+          .concat(Object.keys(byStrain).filter((strain) => !order.includes(strain)).sort());
+        const columns = [[], [], []];
+        const fixed = { Indica: 0, Hybrid: 1, Sativa: 2 };
+        strains.forEach((strain) => {
+          let target = fixed[strain];
+          if (target === undefined || columns[target].length) {
+            target = [0, 1, 2].reduce((best, index) =>
+              columnWeight(columns[index], rowHeight) < columnWeight(columns[best], rowHeight) ? index : best, 0);
+          }
+          columns[target].push({ strain, rows: byStrain[strain], continued: false });
+        });
+        if (!strains.length) return columns;
+        const dominant = strains.reduce((best, strain) =>
+          byStrain[strain].length > byStrain[best].length ? strain : best, strains[0]);
+        const dominantRows = byStrain[dominant];
+        if (dominantRows.length < 8 || dominantRows.length / rows.length < 0.60) return columns;
+
+        const score = (candidate) => {
+          const heights = candidate.map((column) => columnWeight(column, rowHeight));
+          return [Math.max(...heights), Math.max(...heights) - Math.min(...heights)];
+        };
+        let bestColumns = columns;
+        let bestScore = score(columns);
+        const minority = strains.filter((strain) => strain !== dominant);
+        for (let firstEnd = 1; firstEnd < dominantRows.length - 1; firstEnd += 1) {
+          for (let secondEnd = firstEnd + 1; secondEnd < dominantRows.length; secondEnd += 1) {
+            const chunks = [
+              dominantRows.slice(0, firstEnd),
+              dominantRows.slice(firstEnd, secondEnd),
+              dominantRows.slice(secondEnd)
+            ];
+            const candidate = chunks.map((chunk, index) => [
+              { strain: dominant, rows: chunk, continued: index > 0 }
+            ]);
+            minority.forEach((strain) => {
+              const target = fixed[strain] ?? [0, 1, 2].reduce((best, index) =>
+                columnWeight(candidate[index], rowHeight) < columnWeight(candidate[best], rowHeight) ? index : best, 0);
+              candidate[target].push({ strain, rows: byStrain[strain], continued: false });
+            });
+            const candidateScore = score(candidate);
+            if (candidateScore[0] < bestScore[0]
+              || (candidateScore[0] === bestScore[0] && candidateScore[1] < bestScore[1])) {
+              bestColumns = candidate;
+              bestScore = candidateScore;
+            }
+          }
+        }
+        return bestColumns;
       }
 
       function processLabel(rows) {
@@ -627,16 +696,13 @@
       }
 
       function strainIslandsHtml(rows) {
-        const byStrain = rows.reduce((acc, row) => {
-          const strain = row.strain || "Other";
-          (acc[strain] ||= []).push(row);
-          return acc;
-        }, {});
         return `
           <div class="islands">
-            ${strainGroupHtml("Indica", byStrain.Indica || [])}
-            ${strainGroupHtml("Hybrid", byStrain.Hybrid || [])}
-            ${strainGroupHtml("Sativa", byStrain.Sativa || [])}
+            ${adaptiveStrainColumns(rows).map((column) => `
+              <div class="island-column">
+                ${column.map((panel) => strainGroupHtml(panel.strain, panel.rows, panel.continued)).join("")}
+              </div>
+            `).join("")}
           </div>
         `;
       }

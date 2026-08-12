@@ -12,6 +12,8 @@ MIN_ROW_HEIGHT = 34
 MAX_ROW_HEIGHT = 44
 PROCESS_ORDER = ["Distillate", "Cured Resin", "Live Resin", "DLR", "Live Rosin", "Rosin", "Rosin/CR", "Other"]
 FORMAT_ORDER = ["510", "AIO", "Other"]
+STRAIN_ORDER = ["Indica", "Hybrid", "Sativa", "Other"]
+PANEL_STACK_GAP = 8
 
 
 def clamp(value: int, minimum: int, maximum: int) -> int:
@@ -48,14 +50,91 @@ def _species_panel_height(rows: Sequence[Dict[str, Any]], row_height: int) -> in
     return base_height + sum(22 + len(by_format[format_name]) * row_height for format_name in ordered_formats)
 
 
+def _column_height(panels: Sequence[Dict[str, Any]], row_height: int) -> int:
+    if not panels:
+        return 0
+    return sum(_species_panel_height(panel["rows"], row_height) for panel in panels) + (
+        len(panels) - 1
+    ) * PANEL_STACK_GAP
+
+
+def adaptive_strain_columns(
+    rows: Sequence[Dict[str, Any]], row_height: int, column_count: int = 3
+) -> List[List[Dict[str, Any]]]:
+    """Balance a dominant species across columns without losing species labels."""
+    by_strain: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
+    for row in rows:
+        by_strain[str(row.get("strain") or "Other")].append(row)
+
+    present = set(by_strain)
+    ordered_strains = [strain for strain in STRAIN_ORDER if strain in present]
+    ordered_strains.extend(sorted(present - set(ordered_strains), key=str.casefold))
+    columns: List[List[Dict[str, Any]]] = [[] for _ in range(column_count)]
+    fixed_positions = {"Indica": 0, "Hybrid": 1, "Sativa": 2}
+    for strain in ordered_strains:
+        target = fixed_positions.get(strain)
+        if target is None or target >= column_count or columns[target]:
+            target = min(range(column_count), key=lambda index: _column_height(columns[index], row_height))
+        columns[target].append({"strain": strain, "rows": by_strain[strain], "continued": False})
+
+    if not ordered_strains:
+        return columns
+    dominant = max(ordered_strains, key=lambda strain: len(by_strain[strain]))
+    dominant_rows = by_strain[dominant]
+    total_rows = len(rows)
+    # Keep the conventional species columns unless the imbalance is visually meaningful.
+    if (
+        len(dominant_rows) < 8
+        or len(dominant_rows) / max(total_rows, 1) < 0.60
+        or column_count != 3
+    ):
+        return columns
+
+    minority = [strain for strain in ordered_strains if strain != dominant]
+    best_columns = columns
+    best_score = (
+        max((_column_height(column, row_height) for column in columns), default=0),
+        max((_column_height(column, row_height) for column in columns), default=0)
+        - min((_column_height(column, row_height) for column in columns), default=0),
+    )
+    count = len(dominant_rows)
+    for first_end in range(1, count - 1):
+        for second_end in range(first_end + 1, count):
+            chunks = [
+                dominant_rows[:first_end],
+                dominant_rows[first_end:second_end],
+                dominant_rows[second_end:],
+            ]
+            candidate: List[List[Dict[str, Any]]] = [
+                [{"strain": dominant, "rows": chunk, "continued": index > 0}]
+                for index, chunk in enumerate(chunks)
+            ]
+            for strain in minority:
+                target = fixed_positions.get(strain)
+                if target is None or target >= column_count:
+                    target = min(
+                        range(column_count),
+                        key=lambda index: _column_height(candidate[index], row_height),
+                    )
+                candidate[target].append(
+                    {"strain": strain, "rows": by_strain[strain], "continued": False}
+                )
+            heights = [_column_height(column, row_height) for column in candidate]
+            score = (max(heights), max(heights) - min(heights))
+            if score < best_score:
+                best_score = score
+                best_columns = candidate
+    return best_columns
+
+
 def brand_body_height(rows: Sequence[Dict[str, Any]], row_height: int) -> int:
     height = 0
     for group in content_groups(rows):
-        by_strain: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
-        for row in group["rows"]:
-            by_strain[str(row.get("strain") or "Other")].append(row)
         panel_height = max(
-            (_species_panel_height(strain_rows, row_height) for strain_rows in by_strain.values()),
+            (
+                _column_height(column, row_height)
+                for column in adaptive_strain_columns(group["rows"], row_height)
+            ),
             default=0,
         )
         height += 30 + panel_height + 10

@@ -139,9 +139,12 @@ body,
   column-gap: 18px;
 }
 
-.strain-indica { grid-column: 1; }
-.strain-hybrid { grid-column: 2; }
-.strain-sativa { grid-column: 3; }
+.island-column {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+}
 
 .strain-group {
   padding: 10px 12px 12px;

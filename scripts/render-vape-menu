@@ -9,7 +9,13 @@ from typing import Dict, List
 
 from PIL import Image, ImageDraw, ImageFont
 
-from vape_menu_layout import best_layout, brand_body_height, content_groups
+from vape_menu_layout import (
+    PANEL_STACK_GAP,
+    adaptive_strain_columns,
+    best_layout,
+    brand_body_height,
+    content_groups,
+)
 
 
 WIDTH = 1080
@@ -256,12 +262,12 @@ def draw_menu(rows: List[Dict], output: Path, width: int, height: int) -> None:
 
         island_gap = int(18 * scale_x)
         island_w = int((1004 * scale_x - island_gap * 2) / 3)
-        indica_x = left
-        hybrid_x = left + island_w + island_gap
-        sativa_x = left + (island_w + island_gap) * 2
+        column_x = [left + (island_w + island_gap) * index for index in range(3)]
         name_w = int(island_w - 78 * scale_x)
 
-        def draw_group(title: str, group_rows: List[Dict], x: int, start_y: int) -> int:
+        def draw_group(
+            title: str, group_rows: List[Dict], x: int, start_y: int, continued: bool = False
+        ) -> int:
             panel_pad_x = int(12 * scale_x)
             panel_pad_top = int(10 * scale_y)
             panel_pad_bottom = int(12 * scale_y)
@@ -280,7 +286,7 @@ def draw_menu(rows: List[Dict], output: Path, width: int, height: int) -> None:
             local_y = start_y + panel_pad_top
             text_x = x + panel_pad_x
             draw.text((text_x, local_y), title, fill=color, font=strain_title_font)
-            thc_label = "THC"
+            thc_label = "CONT. · THC" if continued else "THC"
             draw.text(
                 (x + island_w - panel_pad_x - text_width(draw, thc_label, thc_label_font), local_y + int(3 * scale_y)),
                 thc_label,
@@ -315,11 +321,22 @@ def draw_menu(rows: List[Dict], output: Path, width: int, height: int) -> None:
             return start_y + panel_h
 
         def draw_islands(group_rows: List[Dict], start_y: int) -> int:
-            strains = strain_groups(group_rows)
-            indica_y = draw_group("Indica", strains.get("Indica", []), indica_x, start_y) if strains.get("Indica") else start_y
-            hybrid_y = draw_group("Hybrid", strains.get("Hybrid", []), hybrid_x, start_y) if strains.get("Hybrid") else start_y
-            sativa_y = draw_group("Sativa", strains.get("Sativa", []), sativa_x, start_y) if strains.get("Sativa") else start_y
-            return max(indica_y, hybrid_y, sativa_y)
+            columns = adaptive_strain_columns(group_rows, layout["row_height"])
+            column_ends = []
+            for index, panels in enumerate(columns):
+                column_y = start_y
+                for panel_index, panel in enumerate(panels):
+                    if panel_index:
+                        column_y += int(PANEL_STACK_GAP * scale_y)
+                    column_y = draw_group(
+                        panel["strain"],
+                        panel["rows"],
+                        column_x[index],
+                        column_y,
+                        panel["continued"],
+                    )
+                column_ends.append(column_y)
+            return max(column_ends, default=start_y)
 
         for content_group in content_groups(group):
             process = content_group["process"]
