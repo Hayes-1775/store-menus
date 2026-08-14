@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-12T10:23:52",
-  "inventory_source": "/Users/mikehayes/Downloads/Inventory Miracle Greens Bend 2026-08-10.csv",
+  "generated_at": "2026-08-14T05:50:22",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-14-mcp.csv",
   "menu": "vapes",
   "screen": 4,
   "rotation_seconds": 20,
@@ -12,11 +12,11 @@
   "display": {
     "fits": true,
     "row_height": 44,
-    "required_height": 1339,
+    "required_height": 1427,
     "available_height": 1886,
-    "remaining_pixels": 547,
+    "remaining_pixels": 459,
     "brand_count": 3,
-    "row_count": 39
+    "row_count": 43
   },
   "rows": [
     {
@@ -31,9 +31,10 @@
       "thc_display": "89%",
       "price": "$17.78",
       "short_price": "$17.78",
-      "quantity": 1.0,
+      "quantity": 11.0,
       "source_rows": [
-        772
+        126,
+        127
       ],
       "detail_display": "89%"
     },
@@ -51,8 +52,8 @@
       "short_price": "$17.78",
       "quantity": 5.0,
       "source_rows": [
-        770,
-        771
+        68,
+        69
       ],
       "detail_display": "89%"
     },
@@ -70,10 +71,28 @@
       "short_price": "$17.99",
       "quantity": 4.0,
       "source_rows": [
-        775,
-        776
+        201,
+        202
       ],
       "detail_display": "85%"
+    },
+    {
+      "brand": "National",
+      "product_name": "Cherry Cola Cart",
+      "display_name": "Cherry Cola Cart",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.8295,
+      "thc_display": "83%",
+      "price": "$17.78",
+      "short_price": "$17.78",
+      "quantity": 10.0,
+      "source_rows": [
+        57
+      ],
+      "detail_display": "83%"
     },
     {
       "brand": "National",
@@ -87,11 +106,11 @@
       "thc_display": "88%",
       "price": "$17.78",
       "short_price": "$17.78",
-      "quantity": 14.0,
+      "quantity": 13.0,
       "source_rows": [
-        787,
-        788,
-        789
+        323,
+        324,
+        325
       ],
       "detail_display": "88%"
     },
@@ -107,9 +126,10 @@
       "thc_display": "88%",
       "price": "$17.99",
       "short_price": "$17.99",
-      "quantity": 8.0,
+      "quantity": 12.0,
       "source_rows": [
-        780
+        232,
+        233
       ],
       "detail_display": "88%"
     },
@@ -127,9 +147,9 @@
       "short_price": "$17.99",
       "quantity": 8.0,
       "source_rows": [
-        782,
-        783,
-        784
+        302,
+        303,
+        304
       ],
       "detail_display": "88%"
     },
@@ -147,9 +167,27 @@
       "short_price": "$17.78",
       "quantity": 9.0,
       "source_rows": [
-        777
+        213
       ],
       "detail_display": "86%"
+    },
+    {
+      "brand": "Freshy",
+      "product_name": "Mango Tango",
+      "display_name": "Mango Tango",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8697,
+      "thc_display": "87%",
+      "price": "$15.56",
+      "short_price": "$15.56",
+      "quantity": 10.0,
+      "source_rows": [
+        169
+      ],
+      "detail_display": "87%"
     },
     {
       "brand": "Freshy",
@@ -165,7 +203,7 @@
       "short_price": "$15.56",
       "quantity": 4.0,
       "source_rows": [
-        286
+        108
       ],
       "detail_display": "87%"
     },
@@ -181,9 +219,10 @@
       "thc_display": "86%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 2.0,
+      "quantity": 9.0,
       "source_rows": [
-        264
+        4,
+        5
       ],
       "detail_display": "86%"
     },
@@ -199,10 +238,10 @@
       "thc_display": "86%",
       "price": "$18.95",
       "short_price": "$18.95",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
-        304,
-        305
+        175,
+        176
       ],
       "detail_display": "86%"
     },
@@ -218,9 +257,9 @@
       "thc_display": "86%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        272
+        41
       ],
       "detail_display": "86%"
     },
@@ -238,7 +277,7 @@
       "short_price": "$18.95",
       "quantity": 2.0,
       "source_rows": [
-        321
+        280
       ],
       "detail_display": "86%"
     },
@@ -254,9 +293,10 @@
       "thc_display": "84%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 2.0,
+      "quantity": 11.0,
       "source_rows": [
-        285
+        118,
+        119
       ],
       "detail_display": "84%"
     },
@@ -272,9 +312,9 @@
       "thc_display": "86%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 6.0,
+      "quantity": 3.0,
       "source_rows": [
-        270
+        40
       ],
       "detail_display": "86%"
     },
@@ -290,9 +330,10 @@
       "thc_display": "86%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 2.0,
+      "quantity": 8.0,
       "source_rows": [
-        320
+        281,
+        283
       ],
       "detail_display": "86%"
     },
@@ -308,9 +349,9 @@
       "thc_display": "87%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 9.0,
+      "quantity": 5.0,
       "source_rows": [
-        282
+        87
       ],
       "detail_display": "87%"
     },
@@ -326,11 +367,11 @@
       "thc_display": "87%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 12.0,
+      "quantity": 11.0,
       "source_rows": [
-        277,
-        278,
-        279
+        81,
+        82,
+        83
       ],
       "detail_display": "87%"
     },
@@ -348,8 +389,8 @@
       "short_price": "$15.56",
       "quantity": 11.0,
       "source_rows": [
-        314,
-        316
+        252,
+        253
       ],
       "detail_display": "86%"
     },
@@ -367,7 +408,7 @@
       "short_price": "$15.56",
       "quantity": 8.0,
       "source_rows": [
-        293
+        165
       ],
       "detail_display": "86%"
     },
@@ -383,10 +424,10 @@
       "thc_display": "85%",
       "price": "$18.95",
       "short_price": "$18.95",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        312,
-        313
+        248,
+        249
       ],
       "detail_display": "85%"
     },
@@ -402,10 +443,10 @@
       "thc_display": "84%",
       "price": "$18.95",
       "short_price": "$18.95",
-      "quantity": 4.0,
+      "quantity": 2.0,
       "source_rows": [
-        317,
-        318
+        259,
+        260
       ],
       "detail_display": "84%"
     },
@@ -421,9 +462,64 @@
       "thc_display": "86%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 8.0,
+      "quantity": 5.0,
       "source_rows": [
-        292
+        163
+      ],
+      "detail_display": "86%"
+    },
+    {
+      "brand": "Freshy",
+      "product_name": "Watermelon Splash",
+      "display_name": "Watermelon Splash",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8683,
+      "thc_display": "87%",
+      "price": "$15.56",
+      "short_price": "$15.56",
+      "quantity": 10.0,
+      "source_rows": [
+        320,
+        322
+      ],
+      "detail_display": "87%"
+    },
+    {
+      "brand": "Freshy",
+      "product_name": "Banana Candy",
+      "display_name": "Banana Candy",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8601000000000001,
+      "thc_display": "86%",
+      "price": "$15.56",
+      "short_price": "$15.56",
+      "quantity": 10.0,
+      "source_rows": [
+        17
+      ],
+      "detail_display": "86%"
+    },
+    {
+      "brand": "Freshy",
+      "product_name": "Killer Kiwi",
+      "display_name": "Killer Kiwi",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8596,
+      "thc_display": "86%",
+      "price": "$15.56",
+      "short_price": "$15.56",
+      "quantity": 10.0,
+      "source_rows": [
+        141
       ],
       "detail_display": "86%"
     },
@@ -439,9 +535,9 @@
       "thc_display": "85%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        308
+        226
       ],
       "detail_display": "85%"
     },
@@ -457,9 +553,9 @@
       "thc_display": "85%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        311
+        244
       ],
       "detail_display": "85%"
     },
@@ -475,28 +571,9 @@
       "thc_display": "85%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 4.0,
+      "quantity": 8.0,
       "source_rows": [
-        274
-      ],
-      "detail_display": "85%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Banana Candy",
-      "display_name": "Banana Candy",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8502,
-      "thc_display": "85%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 2.0,
-      "source_rows": [
-        266,
-        268
+        30
       ],
       "detail_display": "85%"
     },
@@ -512,9 +589,9 @@
       "thc_display": "87%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 4.0,
+      "quantity": 8.0,
       "source_rows": [
-        324
+        318
       ],
       "detail_display": "87%"
     },
@@ -532,7 +609,7 @@
       "short_price": "$20",
       "quantity": 6.0,
       "source_rows": [
-        289
+        143
       ],
       "detail_display": "86%"
     },
@@ -548,9 +625,9 @@
       "thc_display": "85%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 5.0,
+      "quantity": 1.0,
       "source_rows": [
-        299
+        172
       ],
       "detail_display": "85%"
     },
@@ -566,9 +643,9 @@
       "thc_display": "84%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 8.0,
+      "quantity": 6.0,
       "source_rows": [
-        944
+        110
       ],
       "detail_display": "84%"
     },
@@ -586,7 +663,7 @@
       "short_price": "$15.56",
       "quantity": 4.0,
       "source_rows": [
-        946
+        135
       ],
       "detail_display": "83%"
     },
@@ -604,7 +681,7 @@
       "short_price": "$18.95",
       "quantity": 1.0,
       "source_rows": [
-        949
+        156
       ],
       "detail_display": "81%"
     },
@@ -622,7 +699,7 @@
       "short_price": "$15.56",
       "quantity": 6.0,
       "source_rows": [
-        939
+        60
       ],
       "detail_display": "86%"
     },
@@ -640,7 +717,7 @@
       "short_price": "$15.56",
       "quantity": 3.0,
       "source_rows": [
-        941
+        101
       ],
       "detail_display": "84%"
     },
@@ -656,9 +733,9 @@
       "thc_display": "84%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        957
+        306
       ],
       "detail_display": "84%"
     },
@@ -676,7 +753,7 @@
       "short_price": "$15.56",
       "quantity": 1.0,
       "source_rows": [
-        945
+        109
       ],
       "detail_display": "83%"
     },
@@ -688,13 +765,13 @@
       "size": "1g",
       "format": "510",
       "process": "Live Resin",
-      "thc": 0.831,
+      "thc": 0.8310000000000001,
       "thc_display": "83%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 1.0,
+      "quantity": 10.0,
       "source_rows": [
-        952
+        262
       ],
       "detail_display": "83%"
     },
@@ -710,10 +787,10 @@
       "thc_display": "83%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 11.0,
+      "quantity": 6.0,
       "source_rows": [
-        954,
-        955
+        297,
+        298
       ],
       "detail_display": "83%"
     },
@@ -729,9 +806,9 @@
       "thc_display": "81%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 9.0,
+      "quantity": 2.0,
       "source_rows": [
-        950
+        174
       ],
       "detail_display": "81%"
     }
