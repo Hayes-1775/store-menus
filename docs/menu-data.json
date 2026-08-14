@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T05:50:21",
+  "generated_at": "2026-08-14T15:03:45",
   "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-14-mcp.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
@@ -10,7 +10,7 @@
       "group_order": 1,
       "thc": 0.217,
       "thc_display": "22%",
-      "quantity": 517.5,
+      "quantity": 513.93,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -180,7 +180,7 @@
       "group_order": 1,
       "thc": 0.2475,
       "thc_display": "25%",
-      "quantity": 149.65,
+      "quantity": 146.15,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -214,7 +214,7 @@
       "group_order": 1,
       "thc": 0.2491,
       "thc_display": "25%",
-      "quantity": 421.71,
+      "quantity": 420.64,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -248,7 +248,7 @@
       "group_order": 1,
       "thc": 0.2557,
       "thc_display": "26%",
-      "quantity": 447.32,
+      "quantity": 439.26,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -274,6 +274,40 @@
       "feeling": "Calming",
       "looking_for": "Sleepy",
       "display_name": "Punch Breath"
+    },
+    {
+      "product_name": "Lemon Kush",
+      "brand": "Millerville",
+      "strain": "Indica",
+      "group_order": 1,
+      "thc": 0.2618,
+      "thc_display": "26%",
+      "quantity": 454.0,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "d994b140-94f9-41d5-8c67-8aec410a9ad5"
+      ],
+      "source_variant_ids": [
+        "00d96639-b907-4076-a27e-75700a26849a"
+      ],
+      "source_skus": [
+        "tWR3yNGOPy"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Citrusy",
+      "looking_for": "Chill",
+      "display_name": "Lemon Kush"
     },
     {
       "product_name": "Purple Churro",
@@ -376,6 +410,40 @@
       "feeling": "Dreamy",
       "looking_for": "Sleepy",
       "display_name": "Snowland"
+    },
+    {
+      "product_name": "Jager",
+      "brand": "Millerville",
+      "strain": "Indica",
+      "group_order": 1,
+      "thc": 0.27580000000000005,
+      "thc_display": "28%",
+      "quantity": 454.0,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "4ccf6781-10d6-4d13-bcdd-90c273a27e0a"
+      ],
+      "source_variant_ids": [
+        "6ebc4a8f-0cd6-4828-bb98-5b1058e3b95d"
+      ],
+      "source_skus": [
+        "JpDkXiOFcw"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Mellow",
+      "looking_for": "Sleepy",
+      "display_name": "Jager"
     },
     {
       "product_name": "Double Blue Jager",
@@ -514,13 +582,47 @@
       "display_name": "Maltese Tiger"
     },
     {
+      "product_name": "Animal Tsunami",
+      "brand": "Oregrown",
+      "strain": "Indica",
+      "group_order": 1,
+      "thc": 0.2685,
+      "thc_display": "27%",
+      "quantity": 110.46,
+      "price_profile": "$7 Gram",
+      "gram": "$7",
+      "eighth": "$22",
+      "quarter": "$42",
+      "half": "$80",
+      "ounce": "$148",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "db342e5c-707d-4b59-bb6b-7125e957b83a"
+      ],
+      "source_variant_ids": [
+        "cd9b8da8-ae54-4901-8980-7b4684e5201b"
+      ],
+      "source_skus": [
+        "dV5aHUdVmW"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Soothing",
+      "looking_for": "Sleepy",
+      "display_name": "Animal Tsunami"
+    },
+    {
       "product_name": "Zookies",
       "brand": "Garden First Cannabis",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.28559999999999997,
       "thc_display": "29%",
-      "quantity": 77.35,
+      "quantity": 70.31,
       "price_profile": "$10 Gram",
       "gram": "$10",
       "eighth": "$32",
@@ -554,7 +656,7 @@
       "group_order": 1,
       "thc": 0.215,
       "thc_display": "22%",
-      "quantity": 76.57,
+      "quantity": 73.07,
       "price_profile": "$12 Gram",
       "gram": "$12",
       "eighth": "$38",
@@ -588,7 +690,7 @@
       "group_order": 1,
       "thc": 0.2967,
       "thc_display": "30%",
-      "quantity": 44.99,
+      "quantity": 43.98,
       "price_profile": "$17 Gram",
       "gram": "$17",
       "eighth": "$54",
@@ -622,7 +724,7 @@
       "group_order": 2,
       "thc": 0.155,
       "thc_display": "16%",
-      "quantity": 472.25,
+      "quantity": 468.75,
       "price_profile": "$3 Gram",
       "gram": "$3",
       "eighth": "$10",
@@ -656,7 +758,7 @@
       "group_order": 2,
       "thc": 0.2413,
       "thc_display": "24%",
-      "quantity": 454.0,
+      "quantity": 439.91,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -690,7 +792,7 @@
       "group_order": 2,
       "thc": 0.2755,
       "thc_display": "28%",
-      "quantity": 89.93,
+      "quantity": 82.85,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -724,7 +826,7 @@
       "group_order": 2,
       "thc": 0.25239999999999996,
       "thc_display": "25%",
-      "quantity": 53.58,
+      "quantity": 46.58,
       "price_profile": "$9 Gram",
       "gram": "$9",
       "eighth": "$28",
@@ -860,7 +962,7 @@
       "group_order": 2,
       "thc": 0.3019,
       "thc_display": "30%",
-      "quantity": 50.17,
+      "quantity": 46.67,
       "price_profile": "$12 Gram",
       "gram": "$12",
       "eighth": "$38",
@@ -928,7 +1030,7 @@
       "group_order": 3,
       "thc": 0.1791,
       "thc_display": "18%",
-      "quantity": 301.96,
+      "quantity": 298.46,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -954,6 +1056,40 @@
       "feeling": "Focused",
       "looking_for": "Energy",
       "display_name": "Miami Dade"
+    },
+    {
+      "product_name": "Ape Cheese",
+      "brand": "Millerville",
+      "strain": "Sativa",
+      "group_order": 3,
+      "thc": 0.2332,
+      "thc_display": "23%",
+      "quantity": 454.0,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "aa1dc8d2-e3d6-4d89-9907-92b2d83cd177"
+      ],
+      "source_variant_ids": [
+        "b41841b7-78e3-417f-a605-9134434e3788"
+      ],
+      "source_skus": [
+        "m7RzDUoD0i"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Lively",
+      "looking_for": "Energy",
+      "display_name": "Ape Cheese"
     },
     {
       "product_name": "Dante's Cookie Jar",
@@ -996,7 +1132,7 @@
       "group_order": 3,
       "thc": 0.28550000000000003,
       "thc_display": "29%",
-      "quantity": 564.15,
+      "quantity": 559.52,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1015,8 +1151,8 @@
         "2b7e1b1f-0b6d-4884-8e64-1285f06b5c5c"
       ],
       "source_skus": [
-        "fdztBs0W82",
-        "LcZTU21OSg"
+        "LcZTU21OSg",
+        "fdztBs0W82"
       ],
       "dutchie_url": "",
       "no_recent_sales": false,
@@ -1031,7 +1167,7 @@
       "group_order": 3,
       "thc": 0.3091,
       "thc_display": "31%",
-      "quantity": 135.6,
+      "quantity": 132.1,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1057,6 +1193,40 @@
       "feeling": "Creative",
       "looking_for": "Energy",
       "display_name": "Blue Dream"
+    },
+    {
+      "product_name": "High Desert Sour Sage",
+      "brand": "Oregrown",
+      "strain": "Sativa",
+      "group_order": 3,
+      "thc": 0.27390000000000003,
+      "thc_display": "27%",
+      "quantity": 106.02,
+      "price_profile": "$7 Gram",
+      "gram": "$7",
+      "eighth": "$22",
+      "quarter": "$42",
+      "half": "$80",
+      "ounce": "$148",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "2b17d933-6962-49e2-8035-de76086820ef"
+      ],
+      "source_variant_ids": [
+        "a5683838-a64a-423a-9fb4-9523da53b97b"
+      ],
+      "source_skus": [
+        "KVdgpO197N"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Alert",
+      "looking_for": "Energy",
+      "display_name": "High Desert Sour Sage"
     },
     {
       "product_name": "Candied Lemons",
@@ -1099,14 +1269,14 @@
       "group_order": 3,
       "thc": 0.3084,
       "thc_display": "31%",
-      "quantity": 22.62,
+      "quantity": 19.12,
       "price_profile": "$16 Gram",
       "gram": "$16",
       "eighth": "$50",
       "quarter": "$95",
       "half": "$180",
       "ounce": "$332",
-      "low_stock": false,
+      "low_stock": true,
       "closeout": true,
       "aged_inventory": false,
       "aged_inventory_days": null,

@@ -73,5 +73,8 @@
   "Iced Mocha": { "feeling": "Velvety", "looking_for": "Hungry" },
   "Sub Zero": { "feeling": "Frosty", "looking_for": "Chill" },
   "Sour Grapes": { "feeling": "Tangy", "looking_for": "Chill" },
-  "Pink Passion Fruit": { "feeling": "Vibrant", "looking_for": "Energy" }
+  "Pink Passion Fruit": { "feeling": "Vibrant", "looking_for": "Energy" },
+  "Lemon Kush": { "feeling": "Citrusy", "looking_for": "Chill" },
+  "Jager": { "feeling": "Mellow", "looking_for": "Sleepy" },
+  "Ape Cheese": { "feeling": "Lively", "looking_for": "Energy" }
 }

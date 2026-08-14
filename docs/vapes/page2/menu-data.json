@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T05:50:22",
+  "generated_at": "2026-08-14T15:03:46",
   "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-14-mcp.csv",
   "menu": "vapes",
   "screen": 2,
@@ -11,11 +11,11 @@
   "display": {
     "fits": true,
     "row_height": 44,
-    "required_height": 860,
+    "required_height": 816,
     "available_height": 1886,
-    "remaining_pixels": 1026,
+    "remaining_pixels": 1070,
     "brand_count": 2,
-    "row_count": 14
+    "row_count": 13
   },
   "rows": [
     {
@@ -250,24 +250,6 @@
       "quantity": 8.0,
       "source_rows": [
         122
-      ],
-      "detail_display": "77%"
-    },
-    {
-      "brand": "Moonwalk",
-      "product_name": "Sour Papaya",
-      "display_name": "Sour Papaya",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Rosin",
-      "thc": 0.7696,
-      "thc_display": "77%",
-      "price": "$60.00",
-      "short_price": "$60",
-      "quantity": 1.0,
-      "source_rows": [
-        247
       ],
       "detail_display": "77%"
     }

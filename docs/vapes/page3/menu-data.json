@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T05:50:22",
+  "generated_at": "2026-08-14T15:03:46",
   "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-14-mcp.csv",
   "menu": "vapes",
   "screen": 3,
@@ -17,7 +17,7 @@
     "available_height": 1886,
     "remaining_pixels": 7,
     "brand_count": 4,
-    "row_count": 38
+    "row_count": 37
   },
   "rows": [
     {
@@ -364,24 +364,6 @@
     },
     {
       "brand": "Entourage Cannabis",
-      "product_name": "Red Lebanese",
-      "display_name": "Red Lebanese AIO",
-      "strain": "Sativa",
-      "size": "2g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.7295,
-      "thc_display": "73%",
-      "price": "$64.44",
-      "short_price": "$64.44",
-      "quantity": 1.0,
-      "source_rows": [
-        234
-      ],
-      "detail_display": "73%"
-    },
-    {
-      "brand": "Entourage Cannabis",
       "product_name": "Mango Mintality",
       "display_name": "Mango Mintality AIO",
       "strain": "Sativa",
@@ -392,7 +374,7 @@
       "thc_display": "72%",
       "price": "$40.00",
       "short_price": "$40",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
         161
       ],
@@ -430,7 +412,7 @@
       "short_price": "$14.44",
       "quantity": 5.0,
       "source_rows": [
-        37
+        36
       ],
       "detail_display": "73%"
     },
@@ -482,7 +464,7 @@
       "thc_display": "75%",
       "price": "$14.44",
       "short_price": "$14.44",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
         242
       ],
@@ -519,9 +501,9 @@
       "thc_display": "",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 13.0,
+      "quantity": 12.0,
       "source_rows": [
-        186,
+        185,
         187
       ],
       "detail_display": ""
@@ -574,7 +556,7 @@
       "thc_display": "",
       "price": "$28.89",
       "short_price": "$28.89",
-      "quantity": 19.0,
+      "quantity": 18.0,
       "source_rows": [
         315
       ],
@@ -682,7 +664,7 @@
       "thc_display": "81%",
       "price": "$32.40",
       "short_price": "$32.4",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
         299
       ],
