@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-15T08:18:47",
-  "inventory_source": "/Users/mikehayes/.codex/worktrees/9c77/Store Menus/downloads/flowhub-inventory-2026-08-15-mcp.csv",
+  "generated_at": "2026-08-16T07:44:47",
+  "inventory_source": "/Users/mikehayes/.codex/worktrees/9c77/Store Menus/downloads/flowhub-inventory-2026-08-16-mcp.csv",
   "menu": "vapes",
   "screen": 4,
   "rotation_seconds": 20,
@@ -16,7 +16,7 @@
     "available_height": 1886,
     "remaining_pixels": 459,
     "brand_count": 3,
-    "row_count": 43
+    "row_count": 42
   },
   "rows": [
     {
@@ -33,8 +33,8 @@
       "short_price": "$17.78",
       "quantity": 11.0,
       "source_rows": [
-        124,
-        125
+        122,
+        123
       ],
       "detail_display": "89%"
     },
@@ -71,8 +71,8 @@
       "short_price": "$17.99",
       "quantity": 4.0,
       "source_rows": [
-        198,
-        199
+        196,
+        197
       ],
       "detail_display": "85%"
     },
@@ -106,11 +106,11 @@
       "thc_display": "88%",
       "price": "$17.78",
       "short_price": "$17.78",
-      "quantity": 13.0,
+      "quantity": 12.0,
       "source_rows": [
-        316,
-        317,
-        318
+        311,
+        312,
+        313
       ],
       "detail_display": "88%"
     },
@@ -128,7 +128,7 @@
       "short_price": "$17.99",
       "quantity": 6.0,
       "source_rows": [
-        229
+        227
       ],
       "detail_display": "88%"
     },
@@ -144,11 +144,11 @@
       "thc_display": "88%",
       "price": "$17.99",
       "short_price": "$17.99",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        294,
-        295,
-        297
+        290,
+        292,
+        293
       ],
       "detail_display": "88%"
     },
@@ -166,7 +166,7 @@
       "short_price": "$17.78",
       "quantity": 9.0,
       "source_rows": [
-        210
+        207
       ],
       "detail_display": "86%"
     },
@@ -184,7 +184,7 @@
       "short_price": "$15.56",
       "quantity": 10.0,
       "source_rows": [
-        164
+        163
       ],
       "detail_display": "87%"
     },
@@ -220,8 +220,8 @@
       "short_price": "$15.56",
       "quantity": 8.0,
       "source_rows": [
-        4,
-        5
+        5,
+        6
       ],
       "detail_display": "86%"
     },
@@ -239,8 +239,8 @@
       "short_price": "$18.95",
       "quantity": 9.0,
       "source_rows": [
-        172,
-        173
+        170,
+        171
       ],
       "detail_display": "86%"
     },
@@ -276,7 +276,7 @@
       "short_price": "$18.95",
       "quantity": 2.0,
       "source_rows": [
-        277
+        274
       ],
       "detail_display": "86%"
     },
@@ -294,7 +294,7 @@
       "short_price": "$15.56",
       "quantity": 11.0,
       "source_rows": [
-        117,
+        118,
         119
       ],
       "detail_display": "84%"
@@ -311,7 +311,7 @@
       "thc_display": "86%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 3.0,
+      "quantity": 1.0,
       "source_rows": [
         40
       ],
@@ -331,8 +331,8 @@
       "short_price": "$20",
       "quantity": 8.0,
       "source_rows": [
-        278,
-        279
+        275,
+        277
       ],
       "detail_display": "86%"
     },
@@ -350,7 +350,7 @@
       "short_price": "$15.56",
       "quantity": 5.0,
       "source_rows": [
-        88
+        86
       ],
       "detail_display": "87%"
     },
@@ -388,8 +388,8 @@
       "short_price": "$15.56",
       "quantity": 11.0,
       "source_rows": [
-        248,
-        249
+        245,
+        247
       ],
       "detail_display": "86%"
     },
@@ -407,7 +407,7 @@
       "short_price": "$15.56",
       "quantity": 8.0,
       "source_rows": [
-        163
+        159
       ],
       "detail_display": "86%"
     },
@@ -425,8 +425,8 @@
       "short_price": "$18.95",
       "quantity": 4.0,
       "source_rows": [
-        245,
-        246
+        242,
+        243
       ],
       "detail_display": "85%"
     },
@@ -444,8 +444,8 @@
       "short_price": "$18.95",
       "quantity": 2.0,
       "source_rows": [
-        256,
-        257
+        253,
+        254
       ],
       "detail_display": "84%"
     },
@@ -461,9 +461,9 @@
       "thc_display": "86%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 3.0,
+      "quantity": 2.0,
       "source_rows": [
-        159
+        158
       ],
       "detail_display": "86%"
     },
@@ -481,8 +481,8 @@
       "short_price": "$15.56",
       "quantity": 10.0,
       "source_rows": [
-        313,
-        314
+        308,
+        309
       ],
       "detail_display": "87%"
     },
@@ -500,7 +500,7 @@
       "short_price": "$15.56",
       "quantity": 10.0,
       "source_rows": [
-        20
+        17
       ],
       "detail_display": "86%"
     },
@@ -518,7 +518,7 @@
       "short_price": "$15.56",
       "quantity": 10.0,
       "source_rows": [
-        139
+        138
       ],
       "detail_display": "86%"
     },
@@ -536,7 +536,7 @@
       "short_price": "$15.56",
       "quantity": 5.0,
       "source_rows": [
-        223
+        221
       ],
       "detail_display": "85%"
     },
@@ -554,7 +554,7 @@
       "short_price": "$15.56",
       "quantity": 4.0,
       "source_rows": [
-        241
+        239
       ],
       "detail_display": "85%"
     },
@@ -570,7 +570,7 @@
       "thc_display": "85%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
         31
       ],
@@ -590,7 +590,7 @@
       "short_price": "$20",
       "quantity": 7.0,
       "source_rows": [
-        309
+        305
       ],
       "detail_display": "87%"
     },
@@ -606,29 +606,11 @@
       "thc_display": "86%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        141
+        139
       ],
       "detail_display": "86%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Maui Wowie Fruit Punch",
-      "display_name": "Maui Wowie Fruit Punch AIO",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.8473999999999999,
-      "thc_display": "85%",
-      "price": "$20.00",
-      "short_price": "$20",
-      "quantity": 1.0,
-      "source_rows": [
-        169
-      ],
-      "detail_display": "85%"
     },
     {
       "brand": "Puck Fortland",
@@ -660,9 +642,9 @@
       "thc_display": "83%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 3.0,
+      "quantity": 2.0,
       "source_rows": [
-        133
+        131
       ],
       "detail_display": "83%"
     },
@@ -680,7 +662,7 @@
       "short_price": "$18.95",
       "quantity": 1.0,
       "source_rows": [
-        153
+        151
       ],
       "detail_display": "81%"
     },
@@ -696,7 +678,7 @@
       "thc_display": "86%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 6.0,
+      "quantity": 4.0,
       "source_rows": [
         60
       ],
@@ -734,7 +716,7 @@
       "short_price": "$15.56",
       "quantity": 5.0,
       "source_rows": [
-        298
+        294
       ],
       "detail_display": "84%"
     },
@@ -768,9 +750,9 @@
       "thc_display": "83%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        260
+        257
       ],
       "detail_display": "83%"
     },
@@ -788,8 +770,8 @@
       "short_price": "$15.56",
       "quantity": 6.0,
       "source_rows": [
-        290,
-        291
+        286,
+        287
       ],
       "detail_display": "83%"
     },
@@ -807,7 +789,7 @@
       "short_price": "$15.56",
       "quantity": 2.0,
       "source_rows": [
-        171
+        169
       ],
       "detail_display": "81%"
     }
