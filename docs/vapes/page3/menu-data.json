@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-16T07:44:47",
-  "inventory_source": "/Users/mikehayes/.codex/worktrees/9c77/Store Menus/downloads/flowhub-inventory-2026-08-16-mcp.csv",
+  "generated_at": "2026-08-17T11:31:33",
+  "inventory_source": "/Users/mikehayes/.codex/worktrees/9c77/Store Menus/downloads/flowhub-inventory-2026-08-17-mcp.csv",
   "menu": "vapes",
   "screen": 3,
   "rotation_seconds": 20,
@@ -12,12 +12,12 @@
   ],
   "display": {
     "fits": true,
-    "row_height": 42,
-    "required_height": 1879,
+    "row_height": 44,
+    "required_height": 1868,
     "available_height": 1886,
-    "remaining_pixels": 7,
+    "remaining_pixels": 18,
     "brand_count": 4,
-    "row_count": 37
+    "row_count": 36
   },
   "rows": [
     {
@@ -34,7 +34,7 @@
       "short_price": "$24.44",
       "quantity": 9.0,
       "source_rows": [
-        191
+        189
       ],
       "detail_display": "88%"
     },
@@ -52,7 +52,7 @@
       "short_price": "$24.44",
       "quantity": 4.0,
       "source_rows": [
-        177
+        175
       ],
       "detail_display": "87%"
     },
@@ -68,9 +68,9 @@
       "thc_display": "86%",
       "price": "$24.44",
       "short_price": "$24.44",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        154
+        153
       ],
       "detail_display": "86%"
     },
@@ -106,7 +106,7 @@
       "short_price": "$24.44",
       "quantity": 5.0,
       "source_rows": [
-        148
+        147
       ],
       "detail_display": "83%"
     },
@@ -124,7 +124,7 @@
       "short_price": "$36",
       "quantity": 1.0,
       "source_rows": [
-        299
+        295
       ],
       "detail_display": "75%"
     },
@@ -142,7 +142,7 @@
       "short_price": "$29.6",
       "quantity": 9.0,
       "source_rows": [
-        130
+        129
       ],
       "detail_display": ""
     },
@@ -160,7 +160,7 @@
       "short_price": "$24.44",
       "quantity": 6.0,
       "source_rows": [
-        102
+        101
       ],
       "detail_display": "90%"
     },
@@ -214,7 +214,7 @@
       "short_price": "$40",
       "quantity": 1.0,
       "source_rows": [
-        198
+        196
       ],
       "detail_display": "73%"
     },
@@ -232,7 +232,7 @@
       "short_price": "$40",
       "quantity": 8.0,
       "source_rows": [
-        237
+        234
       ],
       "detail_display": "71%"
     },
@@ -286,7 +286,7 @@
       "short_price": "$33.33",
       "quantity": 9.0,
       "source_rows": [
-        121
+        120
       ],
       "detail_display": "75%"
     },
@@ -304,7 +304,7 @@
       "short_price": "$40",
       "quantity": 4.0,
       "source_rows": [
-        298
+        294
       ],
       "detail_display": "72%"
     },
@@ -322,7 +322,7 @@
       "short_price": "$40",
       "quantity": 10.0,
       "source_rows": [
-        126
+        125
       ],
       "detail_display": "72%"
     },
@@ -340,7 +340,7 @@
       "short_price": "$33.33",
       "quantity": 3.0,
       "source_rows": [
-        261
+        258
       ],
       "detail_display": "77%"
     },
@@ -358,7 +358,7 @@
       "short_price": "$34",
       "quantity": 1.0,
       "source_rows": [
-        143
+        142
       ],
       "detail_display": "70%"
     },
@@ -374,9 +374,9 @@
       "thc_display": "72%",
       "price": "$40.00",
       "short_price": "$40",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        156
+        155
       ],
       "detail_display": "72%"
     },
@@ -392,29 +392,11 @@
       "thc_display": "72%",
       "price": "$64.44",
       "short_price": "$64.44",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        129
+        128
       ],
       "detail_display": "72%"
-    },
-    {
-      "brand": "Grown Rogue",
-      "product_name": "Blue Runtz",
-      "display_name": "Blue Runtz",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Cured Resin",
-      "thc": 0.7288,
-      "thc_display": "73%",
-      "price": "$14.44",
-      "short_price": "$14.44",
-      "quantity": 2.0,
-      "source_rows": [
-        36
-      ],
-      "detail_display": "73%"
     },
     {
       "brand": "Grown Rogue",
@@ -428,7 +410,7 @@
       "thc_display": "73%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
         34
       ],
@@ -448,7 +430,7 @@
       "short_price": "$22.22",
       "quantity": 5.0,
       "source_rows": [
-        249
+        246
       ],
       "detail_display": "73%"
     },
@@ -464,9 +446,9 @@
       "thc_display": "75%",
       "price": "$14.44",
       "short_price": "$14.44",
-      "quantity": 3.0,
+      "quantity": 1.0,
       "source_rows": [
-        235
+        232
       ],
       "detail_display": "75%"
     },
@@ -484,8 +466,8 @@
       "short_price": "$14.44",
       "quantity": 12.0,
       "source_rows": [
-        219,
-        220
+        216,
+        217
       ],
       "detail_display": ""
     },
@@ -503,8 +485,8 @@
       "short_price": "$22.22",
       "quantity": 11.0,
       "source_rows": [
-        180,
-        182
+        179,
+        180
       ],
       "detail_display": ""
     },
@@ -520,9 +502,9 @@
       "thc_display": "89%",
       "price": "$32.44",
       "short_price": "$32.44",
-      "quantity": 18.0,
+      "quantity": 17.0,
       "source_rows": [
-        178
+        176
       ],
       "detail_display": "89%"
     },
@@ -558,7 +540,7 @@
       "short_price": "$28.89",
       "quantity": 18.0,
       "source_rows": [
-        303
+        299
       ],
       "detail_display": ""
     },
@@ -574,7 +556,7 @@
       "thc_display": "86%",
       "price": "$32.40",
       "short_price": "$32.4",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
         51
       ],
@@ -594,7 +576,7 @@
       "short_price": "$50",
       "quantity": 1.0,
       "source_rows": [
-        251
+        248
       ],
       "detail_display": "77%"
     },
@@ -612,7 +594,7 @@
       "short_price": "$50",
       "quantity": 9.0,
       "source_rows": [
-        104
+        103
       ],
       "detail_display": ""
     },
@@ -648,7 +630,7 @@
       "short_price": "$27.78",
       "quantity": 2.0,
       "source_rows": [
-        264
+        261
       ],
       "detail_display": "75%"
     },
@@ -666,7 +648,7 @@
       "short_price": "$32.4",
       "quantity": 4.0,
       "source_rows": [
-        288
+        284
       ],
       "detail_display": "81%"
     },
