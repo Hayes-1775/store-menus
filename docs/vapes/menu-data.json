@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-18T09:06:00",
-  "inventory_source": "/Users/mikehayes/.codex/worktrees/9c77/Store Menus/downloads/flowhub-inventory-2026-08-18-mcp.csv",
+  "generated_at": "2026-08-19T08:02:01",
+  "inventory_source": "/Users/mikehayes/.codex/worktrees/9c77/Store Menus/downloads/flowhub-inventory-2026-08-19-mcp.csv",
   "menu": "vapes",
   "screen": 1,
   "rotation_seconds": 20,
@@ -12,11 +12,11 @@
   "display": {
     "fits": true,
     "row_height": 44,
-    "required_height": 1719,
+    "required_height": 1829,
     "available_height": 1886,
-    "remaining_pixels": 167,
+    "remaining_pixels": 57,
     "brand_count": 3,
-    "row_count": 41
+    "row_count": 47
   },
   "rows": [
     {
@@ -31,9 +31,9 @@
       "thc_display": "80%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 3.0,
+      "quantity": 2.0,
       "source_rows": [
-        126
+        127
       ],
       "detail_display": "80%"
     },
@@ -49,9 +49,9 @@
       "thc_display": "78%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 15.0,
+      "quantity": 14.0,
       "source_rows": [
-        184
+        188
       ],
       "detail_display": "78%"
     },
@@ -67,9 +67,9 @@
       "thc_display": "78%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 11.0,
+      "quantity": 10.0,
       "source_rows": [
-        95
+        96
       ],
       "detail_display": "78%"
     },
@@ -87,7 +87,7 @@
       "short_price": "$22.22",
       "quantity": 8.0,
       "source_rows": [
-        290
+        295
       ],
       "detail_display": "77%"
     },
@@ -103,7 +103,7 @@
       "thc_display": "79%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 11.0,
+      "quantity": 10.0,
       "source_rows": [
         105
       ],
@@ -121,9 +121,9 @@
       "thc_display": "76%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        127
+        128
       ],
       "detail_display": "76%"
     },
@@ -141,7 +141,7 @@
       "short_price": "$22.22",
       "quantity": 10.0,
       "source_rows": [
-        257
+        262
       ],
       "detail_display": "70%"
     },
@@ -159,7 +159,7 @@
       "short_price": "$23",
       "quantity": 4.0,
       "source_rows": [
-        181
+        185
       ],
       "detail_display": "86%"
     },
@@ -175,7 +175,7 @@
       "thc_display": "83%",
       "price": "$24.00",
       "short_price": "$24",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
         111,
         112
@@ -196,7 +196,7 @@
       "short_price": "$26",
       "quantity": 2.0,
       "source_rows": [
-        227
+        232
       ],
       "detail_display": "82%"
     },
@@ -212,9 +212,9 @@
       "thc_display": "78%",
       "price": "$24.00",
       "short_price": "$24",
-      "quantity": 5.0,
+      "quantity": 3.0,
       "source_rows": [
-        64
+        65
       ],
       "detail_display": "78%"
     },
@@ -230,9 +230,9 @@
       "thc_display": "81%",
       "price": "$36.00",
       "short_price": "$36",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        254
+        259
       ],
       "detail_display": "81%"
     },
@@ -248,7 +248,7 @@
       "thc_display": "87%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
         98
       ],
@@ -266,9 +266,9 @@
       "thc_display": "79%",
       "price": "$24.00",
       "short_price": "$24",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        7
+        5
       ],
       "detail_display": "79%"
     },
@@ -286,7 +286,7 @@
       "short_price": "$24",
       "quantity": 9.0,
       "source_rows": [
-        289
+        294
       ],
       "detail_display": "77%"
     },
@@ -302,7 +302,7 @@
       "thc_display": "78%",
       "price": "$35.56",
       "short_price": "$35.56",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
         15
       ],
@@ -320,7 +320,7 @@
       "thc_display": "74%",
       "price": "$35.56",
       "short_price": "$35.56",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
         110
       ],
@@ -338,10 +338,10 @@
       "thc_display": "85%",
       "price": "$23.00",
       "short_price": "$23",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        89,
-        90
+        90,
+        91
       ],
       "detail_display": "85%"
     },
@@ -357,9 +357,9 @@
       "thc_display": "85%",
       "price": "$24.00",
       "short_price": "$24",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        124
+        125
       ],
       "detail_display": "85%"
     },
@@ -377,7 +377,7 @@
       "short_price": "$20",
       "quantity": 8.0,
       "source_rows": [
-        53
+        54
       ],
       "detail_display": "84%"
     },
@@ -395,7 +395,7 @@
       "short_price": "$26",
       "quantity": 1.0,
       "source_rows": [
-        61
+        62
       ],
       "detail_display": "77%"
     },
@@ -413,7 +413,7 @@
       "short_price": "$40",
       "quantity": 2.0,
       "source_rows": [
-        249
+        254
       ],
       "detail_display": "68%"
     },
@@ -437,6 +437,24 @@
     },
     {
       "brand": "Buddies",
+      "product_name": "Midnight Grape",
+      "display_name": "Midnight Grape",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.769,
+      "thc_display": "77%",
+      "price": "$23.62",
+      "short_price": "$23.62",
+      "quantity": 12.0,
+      "source_rows": [
+        181
+      ],
+      "detail_display": "77%"
+    },
+    {
+      "brand": "Buddies",
       "product_name": "Raspberry Punch",
       "display_name": "Raspberry Punch",
       "strain": "Indica",
@@ -449,7 +467,7 @@
       "short_price": "$23.62",
       "quantity": 3.0,
       "source_rows": [
-        220
+        225
       ],
       "detail_display": "73%"
     },
@@ -465,7 +483,7 @@
       "thc_display": "76%",
       "price": "$31.16",
       "short_price": "$31.16",
-      "quantity": 8.0,
+      "quantity": 6.0,
       "source_rows": [
         26
       ],
@@ -485,9 +503,27 @@
       "short_price": "$15.73",
       "quantity": 9.0,
       "source_rows": [
-        172
+        175
       ],
       "detail_display": "90%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Blueberry Muffin",
+      "display_name": "Blueberry Muffin",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.8774,
+      "thc_display": "88%",
+      "price": "$15.73",
+      "short_price": "$15.73",
+      "quantity": 9.0,
+      "source_rows": [
+        46
+      ],
+      "detail_display": "88%"
     },
     {
       "brand": "Buddies",
@@ -503,9 +539,27 @@
       "short_price": "$15.73",
       "quantity": 10.0,
       "source_rows": [
-        58
+        59
       ],
       "detail_display": "88%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Grape Ape",
+      "display_name": "Grape Ape",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.8717,
+      "thc_display": "87%",
+      "price": "$15.73",
+      "short_price": "$15.73",
+      "quantity": 12.0,
+      "source_rows": [
+        116
+      ],
+      "detail_display": "87%"
     },
     {
       "brand": "Buddies",
@@ -519,9 +573,9 @@
       "thc_display": "87%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        12
+        11
       ],
       "detail_display": "87%"
     },
@@ -537,9 +591,9 @@
       "thc_display": "86%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        9
+        6
       ],
       "detail_display": "86%"
     },
@@ -557,7 +611,7 @@
       "short_price": "$26.44",
       "quantity": 4.0,
       "source_rows": [
-        197
+        202
       ],
       "detail_display": "81%"
     },
@@ -575,7 +629,7 @@
       "short_price": "$26.44",
       "quantity": 3.0,
       "source_rows": [
-        200
+        205
       ],
       "detail_display": "78%"
     },
@@ -609,9 +663,9 @@
       "thc_display": "92%",
       "price": "$20.47",
       "short_price": "$20.47",
-      "quantity": 4.0,
+      "quantity": 2.0,
       "source_rows": [
-        44
+        43
       ],
       "detail_display": "92%"
     },
@@ -629,9 +683,27 @@
       "short_price": "$20.47",
       "quantity": 11.0,
       "source_rows": [
-        201
+        206
       ],
       "detail_display": "91%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Orange Soda",
+      "display_name": "Orange Soda 2g",
+      "strain": "Hybrid",
+      "size": "2g",
+      "format": "AIO",
+      "process": "Distillate",
+      "thc": 0.8953,
+      "thc_display": "90%",
+      "price": "$30.67",
+      "short_price": "$30.67",
+      "quantity": 12.0,
+      "source_rows": [
+        196
+      ],
+      "detail_display": "90%"
     },
     {
       "brand": "Buddies",
@@ -647,7 +719,25 @@
       "short_price": "$30.67",
       "quantity": 2.0,
       "source_rows": [
-        174
+        177
+      ],
+      "detail_display": "87%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Apple Fritter",
+      "display_name": "Apple Fritter 2g",
+      "strain": "Hybrid",
+      "size": "2g",
+      "format": "AIO",
+      "process": "Distillate",
+      "thc": 0.8741,
+      "thc_display": "87%",
+      "price": "$30.67",
+      "short_price": "$30.67",
+      "quantity": 12.0,
+      "source_rows": [
+        9
       ],
       "detail_display": "87%"
     },
@@ -665,9 +755,27 @@
       "short_price": "$30.67",
       "quantity": 1.0,
       "source_rows": [
-        198
+        203
       ],
       "detail_display": "87%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Apricot Helix",
+      "display_name": "Apricot Helix 2g",
+      "strain": "Hybrid",
+      "size": "2g",
+      "format": "AIO",
+      "process": "Distillate",
+      "thc": 0.8631,
+      "thc_display": "86%",
+      "price": "$30.67",
+      "short_price": "$30.67",
+      "quantity": 12.0,
+      "source_rows": [
+        12
+      ],
+      "detail_display": "86%"
     },
     {
       "brand": "Buddies",
@@ -681,9 +789,9 @@
       "thc_display": "86%",
       "price": "$20.47",
       "short_price": "$20.47",
-      "quantity": 12.0,
+      "quantity": 11.0,
       "source_rows": [
-        206
+        212
       ],
       "detail_display": "86%"
     },
@@ -701,7 +809,7 @@
       "short_price": "$26.44",
       "quantity": 1.0,
       "source_rows": [
-        217
+        222
       ],
       "detail_display": "85%"
     },
@@ -719,7 +827,7 @@
       "short_price": "$23.62",
       "quantity": 7.0,
       "source_rows": [
-        54
+        55
       ],
       "detail_display": "76%"
     },
@@ -737,7 +845,7 @@
       "short_price": "$26.44",
       "quantity": 5.0,
       "source_rows": [
-        182
+        186
       ],
       "detail_display": "75%"
     },
@@ -755,7 +863,7 @@
       "short_price": "$31.16",
       "quantity": 5.0,
       "source_rows": [
-        69
+        70
       ],
       "detail_display": "76%"
     }

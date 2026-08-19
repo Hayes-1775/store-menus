@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-18T09:06:00",
-  "inventory_source": "/Users/mikehayes/.codex/worktrees/9c77/Store Menus/downloads/flowhub-inventory-2026-08-18-mcp.csv",
+  "generated_at": "2026-08-19T08:02:01",
+  "inventory_source": "/Users/mikehayes/.codex/worktrees/9c77/Store Menus/downloads/flowhub-inventory-2026-08-19-mcp.csv",
   "menu": "vapes",
   "screen": 2,
   "rotation_seconds": 20,
@@ -11,11 +11,11 @@
   "display": {
     "fits": true,
     "row_height": 44,
-    "required_height": 816,
+    "required_height": 860,
     "available_height": 1886,
-    "remaining_pixels": 1070,
+    "remaining_pixels": 1026,
     "brand_count": 2,
-    "row_count": 13
+    "row_count": 15
   },
   "rows": [
     {
@@ -50,7 +50,7 @@
       "short_price": "$33.33",
       "quantity": 3.0,
       "source_rows": [
-        224
+        229
       ],
       "detail_display": "71%"
     },
@@ -68,7 +68,7 @@
       "short_price": "$55.56",
       "quantity": 1.0,
       "source_rows": [
-        79
+        80
       ],
       "detail_display": "73%"
     },
@@ -86,7 +86,7 @@
       "short_price": "$41.67",
       "quantity": 8.0,
       "source_rows": [
-        190
+        194
       ],
       "detail_display": "71%"
     },
@@ -104,8 +104,8 @@
       "short_price": "$27.78",
       "quantity": 11.0,
       "source_rows": [
-        144,
-        145
+        148,
+        149
       ],
       "detail_display": "76%"
     },
@@ -121,9 +121,9 @@
       "thc_display": "72%",
       "price": "$33.33",
       "short_price": "$33.33",
-      "quantity": 3.0,
+      "quantity": 2.0,
       "source_rows": [
-        307
+        312
       ],
       "detail_display": "72%"
     },
@@ -141,7 +141,7 @@
       "short_price": "$55.56",
       "quantity": 4.0,
       "source_rows": [
-        72
+        73
       ],
       "detail_display": "74%"
     },
@@ -159,7 +159,7 @@
       "short_price": "$41.67",
       "quantity": 5.0,
       "source_rows": [
-        123
+        124
       ],
       "detail_display": "72%"
     },
@@ -177,7 +177,7 @@
       "short_price": "$27.78",
       "quantity": 9.0,
       "source_rows": [
-        151
+        154
       ],
       "detail_display": "75%"
     },
@@ -195,7 +195,7 @@
       "short_price": "$33.33",
       "quantity": 5.0,
       "source_rows": [
-        149
+        152
       ],
       "detail_display": "71%"
     },
@@ -213,7 +213,7 @@
       "short_price": "$55.56",
       "quantity": 4.0,
       "source_rows": [
-        244
+        249
       ],
       "detail_display": "72%"
     },
@@ -231,7 +231,7 @@
       "short_price": "$41.7",
       "quantity": 3.0,
       "source_rows": [
-        152
+        155
       ],
       "detail_display": "72%"
     },
@@ -249,9 +249,45 @@
       "short_price": "$60",
       "quantity": 8.0,
       "source_rows": [
-        119
+        120
       ],
       "detail_display": "77%"
+    },
+    {
+      "brand": "Moonwalk",
+      "product_name": "Hugo Spritzer",
+      "display_name": "Hugo Spritzer",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Rosin",
+      "thc": 0.7674,
+      "thc_display": "77%",
+      "price": "$55.56",
+      "short_price": "$55.56",
+      "quantity": 10.0,
+      "source_rows": [
+        136
+      ],
+      "detail_display": "77%"
+    },
+    {
+      "brand": "Moonwalk",
+      "product_name": "Honey Z",
+      "display_name": "Honey Z",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Rosin",
+      "thc": 0.7625,
+      "thc_display": "76%",
+      "price": "$55.56",
+      "short_price": "$55.56",
+      "quantity": 10.0,
+      "source_rows": [
+        134
+      ],
+      "detail_display": "76%"
     }
   ]
 }
