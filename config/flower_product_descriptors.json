@@ -77,5 +77,8 @@
   "Pink Passion Fruit": { "feeling": "Vibrant", "looking_for": "Energy" },
   "Lemon Kush": { "feeling": "Citrusy", "looking_for": "Chill" },
   "Jager": { "feeling": "Mellow", "looking_for": "Sleepy" },
-  "Ape Cheese": { "feeling": "Lively", "looking_for": "Energy" }
+  "Ape Cheese": { "feeling": "Lively", "looking_for": "Energy" },
+  "Rainbow Runtz": { "feeling": "Colorful", "looking_for": "Chill" },
+  "Collins Ave": { "feeling": "Smooth", "looking_for": "Chill" },
+  "Blue Sunshine": { "feeling": "Bright", "looking_for": "Energy" }
 }

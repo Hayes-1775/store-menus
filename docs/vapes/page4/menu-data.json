@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T08:02:01",
+  "generated_at": "2026-08-19T15:13:22",
   "inventory_source": "/Users/mikehayes/.codex/worktrees/9c77/Store Menus/downloads/flowhub-inventory-2026-08-19-mcp.csv",
   "menu": "vapes",
   "screen": 4,
@@ -12,11 +12,11 @@
   "display": {
     "fits": true,
     "row_height": 44,
-    "required_height": 1339,
+    "required_height": 1427,
     "available_height": 1886,
-    "remaining_pixels": 547,
+    "remaining_pixels": 459,
     "brand_count": 3,
-    "row_count": 37
+    "row_count": 43
   },
   "rows": [
     {
@@ -33,8 +33,8 @@
       "short_price": "$17.78",
       "quantity": 11.0,
       "source_rows": [
-        122,
-        123
+        126,
+        127
       ],
       "detail_display": "89%"
     },
@@ -52,8 +52,8 @@
       "short_price": "$17.78",
       "quantity": 5.0,
       "source_rows": [
-        68,
-        69
+        70,
+        71
       ],
       "detail_display": "89%"
     },
@@ -71,8 +71,8 @@
       "short_price": "$17.99",
       "quantity": 4.0,
       "source_rows": [
-        198,
-        199
+        206,
+        207
       ],
       "detail_display": "85%"
     },
@@ -90,7 +90,7 @@
       "short_price": "$17.78",
       "quantity": 10.0,
       "source_rows": [
-        58
+        59
       ],
       "detail_display": "83%"
     },
@@ -108,9 +108,9 @@
       "short_price": "$17.78",
       "quantity": 12.0,
       "source_rows": [
-        309,
-        310,
-        311
+        319,
+        320,
+        321
       ],
       "detail_display": "88%"
     },
@@ -128,7 +128,7 @@
       "short_price": "$17.99",
       "quantity": 6.0,
       "source_rows": [
-        226
+        235
       ],
       "detail_display": "88%"
     },
@@ -146,9 +146,9 @@
       "short_price": "$17.99",
       "quantity": 6.0,
       "source_rows": [
-        289,
-        290,
-        291
+        299,
+        300,
+        301
       ],
       "detail_display": "88%"
     },
@@ -166,7 +166,7 @@
       "short_price": "$17.78",
       "quantity": 9.0,
       "source_rows": [
-        209
+        216
       ],
       "detail_display": "86%"
     },
@@ -182,9 +182,9 @@
       "thc_display": "87%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
-        166
+        171
       ],
       "detail_display": "87%"
     },
@@ -200,9 +200,9 @@
       "thc_display": "87%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        106
+        110
       ],
       "detail_display": "87%"
     },
@@ -221,7 +221,7 @@
       "quantity": 4.0,
       "source_rows": [
         2,
-        4
+        3
       ],
       "detail_display": "86%"
     },
@@ -237,10 +237,10 @@
       "thc_display": "86%",
       "price": "$18.95",
       "short_price": "$18.95",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        172,
-        173
+        179,
+        180
       ],
       "detail_display": "86%"
     },
@@ -258,7 +258,7 @@
       "short_price": "$15.56",
       "quantity": 3.0,
       "source_rows": [
-        42
+        43
       ],
       "detail_display": "86%"
     },
@@ -276,7 +276,7 @@
       "short_price": "$18.95",
       "quantity": 2.0,
       "source_rows": [
-        272
+        281
       ],
       "detail_display": "86%"
     },
@@ -294,10 +294,28 @@
       "short_price": "$15.56",
       "quantity": 9.0,
       "source_rows": [
-        118,
-        119
+        121,
+        122
       ],
       "detail_display": "84%"
+    },
+    {
+      "brand": "Freshy",
+      "product_name": "Blueberry Burst",
+      "display_name": "Blueberry Burst AIO",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.8569,
+      "thc_display": "86%",
+      "price": "$20.00",
+      "short_price": "$20",
+      "quantity": 10.0,
+      "source_rows": [
+        42
+      ],
+      "detail_display": "86%"
     },
     {
       "brand": "Freshy",
@@ -313,8 +331,8 @@
       "short_price": "$20",
       "quantity": 7.0,
       "source_rows": [
-        273,
-        274
+        282,
+        284
       ],
       "detail_display": "86%"
     },
@@ -332,7 +350,7 @@
       "short_price": "$15.56",
       "quantity": 5.0,
       "source_rows": [
-        88
+        92
       ],
       "detail_display": "87%"
     },
@@ -350,9 +368,9 @@
       "short_price": "$15.56",
       "quantity": 11.0,
       "source_rows": [
-        81,
-        82,
-        83
+        83,
+        84,
+        85
       ],
       "detail_display": "87%"
     },
@@ -368,10 +386,9 @@
       "thc_display": "86%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 11.0,
+      "quantity": 10.0,
       "source_rows": [
-        244,
-        245
+        255
       ],
       "detail_display": "86%"
     },
@@ -389,7 +406,7 @@
       "short_price": "$15.56",
       "quantity": 8.0,
       "source_rows": [
-        161
+        167
       ],
       "detail_display": "86%"
     },
@@ -405,10 +422,10 @@
       "thc_display": "85%",
       "price": "$18.95",
       "short_price": "$18.95",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        241,
-        242
+        250,
+        251
       ],
       "detail_display": "85%"
     },
@@ -426,10 +443,28 @@
       "short_price": "$18.95",
       "quantity": 2.0,
       "source_rows": [
-        252,
-        253
+        261,
+        262
       ],
       "detail_display": "84%"
+    },
+    {
+      "brand": "Freshy",
+      "product_name": "Mango Strawberry Smoothie",
+      "display_name": "Mango Strawberry Smoothie AIO",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.8554999999999999,
+      "thc_display": "86%",
+      "price": "$20.00",
+      "short_price": "$20",
+      "quantity": 10.0,
+      "source_rows": [
+        166
+      ],
+      "detail_display": "86%"
     },
     {
       "brand": "Freshy",
@@ -445,8 +480,8 @@
       "short_price": "$15.56",
       "quantity": 10.0,
       "source_rows": [
-        306,
-        308
+        316,
+        318
       ],
       "detail_display": "87%"
     },
@@ -482,7 +517,7 @@
       "short_price": "$15.56",
       "quantity": 9.0,
       "source_rows": [
-        140
+        143
       ],
       "detail_display": "86%"
     },
@@ -500,7 +535,7 @@
       "short_price": "$15.56",
       "quantity": 4.0,
       "source_rows": [
-        221
+        230
       ],
       "detail_display": "85%"
     },
@@ -518,7 +553,7 @@
       "short_price": "$15.56",
       "quantity": 4.0,
       "source_rows": [
-        238
+        246
       ],
       "detail_display": "85%"
     },
@@ -534,8 +569,9 @@
       "thc_display": "85%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 4.0,
+      "quantity": 14.0,
       "source_rows": [
+        29,
         30
       ],
       "detail_display": "85%"
@@ -552,11 +588,65 @@
       "thc_display": "87%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 3.0,
+      "quantity": 2.0,
       "source_rows": [
-        303
+        314
       ],
       "detail_display": "87%"
+    },
+    {
+      "brand": "Freshy",
+      "product_name": "Killer Kiwi",
+      "display_name": "Killer Kiwi AIO",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.8596,
+      "thc_display": "86%",
+      "price": "$20.00",
+      "short_price": "$20",
+      "quantity": 10.0,
+      "source_rows": [
+        148
+      ],
+      "detail_display": "86%"
+    },
+    {
+      "brand": "Freshy",
+      "product_name": "Maui Wowie Fruit Punch",
+      "display_name": "Maui Wowie Fruit Punch AIO",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.8473999999999999,
+      "thc_display": "85%",
+      "price": "$20.00",
+      "short_price": "$20",
+      "quantity": 10.0,
+      "source_rows": [
+        174
+      ],
+      "detail_display": "85%"
+    },
+    {
+      "brand": "Puck Fortland",
+      "product_name": "Forbidden Fruit",
+      "display_name": "Forbidden Fruit",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8385000000000001,
+      "thc_display": "84%",
+      "price": "$15.56",
+      "short_price": "$15.56",
+      "quantity": 10.0,
+      "source_rows": [
+        87
+      ],
+      "detail_display": "84%"
     },
     {
       "brand": "Puck Fortland",
@@ -572,7 +662,7 @@
       "short_price": "$15.56",
       "quantity": 5.0,
       "source_rows": [
-        108
+        112
       ],
       "detail_display": "84%"
     },
@@ -590,7 +680,7 @@
       "short_price": "$15.56",
       "quantity": 2.0,
       "source_rows": [
-        131
+        135
       ],
       "detail_display": "83%"
     },
@@ -608,7 +698,7 @@
       "short_price": "$15.56",
       "quantity": 2.0,
       "source_rows": [
-        61
+        62
       ],
       "detail_display": "86%"
     },
@@ -626,7 +716,7 @@
       "short_price": "$15.56",
       "quantity": 1.0,
       "source_rows": [
-        100
+        103
       ],
       "detail_display": "84%"
     },
@@ -642,11 +732,29 @@
       "thc_display": "84%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        292
+        303
       ],
       "detail_display": "84%"
+    },
+    {
+      "brand": "Puck Fortland",
+      "product_name": "Ghost Train Haze",
+      "display_name": "Ghost Train Haze",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8487,
+      "thc_display": "85%",
+      "price": "$15.56",
+      "short_price": "$15.56",
+      "quantity": 10.0,
+      "source_rows": [
+        104
+      ],
+      "detail_display": "85%"
     },
     {
       "brand": "Puck Fortland",
@@ -662,7 +770,7 @@
       "short_price": "$15.56",
       "quantity": 6.0,
       "source_rows": [
-        256
+        264
       ],
       "detail_display": "83%"
     },
@@ -680,8 +788,8 @@
       "short_price": "$15.56",
       "quantity": 5.0,
       "source_rows": [
-        285,
-        286
+        295,
+        296
       ],
       "detail_display": "83%"
     },
@@ -699,7 +807,7 @@
       "short_price": "$15.56",
       "quantity": 1.0,
       "source_rows": [
-        171
+        178
       ],
       "detail_display": "81%"
     }

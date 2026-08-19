@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T08:02:00",
+  "generated_at": "2026-08-19T15:13:20",
   "inventory_source": "/Users/mikehayes/.codex/worktrees/9c77/Store Menus/downloads/flowhub-inventory-2026-08-19-mcp.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
@@ -10,7 +10,7 @@
       "group_order": 1,
       "thc": 0.17629999999999998,
       "thc_display": "18%",
-      "quantity": 412.0,
+      "quantity": 383.97,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -276,6 +276,40 @@
       "display_name": "Double Blue Jager"
     },
     {
+      "product_name": "Rainbow Runtz",
+      "brand": "Grown Rogue",
+      "strain": "Indica",
+      "group_order": 1,
+      "thc": 0.2884,
+      "thc_display": "29%",
+      "quantity": 227.0,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "406d6fa4-9166-448a-b749-5ea8663a6a00"
+      ],
+      "source_variant_ids": [
+        "3e01fa92-f7d3-40f5-bebb-1b99954209a5"
+      ],
+      "source_skus": [
+        "VQdZzrR1Fx"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Colorful",
+      "looking_for": "Chill",
+      "display_name": "Rainbow Runtz"
+    },
+    {
       "product_name": "Hectane",
       "brand": "Grown Rogue",
       "strain": "Indica",
@@ -384,7 +418,7 @@
       "group_order": 1,
       "thc": 0.24609999999999999,
       "thc_display": "25%",
-      "quantity": 114.0,
+      "quantity": 109.42,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -418,7 +452,7 @@
       "group_order": 1,
       "thc": 0.2685,
       "thc_display": "27%",
-      "quantity": 62.21,
+      "quantity": 44.59,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -758,7 +792,7 @@
       "group_order": 2,
       "thc": 0.2618,
       "thc_display": "26%",
-      "quantity": 416.96,
+      "quantity": 412.36,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -820,13 +854,81 @@
       "display_name": "Purple Churro"
     },
     {
+      "product_name": "Cherry Punch",
+      "brand": "Grown Rogue",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.2667,
+      "thc_display": "27%",
+      "quantity": 227.0,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "bfe38935-d67a-4fe5-bb43-8b5cc5659c20"
+      ],
+      "source_variant_ids": [
+        "f9a43f64-3f52-40af-9b98-0b6d41b3fd2d"
+      ],
+      "source_skus": [
+        "sRCmuC5F2U"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Focused",
+      "looking_for": "Energy",
+      "display_name": "Cherry Punch"
+    },
+    {
+      "product_name": "Collins Ave",
+      "brand": "Grown Rogue",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.26780000000000004,
+      "thc_display": "27%",
+      "quantity": 227.0,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "9bf77419-17d0-4b17-bbe6-5a579da934b8"
+      ],
+      "source_variant_ids": [
+        "b431f232-feea-432e-a2e4-3ffc7af1b4b3"
+      ],
+      "source_skus": [
+        "pzmnSIt0N9"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Smooth",
+      "looking_for": "Chill",
+      "display_name": "Collins Ave"
+    },
+    {
       "product_name": "Peak 112",
       "brand": "Oregrown",
       "strain": "Hybrid",
       "group_order": 2,
       "thc": 0.2693,
       "thc_display": "27%",
-      "quantity": 114.0,
+      "quantity": 110.48,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -894,7 +996,7 @@
       "group_order": 2,
       "thc": 0.2755,
       "thc_display": "28%",
-      "quantity": 59.73,
+      "quantity": 57.63,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -920,6 +1022,74 @@
       "feeling": "Uplifting",
       "looking_for": "Energy",
       "display_name": "Black Market"
+    },
+    {
+      "product_name": "Category 5",
+      "brand": "Grown Rogue",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.31810000000000005,
+      "thc_display": "32%",
+      "quantity": 227.0,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "35d1511c-51a2-4244-a52e-6be618d4b5bd"
+      ],
+      "source_variant_ids": [
+        "0f6dcffb-fef3-4dd4-b1bc-f337224329ba"
+      ],
+      "source_skus": [
+        "YJI1fHkj5K"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Energizing",
+      "looking_for": "Energy",
+      "display_name": "Category 5"
+    },
+    {
+      "product_name": "Scented Marker",
+      "brand": "Grown Rogue",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.3282,
+      "thc_display": "33%",
+      "quantity": 227.0,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "a6a0231b-c196-4e11-aeb1-7fd517663a45"
+      ],
+      "source_variant_ids": [
+        "72bf20b8-6838-4c77-8a50-5896047d5e6e"
+      ],
+      "source_skus": [
+        "HeRlQJ9S7J"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Social",
+      "looking_for": "Hungry",
+      "display_name": "Scented Marker"
     },
     {
       "product_name": "Cherry Paloma",
@@ -1058,13 +1228,47 @@
       "display_name": "Super Boof"
     },
     {
+      "product_name": "Blue Sunshine",
+      "brand": "Noble Farms",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.315,
+      "thc_display": "32%",
+      "quantity": 115.0,
+      "price_profile": "$16 Gram",
+      "gram": "$16",
+      "eighth": "$50",
+      "quarter": "$95",
+      "half": "$180",
+      "ounce": "$332",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "4eda94e9-163b-45e2-b0e6-ba1022810d82"
+      ],
+      "source_variant_ids": [
+        "f339b77b-df47-4179-a9cb-cea1e4833254"
+      ],
+      "source_skus": [
+        "TJ0DtvxeeS"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Bright",
+      "looking_for": "Energy",
+      "display_name": "Blue Sunshine"
+    },
+    {
       "product_name": "Miami Dade",
       "brand": "Good Garden",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.1791,
       "thc_display": "18%",
-      "quantity": 293.31,
+      "quantity": 289.77,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1167,15 +1371,15 @@
       "group_order": 3,
       "thc": 0.3091,
       "thc_display": "31%",
-      "quantity": 48.43,
+      "quantity": 18.92,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
       "quarter": "$30",
       "half": "$57",
       "ounce": "$105",
-      "low_stock": false,
-      "closeout": false,
+      "low_stock": true,
+      "closeout": true,
       "aged_inventory": false,
       "aged_inventory_days": null,
       "aged_inventory_date": "",
@@ -1235,7 +1439,7 @@
       "group_order": 3,
       "thc": 0.243,
       "thc_display": "24%",
-      "quantity": 69.28,
+      "quantity": 68.18,
       "price_profile": "$10 Gram",
       "gram": "$10",
       "eighth": "$32",
@@ -1261,6 +1465,40 @@
       "feeling": "Focused",
       "looking_for": "Energy",
       "display_name": "Candied Lemons"
+    },
+    {
+      "product_name": "Orange Slyce",
+      "brand": "Noble Farms",
+      "strain": "Sativa",
+      "group_order": 3,
+      "thc": 0.3299,
+      "thc_display": "33%",
+      "quantity": 115.0,
+      "price_profile": "$16 Gram",
+      "gram": "$16",
+      "eighth": "$50",
+      "quarter": "$95",
+      "half": "$180",
+      "ounce": "$332",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "e5ce76de-85bf-4911-b75c-f37546f0eaab"
+      ],
+      "source_variant_ids": [
+        "e7090d75-a566-45c4-b145-b61e08edb088"
+      ],
+      "source_skus": [
+        "IVrO6twOIv"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Zesty",
+      "looking_for": "Energy",
+      "display_name": "Orange Slyce"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T08:02:01",
+  "generated_at": "2026-08-19T15:13:21",
   "inventory_source": "/Users/mikehayes/.codex/worktrees/9c77/Store Menus/downloads/flowhub-inventory-2026-08-19-mcp.csv",
   "menu": "vapes",
   "screen": 3,
@@ -12,12 +12,12 @@
   ],
   "display": {
     "fits": true,
-    "row_height": 44,
-    "required_height": 1868,
+    "row_height": 42,
+    "required_height": 1879,
     "available_height": 1886,
-    "remaining_pixels": 18,
+    "remaining_pixels": 7,
     "brand_count": 4,
-    "row_count": 35
+    "row_count": 38
   },
   "rows": [
     {
@@ -34,7 +34,7 @@
       "short_price": "$24.44",
       "quantity": 7.0,
       "source_rows": [
-        193
+        201
       ],
       "detail_display": "88%"
     },
@@ -52,7 +52,7 @@
       "short_price": "$24.44",
       "quantity": 3.0,
       "source_rows": [
-        178
+        185
       ],
       "detail_display": "87%"
     },
@@ -70,7 +70,7 @@
       "short_price": "$24.44",
       "quantity": 7.0,
       "source_rows": [
-        156
+        161
       ],
       "detail_display": "86%"
     },
@@ -106,7 +106,7 @@
       "short_price": "$24.44",
       "quantity": 5.0,
       "source_rows": [
-        150
+        155
       ],
       "detail_display": "83%"
     },
@@ -124,7 +124,7 @@
       "short_price": "$36",
       "quantity": 1.0,
       "source_rows": [
-        297
+        307
       ],
       "detail_display": "75%"
     },
@@ -142,7 +142,7 @@
       "short_price": "$29.6",
       "quantity": 9.0,
       "source_rows": [
-        130
+        134
       ],
       "detail_display": ""
     },
@@ -158,9 +158,9 @@
       "thc_display": "90%",
       "price": "$24.44",
       "short_price": "$24.44",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        101
+        105
       ],
       "detail_display": "90%"
     },
@@ -176,7 +176,7 @@
       "thc_display": "",
       "price": "$29.60",
       "short_price": "$29.6",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
         22
       ],
@@ -194,9 +194,9 @@
       "thc_display": "65%",
       "price": "$33.33",
       "short_price": "$33.33",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        76
+        78
       ],
       "detail_display": "65%"
     },
@@ -214,7 +214,7 @@
       "short_price": "$40",
       "quantity": 1.0,
       "source_rows": [
-        200
+        208
       ],
       "detail_display": "73%"
     },
@@ -232,7 +232,7 @@
       "short_price": "$40",
       "quantity": 8.0,
       "source_rows": [
-        236
+        245
       ],
       "detail_display": "71%"
     },
@@ -250,7 +250,7 @@
       "short_price": "$64.44",
       "quantity": 2.0,
       "source_rows": [
-        72
+        74
       ],
       "detail_display": "68%"
     },
@@ -268,7 +268,7 @@
       "short_price": "$40",
       "quantity": 10.0,
       "source_rows": [
-        75
+        77
       ],
       "detail_display": "65%"
     },
@@ -284,9 +284,9 @@
       "thc_display": "75%",
       "price": "$33.33",
       "short_price": "$33.33",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        121
+        125
       ],
       "detail_display": "75%"
     },
@@ -304,7 +304,7 @@
       "short_price": "$40",
       "quantity": 4.0,
       "source_rows": [
-        296
+        306
       ],
       "detail_display": "72%"
     },
@@ -322,7 +322,7 @@
       "short_price": "$40",
       "quantity": 10.0,
       "source_rows": [
-        126
+        130
       ],
       "detail_display": "72%"
     },
@@ -340,7 +340,7 @@
       "short_price": "$33.33",
       "quantity": 3.0,
       "source_rows": [
-        260
+        269
       ],
       "detail_display": "77%"
     },
@@ -358,7 +358,7 @@
       "short_price": "$34",
       "quantity": 1.0,
       "source_rows": [
-        145
+        150
       ],
       "detail_display": "70%"
     },
@@ -374,9 +374,9 @@
       "thc_display": "72%",
       "price": "$40.00",
       "short_price": "$40",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        158
+        163
       ],
       "detail_display": "72%"
     },
@@ -394,9 +394,27 @@
       "short_price": "$64.44",
       "quantity": 4.0,
       "source_rows": [
-        129
+        133
       ],
       "detail_display": "72%"
+    },
+    {
+      "brand": "Grown Rogue",
+      "product_name": "Modified Grapes",
+      "display_name": "Modified Grapes",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.7995,
+      "thc_display": "80%",
+      "price": "$14.44",
+      "short_price": "$14.44",
+      "quantity": 12.0,
+      "source_rows": [
+        194
+      ],
+      "detail_display": "80%"
     },
     {
       "brand": "Grown Rogue",
@@ -410,9 +428,9 @@
       "thc_display": "73%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 3.0,
+      "quantity": 4.0,
       "source_rows": [
-        34
+        35
       ],
       "detail_display": "73%"
     },
@@ -428,9 +446,9 @@
       "thc_display": "73%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        248
+        257
       ],
       "detail_display": "73%"
     },
@@ -446,12 +464,48 @@
       "thc_display": "",
       "price": "$14.44",
       "short_price": "$14.44",
-      "quantity": 11.0,
+      "quantity": 10.0,
       "source_rows": [
-        219,
-        220
+        228,
+        229
       ],
       "detail_display": ""
+    },
+    {
+      "brand": "Grown Rogue",
+      "product_name": "Rainbow Sherbert #11",
+      "display_name": "Rainbow Sherbert #11 AIO",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Cured Resin",
+      "thc": 0.7394,
+      "thc_display": "74%",
+      "price": "$22.22",
+      "short_price": "$22.22",
+      "quantity": 10.0,
+      "source_rows": [
+        227
+      ],
+      "detail_display": "74%"
+    },
+    {
+      "brand": "Grown Rogue",
+      "product_name": "Trainwreck",
+      "display_name": "Trainwreck",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.8134,
+      "thc_display": "81%",
+      "price": "$14.44",
+      "short_price": "$14.44",
+      "quantity": 12.0,
+      "source_rows": [
+        294
+      ],
+      "detail_display": "81%"
     },
     {
       "brand": "Grown Rogue",
@@ -467,8 +521,8 @@
       "short_price": "$22.22",
       "quantity": 10.0,
       "source_rows": [
-        182,
-        184
+        189,
+        190
       ],
       "detail_display": ""
     },
@@ -486,7 +540,7 @@
       "short_price": "$32.44",
       "quantity": 16.0,
       "source_rows": [
-        179
+        186
       ],
       "detail_display": "89%"
     },
@@ -504,7 +558,7 @@
       "short_price": "$32.4",
       "quantity": 8.0,
       "source_rows": [
-        78
+        80
       ],
       "detail_display": "77%"
     },
@@ -522,7 +576,7 @@
       "short_price": "$28.89",
       "quantity": 18.0,
       "source_rows": [
-        301
+        311
       ],
       "detail_display": ""
     },
@@ -540,7 +594,7 @@
       "short_price": "$32.4",
       "quantity": 4.0,
       "source_rows": [
-        52
+        55
       ],
       "detail_display": "86%"
     },
@@ -558,7 +612,7 @@
       "short_price": "$50",
       "quantity": 1.0,
       "source_rows": [
-        250
+        259
       ],
       "detail_display": "77%"
     },
@@ -576,7 +630,7 @@
       "short_price": "$50",
       "quantity": 7.0,
       "source_rows": [
-        103
+        107
       ],
       "detail_display": ""
     },
@@ -612,7 +666,7 @@
       "short_price": "$27.78",
       "quantity": 2.0,
       "source_rows": [
-        263
+        272
       ],
       "detail_display": "75%"
     },
@@ -630,7 +684,7 @@
       "short_price": "$32.4",
       "quantity": 4.0,
       "source_rows": [
-        287
+        297
       ],
       "detail_display": "81%"
     },
