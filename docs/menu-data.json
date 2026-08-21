@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-19T15:13:20",
-  "inventory_source": "/Users/mikehayes/.codex/worktrees/9c77/Store Menus/downloads/flowhub-inventory-2026-08-19-mcp.csv",
+  "generated_at": "2026-08-21T06:55:37",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-21-mcp.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -10,7 +10,7 @@
       "group_order": 1,
       "thc": 0.17629999999999998,
       "thc_display": "18%",
-      "quantity": 383.97,
+      "quantity": 355.87,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -134,7 +134,7 @@
         "dCjca1Luz7"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Sweet",
       "looking_for": "Chill",
       "display_name": "Stuffed Cherry Gelato"
@@ -180,7 +180,7 @@
       "group_order": 1,
       "thc": 0.2741,
       "thc_display": "27%",
-      "quantity": 253.09,
+      "quantity": 245.97,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -214,7 +214,7 @@
       "group_order": 1,
       "thc": 0.27580000000000005,
       "thc_display": "28%",
-      "quantity": 427.19,
+      "quantity": 415.5,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -248,7 +248,7 @@
       "group_order": 1,
       "thc": 0.281,
       "thc_display": "28%",
-      "quantity": 408.5,
+      "quantity": 369.35,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -270,7 +270,7 @@
         "IapfDoiqjY"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true,
+      "no_recent_sales": false,
       "feeling": "Mellow",
       "looking_for": "Sleepy",
       "display_name": "Double Blue Jager"
@@ -282,7 +282,7 @@
       "group_order": 1,
       "thc": 0.2884,
       "thc_display": "29%",
-      "quantity": 227.0,
+      "quantity": 218.26,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -378,47 +378,13 @@
       "display_name": "The Hive"
     },
     {
-      "product_name": "Maltese Tiger",
-      "brand": "Oregrown",
-      "strain": "Indica",
-      "group_order": 1,
-      "thc": 0.2373,
-      "thc_display": "24%",
-      "quantity": 29.15,
-      "price_profile": "$7 Gram",
-      "gram": "$7",
-      "eighth": "$22",
-      "quarter": "$42",
-      "half": "$80",
-      "ounce": "$148",
-      "low_stock": false,
-      "closeout": false,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "d8674ca3-ab64-435a-a48e-24391052fabb"
-      ],
-      "source_variant_ids": [
-        "2d783978-9879-48e4-b416-e40405fb4bd5"
-      ],
-      "source_skus": [
-        "QjPmSNhvtH"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false,
-      "feeling": "Uplifted",
-      "looking_for": "Energy",
-      "display_name": "Maltese Tiger"
-    },
-    {
       "product_name": "Alien Gary",
       "brand": "Oregrown",
       "strain": "Indica",
       "group_order": 1,
       "thc": 0.24609999999999999,
       "thc_display": "25%",
-      "quantity": 109.42,
+      "quantity": 102.42,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -452,7 +418,7 @@
       "group_order": 1,
       "thc": 0.2685,
       "thc_display": "27%",
-      "quantity": 44.59,
+      "quantity": 41.09,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -508,7 +474,7 @@
         "CljXcKOLRG"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Sweet",
       "looking_for": "Chill",
       "display_name": "Sherb Cream Pop #4"
@@ -520,7 +486,7 @@
       "group_order": 1,
       "thc": 0.28559999999999997,
       "thc_display": "29%",
-      "quantity": 55.14,
+      "quantity": 48.02,
       "price_profile": "$10 Gram",
       "gram": "$10",
       "eighth": "$32",
@@ -576,7 +542,7 @@
         "IDjuNM2gd5"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Mellow",
       "looking_for": "Sleepy",
       "display_name": "Goodies"
@@ -588,7 +554,7 @@
       "group_order": 2,
       "thc": 0.155,
       "thc_display": "16%",
-      "quantity": 391.57,
+      "quantity": 335.36,
       "price_profile": "$3 Gram",
       "gram": "$3",
       "eighth": "$10",
@@ -678,7 +644,7 @@
         "W9YSnBVznN"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Sedative",
       "looking_for": "Sleepy",
       "display_name": "Devils Den"
@@ -690,7 +656,7 @@
       "group_order": 2,
       "thc": 0.23,
       "thc_display": "23%",
-      "quantity": 323.6,
+      "quantity": 289.6,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -746,7 +712,7 @@
         "ZlbsvpM2BS"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Tangy",
       "looking_for": "Chill",
       "display_name": "Sour Grapes"
@@ -758,7 +724,7 @@
       "group_order": 2,
       "thc": 0.245,
       "thc_display": "25%",
-      "quantity": 511.82,
+      "quantity": 498.89,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -792,7 +758,7 @@
       "group_order": 2,
       "thc": 0.2618,
       "thc_display": "26%",
-      "quantity": 412.36,
+      "quantity": 359.6,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -928,7 +894,7 @@
       "group_order": 2,
       "thc": 0.2693,
       "thc_display": "27%",
-      "quantity": 110.48,
+      "quantity": 103.38,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -984,7 +950,7 @@
         "1A4010300023A51000002447"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Tranquil",
       "looking_for": "Sleepy",
       "display_name": "Black Amber"
@@ -996,7 +962,7 @@
       "group_order": 2,
       "thc": 0.2755,
       "thc_display": "28%",
-      "quantity": 57.63,
+      "quantity": 50.61,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1030,7 +996,7 @@
       "group_order": 2,
       "thc": 0.31810000000000005,
       "thc_display": "32%",
-      "quantity": 227.0,
+      "quantity": 198.72,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1064,7 +1030,7 @@
       "group_order": 2,
       "thc": 0.3282,
       "thc_display": "33%",
-      "quantity": 227.0,
+      "quantity": 215.39,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1098,15 +1064,15 @@
       "group_order": 2,
       "thc": 0.25239999999999996,
       "thc_display": "25%",
-      "quantity": 46.58,
+      "quantity": 18.51,
       "price_profile": "$9 Gram",
       "gram": "$9",
       "eighth": "$28",
       "quarter": "$53",
       "half": "$101",
       "ounce": "$187",
-      "low_stock": false,
-      "closeout": false,
+      "low_stock": true,
+      "closeout": true,
       "aged_inventory": false,
       "aged_inventory_days": null,
       "aged_inventory_date": "",
@@ -1120,7 +1086,7 @@
         "vpKw7h3bKs"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true,
+      "no_recent_sales": false,
       "feeling": "Uplifting",
       "looking_for": "Energy",
       "display_name": "Cherry Paloma"
@@ -1154,7 +1120,7 @@
         "v37wZN0vPj"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Bright",
       "looking_for": "Energy",
       "display_name": "Lime Dawg"
@@ -1200,7 +1166,7 @@
       "group_order": 2,
       "thc": 0.3019,
       "thc_display": "30%",
-      "quantity": 46.67,
+      "quantity": 45.57,
       "price_profile": "$12 Gram",
       "gram": "$12",
       "eighth": "$38",
@@ -1222,7 +1188,7 @@
         "53B9VXkgnH"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true,
+      "no_recent_sales": false,
       "feeling": "Euphoric",
       "looking_for": "Energy",
       "display_name": "Super Boof"
@@ -1234,7 +1200,7 @@
       "group_order": 2,
       "thc": 0.315,
       "thc_display": "32%",
-      "quantity": 115.0,
+      "quantity": 106.87,
       "price_profile": "$16 Gram",
       "gram": "$16",
       "eighth": "$50",
@@ -1302,7 +1268,7 @@
       "group_order": 3,
       "thc": 0.2332,
       "thc_display": "23%",
-      "quantity": 422.16,
+      "quantity": 396.11,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1336,7 +1302,7 @@
       "group_order": 3,
       "thc": 0.28550000000000003,
       "thc_display": "29%",
-      "quantity": 479.16,
+      "quantity": 453.33,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1365,47 +1331,13 @@
       "display_name": "Pink Passion Fruit"
     },
     {
-      "product_name": "Blue Dream",
-      "brand": "Grown Rogue",
-      "strain": "Sativa",
-      "group_order": 3,
-      "thc": 0.3091,
-      "thc_display": "31%",
-      "quantity": 18.92,
-      "price_profile": "$5 Gram",
-      "gram": "$5",
-      "eighth": "$16",
-      "quarter": "$30",
-      "half": "$57",
-      "ounce": "$105",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "080b8298-4abb-4ee8-a094-d0cbc6e76881"
-      ],
-      "source_variant_ids": [
-        "dea77b07-c333-45f5-bd68-61956e4ad900"
-      ],
-      "source_skus": [
-        "hArARyY0eg"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false,
-      "feeling": "Creative",
-      "looking_for": "Energy",
-      "display_name": "Blue Dream"
-    },
-    {
       "product_name": "High Desert Sour Sage",
       "brand": "Oregrown",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.27390000000000003,
       "thc_display": "27%",
-      "quantity": 65.38,
+      "quantity": 61.78,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -1431,6 +1363,40 @@
       "feeling": "Alert",
       "looking_for": "Energy",
       "display_name": "High Desert Sour Sage"
+    },
+    {
+      "product_name": "Emerald Apricot",
+      "brand": "Oregrown",
+      "strain": "Sativa",
+      "group_order": 3,
+      "thc": 0.3066,
+      "thc_display": "31%",
+      "quantity": 114.0,
+      "price_profile": "$7 Gram",
+      "gram": "$7",
+      "eighth": "$22",
+      "quarter": "$42",
+      "half": "$80",
+      "ounce": "$148",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "e7fffdbe-ebea-4e32-9864-461460cfa7fb"
+      ],
+      "source_variant_ids": [
+        "a431c930-a15d-42e5-b39f-689cfad805af"
+      ],
+      "source_skus": [
+        "rLcckQXbi7"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Fruity",
+      "looking_for": "Energy",
+      "display_name": "Emerald Apricot"
     },
     {
       "product_name": "Candied Lemons",
@@ -1473,7 +1439,7 @@
       "group_order": 3,
       "thc": 0.3299,
       "thc_display": "33%",
-      "quantity": 115.0,
+      "quantity": 84.99,
       "price_profile": "$16 Gram",
       "gram": "$16",
       "eighth": "$50",
