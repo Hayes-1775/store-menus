@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-21T06:55:38",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-21-mcp.csv",
+  "generated_at": "2026-08-23T07:27:35",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-23-mcp.csv",
   "menu": "vapes",
   "screen": 4,
   "rotation_seconds": 20,
@@ -16,7 +16,7 @@
     "available_height": 1886,
     "remaining_pixels": 503,
     "brand_count": 3,
-    "row_count": 40
+    "row_count": 37
   },
   "rows": [
     {
@@ -33,8 +33,8 @@
       "short_price": "$17.78",
       "quantity": 11.0,
       "source_rows": [
-        117,
-        118
+        113,
+        114
       ],
       "detail_display": "89%"
     },
@@ -52,8 +52,8 @@
       "short_price": "$17.78",
       "quantity": 5.0,
       "source_rows": [
-        64,
-        65
+        63,
+        64
       ],
       "detail_display": "89%"
     },
@@ -71,8 +71,8 @@
       "short_price": "$17.99",
       "quantity": 4.0,
       "source_rows": [
-        197,
-        198
+        191,
+        192
       ],
       "detail_display": "85%"
     },
@@ -108,9 +108,9 @@
       "short_price": "$17.78",
       "quantity": 12.0,
       "source_rows": [
-        308,
-        309,
-        310
+        296,
+        297,
+        298
       ],
       "detail_display": "88%"
     },
@@ -126,9 +126,9 @@
       "thc_display": "88%",
       "price": "$17.99",
       "short_price": "$17.99",
-      "quantity": 6.0,
+      "quantity": 4.0,
       "source_rows": [
-        226
+        219
       ],
       "detail_display": "88%"
     },
@@ -144,11 +144,11 @@
       "thc_display": "88%",
       "price": "$17.99",
       "short_price": "$17.99",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        289,
-        290,
-        291
+        277,
+        278,
+        279
       ],
       "detail_display": "88%"
     },
@@ -166,7 +166,7 @@
       "short_price": "$17.78",
       "quantity": 9.0,
       "source_rows": [
-        207
+        201
       ],
       "detail_display": "86%"
     },
@@ -184,7 +184,7 @@
       "short_price": "$15.56",
       "quantity": 9.0,
       "source_rows": [
-        163
+        157
       ],
       "detail_display": "87%"
     },
@@ -202,7 +202,7 @@
       "short_price": "$15.56",
       "quantity": 3.0,
       "source_rows": [
-        102
+        100
       ],
       "detail_display": "87%"
     },
@@ -218,9 +218,9 @@
       "thc_display": "86%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        3,
+        2,
         4
       ],
       "detail_display": "86%"
@@ -239,8 +239,8 @@
       "short_price": "$18.95",
       "quantity": 7.0,
       "source_rows": [
-        170,
-        171
+        165,
+        166
       ],
       "detail_display": "86%"
     },
@@ -276,8 +276,8 @@
       "short_price": "$15.56",
       "quantity": 9.0,
       "source_rows": [
-        112,
-        113
+        109,
+        110
       ],
       "detail_display": "84%"
     },
@@ -293,7 +293,7 @@
       "thc_display": "86%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 5.0,
+      "quantity": 2.0,
       "source_rows": [
         40
       ],
@@ -313,8 +313,8 @@
       "short_price": "$20",
       "quantity": 5.0,
       "source_rows": [
-        272,
-        274
+        262,
+        263
       ],
       "detail_display": "86%"
     },
@@ -330,9 +330,9 @@
       "thc_display": "87%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 5.0,
+      "quantity": 3.0,
       "source_rows": [
-        83
+        82
       ],
       "detail_display": "87%"
     },
@@ -350,8 +350,8 @@
       "short_price": "$15.56",
       "quantity": 8.0,
       "source_rows": [
-        76,
-        78
+        75,
+        77
       ],
       "detail_display": "87%"
     },
@@ -369,7 +369,7 @@
       "short_price": "$15.56",
       "quantity": 10.0,
       "source_rows": [
-        245
+        236
       ],
       "detail_display": "86%"
     },
@@ -385,29 +385,11 @@
       "thc_display": "86%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        158
+        154
       ],
       "detail_display": "86%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Spiced Apple Cider",
-      "display_name": "Spiced Apple Cider",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8504999999999999,
-      "thc_display": "85%",
-      "price": "$18.95",
-      "short_price": "$18.95",
-      "quantity": 1.0,
-      "source_rows": [
-        241
-      ],
-      "detail_display": "85%"
     },
     {
       "brand": "Freshy",
@@ -423,7 +405,7 @@
       "short_price": "$18.95",
       "quantity": 1.0,
       "source_rows": [
-        252
+        242
       ],
       "detail_display": "84%"
     },
@@ -439,9 +421,9 @@
       "thc_display": "86%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 10.0,
+      "quantity": 7.0,
       "source_rows": [
-        157
+        151
       ],
       "detail_display": "86%"
     },
@@ -457,9 +439,9 @@
       "thc_display": "87%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 8.0,
+      "quantity": 6.0,
       "source_rows": [
-        305
+        293
       ],
       "detail_display": "87%"
     },
@@ -475,8 +457,9 @@
       "thc_display": "86%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 10.0,
+      "quantity": 11.0,
       "source_rows": [
+        18,
         20
       ],
       "detail_display": "86%"
@@ -495,7 +478,7 @@
       "short_price": "$15.56",
       "quantity": 4.0,
       "source_rows": [
-        134
+        130
       ],
       "detail_display": "86%"
     },
@@ -513,7 +496,7 @@
       "short_price": "$15.56",
       "quantity": 3.0,
       "source_rows": [
-        221
+        215
       ],
       "detail_display": "85%"
     },
@@ -529,9 +512,9 @@
       "thc_display": "85%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 3.0,
+      "quantity": 1.0,
       "source_rows": [
-        236
+        228
       ],
       "detail_display": "85%"
     },
@@ -549,8 +532,8 @@
       "short_price": "$15.56",
       "quantity": 14.0,
       "source_rows": [
-        29,
-        31
+        28,
+        30
       ],
       "detail_display": "85%"
     },
@@ -568,7 +551,7 @@
       "short_price": "$20",
       "quantity": 10.0,
       "source_rows": [
-        138
+        132
       ],
       "detail_display": "86%"
     },
@@ -584,9 +567,9 @@
       "thc_display": "85%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 5.0,
+      "quantity": 3.0,
       "source_rows": [
-        166
+        161
       ],
       "detail_display": "85%"
     },
@@ -620,9 +603,9 @@
       "thc_display": "84%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        104
+        102
       ],
       "detail_display": "84%"
     },
@@ -640,45 +623,9 @@
       "short_price": "$15.56",
       "quantity": 2.0,
       "source_rows": [
-        126
+        122
       ],
       "detail_display": "83%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Cherry Pie",
-      "display_name": "Cherry Pie",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8573000000000001,
-      "thc_display": "86%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 1.0,
-      "source_rows": [
-        57
-      ],
-      "detail_display": "86%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Tropicanna Cookies",
-      "display_name": "Tropicanna Cookies",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8378,
-      "thc_display": "84%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 4.0,
-      "source_rows": [
-        292
-      ],
-      "detail_display": "84%"
     },
     {
       "brand": "Puck Fortland",
@@ -692,9 +639,9 @@
       "thc_display": "85%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        96
+        94
       ],
       "detail_display": "85%"
     },
@@ -710,9 +657,9 @@
       "thc_display": "83%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        256
+        245
       ],
       "detail_display": "83%"
     },
@@ -728,10 +675,10 @@
       "thc_display": "83%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        285,
-        286
+        273,
+        274
       ],
       "detail_display": "83%"
     },
@@ -749,7 +696,7 @@
       "short_price": "$15.56",
       "quantity": 1.0,
       "source_rows": [
-        169
+        164
       ],
       "detail_display": "81%"
     }
