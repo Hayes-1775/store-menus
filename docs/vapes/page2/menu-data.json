@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-23T07:27:35",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-23-mcp.csv",
+  "generated_at": "2026-08-24T11:24:37",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-24-mcp.csv",
   "menu": "vapes",
   "screen": 2,
   "rotation_seconds": 20,
@@ -15,7 +15,7 @@
     "available_height": 1886,
     "remaining_pixels": 1026,
     "brand_count": 2,
-    "row_count": 15
+    "row_count": 14
   },
   "rows": [
     {
@@ -32,7 +32,7 @@
       "short_price": "$27.78",
       "quantity": 1.0,
       "source_rows": [
-        98
+        97
       ],
       "detail_display": "73%"
     },
@@ -50,27 +50,9 @@
       "short_price": "$33.33",
       "quantity": 1.0,
       "source_rows": [
-        221
+        218
       ],
       "detail_display": "71%"
-    },
-    {
-      "brand": "Oregrown",
-      "product_name": "El Chivo",
-      "display_name": "El Chivo AIO",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.728,
-      "thc_display": "73%",
-      "price": "$55.56",
-      "short_price": "$55.56",
-      "quantity": 1.0,
-      "source_rows": [
-        74
-      ],
-      "detail_display": "73%"
     },
     {
       "brand": "Oregrown",
@@ -86,7 +68,7 @@
       "short_price": "$41.67",
       "quantity": 8.0,
       "source_rows": [
-        187
+        184
       ],
       "detail_display": "71%"
     },
@@ -123,7 +105,7 @@
       "short_price": "$33.33",
       "quantity": 2.0,
       "source_rows": [
-        299
+        296
       ],
       "detail_display": "72%"
     },
@@ -141,7 +123,7 @@
       "short_price": "$55.56",
       "quantity": 3.0,
       "source_rows": [
-        67
+        66
       ],
       "detail_display": "74%"
     },
@@ -159,7 +141,7 @@
       "short_price": "$41.67",
       "quantity": 5.0,
       "source_rows": [
-        115
+        114
       ],
       "detail_display": "72%"
     },
@@ -177,7 +159,7 @@
       "short_price": "$27.78",
       "quantity": 8.0,
       "source_rows": [
-        145
+        143
       ],
       "detail_display": "75%"
     },
@@ -193,9 +175,9 @@
       "thc_display": "71%",
       "price": "$33.33",
       "short_price": "$33.33",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        143
+        141
       ],
       "detail_display": "71%"
     },
@@ -213,7 +195,7 @@
       "short_price": "$55.56",
       "quantity": 4.0,
       "source_rows": [
-        239
+        236
       ],
       "detail_display": "72%"
     },
@@ -231,7 +213,7 @@
       "short_price": "$41.7",
       "quantity": 3.0,
       "source_rows": [
-        146
+        144
       ],
       "detail_display": "72%"
     },
@@ -249,7 +231,7 @@
       "short_price": "$60",
       "quantity": 8.0,
       "source_rows": [
-        111
+        110
       ],
       "detail_display": "77%"
     },
@@ -267,7 +249,7 @@
       "short_price": "$55.56",
       "quantity": 9.0,
       "source_rows": [
-        127
+        126
       ],
       "detail_display": "77%"
     },
@@ -285,7 +267,7 @@
       "short_price": "$55.56",
       "quantity": 10.0,
       "source_rows": [
-        125
+        124
       ],
       "detail_display": "76%"
     }
