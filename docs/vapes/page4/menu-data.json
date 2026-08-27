@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-24T11:24:37",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-24-mcp.csv",
+  "generated_at": "2026-08-27T13:05:35",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-27-mcp.csv",
   "menu": "vapes",
   "screen": 4,
   "rotation_seconds": 20,
@@ -12,11 +12,11 @@
   "display": {
     "fits": true,
     "row_height": 44,
-    "required_height": 1339,
+    "required_height": 1207,
     "available_height": 1886,
-    "remaining_pixels": 547,
+    "remaining_pixels": 679,
     "brand_count": 3,
-    "row_count": 35
+    "row_count": 28
   },
   "rows": [
     {
@@ -31,10 +31,10 @@
       "thc_display": "89%",
       "price": "$17.78",
       "short_price": "$17.78",
-      "quantity": 11.0,
+      "quantity": 10.0,
       "source_rows": [
-        112,
-        113
+        100,
+        101
       ],
       "detail_display": "89%"
     },
@@ -52,8 +52,8 @@
       "short_price": "$17.78",
       "quantity": 4.0,
       "source_rows": [
-        62,
-        63
+        52,
+        53
       ],
       "detail_display": "89%"
     },
@@ -71,8 +71,8 @@
       "short_price": "$17.99",
       "quantity": 4.0,
       "source_rows": [
-        188,
-        189
+        172,
+        173
       ],
       "detail_display": "85%"
     },
@@ -90,7 +90,7 @@
       "short_price": "$17.78",
       "quantity": 10.0,
       "source_rows": [
-        54
+        45
       ],
       "detail_display": "83%"
     },
@@ -106,11 +106,9 @@
       "thc_display": "88%",
       "price": "$17.78",
       "short_price": "$17.78",
-      "quantity": 12.0,
+      "quantity": 10.0,
       "source_rows": [
-        293,
-        294,
-        295
+        277
       ],
       "detail_display": "88%"
     },
@@ -128,7 +126,7 @@
       "short_price": "$17.99",
       "quantity": 4.0,
       "source_rows": [
-        216
+        195
       ],
       "detail_display": "88%"
     },
@@ -146,9 +144,9 @@
       "short_price": "$17.99",
       "quantity": 5.0,
       "source_rows": [
-        274,
-        275,
-        276
+        258,
+        259,
+        260
       ],
       "detail_display": "88%"
     },
@@ -166,7 +164,7 @@
       "short_price": "$17.78",
       "quantity": 9.0,
       "source_rows": [
-        198
+        181
       ],
       "detail_display": "86%"
     },
@@ -182,9 +180,9 @@
       "thc_display": "87%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 9.0,
+      "quantity": 6.0,
       "source_rows": [
-        154
+        141
       ],
       "detail_display": "87%"
     },
@@ -200,30 +198,11 @@
       "thc_display": "87%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 3.0,
+      "quantity": 1.0,
       "source_rows": [
-        99
+        88
       ],
       "detail_display": "87%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Animal C@@kies",
-      "display_name": "Animal C@@kies",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8640000000000001,
-      "thc_display": "86%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 2.0,
-      "source_rows": [
-        2,
-        3
-      ],
-      "detail_display": "86%"
     },
     {
       "brand": "Freshy",
@@ -239,26 +218,8 @@
       "short_price": "$18.95",
       "quantity": 7.0,
       "source_rows": [
-        163,
-        164
-      ],
-      "detail_display": "86%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Blueberry Burst",
-      "display_name": "Blueberry Burst",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8569,
-      "thc_display": "86%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 2.0,
-      "source_rows": [
-        40
+        150,
+        151
       ],
       "detail_display": "86%"
     },
@@ -276,8 +237,8 @@
       "short_price": "$15.56",
       "quantity": 8.0,
       "source_rows": [
-        108,
-        109
+        96,
+        97
       ],
       "detail_display": "84%"
     },
@@ -295,27 +256,9 @@
       "short_price": "$20",
       "quantity": 2.0,
       "source_rows": [
-        259
+        236
       ],
       "detail_display": "86%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "GG#4",
-      "display_name": "GG#4",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8698999999999999,
-      "thc_display": "87%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 2.0,
-      "source_rows": [
-        82
-      ],
-      "detail_display": "87%"
     },
     {
       "brand": "Freshy",
@@ -329,10 +272,10 @@
       "thc_display": "87%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        75,
-        76
+        64,
+        66
       ],
       "detail_display": "87%"
     },
@@ -348,9 +291,9 @@
       "thc_display": "86%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
-        233
+        210
       ],
       "detail_display": "86%"
     },
@@ -366,9 +309,9 @@
       "thc_display": "86%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        152
+        139
       ],
       "detail_display": "86%"
     },
@@ -386,7 +329,7 @@
       "short_price": "$18.95",
       "quantity": 1.0,
       "source_rows": [
-        239
+        217
       ],
       "detail_display": "84%"
     },
@@ -402,9 +345,9 @@
       "thc_display": "86%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 4.0,
+      "quantity": 2.0,
       "source_rows": [
-        149
+        138
       ],
       "detail_display": "86%"
     },
@@ -420,9 +363,9 @@
       "thc_display": "87%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        290
+        273
       ],
       "detail_display": "87%"
     },
@@ -440,25 +383,7 @@
       "short_price": "$15.56",
       "quantity": 9.0,
       "source_rows": [
-        18
-      ],
-      "detail_display": "86%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Killer Kiwi",
-      "display_name": "Killer Kiwi",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8596,
-      "thc_display": "86%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 4.0,
-      "source_rows": [
-        129
+        14
       ],
       "detail_display": "86%"
     },
@@ -474,9 +399,9 @@
       "thc_display": "85%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 3.0,
+      "quantity": 2.0,
       "source_rows": [
-        212
+        191
       ],
       "detail_display": "85%"
     },
@@ -494,7 +419,7 @@
       "short_price": "$15.56",
       "quantity": 1.0,
       "source_rows": [
-        225
+        204
       ],
       "detail_display": "85%"
     },
@@ -510,10 +435,9 @@
       "thc_display": "85%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 14.0,
+      "quantity": 7.0,
       "source_rows": [
-        27,
-        30
+        26
       ],
       "detail_display": "85%"
     },
@@ -529,9 +453,9 @@
       "thc_display": "86%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        133
+        119
       ],
       "detail_display": "86%"
     },
@@ -547,9 +471,9 @@
       "thc_display": "84%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 10.0,
+      "quantity": 7.0,
       "source_rows": [
-        77
+        67
       ],
       "detail_display": "84%"
     },
@@ -565,29 +489,11 @@
       "thc_display": "84%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 3.0,
-      "source_rows": [
-        101
-      ],
-      "detail_display": "84%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Hippy Crasher",
-      "display_name": "Hippy Crasher",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8259000000000001,
-      "thc_display": "83%",
-      "price": "$15.56",
-      "short_price": "$15.56",
       "quantity": 2.0,
       "source_rows": [
-        121
+        90
       ],
-      "detail_display": "83%"
+      "detail_display": "84%"
     },
     {
       "brand": "Puck Fortland",
@@ -601,9 +507,9 @@
       "thc_display": "85%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        93
+        82
       ],
       "detail_display": "85%"
     },
@@ -619,48 +525,11 @@
       "thc_display": "83%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        242
+        221
       ],
       "detail_display": "83%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Trainwreck",
-      "display_name": "Trainwreck",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8298000000000001,
-      "thc_display": "83%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 3.0,
-      "source_rows": [
-        270,
-        271
-      ],
-      "detail_display": "83%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Maui Wowie",
-      "display_name": "Maui Wowie",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8066,
-      "thc_display": "81%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 1.0,
-      "source_rows": [
-        162
-      ],
-      "detail_display": "81%"
     }
   ]
 }

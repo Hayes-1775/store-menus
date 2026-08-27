@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-24T11:24:37",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-24-mcp.csv",
+  "generated_at": "2026-08-27T13:05:35",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-27-mcp.csv",
   "menu": "vapes",
   "screen": 3,
   "rotation_seconds": 20,
@@ -13,11 +13,11 @@
   "display": {
     "fits": true,
     "row_height": 44,
-    "required_height": 1846,
+    "required_height": 1780,
     "available_height": 1886,
-    "remaining_pixels": 40,
+    "remaining_pixels": 106,
     "brand_count": 4,
-    "row_count": 32
+    "row_count": 30
   },
   "rows": [
     {
@@ -34,7 +34,7 @@
       "short_price": "$24.44",
       "quantity": 5.0,
       "source_rows": [
-        183
+        168
       ],
       "detail_display": "88%"
     },
@@ -52,7 +52,7 @@
       "short_price": "$24.44",
       "quantity": 3.0,
       "source_rows": [
-        169
+        155
       ],
       "detail_display": "87%"
     },
@@ -70,9 +70,27 @@
       "short_price": "$24.44",
       "quantity": 6.0,
       "source_rows": [
-        145
+        133
       ],
       "detail_display": "86%"
+    },
+    {
+      "brand": "Higher Cultures",
+      "product_name": "Beef Tartare",
+      "display_name": "Beef Tartare",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7622,
+      "thc_display": "76%",
+      "price": "$36.00",
+      "short_price": "$36",
+      "quantity": 1.0,
+      "source_rows": [
+        18
+      ],
+      "detail_display": "76%"
     },
     {
       "brand": "Higher Cultures",
@@ -88,7 +106,7 @@
       "short_price": "$29.6",
       "quantity": 10.0,
       "source_rows": [
-        12
+        11
       ],
       "detail_display": ""
     },
@@ -104,9 +122,9 @@
       "thc_display": "83%",
       "price": "$24.44",
       "short_price": "$24.44",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        140
+        128
       ],
       "detail_display": "83%"
     },
@@ -124,7 +142,7 @@
       "short_price": "$29.6",
       "quantity": 8.0,
       "source_rows": [
-        120
+        108
       ],
       "detail_display": ""
     },
@@ -142,7 +160,7 @@
       "short_price": "$24.44",
       "quantity": 3.0,
       "source_rows": [
-        94
+        83
       ],
       "detail_display": "90%"
     },
@@ -158,29 +176,11 @@
       "thc_display": "",
       "price": "$29.60",
       "short_price": "$29.6",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        20
+        17
       ],
       "detail_display": ""
-    },
-    {
-      "brand": "Entourage Cannabis",
-      "product_name": "Dulce De Uva",
-      "display_name": "Dulce De Uva",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.6546,
-      "thc_display": "65%",
-      "price": "$33.33",
-      "short_price": "$33.33",
-      "quantity": 3.0,
-      "source_rows": [
-        69
-      ],
-      "detail_display": "65%"
     },
     {
       "brand": "Entourage Cannabis",
@@ -196,7 +196,7 @@
       "short_price": "$40",
       "quantity": 8.0,
       "source_rows": [
-        224
+        203
       ],
       "detail_display": "71%"
     },
@@ -214,7 +214,7 @@
       "short_price": "$64.44",
       "quantity": 2.0,
       "source_rows": [
-        65
+        55
       ],
       "detail_display": "68%"
     },
@@ -232,7 +232,7 @@
       "short_price": "$40",
       "quantity": 10.0,
       "source_rows": [
-        68
+        58
       ],
       "detail_display": "65%"
     },
@@ -248,9 +248,9 @@
       "thc_display": "75%",
       "price": "$33.33",
       "short_price": "$33.33",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        111
+        99
       ],
       "detail_display": "75%"
     },
@@ -266,9 +266,9 @@
       "thc_display": "72%",
       "price": "$40.00",
       "short_price": "$40",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        280
+        264
       ],
       "detail_display": "72%"
     },
@@ -284,9 +284,9 @@
       "thc_display": "72%",
       "price": "$40.00",
       "short_price": "$40",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        116
+        104
       ],
       "detail_display": "72%"
     },
@@ -302,9 +302,9 @@
       "thc_display": "77%",
       "price": "$33.33",
       "short_price": "$33.33",
-      "quantity": 3.0,
+      "quantity": 1.0,
       "source_rows": [
-        246
+        224
       ],
       "detail_display": "77%"
     },
@@ -322,27 +322,9 @@
       "short_price": "$40",
       "quantity": 5.0,
       "source_rows": [
-        147
+        135
       ],
       "detail_display": "72%"
-    },
-    {
-      "brand": "Grown Rogue",
-      "product_name": "Modified Grapes",
-      "display_name": "Modified Grapes",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Cured Resin",
-      "thc": 0.7995,
-      "thc_display": "80%",
-      "price": "$14.44",
-      "short_price": "$14.44",
-      "quantity": 5.0,
-      "source_rows": [
-        177
-      ],
-      "detail_display": "80%"
     },
     {
       "brand": "Grown Rogue",
@@ -358,7 +340,7 @@
       "short_price": "$22.22",
       "quantity": 3.0,
       "source_rows": [
-        33
+        29
       ],
       "detail_display": "73%"
     },
@@ -376,7 +358,7 @@
       "short_price": "$22.22",
       "quantity": 2.0,
       "source_rows": [
-        235
+        213
       ],
       "detail_display": "73%"
     },
@@ -392,29 +374,11 @@
       "thc_display": "74%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        209
+        188
       ],
       "detail_display": "74%"
-    },
-    {
-      "brand": "Grown Rogue",
-      "product_name": "Trainwreck",
-      "display_name": "Trainwreck",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Cured Resin",
-      "thc": 0.8134,
-      "thc_display": "81%",
-      "price": "$14.44",
-      "short_price": "$14.44",
-      "quantity": 2.0,
-      "source_rows": [
-        269
-      ],
-      "detail_display": "81%"
     },
     {
       "brand": "Grown Rogue",
@@ -430,8 +394,8 @@
       "short_price": "$22.22",
       "quantity": 10.0,
       "source_rows": [
-        172,
-        173
+        158,
+        159
       ],
       "detail_display": ""
     },
@@ -447,9 +411,9 @@
       "thc_display": "89%",
       "price": "$32.44",
       "short_price": "$32.44",
-      "quantity": 14.0,
+      "quantity": 12.0,
       "source_rows": [
-        170
+        156
       ],
       "detail_display": "89%"
     },
@@ -465,9 +429,9 @@
       "thc_display": "77%",
       "price": "$32.40",
       "short_price": "$32.4",
-      "quantity": 6.0,
+      "quantity": 4.0,
       "source_rows": [
-        71
+        61
       ],
       "detail_display": "77%"
     },
@@ -485,7 +449,7 @@
       "short_price": "$28.89",
       "quantity": 16.0,
       "source_rows": [
-        285
+        268
       ],
       "detail_display": ""
     },
@@ -503,7 +467,7 @@
       "short_price": "$32.4",
       "quantity": 2.0,
       "source_rows": [
-        49
+        41
       ],
       "detail_display": "86%"
     },
@@ -521,7 +485,7 @@
       "short_price": "$50",
       "quantity": 1.0,
       "source_rows": [
-        237
+        215
       ],
       "detail_display": "77%"
     },
@@ -537,9 +501,9 @@
       "thc_display": "",
       "price": "$50.00",
       "short_price": "$50",
-      "quantity": 5.0,
+      "quantity": 2.0,
       "source_rows": [
-        96
+        85
       ],
       "detail_display": ""
     },
@@ -555,9 +519,9 @@
       "thc_display": "79%",
       "price": "$27.78",
       "short_price": "$27.78",
-      "quantity": 16.0,
+      "quantity": 15.0,
       "source_rows": [
-        22
+        19
       ],
       "detail_display": "79%"
     },
@@ -575,7 +539,7 @@
       "short_price": "$32.4",
       "quantity": 3.0,
       "source_rows": [
-        272
+        256
       ],
       "detail_display": "81%"
     },
@@ -591,9 +555,9 @@
       "thc_display": "",
       "price": "$50.00",
       "short_price": "$50",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        23
+        20
       ],
       "detail_display": ""
     }
