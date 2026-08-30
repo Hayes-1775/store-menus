@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-27T13:05:35",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-27-mcp.csv",
+  "generated_at": "2026-08-30T10:34:45",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-30-mcp.csv",
   "menu": "vapes",
   "screen": 1,
   "rotation_seconds": 20,
@@ -12,49 +12,13 @@
   "display": {
     "fits": true,
     "row_height": 44,
-    "required_height": 1719,
+    "required_height": 1631,
     "available_height": 1886,
-    "remaining_pixels": 167,
+    "remaining_pixels": 255,
     "brand_count": 3,
-    "row_count": 35
+    "row_count": 30
   },
   "rows": [
-    {
-      "brand": "Verdant",
-      "product_name": "Modified Yogurt",
-      "display_name": "Modified Yogurt",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Rosin/CR",
-      "thc": 0.778,
-      "thc_display": "78%",
-      "price": "$22.22",
-      "short_price": "$22.22",
-      "quantity": 9.0,
-      "source_rows": [
-        165
-      ],
-      "detail_display": "78%"
-    },
-    {
-      "brand": "Verdant",
-      "product_name": "Garlic Cherries",
-      "display_name": "Garlic Cherries",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Rosin/CR",
-      "thc": 0.7809999999999999,
-      "thc_display": "78%",
-      "price": "$22.22",
-      "short_price": "$22.22",
-      "quantity": 3.0,
-      "source_rows": [
-        78
-      ],
-      "detail_display": "78%"
-    },
     {
       "brand": "Verdant",
       "product_name": "Government Hangman",
@@ -67,7 +31,7 @@
       "thc_display": "79%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 7.0,
+      "quantity": 4.0,
       "source_rows": [
         87
       ],
@@ -85,7 +49,7 @@
       "thc_display": "76%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 6.0,
+      "quantity": 2.0,
       "source_rows": [
         106
       ],
@@ -103,29 +67,11 @@
       "thc_display": "70%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
         226
       ],
       "detail_display": "70%"
-    },
-    {
-      "brand": "NW Kind",
-      "product_name": "Mint Chocolate Chip",
-      "display_name": "Mint Chocolate Chip",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Distillate",
-      "thc": 0.858,
-      "thc_display": "86%",
-      "price": "$23.00",
-      "short_price": "$23",
-      "quantity": 3.0,
-      "source_rows": [
-        161
-      ],
-      "detail_display": "86%"
     },
     {
       "brand": "NW Kind",
@@ -139,7 +85,7 @@
       "thc_display": "83%",
       "price": "$24.00",
       "short_price": "$24",
-      "quantity": 5.0,
+      "quantity": 2.0,
       "source_rows": [
         92,
         93
@@ -160,7 +106,7 @@
       "short_price": "$26",
       "quantity": 1.0,
       "source_rows": [
-        200
+        198
       ],
       "detail_display": "82%"
     },
@@ -178,27 +124,9 @@
       "short_price": "$36",
       "quantity": 2.0,
       "source_rows": [
-        223
+        222
       ],
       "detail_display": "81%"
-    },
-    {
-      "brand": "NW Kind",
-      "product_name": "Apple Fritter",
-      "display_name": "Apple Fritter",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Cured Resin",
-      "thc": 0.7859999999999999,
-      "thc_display": "79%",
-      "price": "$24.00",
-      "short_price": "$24",
-      "quantity": 1.0,
-      "source_rows": [
-        4
-      ],
-      "detail_display": "79%"
     },
     {
       "brand": "NW Kind",
@@ -230,9 +158,9 @@
       "thc_display": "78%",
       "price": "$35.56",
       "short_price": "$35.56",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        13
+        12
       ],
       "detail_display": "78%"
     },
@@ -266,9 +194,9 @@
       "thc_display": "84%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        42
+        43
       ],
       "detail_display": "84%"
     },
@@ -284,9 +212,9 @@
       "thc_display": "68%",
       "price": "$40.00",
       "short_price": "$40",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
-        219
+        218
       ],
       "detail_display": "68%"
     },
@@ -302,9 +230,9 @@
       "thc_display": "78%",
       "price": "$23.62",
       "short_price": "$23.62",
-      "quantity": 4.0,
+      "quantity": 1.0,
       "source_rows": [
-        31
+        30
       ],
       "detail_display": "78%"
     },
@@ -322,7 +250,7 @@
       "short_price": "$23.62",
       "quantity": 12.0,
       "source_rows": [
-        157
+        155
       ],
       "detail_display": "77%"
     },
@@ -338,7 +266,7 @@
       "thc_display": "76%",
       "price": "$31.16",
       "short_price": "$31.16",
-      "quantity": 3.0,
+      "quantity": 1.0,
       "source_rows": [
         21
       ],
@@ -356,9 +284,9 @@
       "thc_display": "90%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 6.0,
+      "quantity": 4.0,
       "source_rows": [
-        153
+        151
       ],
       "detail_display": "90%"
     },
@@ -374,9 +302,9 @@
       "thc_display": "88%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 9.0,
+      "quantity": 6.0,
       "source_rows": [
-        37
+        36
       ],
       "detail_display": "88%"
     },
@@ -394,7 +322,7 @@
       "short_price": "$15.73",
       "quantity": 4.0,
       "source_rows": [
-        46
+        47
       ],
       "detail_display": "88%"
     },
@@ -412,7 +340,7 @@
       "short_price": "$15.73",
       "quantity": 1.0,
       "source_rows": [
-        9
+        8
       ],
       "detail_display": "87%"
     },
@@ -448,7 +376,7 @@
       "short_price": "$26.44",
       "quantity": 1.0,
       "source_rows": [
-        176
+        175
       ],
       "detail_display": "81%"
     },
@@ -466,7 +394,7 @@
       "short_price": "$26.44",
       "quantity": 1.0,
       "source_rows": [
-        179
+        178
       ],
       "detail_display": "78%"
     },
@@ -482,7 +410,7 @@
       "thc_display": "76%",
       "price": "$23.62",
       "short_price": "$23.62",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
         80
       ],
@@ -500,9 +428,9 @@
       "thc_display": "91%",
       "price": "$20.47",
       "short_price": "$20.47",
-      "quantity": 5.0,
+      "quantity": 2.0,
       "source_rows": [
-        180
+        179
       ],
       "detail_display": "91%"
     },
@@ -518,9 +446,9 @@
       "thc_display": "90%",
       "price": "$30.67",
       "short_price": "$30.67",
-      "quantity": 8.0,
+      "quantity": 9.0,
       "source_rows": [
-        170
+        168
       ],
       "detail_display": "90%"
     },
@@ -536,27 +464,9 @@
       "thc_display": "87%",
       "price": "$30.67",
       "short_price": "$30.67",
-      "quantity": 12.0,
+      "quantity": 10.0,
       "source_rows": [
         7
-      ],
-      "detail_display": "87%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Pina Colada",
-      "display_name": "Pina Colada 2g",
-      "strain": "Hybrid",
-      "size": "2g",
-      "format": "AIO",
-      "process": "Distillate",
-      "thc": 0.8709,
-      "thc_display": "87%",
-      "price": "$30.67",
-      "short_price": "$30.67",
-      "quantity": 1.0,
-      "source_rows": [
-        177
       ],
       "detail_display": "87%"
     },
@@ -574,7 +484,7 @@
       "short_price": "$30.67",
       "quantity": 10.0,
       "source_rows": [
-        10
+        9
       ],
       "detail_display": "86%"
     },
@@ -590,9 +500,9 @@
       "thc_display": "86%",
       "price": "$20.47",
       "short_price": "$20.47",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        182
+        181
       ],
       "detail_display": "86%"
     },
@@ -608,9 +518,9 @@
       "thc_display": "76%",
       "price": "$23.62",
       "short_price": "$23.62",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        43
+        44
       ],
       "detail_display": "76%"
     },
@@ -628,7 +538,7 @@
       "short_price": "$26.44",
       "quantity": 5.0,
       "source_rows": [
-        162
+        160
       ],
       "detail_display": "75%"
     },
@@ -644,9 +554,9 @@
       "thc_display": "76%",
       "price": "$31.16",
       "short_price": "$31.16",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        54
+        56
       ],
       "detail_display": "76%"
     }

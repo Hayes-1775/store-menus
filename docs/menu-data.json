@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-27T13:05:34",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-27-mcp.csv",
+  "generated_at": "2026-08-30T10:34:45",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-30-mcp.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -32,7 +32,7 @@
         "U16cZGMkgV"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Calming",
       "looking_for": "Sleepy",
       "display_name": "Mendo Breath"
@@ -66,7 +66,7 @@
         "sKWZqqHD4e"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Relaxing",
       "looking_for": "Chill",
       "display_name": "Apple Jacked"
@@ -100,10 +100,44 @@
         "CyJ6GFQ8Zp"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Balanced",
       "looking_for": "Chill",
       "display_name": "Alley Oop"
+    },
+    {
+      "product_name": "Dirty Zkittlez",
+      "brand": "Millerville",
+      "strain": "Indica",
+      "group_order": 1,
+      "thc": 0.2491,
+      "thc_display": "25%",
+      "quantity": 228.0,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "45d9a423-fccf-4c6d-a43e-b4bed0d56c5c"
+      ],
+      "source_variant_ids": [
+        "7df8e7d9-24e9-409e-872a-11b929941657"
+      ],
+      "source_skus": [
+        "inhZhLZaCA"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Fruity",
+      "looking_for": "Chill",
+      "display_name": "Dirty Zkittlez"
     },
     {
       "product_name": "Stuffed Cherry Gelato",
@@ -112,7 +146,7 @@
       "group_order": 1,
       "thc": 0.2491,
       "thc_display": "25%",
-      "quantity": 402.95,
+      "quantity": 399.42,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -134,7 +168,7 @@
         "dCjca1Luz7"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true,
+      "no_recent_sales": false,
       "feeling": "Sweet",
       "looking_for": "Chill",
       "display_name": "Stuffed Cherry Gelato"
@@ -146,7 +180,7 @@
       "group_order": 1,
       "thc": 0.2557,
       "thc_display": "26%",
-      "quantity": 404.11,
+      "quantity": 390.01,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -214,7 +248,7 @@
       "group_order": 1,
       "thc": 0.27580000000000005,
       "thc_display": "28%",
-      "quantity": 408.36,
+      "quantity": 394.26,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -248,7 +282,7 @@
       "group_order": 1,
       "thc": 0.281,
       "thc_display": "28%",
-      "quantity": 357.56,
+      "quantity": 345.42,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -282,7 +316,7 @@
       "group_order": 1,
       "thc": 0.2884,
       "thc_display": "29%",
-      "quantity": 180.9,
+      "quantity": 175.27,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -316,7 +350,7 @@
       "group_order": 1,
       "thc": 0.30210000000000004,
       "thc_display": "30%",
-      "quantity": 296.7,
+      "quantity": 289.6,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -384,7 +418,7 @@
       "group_order": 1,
       "thc": 0.24609999999999999,
       "thc_display": "25%",
-      "quantity": 83.16,
+      "quantity": 65.45,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -418,7 +452,7 @@
       "group_order": 1,
       "thc": 0.2685,
       "thc_display": "27%",
-      "quantity": 16.36,
+      "quantity": 5.71,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -452,7 +486,7 @@
       "group_order": 1,
       "thc": 0.2211,
       "thc_display": "22%",
-      "quantity": 29.42,
+      "quantity": 25.92,
       "price_profile": "$10 Gram",
       "gram": "$10",
       "eighth": "$32",
@@ -460,7 +494,7 @@
       "half": "$116",
       "ounce": "$214",
       "low_stock": false,
-      "closeout": false,
+      "closeout": true,
       "aged_inventory": false,
       "aged_inventory_days": null,
       "aged_inventory_date": "",
@@ -474,7 +508,7 @@
         "CljXcKOLRG"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true,
+      "no_recent_sales": false,
       "feeling": "Sweet",
       "looking_for": "Chill",
       "display_name": "Sherb Cream Pop #4"
@@ -486,7 +520,7 @@
       "group_order": 1,
       "thc": 0.28559999999999997,
       "thc_display": "29%",
-      "quantity": 32.4,
+      "quantity": 25.25,
       "price_profile": "$10 Gram",
       "gram": "$10",
       "eighth": "$32",
@@ -494,7 +528,7 @@
       "half": "$116",
       "ounce": "$214",
       "low_stock": false,
-      "closeout": false,
+      "closeout": true,
       "aged_inventory": false,
       "aged_inventory_days": null,
       "aged_inventory_date": "",
@@ -520,7 +554,7 @@
       "group_order": 1,
       "thc": 0.215,
       "thc_display": "22%",
-      "quantity": 62.49,
+      "quantity": 58.89,
       "price_profile": "$12 Gram",
       "gram": "$12",
       "eighth": "$38",
@@ -542,7 +576,7 @@
         "IDjuNM2gd5"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true,
+      "no_recent_sales": false,
       "feeling": "Mellow",
       "looking_for": "Sleepy",
       "display_name": "Goodies"
@@ -554,7 +588,7 @@
       "group_order": 2,
       "thc": 0.155,
       "thc_display": "16%",
-      "quantity": 284.06,
+      "quantity": 228.21,
       "price_profile": "$3 Gram",
       "gram": "$3",
       "eighth": "$10",
@@ -588,7 +622,7 @@
       "group_order": 2,
       "thc": 0.217,
       "thc_display": "22%",
-      "quantity": 488.04,
+      "quantity": 463.48,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -622,7 +656,7 @@
       "group_order": 2,
       "thc": 0.21899999999999997,
       "thc_display": "22%",
-      "quantity": 261.79,
+      "quantity": 260.79,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -644,10 +678,44 @@
         "W9YSnBVznN"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true,
+      "no_recent_sales": false,
       "feeling": "Sedative",
       "looking_for": "Sleepy",
       "display_name": "Devils Den"
+    },
+    {
+      "product_name": "Apple Tart",
+      "brand": "Miracle Farms",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.1739208,
+      "thc_display": "17%",
+      "quantity": 1.0,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
+      "low_stock": true,
+      "closeout": true,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "669c4dee-8608-4e33-8a53-13e6ffd9cd52"
+      ],
+      "source_variant_ids": [
+        "013a3ddc-8228-437c-9917-7150c9795ea6"
+      ],
+      "source_skus": [
+        "QVkgLKhISJ"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Mellow",
+      "looking_for": "Chill",
+      "display_name": "Apple Tart"
     },
     {
       "product_name": "Smashburger",
@@ -656,7 +724,7 @@
       "group_order": 2,
       "thc": 0.23,
       "thc_display": "23%",
-      "quantity": 279.47,
+      "quantity": 261.94,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -678,7 +746,7 @@
         "R61IRt3KQi"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true,
+      "no_recent_sales": false,
       "feeling": "Sleepy",
       "looking_for": "Sleepy",
       "display_name": "Smashburger"
@@ -712,7 +780,7 @@
         "ZlbsvpM2BS"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Tangy",
       "looking_for": "Chill",
       "display_name": "Sour Grapes"
@@ -746,7 +814,7 @@
         "N3xGRavjiF"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Driven",
       "looking_for": "Energy",
       "display_name": "Dante's Cookie Jar"
@@ -758,7 +826,7 @@
       "group_order": 2,
       "thc": 0.2618,
       "thc_display": "26%",
-      "quantity": 262.72,
+      "quantity": 238.03,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -826,7 +894,7 @@
       "group_order": 2,
       "thc": 0.2667,
       "thc_display": "27%",
-      "quantity": 191.82,
+      "quantity": 186.19,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -882,7 +950,7 @@
         "pzmnSIt0N9"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Smooth",
       "looking_for": "Chill",
       "display_name": "Collins Ave"
@@ -894,7 +962,7 @@
       "group_order": 2,
       "thc": 0.2693,
       "thc_display": "27%",
-      "quantity": 76.7,
+      "quantity": 30.9,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -916,7 +984,7 @@
         "a1CSJ14LsD"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true,
+      "no_recent_sales": false,
       "feeling": "Balanced",
       "looking_for": "Chill",
       "display_name": "Peak 112"
@@ -928,7 +996,7 @@
       "group_order": 2,
       "thc": 0.273,
       "thc_display": "27%",
-      "quantity": 168.3,
+      "quantity": 154.2,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -962,7 +1030,7 @@
       "group_order": 2,
       "thc": 0.2755,
       "thc_display": "28%",
-      "quantity": 30.92,
+      "quantity": 25.3,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -970,7 +1038,7 @@
       "half": "$57",
       "ounce": "$105",
       "low_stock": false,
-      "closeout": false,
+      "closeout": true,
       "aged_inventory": false,
       "aged_inventory_days": null,
       "aged_inventory_date": "",
@@ -990,13 +1058,13 @@
       "display_name": "Black Market"
     },
     {
-      "product_name": "Category 5",
-      "brand": "Grown Rogue",
+      "product_name": "Golden Lemons",
+      "brand": "Millerville",
       "strain": "Hybrid",
       "group_order": 2,
-      "thc": 0.31810000000000005,
+      "thc": 0.32089999999999996,
       "thc_display": "32%",
-      "quantity": 144.45,
+      "quantity": 228.0,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1009,28 +1077,28 @@
       "aged_inventory_days": null,
       "aged_inventory_date": "",
       "source_product_ids": [
-        "35d1511c-51a2-4244-a52e-6be618d4b5bd"
+        "03a18bc3-c1db-4b42-aeba-02d745194122"
       ],
       "source_variant_ids": [
-        "0f6dcffb-fef3-4dd4-b1bc-f337224329ba"
+        "fe562460-15ef-4bd7-b432-bcb2ba757f7d"
       ],
       "source_skus": [
-        "YJI1fHkj5K"
+        "2WKanmJhhb"
       ],
       "dutchie_url": "",
       "no_recent_sales": false,
-      "feeling": "Energizing",
+      "feeling": "Citrusy",
       "looking_for": "Energy",
-      "display_name": "Category 5"
+      "display_name": "Golden Lemons"
     },
     {
-      "product_name": "Scented Marker",
-      "brand": "Grown Rogue",
+      "product_name": "Goofies",
+      "brand": "Millerville",
       "strain": "Hybrid",
       "group_order": 2,
-      "thc": 0.3282,
+      "thc": 0.3262,
       "thc_display": "33%",
-      "quantity": 59.87,
+      "quantity": 228.0,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1043,19 +1111,53 @@
       "aged_inventory_days": null,
       "aged_inventory_date": "",
       "source_product_ids": [
-        "a6a0231b-c196-4e11-aeb1-7fd517663a45"
+        "fa9744ac-16ca-4bfb-802d-4f6d43b2d243"
       ],
       "source_variant_ids": [
-        "72bf20b8-6838-4c77-8a50-5896047d5e6e"
+        "d8fa2751-5be1-4a2b-8dd3-c5f8cfc0a86d"
       ],
       "source_skus": [
-        "HeRlQJ9S7J"
+        "vrnvq2h071"
       ],
       "dutchie_url": "",
       "no_recent_sales": false,
-      "feeling": "Social",
-      "looking_for": "Hungry",
-      "display_name": "Scented Marker"
+      "feeling": "Giggly",
+      "looking_for": "Chill",
+      "display_name": "Goofies"
+    },
+    {
+      "product_name": "Papaya Juice",
+      "brand": "",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.23149999999999998,
+      "thc_display": "23%",
+      "quantity": 114.0,
+      "price_profile": "$10 Gram",
+      "gram": "$10",
+      "eighth": "$32",
+      "quarter": "$61",
+      "half": "$116",
+      "ounce": "$214",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "85dc549c-cc8f-46ee-bbc0-44d5502d6f1e"
+      ],
+      "source_variant_ids": [
+        "79777ad9-5d6d-457b-b07d-e243d849c74f"
+      ],
+      "source_skus": [
+        "1A401030001E656000006653"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Bright",
+      "looking_for": "Energy",
+      "display_name": "Papaya Juice"
     },
     {
       "product_name": "Lime Dawg",
@@ -1064,7 +1166,7 @@
       "group_order": 2,
       "thc": 0.2401,
       "thc_display": "24%",
-      "quantity": 84.1,
+      "quantity": 77.07,
       "price_profile": "$10 Gram",
       "gram": "$10",
       "eighth": "$32",
@@ -1086,7 +1188,7 @@
         "v37wZN0vPj"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true,
+      "no_recent_sales": false,
       "feeling": "Bright",
       "looking_for": "Energy",
       "display_name": "Lime Dawg"
@@ -1126,6 +1228,40 @@
       "display_name": "Iced Mocha"
     },
     {
+      "product_name": "Cap Junky",
+      "brand": "",
+      "strain": "Hybrid",
+      "group_order": 2,
+      "thc": 0.3163,
+      "thc_display": "32%",
+      "quantity": 114.0,
+      "price_profile": "$10 Gram",
+      "gram": "$10",
+      "eighth": "$32",
+      "quarter": "$61",
+      "half": "$116",
+      "ounce": "$214",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "6549e88b-edef-4174-b318-b53b5764b9ff"
+      ],
+      "source_variant_ids": [
+        "6ae26a95-1b19-4657-a3ed-62ec34be264e"
+      ],
+      "source_skus": [
+        "1A401030001E656000006625"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Potent",
+      "looking_for": "Chill",
+      "display_name": "Cap Junky"
+    },
+    {
       "product_name": "Super Boof",
       "brand": "Fenario Farms",
       "strain": "Hybrid",
@@ -1154,7 +1290,7 @@
         "53B9VXkgnH"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Euphoric",
       "looking_for": "Energy",
       "display_name": "Super Boof"
@@ -1166,7 +1302,7 @@
       "group_order": 2,
       "thc": 0.315,
       "thc_display": "32%",
-      "quantity": 90.58,
+      "quantity": 72.88,
       "price_profile": "$16 Gram",
       "gram": "$16",
       "eighth": "$50",
@@ -1222,7 +1358,7 @@
         "C5SpAOxJam"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Focused",
       "looking_for": "Energy",
       "display_name": "Miami Dade"
@@ -1234,7 +1370,7 @@
       "group_order": 3,
       "thc": 0.2332,
       "thc_display": "23%",
-      "quantity": 287.85,
+      "quantity": 275.14,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1262,13 +1398,47 @@
       "display_name": "Ape Cheese"
     },
     {
+      "product_name": "White Chocolate Chip",
+      "brand": "Millerville",
+      "strain": "Sativa",
+      "group_order": 3,
+      "thc": 0.2719,
+      "thc_display": "27%",
+      "quantity": 228.0,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "2299696f-6ee3-4fce-8150-20114cc09a4f"
+      ],
+      "source_variant_ids": [
+        "7eb43282-2fbe-40ba-b425-0a3c42eeacef"
+      ],
+      "source_skus": [
+        "Mf6MA6qReL"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Uplifting",
+      "looking_for": "Energy",
+      "display_name": "White Chocolate Chip"
+    },
+    {
       "product_name": "Pink Passion Fruit",
       "brand": "Grown Rogue",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.28550000000000003,
       "thc_display": "29%",
-      "quantity": 324.98,
+      "quantity": 307.24,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1287,8 +1457,8 @@
         "2b7e1b1f-0b6d-4884-8e64-1285f06b5c5c"
       ],
       "source_skus": [
-        "LcZTU21OSg",
-        "fdztBs0W82"
+        "fdztBs0W82",
+        "LcZTU21OSg"
       ],
       "dutchie_url": "",
       "no_recent_sales": false,
@@ -1297,13 +1467,81 @@
       "display_name": "Pink Passion Fruit"
     },
     {
+      "product_name": "Sunday Bread",
+      "brand": "Millerville",
+      "strain": "Sativa",
+      "group_order": 3,
+      "thc": 0.2977,
+      "thc_display": "30%",
+      "quantity": 228.0,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "70027b2f-7e45-4787-86f1-6eaaabeeed48"
+      ],
+      "source_variant_ids": [
+        "581b1f6e-3879-423f-93b6-431223c53e5c"
+      ],
+      "source_skus": [
+        "qd7OGEdF6x"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Bright",
+      "looking_for": "Energy",
+      "display_name": "Sunday Bread"
+    },
+    {
+      "product_name": "Hella Jelly",
+      "brand": "Millerville",
+      "strain": "Sativa",
+      "group_order": 3,
+      "thc": 0.3065,
+      "thc_display": "31%",
+      "quantity": 220.99,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "19a800e4-3046-4874-8cae-40d7cdb25bde"
+      ],
+      "source_variant_ids": [
+        "d35756c5-0200-4c49-8279-05e974714ba4"
+      ],
+      "source_skus": [
+        "h4pTlKf8Wn"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Creative",
+      "looking_for": "Energy",
+      "display_name": "Hella Jelly"
+    },
+    {
       "product_name": "High Desert Sour Sage",
       "brand": "Oregrown",
       "strain": "Sativa",
       "group_order": 3,
       "thc": 0.27390000000000003,
       "thc_display": "27%",
-      "quantity": 47.7,
+      "quantity": 40.62,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -1337,7 +1575,7 @@
       "group_order": 3,
       "thc": 0.3066,
       "thc_display": "31%",
-      "quantity": 57.27,
+      "quantity": 32.47,
       "price_profile": "$7 Gram",
       "gram": "$7",
       "eighth": "$22",
@@ -1371,7 +1609,7 @@
       "group_order": 3,
       "thc": 0.243,
       "thc_display": "24%",
-      "quantity": 50.62,
+      "quantity": 49.58,
       "price_profile": "$10 Gram",
       "gram": "$10",
       "eighth": "$32",
@@ -1405,7 +1643,7 @@
       "group_order": 3,
       "thc": 0.3299,
       "thc_display": "33%",
-      "quantity": 74.49,
+      "quantity": 23.62,
       "price_profile": "$16 Gram",
       "gram": "$16",
       "eighth": "$50",
@@ -1413,7 +1651,7 @@
       "half": "$180",
       "ounce": "$332",
       "low_stock": false,
-      "closeout": false,
+      "closeout": true,
       "aged_inventory": false,
       "aged_inventory_days": null,
       "aged_inventory_date": "",

@@ -1,535 +1,201 @@
 {
-  "generated_at": "2026-08-27T13:05:35",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-27-mcp.csv",
+  "generated_at": "2026-08-30T10:34:46",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-30-mcp.csv",
   "menu": "vapes",
   "screen": 4,
   "rotation_seconds": 20,
   "brands": [
-    "National",
-    "Freshy",
-    "Puck Fortland"
+    "Unknown"
   ],
   "display": {
     "fits": true,
     "row_height": 44,
-    "required_height": 1207,
+    "required_height": 733,
     "available_height": 1886,
-    "remaining_pixels": 679,
-    "brand_count": 3,
-    "row_count": 28
+    "remaining_pixels": 1153,
+    "brand_count": 1,
+    "row_count": 10
   },
   "rows": [
     {
-      "brand": "National",
-      "product_name": "Guava Cart",
-      "display_name": "Guava Cart",
+      "brand": "Unknown",
+      "product_name": "Slurricane",
+      "display_name": "Slurricane",
       "strain": "Indica",
       "size": "1g",
       "format": "510",
       "process": "Distillate",
-      "thc": 0.8898,
+      "thc": 0.888,
       "thc_display": "89%",
-      "price": "$17.78",
-      "short_price": "$17.78",
+      "price": "$16.67",
+      "short_price": "$16.67",
       "quantity": 10.0,
       "source_rows": [
-        100,
-        101
+        203
       ],
       "detail_display": "89%"
     },
     {
-      "brand": "National",
-      "product_name": "Creamsicle Cart",
-      "display_name": "Creamsicle Cart",
+      "brand": "Unknown",
+      "product_name": "Madd Fruit",
+      "display_name": "Madd Fruit",
       "strain": "Indica",
       "size": "1g",
       "format": "510",
-      "process": "Distillate",
-      "thc": 0.8876000000000001,
-      "thc_display": "89%",
-      "price": "$17.78",
-      "short_price": "$17.78",
-      "quantity": 4.0,
-      "source_rows": [
-        52,
-        53
-      ],
-      "detail_display": "89%"
-    },
-    {
-      "brand": "National",
-      "product_name": "Oregon Apple Cart",
-      "display_name": "Oregon Apple Cart",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Distillate",
-      "thc": 0.8458,
-      "thc_display": "85%",
-      "price": "$17.99",
-      "short_price": "$17.99",
-      "quantity": 4.0,
-      "source_rows": [
-        172,
-        173
-      ],
-      "detail_display": "85%"
-    },
-    {
-      "brand": "National",
-      "product_name": "Cherry Cola Cart",
-      "display_name": "Cherry Cola Cart",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Distillate",
-      "thc": 0.8295,
-      "thc_display": "83%",
-      "price": "$17.78",
-      "short_price": "$17.78",
+      "process": "Cured Resin",
+      "thc": 0.8420000000000001,
+      "thc_display": "84%",
+      "price": "$20.00",
+      "short_price": "$20",
       "quantity": 10.0,
       "source_rows": [
-        45
+        130
       ],
-      "detail_display": "83%"
+      "detail_display": "84%"
     },
     {
-      "brand": "National",
-      "product_name": "Watermelon Wonder Cart",
-      "display_name": "Watermelon Wonder Cart",
+      "brand": "Unknown",
+      "product_name": "Tagalongz",
+      "display_name": "Tagalongz",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.807,
+      "thc_display": "81%",
+      "price": "$25.00",
+      "short_price": "$25",
+      "quantity": 10.0,
+      "source_rows": [
+        223
+      ],
+      "detail_display": "81%"
+    },
+    {
+      "brand": "Unknown",
+      "product_name": "Blueberry Muffin",
+      "display_name": "Blueberry Muffin",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.764,
+      "thc_display": "76%",
+      "price": "$25.00",
+      "short_price": "$25",
+      "quantity": 10.0,
+      "source_rows": [
+        39
+      ],
+      "detail_display": "76%"
+    },
+    {
+      "brand": "Unknown",
+      "product_name": "Banana Punch",
+      "display_name": "Banana Punch",
       "strain": "Hybrid",
       "size": "1g",
       "format": "510",
       "process": "Distillate",
-      "thc": 0.8811,
-      "thc_display": "88%",
-      "price": "$17.78",
-      "short_price": "$17.78",
+      "thc": 0.86,
+      "thc_display": "86%",
+      "price": "$16.67",
+      "short_price": "$16.67",
+      "quantity": 9.0,
+      "source_rows": [
+        16
+      ],
+      "detail_display": "86%"
+    },
+    {
+      "brand": "Unknown",
+      "product_name": "Papaya Melons",
+      "display_name": "Papaya Melons",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.794,
+      "thc_display": "79%",
+      "price": "$25.00",
+      "short_price": "$25",
       "quantity": 10.0,
+      "source_rows": [
+        174
+      ],
+      "detail_display": "79%"
+    },
+    {
+      "brand": "Unknown",
+      "product_name": "Winter Sunset",
+      "display_name": "Winter Sunset",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.804,
+      "thc_display": "80%",
+      "price": "$20.00",
+      "short_price": "$20",
+      "quantity": 9.0,
       "source_rows": [
         277
       ],
-      "detail_display": "88%"
+      "detail_display": "80%"
     },
     {
-      "brand": "National",
-      "product_name": "Raspberry Skywalker Cart",
-      "display_name": "Raspberry Skywalker Cart",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Distillate",
-      "thc": 0.8772,
-      "thc_display": "88%",
-      "price": "$17.99",
-      "short_price": "$17.99",
-      "quantity": 4.0,
-      "source_rows": [
-        195
-      ],
-      "detail_display": "88%"
-    },
-    {
-      "brand": "National",
-      "product_name": "Tropical Trainwreck Cart",
-      "display_name": "Tropical Trainwreck Cart",
+      "brand": "Unknown",
+      "product_name": "Maui True Blood",
+      "display_name": "Maui True Blood",
       "strain": "Sativa",
       "size": "1g",
       "format": "510",
-      "process": "Distillate",
-      "thc": 0.8755,
-      "thc_display": "88%",
-      "price": "$17.99",
-      "short_price": "$17.99",
-      "quantity": 5.0,
+      "process": "Live Resin",
+      "thc": 0.774,
+      "thc_display": "77%",
+      "price": "$25.00",
+      "short_price": "$25",
+      "quantity": 10.0,
       "source_rows": [
-        258,
-        259,
-        260
+        143
       ],
-      "detail_display": "88%"
+      "detail_display": "77%"
     },
     {
-      "brand": "National",
-      "product_name": "Pineapple Wreck Cart",
-      "display_name": "Pineapple Wreck Cart",
+      "brand": "Unknown",
+      "product_name": "Trop Cherry Strawberry",
+      "display_name": "Trop Cherry Strawberry",
       "strain": "Sativa",
       "size": "1g",
       "format": "510",
-      "process": "Distillate",
-      "thc": 0.8552,
-      "thc_display": "86%",
-      "price": "$17.78",
-      "short_price": "$17.78",
-      "quantity": 9.0,
-      "source_rows": [
-        181
-      ],
-      "detail_display": "86%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Mango Tango",
-      "display_name": "Mango Tango",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8697,
-      "thc_display": "87%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 6.0,
-      "source_rows": [
-        141
-      ],
-      "detail_display": "87%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Gr@pe Ape",
-      "display_name": "Gr@pe Ape",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8652,
-      "thc_display": "87%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 1.0,
-      "source_rows": [
-        88
-      ],
-      "detail_display": "87%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Melon Breeze",
-      "display_name": "Melon Breeze",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8637999999999999,
-      "thc_display": "86%",
-      "price": "$18.95",
-      "short_price": "$18.95",
-      "quantity": 7.0,
-      "source_rows": [
-        150,
-        151
-      ],
-      "detail_display": "86%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Grape Galaxy",
-      "display_name": "Grape Galaxy",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8441,
-      "thc_display": "84%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 8.0,
-      "source_rows": [
-        96,
-        97
-      ],
-      "detail_display": "84%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Tigers Blood",
-      "display_name": "Tigers Blood AIO",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.8563,
-      "thc_display": "86%",
+      "process": "Cured Resin",
+      "thc": 0.77,
+      "thc_display": "77%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 2.0,
+      "quantity": 10.0,
       "source_rows": [
-        236
+        255
       ],
-      "detail_display": "86%"
+      "detail_display": "77%"
     },
     {
-      "brand": "Freshy",
-      "product_name": "Fierce Green Apple",
-      "display_name": "Fierce Green Apple",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8654999999999999,
-      "thc_display": "87%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 7.0,
-      "source_rows": [
-        64,
-        66
-      ],
-      "detail_display": "87%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Strawberry Fields 4Ever",
-      "display_name": "Strawberry Fields 4Ever",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8583,
-      "thc_display": "86%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 9.0,
-      "source_rows": [
-        210
-      ],
-      "detail_display": "86%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Mango Strawberry Smoothie",
-      "display_name": "Mango Strawberry Smoothie",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8554999999999999,
-      "thc_display": "86%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 5.0,
-      "source_rows": [
-        139
-      ],
-      "detail_display": "86%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Super Boof",
-      "display_name": "Super Boof",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.843,
-      "thc_display": "84%",
-      "price": "$18.95",
-      "short_price": "$18.95",
-      "quantity": 1.0,
-      "source_rows": [
-        217
-      ],
-      "detail_display": "84%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Mango Strawberry Smoothie",
-      "display_name": "Mango Strawberry Smoothie AIO",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.8554999999999999,
-      "thc_display": "86%",
-      "price": "$20.00",
-      "short_price": "$20",
-      "quantity": 2.0,
-      "source_rows": [
-        138
-      ],
-      "detail_display": "86%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Watermelon Splash",
-      "display_name": "Watermelon Splash",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8683,
-      "thc_display": "87%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 5.0,
-      "source_rows": [
-        273
-      ],
-      "detail_display": "87%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Banana Candy",
-      "display_name": "Banana Candy",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8601000000000001,
-      "thc_display": "86%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 9.0,
-      "source_rows": [
-        14
-      ],
-      "detail_display": "86%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Raspberry Lemonade",
-      "display_name": "Raspberry Lemonade",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8525,
-      "thc_display": "85%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 2.0,
-      "source_rows": [
-        191
-      ],
-      "detail_display": "85%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Shirley Temple",
-      "display_name": "Shirley Temple",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8515,
-      "thc_display": "85%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 1.0,
-      "source_rows": [
-        204
-      ],
-      "detail_display": "85%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Blue Dream",
-      "display_name": "Blue Dream",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8512000000000001,
-      "thc_display": "85%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 7.0,
-      "source_rows": [
-        26
-      ],
-      "detail_display": "85%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Killer Kiwi",
-      "display_name": "Killer Kiwi AIO",
+      "brand": "Unknown",
+      "product_name": "Maui True Blood",
+      "display_name": "Maui True Blood AIO",
       "strain": "Sativa",
       "size": "1g",
       "format": "AIO",
       "process": "Live Resin",
-      "thc": 0.8596,
-      "thc_display": "86%",
-      "price": "$20.00",
-      "short_price": "$20",
-      "quantity": 5.0,
+      "thc": 0.774,
+      "thc_display": "77%",
+      "price": "$30.00",
+      "short_price": "$30",
+      "quantity": 10.0,
       "source_rows": [
-        119
+        142
       ],
-      "detail_display": "86%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Forbidden Fruit",
-      "display_name": "Forbidden Fruit",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8385000000000001,
-      "thc_display": "84%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 7.0,
-      "source_rows": [
-        67
-      ],
-      "detail_display": "84%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Granddaddy Purple",
-      "display_name": "Granddaddy Purple",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8362999999999999,
-      "thc_display": "84%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 2.0,
-      "source_rows": [
-        90
-      ],
-      "detail_display": "84%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Ghost Train Haze",
-      "display_name": "Ghost Train Haze",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8487,
-      "thc_display": "85%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 7.0,
-      "source_rows": [
-        82
-      ],
-      "detail_display": "85%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Super Sour Diesel",
-      "display_name": "Super Sour Diesel",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8310000000000001,
-      "thc_display": "83%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 4.0,
-      "source_rows": [
-        221
-      ],
-      "detail_display": "83%"
+      "detail_display": "77%"
     }
   ]
 }

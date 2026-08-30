@@ -81,5 +81,13 @@
   "Rainbow Runtz": { "feeling": "Colorful", "looking_for": "Chill" },
   "Collins Ave": { "feeling": "Smooth", "looking_for": "Chill" },
   "Blue Sunshine": { "feeling": "Bright", "looking_for": "Energy" },
-  "Emerald Apricot": { "feeling": "Fruity", "looking_for": "Energy" }
+  "Emerald Apricot": { "feeling": "Fruity", "looking_for": "Energy" },
+  "Dirty Zkittlez": { "feeling": "Fruity", "looking_for": "Chill" },
+  "Apple Tart": { "feeling": "Mellow", "looking_for": "Chill" },
+  "Golden Lemons": { "feeling": "Citrusy", "looking_for": "Energy" },
+  "Goofies": { "feeling": "Giggly", "looking_for": "Chill" },
+  "Cap Junky": { "feeling": "Potent", "looking_for": "Chill" },
+  "White Chocolate Chip": { "feeling": "Uplifting", "looking_for": "Energy" },
+  "Sunday Bread": { "feeling": "Bright", "looking_for": "Energy" },
+  "Hella Jelly": { "feeling": "Creative", "looking_for": "Energy" }
 }
