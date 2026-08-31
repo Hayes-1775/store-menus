@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-30T10:34:45",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-30-mcp.csv",
+  "generated_at": "2026-08-31T09:20:18",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-31-mcp.csv",
   "menu": "vapes",
   "screen": 2,
   "rotation_seconds": 20,
@@ -18,7 +18,7 @@
     "available_height": 1886,
     "remaining_pixels": 0,
     "brand_count": 5,
-    "row_count": 32
+    "row_count": 30
   },
   "rows": [
     {
@@ -35,7 +35,7 @@
       "short_price": "$41.67",
       "quantity": 7.0,
       "source_rows": [
-        167
+        164
       ],
       "detail_display": "71%"
     },
@@ -54,7 +54,7 @@
       "quantity": 8.0,
       "source_rows": [
         121,
-        123
+        122
       ],
       "detail_display": "76%"
     },
@@ -72,7 +72,7 @@
       "short_price": "$33.33",
       "quantity": 1.0,
       "source_rows": [
-        276
+        272
       ],
       "detail_display": "72%"
     },
@@ -88,9 +88,9 @@
       "thc_display": "74%",
       "price": "$55.56",
       "short_price": "$55.56",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
-        58
+        57
       ],
       "detail_display": "74%"
     },
@@ -108,7 +108,7 @@
       "short_price": "$41.67",
       "quantity": 5.0,
       "source_rows": [
-        102
+        101
       ],
       "detail_display": "72%"
     },
@@ -124,9 +124,9 @@
       "thc_display": "75%",
       "price": "$27.78",
       "short_price": "$27.78",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        127
+        126
       ],
       "detail_display": "75%"
     },
@@ -144,7 +144,7 @@
       "short_price": "$33.33",
       "quantity": 1.0,
       "source_rows": [
-        125
+        124
       ],
       "detail_display": "71%"
     },
@@ -162,7 +162,7 @@
       "short_price": "$55.56",
       "quantity": 4.0,
       "source_rows": [
-        213
+        210
       ],
       "detail_display": "72%"
     },
@@ -180,7 +180,7 @@
       "short_price": "$41.7",
       "quantity": 2.0,
       "source_rows": [
-        128
+        127
       ],
       "detail_display": "72%"
     },
@@ -198,7 +198,7 @@
       "short_price": "$60",
       "quantity": 6.0,
       "source_rows": [
-        98
+        97
       ],
       "detail_display": "77%"
     },
@@ -216,7 +216,7 @@
       "short_price": "$55.56",
       "quantity": 7.0,
       "source_rows": [
-        112
+        111
       ],
       "detail_display": "77%"
     },
@@ -234,7 +234,7 @@
       "short_price": "$55.56",
       "quantity": 10.0,
       "source_rows": [
-        111
+        110
       ],
       "detail_display": "76%"
     },
@@ -252,7 +252,7 @@
       "short_price": "$24.44",
       "quantity": 4.0,
       "source_rows": [
-        166
+        163
       ],
       "detail_display": "88%"
     },
@@ -270,7 +270,7 @@
       "short_price": "$24.44",
       "quantity": 3.0,
       "source_rows": [
-        153
+        150
       ],
       "detail_display": "87%"
     },
@@ -288,7 +288,7 @@
       "short_price": "$24.44",
       "quantity": 6.0,
       "source_rows": [
-        129
+        128
       ],
       "detail_display": "86%"
     },
@@ -330,24 +330,6 @@
     },
     {
       "brand": "Higher Cultures",
-      "product_name": "Lemon Cherry Gelato",
-      "display_name": "Lemon Cherry Gelato",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "AIO",
-      "process": "DLR",
-      "thc": 0.83426,
-      "thc_display": "83%",
-      "price": "$24.44",
-      "short_price": "$24.44",
-      "quantity": 1.0,
-      "source_rows": [
-        124
-      ],
-      "detail_display": "83%"
-    },
-    {
-      "brand": "Higher Cultures",
       "product_name": "Headbanger",
       "display_name": "Headbanger",
       "strain": "Hybrid",
@@ -360,7 +342,7 @@
       "short_price": "$29.6",
       "quantity": 7.0,
       "source_rows": [
-        108
+        107
       ],
       "detail_display": ""
     },
@@ -378,7 +360,7 @@
       "short_price": "$24.44",
       "quantity": 3.0,
       "source_rows": [
-        83
+        82
       ],
       "detail_display": "90%"
     },
@@ -414,27 +396,9 @@
       "short_price": "$40",
       "quantity": 7.0,
       "source_rows": [
-        201
+        198
       ],
       "detail_display": "71%"
-    },
-    {
-      "brand": "Entourage Cannabis",
-      "product_name": "Dirty Dawg",
-      "display_name": "Dirty Dawg AIO",
-      "strain": "Indica",
-      "size": "2g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.6777,
-      "thc_display": "68%",
-      "price": "$64.44",
-      "short_price": "$64.44",
-      "quantity": 1.0,
-      "source_rows": [
-        57
-      ],
-      "detail_display": "68%"
     },
     {
       "brand": "Entourage Cannabis",
@@ -450,7 +414,7 @@
       "short_price": "$40",
       "quantity": 9.0,
       "source_rows": [
-        59
+        58
       ],
       "detail_display": "65%"
     },
@@ -468,7 +432,7 @@
       "short_price": "$33.33",
       "quantity": 4.0,
       "source_rows": [
-        99
+        98
       ],
       "detail_display": "75%"
     },
@@ -486,7 +450,7 @@
       "short_price": "$40",
       "quantity": 3.0,
       "source_rows": [
-        264
+        261
       ],
       "detail_display": "72%"
     },
@@ -504,7 +468,7 @@
       "short_price": "$40",
       "quantity": 6.0,
       "source_rows": [
-        104
+        103
       ],
       "detail_display": "72%"
     },
@@ -520,9 +484,9 @@
       "thc_display": "72%",
       "price": "$40.00",
       "short_price": "$40",
-      "quantity": 3.0,
+      "quantity": 2.0,
       "source_rows": [
-        133
+        132
       ],
       "detail_display": "72%"
     },
@@ -558,7 +522,7 @@
       "short_price": "$22.22",
       "quantity": 1.0,
       "source_rows": [
-        212
+        209
       ],
       "detail_display": "73%"
     },
@@ -576,7 +540,7 @@
       "short_price": "$22.22",
       "quantity": 5.0,
       "source_rows": [
-        187
+        184
       ],
       "detail_display": "74%"
     },
@@ -594,7 +558,7 @@
       "short_price": "$22.22",
       "quantity": 8.0,
       "source_rows": [
-        158
+        153
       ],
       "detail_display": ""
     }

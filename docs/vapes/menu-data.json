@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-30T10:34:45",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-30-mcp.csv",
+  "generated_at": "2026-08-31T09:20:18",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-31-mcp.csv",
   "menu": "vapes",
   "screen": 1,
   "rotation_seconds": 20,
@@ -12,11 +12,11 @@
   "display": {
     "fits": true,
     "row_height": 44,
-    "required_height": 1631,
+    "required_height": 1609,
     "available_height": 1886,
-    "remaining_pixels": 255,
+    "remaining_pixels": 277,
     "brand_count": 3,
-    "row_count": 30
+    "row_count": 26
   },
   "rows": [
     {
@@ -31,9 +31,9 @@
       "thc_display": "79%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 4.0,
+      "quantity": 2.0,
       "source_rows": [
-        87
+        86
       ],
       "detail_display": "79%"
     },
@@ -51,7 +51,7 @@
       "short_price": "$22.22",
       "quantity": 2.0,
       "source_rows": [
-        106
+        105
       ],
       "detail_display": "76%"
     },
@@ -69,7 +69,7 @@
       "short_price": "$22.22",
       "quantity": 6.0,
       "source_rows": [
-        226
+        223
       ],
       "detail_display": "70%"
     },
@@ -87,28 +87,10 @@
       "short_price": "$24",
       "quantity": 2.0,
       "source_rows": [
-        92,
-        93
+        91,
+        92
       ],
       "detail_display": "83%"
-    },
-    {
-      "brand": "NW Kind",
-      "product_name": "Sangiovese",
-      "display_name": "Sangiovese",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Cured Resin",
-      "thc": 0.8240000000000001,
-      "thc_display": "82%",
-      "price": "$26.00",
-      "short_price": "$26",
-      "quantity": 1.0,
-      "source_rows": [
-        198
-      ],
-      "detail_display": "82%"
     },
     {
       "brand": "NW Kind",
@@ -124,7 +106,7 @@
       "short_price": "$36",
       "quantity": 2.0,
       "source_rows": [
-        222
+        219
       ],
       "detail_display": "81%"
     },
@@ -140,9 +122,9 @@
       "thc_display": "77%",
       "price": "$24.00",
       "short_price": "$24",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        262
+        259
       ],
       "detail_display": "77%"
     },
@@ -178,7 +160,7 @@
       "short_price": "$35.56",
       "quantity": 4.0,
       "source_rows": [
-        91
+        90
       ],
       "detail_display": "74%"
     },
@@ -196,7 +178,7 @@
       "short_price": "$20",
       "quantity": 3.0,
       "source_rows": [
-        43
+        42
       ],
       "detail_display": "84%"
     },
@@ -214,27 +196,9 @@
       "short_price": "$40",
       "quantity": 1.0,
       "source_rows": [
-        218
+        215
       ],
       "detail_display": "68%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Blue Steel",
-      "display_name": "Blue Steel",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.7789,
-      "thc_display": "78%",
-      "price": "$23.62",
-      "short_price": "$23.62",
-      "quantity": 1.0,
-      "source_rows": [
-        30
-      ],
-      "detail_display": "78%"
     },
     {
       "brand": "Buddies",
@@ -248,29 +212,11 @@
       "thc_display": "77%",
       "price": "$23.62",
       "short_price": "$23.62",
-      "quantity": 12.0,
+      "quantity": 10.0,
       "source_rows": [
-        155
+        152
       ],
       "detail_display": "77%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Black Raspberry",
-      "display_name": "Black Raspberry 1g",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.7645000000000001,
-      "thc_display": "76%",
-      "price": "$31.16",
-      "short_price": "$31.16",
-      "quantity": 1.0,
-      "source_rows": [
-        21
-      ],
-      "detail_display": "76%"
     },
     {
       "brand": "Buddies",
@@ -286,7 +232,7 @@
       "short_price": "$15.73",
       "quantity": 4.0,
       "source_rows": [
-        151
+        148
       ],
       "detail_display": "90%"
     },
@@ -302,9 +248,9 @@
       "thc_display": "88%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        36
+        35
       ],
       "detail_display": "88%"
     },
@@ -322,27 +268,9 @@
       "short_price": "$15.73",
       "quantity": 4.0,
       "source_rows": [
-        47
+        46
       ],
       "detail_display": "88%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Apricot Helix",
-      "display_name": "Apricot Helix",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Distillate",
-      "thc": 0.8715999999999999,
-      "thc_display": "87%",
-      "price": "$15.73",
-      "short_price": "$15.73",
-      "quantity": 1.0,
-      "source_rows": [
-        8
-      ],
-      "detail_display": "87%"
     },
     {
       "brand": "Buddies",
@@ -376,7 +304,7 @@
       "short_price": "$26.44",
       "quantity": 1.0,
       "source_rows": [
-        175
+        172
       ],
       "detail_display": "81%"
     },
@@ -394,7 +322,7 @@
       "short_price": "$26.44",
       "quantity": 1.0,
       "source_rows": [
-        178
+        175
       ],
       "detail_display": "78%"
     },
@@ -412,7 +340,7 @@
       "short_price": "$23.62",
       "quantity": 7.0,
       "source_rows": [
-        80
+        79
       ],
       "detail_display": "76%"
     },
@@ -428,9 +356,9 @@
       "thc_display": "91%",
       "price": "$20.47",
       "short_price": "$20.47",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
-        179
+        176
       ],
       "detail_display": "91%"
     },
@@ -448,7 +376,7 @@
       "short_price": "$30.67",
       "quantity": 9.0,
       "source_rows": [
-        168
+        165
       ],
       "detail_display": "90%"
     },
@@ -466,7 +394,7 @@
       "short_price": "$30.67",
       "quantity": 10.0,
       "source_rows": [
-        7
+        6
       ],
       "detail_display": "87%"
     },
@@ -502,7 +430,7 @@
       "short_price": "$20.47",
       "quantity": 6.0,
       "source_rows": [
-        181
+        178
       ],
       "detail_display": "86%"
     },
@@ -520,7 +448,7 @@
       "short_price": "$23.62",
       "quantity": 6.0,
       "source_rows": [
-        44
+        43
       ],
       "detail_display": "76%"
     },
@@ -538,7 +466,7 @@
       "short_price": "$26.44",
       "quantity": 5.0,
       "source_rows": [
-        160
+        157
       ],
       "detail_display": "75%"
     },
@@ -556,7 +484,7 @@
       "short_price": "$31.16",
       "quantity": 3.0,
       "source_rows": [
-        56
+        55
       ],
       "detail_display": "76%"
     }
