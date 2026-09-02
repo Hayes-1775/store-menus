@@ -89,5 +89,6 @@
   "Cap Junky": { "feeling": "Potent", "looking_for": "Chill" },
   "White Chocolate Chip": { "feeling": "Uplifting", "looking_for": "Energy" },
   "Sunday Bread": { "feeling": "Bright", "looking_for": "Energy" },
-  "Hella Jelly": { "feeling": "Creative", "looking_for": "Energy" }
+  "Hella Jelly": { "feeling": "Creative", "looking_for": "Energy" },
+  "Cel-Rey": { "feeling": "Focused", "looking_for": "Energy" }
 }

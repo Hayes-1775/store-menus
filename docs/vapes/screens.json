@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T09:20:18",
+  "generated_at": "2026-09-02T05:08:54",
   "rotation_seconds": 20,
   "configured_screen_count": 4,
   "enabled_screens": [
@@ -11,9 +11,10 @@
       "brands": [
         "Verdant",
         "NW Kind",
-        "Buddies"
+        "Buddies",
+        "Oregrown"
       ],
-      "row_count": 26,
+      "row_count": 32,
       "data": "menu-data.json",
       "image": "latest.jpg"
     }

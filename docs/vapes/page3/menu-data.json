@@ -1,151 +1,24 @@
 {
-  "generated_at": "2026-08-31T09:20:18",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-08-31-mcp.csv",
+  "generated_at": "2026-09-02T05:08:54",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-09-02-mcp.csv",
   "menu": "vapes",
   "screen": 3,
   "rotation_seconds": 20,
   "brands": [
-    "Mule",
     "National",
     "Freshy",
     "Unknown"
   ],
   "display": {
     "fits": true,
-    "row_height": 40,
-    "required_height": 1875,
+    "row_height": 44,
+    "required_height": 1563,
     "available_height": 1886,
-    "remaining_pixels": 11,
-    "brand_count": 4,
-    "row_count": 42
+    "remaining_pixels": 323,
+    "brand_count": 3,
+    "row_count": 33
   },
   "rows": [
-    {
-      "brand": "Mule",
-      "product_name": "Mendo Breath",
-      "display_name": "Mendo Breath",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8867,
-      "thc_display": "89%",
-      "price": "$32.44",
-      "short_price": "$32.44",
-      "quantity": 8.0,
-      "source_rows": [
-        151
-      ],
-      "detail_display": "89%"
-    },
-    {
-      "brand": "Mule",
-      "product_name": "Early Yeti",
-      "display_name": "Early Yeti AIO",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.7687999999999999,
-      "thc_display": "77%",
-      "price": "$32.40",
-      "short_price": "$32.4",
-      "quantity": 3.0,
-      "source_rows": [
-        61
-      ],
-      "detail_display": "77%"
-    },
-    {
-      "brand": "Mule",
-      "product_name": "Watermelon Punch",
-      "display_name": "Watermelon Punch",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.0,
-      "thc_display": "",
-      "price": "$28.89",
-      "short_price": "$28.89",
-      "quantity": 12.0,
-      "source_rows": [
-        263
-      ],
-      "detail_display": ""
-    },
-    {
-      "brand": "Mule",
-      "product_name": "Cakewreck",
-      "display_name": "Cakewreck AIO",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.8593000000000001,
-      "thc_display": "86%",
-      "price": "$32.40",
-      "short_price": "$32.4",
-      "quantity": 1.0,
-      "source_rows": [
-        41
-      ],
-      "detail_display": "86%"
-    },
-    {
-      "brand": "Mule",
-      "product_name": "Golden Butter",
-      "display_name": "Golden Butter AIO",
-      "strain": "Hybrid",
-      "size": "2g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.0,
-      "thc_display": "",
-      "price": "$50.00",
-      "short_price": "$50",
-      "quantity": 1.0,
-      "source_rows": [
-        84
-      ],
-      "detail_display": ""
-    },
-    {
-      "brand": "Mule",
-      "product_name": "Bigfoot Pines",
-      "display_name": "Bigfoot Pines",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.7909999999999999,
-      "thc_display": "79%",
-      "price": "$27.78",
-      "short_price": "$27.78",
-      "quantity": 13.0,
-      "source_rows": [
-        19
-      ],
-      "detail_display": "79%"
-    },
-    {
-      "brand": "Mule",
-      "product_name": "Trop Dog",
-      "display_name": "Trop Dog AIO",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.8142,
-      "thc_display": "81%",
-      "price": "$32.40",
-      "short_price": "$32.4",
-      "quantity": 2.0,
-      "source_rows": [
-        253
-      ],
-      "detail_display": "81%"
-    },
     {
       "brand": "National",
       "product_name": "Blueberry Pie",
@@ -160,7 +33,7 @@
       "short_price": "$17.77",
       "quantity": 9.0,
       "source_rows": [
-        39
+        42
       ],
       "detail_display": "89%"
     },
@@ -176,10 +49,10 @@
       "thc_display": "89%",
       "price": "$17.78",
       "short_price": "$17.78",
-      "quantity": 10.0,
+      "quantity": 8.0,
       "source_rows": [
-        99,
-        100
+        98,
+        99
       ],
       "detail_display": "89%"
     },
@@ -197,7 +70,7 @@
       "short_price": "$17.77",
       "quantity": 9.0,
       "source_rows": [
-        54
+        57
       ],
       "detail_display": "89%"
     },
@@ -215,8 +88,8 @@
       "short_price": "$17.78",
       "quantity": 4.0,
       "source_rows": [
-        52,
-        53
+        55,
+        56
       ],
       "detail_display": "89%"
     },
@@ -234,8 +107,8 @@
       "short_price": "$17.99",
       "quantity": 4.0,
       "source_rows": [
-        167,
-        168
+        165,
+        166
       ],
       "detail_display": "85%"
     },
@@ -253,7 +126,7 @@
       "short_price": "$17.78",
       "quantity": 9.0,
       "source_rows": [
-        45
+        48
       ],
       "detail_display": "83%"
     },
@@ -269,9 +142,9 @@
       "thc_display": "88%",
       "price": "$17.78",
       "short_price": "$17.78",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
-        270
+        268
       ],
       "detail_display": "88%"
     },
@@ -287,9 +160,10 @@
       "thc_display": "88%",
       "price": "$17.77",
       "short_price": "$17.77",
-      "quantity": 10.0,
+      "quantity": 20.0,
       "source_rows": [
-        191
+        189,
+        190
       ],
       "detail_display": "88%"
     },
@@ -305,9 +179,9 @@
       "thc_display": "88%",
       "price": "$17.99",
       "short_price": "$17.99",
-      "quantity": 3.0,
+      "quantity": 1.0,
       "source_rows": [
-        190
+        188
       ],
       "detail_display": "88%"
     },
@@ -325,7 +199,7 @@
       "short_price": "$17.77",
       "quantity": 10.0,
       "source_rows": [
-        131
+        132
       ],
       "detail_display": "90%"
     },
@@ -341,9 +215,9 @@
       "thc_display": "88%",
       "price": "$17.77",
       "short_price": "$17.77",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
-        257
+        256
       ],
       "detail_display": "88%"
     },
@@ -361,9 +235,9 @@
       "short_price": "$17.99",
       "quantity": 5.0,
       "source_rows": [
+        253,
         254,
-        255,
-        256
+        255
       ],
       "detail_display": "88%"
     },
@@ -381,7 +255,7 @@
       "short_price": "$17.78",
       "quantity": 9.0,
       "source_rows": [
-        177
+        175
       ],
       "detail_display": "86%"
     },
@@ -397,7 +271,7 @@
       "thc_display": "86%",
       "price": "$18.95",
       "short_price": "$18.95",
-      "quantity": 5.0,
+      "quantity": 3.0,
       "source_rows": [
         146,
         147
@@ -416,10 +290,10 @@
       "thc_display": "84%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        95,
-        96
+        94,
+        95
       ],
       "detail_display": "84%"
     },
@@ -437,7 +311,7 @@
       "short_price": "$20",
       "quantity": 2.0,
       "source_rows": [
-        232
+        231
       ],
       "detail_display": "86%"
     },
@@ -455,8 +329,8 @@
       "short_price": "$15.56",
       "quantity": 7.0,
       "source_rows": [
-        65,
-        66
+        66,
+        67
       ],
       "detail_display": "87%"
     },
@@ -474,7 +348,7 @@
       "short_price": "$15.56",
       "quantity": 8.0,
       "source_rows": [
-        206
+        205
       ],
       "detail_display": "86%"
     },
@@ -490,9 +364,9 @@
       "thc_display": "86%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
-        135
+        136
       ],
       "detail_display": "86%"
     },
@@ -510,7 +384,7 @@
       "short_price": "$18.95",
       "quantity": 1.0,
       "source_rows": [
-        214
+        213
       ],
       "detail_display": "84%"
     },
@@ -528,7 +402,7 @@
       "short_price": "$15.56",
       "quantity": 1.0,
       "source_rows": [
-        268
+        266
       ],
       "detail_display": "87%"
     },
@@ -544,9 +418,9 @@
       "thc_display": "86%",
       "price": "$15.56",
       "short_price": "$15.56",
-      "quantity": 6.0,
+      "quantity": 3.0,
       "source_rows": [
-        13
+        17
       ],
       "detail_display": "86%"
     },
@@ -564,45 +438,9 @@
       "short_price": "$15.56",
       "quantity": 2.0,
       "source_rows": [
-        187
+        185
       ],
       "detail_display": "85%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Blue Dream",
-      "display_name": "Blue Dream",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8512000000000001,
-      "thc_display": "85%",
-      "price": "$15.56",
-      "short_price": "$15.56",
-      "quantity": 3.0,
-      "source_rows": [
-        25
-      ],
-      "detail_display": "85%"
-    },
-    {
-      "brand": "Freshy",
-      "product_name": "Killer Kiwi",
-      "display_name": "Killer Kiwi AIO",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.8596,
-      "thc_display": "86%",
-      "price": "$20.00",
-      "short_price": "$20",
-      "quantity": 2.0,
-      "source_rows": [
-        117
-      ],
-      "detail_display": "86%"
     },
     {
       "brand": "Unknown",
@@ -616,9 +454,9 @@
       "thc_display": "89%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 10.0,
+      "quantity": 8.0,
       "source_rows": [
-        200
+        199
       ],
       "detail_display": "89%"
     },
@@ -634,9 +472,9 @@
       "thc_display": "84%",
       "price": "$24.00",
       "short_price": "$24",
-      "quantity": 10.0,
+      "quantity": 8.0,
       "source_rows": [
-        129
+        130
       ],
       "detail_display": "84%"
     },
@@ -652,9 +490,9 @@
       "thc_display": "81%",
       "price": "$30.00",
       "short_price": "$30",
-      "quantity": 8.0,
+      "quantity": 5.0,
       "source_rows": [
-        220
+        219
       ],
       "detail_display": "81%"
     },
@@ -670,9 +508,9 @@
       "thc_display": "76%",
       "price": "$30.00",
       "short_price": "$30",
-      "quantity": 9.0,
+      "quantity": 7.0,
       "source_rows": [
-        37
+        40
       ],
       "detail_display": "76%"
     },
@@ -688,9 +526,9 @@
       "thc_display": "86%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 9.0,
+      "quantity": 7.0,
       "source_rows": [
-        16
+        19
       ],
       "detail_display": "86%"
     },
@@ -708,7 +546,7 @@
       "short_price": "$30",
       "quantity": 8.0,
       "source_rows": [
-        171
+        169
       ],
       "detail_display": "79%"
     },
@@ -726,7 +564,7 @@
       "short_price": "$24",
       "quantity": 8.0,
       "source_rows": [
-        273
+        272
       ],
       "detail_display": "80%"
     },
@@ -744,7 +582,7 @@
       "short_price": "$30",
       "quantity": 9.0,
       "source_rows": [
-        140
+        141
       ],
       "detail_display": "77%"
     },
@@ -762,7 +600,7 @@
       "short_price": "$24",
       "quantity": 10.0,
       "source_rows": [
-        252
+        251
       ],
       "detail_display": "77%"
     },
@@ -780,7 +618,7 @@
       "short_price": "$36",
       "quantity": 10.0,
       "source_rows": [
-        139
+        140
       ],
       "detail_display": "77%"
     }
