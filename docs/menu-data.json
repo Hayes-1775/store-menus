@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-03T11:26:26",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-09-03-mcp.csv",
+  "generated_at": "2026-09-03T12:07:04",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-09-03-1204-mcp.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -70,6 +70,40 @@
       "feeling": "Relaxing",
       "looking_for": "Chill",
       "display_name": "Apple Jacked"
+    },
+    {
+      "product_name": "Devils Den",
+      "brand": "Miracle Farms",
+      "strain": "Indica",
+      "group_order": 1,
+      "thc": 0.21899999999999997,
+      "thc_display": "22%",
+      "quantity": 256.71,
+      "price_profile": "$5 Gram",
+      "gram": "$5",
+      "eighth": "$16",
+      "quarter": "$30",
+      "half": "$57",
+      "ounce": "$105",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "87ab3c0c-acf2-44e4-9f5a-32e16a4d70cc"
+      ],
+      "source_variant_ids": [
+        "709b5603-6c59-4b74-95f3-76637f3061ba"
+      ],
+      "source_skus": [
+        "W9YSnBVznN"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": false,
+      "feeling": "Sedative",
+      "looking_for": "Sleepy",
+      "display_name": "Devils Den"
     },
     {
       "product_name": "Alley Oop",
@@ -588,7 +622,7 @@
       "group_order": 2,
       "thc": 0.155,
       "thc_display": "16%",
-      "quantity": 164.51,
+      "quantity": 157.47,
       "price_profile": "$3 Gram",
       "gram": "$3",
       "eighth": "$10",
@@ -622,7 +656,7 @@
       "group_order": 2,
       "thc": 0.217,
       "thc_display": "22%",
-      "quantity": 417.85,
+      "quantity": 414.31,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -648,40 +682,6 @@
       "feeling": "Tingly",
       "looking_for": "Chill",
       "display_name": "Red Pave"
-    },
-    {
-      "product_name": "Devils Den",
-      "brand": "Miracle Farms",
-      "strain": "Hybrid",
-      "group_order": 2,
-      "thc": 0.21899999999999997,
-      "thc_display": "22%",
-      "quantity": 256.71,
-      "price_profile": "$5 Gram",
-      "gram": "$5",
-      "eighth": "$16",
-      "quarter": "$30",
-      "half": "$57",
-      "ounce": "$105",
-      "low_stock": false,
-      "closeout": false,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "87ab3c0c-acf2-44e4-9f5a-32e16a4d70cc"
-      ],
-      "source_variant_ids": [
-        "709b5603-6c59-4b74-95f3-76637f3061ba"
-      ],
-      "source_skus": [
-        "W9YSnBVznN"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false,
-      "feeling": "Sedative",
-      "looking_for": "Sleepy",
-      "display_name": "Devils Den"
     },
     {
       "product_name": "Smashburger",
@@ -860,7 +860,7 @@
       "group_order": 2,
       "thc": 0.2667,
       "thc_display": "27%",
-      "quantity": 179.21,
+      "quantity": 175.67,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -990,40 +990,6 @@
       "display_name": "Black Market"
     },
     {
-      "product_name": "Category 5",
-      "brand": "Grown Rogue",
-      "strain": "Hybrid",
-      "group_order": 2,
-      "thc": 0.31810000000000005,
-      "thc_display": "32%",
-      "quantity": 0.03,
-      "price_profile": "$5 Gram",
-      "gram": "$5",
-      "eighth": "$16",
-      "quarter": "$30",
-      "half": "$57",
-      "ounce": "$105",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "35d1511c-51a2-4244-a52e-6be618d4b5bd"
-      ],
-      "source_variant_ids": [
-        "0f6dcffb-fef3-4dd4-b1bc-f337224329ba"
-      ],
-      "source_skus": [
-        "YJI1fHkj5K"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false,
-      "feeling": "Energizing",
-      "looking_for": "Energy",
-      "display_name": "Category 5"
-    },
-    {
       "product_name": "Golden Lemons",
       "brand": "Millerville",
       "strain": "Hybrid",
@@ -1090,40 +1056,6 @@
       "feeling": "Giggly",
       "looking_for": "Chill",
       "display_name": "Goofies"
-    },
-    {
-      "product_name": "Scented Marker",
-      "brand": "Grown Rogue",
-      "strain": "Hybrid",
-      "group_order": 2,
-      "thc": 0.3282,
-      "thc_display": "33%",
-      "quantity": 2.55,
-      "price_profile": "$5 Gram",
-      "gram": "$5",
-      "eighth": "$16",
-      "quarter": "$30",
-      "half": "$57",
-      "ounce": "$105",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "a6a0231b-c196-4e11-aeb1-7fd517663a45"
-      ],
-      "source_variant_ids": [
-        "72bf20b8-6838-4c77-8a50-5896047d5e6e"
-      ],
-      "source_skus": [
-        "HeRlQJ9S7J"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false,
-      "feeling": "Social",
-      "looking_for": "Hungry",
-      "display_name": "Scented Marker"
     },
     {
       "product_name": "Sheesh",
