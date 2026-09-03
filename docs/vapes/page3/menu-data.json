@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T05:46:26",
+  "generated_at": "2026-09-03T11:26:28",
   "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-09-03-mcp.csv",
   "menu": "vapes",
   "screen": 3,
@@ -18,7 +18,7 @@
     "available_height": 1886,
     "remaining_pixels": 6,
     "brand_count": 5,
-    "row_count": 55
+    "row_count": 54
   },
   "rows": [
     {
@@ -33,7 +33,7 @@
       "thc_display": "68%",
       "price": "$33.34",
       "short_price": "$33.34",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
         148
       ],
@@ -69,7 +69,7 @@
       "thc_display": "65%",
       "price": "$40.00",
       "short_price": "$40",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
         79
       ],
@@ -303,7 +303,7 @@
       "thc_display": "",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
         194
       ],
@@ -321,29 +321,11 @@
       "thc_display": "89%",
       "price": "$32.44",
       "short_price": "$32.44",
-      "quantity": 4.0,
+      "quantity": 5.0,
       "source_rows": [
         191
       ],
       "detail_display": "89%"
-    },
-    {
-      "brand": "Mule",
-      "product_name": "Early Yeti",
-      "display_name": "Early Yeti AIO",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.7687999999999999,
-      "thc_display": "77%",
-      "price": "$32.40",
-      "short_price": "$32.4",
-      "quantity": 1.0,
-      "source_rows": [
-        82
-      ],
-      "detail_display": "77%"
     },
     {
       "brand": "Mule",
@@ -357,7 +339,7 @@
       "thc_display": "",
       "price": "$28.89",
       "short_price": "$28.89",
-      "quantity": 10.0,
+      "quantity": 11.0,
       "source_rows": [
         322
       ],
@@ -375,7 +357,7 @@
       "thc_display": "79%",
       "price": "$27.78",
       "short_price": "$27.78",
-      "quantity": 10.0,
+      "quantity": 11.0,
       "source_rows": [
         27
       ],
@@ -977,7 +959,7 @@
       "thc_display": "87%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
         324
       ],

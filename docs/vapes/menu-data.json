@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T05:46:26",
+  "generated_at": "2026-09-03T11:26:27",
   "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-09-03-mcp.csv",
   "menu": "vapes",
   "screen": 1,
@@ -11,12 +11,12 @@
   ],
   "display": {
     "fits": true,
-    "row_height": 38,
-    "required_height": 1875,
+    "row_height": 44,
+    "required_height": 1807,
     "available_height": 1886,
-    "remaining_pixels": 11,
+    "remaining_pixels": 79,
     "brand_count": 3,
-    "row_count": 46
+    "row_count": 45
   },
   "rows": [
     {
@@ -62,7 +62,7 @@
       "strain": "Indica",
       "size": "1g",
       "format": "510",
-      "process": "Live Resin",
+      "process": "Rosin/CR",
       "thc": 0.742,
       "thc_display": "74%",
       "price": "$22.22",
@@ -80,12 +80,12 @@
       "strain": "Hybrid",
       "size": "1g",
       "format": "510",
-      "process": "Live Resin",
+      "process": "Rosin/CR",
       "thc": 0.8,
       "thc_display": "80%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 20.0,
+      "quantity": 17.0,
       "source_rows": [
         99
       ],
@@ -98,12 +98,12 @@
       "strain": "Hybrid",
       "size": "1g",
       "format": "510",
-      "process": "Live Resin",
+      "process": "Rosin/CR",
       "thc": 0.7718,
       "thc_display": "77%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 20.0,
+      "quantity": 19.0,
       "source_rows": [
         3
       ],
@@ -116,7 +116,7 @@
       "strain": "Hybrid",
       "size": "1g",
       "format": "510",
-      "process": "Live Resin",
+      "process": "Rosin/CR",
       "thc": 0.758,
       "thc_display": "76%",
       "price": "$22.22",
@@ -134,7 +134,7 @@
       "strain": "Sativa",
       "size": "1g",
       "format": "510",
-      "process": "Live Resin",
+      "process": "Rosin/CR",
       "thc": 0.7733,
       "thc_display": "77%",
       "price": "$22.22",
@@ -152,7 +152,7 @@
       "strain": "Sativa",
       "size": "1g",
       "format": "510",
-      "process": "Live Resin",
+      "process": "Rosin/CR",
       "thc": 0.742,
       "thc_display": "74%",
       "price": "$22.22",
@@ -355,7 +355,7 @@
       "thc_display": "78%",
       "price": "$35.56",
       "short_price": "$35.56",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
         18
       ],
@@ -445,7 +445,7 @@
       "thc_display": "73%",
       "price": "$30.00",
       "short_price": "$30",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
         90
       ],
@@ -517,7 +517,7 @@
       "thc_display": "91%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 12.0,
+      "quantity": 11.0,
       "source_rows": [
         70
       ],
@@ -769,7 +769,7 @@
       "thc_display": "87%",
       "price": "$30.67",
       "short_price": "$30.67",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
         11
       ],
@@ -828,24 +828,6 @@
         196
       ],
       "detail_display": "75%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Cvndylvnd",
-      "display_name": "Cvndylvnd 1g",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.7609,
-      "thc_display": "76%",
-      "price": "$31.16",
-      "short_price": "$31.16",
-      "quantity": 1.0,
-      "source_rows": [
-        75
-      ],
-      "detail_display": "76%"
     }
   ]
 }
