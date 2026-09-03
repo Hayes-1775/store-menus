@@ -1,18 +1,367 @@
 {
-  "generated_at": "2026-09-02T05:08:54",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-09-02-mcp.csv",
+  "generated_at": "2026-09-03T05:46:27",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-09-03-mcp.csv",
   "menu": "vapes",
   "screen": 4,
   "rotation_seconds": 20,
-  "brands": [],
+  "brands": [
+    "Puck Fortland",
+    "Unknown"
+  ],
   "display": {
     "fits": true,
     "row_height": 44,
-    "required_height": 88,
+    "required_height": 1060,
     "available_height": 1886,
-    "remaining_pixels": 1798,
-    "brand_count": 0,
-    "row_count": 0
+    "remaining_pixels": 826,
+    "brand_count": 2,
+    "row_count": 19
   },
-  "rows": []
+  "rows": [
+    {
+      "brand": "Puck Fortland",
+      "product_name": "Kush Cake",
+      "display_name": "Kush Cake",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.868,
+      "thc_display": "87%",
+      "price": "$15.55",
+      "short_price": "$15.55",
+      "quantity": 10.0,
+      "source_rows": [
+        147
+      ],
+      "detail_display": "87%"
+    },
+    {
+      "brand": "Puck Fortland",
+      "product_name": "Forbidden Fruit",
+      "display_name": "Forbidden Fruit",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8385000000000001,
+      "thc_display": "84%",
+      "price": "$15.55",
+      "short_price": "$15.55",
+      "quantity": 10.0,
+      "source_rows": [
+        87
+      ],
+      "detail_display": "84%"
+    },
+    {
+      "brand": "Puck Fortland",
+      "product_name": "Granddaddy Purple",
+      "display_name": "Granddaddy Purple",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8362999999999999,
+      "thc_display": "84%",
+      "price": "$15.55",
+      "short_price": "$15.55",
+      "quantity": 10.0,
+      "source_rows": [
+        113
+      ],
+      "detail_display": "84%"
+    },
+    {
+      "brand": "Puck Fortland",
+      "product_name": "Cherry Pie",
+      "display_name": "Cherry Pie",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8573000000000001,
+      "thc_display": "86%",
+      "price": "$15.55",
+      "short_price": "$15.55",
+      "quantity": 10.0,
+      "source_rows": [
+        66
+      ],
+      "detail_display": "86%"
+    },
+    {
+      "brand": "Puck Fortland",
+      "product_name": "Gelatti",
+      "display_name": "Gelatti",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8441,
+      "thc_display": "84%",
+      "price": "$15.55",
+      "short_price": "$15.55",
+      "quantity": 10.0,
+      "source_rows": [
+        102
+      ],
+      "detail_display": "84%"
+    },
+    {
+      "brand": "Puck Fortland",
+      "product_name": "Tropicanna Cookies",
+      "display_name": "Tropicanna Cookies",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8378,
+      "thc_display": "84%",
+      "price": "$15.55",
+      "short_price": "$15.55",
+      "quantity": 10.0,
+      "source_rows": [
+        317
+      ],
+      "detail_display": "84%"
+    },
+    {
+      "brand": "Puck Fortland",
+      "product_name": "Jack",
+      "display_name": "Jack",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8309000000000001,
+      "thc_display": "83%",
+      "price": "$15.55",
+      "short_price": "$15.55",
+      "quantity": 10.0,
+      "source_rows": [
+        141
+      ],
+      "detail_display": "83%"
+    },
+    {
+      "brand": "Puck Fortland",
+      "product_name": "Trainwreck",
+      "display_name": "Trainwreck",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8298000000000001,
+      "thc_display": "83%",
+      "price": "$15.55",
+      "short_price": "$15.55",
+      "quantity": 10.0,
+      "source_rows": [
+        307
+      ],
+      "detail_display": "83%"
+    },
+    {
+      "brand": "Puck Fortland",
+      "product_name": "Maui Wowie",
+      "display_name": "Maui Wowie",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8066,
+      "thc_display": "81%",
+      "price": "$15.55",
+      "short_price": "$15.55",
+      "quantity": 10.0,
+      "source_rows": [
+        184
+      ],
+      "detail_display": "81%"
+    },
+    {
+      "brand": "Unknown",
+      "product_name": "Slurricane",
+      "display_name": "Slurricane",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.888,
+      "thc_display": "89%",
+      "price": "$20.00",
+      "short_price": "$20",
+      "quantity": 6.0,
+      "source_rows": [
+        249
+      ],
+      "detail_display": "89%"
+    },
+    {
+      "brand": "Unknown",
+      "product_name": "Madd Fruit",
+      "display_name": "Madd Fruit",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.8420000000000001,
+      "thc_display": "84%",
+      "price": "$24.00",
+      "short_price": "$24",
+      "quantity": 18.0,
+      "source_rows": [
+        164,
+        165
+      ],
+      "detail_display": "84%"
+    },
+    {
+      "brand": "Unknown",
+      "product_name": "Tagalongz",
+      "display_name": "Tagalongz",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.807,
+      "thc_display": "81%",
+      "price": "$30.00",
+      "short_price": "$30",
+      "quantity": 4.0,
+      "source_rows": [
+        272
+      ],
+      "detail_display": "81%"
+    },
+    {
+      "brand": "Unknown",
+      "product_name": "Blueberry Muffin",
+      "display_name": "Blueberry Muffin",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.764,
+      "thc_display": "76%",
+      "price": "$30.00",
+      "short_price": "$30",
+      "quantity": 13.0,
+      "source_rows": [
+        53,
+        54
+      ],
+      "detail_display": "76%"
+    },
+    {
+      "brand": "Unknown",
+      "product_name": "Banana Punch",
+      "display_name": "Banana Punch",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.86,
+      "thc_display": "86%",
+      "price": "$20.00",
+      "short_price": "$20",
+      "quantity": 16.0,
+      "source_rows": [
+        23,
+        24
+      ],
+      "detail_display": "86%"
+    },
+    {
+      "brand": "Unknown",
+      "product_name": "Papaya Melons",
+      "display_name": "Papaya Melons",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.794,
+      "thc_display": "79%",
+      "price": "$30.00",
+      "short_price": "$30",
+      "quantity": 7.0,
+      "source_rows": [
+        213
+      ],
+      "detail_display": "79%"
+    },
+    {
+      "brand": "Unknown",
+      "product_name": "Winter Sunset",
+      "display_name": "Winter Sunset",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.804,
+      "thc_display": "80%",
+      "price": "$24.00",
+      "short_price": "$24",
+      "quantity": 7.0,
+      "source_rows": [
+        335
+      ],
+      "detail_display": "80%"
+    },
+    {
+      "brand": "Unknown",
+      "product_name": "Maui True Blood",
+      "display_name": "Maui True Blood",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.774,
+      "thc_display": "77%",
+      "price": "$30.00",
+      "short_price": "$30",
+      "quantity": 9.0,
+      "source_rows": [
+        179
+      ],
+      "detail_display": "77%"
+    },
+    {
+      "brand": "Unknown",
+      "product_name": "Trop Cherry Strawberry",
+      "display_name": "Trop Cherry Strawberry",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.77,
+      "thc_display": "77%",
+      "price": "$24.00",
+      "short_price": "$24",
+      "quantity": 10.0,
+      "source_rows": [
+        309
+      ],
+      "detail_display": "77%"
+    },
+    {
+      "brand": "Unknown",
+      "product_name": "Maui True Blood",
+      "display_name": "Maui True Blood AIO",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.774,
+      "thc_display": "77%",
+      "price": "$36.00",
+      "short_price": "$36",
+      "quantity": 10.0,
+      "source_rows": [
+        178
+      ],
+      "detail_display": "77%"
+    }
+  ]
 }

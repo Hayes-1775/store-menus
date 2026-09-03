@@ -1,42 +1,167 @@
 {
-  "generated_at": "2026-09-02T05:08:54",
-  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-09-02-mcp.csv",
+  "generated_at": "2026-09-03T05:46:26",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-09-03-mcp.csv",
   "menu": "vapes",
   "screen": 1,
   "rotation_seconds": 20,
   "brands": [
     "Verdant",
     "NW Kind",
-    "Buddies",
-    "Oregrown"
+    "Buddies"
   ],
   "display": {
     "fits": true,
-    "row_height": 36,
-    "required_height": 1871,
+    "row_height": 38,
+    "required_height": 1875,
     "available_height": 1886,
-    "remaining_pixels": 15,
-    "brand_count": 4,
-    "row_count": 32
+    "remaining_pixels": 11,
+    "brand_count": 3,
+    "row_count": 46
   },
   "rows": [
     {
       "brand": "Verdant",
-      "product_name": "Government Hangman",
-      "display_name": "Government Hangman",
-      "strain": "Sativa",
+      "product_name": "Hash Street",
+      "display_name": "Hash Street",
+      "strain": "Indica",
       "size": "1g",
       "format": "510",
       "process": "Rosin/CR",
-      "thc": 0.785,
-      "thc_display": "79%",
+      "thc": 0.7979999999999999,
+      "thc_display": "80%",
       "price": "$22.22",
       "short_price": "$22.22",
-      "quantity": 1.0,
+      "quantity": 19.0,
       "source_rows": [
-        85
+        132
       ],
-      "detail_display": "79%"
+      "detail_display": "80%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Modified Yogurt",
+      "display_name": "Modified Yogurt",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Rosin/CR",
+      "thc": 0.778,
+      "thc_display": "78%",
+      "price": "$22.22",
+      "short_price": "$22.22",
+      "quantity": 20.0,
+      "source_rows": [
+        199
+      ],
+      "detail_display": "78%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Sharpie Ice Cream",
+      "display_name": "Sharpie Ice Cream",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.742,
+      "thc_display": "74%",
+      "price": "$22.22",
+      "short_price": "$22.22",
+      "quantity": 20.0,
+      "source_rows": [
+        245
+      ],
+      "detail_display": "74%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Garlic and Fruit",
+      "display_name": "Garlic and Fruit",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8,
+      "thc_display": "80%",
+      "price": "$22.22",
+      "short_price": "$22.22",
+      "quantity": 20.0,
+      "source_rows": [
+        99
+      ],
+      "detail_display": "80%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Amarello Papaya Delight",
+      "display_name": "Amarello Papaya Delight",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.7718,
+      "thc_display": "77%",
+      "price": "$22.22",
+      "short_price": "$22.22",
+      "quantity": 20.0,
+      "source_rows": [
+        3
+      ],
+      "detail_display": "77%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Strawberry Banana Punch",
+      "display_name": "Strawberry Banana Punch",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.758,
+      "thc_display": "76%",
+      "price": "$22.22",
+      "short_price": "$22.22",
+      "quantity": 20.0,
+      "source_rows": [
+        257
+      ],
+      "detail_display": "76%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Sour Funk",
+      "display_name": "Sour Funk",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.7733,
+      "thc_display": "77%",
+      "price": "$22.22",
+      "short_price": "$22.22",
+      "quantity": 20.0,
+      "source_rows": [
+        251
+      ],
+      "detail_display": "77%"
+    },
+    {
+      "brand": "Verdant",
+      "product_name": "Super Alien Cookies",
+      "display_name": "Super Alien Cookies",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.742,
+      "thc_display": "74%",
+      "price": "$22.22",
+      "short_price": "$22.22",
+      "quantity": 19.0,
+      "source_rows": [
+        264
+      ],
+      "detail_display": "74%"
     },
     {
       "brand": "Verdant",
@@ -52,9 +177,45 @@
       "short_price": "$22.22",
       "quantity": 5.0,
       "source_rows": [
-        222
+        275
       ],
       "detail_display": "70%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Chem Cookiez",
+      "display_name": "Chem Cookiez",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.889,
+      "thc_display": "89%",
+      "price": "$20.00",
+      "short_price": "$20",
+      "quantity": 10.0,
+      "source_rows": [
+        61
+      ],
+      "detail_display": "89%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Blueberry Muffin",
+      "display_name": "Blueberry Muffin",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.884,
+      "thc_display": "88%",
+      "price": "$20.00",
+      "short_price": "$20",
+      "quantity": 10.0,
+      "source_rows": [
+        50
+      ],
+      "detail_display": "88%"
     },
     {
       "brand": "NW Kind",
@@ -68,12 +229,47 @@
       "thc_display": "83%",
       "price": "$24.00",
       "short_price": "$24",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
-        90,
-        91
+        116
       ],
       "detail_display": "83%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Cadillac Rainbows",
+      "display_name": "Cadillac Rainbows",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.792,
+      "thc_display": "79%",
+      "price": "$30.00",
+      "short_price": "$30",
+      "quantity": 10.0,
+      "source_rows": [
+        57
+      ],
+      "detail_display": "79%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "White Truffle",
+      "display_name": "White Truffle",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.778,
+      "thc_display": "78%",
+      "price": "$24.00",
+      "short_price": "$24",
+      "quantity": 10.0,
+      "source_rows": [
+        334
+      ],
+      "detail_display": "78%"
     },
     {
       "brand": "NW Kind",
@@ -89,9 +285,45 @@
       "short_price": "$36",
       "quantity": 2.0,
       "source_rows": [
-        218
+        271
       ],
       "detail_display": "81%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Lime Warp",
+      "display_name": "Lime Warp",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.843,
+      "thc_display": "84%",
+      "price": "$20.00",
+      "short_price": "$20",
+      "quantity": 10.0,
+      "source_rows": [
+        158
+      ],
+      "detail_display": "84%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Orange Juice",
+      "display_name": "Orange Juice",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.786,
+      "thc_display": "79%",
+      "price": "$24.00",
+      "short_price": "$24",
+      "quantity": 10.0,
+      "source_rows": [
+        205
+      ],
+      "detail_display": "79%"
     },
     {
       "brand": "NW Kind",
@@ -105,9 +337,9 @@
       "thc_display": "77%",
       "price": "$24.00",
       "short_price": "$24",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        258
+        318
       ],
       "detail_display": "77%"
     },
@@ -125,7 +357,7 @@
       "short_price": "$35.56",
       "quantity": 4.0,
       "source_rows": [
-        15
+        18
       ],
       "detail_display": "78%"
     },
@@ -141,47 +373,119 @@
       "thc_display": "74%",
       "price": "$35.56",
       "short_price": "$35.56",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        89
+        114
       ],
       "detail_display": "74%"
     },
     {
       "brand": "NW Kind",
-      "product_name": "Candylvnd",
-      "display_name": "Candylvnd",
+      "product_name": "Jack Herer",
+      "display_name": "Jack Herer",
       "strain": "Sativa",
       "size": "1g",
       "format": "510",
       "process": "Distillate",
-      "thc": 0.8420000000000001,
-      "thc_display": "84%",
+      "thc": 0.862,
+      "thc_display": "86%",
       "price": "$20.00",
       "short_price": "$20",
-      "quantity": 1.0,
+      "quantity": 10.0,
       "source_rows": [
-        45
+        140
       ],
-      "detail_display": "84%"
+      "detail_display": "86%"
     },
     {
       "brand": "NW Kind",
-      "product_name": "Super Gremlin",
-      "display_name": "Super Gremlin AIO",
+      "product_name": "Island Girl",
+      "display_name": "Island Girl",
       "strain": "Sativa",
       "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.682,
-      "thc_display": "68%",
-      "price": "$40.00",
-      "short_price": "$40",
-      "quantity": 1.0,
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.78,
+      "thc_display": "78%",
+      "price": "$24.00",
+      "short_price": "$24",
+      "quantity": 10.0,
       "source_rows": [
-        214
+        139
       ],
-      "detail_display": "68%"
+      "detail_display": "78%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Pineapple Upsidedown Cake",
+      "display_name": "Pineapple Upsidedown Cake",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Cured Resin",
+      "thc": 0.772,
+      "thc_display": "77%",
+      "price": "$24.00",
+      "short_price": "$24",
+      "quantity": 10.0,
+      "source_rows": [
+        220
+      ],
+      "detail_display": "77%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Francos Lemon",
+      "display_name": "Francos Lemon",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.732,
+      "thc_display": "73%",
+      "price": "$30.00",
+      "short_price": "$30",
+      "quantity": 10.0,
+      "source_rows": [
+        90
+      ],
+      "detail_display": "73%"
+    },
+    {
+      "brand": "NW Kind",
+      "product_name": "Orange Creamsicle",
+      "display_name": "Orange Creamsicle",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.688,
+      "thc_display": "69%",
+      "price": "$30.00",
+      "short_price": "$30",
+      "quantity": 10.0,
+      "source_rows": [
+        204
+      ],
+      "detail_display": "69%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Blue Cookies",
+      "display_name": "Blue Cookies",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.7995,
+      "thc_display": "80%",
+      "price": "$23.63",
+      "short_price": "$23.63",
+      "quantity": 12.0,
+      "source_rows": [
+        33
+      ],
+      "detail_display": "80%"
     },
     {
       "brand": "Buddies",
@@ -195,11 +499,29 @@
       "thc_display": "77%",
       "price": "$23.62",
       "short_price": "$23.62",
-      "quantity": 9.0,
+      "quantity": 7.0,
       "source_rows": [
-        152
+        192
       ],
       "detail_display": "77%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Cranberry Kush",
+      "display_name": "Cranberry Kush",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.9079999999999999,
+      "thc_display": "91%",
+      "price": "$15.73",
+      "short_price": "$15.73",
+      "quantity": 12.0,
+      "source_rows": [
+        70
+      ],
+      "detail_display": "91%"
     },
     {
       "brand": "Buddies",
@@ -213,29 +535,11 @@
       "thc_display": "90%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 3.0,
+      "quantity": 1.0,
       "source_rows": [
-        148
+        188
       ],
       "detail_display": "90%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Blueberry Muffin",
-      "display_name": "Blueberry Muffin",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Distillate",
-      "thc": 0.8774,
-      "thc_display": "88%",
-      "price": "$15.73",
-      "short_price": "$15.73",
-      "quantity": 2.0,
-      "source_rows": [
-        38
-      ],
-      "detail_display": "88%"
     },
     {
       "brand": "Buddies",
@@ -249,11 +553,83 @@
       "thc_display": "88%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
-        49
+        64
       ],
       "detail_display": "88%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Orange Soda",
+      "display_name": "Orange Soda",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.8736,
+      "thc_display": "87%",
+      "price": "$15.73",
+      "short_price": "$15.73",
+      "quantity": 12.0,
+      "source_rows": [
+        206
+      ],
+      "detail_display": "87%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Peach OG",
+      "display_name": "Peach OG",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.8719,
+      "thc_display": "87%",
+      "price": "$15.73",
+      "short_price": "$15.73",
+      "quantity": 12.0,
+      "source_rows": [
+        214
+      ],
+      "detail_display": "87%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Grape Ape",
+      "display_name": "Grape Ape",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.8717,
+      "thc_display": "87%",
+      "price": "$15.73",
+      "short_price": "$15.73",
+      "quantity": 12.0,
+      "source_rows": [
+        119
+      ],
+      "detail_display": "87%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Apricot Helix",
+      "display_name": "Apricot Helix",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Distillate",
+      "thc": 0.8715999999999999,
+      "thc_display": "87%",
+      "price": "$15.73",
+      "short_price": "$15.73",
+      "quantity": 12.0,
+      "source_rows": [
+        14
+      ],
+      "detail_display": "87%"
     },
     {
       "brand": "Buddies",
@@ -267,11 +643,29 @@
       "thc_display": "86%",
       "price": "$15.73",
       "short_price": "$15.73",
-      "quantity": 6.0,
+      "quantity": 4.0,
       "source_rows": [
-        7
+        9
       ],
       "detail_display": "86%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Grape Mountain",
+      "display_name": "Grape Mountain",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.8034,
+      "thc_display": "80%",
+      "price": "$23.63",
+      "short_price": "$23.63",
+      "quantity": 12.0,
+      "source_rows": [
+        125
+      ],
+      "detail_display": "80%"
     },
     {
       "brand": "Buddies",
@@ -287,7 +681,7 @@
       "short_price": "$26.44",
       "quantity": 1.0,
       "source_rows": [
-        173
+        218
       ],
       "detail_display": "78%"
     },
@@ -303,9 +697,9 @@
       "thc_display": "76%",
       "price": "$23.62",
       "short_price": "$23.62",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        79
+        101
       ],
       "detail_display": "76%"
     },
@@ -321,11 +715,47 @@
       "thc_display": "90%",
       "price": "$30.67",
       "short_price": "$30.67",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        163
+        207
       ],
       "detail_display": "90%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Blue Ox",
+      "display_name": "Blue Ox 1g",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Distillate",
+      "thc": 0.8902,
+      "thc_display": "89%",
+      "price": "$20.47",
+      "short_price": "$20.47",
+      "quantity": 12.0,
+      "source_rows": [
+        38
+      ],
+      "detail_display": "89%"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Tropical Blast",
+      "display_name": "Tropical Blast 1g",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Distillate",
+      "thc": 0.8845000000000001,
+      "thc_display": "88%",
+      "price": "$20.47",
+      "short_price": "$20.47",
+      "quantity": 12.0,
+      "source_rows": [
+        311
+      ],
+      "detail_display": "88%"
     },
     {
       "brand": "Buddies",
@@ -341,7 +771,7 @@
       "short_price": "$30.67",
       "quantity": 7.0,
       "source_rows": [
-        9
+        11
       ],
       "detail_display": "87%"
     },
@@ -359,25 +789,7 @@
       "short_price": "$30.67",
       "quantity": 7.0,
       "source_rows": [
-        12
-      ],
-      "detail_display": "86%"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Pink Lemonade",
-      "display_name": "Pink Lemonade 1g",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Distillate",
-      "thc": 0.8604999999999999,
-      "thc_display": "86%",
-      "price": "$20.47",
-      "short_price": "$20.47",
-      "quantity": 2.0,
-      "source_rows": [
-        176
+        15
       ],
       "detail_display": "86%"
     },
@@ -393,9 +805,9 @@
       "thc_display": "76%",
       "price": "$23.62",
       "short_price": "$23.62",
-      "quantity": 6.0,
+      "quantity": 4.0,
       "source_rows": [
-        46
+        60
       ],
       "detail_display": "76%"
     },
@@ -413,7 +825,7 @@
       "short_price": "$26.44",
       "quantity": 5.0,
       "source_rows": [
-        156
+        196
       ],
       "detail_display": "75%"
     },
@@ -429,174 +841,11 @@
       "thc_display": "76%",
       "price": "$31.16",
       "short_price": "$31.16",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
-        58
+        75
       ],
       "detail_display": "76%"
-    },
-    {
-      "brand": "Oregrown",
-      "product_name": "Oishii",
-      "display_name": "Oishii AIO",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.705,
-      "thc_display": "71%",
-      "price": "$41.67",
-      "short_price": "$41.67",
-      "quantity": 6.0,
-      "source_rows": [
-        162
-      ],
-      "detail_display": "71%"
-    },
-    {
-      "brand": "Oregrown",
-      "product_name": "Lemon Berry #17",
-      "display_name": "Lemon Berry #17",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Cured Resin",
-      "thc": 0.7617,
-      "thc_display": "76%",
-      "price": "$27.78",
-      "short_price": "$27.78",
-      "quantity": 8.0,
-      "source_rows": [
-        120,
-        122
-      ],
-      "detail_display": "76%"
-    },
-    {
-      "brand": "Oregrown",
-      "product_name": "Watermelon Zkittlez",
-      "display_name": "Watermelon Zkittlez",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.7197,
-      "thc_display": "72%",
-      "price": "$33.33",
-      "short_price": "$33.33",
-      "quantity": 1.0,
-      "source_rows": [
-        271
-      ],
-      "detail_display": "72%"
-    },
-    {
-      "brand": "Oregrown",
-      "product_name": "Drunken Strawberries",
-      "display_name": "Drunken Strawberries AIO",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.7386,
-      "thc_display": "74%",
-      "price": "$55.56",
-      "short_price": "$55.56",
-      "quantity": 1.0,
-      "source_rows": [
-        60
-      ],
-      "detail_display": "74%"
-    },
-    {
-      "brand": "Oregrown",
-      "product_name": "Guava Cream",
-      "display_name": "Guava Cream AIO",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.7182999999999999,
-      "thc_display": "72%",
-      "price": "$41.67",
-      "short_price": "$41.67",
-      "quantity": 5.0,
-      "source_rows": [
-        100
-      ],
-      "detail_display": "72%"
-    },
-    {
-      "brand": "Oregrown",
-      "product_name": "London Sour",
-      "display_name": "London Sour",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Cured Resin",
-      "thc": 0.7468,
-      "thc_display": "75%",
-      "price": "$27.78",
-      "short_price": "$27.78",
-      "quantity": 6.0,
-      "source_rows": [
-        127
-      ],
-      "detail_display": "75%"
-    },
-    {
-      "brand": "Oregrown",
-      "product_name": "Lemonhead Zkittlez",
-      "display_name": "Lemonhead Zkittlez",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.7073999999999999,
-      "thc_display": "71%",
-      "price": "$33.33",
-      "short_price": "$33.33",
-      "quantity": 1.0,
-      "source_rows": [
-        125
-      ],
-      "detail_display": "71%"
-    },
-    {
-      "brand": "Oregrown",
-      "product_name": "Sub Zero",
-      "display_name": "Sub Zero AIO",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.7151000000000001,
-      "thc_display": "72%",
-      "price": "$55.56",
-      "short_price": "$55.56",
-      "quantity": 4.0,
-      "source_rows": [
-        209
-      ],
-      "detail_display": "72%"
-    },
-    {
-      "brand": "Oregrown",
-      "product_name": "London Sour",
-      "display_name": "London Sour AIO",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.715,
-      "thc_display": "72%",
-      "price": "$41.70",
-      "short_price": "$41.7",
-      "quantity": 2.0,
-      "source_rows": [
-        128
-      ],
-      "detail_display": "72%"
     }
   ]
 }
