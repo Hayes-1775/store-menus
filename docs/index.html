@@ -700,13 +700,21 @@
         const available = menuHeight - contentTop - bottomMargin;
         const groupCount = activeGroups.length;
         const rowCount = Math.max(rows.length, 1);
-        let rowHeight = 34;
-        for (let candidate = 54; candidate >= 34; candidate -= 1) {
+        let layout = null;
+        for (let candidate = 54; candidate >= 26; candidate -= 1) {
           if (totalVerticalUsage(candidate, groupCount, rowCount) <= available) {
-            rowHeight = candidate;
+            layout = {
+              rowHeight: candidate,
+              requiredHeight: totalVerticalUsage(candidate, groupCount, rowCount),
+              availableHeight: available,
+            };
             break;
           }
         }
+        if (!layout) {
+          throw new Error(`Flower menu overflow: ${rows.length} products cannot fit one screen.`);
+        }
+        const rowHeight = layout.rowHeight;
         const bodySize = clamp(Math.floor(rowHeight * 0.68), 24, 36);
         const { sectionHeight, gapAfterSection, gapBetweenGroups } = getSectionMetrics(rowHeight);
         const sectionSize = clamp(Math.floor(sectionHeight * 0.70), 32, 48);
@@ -760,6 +768,7 @@
         root.setProperty("--closeout-pill-text-size", `${closeoutPillTextSize}px`);
         root.setProperty("--closeout-leaf-size", `${closeoutLeafSize}px`);
         root.setProperty("--closeout-leaf-offset", `${closeoutLeafOffset}px`);
+        return layout;
       }
 
       function rowHtml(row) {
@@ -948,7 +957,7 @@
       function renderMenu(payload) {
         const rows = payload.rows || [];
         const activeGroups = sections.filter(([strain]) => rows.some((row) => row.strain === strain));
-        applyDynamicSizing(rows, activeGroups);
+        const layout = applyDynamicSizing(rows, activeGroups);
 
         const groups = document.getElementById("groups");
         groups.innerHTML = activeGroups.map(([strain, color]) => {
@@ -960,6 +969,15 @@
             </section>
           `;
         }).join("");
+        const renderedRowCount = groups.querySelectorAll(".row").length;
+        if (renderedRowCount !== rows.length || groups.offsetHeight > layout.availableHeight) {
+          throw new Error(
+            `Flower menu overflow: rendered ${renderedRowCount}/${rows.length} products ` +
+            `using ${groups.offsetHeight}/${layout.availableHeight}px.`
+          );
+        }
+        groups.dataset.rowCount = String(renderedRowCount);
+        groups.dataset.rowHeight = String(layout.rowHeight);
         animateAgedInventoryRows();
       }
 

@@ -5,6 +5,8 @@ from pathlib import Path
 
 from PIL import Image
 
+from flower_menu_layout import FlowerMenuLayoutError, select_flower_layout
+
 
 def fail(message: str) -> None:
     print(f"FAIL: {message}", file=sys.stderr)
@@ -64,6 +66,14 @@ def main() -> None:
     descriptors = json.loads(descriptors_path.read_text(encoding="utf-8"))
     aliases = json.loads(aliases_path.read_text(encoding="utf-8"))
     rows = menu.get("rows", [])
+
+    active_group_count = len({row.get("strain") for row in rows if row.get("strain")})
+    try:
+        flower_layout = select_flower_layout(len(rows), active_group_count)
+    except FlowerMenuLayoutError as error:
+        fail(str(error))
+    if not flower_layout["fits"]:
+        fail("flower menu layout does not fit one screen")
 
     if docs_menu != menu:
         fail("docs/menu-data.json does not exactly match data/flower_menu.json")
@@ -184,6 +194,13 @@ def main() -> None:
     for required_reference in ("row.feeling", "row.looking_for", "row.display_name"):
         if required_reference not in html:
             fail(f"docs/index.html is missing generated curation reference: {required_reference}")
+    for required_guard in (
+        'groups.querySelectorAll(".row").length',
+        "groups.offsetHeight",
+        "Flower menu overflow",
+    ):
+        if required_guard not in html:
+            fail(f"docs/index.html is missing the single-screen runtime guard: {required_guard}")
 
     low_stock_rows = [row for row in rows if row.get("quantity", 0) < 27]
     for row in low_stock_rows:
@@ -213,6 +230,7 @@ def main() -> None:
         "html": str(html_path),
         "docs_data": str(docs_data_path),
         "size": img.size,
+        "flower_layout": flower_layout,
     }, indent=2))
 
 

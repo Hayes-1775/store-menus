@@ -8,6 +8,8 @@ from typing import Dict, List
 
 from PIL import Image, ImageDraw, ImageFont
 
+from flower_menu_layout import BOTTOM_MARGIN, CONTENT_TOP, select_flower_layout
+
 
 WIDTH = 1080
 HEIGHT = 1920
@@ -103,22 +105,19 @@ def draw_menu(rows: List[Dict], output: Path, width: int, height: int) -> None:
 
     grouped = group_rows(rows)
     active_groups = [strain for strain in ["Indica", "Hybrid", "Sativa"] if grouped.get(strain)]
-    row_count = len(rows)
-    content_top = int(88 * scale_y)
-    bottom_margin = int(34 * scale_y)
-    available_h = height - content_top - bottom_margin
     group_count = len(active_groups)
-    target_row_h = int((available_h - (group_count * 60 * scale_y) - (group_count * 20 * scale_y) - ((group_count - 1) * 24 * scale_y)) / max(row_count, 1))
-    row_h = clamp(target_row_h, int(38 * scale_y), int(54 * scale_y))
-    body_font_size = clamp(int(row_h * 0.68), int(26 * s), int(36 * s))
-    bar_h = clamp(int(row_h * 1.34), int(54 * scale_y), int(68 * scale_y))
-    gap_after_bar = clamp(int(row_h * 0.40), int(16 * scale_y), int(24 * scale_y))
-    gap_between_groups = clamp(int(row_h * 0.52), int(18 * scale_y), int(30 * scale_y))
+    layout = select_flower_layout(len(rows), group_count)
+    row_h = int(layout["row_height"] * scale_y)
+    body_font_size = clamp(int(row_h * 0.68), int(24 * s), int(36 * s))
+    bar_h = int(layout["section_height"] * scale_y)
+    gap_after_bar = int(layout["gap_after_section"] * scale_y)
+    gap_between_groups = int(layout["gap_between_groups"] * scale_y)
     section_font_size = clamp(int(bar_h * 0.70), int(36 * s), int(48 * s))
 
     body_font = font("body", body_font_size)
     section_font = font("title", section_font_size)
-    y = int(88 * scale_y)
+    y = int(CONTENT_TOP * scale_y)
+    drawn_rows = 0
     section_colors = {
         "Indica": (120, 140, 200),
         "Hybrid": (110, 185, 70),
@@ -137,8 +136,6 @@ def draw_menu(rows: List[Dict], output: Path, width: int, height: int) -> None:
         y += bar_h + gap_after_bar
 
         for row in group:
-            if y > height - int(55 * scale_y):
-                break
             name = row.get("display_name") or row["product_name"]
             badge = row.get("aged_inventory")
             badge_gap = int(8 * scale_x) if badge else 0
@@ -177,8 +174,17 @@ def draw_menu(rows: List[Dict], output: Path, width: int, height: int) -> None:
                 value = str(value)
                 draw.text((columns[key] - text_width(draw, value, body_font) // 2, y), value, fill=WHITE, font=body_font)
             y += row_h
+            drawn_rows += 1
         if strain_index < len(active_groups) - 1:
             y += gap_between_groups
+
+    bottom_limit = height - int(BOTTOM_MARGIN * scale_y)
+    if drawn_rows != len(rows) or y > bottom_limit:
+        raise RuntimeError(
+            "Flower menu rendering exceeded the single-screen layout contract: "
+            f"drew {drawn_rows}/{len(rows)} rows and ended at {y}px "
+            f"with a {bottom_limit}px limit."
+        )
 
     output.parent.mkdir(parents=True, exist_ok=True)
     img.save(output, "JPEG", quality=92, optimize=True)
@@ -205,7 +211,17 @@ def main() -> None:
         dated = archive / f"flower-menu-{datetime.now().date().isoformat()}.jpg"
         shutil.copyfile(out, dated)
 
-    print(json.dumps({"out": str(out), "width": args.width, "height": args.height, "rows": len(rows)}, indent=2))
+    active_group_count = len([strain for strain, group in group_rows(rows).items() if group])
+    layout = select_flower_layout(len(rows), active_group_count)
+    print(json.dumps({
+        "out": str(out),
+        "width": args.width,
+        "height": args.height,
+        "rows": len(rows),
+        "row_height": layout["row_height"],
+        "required_height": layout["required_height"],
+        "available_height": layout["available_height"],
+    }, indent=2))
 
 
 if __name__ == "__main__":
