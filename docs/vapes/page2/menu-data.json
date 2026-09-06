@@ -1,22 +1,23 @@
 {
-  "generated_at": "2026-09-04T11:55:11",
-  "inventory_source": "downloads/flowhub-inventory-2026-09-04-mcp.csv",
+  "generated_at": "2026-09-06T11:47:14",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-09-06-mcp.csv",
   "menu": "vapes",
   "screen": 2,
   "rotation_seconds": 20,
   "brands": [
     "Oregrown",
     "Moonwalk",
-    "Higher Cultures"
+    "Higher Cultures",
+    "Entourage Cannabis"
   ],
   "display": {
     "fits": true,
-    "row_height": 44,
-    "required_height": 1675,
+    "row_height": 35,
+    "required_height": 1879,
     "available_height": 1886,
-    "remaining_pixels": 211,
-    "brand_count": 3,
-    "row_count": 30
+    "remaining_pixels": 7,
+    "brand_count": 4,
+    "row_count": 39
   },
   "rows": [
     {
@@ -33,7 +34,7 @@
       "short_price": "$33.34",
       "quantity": 10.0,
       "source_rows": [
-        78
+        76
       ],
       "detail_display": "75%"
     },
@@ -49,9 +50,9 @@
       "thc_display": "70%",
       "price": "$33.34",
       "short_price": "$33.34",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
-        20
+        19
       ],
       "detail_display": "70%"
     },
@@ -69,7 +70,7 @@
       "short_price": "$41.67",
       "quantity": 6.0,
       "source_rows": [
-        206
+        199
       ],
       "detail_display": "71%"
     },
@@ -85,9 +86,9 @@
       "thc_display": "70%",
       "price": "$61.12",
       "short_price": "$61.12",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        124
+        120
       ],
       "detail_display": "70%"
     },
@@ -105,8 +106,8 @@
       "short_price": "$27.78",
       "quantity": 8.0,
       "source_rows": [
-        154,
-        155
+        149,
+        150
       ],
       "detail_display": "76%"
     },
@@ -124,7 +125,7 @@
       "short_price": "$33.34",
       "quantity": 10.0,
       "source_rows": [
-        166
+        160
       ],
       "detail_display": "72%"
     },
@@ -142,7 +143,7 @@
       "short_price": "$33.33",
       "quantity": 1.0,
       "source_rows": [
-        336
+        326
       ],
       "detail_display": "72%"
     },
@@ -160,7 +161,7 @@
       "short_price": "$61.12",
       "quantity": 10.0,
       "source_rows": [
-        30
+        29
       ],
       "detail_display": "74%"
     },
@@ -178,7 +179,7 @@
       "short_price": "$55.56",
       "quantity": 1.0,
       "source_rows": [
-        80
+        78
       ],
       "detail_display": "74%"
     },
@@ -196,7 +197,7 @@
       "short_price": "$41.67",
       "quantity": 5.0,
       "source_rows": [
-        130
+        126
       ],
       "detail_display": "72%"
     },
@@ -214,7 +215,7 @@
       "short_price": "$27.78",
       "quantity": 6.0,
       "source_rows": [
-        163
+        157
       ],
       "detail_display": "75%"
     },
@@ -232,7 +233,7 @@
       "short_price": "$33.34",
       "quantity": 10.0,
       "source_rows": [
-        63
+        62
       ],
       "detail_display": "72%"
     },
@@ -250,7 +251,7 @@
       "short_price": "$33.33",
       "quantity": 1.0,
       "source_rows": [
-        159
+        153
       ],
       "detail_display": "71%"
     },
@@ -268,7 +269,7 @@
       "short_price": "$55.56",
       "quantity": 4.0,
       "source_rows": [
-        265
+        256
       ],
       "detail_display": "72%"
     },
@@ -286,7 +287,7 @@
       "short_price": "$41.7",
       "quantity": 2.0,
       "source_rows": [
-        164
+        158
       ],
       "detail_display": "72%"
     },
@@ -304,7 +305,7 @@
       "short_price": "$60",
       "quantity": 6.0,
       "source_rows": [
-        125
+        121
       ],
       "detail_display": "77%"
     },
@@ -322,7 +323,7 @@
       "short_price": "$55.56",
       "quantity": 7.0,
       "source_rows": [
-        140
+        136
       ],
       "detail_display": "77%"
     },
@@ -340,7 +341,7 @@
       "short_price": "$55.56",
       "quantity": 9.0,
       "source_rows": [
-        245
+        237
       ],
       "detail_display": "74%"
     },
@@ -358,7 +359,7 @@
       "short_price": "$55.56",
       "quantity": 10.0,
       "source_rows": [
-        139
+        135
       ],
       "detail_display": "76%"
     },
@@ -374,9 +375,9 @@
       "thc_display": "88%",
       "price": "$24.44",
       "short_price": "$24.44",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
-        205
+        198
       ],
       "detail_display": "88%"
     },
@@ -394,7 +395,7 @@
       "short_price": "$24.44",
       "quantity": 2.0,
       "source_rows": [
-        193
+        186
       ],
       "detail_display": "87%"
     },
@@ -410,9 +411,9 @@
       "thc_display": "86%",
       "price": "$24.44",
       "short_price": "$24.44",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
-        165
+        159
       ],
       "detail_display": "86%"
     },
@@ -436,24 +437,6 @@
     },
     {
       "brand": "Higher Cultures",
-      "product_name": "Beef Tartare",
-      "display_name": "Beef Tartare",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.7622,
-      "thc_display": "76%",
-      "price": "$36.00",
-      "short_price": "$36",
-      "quantity": 1.0,
-      "source_rows": [
-        27
-      ],
-      "detail_display": "76%"
-    },
-    {
-      "brand": "Higher Cultures",
       "product_name": "Astro Funk",
       "display_name": "Astro Funk",
       "strain": "Indica",
@@ -464,7 +447,7 @@
       "thc_display": "",
       "price": "$29.60",
       "short_price": "$29.6",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
         17
       ],
@@ -482,7 +465,7 @@
       "thc_display": "80%",
       "price": "$44.45",
       "short_price": "$44.45",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
         12
       ],
@@ -500,9 +483,9 @@
       "thc_display": "",
       "price": "$29.60",
       "short_price": "$29.6",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        137
+        133
       ],
       "detail_display": ""
     },
@@ -518,9 +501,9 @@
       "thc_display": "90%",
       "price": "$24.44",
       "short_price": "$24.44",
-      "quantity": 3.0,
+      "quantity": 2.0,
       "source_rows": [
-        107
+        103
       ],
       "detail_display": "90%"
     },
@@ -536,9 +519,9 @@
       "thc_display": "80%",
       "price": "$44.45",
       "short_price": "$44.45",
-      "quantity": 7.0,
+      "quantity": 5.0,
       "source_rows": [
-        253
+        245
       ],
       "detail_display": "80%"
     },
@@ -554,11 +537,191 @@
       "thc_display": "",
       "price": "$29.60",
       "short_price": "$29.6",
-      "quantity": 6.0,
+      "quantity": 5.0,
       "source_rows": [
-        26
+        25
       ],
       "detail_display": ""
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "L.A. Pop Rocks x Purple Push Pop",
+      "display_name": "L.A. Pop Rocks x Purple Push Pop",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.6795,
+      "thc_display": "68%",
+      "price": "$33.34",
+      "short_price": "$33.34",
+      "quantity": 9.0,
+      "source_rows": [
+        146
+      ],
+      "detail_display": "68%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Shaved Ice",
+      "display_name": "Shaved Ice AIO",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7114,
+      "thc_display": "71%",
+      "price": "$40.00",
+      "short_price": "$40",
+      "quantity": 4.0,
+      "source_rows": [
+        241
+      ],
+      "detail_display": "71%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Dulce De Uva",
+      "display_name": "Dulce De Uva AIO",
+      "strain": "Indica",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.6546,
+      "thc_display": "65%",
+      "price": "$40.00",
+      "short_price": "$40",
+      "quantity": 7.0,
+      "source_rows": [
+        79
+      ],
+      "detail_display": "65%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Grape Life",
+      "display_name": "Grape Life",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.7511,
+      "thc_display": "75%",
+      "price": "$33.33",
+      "short_price": "$33.33",
+      "quantity": 2.0,
+      "source_rows": [
+        122
+      ],
+      "detail_display": "75%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Lemon Cherry Gushers",
+      "display_name": "Lemon Cherry Gushers",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.6835000000000001,
+      "thc_display": "68%",
+      "price": "$33.34",
+      "short_price": "$33.34",
+      "quantity": 7.0,
+      "source_rows": [
+        152
+      ],
+      "detail_display": "68%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Animal Sherb Mints",
+      "display_name": "Animal Sherb Mints",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.6738,
+      "thc_display": "67%",
+      "price": "$33.34",
+      "short_price": "$33.34",
+      "quantity": 7.0,
+      "source_rows": [
+        7
+      ],
+      "detail_display": "67%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Upper Cut",
+      "display_name": "Upper Cut AIO",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7188,
+      "thc_display": "72%",
+      "price": "$40.00",
+      "short_price": "$40",
+      "quantity": 2.0,
+      "source_rows": [
+        313
+      ],
+      "detail_display": "72%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Lavender Loaf",
+      "display_name": "Lavender Loaf AIO",
+      "strain": "Hybrid",
+      "size": "2g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7170000000000001,
+      "thc_display": "72%",
+      "price": "$64.44",
+      "short_price": "$64.44",
+      "quantity": 4.0,
+      "source_rows": [
+        148
+      ],
+      "detail_display": "72%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Gushers",
+      "display_name": "Gushers AIO",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7159,
+      "thc_display": "72%",
+      "price": "$40.00",
+      "short_price": "$40",
+      "quantity": 6.0,
+      "source_rows": [
+        128
+      ],
+      "detail_display": "72%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Sour Peaches",
+      "display_name": "Sour Peaches AIO",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7046000000000001,
+      "thc_display": "70%",
+      "price": "$40.00",
+      "short_price": "$40",
+      "quantity": 9.0,
+      "source_rows": [
+        249
+      ],
+      "detail_display": "70%"
     }
   ]
 }

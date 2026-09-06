@@ -1,185 +1,22 @@
 {
-  "generated_at": "2026-09-04T11:55:12",
-  "inventory_source": "downloads/flowhub-inventory-2026-09-04-mcp.csv",
+  "generated_at": "2026-09-06T11:47:14",
+  "inventory_source": "/Users/mikehayes/Documents/Store Menus/downloads/flowhub-inventory-2026-09-06-mcp.csv",
   "menu": "vapes",
   "screen": 4,
   "rotation_seconds": 20,
   "brands": [
-    "Puck Fortland",
     "Unknown"
   ],
   "display": {
     "fits": true,
     "row_height": 44,
-    "required_height": 1060,
+    "required_height": 733,
     "available_height": 1886,
-    "remaining_pixels": 826,
-    "brand_count": 2,
-    "row_count": 19
+    "remaining_pixels": 1153,
+    "brand_count": 1,
+    "row_count": 10
   },
   "rows": [
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Kush Cake",
-      "display_name": "Kush Cake",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.868,
-      "thc_display": "87%",
-      "price": "$15.55",
-      "short_price": "$15.55",
-      "quantity": 10.0,
-      "source_rows": [
-        149
-      ],
-      "detail_display": "87%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Forbidden Fruit",
-      "display_name": "Forbidden Fruit",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8385000000000001,
-      "thc_display": "84%",
-      "price": "$15.55",
-      "short_price": "$15.55",
-      "quantity": 10.0,
-      "source_rows": [
-        91
-      ],
-      "detail_display": "84%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Granddaddy Purple",
-      "display_name": "Granddaddy Purple",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8362999999999999,
-      "thc_display": "84%",
-      "price": "$15.55",
-      "short_price": "$15.55",
-      "quantity": 10.0,
-      "source_rows": [
-        115
-      ],
-      "detail_display": "84%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Cherry Pie",
-      "display_name": "Cherry Pie",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8573000000000001,
-      "thc_display": "86%",
-      "price": "$15.55",
-      "short_price": "$15.55",
-      "quantity": 10.0,
-      "source_rows": [
-        67
-      ],
-      "detail_display": "86%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Gelatti",
-      "display_name": "Gelatti",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8441,
-      "thc_display": "84%",
-      "price": "$15.55",
-      "short_price": "$15.55",
-      "quantity": 10.0,
-      "source_rows": [
-        104
-      ],
-      "detail_display": "84%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Tropicanna Cookies",
-      "display_name": "Tropicanna Cookies",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8378,
-      "thc_display": "84%",
-      "price": "$15.55",
-      "short_price": "$15.55",
-      "quantity": 10.0,
-      "source_rows": [
-        320
-      ],
-      "detail_display": "84%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Jack",
-      "display_name": "Jack",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8309000000000001,
-      "thc_display": "83%",
-      "price": "$15.55",
-      "short_price": "$15.55",
-      "quantity": 10.0,
-      "source_rows": [
-        143
-      ],
-      "detail_display": "83%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Trainwreck",
-      "display_name": "Trainwreck",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8298000000000001,
-      "thc_display": "83%",
-      "price": "$15.55",
-      "short_price": "$15.55",
-      "quantity": 10.0,
-      "source_rows": [
-        309
-      ],
-      "detail_display": "83%"
-    },
-    {
-      "brand": "Puck Fortland",
-      "product_name": "Maui Wowie",
-      "display_name": "Maui Wowie",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.8066,
-      "thc_display": "81%",
-      "price": "$15.55",
-      "short_price": "$15.55",
-      "quantity": 10.0,
-      "source_rows": [
-        187
-      ],
-      "detail_display": "81%"
-    },
     {
       "brand": "Unknown",
       "product_name": "Slurricane",
@@ -194,7 +31,7 @@
       "short_price": "$20",
       "quantity": 6.0,
       "source_rows": [
-        252
+        244
       ],
       "detail_display": "89%"
     },
@@ -212,8 +49,8 @@
       "short_price": "$24",
       "quantity": 16.0,
       "source_rows": [
-        167,
-        168
+        161,
+        162
       ],
       "detail_display": "84%"
     },
@@ -231,7 +68,7 @@
       "short_price": "$30",
       "quantity": 4.0,
       "source_rows": [
-        275
+        266
       ],
       "detail_display": "81%"
     },
@@ -249,8 +86,8 @@
       "short_price": "$30",
       "quantity": 12.0,
       "source_rows": [
-        53,
-        54
+        52,
+        53
       ],
       "detail_display": "76%"
     },
@@ -268,8 +105,8 @@
       "short_price": "$20",
       "quantity": 16.0,
       "source_rows": [
-        24,
-        25
+        23,
+        24
       ],
       "detail_display": "86%"
     },
@@ -287,7 +124,7 @@
       "short_price": "$30",
       "quantity": 7.0,
       "source_rows": [
-        216
+        209
       ],
       "detail_display": "79%"
     },
@@ -303,9 +140,9 @@
       "thc_display": "80%",
       "price": "$24.00",
       "short_price": "$24",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
-        338
+        328
       ],
       "detail_display": "80%"
     },
@@ -321,9 +158,9 @@
       "thc_display": "77%",
       "price": "$30.00",
       "short_price": "$30",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        182
+        175
       ],
       "detail_display": "77%"
     },
@@ -341,7 +178,7 @@
       "short_price": "$24",
       "quantity": 9.0,
       "source_rows": [
-        312
+        302
       ],
       "detail_display": "77%"
     },
@@ -359,7 +196,7 @@
       "short_price": "$36",
       "quantity": 7.0,
       "source_rows": [
-        181
+        174
       ],
       "detail_display": "77%"
     }
