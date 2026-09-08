@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T09:45:58",
+  "generated_at": "2026-09-08T14:09:11",
   "inventory_source": "downloads/flowhub-inventory-2026-09-08-mcp.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
@@ -10,7 +10,7 @@
       "group_order": 1,
       "thc": 0.17629999999999998,
       "thc_display": "18%",
-      "quantity": 146.66,
+      "quantity": 118.64,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -214,7 +214,7 @@
       "group_order": 1,
       "thc": 0.2557,
       "thc_display": "26%",
-      "quantity": 384.38,
+      "quantity": 370.36,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -384,7 +384,7 @@
       "group_order": 1,
       "thc": 0.30210000000000004,
       "thc_display": "30%",
-      "quantity": 194.2,
+      "quantity": 190.61,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -656,7 +656,7 @@
       "group_order": 2,
       "thc": 0.217,
       "thc_display": "22%",
-      "quantity": 413.23,
+      "quantity": 409.73,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -928,7 +928,7 @@
       "group_order": 2,
       "thc": 0.273,
       "thc_display": "27%",
-      "quantity": 132.99,
+      "quantity": 129.39,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1058,40 +1058,6 @@
       "display_name": "Sheesh"
     },
     {
-      "product_name": "Papaya Juice",
-      "brand": "",
-      "strain": "Hybrid",
-      "group_order": 2,
-      "thc": 0.23149999999999998,
-      "thc_display": "23%",
-      "quantity": 111.91,
-      "price_profile": "$10 Gram",
-      "gram": "$10",
-      "eighth": "$32",
-      "quarter": "$61",
-      "half": "$116",
-      "ounce": "$214",
-      "low_stock": false,
-      "closeout": false,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "85dc549c-cc8f-46ee-bbc0-44d5502d6f1e"
-      ],
-      "source_variant_ids": [
-        "79777ad9-5d6d-457b-b07d-e243d849c74f"
-      ],
-      "source_skus": [
-        "1A401030001E656000006653"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": true,
-      "feeling": "Bright",
-      "looking_for": "Energy",
-      "display_name": "Papaya Juice"
-    },
-    {
       "product_name": "Lime Dawg",
       "brand": "Garden First Cannabis",
       "strain": "Hybrid",
@@ -1161,28 +1127,28 @@
     },
     {
       "product_name": "Cap Junky",
-      "brand": "",
+      "brand": "Fenario Farms",
       "strain": "Hybrid",
       "group_order": 2,
-      "thc": 0.3163,
-      "thc_display": "32%",
+      "thc": 0.32799999999999996,
+      "thc_display": "33%",
       "quantity": 76.64,
-      "price_profile": "$10 Gram",
-      "gram": "$10",
-      "eighth": "$32",
-      "quarter": "$61",
-      "half": "$116",
-      "ounce": "$214",
+      "price_profile": "$12 Gram",
+      "gram": "$12",
+      "eighth": "$38",
+      "quarter": "$72",
+      "half": "$137",
+      "ounce": "$253",
       "low_stock": false,
       "closeout": false,
       "aged_inventory": false,
       "aged_inventory_days": null,
       "aged_inventory_date": "",
       "source_product_ids": [
-        "6549e88b-edef-4174-b318-b53b5764b9ff"
+        "03cb3758-22af-410a-adb0-e79c7ff6caeb"
       ],
       "source_variant_ids": [
-        "6ae26a95-1b19-4657-a3ed-62ec34be264e"
+        "2941673c-2f9a-4eb1-874f-557cf5fa86ed"
       ],
       "source_skus": [
         "1A401030001E656000006625"
@@ -1268,7 +1234,7 @@
       "group_order": 3,
       "thc": 0.2332,
       "thc_display": "23%",
-      "quantity": 198.58,
+      "quantity": 195.08,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1336,7 +1302,7 @@
       "group_order": 3,
       "thc": 0.28550000000000003,
       "thc_display": "29%",
-      "quantity": 207.87,
+      "quantity": 204.37,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1405,7 +1371,7 @@
       "group_order": 3,
       "thc": 0.3065,
       "thc_display": "31%",
-      "quantity": 170.42,
+      "quantity": 165.77,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1439,7 +1405,7 @@
       "group_order": 3,
       "thc": 0.2102,
       "thc_display": "21%",
-      "quantity": 57.05,
+      "quantity": 55.03,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -1533,6 +1499,40 @@
       "feeling": "Focused",
       "looking_for": "Energy",
       "display_name": "Candied Lemons"
+    },
+    {
+      "product_name": "Papaya Juice",
+      "brand": "Fenario Farms",
+      "strain": "Sativa",
+      "group_order": 3,
+      "thc": 0.31079999999999997,
+      "thc_display": "31%",
+      "quantity": 111.91,
+      "price_profile": "$12 Gram",
+      "gram": "$12",
+      "eighth": "$38",
+      "quarter": "$72",
+      "half": "$137",
+      "ounce": "$253",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "fbc3781c-f61a-460a-98a3-65d0542505c5"
+      ],
+      "source_variant_ids": [
+        "4a3a06a3-c26b-46d6-a4b5-424641e7462f"
+      ],
+      "source_skus": [
+        "1A401030001E656000006653"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": true,
+      "feeling": "Bright",
+      "looking_for": "Energy",
+      "display_name": "Papaya Juice"
     },
     {
       "product_name": "Durban Poison S1",
