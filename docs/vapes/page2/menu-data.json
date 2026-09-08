@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-06T11:49:19",
-  "inventory_source": "downloads/flowhub-inventory-2026-09-06-mcp.csv",
+  "generated_at": "2026-09-08T08:17:51",
+  "inventory_source": "downloads/flowhub-inventory-2026-09-08-mcp.csv",
   "menu": "vapes",
   "screen": 2,
   "rotation_seconds": 20,
@@ -12,12 +12,12 @@
   ],
   "display": {
     "fits": true,
-    "row_height": 35,
-    "required_height": 1879,
+    "row_height": 36,
+    "required_height": 1867,
     "available_height": 1886,
-    "remaining_pixels": 7,
+    "remaining_pixels": 19,
     "brand_count": 4,
-    "row_count": 39
+    "row_count": 37
   },
   "rows": [
     {
@@ -32,7 +32,7 @@
       "thc_display": "75%",
       "price": "$33.34",
       "short_price": "$33.34",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
         76
       ],
@@ -50,7 +50,7 @@
       "thc_display": "70%",
       "price": "$33.34",
       "short_price": "$33.34",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
         19
       ],
@@ -70,7 +70,7 @@
       "short_price": "$41.67",
       "quantity": 6.0,
       "source_rows": [
-        199
+        197
       ],
       "detail_display": "71%"
     },
@@ -86,7 +86,7 @@
       "thc_display": "70%",
       "price": "$61.12",
       "short_price": "$61.12",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
         120
       ],
@@ -143,7 +143,7 @@
       "short_price": "$33.33",
       "quantity": 1.0,
       "source_rows": [
-        326
+        323
       ],
       "detail_display": "72%"
     },
@@ -159,7 +159,7 @@
       "thc_display": "74%",
       "price": "$61.12",
       "short_price": "$61.12",
-      "quantity": 10.0,
+      "quantity": 9.0,
       "source_rows": [
         29
       ],
@@ -239,24 +239,6 @@
     },
     {
       "brand": "Oregrown",
-      "product_name": "Lemonhead Zkittlez",
-      "display_name": "Lemonhead Zkittlez",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.7073999999999999,
-      "thc_display": "71%",
-      "price": "$33.33",
-      "short_price": "$33.33",
-      "quantity": 1.0,
-      "source_rows": [
-        153
-      ],
-      "detail_display": "71%"
-    },
-    {
-      "brand": "Oregrown",
       "product_name": "Sub Zero",
       "display_name": "Sub Zero AIO",
       "strain": "Sativa",
@@ -269,7 +251,7 @@
       "short_price": "$55.56",
       "quantity": 4.0,
       "source_rows": [
-        256
+        253
       ],
       "detail_display": "72%"
     },
@@ -339,9 +321,9 @@
       "thc_display": "74%",
       "price": "$55.56",
       "short_price": "$55.56",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        237
+        234
       ],
       "detail_display": "74%"
     },
@@ -377,7 +359,7 @@
       "short_price": "$24.44",
       "quantity": 3.0,
       "source_rows": [
-        198
+        196
       ],
       "detail_display": "88%"
     },
@@ -395,7 +377,7 @@
       "short_price": "$24.44",
       "quantity": 2.0,
       "source_rows": [
-        186
+        184
       ],
       "detail_display": "87%"
     },
@@ -465,7 +447,7 @@
       "thc_display": "80%",
       "price": "$44.45",
       "short_price": "$44.45",
-      "quantity": 9.0,
+      "quantity": 4.0,
       "source_rows": [
         12
       ],
@@ -501,7 +483,7 @@
       "thc_display": "90%",
       "price": "$24.44",
       "short_price": "$24.44",
-      "quantity": 2.0,
+      "quantity": 1.0,
       "source_rows": [
         103
       ],
@@ -519,9 +501,9 @@
       "thc_display": "80%",
       "price": "$44.45",
       "short_price": "$44.45",
-      "quantity": 5.0,
+      "quantity": 3.0,
       "source_rows": [
-        245
+        242
       ],
       "detail_display": "80%"
     },
@@ -575,7 +557,7 @@
       "short_price": "$40",
       "quantity": 4.0,
       "source_rows": [
-        241
+        238
       ],
       "detail_display": "71%"
     },
@@ -599,24 +581,6 @@
     },
     {
       "brand": "Entourage Cannabis",
-      "product_name": "Grape Life",
-      "display_name": "Grape Life",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.7511,
-      "thc_display": "75%",
-      "price": "$33.33",
-      "short_price": "$33.33",
-      "quantity": 2.0,
-      "source_rows": [
-        122
-      ],
-      "detail_display": "75%"
-    },
-    {
-      "brand": "Entourage Cannabis",
       "product_name": "Lemon Cherry Gushers",
       "display_name": "Lemon Cherry Gushers",
       "strain": "Hybrid",
@@ -627,7 +591,7 @@
       "thc_display": "68%",
       "price": "$33.34",
       "short_price": "$33.34",
-      "quantity": 7.0,
+      "quantity": 6.0,
       "source_rows": [
         152
       ],
@@ -665,7 +629,7 @@
       "short_price": "$40",
       "quantity": 2.0,
       "source_rows": [
-        313
+        310
       ],
       "detail_display": "72%"
     },
@@ -719,7 +683,7 @@
       "short_price": "$40",
       "quantity": 9.0,
       "source_rows": [
-        249
+        246
       ],
       "detail_display": "70%"
     }
