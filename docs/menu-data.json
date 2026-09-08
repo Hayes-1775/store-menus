@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T08:17:50",
+  "generated_at": "2026-09-08T09:45:58",
   "inventory_source": "downloads/flowhub-inventory-2026-09-08-mcp.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
@@ -894,7 +894,7 @@
       "group_order": 2,
       "thc": 0.26780000000000004,
       "thc_display": "27%",
-      "quantity": 190.75,
+      "quantity": 176.66,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -996,7 +996,7 @@
       "group_order": 2,
       "thc": 0.3262,
       "thc_display": "33%",
-      "quantity": 92.96,
+      "quantity": 90.95,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1192,40 +1192,6 @@
       "feeling": "Potent",
       "looking_for": "Chill",
       "display_name": "Cap Junky"
-    },
-    {
-      "product_name": "Super Boof",
-      "brand": "Fenario Farms",
-      "strain": "Hybrid",
-      "group_order": 2,
-      "thc": 0.3019,
-      "thc_display": "30%",
-      "quantity": 3.19,
-      "price_profile": "$12 Gram",
-      "gram": "$12",
-      "eighth": "$38",
-      "quarter": "$72",
-      "half": "$137",
-      "ounce": "$253",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "3cdea1c5-dddd-4521-9b43-81effedcf8aa"
-      ],
-      "source_variant_ids": [
-        "5f3b50ba-3c67-4917-a367-c2048d62016b"
-      ],
-      "source_skus": [
-        "53B9VXkgnH"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false,
-      "feeling": "Euphoric",
-      "looking_for": "Energy",
-      "display_name": "Super Boof"
     },
     {
       "product_name": "Blue Sunshine",
