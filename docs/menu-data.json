@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-08T14:09:11",
-  "inventory_source": "downloads/flowhub-inventory-2026-09-08-mcp.csv",
+  "generated_at": "2026-09-09T08:30:19",
+  "inventory_source": "downloads/flowhub-inventory-2026-09-09-mcp.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -146,7 +146,7 @@
       "group_order": 1,
       "thc": 0.2491,
       "thc_display": "25%",
-      "quantity": 166.39,
+      "quantity": 165.33,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -180,7 +180,7 @@
       "group_order": 1,
       "thc": 0.2491,
       "thc_display": "25%",
-      "quantity": 399.42,
+      "quantity": 392.41,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -202,7 +202,7 @@
         "dCjca1Luz7"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true,
+      "no_recent_sales": false,
       "feeling": "Sweet",
       "looking_for": "Chill",
       "display_name": "Stuffed Cherry Gelato"
@@ -304,7 +304,7 @@
         "JpDkXiOFcw"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Mellow",
       "looking_for": "Sleepy",
       "display_name": "Jager"
@@ -316,7 +316,7 @@
       "group_order": 1,
       "thc": 0.281,
       "thc_display": "28%",
-      "quantity": 290.56,
+      "quantity": 283.51,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -384,7 +384,7 @@
       "group_order": 1,
       "thc": 0.30210000000000004,
       "thc_display": "30%",
-      "quantity": 190.61,
+      "quantity": 187.03,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -440,7 +440,7 @@
         "5EBVDP7aK4"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Uplifted",
       "looking_for": "Energy",
       "display_name": "Maltese Tiger"
@@ -576,7 +576,7 @@
         "IDjuNM2gd5"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Mellow",
       "looking_for": "Sleepy",
       "display_name": "Goodies"
@@ -588,7 +588,7 @@
       "group_order": 1,
       "thc": 0.2856,
       "thc_display": "29%",
-      "quantity": 75.4,
+      "quantity": 67.27,
       "price_profile": "$14 Gram",
       "gram": "$14",
       "eighth": "$44",
@@ -656,7 +656,7 @@
       "group_order": 2,
       "thc": 0.217,
       "thc_display": "22%",
-      "quantity": 409.73,
+      "quantity": 380.62,
       "price_profile": "$4 Gram",
       "gram": "$4",
       "eighth": "$14",
@@ -690,7 +690,7 @@
       "group_order": 2,
       "thc": 0.23,
       "thc_display": "23%",
-      "quantity": 248.88,
+      "quantity": 237.22,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -746,7 +746,7 @@
         "ZlbsvpM2BS"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Tangy",
       "looking_for": "Chill",
       "display_name": "Sour Grapes"
@@ -758,7 +758,7 @@
       "group_order": 2,
       "thc": 0.245,
       "thc_display": "25%",
-      "quantity": 425.87,
+      "quantity": 383.86,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -792,7 +792,7 @@
       "group_order": 2,
       "thc": 0.2618,
       "thc_display": "26%",
-      "quantity": 144.79,
+      "quantity": 141.24,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -826,7 +826,7 @@
       "group_order": 2,
       "thc": 0.264,
       "thc_display": "26%",
-      "quantity": 245.51,
+      "quantity": 217.45,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -848,7 +848,7 @@
         "riV28s3K5V"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true,
+      "no_recent_sales": false,
       "feeling": "Soothing",
       "looking_for": "Sleepy",
       "display_name": "Purple Churro"
@@ -996,7 +996,7 @@
       "group_order": 2,
       "thc": 0.3262,
       "thc_display": "33%",
-      "quantity": 90.95,
+      "quantity": 87.41,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1030,7 +1030,7 @@
       "group_order": 2,
       "thc": 0.2771,
       "thc_display": "28%",
-      "quantity": 75.98,
+      "quantity": 72.43,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -1086,7 +1086,7 @@
         "v37wZN0vPj"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Bright",
       "looking_for": "Energy",
       "display_name": "Lime Dawg"
@@ -1132,7 +1132,7 @@
       "group_order": 2,
       "thc": 0.32799999999999996,
       "thc_display": "33%",
-      "quantity": 76.64,
+      "quantity": 73.12,
       "price_profile": "$12 Gram",
       "gram": "$12",
       "eighth": "$38",
@@ -1222,7 +1222,7 @@
         "C5SpAOxJam"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Focused",
       "looking_for": "Energy",
       "display_name": "Miami Dade"
@@ -1234,7 +1234,7 @@
       "group_order": 3,
       "thc": 0.2332,
       "thc_display": "23%",
-      "quantity": 195.08,
+      "quantity": 192.02,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1302,7 +1302,7 @@
       "group_order": 3,
       "thc": 0.28550000000000003,
       "thc_display": "29%",
-      "quantity": 204.37,
+      "quantity": 200.81,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1321,8 +1321,8 @@
         "2b7e1b1f-0b6d-4884-8e64-1285f06b5c5c"
       ],
       "source_skus": [
-        "fdztBs0W82",
-        "LcZTU21OSg"
+        "LcZTU21OSg",
+        "fdztBs0W82"
       ],
       "dutchie_url": "",
       "no_recent_sales": false,
@@ -1405,7 +1405,7 @@
       "group_order": 3,
       "thc": 0.2102,
       "thc_display": "21%",
-      "quantity": 55.03,
+      "quantity": 47.95,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -1563,7 +1563,7 @@
         "tSykPJzUt3"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Productive",
       "looking_for": "Energy",
       "display_name": "Durban Poison S1"
