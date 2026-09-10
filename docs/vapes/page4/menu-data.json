@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-09T08:30:21",
-  "inventory_source": "downloads/flowhub-inventory-2026-09-09-mcp.csv",
+  "generated_at": "2026-09-10T16:37:44",
+  "inventory_source": "downloads/flowhub-inventory-2026-09-10-mcp.csv",
   "menu": "vapes",
   "screen": 4,
   "rotation_seconds": 20,
@@ -31,7 +31,7 @@
       "short_price": "$20",
       "quantity": 6.0,
       "source_rows": [
-        237
+        236
       ],
       "detail_display": "89%"
     },
@@ -47,7 +47,7 @@
       "thc_display": "84%",
       "price": "$24.00",
       "short_price": "$24",
-      "quantity": 16.0,
+      "quantity": 15.0,
       "source_rows": [
         158,
         159
@@ -68,7 +68,7 @@
       "short_price": "$30",
       "quantity": 3.0,
       "source_rows": [
-        258
+        257
       ],
       "detail_display": "81%"
     },
@@ -84,7 +84,7 @@
       "thc_display": "76%",
       "price": "$30.00",
       "short_price": "$30",
-      "quantity": 11.0,
+      "quantity": 10.0,
       "source_rows": [
         51,
         52
@@ -142,7 +142,7 @@
       "short_price": "$24",
       "quantity": 5.0,
       "source_rows": [
-        319
+        317
       ],
       "detail_display": "80%"
     },
@@ -178,7 +178,7 @@
       "short_price": "$24",
       "quantity": 9.0,
       "source_rows": [
-        293
+        291
       ],
       "detail_display": "77%"
     },

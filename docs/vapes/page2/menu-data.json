@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-09T08:30:20",
-  "inventory_source": "downloads/flowhub-inventory-2026-09-09-mcp.csv",
+  "generated_at": "2026-09-10T16:37:44",
+  "inventory_source": "downloads/flowhub-inventory-2026-09-10-mcp.csv",
   "menu": "vapes",
   "screen": 2,
   "rotation_seconds": 20,
@@ -17,7 +17,7 @@
     "available_height": 1886,
     "remaining_pixels": 19,
     "brand_count": 4,
-    "row_count": 37
+    "row_count": 36
   },
   "rows": [
     {
@@ -86,7 +86,7 @@
       "thc_display": "70%",
       "price": "$61.12",
       "short_price": "$61.12",
-      "quantity": 6.0,
+      "quantity": 4.0,
       "source_rows": [
         117
       ],
@@ -143,7 +143,7 @@
       "short_price": "$33.33",
       "quantity": 1.0,
       "source_rows": [
-        317
+        315
       ],
       "detail_display": "72%"
     },
@@ -159,7 +159,7 @@
       "thc_display": "74%",
       "price": "$61.12",
       "short_price": "$61.12",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
         29
       ],
@@ -251,7 +251,7 @@
       "short_price": "$55.56",
       "quantity": 4.0,
       "source_rows": [
-        249
+        248
       ],
       "detail_display": "72%"
     },
@@ -285,7 +285,7 @@
       "thc_display": "77%",
       "price": "$60.00",
       "short_price": "$60",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
         118
       ],
@@ -321,9 +321,9 @@
       "thc_display": "74%",
       "price": "$55.56",
       "short_price": "$55.56",
-      "quantity": 8.0,
+      "quantity": 7.0,
       "source_rows": [
-        230
+        229
       ],
       "detail_display": "74%"
     },
@@ -411,7 +411,7 @@
       "thc_display": "77%",
       "price": "$44.45",
       "short_price": "$44.45",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
         2
       ],
@@ -473,24 +473,6 @@
     },
     {
       "brand": "Higher Cultures",
-      "product_name": "Ginger Tea",
-      "display_name": "Ginger Tea",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "AIO",
-      "process": "DLR",
-      "thc": 0.8996999999999999,
-      "thc_display": "90%",
-      "price": "$24.44",
-      "short_price": "$24.44",
-      "quantity": 1.0,
-      "source_rows": [
-        100
-      ],
-      "detail_display": "90%"
-    },
-    {
-      "brand": "Higher Cultures",
       "product_name": "Sour Diesel",
       "display_name": "Sour Diesel",
       "strain": "Sativa",
@@ -501,9 +483,9 @@
       "thc_display": "80%",
       "price": "$44.45",
       "short_price": "$44.45",
-      "quantity": 3.0,
+      "quantity": 2.0,
       "source_rows": [
-        238
+        237
       ],
       "detail_display": "80%"
     },
@@ -557,7 +539,7 @@
       "short_price": "$40",
       "quantity": 4.0,
       "source_rows": [
-        234
+        233
       ],
       "detail_display": "71%"
     },
@@ -591,7 +573,7 @@
       "thc_display": "68%",
       "price": "$33.34",
       "short_price": "$33.34",
-      "quantity": 5.0,
+      "quantity": 4.0,
       "source_rows": [
         149
       ],
@@ -629,7 +611,7 @@
       "short_price": "$40",
       "quantity": 2.0,
       "source_rows": [
-        304
+        302
       ],
       "detail_display": "72%"
     },
@@ -645,7 +627,7 @@
       "thc_display": "72%",
       "price": "$64.44",
       "short_price": "$64.44",
-      "quantity": 4.0,
+      "quantity": 3.0,
       "source_rows": [
         145
       ],
@@ -681,9 +663,9 @@
       "thc_display": "70%",
       "price": "$40.00",
       "short_price": "$40",
-      "quantity": 9.0,
+      "quantity": 8.0,
       "source_rows": [
-        242
+        241
       ],
       "detail_display": "70%"
     }
