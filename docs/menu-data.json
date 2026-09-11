@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-10T16:37:43",
-  "inventory_source": "downloads/flowhub-inventory-2026-09-10-mcp.csv",
+  "generated_at": "2026-09-11T08:47:36",
+  "inventory_source": "downloads/flowhub-inventory-2026-09-11-mcp.csv",
   "pricing_workbook": "/Users/mikehayes/Desktop/Flower Menu Link.xlsm",
   "rows": [
     {
@@ -10,7 +10,7 @@
       "group_order": 1,
       "thc": 0.17629999999999998,
       "thc_display": "18%",
-      "quantity": 118.64,
+      "quantity": 90.64,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -66,7 +66,7 @@
         "sKWZqqHD4e"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Relaxing",
       "looking_for": "Chill",
       "display_name": "Apple Jacked"
@@ -100,7 +100,7 @@
         "W9YSnBVznN"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Sedative",
       "looking_for": "Sleepy",
       "display_name": "Devils Den"
@@ -236,7 +236,7 @@
         "mqOZwhCY4y"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Calming",
       "looking_for": "Sleepy",
       "display_name": "Punch Breath"
@@ -282,7 +282,7 @@
       "group_order": 1,
       "thc": 0.27580000000000005,
       "thc_display": "28%",
-      "quantity": 345.23,
+      "quantity": 343.21,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -304,7 +304,7 @@
         "JpDkXiOFcw"
       ],
       "dutchie_url": "",
-      "no_recent_sales": true,
+      "no_recent_sales": false,
       "feeling": "Mellow",
       "looking_for": "Sleepy",
       "display_name": "Jager"
@@ -350,7 +350,7 @@
       "group_order": 1,
       "thc": 0.2884,
       "thc_display": "29%",
-      "quantity": 62.29,
+      "quantity": 90.32,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -384,7 +384,7 @@
       "group_order": 1,
       "thc": 0.30210000000000004,
       "thc_display": "30%",
-      "quantity": 187.03,
+      "quantity": 179.93,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -520,14 +520,14 @@
       "group_order": 1,
       "thc": 0.2211,
       "thc_display": "22%",
-      "quantity": 24.88,
+      "quantity": 17.78,
       "price_profile": "$10 Gram",
       "gram": "$10",
       "eighth": "$32",
       "quarter": "$61",
       "half": "$116",
       "ounce": "$214",
-      "low_stock": false,
+      "low_stock": true,
       "closeout": true,
       "aged_inventory": false,
       "aged_inventory_days": null,
@@ -580,6 +580,40 @@
       "feeling": "Mellow",
       "looking_for": "Sleepy",
       "display_name": "Goodies"
+    },
+    {
+      "product_name": "Papaya Juice",
+      "brand": "Fenario Farms",
+      "strain": "Indica",
+      "group_order": 1,
+      "thc": 0.31079999999999997,
+      "thc_display": "31%",
+      "quantity": 111.91,
+      "price_profile": "$12 Gram",
+      "gram": "$12",
+      "eighth": "$38",
+      "quarter": "$72",
+      "half": "$137",
+      "ounce": "$253",
+      "low_stock": false,
+      "closeout": false,
+      "aged_inventory": false,
+      "aged_inventory_days": null,
+      "aged_inventory_date": "",
+      "source_product_ids": [
+        "fbc3781c-f61a-460a-98a3-65d0542505c5"
+      ],
+      "source_variant_ids": [
+        "4a3a06a3-c26b-46d6-a4b5-424641e7462f"
+      ],
+      "source_skus": [
+        "1A401030001E656000006653"
+      ],
+      "dutchie_url": "",
+      "no_recent_sales": true,
+      "feeling": "Bright",
+      "looking_for": "Energy",
+      "display_name": "Papaya Juice"
     },
     {
       "product_name": "OMMP Blueberry",
@@ -758,7 +792,7 @@
       "group_order": 2,
       "thc": 0.245,
       "thc_display": "25%",
-      "quantity": 355.77,
+      "quantity": 348.74,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -792,7 +826,7 @@
       "group_order": 2,
       "thc": 0.2618,
       "thc_display": "26%",
-      "quantity": 141.24,
+      "quantity": 139.15,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -860,7 +894,7 @@
       "group_order": 2,
       "thc": 0.2667,
       "thc_display": "27%",
-      "quantity": 156.69,
+      "quantity": 154.62,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -916,7 +950,7 @@
         "pzmnSIt0N9"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Smooth",
       "looking_for": "Chill",
       "display_name": "Collins Ave"
@@ -1030,7 +1064,7 @@
       "group_order": 2,
       "thc": 0.2771,
       "thc_display": "28%",
-      "quantity": 72.43,
+      "quantity": 70.43,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -1098,7 +1132,7 @@
       "group_order": 2,
       "thc": 0.2502,
       "thc_display": "25%",
-      "quantity": 13.64,
+      "quantity": 10.04,
       "price_profile": "$10 Gram",
       "gram": "$10",
       "eighth": "$32",
@@ -1132,7 +1166,7 @@
       "group_order": 2,
       "thc": 0.32799999999999996,
       "thc_display": "33%",
-      "quantity": 73.12,
+      "quantity": 71.02,
       "price_profile": "$12 Gram",
       "gram": "$12",
       "eighth": "$38",
@@ -1188,7 +1222,7 @@
         "TJ0DtvxeeS"
       ],
       "dutchie_url": "",
-      "no_recent_sales": false,
+      "no_recent_sales": true,
       "feeling": "Bright",
       "looking_for": "Energy",
       "display_name": "Blue Sunshine"
@@ -1234,7 +1268,7 @@
       "group_order": 3,
       "thc": 0.2332,
       "thc_display": "23%",
-      "quantity": 174.84,
+      "quantity": 172.82,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1268,7 +1302,7 @@
       "group_order": 3,
       "thc": 0.2719,
       "thc_display": "27%",
-      "quantity": 154.16,
+      "quantity": 152.16,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1302,7 +1336,7 @@
       "group_order": 3,
       "thc": 0.28550000000000003,
       "thc_display": "29%",
-      "quantity": 188.07,
+      "quantity": 186.07,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1371,7 +1405,7 @@
       "group_order": 3,
       "thc": 0.3065,
       "thc_display": "31%",
-      "quantity": 154.34,
+      "quantity": 152.24,
       "price_profile": "$5 Gram",
       "gram": "$5",
       "eighth": "$16",
@@ -1405,7 +1439,7 @@
       "group_order": 3,
       "thc": 0.2102,
       "thc_display": "21%",
-      "quantity": 44.45,
+      "quantity": 36.76,
       "price_profile": "$6 Gram",
       "gram": "$6",
       "eighth": "$19",
@@ -1431,40 +1465,6 @@
       "feeling": "Focused",
       "looking_for": "Energy",
       "display_name": "Cel-Rey"
-    },
-    {
-      "product_name": "High Desert Sour Sage",
-      "brand": "Oregrown",
-      "strain": "Sativa",
-      "group_order": 3,
-      "thc": 0.27390000000000003,
-      "thc_display": "27%",
-      "quantity": 11.78,
-      "price_profile": "$7 Gram",
-      "gram": "$7",
-      "eighth": "$22",
-      "quarter": "$42",
-      "half": "$80",
-      "ounce": "$148",
-      "low_stock": true,
-      "closeout": true,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "2b17d933-6962-49e2-8035-de76086820ef"
-      ],
-      "source_variant_ids": [
-        "a5683838-a64a-423a-9fb4-9523da53b97b"
-      ],
-      "source_skus": [
-        "KVdgpO197N"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": false,
-      "feeling": "Alert",
-      "looking_for": "Energy",
-      "display_name": "High Desert Sour Sage"
     },
     {
       "product_name": "Candied Lemons",
@@ -1499,40 +1499,6 @@
       "feeling": "Focused",
       "looking_for": "Energy",
       "display_name": "Candied Lemons"
-    },
-    {
-      "product_name": "Papaya Juice",
-      "brand": "Fenario Farms",
-      "strain": "Sativa",
-      "group_order": 3,
-      "thc": 0.31079999999999997,
-      "thc_display": "31%",
-      "quantity": 111.91,
-      "price_profile": "$12 Gram",
-      "gram": "$12",
-      "eighth": "$38",
-      "quarter": "$72",
-      "half": "$137",
-      "ounce": "$253",
-      "low_stock": false,
-      "closeout": false,
-      "aged_inventory": false,
-      "aged_inventory_days": null,
-      "aged_inventory_date": "",
-      "source_product_ids": [
-        "fbc3781c-f61a-460a-98a3-65d0542505c5"
-      ],
-      "source_variant_ids": [
-        "4a3a06a3-c26b-46d6-a4b5-424641e7462f"
-      ],
-      "source_skus": [
-        "1A401030001E656000006653"
-      ],
-      "dutchie_url": "",
-      "no_recent_sales": true,
-      "feeling": "Bright",
-      "looking_for": "Energy",
-      "display_name": "Papaya Juice"
     },
     {
       "product_name": "Durban Poison S1",
