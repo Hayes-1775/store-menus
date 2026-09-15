@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T08:47:37",
+  "generated_at": "2026-09-15T04:38:21",
   "rotation_seconds": 20,
   "configured_screen_count": 4,
   "enabled_screens": [
@@ -13,7 +13,7 @@
         "NW Kind",
         "Buddies"
       ],
-      "row_count": 45,
+      "row_count": 44,
       "data": "menu-data.json",
       "image": "latest.jpg"
     }
