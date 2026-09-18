@@ -90,5 +90,15 @@
   "White Chocolate Chip": { "feeling": "Uplifting", "looking_for": "Energy" },
   "Sunday Bread": { "feeling": "Bright", "looking_for": "Energy" },
   "Hella Jelly": { "feeling": "Creative", "looking_for": "Energy" },
-  "Cel-Rey": { "feeling": "Focused", "looking_for": "Energy" }
+  "Cel-Rey": { "feeling": "Focused", "looking_for": "Energy" },
+  "Hash Burger": { "feeling": "Relaxing", "looking_for": "Sleepy" },
+  "Jokerz Candy": { "feeling": "Relaxing", "looking_for": "Sleepy" },
+  "Indigo": { "feeling": "Balanced", "looking_for": "Chill" },
+  "Bolinas": { "feeling": "Balanced", "looking_for": "Chill" },
+  "Cap Junky - Fenario Farms": { "feeling": "Potent", "looking_for": "Chill" },
+  "Strawberry OG": { "feeling": "Balanced", "looking_for": "Chill" },
+  "Cap Junky - Noble Farms": { "feeling": "Potent", "looking_for": "Chill" },
+  "Maui True Blood": { "feeling": "Uplifting", "looking_for": "Energy" },
+  "AK Pie": { "feeling": "Uplifting", "looking_for": "Energy" },
+  "Guava Tart": { "feeling": "Uplifting", "looking_for": "Energy" }
 }

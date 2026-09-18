@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+"""Write only allowlisted customer menu fields to GitHub Pages."""
+import argparse
+import json
+from pathlib import Path
+from menu_public_payload import public_menu_payload, validate_public_payload
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--input", required=True)
+parser.add_argument("--output", required=True)
+args = parser.parse_args()
+payload = public_menu_payload(json.loads(Path(args.input).read_text()))
+validate_public_payload(payload)
+Path(args.output).write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n")

@@ -40,7 +40,7 @@ for SCREEN_NUMBER in $(seq 1 "$SCREEN_COUNT"); do
     --archive-dir "$ARCHIVE_DIR" \
     --archive
 
-  cp "data/${DATA_STEM}.json" "${DOCS_DIR}/menu-data.json"
+  "$PYTHON" scripts/export-public-menu-data --input "data/${DATA_STEM}.json" --output "${DOCS_DIR}/menu-data.json"
 done
 
 "$PYTHON" scripts/build-vape-screen-manifest >/dev/null

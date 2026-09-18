@@ -6,6 +6,7 @@ from pathlib import Path
 from PIL import Image
 
 from flower_menu_layout import FlowerMenuLayoutError, select_flower_layout
+from menu_public_payload import public_menu_payload, validate_public_payload
 
 
 def fail(message: str) -> None:
@@ -75,8 +76,18 @@ def main() -> None:
     if not flower_layout["fits"]:
         fail("flower menu layout does not fit one screen")
 
-    if docs_menu != menu:
-        fail("docs/menu-data.json does not exactly match data/flower_menu.json")
+    if docs_menu != public_menu_payload(menu):
+        fail("docs/menu-data.json does not match the customer projection of data/flower_menu.json")
+    for public_path in Path("docs").rglob("menu-data.json"):
+        try:
+            validate_public_payload(json.loads(public_path.read_text(encoding="utf-8")))
+        except ValueError as error:
+            fail(f"{public_path}: {error}")
+    for row in rows:
+        if row.get("thc") is None or not str(row.get("thc_display", "")).strip():
+            fail(f"missing flower THC: {row['product_name']}")
+        if any(not str(row.get(key, "")).startswith("$") for key in ("gram", "eighth", "quarter", "half", "ounce")):
+            fail(f"missing flower prices: {row['product_name']}")
 
     name_counts = {}
     for row in rows:

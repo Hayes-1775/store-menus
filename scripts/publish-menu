@@ -62,6 +62,9 @@ workflow_run_timed_step "$WORKFLOW_NAME" "stage_publishable_files" "batch-git-ad
   scripts/send-store-menu-report-email \
   scripts/verify-live-menu \
   scripts/verify-menu \
+  scripts/menu_public_payload.py \
+  scripts/test_menu_public_payload.py \
+  scripts/export-public-menu-data \
   scripts/publish-menu \
   docs/index.html \
   docs/.nojekyll \
