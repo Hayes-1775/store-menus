@@ -1,6 +1,6 @@
 {
   "schema_version": "menu.public.v1",
-  "generated_at": "2026-09-18T08:46:10.916+00:00",
+  "generated_at": "2026-09-21T18:30:50.917Z",
   "menu": "vapes",
   "screen": 1,
   "rotation_seconds": 20,
@@ -161,8 +161,8 @@
       "thc": 0.889,
       "thc_display": "89%",
       "detail_display": "89%",
-      "price": "$20",
-      "short_price": "$20"
+      "price": "$20.00",
+      "short_price": "$20.00"
     },
     {
       "brand": "NW Kind",
@@ -175,22 +175,8 @@
       "thc": 0.884,
       "thc_display": "88%",
       "detail_display": "88%",
-      "price": "$20",
-      "short_price": "$20"
-    },
-    {
-      "brand": "NW Kind",
-      "product_name": "Cadillac Rainbows",
-      "display_name": "Cadillac Rainbows",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.792,
-      "thc_display": "79%",
-      "detail_display": "79%",
-      "price": "$30",
-      "short_price": "$30"
+      "price": "$20.00",
+      "short_price": "$20.00"
     },
     {
       "brand": "NW Kind",
@@ -203,22 +189,8 @@
       "thc": 0.778,
       "thc_display": "78%",
       "detail_display": "78%",
-      "price": "$24",
-      "short_price": "$24"
-    },
-    {
-      "brand": "NW Kind",
-      "product_name": "Tagalongz",
-      "display_name": "Tagalongz",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.807,
-      "thc_display": "81%",
-      "detail_display": "81%",
-      "price": "$36",
-      "short_price": "$36"
+      "price": "$24.00",
+      "short_price": "$24.00"
     },
     {
       "brand": "NW Kind",
@@ -231,8 +203,8 @@
       "thc": 0.843,
       "thc_display": "84%",
       "detail_display": "84%",
-      "price": "$20",
-      "short_price": "$20"
+      "price": "$20.00",
+      "short_price": "$20.00"
     },
     {
       "brand": "NW Kind",
@@ -245,8 +217,8 @@
       "thc": 0.786,
       "thc_display": "79%",
       "detail_display": "79%",
-      "price": "$24",
-      "short_price": "$24"
+      "price": "$24.00",
+      "short_price": "$24.00"
     },
     {
       "brand": "NW Kind",
@@ -259,22 +231,8 @@
       "thc": 0.7659999999999999,
       "thc_display": "77%",
       "detail_display": "77%",
-      "price": "$24",
-      "short_price": "$24"
-    },
-    {
-      "brand": "NW Kind",
-      "product_name": "BOP",
-      "display_name": "BOP",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.784,
-      "thc_display": "78%",
-      "detail_display": "78%",
-      "price": "$35.56",
-      "short_price": "$35.56"
+      "price": "$24.00",
+      "short_price": "$24.00"
     },
     {
       "brand": "NW Kind",
@@ -301,8 +259,8 @@
       "thc": 0.78,
       "thc_display": "78%",
       "detail_display": "78%",
-      "price": "$24",
-      "short_price": "$24"
+      "price": "$24.00",
+      "short_price": "$24.00"
     },
     {
       "brand": "NW Kind",
@@ -315,22 +273,8 @@
       "thc": 0.772,
       "thc_display": "77%",
       "detail_display": "77%",
-      "price": "$24",
-      "short_price": "$24"
-    },
-    {
-      "brand": "NW Kind",
-      "product_name": "Francos Lemon",
-      "display_name": "Francos Lemon",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.732,
-      "thc_display": "73%",
-      "detail_display": "73%",
-      "price": "$30",
-      "short_price": "$30"
+      "price": "$24.00",
+      "short_price": "$24.00"
     },
     {
       "brand": "NW Kind",
@@ -343,8 +287,8 @@
       "thc": 0.688,
       "thc_display": "69%",
       "detail_display": "69%",
-      "price": "$30",
-      "short_price": "$30"
+      "price": "$30.00",
+      "short_price": "$30.00"
     },
     {
       "brand": "Buddies",
@@ -385,8 +329,8 @@
       "thc": 0.7636,
       "thc_display": "76%",
       "detail_display": "76%",
-      "price": "$23.6",
-      "short_price": "$23.6"
+      "price": "$23.60",
+      "short_price": "$23.60"
     },
     {
       "brand": "Buddies",
@@ -441,20 +385,6 @@
       "thc": 0.8715999999999999,
       "thc_display": "87%",
       "detail_display": "87%",
-      "price": "$15.73",
-      "short_price": "$15.73"
-    },
-    {
-      "brand": "Buddies",
-      "product_name": "Apple Fritter",
-      "display_name": "Apple Fritter",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Distillate",
-      "thc": 0.8590000000000001,
-      "thc_display": "86%",
-      "detail_display": "86%",
       "price": "$15.73",
       "short_price": "$15.73"
     },
@@ -539,8 +469,8 @@
       "thc": 0.8773000000000001,
       "thc_display": "88%",
       "detail_display": "88%",
-      "price": "$12",
-      "short_price": "$12"
+      "price": "$12.00",
+      "short_price": "$12.00"
     },
     {
       "brand": "Buddies",
@@ -553,8 +483,8 @@
       "thc": 0.8453,
       "thc_display": "85%",
       "detail_display": "85%",
-      "price": "$12",
-      "short_price": "$12"
+      "price": "$12.00",
+      "short_price": "$12.00"
     },
     {
       "brand": "Buddies",
@@ -567,8 +497,8 @@
       "thc": 0.8446000000000001,
       "thc_display": "84%",
       "detail_display": "84%",
-      "price": "$12",
-      "short_price": "$12"
+      "price": "$12.00",
+      "short_price": "$12.00"
     },
     {
       "brand": "Buddies",
@@ -581,8 +511,8 @@
       "thc": 0.8318000000000001,
       "thc_display": "83%",
       "detail_display": "83%",
-      "price": "$12",
-      "short_price": "$12"
+      "price": "$12.00",
+      "short_price": "$12.00"
     },
     {
       "brand": "Buddies",
@@ -611,6 +541,20 @@
       "detail_display": "—",
       "price": "$23.62",
       "short_price": "$23.62"
+    },
+    {
+      "brand": "Buddies",
+      "product_name": "Cvndylvnd",
+      "display_name": "Cvndylvnd",
+      "strain": "Sativa",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.7609,
+      "thc_display": "76%",
+      "detail_display": "76%",
+      "price": "$31.16",
+      "short_price": "$31.16"
     },
     {
       "brand": "Buddies",

@@ -1,6 +1,6 @@
 {
   "schema_version": "menu.public.v1",
-  "generated_at": "2026-09-18T08:46:10.916+00:00",
+  "generated_at": "2026-09-21T18:30:50.917Z",
   "menu": "flower",
   "rows": [
     {
@@ -598,24 +598,6 @@
       "no_recent_sales": false
     },
     {
-      "product_name": "Cap Junky - Fenario Farms",
-      "display_name": "Cap Junky - Fenario Farms",
-      "brand": "Fenario Farms",
-      "strain": "Hybrid",
-      "thc": 0.3163,
-      "thc_display": "32%",
-      "gram": "$12",
-      "eighth": "$38",
-      "quarter": "$72",
-      "half": "$137",
-      "ounce": "$253",
-      "feeling": "Potent",
-      "looking_for": "Chill",
-      "closeout": true,
-      "aged_inventory": false,
-      "no_recent_sales": false
-    },
-    {
       "product_name": "Strawberry OG",
       "display_name": "Strawberry OG",
       "brand": "Noble Farms",
@@ -634,8 +616,8 @@
       "no_recent_sales": false
     },
     {
-      "product_name": "Cap Junky - Noble Farms",
-      "display_name": "Cap Junky - Noble Farms",
+      "product_name": "Cap Junky",
+      "display_name": "Cap Junky",
       "brand": "Noble Farms",
       "strain": "Hybrid",
       "thc": 0.38420000000000004,
