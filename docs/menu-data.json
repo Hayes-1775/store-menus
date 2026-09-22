@@ -1,6 +1,6 @@
 {
   "schema_version": "menu.public.v1",
-  "generated_at": "2026-09-22T16:25:05.97+00:00",
+  "generated_at": "2026-09-22T19:16:21.36+00:00",
   "menu": "flower",
   "rows": [
     {
@@ -198,24 +198,6 @@
       "feeling": "Dreamy",
       "looking_for": "Sleepy",
       "closeout": false,
-      "aged_inventory": false,
-      "no_recent_sales": false
-    },
-    {
-      "product_name": "Hash Burger",
-      "display_name": "Hash Burger",
-      "brand": "Oregrown",
-      "strain": "Indica",
-      "thc": 0.27130000000000004,
-      "thc_display": "27%",
-      "gram": "$5",
-      "eighth": "$16",
-      "quarter": "$30",
-      "half": "$57",
-      "ounce": "$105",
-      "feeling": "Relaxing",
-      "looking_for": "Sleepy",
-      "closeout": true,
       "aged_inventory": false,
       "no_recent_sales": false
     },
@@ -486,24 +468,6 @@
       "feeling": "Balanced",
       "looking_for": "Chill",
       "closeout": false,
-      "aged_inventory": false,
-      "no_recent_sales": false
-    },
-    {
-      "product_name": "Sherb Cream Pop #4",
-      "display_name": "Sherb Cream Pop #4",
-      "brand": "Garden First Cannabis",
-      "strain": "Hybrid",
-      "thc": 0.2211,
-      "thc_display": "22%",
-      "gram": "$10",
-      "eighth": "$32",
-      "quarter": "$61",
-      "half": "$116",
-      "ounce": "$214",
-      "feeling": "Sweet",
-      "looking_for": "Chill",
-      "closeout": true,
       "aged_inventory": false,
       "no_recent_sales": false
     },
