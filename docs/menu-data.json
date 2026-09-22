@@ -1,6 +1,6 @@
 {
   "schema_version": "menu.public.v1",
-  "generated_at": "2026-09-21T18:30:50.917Z",
+  "generated_at": "2026-09-22T15:10:51.762+00:00",
   "menu": "flower",
   "rows": [
     {
@@ -215,7 +215,7 @@
       "ounce": "$105",
       "feeling": "Relaxing",
       "looking_for": "Sleepy",
-      "closeout": false,
+      "closeout": true,
       "aged_inventory": false,
       "no_recent_sales": false
     },
@@ -328,42 +328,6 @@
       "no_recent_sales": false
     },
     {
-      "product_name": "Jokerz Candy",
-      "display_name": "Jokerz Candy",
-      "brand": "Oregrown",
-      "strain": "Indica",
-      "thc": 0.2955,
-      "thc_display": "30%",
-      "gram": "$6",
-      "eighth": "$19",
-      "quarter": "$36",
-      "half": "$68",
-      "ounce": "$126",
-      "feeling": "Relaxing",
-      "looking_for": "Sleepy",
-      "closeout": false,
-      "aged_inventory": false,
-      "no_recent_sales": false
-    },
-    {
-      "product_name": "The Hive",
-      "display_name": "The Hive",
-      "brand": "Oregrown",
-      "strain": "Indica",
-      "thc": 0.2054,
-      "thc_display": "21%",
-      "gram": "$7",
-      "eighth": "$22",
-      "quarter": "$42",
-      "half": "$80",
-      "ounce": "$148",
-      "feeling": "Cheerful",
-      "looking_for": "Chill",
-      "closeout": true,
-      "aged_inventory": false,
-      "no_recent_sales": false
-    },
-    {
       "product_name": "Goodies",
       "display_name": "Goodies",
       "brand": "Fenario Farms",
@@ -414,24 +378,6 @@
       "feeling": "Soothing",
       "looking_for": "Sleepy",
       "closeout": true,
-      "aged_inventory": false,
-      "no_recent_sales": false
-    },
-    {
-      "product_name": "Dark Queen",
-      "display_name": "Dark Queen",
-      "brand": "Miracle Farms",
-      "strain": "Hybrid",
-      "thc": 0.155,
-      "thc_display": "16%",
-      "gram": "$3",
-      "eighth": "$10",
-      "quarter": "$20",
-      "half": "$40",
-      "ounce": "$67",
-      "feeling": "Euphoric",
-      "looking_for": "Chill",
-      "closeout": false,
       "aged_inventory": false,
       "no_recent_sales": false
     },
@@ -521,7 +467,7 @@
       "ounce": "$105",
       "feeling": "Citrusy",
       "looking_for": "Energy",
-      "closeout": false,
+      "closeout": true,
       "aged_inventory": false,
       "no_recent_sales": false
     },
@@ -675,7 +621,7 @@
       "brand": "Miracle Farms",
       "strain": "Sativa",
       "thc": 0.245,
-      "thc_display": "25%",
+      "thc_display": "24%",
       "gram": "$5",
       "eighth": "$16",
       "quarter": "$30",

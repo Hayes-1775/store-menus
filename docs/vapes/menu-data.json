@@ -1,6 +1,6 @@
 {
   "schema_version": "menu.public.v1",
-  "generated_at": "2026-09-21T18:30:50.917Z",
+  "generated_at": "2026-09-22T15:10:51.762+00:00",
   "menu": "vapes",
   "screen": 1,
   "rotation_seconds": 20,
@@ -247,20 +247,6 @@
       "detail_display": "74%",
       "price": "$35.56",
       "short_price": "$35.56"
-    },
-    {
-      "brand": "NW Kind",
-      "product_name": "Island Girl",
-      "display_name": "Island Girl",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Cured Resin",
-      "thc": 0.78,
-      "thc_display": "78%",
-      "detail_display": "78%",
-      "price": "$24.00",
-      "short_price": "$24.00"
     },
     {
       "brand": "NW Kind",
