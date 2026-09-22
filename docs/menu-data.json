@@ -1,6 +1,6 @@
 {
   "schema_version": "menu.public.v1",
-  "generated_at": "2026-09-22T15:10:51.762+00:00",
+  "generated_at": "2026-09-22T16:25:05.97+00:00",
   "menu": "flower",
   "rows": [
     {
@@ -450,24 +450,6 @@
       "feeling": "Smooth",
       "looking_for": "Chill",
       "closeout": false,
-      "aged_inventory": false,
-      "no_recent_sales": false
-    },
-    {
-      "product_name": "Golden Lemons",
-      "display_name": "Golden Lemons",
-      "brand": "Millerville",
-      "strain": "Hybrid",
-      "thc": 0.32089999999999996,
-      "thc_display": "32%",
-      "gram": "$5",
-      "eighth": "$16",
-      "quarter": "$30",
-      "half": "$57",
-      "ounce": "$105",
-      "feeling": "Citrusy",
-      "looking_for": "Energy",
-      "closeout": true,
       "aged_inventory": false,
       "no_recent_sales": false
     },
