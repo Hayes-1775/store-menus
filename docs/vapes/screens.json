@@ -21,9 +21,10 @@
     {
       "number": 5,
       "brands": [
+        "Oregrown",
         "Entourage Cannabis"
       ],
-      "row_count": 22,
+      "row_count": 37,
       "data": "page5/menu-data.json",
       "image": "page5/latest.jpg"
     }
