@@ -22,7 +22,7 @@
     "height": 1920
   },
   "vape_menu": {
-    "screen_count": 4,
+    "screen_count": 5,
     "brand_priority": [
       "Verdant",
       "NW Kind",
@@ -44,7 +44,7 @@
       "Oregrown": 2,
       "Moonwalk": 2,
       "Higher Cultures": 3,
-      "Entourage Cannabis": 3,
+      "Entourage Cannabis": 5,
       "Grown Rogue": 3,
       "Mule": 3,
       "National": 4,
@@ -53,7 +53,8 @@
     },
     "rotation_seconds": 20,
     "enabled_screens": [
-      1
+      1,
+      5
     ]
   }
 }
