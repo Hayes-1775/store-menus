@@ -53,20 +53,6 @@
     },
     {
       "brand": "Oregrown",
-      "product_name": "Grape Gas",
-      "display_name": "Grape Gas",
-      "strain": "Indica",
-      "size": "2g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.7025,
-      "thc_display": "70%",
-      "detail_display": "70%",
-      "price": "$61.12",
-      "short_price": "$61.12"
-    },
-    {
-      "brand": "Oregrown",
       "product_name": "Grape Junky",
       "display_name": "Grape Junky",
       "strain": "Indica",
@@ -137,20 +123,6 @@
     },
     {
       "brand": "Oregrown",
-      "product_name": "Drunken Strawberries",
-      "display_name": "Drunken Strawberries",
-      "strain": "Hybrid",
-      "size": "2g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.7386,
-      "thc_display": "74%",
-      "detail_display": "74%",
-      "price": "$55.56",
-      "short_price": "$55.56"
-    },
-    {
-      "brand": "Oregrown",
       "product_name": "Guava Cream",
       "display_name": "Guava Cream",
       "strain": "Hybrid",
@@ -204,20 +176,6 @@
       "detail_display": "72%",
       "price": "$55.56",
       "short_price": "$55.56"
-    },
-    {
-      "brand": "Oregrown",
-      "product_name": "London Sour",
-      "display_name": "London Sour",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.715,
-      "thc_display": "72%",
-      "detail_display": "72%",
-      "price": "$41.7",
-      "short_price": "$41.7"
     },
     {
       "brand": "Entourage Cannabis",
