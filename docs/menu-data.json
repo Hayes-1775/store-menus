@@ -1,6 +1,6 @@
 {
   "schema_version": "menu.public.v1",
-  "generated_at": "2026-09-23T15:00:18.371+00:00",
+  "generated_at": "2026-09-23T18:51:08Z",
   "menu": "flower",
   "rows": [
     {
@@ -324,24 +324,6 @@
       "feeling": "Bright",
       "looking_for": "Energy",
       "closeout": false,
-      "aged_inventory": false,
-      "no_recent_sales": false
-    },
-    {
-      "product_name": "OMMP Blueberry",
-      "display_name": "OMMP Blueberry",
-      "brand": "Noble Farms",
-      "strain": "Indica",
-      "thc": 0.2856,
-      "thc_display": "29%",
-      "gram": "$14",
-      "eighth": "$44",
-      "quarter": "$84",
-      "half": "$160",
-      "ounce": "$295",
-      "feeling": "Soothing",
-      "looking_for": "Sleepy",
-      "closeout": true,
       "aged_inventory": false,
       "no_recent_sales": false
     },
