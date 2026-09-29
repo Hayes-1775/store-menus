@@ -1,6 +1,5 @@
 {
-  "schema_version": "menu.public.v1",
-  "generated_at": "2026-09-23T15:00:18.371+00:00",
+  "generated_at": "2026-09-29T14:36:07",
   "menu": "vapes",
   "screen": 5,
   "rotation_seconds": 20,
@@ -19,9 +18,9 @@
       "process": "Cured Resin",
       "thc": 0.7458,
       "thc_display": "75%",
-      "detail_display": "75%",
       "price": "$33.34",
-      "short_price": "$33.34"
+      "short_price": "$33.34",
+      "detail_display": "75%"
     },
     {
       "brand": "Oregrown",
@@ -33,37 +32,37 @@
       "process": "Live Resin",
       "thc": 0.7040000000000001,
       "thc_display": "70%",
-      "detail_display": "70%",
       "price": "$33.34",
-      "short_price": "$33.34"
+      "short_price": "$33.34",
+      "detail_display": "70%"
     },
     {
       "brand": "Oregrown",
       "product_name": "Oishii",
-      "display_name": "Oishii",
+      "display_name": "Oishii AIO",
       "strain": "Indica",
       "size": "1g",
       "format": "AIO",
       "process": "Live Resin",
       "thc": 0.705,
       "thc_display": "71%",
-      "detail_display": "71%",
       "price": "$41.67",
-      "short_price": "$41.67"
+      "short_price": "$41.67",
+      "detail_display": "71%"
     },
     {
       "brand": "Oregrown",
       "product_name": "Grape Junky",
-      "display_name": "Grape Junky",
+      "display_name": "Grape Junky AIO",
       "strain": "Indica",
-      "size": "2g",
+      "size": "1g",
       "format": "AIO",
       "process": "Live Resin",
       "thc": 0.6772,
       "thc_display": "68%",
-      "detail_display": "68%",
       "price": "$55.56",
-      "short_price": "$55.56"
+      "short_price": "$55.56",
+      "detail_display": "68%"
     },
     {
       "brand": "Oregrown",
@@ -75,9 +74,9 @@
       "process": "Cured Resin",
       "thc": 0.7617,
       "thc_display": "76%",
-      "detail_display": "76%",
       "price": "$27.78",
-      "short_price": "$27.78"
+      "short_price": "$27.78",
+      "detail_display": "76%"
     },
     {
       "brand": "Oregrown",
@@ -89,51 +88,37 @@
       "process": "Live Resin",
       "thc": 0.7208,
       "thc_display": "72%",
-      "detail_display": "72%",
       "price": "$33.34",
-      "short_price": "$33.34"
-    },
-    {
-      "brand": "Oregrown",
-      "product_name": "Lemon Berry #17",
-      "display_name": "Lemon Berry #17",
-      "strain": "Hybrid",
-      "size": "1g",
-      "format": "510",
-      "process": "Cured Resin",
-      "thc": 0.6833,
-      "thc_display": "68%",
-      "detail_display": "68%",
-      "price": "$27.78",
-      "short_price": "$27.78"
+      "short_price": "$33.34",
+      "detail_display": "72%"
     },
     {
       "brand": "Oregrown",
       "product_name": "Black Maple #22",
-      "display_name": "Black Maple #22",
+      "display_name": "Black Maple #22 AIO",
       "strain": "Hybrid",
-      "size": "2g",
+      "size": "1g",
       "format": "AIO",
       "process": "Live Resin",
       "thc": 0.7387999999999999,
       "thc_display": "74%",
-      "detail_display": "74%",
       "price": "$61.12",
-      "short_price": "$61.12"
+      "short_price": "$61.12",
+      "detail_display": "74%"
     },
     {
       "brand": "Oregrown",
       "product_name": "Guava Cream",
-      "display_name": "Guava Cream",
+      "display_name": "Guava Cream AIO",
       "strain": "Hybrid",
       "size": "1g",
       "format": "AIO",
       "process": "Live Resin",
       "thc": 0.7182999999999999,
       "thc_display": "72%",
-      "detail_display": "72%",
       "price": "$41.67",
-      "short_price": "$41.67"
+      "short_price": "$41.67",
+      "detail_display": "72%"
     },
     {
       "brand": "Oregrown",
@@ -145,9 +130,9 @@
       "process": "Cured Resin",
       "thc": 0.7468,
       "thc_display": "75%",
-      "detail_display": "75%",
       "price": "$27.78",
-      "short_price": "$27.78"
+      "short_price": "$27.78",
+      "detail_display": "75%"
     },
     {
       "brand": "Oregrown",
@@ -159,51 +144,37 @@
       "process": "Live Resin",
       "thc": 0.7197,
       "thc_display": "72%",
-      "detail_display": "72%",
       "price": "$33.34",
-      "short_price": "$33.34"
+      "short_price": "$33.34",
+      "detail_display": "72%"
     },
     {
       "brand": "Oregrown",
       "product_name": "Sub Zero",
-      "display_name": "Sub Zero",
+      "display_name": "Sub Zero AIO",
       "strain": "Sativa",
-      "size": "2g",
+      "size": "1g",
       "format": "AIO",
       "process": "Live Resin",
       "thc": 0.7151000000000001,
       "thc_display": "72%",
-      "detail_display": "72%",
       "price": "$55.56",
-      "short_price": "$55.56"
+      "short_price": "$55.56",
+      "detail_display": "72%"
     },
     {
-      "brand": "Entourage Cannabis",
-      "product_name": "Canal St Runtz | I/H",
-      "display_name": "Canal St Runtz | I/H",
-      "strain": "Indica",
+      "brand": "Oregrown",
+      "product_name": "London Sour",
+      "display_name": "London Sour AIO",
+      "strain": "Sativa",
       "size": "1g",
-      "format": "510",
-      "process": "Live Rosin",
-      "thc": 0.7636,
-      "thc_display": "76%",
-      "detail_display": "76%",
-      "price": "$48.89",
-      "short_price": "$48.89"
-    },
-    {
-      "brand": "Entourage Cannabis",
-      "product_name": "Hash Burger | I/H",
-      "display_name": "Hash Burger | I/H",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Rosin",
-      "thc": 0.7042,
-      "thc_display": "70%",
-      "detail_display": "70%",
-      "price": "$48.89",
-      "short_price": "$48.89"
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.715,
+      "thc_display": "72%",
+      "price": "$41.70",
+      "short_price": "$41.7",
+      "detail_display": "72%"
     },
     {
       "brand": "Entourage Cannabis",
@@ -215,79 +186,65 @@
       "process": "Live Resin",
       "thc": 0.6795,
       "thc_display": "68%",
-      "detail_display": "68%",
       "price": "$33.34",
-      "short_price": "$33.34"
-    },
-    {
-      "brand": "Entourage Cannabis",
-      "product_name": "Canal St. Runtz | I/H",
-      "display_name": "Canal St. Runtz | I/H",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Rosin",
-      "thc": 0.7636,
-      "thc_display": "76%",
-      "detail_display": "76%",
-      "price": "$55.56",
-      "short_price": "$55.56"
-    },
-    {
-      "brand": "Entourage Cannabis",
-      "product_name": "Banana Crasher | I/H",
-      "display_name": "Banana Crasher | I/H",
-      "strain": "Indica",
-      "size": "1g",
-      "format": "AIO",
-      "process": "Live Rosin",
-      "thc": 0.7624,
-      "thc_display": "76%",
-      "detail_display": "76%",
-      "price": "$55.56",
-      "short_price": "$55.56"
+      "short_price": "$33.34",
+      "detail_display": "68%"
     },
     {
       "brand": "Entourage Cannabis",
       "product_name": "Shaved Ice",
-      "display_name": "Shaved Ice",
+      "display_name": "Shaved Ice AIO",
       "strain": "Indica",
       "size": "1g",
       "format": "AIO",
       "process": "Live Resin",
       "thc": 0.7114,
       "thc_display": "71%",
-      "detail_display": "71%",
       "price": "$40.00",
-      "short_price": "$40.00"
-    },
-    {
-      "brand": "Entourage Cannabis",
-      "product_name": "Black Cherry Cheesecake Cookies | I/H",
-      "display_name": "Black Cherry Cheesecake Cookies | I/H",
-      "strain": "Indica",
-      "size": "2g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.6990999999999999,
-      "thc_display": "70%",
-      "detail_display": "70%",
-      "price": "$64.44",
-      "short_price": "$64.44"
+      "short_price": "$40",
+      "detail_display": "71%"
     },
     {
       "brand": "Entourage Cannabis",
       "product_name": "Dulce De Uva",
-      "display_name": "Dulce De Uva",
+      "display_name": "Dulce De Uva AIO",
       "strain": "Indica",
       "size": "1g",
       "format": "AIO",
       "process": "Live Resin",
       "thc": 0.6546,
       "thc_display": "65%",
-      "detail_display": "65%",
       "price": "$40.00",
-      "short_price": "$40.00"
+      "short_price": "$40",
+      "detail_display": "65%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Secret Tang Breath",
+      "display_name": "Secret Tang Breath",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Rosin",
+      "thc": 0.7784,
+      "thc_display": "78%",
+      "price": "$48.89",
+      "short_price": "$48.89",
+      "detail_display": "78%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Canal St Runtz",
+      "display_name": "Canal St Runtz",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Rosin",
+      "thc": 0.7636,
+      "thc_display": "76%",
+      "price": "$48.89",
+      "short_price": "$48.89",
+      "detail_display": "76%"
     },
     {
       "brand": "Entourage Cannabis",
@@ -299,9 +256,37 @@
       "process": "Cured Resin",
       "thc": 0.7071000000000001,
       "thc_display": "71%",
-      "detail_display": "71%",
       "price": "$33.34",
-      "short_price": "$33.34"
+      "short_price": "$33.34",
+      "detail_display": "71%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Sour Peaches",
+      "display_name": "Sour Peaches",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Resin",
+      "thc": 0.7046000000000001,
+      "thc_display": "70%",
+      "price": "$33.34",
+      "short_price": "$33.34",
+      "detail_display": "70%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Hash Burger",
+      "display_name": "Hash Burger",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "510",
+      "process": "Live Rosin",
+      "thc": 0.7042,
+      "thc_display": "70%",
+      "price": "$48.89",
+      "short_price": "$48.89",
+      "detail_display": "70%"
     },
     {
       "brand": "Entourage Cannabis",
@@ -313,9 +298,9 @@
       "process": "Live Resin",
       "thc": 0.6835000000000001,
       "thc_display": "68%",
-      "detail_display": "68%",
       "price": "$33.34",
-      "short_price": "$33.34"
+      "short_price": "$33.34",
+      "detail_display": "68%"
     },
     {
       "brand": "Entourage Cannabis",
@@ -327,9 +312,9 @@
       "process": "Live Resin",
       "thc": 0.6738,
       "thc_display": "67%",
-      "detail_display": "67%",
       "price": "$33.34",
-      "short_price": "$33.34"
+      "short_price": "$33.34",
+      "detail_display": "67%"
     },
     {
       "brand": "Entourage Cannabis",
@@ -341,79 +326,121 @@
       "process": "Cured Resin",
       "thc": 0.6578,
       "thc_display": "66%",
-      "detail_display": "66%",
       "price": "$33.34",
-      "short_price": "$33.34"
+      "short_price": "$33.34",
+      "detail_display": "66%"
     },
     {
       "brand": "Entourage Cannabis",
-      "product_name": "Upper Cut",
-      "display_name": "Upper Cut",
+      "product_name": "Canal St. Runtz",
+      "display_name": "Canal St. Runtz AIO",
       "strain": "Hybrid",
       "size": "1g",
       "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.7188,
-      "thc_display": "72%",
-      "detail_display": "72%",
-      "price": "$40.00",
-      "short_price": "$40.00"
+      "process": "Live Rosin",
+      "thc": 0.7636,
+      "thc_display": "76%",
+      "price": "$55.56",
+      "short_price": "$55.56",
+      "detail_display": "76%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Banana Crasher",
+      "display_name": "Banana Crasher AIO",
+      "strain": "Hybrid",
+      "size": "1g",
+      "format": "AIO",
+      "process": "Live Rosin",
+      "thc": 0.7624,
+      "thc_display": "76%",
+      "price": "$55.56",
+      "short_price": "$55.56",
+      "detail_display": "76%"
     },
     {
       "brand": "Entourage Cannabis",
       "product_name": "Lavender Loaf",
-      "display_name": "Lavender Loaf",
+      "display_name": "Lavender Loaf AIO",
       "strain": "Hybrid",
       "size": "2g",
       "format": "AIO",
       "process": "Live Resin",
       "thc": 0.7170000000000001,
       "thc_display": "72%",
-      "detail_display": "72%",
       "price": "$64.44",
-      "short_price": "$64.44"
+      "short_price": "$64.44",
+      "detail_display": "72%"
     },
     {
       "brand": "Entourage Cannabis",
       "product_name": "Gushers",
-      "display_name": "Gushers",
+      "display_name": "Gushers AIO",
       "strain": "Hybrid",
       "size": "1g",
       "format": "AIO",
       "process": "Live Resin",
       "thc": 0.7159,
       "thc_display": "72%",
-      "detail_display": "72%",
       "price": "$40.00",
-      "short_price": "$40.00"
+      "short_price": "$40",
+      "detail_display": "72%"
     },
     {
       "brand": "Entourage Cannabis",
       "product_name": "Maclaren",
-      "display_name": "Maclaren",
+      "display_name": "Maclaren AIO",
       "strain": "Hybrid",
       "size": "1g",
       "format": "AIO",
       "process": "Live Rosin",
       "thc": 0.7057000000000001,
       "thc_display": "71%",
-      "detail_display": "71%",
       "price": "$55.56",
-      "short_price": "$55.56"
+      "short_price": "$55.56",
+      "detail_display": "71%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Black Cherry Cheesecake Cookies",
+      "display_name": "Black Cherry Cheesecake Cookies AIO",
+      "strain": "Hybrid",
+      "size": "2g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.6990999999999999,
+      "thc_display": "70%",
+      "price": "$64.44",
+      "short_price": "$64.44",
+      "detail_display": "70%"
     },
     {
       "brand": "Entourage Cannabis",
       "product_name": "Lemon Cherry Gushers",
-      "display_name": "Lemon Cherry Gushers",
+      "display_name": "Lemon Cherry Gushers AIO",
       "strain": "Hybrid",
       "size": "2g",
       "format": "AIO",
       "process": "Live Resin",
       "thc": 0.6835000000000001,
       "thc_display": "68%",
-      "detail_display": "68%",
       "price": "$64.44",
-      "short_price": "$64.44"
+      "short_price": "$64.44",
+      "detail_display": "68%"
+    },
+    {
+      "brand": "Entourage Cannabis",
+      "product_name": "Frozen Lemon",
+      "display_name": "Frozen Lemon AIO",
+      "strain": "Hybrid",
+      "size": "2g",
+      "format": "AIO",
+      "process": "Live Resin",
+      "thc": 0.618,
+      "thc_display": "62%",
+      "price": "$64.44",
+      "short_price": "$64.44",
+      "detail_display": "62%"
     },
     {
       "brand": "Entourage Cannabis",
@@ -425,65 +452,23 @@
       "process": "Cured Resin",
       "thc": 0.7843000000000001,
       "thc_display": "78%",
-      "detail_display": "78%",
       "price": "$33.34",
-      "short_price": "$33.34"
-    },
-    {
-      "brand": "Entourage Cannabis",
-      "product_name": "Secret Tang Breath | S/H",
-      "display_name": "Secret Tang Breath | S/H",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Rosin",
-      "thc": 0.7784,
-      "thc_display": "78%",
-      "detail_display": "78%",
-      "price": "$48.89",
-      "short_price": "$48.89"
-    },
-    {
-      "brand": "Entourage Cannabis",
-      "product_name": "Sour Peaches | S/H",
-      "display_name": "Sour Peaches | S/H",
-      "strain": "Sativa",
-      "size": "1g",
-      "format": "510",
-      "process": "Live Resin",
-      "thc": 0.7046000000000001,
-      "thc_display": "70%",
-      "detail_display": "70%",
-      "price": "$33.34",
-      "short_price": "$33.34"
+      "short_price": "$33.34",
+      "detail_display": "78%"
     },
     {
       "brand": "Entourage Cannabis",
       "product_name": "Sour Peaches",
-      "display_name": "Sour Peaches",
+      "display_name": "Sour Peaches AIO",
       "strain": "Sativa",
       "size": "1g",
       "format": "AIO",
       "process": "Live Resin",
       "thc": 0.7046000000000001,
       "thc_display": "70%",
-      "detail_display": "70%",
       "price": "$40.00",
-      "short_price": "$40.00"
-    },
-    {
-      "brand": "Entourage Cannabis",
-      "product_name": "Frozen Lemon | S/H",
-      "display_name": "Frozen Lemon | S/H",
-      "strain": "Sativa",
-      "size": "2g",
-      "format": "AIO",
-      "process": "Live Resin",
-      "thc": 0.618,
-      "thc_display": "62%",
-      "detail_display": "62%",
-      "price": "$64.44",
-      "short_price": "$64.44"
+      "short_price": "$40",
+      "detail_display": "70%"
     }
   ]
 }

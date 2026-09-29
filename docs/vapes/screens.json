@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T15:00:18.371+00:00",
+  "generated_at": "2026-09-29T14:36:06",
   "rotation_seconds": 20,
   "configured_screen_count": 5,
   "enabled_screens": [
@@ -14,7 +14,7 @@
         "NW Kind",
         "Buddies"
       ],
-      "row_count": 39,
+      "row_count": 35,
       "data": "menu-data.json",
       "image": "latest.jpg"
     },
@@ -24,7 +24,7 @@
         "Oregrown",
         "Entourage Cannabis"
       ],
-      "row_count": 34,
+      "row_count": 33,
       "data": "page5/menu-data.json",
       "image": "page5/latest.jpg"
     }

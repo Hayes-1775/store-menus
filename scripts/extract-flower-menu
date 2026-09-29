@@ -357,6 +357,10 @@ def extract_menu(
             row_get(row, header_map, ["Third-Party Display Name"]),
             row_get(row, header_map, ["Supplier Name"]),
         )
+        # Flowhub has this item with supplier and strain reversed in its product name.
+        if clean_display(raw_name) == "Noble Farms |H| Strawberry OG":
+            name = "Strawberry OG"
+            brand = "Noble Farms"
         brand_exempt = is_exempt_from_aged_inventory(
             row_get(row, header_map, ["Brand"]),
             row_get(row, header_map, ["Third-Party Display Name"]),
