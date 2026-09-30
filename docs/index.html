@@ -774,7 +774,7 @@
       function rowHtml(row) {
         const hasCloseoutPriority = Boolean(row.closeout);
         const showsAgedState = Boolean(row.aged_inventory) && !hasCloseoutPriority;
-        const isHiddenGem = row.no_recent_sales && !showsAgedState && !hasCloseoutPriority;
+        const isHiddenGem = row.hidden_gem && !showsAgedState && !hasCloseoutPriority;
         const descriptor = {
           adjective: row.feeling,
           bucket: String(row.looking_for || "").toLowerCase()

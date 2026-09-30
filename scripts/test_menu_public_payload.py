@@ -27,7 +27,8 @@ class PublicMenuPayloadTests(unittest.TestCase):
             validate_public_payload({"rows": [{"product_name": {"provider_id": "private"}}]})
 
     def test_preserves_customer_price_and_treatment(self):
-        row = {"product_name": "Example - Example Farm", "brand": "Example Farm", "closeout": True,
+        row = {"product_name": "Example - Example Farm", "brand": "Example Farm", "closeout": False,
+               "hidden_gem": True,
                "gram": "$14", "eighth": "$44", "quarter": "$84", "half": "$160", "ounce": "$295",
                "feeling": "Balanced", "looking_for": "Chill"}
         self.assertEqual(public_menu_payload({"rows": [row]})["rows"], [row])

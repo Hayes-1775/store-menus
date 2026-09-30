@@ -179,7 +179,8 @@
       "no_recent_sales": false,
       "feeling": "Soothing",
       "looking_for": "Sleepy",
-      "display_name": "Purple Churro"
+      "display_name": "Purple Churro",
+      "hidden_gem": true
     },
     {
       "product_name": "Black Amber",
@@ -251,7 +252,8 @@
       "no_recent_sales": false,
       "feeling": "Mellow",
       "looking_for": "Sleepy",
-      "display_name": "Double Blue Jager"
+      "display_name": "Double Blue Jager",
+      "hidden_gem": true
     },
     {
       "product_name": "Maltese Tiger",

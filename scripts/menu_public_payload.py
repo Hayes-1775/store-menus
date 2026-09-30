@@ -6,7 +6,7 @@ PUBLIC_TOP_FIELDS = frozenset({
 PUBLIC_ROW_FIELDS = frozenset({
     "product_name", "display_name", "brand", "strain", "thc", "thc_display",
     "gram", "eighth", "quarter", "half", "ounce", "feeling", "looking_for",
-    "closeout", "aged_inventory", "no_recent_sales", "size", "format", "process",
+    "closeout", "aged_inventory", "no_recent_sales", "hidden_gem", "size", "format", "process",
     "price", "short_price", "detail_display",
 })
 
