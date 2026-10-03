@@ -54,7 +54,7 @@
   "Jack Herer": { "feeling": "Alert", "looking_for": "Energy" },
   "Jack Herer Silver Lining": { "feeling": "Alert", "looking_for": "Energy" },
   "Southern Sunset": { "feeling": "Bright", "looking_for": "Energy" },
-  "Rocky Mountain Moonshine": { "feeling": "Lively", "looking_for": "Energy" },
+  "Rocky Mountain Moonshine": { "feeling": "Uplifting", "looking_for": "Energy" },
   "Dante's Cookie Jar": { "feeling": "Driven", "looking_for": "Energy" },
   "College Park": { "feeling": "Giggly", "looking_for": "Energy" },
   "Ginger Tea": { "feeling": "Focused", "looking_for": "Energy" },
@@ -100,5 +100,7 @@
   "Cap Junky - Noble Farms": { "feeling": "Potent", "looking_for": "Chill" },
   "Maui True Blood": { "feeling": "Uplifting", "looking_for": "Energy" },
   "AK Pie": { "feeling": "Uplifting", "looking_for": "Energy" },
-  "Guava Tart": { "feeling": "Uplifting", "looking_for": "Energy" }
+  "Guava Tart": { "feeling": "Uplifting", "looking_for": "Energy" },
+  "Permanent Trufflez": { "feeling": "Relaxing", "looking_for": "Sleepy" },
+  "Orange Slice": { "feeling": "Uplifting", "looking_for": "Energy" }
 }
